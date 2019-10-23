@@ -8,15 +8,13 @@ var asi=[7,12];
 var aoi=[-1,-1];
 var aei=[7,12];
 var full=false;
-var win=null;
 var timer;
-var time=0;
+var time = 0;
 
 var stv;
 var tstr;
 var isChLoaded=0;
 var msgGetCh="채널리스트 구성중";
-
 
 $('document').ready(function() {
     $('#menu0').load("https://hshin09.github.io/shinwebtv/kor.html");

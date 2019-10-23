@@ -8,8 +8,8 @@ var asi=[7,12];
 var aoi=[-1,-1];
 var aei=[7,12];
 var full=false;
-var time = 0;
 var timer;
+var time = 0;
 
 var stv;
 var tstr;
@@ -21,7 +21,6 @@ $('document').ready(function() {
     $('#menu1').load("https://hshin09.github.io/shinwebtv/thai.html");
     stv = $('#tv').get(0);
     timer = setInterval( function() { OnOff(); }, 1000 );
-
 });
 
 /*
