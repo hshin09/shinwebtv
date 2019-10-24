@@ -1,0 +1,95 @@
+<style>
+body {
+  overflow:hidden;
+  padding:0;
+  margin:0;
+  background-color:#252525;
+}
+div {
+  float:left;
+  width:10%;
+  height:100%;
+  background-color:#252525;
+}
+li {
+  padding-left:15px;
+  height: 28px;
+  line-height: 28px;
+  verical-align:middle;
+  font-size :15px;
+  color:white;
+}
+#mydiv {
+  position: absolute;
+  float:left;
+  overflow:hidden;
+  padding:0;
+  margin:0;
+  width: 90%;
+  height: 100%;
+  left:10%;
+  top:0;
+  background-color:#252525
+}
+iframe {
+  height:90%;
+}
+#tv,#web {
+  width: 100%;
+  height: 100%;
+  object-fit:fill;
+}
+#videoMessage {
+  position: absolute;
+  opacity: 0.4;
+  left: 0px;
+  top: 30px;
+  background-color: #252525;
+  display: none;
+}
+#secMessage {
+  position: absolute;
+  opacity: 0.4;
+  left: 40vw;
+  top: 5vh;
+  font-size:40px;
+  background-color: #252525;
+  display: none;
+}
+#errorMessage {
+  position: absolute;
+  opacity: 0.3;
+  width: 100%;
+  left: 0px;
+  top: 80vh;
+  background-color: yellow;
+  display: none;
+}
+#er_msg {
+  color:red;
+}
+#menu0 {
+		transition: transform 600ms;
+		transform: translate(-150px, 0px);
+		-ms-transition: -ms-transform 600ms;
+		-webkit-transition: -webkit-transform 600ms;
+		-moz-transition: -moz-transform 600ms;
+		-o-transition: -o-transform 600ms;
+		-ms-transform: translate(-150px, 0px);
+		-webkit-transform: translate(-150px, 0px);
+		-moz-transform: translate(-150px, 0px);
+		-o-transform: translate(-150px, 0px);
+}
+#menu1 {
+		transition: transform 600ms;
+		transform: translate(-150px, 0px);
+		-ms-transition: -ms-transform 600ms;
+		-webkit-transition: -webkit-transform 600ms;
+		-moz-transition: -moz-transform 600ms;
+		-o-transition: -o-transform 600ms;
+		-ms-transform: translate(-150px, 0px);
+		-webkit-transform: translate(-150px, 0px);
+		-moz-transform: translate(-150px, 0px);
+		-o-transform: translate(-150px, 0px);
+}
+</style>
