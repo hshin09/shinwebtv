@@ -8,7 +8,7 @@ var asi=[7,12];
 var aoi=[-1,-1];
 var aei=[7,12];
 var full=false;
-var timer;
+var timer=0;
 var time=0;
 
 var web;
@@ -57,6 +57,7 @@ function OnOff()
 	    if( x.length>0 )
 	    {
           clearInterval(timer);
+          timer=0;
 	        isChLoaded = 1;
 	        mlok();
 	    }
@@ -64,7 +65,11 @@ function OnOff()
     }
 
     if( time++ > 29 ) {
-        clearInterval(timer);
+        if(timer>0) {
+          clearInterval(timer);
+          timer=0;
+          return;
+        }
     }
 
     tstr="";
@@ -284,9 +289,10 @@ function movieclk( w, url, p ) {
 function showVideoMessage()
 {
     time = 0;
-    $('#sec').text( "00" );
-    timer = setInterval( function() { OnOff(); }, 1000 );
+    if(timer<1)
+      timer = setInterval( function() { OnOff(); }, 1000 );
     closeErrorMessage();
+    $('#sec').text( "00" );
     $("#ch_name").text( x[si].innerHTML );
    	$("#videoMessage").css('display', 'block');
   	$("#secMessage").css('display', 'block');
