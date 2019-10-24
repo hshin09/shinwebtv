@@ -95,7 +95,6 @@ function OnOff()
     }
 }
 
-
 function onup() {
 	if(oi>-1) x[oi].style="background-color:#252525";
 	if(ei>-1) x[ei].style="color:yellow";
@@ -273,9 +272,9 @@ function movieclk( w, url, p ) {
 	    xx=web;
 	  }
 	  else {
-      xx=stv;
 	    stv.style.display = "block";
 	    web.setAttribute( "src",  "about:blank" );
+      xx=stv;
 	  }
 
 	 xx.setAttribute( "src",  url );
@@ -312,10 +311,6 @@ function closeErrorMessage()
     document.getElementById("er_msg").innerHTML="";
 }
 
-function playedVideo()
-{
-}
-
 var request;
 var strRes="";
 var demostr="";
@@ -341,35 +336,6 @@ function gettv(i)
 	    return;
 
 	tvaddr[i]=demostr;
-}
-
-function gettv_all()
-{
-    request = new XMLHttpRequest();
-	if(!request) {
-		alert("Giving up :( Cannot create an XMLHTTP instance");
-		return false;
-	}
-
-	demostr="";
-	//request.onreadystatechange=state_change;
-	var i;
-	for(i=0;i<ch.length;i++) {
-		if(ch[i] == "0") {
-			demostr=demostr+",";
-			continue;
-		}
-		if(i>0) {
-			demostr=demostr+",";
-		}
-		request.open("GET", path+ch[i], false);
-		request.setRequestHeader("Access-Control-Allow-Origin","*");
-		request.setRequestHeader("Accept","text/html");
-		request.setRequestHeader("Content-Type","text/html");
-		request.send(null);
-		if(!state_change(i)) break;
-	}
-	tvaddr=demostr.split(",");
 }
 
 function state_change(i) {

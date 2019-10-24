@@ -8,9 +8,10 @@ var asi=[7,12];
 var aoi=[-1,-1];
 var aei=[7,12];
 var full=false;
-var timer;
-var time = 0;
+var timer=0;
+var time=0;
 
+var web;
 var stv;
 var tstr;
 var isChLoaded=0;
@@ -20,6 +21,7 @@ $('document').ready(function() {
     $('#menu0').load("https://hshin09.github.io/shinwebtv/kor.html");
     $('#menu1').load("https://hshin09.github.io/shinwebtv/thai.html");
     stv = $('#tv').get(0);
+    web = document.getElementById("web");
     timer = setInterval( function() { OnOff(); }, 1000 );
 });
 
@@ -54,14 +56,21 @@ function OnOff()
         x=document.getElementById("ml"+gi).getElementsByTagName("li");
 	    if( x.length>0 )
 	    {
-	        isChLoaded = 1;
-	        mlok();
+        clearInterval(timer);
+        timer=0;
+        isChLoaded = 1;
+        mlok();
 	    }
         return;
     }
 
-    if( time++ > 29 )
-        return;
+    if( time++ > 29 ) {
+        if(timer>0) {
+          clearInterval(timer);
+          timer=0;
+          return;
+        }
+    }
 
     tstr="";
     if(time<10)
@@ -78,6 +87,8 @@ function OnOff()
 
     if( stv.error != null || stv.networkState == 3 || ( time > 19 && stv.currentTime < 2 ) )
     {
+        if( $('#errorMessage').css('display')=="block" )
+            return;
         $("#er_msg").text( "에러 안내 : 채널을 가져올수 없음(네트워크 또는 서버 에러)" );
         showErrorMessage();
     }
@@ -251,6 +262,7 @@ function movieclk( w, url, p ) {
 			return;
 		}
 		*/
+    stv.pause();
 	  if( url == null )
 	  {
 	        gettv(p.id);
@@ -264,17 +276,14 @@ function movieclk( w, url, p ) {
 	  oi=si;
 
 	  var xx;
-	  var tv =  document.getElementById("tv");
-	  var web = document.getElementById("web");
 	  if( w === "web" ) {
-	    tv.style.display = "none";
-	    tv.pause();
+	    stv.style.display = "none";
 	    xx=web;
 	  }
 	  else {
-	    tv.style.display = "block";
+	    stv.style.display = "block";
 	    web.setAttribute( "src",  "about:blank" );
-	    xx=tv;
+	    xx=stv;
 	  }
 
 	 xx.setAttribute( "src",  url );
@@ -288,11 +297,13 @@ function movieclk( w, url, p ) {
 function showVideoMessage()
 {
     time = 0;
-    $('#sec').text( "00" );
+    if(timer<1)
+      timer = setInterval( function() { OnOff(); }, 1000 );
     closeErrorMessage();
+    $('#sec').text( "00" );
     $("#ch_name").text( x[si].innerHTML );
-   	$("#videoMessage").css('display', 'block');
-  	$("#secMessage").css('display', 'block');
+    $("#videoMessage").css('display', 'block');
+    $("#secMessage").css('display', 'block');
    	//window.parentView.showMsg(x[si].innerHTML);
 }
 
@@ -334,35 +345,6 @@ function gettv(i)
 	    return;
 
 	tvaddr[i]=demostr;
-}
-
-function gettv_all()
-{
-    request = new XMLHttpRequest();
-	if(!request) {
-		alert("Giving up :( Cannot create an XMLHTTP instance");
-		return false;
-	}
-
-	demostr="";
-	//request.onreadystatechange=state_change;
-	var i;
-	for(i=0;i<ch.length;i++) {
-		if(ch[i] == "0") {
-			demostr=demostr+",";
-			continue;
-		}
-		if(i>0) {
-			demostr=demostr+",";
-		}
-		request.open("GET", path+ch[i], false);
-		request.setRequestHeader("Access-Control-Allow-Origin","*");
-		request.setRequestHeader("Accept","text/html");
-		request.setRequestHeader("Content-Type","text/html");
-		request.send(null);
-		if(!state_change(i)) break;
-	}
-	tvaddr=demostr.split(",");
 }
 
 function state_change(i) {
