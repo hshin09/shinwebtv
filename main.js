@@ -64,7 +64,6 @@ function OnOff()
 
     if( time++ > 29 ) {
         clearInterval(timer);
-        return;
     }
 
     tstr="";
