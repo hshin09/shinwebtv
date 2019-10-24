@@ -9,7 +9,7 @@ var aoi=[-1,-1];
 var aei=[7,12];
 var full=false;
 var timer;
-var time = 0;
+var time=0;
 
 var web;
 var stv;
@@ -56,6 +56,7 @@ function OnOff()
         x=document.getElementById("ml"+gi).getElementsByTagName("li");
 	    if( x.length>0 )
 	    {
+          clearInterval(timer);
 	        isChLoaded = 1;
 	        mlok();
 	    }
@@ -267,6 +268,7 @@ function movieclk( w, url, p ) {
 	    xx=web;
 	  }
 	  else {
+      xx=stv;
 	    stv.style.display = "block";
 	    web.setAttribute( "src",  "about:blank" );
 	  }
@@ -275,7 +277,7 @@ function movieclk( w, url, p ) {
 	 if( w === "tv" )
 	 {
 	    showVideoMessage();
-	    stv.play();
+	    xx.play();
 	 }
 }
 
