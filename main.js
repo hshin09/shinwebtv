@@ -11,6 +11,7 @@ var full=false;
 var timer;
 var time = 0;
 
+var web;
 var stv;
 var tstr;
 var isChLoaded=0;
@@ -20,6 +21,7 @@ $('document').ready(function() {
     $('#menu0').load("https://hshin09.github.io/shinwebtv/kor.html");
     $('#menu1').load("https://hshin09.github.io/shinwebtv/thai.html");
     stv = $('#tv').get(0);
+    web = document.getElementById("web");
     timer = setInterval( function() { OnOff(); }, 1000 );
 });
 
@@ -60,8 +62,10 @@ function OnOff()
         return;
     }
 
-    if( time++ > 29 )
+    if( time++ > 29 ) {
+        clearInterval(timer);
         return;
+    }
 
     tstr="";
     if(time<10)
@@ -245,7 +249,8 @@ function movieclk( w, url, p ) {
 			return;
 		}
 		*/
-	  if( url == null )
+    stv.pause();
+    if( url == null )
 	  {
 	        gettv(p.id);
 	        setTimeout(function(){ x[p.id].click(); }, 0);
@@ -258,43 +263,28 @@ function movieclk( w, url, p ) {
 	  oi=si;
 
 	  var xx;
-	  var tv =  document.getElementById("tv");
-	  var web = document.getElementById("web");
 	  if( w === "web" ) {
-	    tv.style.display = "none";
-	    tv.pause();
+	    stv.style.display = "none";
 	    xx=web;
 	  }
 	  else {
-	    tv.style.display = "block";
+	    stv.style.display = "block";
 	    web.setAttribute( "src",  "about:blank" );
-	    xx=tv;
 	  }
 
 	 xx.setAttribute( "src",  url );
 	 if( w === "tv" )
 	 {
 	    showVideoMessage();
-	    xx.play();
+	    stv.play();
 	 }
 }
-
-/*
-var time = 0;
-function OnOff()
-{
-    if( time++ > 4 )
-    {
-        clearInterval( timer );
-        document.getElementById("videoMessage").style.display = "none";
-    }
-}
-*/
 
 function showVideoMessage()
 {
     time = 0;
     $('#sec').text( "00" );
+    timer = setInterval( function() { OnOff(); }, 1000 );
     closeErrorMessage();
     $("#ch_name").text( x[si].innerHTML );
    	$("#videoMessage").css('display', 'block');
