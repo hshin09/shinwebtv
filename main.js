@@ -76,13 +76,13 @@ function OnOff()
       msgGetCh = msgGetCh + ".";
       $('#sec').text( msgGetCh );
       x=document.getElementById("ml"+gi).getElementsByTagName("li");
-	    if( x.length>=tvaddr.length; )
+	    if( x.length>0; )
 	    {
           clearInterval(timer);
           timer=0;
 	        isChLoaded = 1;
           for(int i=0; i<tvaddr.length; i++)
-            tvaddr[i]=addr[1];
+            tvaddr[i]=addr[i][1];
           alert("road ok");
           mlok();
 	    }
