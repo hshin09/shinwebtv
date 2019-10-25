@@ -81,7 +81,7 @@ function OnOff()
           clearInterval(timer);
           timer=0;
 	        isChLoaded = 1;
-          for(int i=0; i<tvaddr.length; i++)
+          for(var i=0; i<tvaddr.length; i++)
             tvaddr[i]=addr[i][1];
           alert("road ok");
           mlok();
