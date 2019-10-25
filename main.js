@@ -44,8 +44,8 @@ $('document').ready(function() {
     $('#menu1').load("https://hshin09.github.io/shinwebtv/thai.html");
     stv = $('#tv').get(0);
     web = document.getElementById("web");
-    for(var i=0; i<18; i++)
-      tvaddr[i]=addr[i][1];
+    //for(var i=0; i<18; i++)
+    //  tvaddr[i]=addr[i][1];
     timer = setInterval( function() { OnOff(); }, 1100 );
 });
 
