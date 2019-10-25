@@ -75,7 +75,7 @@ function OnOff()
       msgGetCh = msgGetCh + ".";
       $('#sec').text( msgGetCh );
       x=document.getElementById("ml"+gi).getElementsByTagName("li");
-	    if( x.length>0 )
+	    if( x.length>=tvaddr.length; )
 	    {
           clearInterval(timer);
           timer=0;
