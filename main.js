@@ -44,6 +44,8 @@ $('document').ready(function() {
     $('#menu1').load("https://hshin09.github.io/shinwebtv/thai.html");
     stv = $('#tv').get(0);
     web = document.getElementById("web");
+    for(var i=0; i<18; i++)
+      tvaddr[i]=addr[i][1];
     timer = setInterval( function() { OnOff(); }, 1100 );
 });
 
@@ -76,14 +78,11 @@ function OnOff()
       msgGetCh = msgGetCh + ".";
       $('#sec').text( msgGetCh );
       x=document.getElementById("ml"+gi).getElementsByTagName("li");
-	    if( x.length>=tvaddr.length )
+	    if( x.length>0 )
 	    {
           clearInterval(timer);
           timer=0;
 	        isChLoaded = 1;
-          for(var i=0; i<tvaddr.length; i++)
-            tvaddr[i]=addr[i][1];
-          alert("road ok");
           mlok();
 	    }
       return;
