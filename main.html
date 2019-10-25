@@ -1,3 +1,49 @@
+<!DOCTYPE html>
+<!-- saved from url=(0040)http://192.168.1.3:3000/2019_ktmain.html -->
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
+
+    <title>Korea-Thailand TV</title>
+<style>
+li { height: 28px;line-height: 28px;font-size :15px;color:white; verical-align:middle;padding-left:15px;}
+#mydiv { position: absolute;overflow:hidden;float:left;background-color:black; padding:0;margin:0;left:10%;top:0;width: 90%; height: 100%;}
+#tv,#web { width: 100%; height: 100%; object-fit:fill; }
+#menu0 {
+		transition: transform 600ms;
+		transform: translate(-150px, 0px);
+
+		-ms-transition: -ms-transform 600ms;
+		-webkit-transition: -webkit-transform 600ms;
+		-moz-transition: -moz-transform 600ms;
+		-o-transition: -o-transform 600ms;
+
+		-ms-transform: translate(-150px, 0px);
+		-webkit-transform: translate(-150px, 0px);
+		-moz-transform: translate(-150px, 0px);
+		-o-transform: translate(-150px, 0px);
+}
+#menu1 {
+		transition: transform 600ms;
+		transform: translate(-150px, 0px);
+
+		-ms-transition: -ms-transform 600ms;
+		-webkit-transition: -webkit-transform 600ms;
+		-moz-transition: -moz-transform 600ms;
+		-o-transition: -o-transform 600ms;
+
+		-ms-transform: translate(-150px, 0px);
+		-webkit-transform: translate(-150px, 0px);
+		-moz-transform: translate(-150px, 0px);
+		-o-transform: translate(-150px, 0px);
+}
+</style>
+
+    <script src="https://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
+
+<script language="javascript">
 window.onkeydown = keychk;
 var tvaddr=new Array(18);
 var gi=0;
@@ -8,21 +54,18 @@ var asi=[7,12];
 var aoi=[-1,-1];
 var aei=[7,12];
 var full=false;
-var timer=0;
+var win=null;
+var timer;
 var time=0;
 
-var web;
 var stv;
 var tstr;
-var isChLoaded=0;
-var msgGetCh="채널리스트 구성중";
 
 $('document').ready(function() {
-    $('#menu0').load("https://hshin09.github.io/shinwebtv/kor.html");
-    $('#menu1').load("https://hshin09.github.io/shinwebtv/thai.html");
-    stv = $('#tv').get(0);
-    web = document.getElementById("web");
-    timer = setInterval( function() { OnOff(); }, 1100 );
+  //$('#menu1').load("https://hshin09.github.io/shinwebtv/thai.html");
+
+  stv = $('#tv').get(0);
+  timer = setInterval( function() { OnOff(); }, 1000 );
 });
 
 /*
@@ -48,29 +91,8 @@ $('document').ready(function() {
 
 function OnOff()
 {
-    if( !isChLoaded )
-    {
-        $('#secMessage').css('display', 'block');
-        msgGetCh = msgGetCh + ".";
-        $('#sec').text( msgGetCh );
-        x=document.getElementById("ml"+gi).getElementsByTagName("li");
-	    if( x.length>0 )
-	    {
-          clearInterval(timer);
-          timer=0;
-	        isChLoaded = 1;
-	        mlok();
-	    }
+    if( time++ > 29 )
         return;
-    }
-
-    if( time++ > 29 ) {
-        if(timer>0) {
-          clearInterval(timer);
-          timer=0;
-          return;
-        }
-    }
 
     tstr="";
     if(time<10)
@@ -94,6 +116,7 @@ function OnOff()
         $('#videoMessage').css('display', 'none');
     }
 }
+
 
 function onup() {
 	if(oi>-1) x[oi].style="background-color:#252525";
@@ -181,8 +204,12 @@ function keychk(e) {
 			onright();
 		}
 		else if(e.which == 13 && gi == 0) {
-		    tvaddr[si] = null;
-		    gettv(si);
+		    if( si != 7 )
+		    {
+		        tvaddr = new Array(18);
+		        gettv(si);
+	        }
+	        //ei = -1;
 	        x[si].click();
 		}
 }
@@ -253,8 +280,7 @@ function movieclk( w, url, p ) {
 			return;
 		}
 		*/
-    stv.pause();
-    if( url == null )
+	  if( url == null )
 	  {
 	        gettv(p.id);
 	        setTimeout(function(){ x[p.id].click(); }, 0);
@@ -267,14 +293,17 @@ function movieclk( w, url, p ) {
 	  oi=si;
 
 	  var xx;
+	  var tv =  document.getElementById("tv");
+	  var web = document.getElementById("web");
 	  if( w === "web" ) {
-	    stv.style.display = "none";
+	    tv.style.display = "none";
+	    tv.pause();
 	    xx=web;
 	  }
 	  else {
-	    stv.style.display = "block";
+	    tv.style.display = "block";
 	    web.setAttribute( "src",  "about:blank" );
-      xx=stv;
+	    xx=tv;
 	  }
 
 	 xx.setAttribute( "src",  url );
@@ -285,13 +314,23 @@ function movieclk( w, url, p ) {
 	 }
 }
 
+/*
+var time = 0;
+function OnOff()
+{
+    if( time++ > 4 )
+    {
+        clearInterval( timer );
+        document.getElementById("videoMessage").style.display = "none";
+    }
+}
+*/
+
 function showVideoMessage()
 {
     time = 0;
-    if(timer<1)
-      timer = setInterval( function() { OnOff(); }, 1100 );
-    closeErrorMessage();
     $('#sec').text( "00" );
+    closeErrorMessage();
     $("#ch_name").text( x[si].innerHTML );
    	$("#videoMessage").css('display', 'block');
   	$("#secMessage").css('display', 'block');
@@ -309,6 +348,10 @@ function closeErrorMessage()
         return;
     document.getElementById("errorMessage").style.display = "none";
     document.getElementById("er_msg").innerHTML="";
+}
+
+function playedVideo()
+{
 }
 
 var request;
@@ -336,6 +379,35 @@ function gettv(i)
 	    return;
 
 	tvaddr[i]=demostr;
+}
+
+function gettv_all()
+{
+    request = new XMLHttpRequest();
+	if(!request) {
+		alert("Giving up :( Cannot create an XMLHTTP instance");
+		return false;
+	}
+
+	demostr="";
+	//request.onreadystatechange=state_change;
+	var i;
+	for(i=0;i<ch.length;i++) {
+		if(ch[i] == "0") {
+			demostr=demostr+",";
+			continue;
+		}
+		if(i>0) {
+			demostr=demostr+",";
+		}
+		request.open("GET", path+ch[i], false);
+		request.setRequestHeader("Access-Control-Allow-Origin","*");
+		request.setRequestHeader("Accept","text/html");
+		request.setRequestHeader("Content-Type","text/html");
+		request.send(null);
+		if(!state_change(i)) break;
+	}
+	tvaddr=demostr.split(",");
 }
 
 function state_change(i) {
@@ -397,3 +469,102 @@ function videoErr(e)
        break;
    }
 }
+
+</script>
+</head>
+
+<body id="ft" style="background-color:#252525;padding:0;margin:0;overflow:hidden;" onload="mlok();">
+
+<div style="width:10%;height:100%;float:left;background-color:#252525;">
+
+    <div id="menu0" style="overflow:auto; padding: 0px; margin: 0px; display: block; transform: translate(0px, 0px);">
+
+        <ul style="list-style-type: none; padding: 0" id="ml0">
+
+            <li onclick="movieclk('tv',tvaddr[0],this);" id="0" style="background-color: rgb(35, 69, 103);">SBS Golf</li>
+            <li onclick="movieclk('tv',tvaddr[1],this);" id="1">JTBC Golf</li>
+            <li onclick="movieclk('tv',tvaddr[2],this);" id="2">영화 CGV</li>
+            <li onclick="movieclk('tv',tvaddr[3],this);" id="3">영화 OCN</li>
+            <li onclick="movieclk('tv',tvaddr[4],this);" id="4">영화 Screen</li>
+            <li onclick="movieclk('tv',tvaddr[5],this);" id="5">Super Action</li>
+            <li onclick="movieclk('tv',tvaddr[6],this);" id="6">Catch ON 1</li>
+            <li onclick="movieclk('tv','http://live.chosun.gscdn.com/live/_definst_/tvchosun3.stream/playlist.m3u8',this);" id="7">TV 조선 뉴스</li>
+            <li onclick="movieclk('tv',tvaddr[8],this);" id="8">채널 A 뉴스</li>
+            <li onclick="movieclk('tv',tvaddr[9],this);" id="9">JTBC 뉴스</li>
+            <li onclick="movieclk('tv',tvaddr[10],this);" id="10">YTN 뉴스</li>
+            <li onclick="movieclk('tv',tvaddr[11],this);" id="11">SBS TV</li>
+            <li onclick="movieclk('tv',tvaddr[12],this);" id="12">MBC TV</li>
+            <li onclick="movieclk('tv',tvaddr[13],this);" id="13">KBS1 TV</li>
+            <li onclick="movieclk('tv',tvaddr[14],this);" id="14">KBS2 TV</li>
+            <li onclick="movieclk('tv',tvaddr[15],this);" id="15">TVN TV</li>
+            <li onclick="movieclk('tv',tvaddr[16],this);" id="16">코미디 TV</li>
+            <li onclick="movieclk('tv','https://www.pol-tv.com/sjp/live01/playlist.m3u8',this);" id="17">XtvN TV</li>
+
+        </ul>
+
+    </div>
+
+    <div id="menu1">
+
+      <ul style="list-style-type: none; padding: 0" id="ml1">
+
+           <li onclick="movieclk('tv','http://ch3-33.cdn.byteark.com/live/playlist_720p/index.m3u8',this);">3 HD (33)
+           </li>
+           <li onclick="movieclk('tv','https://tc-live1.sanook.com/live/22302_ch5.m3u8?bizid=22302&amp;txSecret=5fe35712623e24c3ebc90cf5271c5a6f&amp;txTime=5d993c8f',this);">5 HD TV
+           </li>
+           <li onclick="movieclk('tv','http://edge160.bugaboo.tv/liveedgech7_partner/smil:auto.smil/chunklist_b1210000_sleng.m3u8',this);">7 HD TV
+           </li>
+           <li onclick="movieclk('tv','http://stream.rs.co.th/ch8-hi/index.m3u8',this);">8 HD TV
+           </li>
+           <li onclick="movieclk('tv','http://183.182.100.184/live/true4u/playlist.m3u8',this);">True4U TV
+           </li>
+           <li onclick="movieclk('tv','https://one31-rlbwkq.cdn.byteark.com/live/playlist-sd.m3u8',this);">GMM One 31
+           </li>
+           <li onclick="movieclk('tv','http://27.254.130.64/live01/chsd_GMM_11.m3u8?p=st',this);">GMM 25 TV
+           </li>
+           <li onclick="movieclk('tv','http://27.254.130.64/live01/chsd_Amarin_13.m3u8?p=st',this);">Amarin 34 TV
+           </li>
+           <li onclick="movieclk('tv','http://183.182.100.184/live/mono29/playlist.m3u8',this);">Mono 29 TV
+           </li>
+           <li onclick="movieclk('tv','http://stream.rs.co.th/ch2-hi/index.m3u8',this);">Starmax TV
+           </li>
+           <li onclick="movieclk('tv','http://vip.login.in.th:1935/CTB/CTB/playlist.m3u8',this);">CTB TV
+           </li>
+           <li onclick="movieclk('tv','http://newtv.cdn.byteark.com/live/playlist_576p/index.m3u8',this);">New TV
+           </li>
+           <li onclick="movieclk('tv','http://stream.rs.co.th/sbd-hi/index.m3u8',this);">สบายดี TV
+           </li>
+           <li onclick="movieclk('tv','http://ns13.revoproject.com/live/94fmclub.m3u8',this);">94FM Club
+           </li>
+
+        </ul>
+
+    </div>
+
+</div>
+
+<div id="mydiv" style="background-color:#252525">
+
+    <video id="tv" frameborder="0" autoplay poster="file:///android_asset/poster.png" onerror="videoErr(event)">
+    </video>
+
+    <iframe id="web" name="web1" frameborder="0" allowfullscreen="" src="" style="height:90%">
+    </iframe>
+
+    <div id="videoMessage" style="position: absolute; opacity: 0.4; left: 0px; top: 30px; background-color: #252525; display: none;">
+        <p id="ch_name" style="margin: 0px; color:yellow;">change channel</p>
+    </div>
+
+    <div id="secMessage" style="position: absolute; opacity: 0.4; left: 40vw; top: 5vh; font-size:40px; background-color: #252525; display: none;">
+        <p id="sec" style="margin: 0px; color:yellow;"></p>
+    </div>
+
+    <div id="errorMessage" style="position: absolute; opacity: 0.3; left: 0px; top: 80vh; width: 100%; background-color: yellow; display: none;">
+        <H2 id="er_msg" align="center" style="color:red;">안녕하세요</H2>
+    </div>
+
+</div>
+
+</body>
+
+</html>
