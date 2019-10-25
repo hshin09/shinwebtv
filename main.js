@@ -203,25 +203,33 @@ function keychk(e) {
 		else if(e.which == 39) {
 			onright();
 		}
-		else if(e.which == 13 && gi == 0) {
-      var i_ch=addr[si][3];
-      var change_name;
-      if(i_ch != 0) { //보조 또는 대체 채널이 있음
-        if(i_ch == 1)  //본채널이었다면 보조채널로
-          i_ch=2;
-        else  //보조채널이었다면 본채널로
-          i_ch=1;
-
-        change_name=x[si].innerHTML;
-        x[si].innerHTML=addr[si][0];
-        addr[si][0]=change_name;
-        tvaddr[si]=addr[si][i_ch];
-        addr[si][3]=i_ch;
-      }
-      if( tvaddr[si] == null )
-		    gettv(si);
-	    x[si].click();
+		else if(e.which == 13 ) {
+      onok();
 		}
+}
+
+function onok() {
+  if( gi == 0 )
+  {
+    var i_ch=addr[si][3];
+    var change_name;
+    if(i_ch != 0) { //보조 또는 대체 채널이 있음
+      if(i_ch == 1)  //본채널이었다면 보조채널로
+        i_ch=2;
+      else  //보조채널이었다면 본채널로
+        i_ch=1;
+
+      change_name=x[si].innerHTML;
+      x[si].innerHTML=addr[si][0];
+      addr[si][0]=change_name;
+      tvaddr[si]=addr[si][i_ch];
+      addr[si][3]=i_ch;
+    }
+
+    if(tvaddr[si] == null)
+      gettv(si);
+  }
+  x[si].click();
 }
 
 var x;
