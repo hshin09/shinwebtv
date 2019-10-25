@@ -6,7 +6,7 @@ var addr=[
 ["영화 CGV",null,null,0],
 ["영화 OCN","http://50.7.118.178:9083/live/lmgr218-live1/GR/13/GR13XDGjlUsD8nZQasCIhw==/live.m3u8",null,1],
 ["영화 Screen",null,null,0],
-["채널차이나",null,"http://23.237.112.138:9083/live/lmgr218-live1/ut/hX/uthXNC6cyUNTT6dtUu9D6A==/live.m3u8",1],
+["채널 차이나",null,"http://23.237.112.138:9083/live/lmgr218-live1/ut/hX/uthXNC6cyUNTT6dtUu9D6A==/live.m3u8",1],
 ["Catch ON 1","http://50.7.118.178:9083/live/lmgr218-live1/Wj/Nz/WjNzluqgVARhAtul5gUKtg==/live.m3u8",null,1],
 ["TV 조선","http://23.237.112.138:9083/live/lmgr218-live1/uN/RW/uNRWY94bN9uq-H4U6-AdGA==/live.m3u8",null,1],
 ["MBN 뉴스",null,"http://23.237.112.138:9083/live/lmgr218-live1/j7/qy/j7qybKo1-oIO_R2EKcmcIA==/live.m3u8",1],
@@ -224,7 +224,7 @@ function onok() {
       addr[si][0]=change_name;
       tvaddr[si]=addr[si][i_ch];
       addr[si][3]=i_ch;
-      window.parentView.showMsg("msg:보조/대체 체널인 "+x[si].innerHTML+" 으로 이동합니다");
+      window.parentView.showMsg("msg:보조/대체 체널인 "+x[si].innerHTML+" 로 이동합니다");
     }
 
     if(tvaddr[si] == null)
