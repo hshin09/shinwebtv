@@ -5,8 +5,8 @@ var addr=[
 ["JTBC Golf","http://23.237.112.138:9083/live/lmgr218-live1/uX/0j/uX0j1KJo8eVhWnTx6uvShw==/live.m3u8",null,1],
 ["영화 CGV",null,null,0],
 ["영화 OCN","http://50.7.118.178:9083/live/lmgr218-live1/GR/13/GR13XDGjlUsD8nZQasCIhw==/live.m3u8
-",null,1]];/*,
-["영화 Screen",null,null,0],
+",null,1],
+["영화 Screen",null,null,0]];/*,
 ["채널차이나",null,"http://23.237.112.138:9083/live/lmgr218-live1/ut/hX/uthXNC6cyUNTT6dtUu9D6A==/live.m3u8",1],
 ["Catch ON 1","http://50.7.118.178:9083/live/lmgr218-live1/Wj/Nz/WjNzluqgVARhAtul5gUKtg==/live.m3u8",null,1],
 ["TV 조선","http://23.237.112.138:9083/live/lmgr218-live1/uN/RW/uNRWY94bN9uq-H4U6-AdGA==/live.m3u8",null,1],
