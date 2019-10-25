@@ -45,7 +45,7 @@ $('document').ready(function() {
     web = document.getElementById("web");
     for(var i=0; i<tvaddr.length; i++)
       tvaddr[i]=addr[i][1];
-    timer = setInterval( function() { OnOff(); }, 1100 );
+    timer = setInterval( function() { OnOff(); }, 1200 );
 });
 
 /*
@@ -87,7 +87,7 @@ function OnOff()
         return;
     }
 
-    if( time++ > 29 ) {
+    if( time++ > 39 ) {
         if(timer>0) {
           clearInterval(timer);
           timer=0;
@@ -101,7 +101,7 @@ function OnOff()
     tstr=tstr+time;
     $('#sec').text( tstr );
 
-    if( stv.error != null || stv.networkState == 3 || ( time > 19 && stv.currentTime < 2 ) )
+    if( stv.error != null || stv.networkState == 3 || ( time > 29 && stv.currentTime < 2 ) )
     {
         if( $('#errorMessage').css('display')=="block" )
             return;
@@ -224,6 +224,7 @@ function onok() {
       addr[si][0]=change_name;
       tvaddr[si]=addr[si][i_ch];
       addr[si][3]=i_ch;
+      window.parentView.showMsg("보조/대체 체널인 "+x[si].innerHTML+" 으로 이동합니다");
     }
 
     if(tvaddr[si] == null)
@@ -334,7 +335,7 @@ function showVideoMessage()
 {
     time = 0;
     if(timer<1)
-      timer = setInterval( function() { OnOff(); }, 1100 );
+      timer = setInterval( function() { OnOff(); }, 1200 );
     closeErrorMessage();
     $('#sec').text( "00" );
     $("#ch_name").text( x[si].innerHTML );
