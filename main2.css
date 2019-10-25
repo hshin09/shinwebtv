@@ -69,14 +69,14 @@ li {
   opacity:0.4;
   left:30vw;
   top:5vh;
-  font-size:30px;
-  background-color:#252525;
   display:none;
 }
 
 #sec {
   margin:0px;
+  font-size:30px;
   color:yellow;
+  background-color:#252525;
 }
 
 #errorMessage {
@@ -85,13 +85,13 @@ li {
   width:100%;
   left:0px;
   top:80vh;
-  font-size:20px;
-  background-color:yellow;
   display:none;
 }
 
 #er_msg {
+  font-size:20px;
   color:red;
+  background-color:yellow;
 }
 
 #menu0 {
