@@ -43,8 +43,6 @@ $('document').ready(function() {
     $('#menu1').load("https://hshin09.github.io/shinwebtv/thai.html");
     stv = $('#tv').get(0);
     web = document.getElementById("web");
-    for(int i=0; i<tvaddr.length; i++)
-      tvaddr[i]=addr[1];
     timer = setInterval( function() { OnOff(); }, 1100 );
 });
 
@@ -73,31 +71,33 @@ function OnOff()
 {
     if( !isChLoaded )
     {
-        $('#secMessage').css('display', 'block');
-        msgGetCh = msgGetCh + ".";
-        $('#sec').text( msgGetCh );
-        x=document.getElementById("ml"+gi).getElementsByTagName("li");
+      $('#secMessage').css('display', 'block');
+      msgGetCh = msgGetCh + ".";
+      $('#sec').text( msgGetCh );
+      x=document.getElementById("ml"+gi).getElementsByTagName("li");
 	    if( x.length>0 )
 	    {
           clearInterval(timer);
           timer=0;
 	        isChLoaded = 1;
-	        mlok();
+          for(int i=0; i<tvaddr.length; i++)
+            tvaddr[i]=addr[1];
+          mlok();
 	    }
-        return;
+      return;
     }
 
     if( time++ > 29 ) {
-        if(timer>0) {
-          clearInterval(timer);
-          timer=0;
-          return;
-        }
+      if(timer>0) {
+        clearInterval(timer);
+        timer=0;
+        return;
+      }
     }
 
     tstr="";
     if(time<10)
-        tstr="0";
+      tstr="0";
     tstr=tstr+time;
     $('#sec').text( tstr );
 
