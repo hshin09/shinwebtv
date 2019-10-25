@@ -1,0 +1,108 @@
+body {
+  overflow:hidden;
+  padding:0;
+  margin:0;
+  background-color:#252525;
+}
+
+div {
+  overflow:hidden;
+  padding:0;
+  margin:0;
+}
+
+#leftmenu {
+    width:10%;
+    height:100%;
+    float:left;
+    background-color:#252525;
+}
+
+ul {
+    height:100%;
+}
+
+li {
+  padding-left:15px;
+  height:28px;
+  line-height:28px;
+  vertical-align:middle;
+  font-size:15px;
+  color:white;
+}
+
+#mydiv {
+  position:absolute;
+  float:left;
+  overflow:hidden;
+  padding:0;
+  margin:0;
+  width:90%;
+  height:100%;
+  left:10%;
+  top:0;
+  background-color:#252525;
+}
+
+#tv, #web {
+  width:100%;
+  height:100%;
+  object-fit:fill;
+}
+
+#videoMessage {
+  position:absolute;
+  opacity:0.4;
+  left:0px;
+  top: 30px;
+  background-color:#252525;
+  display:none;
+}
+
+#ch_name {
+  margin: 0px;
+  color:yellow;
+}
+
+#secMessage {
+  position:absolute;
+  opacity:0.4;
+  left:40vw;
+  top:5vh;
+  font-size:40px;
+  background-color:#252525;
+  display:none;
+}
+
+#sec {
+  margin:0px;
+  color:yellow;
+}
+
+#errorMessage {
+  position:absolute;
+  opacity:0.3;
+  width:100%;
+  left:0px;
+  top:80vh;
+  background-color:yellow;
+  display:none;
+}
+
+#er_msg {
+  color:red;
+}
+
+#menu0 {
+}
+
+#menu1 {
+}
+
+#kor_thai {
+  verical-align:middle;
+  margin:0;
+  height:20px;
+  font-size:8px;
+  color:red;
+}
