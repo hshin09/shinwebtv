@@ -3,7 +3,7 @@ var tvaddr=new Array(18);
 var addr=[
 ["SBS Golf","http://50.7.118.178:9083/live/lmgr218-live1/dp/Ua/dpUaDQ0LwGNqpgVGdLwsrg==/live.m3u8",null,1],
 ["JTBC Golf","http://23.237.112.138:9083/live/lmgr218-live1/uX/0j/uX0j1KJo8eVhWnTx6uvShw==/live.m3u8",null,1],
-["영화 CGV",null,null,0]];//,
+["영화 CGV","","",0]];//,
 
 ["영화 OCN","http://50.7.118.178:9083/live/lmgr218-live1/GR/13/GR13XDGjlUsD8nZQasCIhw==/live.m3u8
 ",null,1],
