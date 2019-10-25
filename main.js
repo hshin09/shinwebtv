@@ -44,8 +44,8 @@ $('document').ready(function() {
     $('#menu1').load("https://hshin09.github.io/shinwebtv/thai.html");
     stv = $('#tv').get(0);
     web = document.getElementById("web");
-    for(var i=0; i<18; i++)
-      tvaddr[i]=addr[i][1];
+    //for(var i=0; i<18; i++)
+    //  tvaddr[i]=addr[i][1];
     timer = setInterval( function() { OnOff(); }, 1100 );
 });
 
@@ -205,6 +205,7 @@ function keychk(e) {
 			onright();
 		}
 		else if(e.which == 13 && gi == 0) {
+      /*
         var i_ch=addr[si][3];
         var change_name;
         if(i_ch!=0) { //보조 또는 대체 채널이 있음
@@ -219,6 +220,7 @@ function keychk(e) {
           tvaddr[si]=addr[si][i_ch];
           addr[si][3]=i_ch;
         }
+        */
         if(tvaddr[si] == null)
 		      gettv(si);
 	      x[si].click();
