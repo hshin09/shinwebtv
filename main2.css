@@ -27,7 +27,7 @@ li {
   height:28px;
   line-height:28px;
   vertical-align:middle;
-  font-size:15px;
+  font-size:7px;
   color:white;
 }
 
@@ -67,7 +67,7 @@ li {
 #secMessage {
   position:absolute;
   opacity:0.4;
-  left:40vw;
+  left:30vw;
   top:5vh;
   font-size:40px;
   background-color:#252525;
