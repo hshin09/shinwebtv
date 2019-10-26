@@ -12,15 +12,13 @@ div {
 }
 
 #leftmenu {
-    width:30%;
+    width:40%;
     height:100%;
     float:left;
     background-color:#252525;
 }
 
 ul {
-    height:100vw;
-    width=30%
     margin:0;
     padding:0;
 }
@@ -44,9 +42,9 @@ li {
   overflow:hidden;
   padding:0;
   margin:0;
-  width:70%;
+  width:60%;
   height:100%;
-  left:30%;
+  left:40%;
   top:0;
   background-color:#252525;
 }
