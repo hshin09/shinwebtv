@@ -284,15 +284,13 @@ function showLeftMenu() {
 function onFullscreenOnOff() {
     if( full == false )
     {
-        document.getElementById("mydiv").style.left="0";
-        document.getElementById("mydiv").style.width="100%";
+        $('leftmenu').attr('display','none');
         full=true;
 	}
 	else
 	{
-	    document.getElementById("mydiv").style.left="10%";
-        document.getElementById("mydiv").style.width="90%";
-        full=false;
+        $('leftmenu').attr('display','block');
+	      full=false;
 	}
 }
 

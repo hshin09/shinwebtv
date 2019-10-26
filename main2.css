@@ -14,11 +14,10 @@ div {
 #leftmenu {
     width:24%;
     position:absolute;
-    opacity:0.4;
+    opacity:0.7;
     left:10vw;
-    top:20vh;
-    //display:none;
-    background-color:#250000;
+    top:10vh;
+    background-color:#252525;
     z-index:2147483647;
 }
 
