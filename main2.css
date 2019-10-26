@@ -13,7 +13,6 @@ div {
 
 #leftmenu {
     width:24%;
-    height:100%;
     float:left;
     background-color:#250000;
 }
@@ -26,7 +25,7 @@ ul {
 #kor_thai {
   width:25vw;
   height:30px;
-  margin-bottom:40px;
+  margin-bottom:100px;
   font-size:15px;
 }
 
