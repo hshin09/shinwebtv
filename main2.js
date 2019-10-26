@@ -295,12 +295,12 @@ function onFullscreenOnOff() {
 }
 
 function movieclk( w, url, p ) {
-        /*
+
 		if(p.id==ei) {
-			onleft();
+			onok();
 			return;
 		}
-		*/
+
     stv.pause();
 	  if( url == null )
 	  {
