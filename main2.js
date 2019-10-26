@@ -284,12 +284,12 @@ function showLeftMenu() {
 function onFullscreenOnOff() {
     if( full == false )
     {
-        $('#leftmenu').attr('display','none');
+        $('#leftmenu').css('display','none');
         full=true;
 	}
 	else
 	{
-        $('#leftmenu').attr('display','block');
+        $('#leftmenu').css('display','block');
 	      full=false;
 	}
 }
