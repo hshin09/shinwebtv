@@ -24,10 +24,10 @@ ul {
 
 li {
   float:left;
-  margin:10px;
-  width=9%;
+  margin:5px;
+  width=8%;
 
-  padding-left:10px;
+  padding-left:0;
   height:17px;
   line-height:17px;
   vertical-align:middle;
