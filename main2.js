@@ -1,4 +1,4 @@
-window.onkeydown = keychk;
+//window.onkeydown = keychk;
 var tvaddr=new Array(18);
 var addr=[
 ["SBS Golf","http://50.7.118.178:9083/live/lmgr218-live1/dp/Ua/dpUaDQ0LwGNqpgVGdLwsrg==/live.m3u8",null,1],
@@ -164,10 +164,10 @@ function onleft() {
 
 function onright() {
 	if(full) {
-	    //document.getElementById("tv").webkitExitFullScreen();
-	    document.getElementById("mydiv").style.left="10%";
-		document.getElementById("mydiv").style.width="90%";
-	    full=false;
+    //document.getElementById("tv").webkitExitFullScreen();
+    document.getElementById("mydiv").style.left="10%";
+  	document.getElementById("mydiv").style.width="90%";
+	  full=false;
 	}
 	else {
 		change();
@@ -231,6 +231,7 @@ function change() {
 	}
 }
 
+/*
 function keychk(e) {
 		if(e.which == 38) {
 			onup();
@@ -248,6 +249,7 @@ function keychk(e) {
 		    onok();
 		}
 }
+*/
 
 var x;
 var cnt;
@@ -310,7 +312,7 @@ function movieclk( w, url, p ) {
 	        return;
 	  }
 	  if(oi>-1) x[oi].style="background-color:#252525;";
-	  if(ei>-1) x[ei].style="background-color:#252525";
+	  //if(ei>-1) x[ei].style="background-color:#252525";
 	  si=ei=p.id;
 	  x[ei].style="background-color:#234567;color:yellow";
 	  oi=si;
