@@ -28,8 +28,8 @@ ul {
 li {
   float:left;
   margin:5px;
-  width=10%;
-
+  width:10%;
+  margin:0;
   padding:0;
   height:17px;
   line-height:17px;
