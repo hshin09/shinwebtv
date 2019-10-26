@@ -19,6 +19,7 @@ div {
     top:20vh;
     //display:none;
     background-color:#250000;
+    z-index:2147483647;
 }
 
 ul {
