@@ -32,21 +32,13 @@ li {
   color:white;
 }
 
-#0,#3,#6,#9,#12,#15 {
-  clear:both;
-}
-
-#1,#4,#7,#10,#113,#16 {
-  float:left;
-}
-
 #mydiv {
   position:absolute;
   float:left;
   overflow:hidden;
   padding:0;
   margin:0;
-  width:90%;
+  width:80%;
   height:100%;
   left:10%;
   top:0;
