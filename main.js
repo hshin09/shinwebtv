@@ -8,7 +8,7 @@ var addr=[
 ["영화 Screen",null,null,0],
 ["채널 차이나",null,"http://23.237.112.138:9083/live/lmgr218-live1/ut/hX/uthXNC6cyUNTT6dtUu9D6A==/live.m3u8",1],
 ["Catch ON 1","http://50.7.118.178:9083/live/lmgr218-live1/Wj/Nz/WjNzluqgVARhAtul5gUKtg==/live.m3u8",null,1],
-["TV 조선",null,"http://23.237.112.138:9083/live/lmgr218-live1/uN/RW/uNRWY94bN9uq-H4U6-AdGA==/live.m3u8",1],
+["TV 조선 뉴스",null,"http://23.237.112.138:9083/live/lmgr218-live1/uN/RW/uNRWY94bN9uq-H4U6-AdGA==/live.m3u8",1],
 ["MBN 뉴스",null,"http://23.237.112.138:9083/live/lmgr218-live1/j7/qy/j7qybKo1-oIO_R2EKcmcIA==/live.m3u8",1],
 ["JTBC 뉴스","http://50.7.118.178:9083/live/lmgr218-live1/1k/C9/1kC9miPHbLuH_Xohzycp8g==/live.m3u8",null,1],
 ["EBS1",null,"http://50.7.118.178:9083/live/lmgr218-live1/Y7/kd/Y7kdN2a2F8joMgdxPBzaAQ==/live.m3u8",1],
