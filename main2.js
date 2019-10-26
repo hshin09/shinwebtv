@@ -335,6 +335,7 @@ function movieclk( w, url, p ) {
 
 function showVideoMessage()
 {
+    onFullscreenOnOff();
     time = 0;
     if(timer<1)
       timer = setInterval( function() { OnOff(); }, 1200 );
