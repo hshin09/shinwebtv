@@ -32,6 +32,10 @@ li {
   color:white;
 }
 
+#2,#4,#6,#8 {
+  clear:both;
+}
+
 #mydiv {
   position:absolute;
   float:left;
