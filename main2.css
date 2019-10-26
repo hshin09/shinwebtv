@@ -20,14 +20,17 @@ div {
 
 ul {
     height:100vw;
+    width=30%
+    margin:0;
+    padding:0;
 }
 
 li {
   float:left;
   margin:5px;
-  width=8%;
+  width=10%;
 
-  padding-left:0;
+  padding:0;
   height:17px;
   line-height:17px;
   vertical-align:middle;
