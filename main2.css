@@ -14,12 +14,11 @@ div {
 #leftmenu {
     width:24%;
     position:absolute;
-    opacity:0.9;
-    left:0;
-    top:5vh;
+    opacity:0.7;
+    left:5;
+    top:10vh;
     background-color:#252525;
     z-index:2147483647;
-    display:none;
 }
 
 ul {
