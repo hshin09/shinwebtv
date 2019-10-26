@@ -12,7 +12,7 @@ div {
 }
 
 #leftmenu {
-    width:10%;
+    width:20%;
     height:100%;
     float:left;
     background-color:#252525;
@@ -23,12 +23,21 @@ ul {
 }
 
 li {
+  margin:5px;
   padding-left:10px;
   height:17px;
   line-height:17px;
   vertical-align:middle;
   font-size:7px;
   color:white;
+}
+
+#0,#3,#6,#9,#12,#15 {
+  clear:both;
+}
+
+#1,#4,#7,#10,#113,#16 {
+  float:left;
 }
 
 #mydiv {
