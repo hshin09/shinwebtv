@@ -25,8 +25,10 @@ ul {
 #kor_thai {
   width:25vw;
   height:30px;
-  margin-bottom:100px;
+  margin-bottom:20px;
   font-size:15px;
+  verical-align:middle;
+  color:red;
 }
 
 li {
@@ -106,17 +108,8 @@ li {
 }
 
 #menu0 {
-  height:100vw;
 }
 
 #menu1 {
   display:none;
-}
-
-#kor_thai {
-  verical-align:middle;
-  margin:0;
-  height:20px;
-  font-size:8px;
-  color:red;
 }
