@@ -203,7 +203,8 @@ function mlok() {
   if(ei>-1) {
    	si=ei;
    	ei=-1;
-		onleft();
+		//onleft();
+    x[si].click();
 	}
 	showLeftMenu();
 }
