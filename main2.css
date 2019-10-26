@@ -28,6 +28,7 @@ ul {
 }
 
 #finish {
+  float:left;
   width:10vw;
   height:25px;
   margin-bottom:10px;
@@ -35,15 +36,18 @@ ul {
   verical-align:middle;
   background:#f00000;
   color:white;
+  font-weight:bold;
 }
 
 #kor_thai {
+  clear:both;
   width:15vw;
   height:25px;
   margin-bottom:10px;
   font-size:12px;
   verical-align:middle;
   color:red;
+  font-weight:bold;
 }
 
 li {
