@@ -24,6 +24,9 @@ ul {
 
 li {
   float:left;
+  margin:10px;
+  width=10%;
+
   padding-left:10px;
   height:17px;
   line-height:17px;
