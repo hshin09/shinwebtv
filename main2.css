@@ -14,9 +14,9 @@ div {
 #leftmenu {
     width:24%;
     position:absolute;
-    opacity:0.8;
+    opacity:0.7;
     margin-left:75%;
-    margin-top:10%;
+    margin-top:15%;
     background-color:#252525;
     z-index:2147483647;
     border:1px solid black;
