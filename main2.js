@@ -1,4 +1,3 @@
-//window.onkeydown = keychk;
 var tvaddr=new Array(18);
 var addr=[
 ["SBS Golf","http://50.7.118.178:9083/live/lmgr218-live1/dp/Ua/dpUaDQ0LwGNqpgVGdLwsrg==/live.m3u8",null,1],
@@ -44,6 +43,7 @@ $('document').ready(function() {
     web = document.getElementById("web");
     for(var i=0; i<tvaddr.length; i++)
       tvaddr[i]=addr[i][1];
+    stv.dblclick(function(){ onFullscreenOnOff(); });
     timer = setInterval( function() { OnOff(); }, 1200 );
 });
 
@@ -98,13 +98,6 @@ function OnOff()
     if(time<10)
         tstr="0";
     tstr=tstr+time;
-    /*
-    tstr=tstr+"-"+Math.floor( stv.currentTime ) + "-" + stv.networkState + "-" + stv.readyState + "-";
-    if( stv.error != null )
-        tstr=tstr+stv.error.code;
-    else
-        tstr=tstr+"null";
-    */
     $('#sec').text( tstr );
 
     if( stv.error != null || stv.networkState == 3 || ( time > 19 && stv.currentTime < 2 ) )
@@ -124,28 +117,8 @@ function OnOff()
     }
 }
 
-function onup() {
-	if(oi>-1) x[oi].style="background-color:#252525";
-	if(ei>-1) x[ei].style="color:yellow";
-	si--;
-	//if(full && gi==0 && si==10) si--;
-	if(si<0) si+=cnt;
-	x[si].style="background-color:#234567";
-	if(si==ei) x[si].style="background-color:#234567;color:yellow";
-	oi=si;
-	if(full) x[si].click();
-}
-
-function ondown() {
-	if(oi>-1) x[oi].style="background-color:#252525";
-	if(ei>-1) x[ei].style="color:yellow";
-	si++;
-	//if(full && gi==0 && si==10) si++;
-	if(si>=cnt) si-=cnt;
-	x[si].style="background-color:#234567";
-	if(si==ei) x[si].style="background-color:#234567;color:yellow";
-	oi=si;
-	if(full) x[si].click();
+function onFinish() {
+  parentView.showMsg("finish");
 }
 
 function onleft() {
@@ -154,24 +127,11 @@ function onleft() {
 			change();
 			return;
 		}
-		//document.getElementById("tv").webkitRequestFullScreen();
 		document.getElementById("mydiv").style.left="0";
 		document.getElementById("mydiv").style.width="100%";
 		full=true;
 	}
 	else if(si>-1) x[si].click();
-}
-
-function onright() {
-	if(full) {
-    //document.getElementById("tv").webkitExitFullScreen();
-    document.getElementById("mydiv").style.left="10%";
-  	document.getElementById("mydiv").style.width="90%";
-	  full=false;
-	}
-	else {
-		change();
-	}
 }
 
 function onok() {
@@ -231,26 +191,6 @@ function change() {
 	}
 }
 
-/*
-function keychk(e) {
-		if(e.which == 38) {
-			onup();
-		}
-		else if(e.which == 40) {
-			ondown();
-		}
-		else if(e.which == 37) {
-			onleft();
-		}
-		else if(e.which == 39) {
-			onright();
-		}
-		else if(e.which == 13 && gi == 0) {
-		    onok();
-		}
-}
-*/
-
 var x;
 var cnt;
 function mlok() {
@@ -259,15 +199,12 @@ function mlok() {
 	var i;
 	for(i=0; i<cnt; i++) {
 		x[i].id=i;
-   }
-   if(ei>-1) {
+  }
+  if(ei>-1) {
    	si=ei;
    	ei=-1;
 		onleft();
 	}
-	else if(si<0)
-		ondown();
-
 	showLeftMenu();
 }
 
@@ -298,12 +235,10 @@ function onFullscreenOnOff() {
 }
 
 function movieclk( w, url, p ) {
-
 		if(p.id==ei) {
 			onok();
 			return;
 		}
-
     stv.pause();
 	  if( url == null )
 	  {
@@ -347,7 +282,6 @@ function showVideoMessage()
     $("#ch_name").text( x[si].innerHTML );
     $("#videoMessage").css('display', 'block');
     $("#secMessage").css('display', 'block');
-   	//window.parentView.showMsg(x[si].innerHTML);
 }
 
 function showErrorMessage()
@@ -366,7 +300,6 @@ function closeErrorMessage()
 var request;
 var strRes="";
 var demostr="";
-
 function gettv(i)
 {
     request = new XMLHttpRequest();
@@ -386,7 +319,6 @@ function gettv(i)
 	request.send(null);
 	if(!state_change(i))
 	    return;
-
 	tvaddr[i]=demostr;
 }
 
@@ -425,27 +357,22 @@ function videoErr(e)
      case e.target.error.MEDIA_ERR_ABORTED:
        document.getElementById("er_msg").innerHTML="에러 안내 : 비디오 취소";
        showErrorMessage();
-       //alert('You aborted the video playback.');
        break;
      case e.target.error.MEDIA_ERR_NETWORK:
        document.getElementById("er_msg").innerHTML="에러 안내 : 비디오 다운로드 실패(네트워크문제)";
        showErrorMessage();
-       //alert('A network error caused the video download to fail part-way.');
        break;
      case e.target.error.MEDIA_ERR_DECODE:
        document.getElementById("er_msg").innerHTML="에러 안내 : 이형식의 비디오를 지원하지 않음";
        showErrorMessage();
-       //alert('The video playback was aborted due to a corruption problem or because the video used features your browser did not support.');
        break;
      case e.target.error.MEDIA_ERR_SRC_NOT_SUPPORTED:
        document.getElementById("er_msg").innerHTML="에러 안내 : 채널을 가져올수 없음(네트워크 또는 서버 에러)";
-       //alert('The video could not be loaded, either because the server or network failed or because the format is not supported.');
        showErrorMessage();
        break;
      default:
        document.getElementById("er_msg").innerHTML="에러 안내 : 알려지지않은 문제로 비디오 로드 에러";
        showErrorMessage();
-       //alert('An unknown error occurred.');
        break;
    }
 }

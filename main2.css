@@ -27,8 +27,18 @@ ul {
     padding:0;
 }
 
+#finish {
+  width:10vw;
+  height:25px;
+  margin-bottom:10px;
+  font-size:12px;
+  verical-align:middle;
+  background:#f00000;
+  color:white;
+}
+
 #kor_thai {
-  width:25vw;
+  width:15vw;
   height:25px;
   margin-bottom:10px;
   font-size:12px;
