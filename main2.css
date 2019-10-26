@@ -13,7 +13,11 @@ div {
 
 #leftmenu {
     width:24%;
-    float:left;
+    position:absolute;
+    opacity:0.4;
+    left:10vw;
+    top:20vh;
+    //display:none;
     background-color:#250000;
 }
 
