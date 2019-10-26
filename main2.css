@@ -19,6 +19,11 @@ div {
     margin-top:20%
     background-color:#252525;
     z-index:2147483647;
+
+    margin: 30px;
+    background-color: #ffffff;
+    border: 1px solid black;
+    opacity: 0.6;
 }
 
 ul {
@@ -46,6 +51,9 @@ li {
   vertical-align:middle;
   font-size:10px;
   color:white;
+
+  color: #000000;
+  font-weight: bold;
 }
 
 #mydiv {
