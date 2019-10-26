@@ -40,6 +40,7 @@ ul {
 }
 
 #kor_thai {
+  display:inline-block;
   width:17vw;
   height:25px;
   margin-bottom:10px;

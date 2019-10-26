@@ -121,19 +121,6 @@ function onFinish() {
   parentView.showMsg("finish");
 }
 
-function onleft() {
-	if(si>-1 && si==ei) {
-		if(full) {
-			change();
-			return;
-		}
-		document.getElementById("mydiv").style.left="0";
-		document.getElementById("mydiv").style.width="100%";
-		full=true;
-	}
-	else if(si>-1) x[si].click();
-}
-
 function onok() {
     if( gi == 0 )
     {
@@ -203,7 +190,6 @@ function mlok() {
   if(ei>-1) {
    	si=ei;
    	ei=-1;
-		//onleft();
     x[si].click();
 	}
 	showLeftMenu();
