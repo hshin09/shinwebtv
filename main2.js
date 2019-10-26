@@ -43,7 +43,7 @@ $('document').ready(function() {
     web = document.getElementById("web");
     for(var i=0; i<tvaddr.length; i++)
       tvaddr[i]=addr[i][1];
-    stv.dblclick(function(){ onFullscreenOnOff(); });
+    $('#tv').dblclick(function(){ onFullscreenOnOff(); });
     timer = setInterval( function() { OnOff(); }, 1200 );
 });
 
