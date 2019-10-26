@@ -23,6 +23,13 @@ ul {
     padding:0;
 }
 
+#kor_thai {
+  width:22vX;
+  height=20px;
+  margin-bottom:10px;
+  font-size:12px;
+}
+
 li {
   float:left;
   margin:5px;
