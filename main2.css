@@ -15,8 +15,8 @@ div {
     width:24%;
     position:absolute;
     opacity:0.9;
-    left:3vw;
-    top:3vh;
+    left:0;
+    top:5vh;
     background-color:#252525;
     z-index:2147483647;
 }
