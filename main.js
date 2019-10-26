@@ -224,7 +224,10 @@ function onok() {
       addr[si][0]=change_name;
       tvaddr[si]=addr[si][i_ch];
       addr[si][3]=i_ch;
-      window.parentView.showMsg("msg:보조/대체 체널인 "+x[si].innerHTML+" 로 이동합니다");
+      if(i_ch==1)
+        window.parentView.showMsg("msg:기본서버("+x[si].innerHTML+") 로 이동합니다");
+      else
+        window.parentView.showMsg("msg:보조서버("+x[si].innerHTML+") 로 이동합니다");
     }
 
     if(tvaddr[si] == null)
