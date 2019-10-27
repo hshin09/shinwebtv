@@ -144,7 +144,6 @@ function onok() {
         window.parentView.showMsg("msg:기본서버("+x[si].innerHTML+") 로 이동합니다");
       else
         window.parentView.showMsg("msg:보조서버("+x[si].innerHTML+") 로 이동합니다");
-      ei=-1;
     }
 
     if(tvaddr[si] == null)
@@ -225,7 +224,7 @@ function onFullscreenOnOff() {
 }
 
 function movieclk( w, url, p ) {
-		if(p.id==ei) {
+		if(p.id==si) {
 			onok();
 			return;
 		}
@@ -237,7 +236,7 @@ function movieclk( w, url, p ) {
 	        return;
 	  }
 	  if(oi>-1) x[oi].style="background-color:#252525;color:white";
-	  //if(ei>-1) x[ei].style="background-color:#252525";
+	  if(ei>-1) x[ei].style="background-color:#252525;color:white";
 	  si=ei=p.id;
 	  x[ei].style="background-color:#234567;color:yellow";
 	  oi=si;
