@@ -47,7 +47,7 @@ $('document').ready(function() {
     for(var i=0; i<tvaddr.length; i++)
       tvaddr[i]=addr[i][1];
     //timer = setInterval( function() { OnOff(); }, 1200 );
-    OnOff();
+    timer=setTimeout(function(){ Onoff(); }, 1200);
 });
 
 /*
@@ -363,7 +363,7 @@ function showVideoMessage()
       clearTimeout(timer);
       timer=null;
     }
-    Onoff();
+    timer=setTimeout(function(){ Onoff(); }, 1200);
     closeErrorMessage();
     $('#sec').text( "00" );
     $("#ch_name").text( x[si].innerHTML );
