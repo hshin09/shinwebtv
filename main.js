@@ -38,6 +38,7 @@ var tstr;
 var isChLoaded=0;
 var msgGetCh="채널리스트 구성중";
 var oldCurrentTime=0;
+var isLongTimer=0;
 
 $('document').ready(function() {
     $('#menu0').load("https://hshin09.github.io/shinwebtv/kor.html");
@@ -46,8 +47,7 @@ $('document').ready(function() {
     web = document.getElementById("web");
     for(var i=0; i<tvaddr.length; i++)
       tvaddr[i]=addr[i][1];
-    //timer = setInterval( function() { OnOff(); }, 1200 );
-    timer=setTimeout(function(){ Onoff(); }, 1200);
+    timer = setInterval( function() { OnOff(); }, 1200 );
 });
 
 /*
@@ -81,11 +81,13 @@ function OnOff()
       x=document.getElementById("ml"+gi).getElementsByTagName("li");
       if( x.length>0 )
 	    {
-          isChLoaded = 1;
+          if(timer) {
+            clearInterval(timer);
+            timer=null;
+          }
+	        isChLoaded = 1;
 	        mlok();
-          return;
 	    }
-      timer=setTimeout(function(){ Onoff(); }, 1200);
       return;
     }
     /*
@@ -97,21 +99,20 @@ function OnOff()
         }
     }
     */
-
+    time++;
     tstr="";
-    if(time++<10)
+    if(time<10)
       tstr="0";
     tstr=tstr+time;
     $('#sec').text( tstr );
 
     if( stv.error != null || stv.networkState == 3 || ( time > 25 && stv.currentTime < 3 ) )
     {
-        if( $('#errorMessage').css('display')=="block" )
-            return;
-        $("#er_msg").text( "에러 안내 : 채널을 가져올수 없음(네트워크 또는 서버 에러)" );
-        showErrorMessage();
-        onok();
-        return;
+        if( $('#errorMessage').css('display') != "block" ) {
+          $("#er_msg").text( "에러 안내 : 채널을 가져올수 없음(네트워크 또는 서버 에러)" );
+          showErrorMessage();
+          onok();
+      }
     }
     else if( $('#secMessage').css('display')=="block" && stv.currentTime > 1 )
     {
@@ -120,23 +121,23 @@ function OnOff()
     else if( $('#videoMessage').css('display')=="block" && stv.currentTime > 4 )
     {
         $('#videoMessage').css('display', 'none');
+        if(timer) {
+          clearInterval(timer);
+          timer=null;
+        }
         oldCurrentTime = stv.currentTime;
-        timer=setTimeout(function(){ Onoff(); }, 15000);
-        return;
+        isLongTimer=1;
+        timer = setInterval( function() { OnOff(); }, 15000 );
     }
-    if(oldCurrentTime>0){
+    if(isLongTimer>0 && oldCurrentTime>0){
       if(oldCurrentTime==stv.currentTime) {
         onok();
-        return;
       }
       else {
         oldCurrentTime = stv.currentTime;
         time+=25;
-        timer=setTimeout(function(){ Onoff(); }, 15000);
-        return;
       }
     }
-    timer=setTimeout(function(){ Onoff(); }, 1200);
 }
 
 function onup() {
@@ -323,6 +324,7 @@ function movieclk( w, url, p ) {
 			return;
 		}
 		*/
+    isLongTimer=0;
     oldCurrentTime=0;
     stv.pause();
     if( url == null )
@@ -360,10 +362,10 @@ function showVideoMessage()
 {
     time = 0;
     if(timer) {
-      clearTimeout(timer);
+      clearInterval(timer);
       timer=null;
     }
-    timer=setTimeout(function(){ Onoff(); }, 1200);
+    timer = setInterval( function() { OnOff(); }, 1200 );
     closeErrorMessage();
     $('#sec').text( "00" );
     $("#ch_name").text( x[si].innerHTML );
