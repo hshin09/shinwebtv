@@ -29,7 +29,7 @@ var asi=[7,12];
 var aoi=[-1,-1];
 var aei=[7,12];
 var full=false;
-var timer=0;
+var timer=null;
 var time=0;
 
 var web;
@@ -46,7 +46,8 @@ $('document').ready(function() {
     web = document.getElementById("web");
     for(var i=0; i<tvaddr.length; i++)
       tvaddr[i]=addr[i][1];
-    timer = setInterval( function() { OnOff(); }, 1200 );
+    //timer = setInterval( function() { OnOff(); }, 1200 );
+    OnOff();
 });
 
 /*
@@ -80,11 +81,11 @@ function OnOff()
       x=document.getElementById("ml"+gi).getElementsByTagName("li");
       if( x.length>0 )
 	    {
-          clearInterval(timer);
-          timer=0;
-	        isChLoaded = 1;
+          isChLoaded = 1;
 	        mlok();
+          return;
 	    }
+      timer=setTimeout(function(){ Onoff(); }, 1200);
       return;
     }
     /*
@@ -96,9 +97,9 @@ function OnOff()
         }
     }
     */
-    time++;
+
     tstr="";
-    if(time<10)
+    if(time++<10)
       tstr="0";
     tstr=tstr+time;
     $('#sec').text( tstr );
@@ -110,6 +111,7 @@ function OnOff()
         $("#er_msg").text( "에러 안내 : 채널을 가져올수 없음(네트워크 또는 서버 에러)" );
         showErrorMessage();
         onok();
+        return;
     }
     else if( $('#secMessage').css('display')=="block" && stv.currentTime > 1 )
     {
@@ -118,22 +120,23 @@ function OnOff()
     else if( $('#videoMessage').css('display')=="block" && stv.currentTime > 4 )
     {
         $('#videoMessage').css('display', 'none');
-        if(timer>0) {
-          clearInterval(timer);
-          timer=0;
-        }
         oldCurrentTime = stv.currentTime;
-        timer = setInterval( function() { OnOff(); }, 15000 );
+        timer=setTimeout(function(){ Onoff(); }, 15000);
+        return;
     }
     if(oldCurrentTime>0){
       if(oldCurrentTime==stv.currentTime) {
         onok();
+        return;
       }
       else {
         oldCurrentTime = stv.currentTime;
         time+=25;
+        timer=setTimeout(function(){ Onoff(); }, 15000);
+        return;
       }
     }
+    timer=setTimeout(function(){ Onoff(); }, 1200);
 }
 
 function onup() {
@@ -319,7 +322,8 @@ function movieclk( w, url, p ) {
 			onleft();
 			return;
 		}
-		*/
+		*/\
+    oldCurrentTime=0;
     stv.pause();
     if( url == null )
 	  {
@@ -354,14 +358,12 @@ function movieclk( w, url, p ) {
 
 function showVideoMessage()
 {
-    oldCurrentTime=0;
-    time = 0;
-    if(timer>0) {
-      clearInterval(timer);
-      timer=0;
+    time = null;
+    if(timer) {
+      clearTimeout(timer);
+      timer=null;
     }
-    if(timer<1)
-      timer = setInterval( function() { OnOff(); }, 1200 );
+    Onoff();
     closeErrorMessage();
     $('#sec').text( "00" );
     $("#ch_name").text( x[si].innerHTML );
