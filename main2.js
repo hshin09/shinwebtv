@@ -35,7 +35,6 @@ var stv;
 var tstr;
 var isChLoaded=0;
 var msgGetCh="채널리스트 구성중";
-var oldCurrentTime=0;
 
 $('document').ready(function() {
     $('#menu0').load("https://hshin09.github.io/shinwebtv/kor.html");
@@ -45,7 +44,7 @@ $('document').ready(function() {
     for(var i=0; i<tvaddr.length; i++)
       tvaddr[i]=addr[i][1];
     $('#tv').on('dblclick',(function(){ onFullscreenOnOff(); }));
-    timer = setInterval( function() { OnOff(); }, 500 );
+    timer = setInterval( function() { OnOff(); }, 1200 );
 });
 
 /*
@@ -83,34 +82,33 @@ function OnOff()
             clearInterval(timer);
             timer=null;
           }
-	        isChLoaded = 1;
-	        mlok();
+          isChLoaded = 1;
+          mlok();
   	    }
         return;
     }
-    /*
+
     if( time++ > 29 ) {
-        if(timer>0) {
+        if(timer) {
           clearInterval(timer);
-          timer=0;
+          timer=null;
           return;
         }
     }
-    */
-    time++;
+
     tstr="";
     if(time<10)
         tstr="0";
     tstr=tstr+time;
     $('#sec').text( tstr );
 
-    if( stv.error != null || stv.networkState == 3 || ( time > 25 && stv.currentTime < 2 ) )
+    if( stv.error != null || stv.networkState == 3 || ( time > 19 && stv.currentTime < 2 ) )
     {
-      if( $('#errorMessage').css('display') != "block" ) {
+        if( $('#errorMessage').css('display')=="block" )
+            return;
         $("#er_msg").text( "에러 안내 : 채널을 가져올수 없음(네트워크 또는 서버 에러)" );
         showErrorMessage();
         onok();
-      }
     }
     else if( $('#secMessage').css('display')=="block" && stv.currentTime > 1 )
     {
@@ -119,21 +117,6 @@ function OnOff()
     else if( $('#videoMessage').css('display')=="block" && stv.currentTime > 4 )
     {
         $('#videoMessage').css('display', 'none');
-        if(timer) {
-          clearInterval(timer);
-          timer=null;
-        }
-        timer = setInterval( function() { OnOff(); }, 15000 );
-        setTimeout(function(){ oldCurrentTime = stv.currentTime; },1000);
-    }
-    if(oldCurrentTime>0) {
-      if(oldCurrentTime==stv.currentTime) {
-        onok();
-      }
-      else {
-        oldCurrentTime = stv.currentTime;
-        time+=10;
-      }
     }
 }
 
@@ -283,10 +266,9 @@ function showVideoMessage()
     onFullscreenOnOff();
     time = 0;
     if(timer) {
-      clearInterval(timer);
+      timer = setInterval( function() { OnOff(); }, 1200 );
       timer=null;
     }
-    timer = setInterval( function() { OnOff(); }, 1200 );
     closeErrorMessage();
     $('#sec').text( "00" );
     $("#ch_name").text( x[si].innerHTML );
