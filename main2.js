@@ -230,6 +230,10 @@ function keychk(e) {
 }
 
 function onFinish() {
+  if(timer)
+    clearInterval(timer);
+  stv.pause();
+  stv.setAttribute( "src",  url );
   parentView.showMsg("finish");
 }
 
