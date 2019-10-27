@@ -131,7 +131,6 @@ function OnOff()
         onok();
       }
       else {
-        $('#secMessage').css('display', 'none');
         oldCurrentTime = stv.currentTime;
         time+=10;
       }
