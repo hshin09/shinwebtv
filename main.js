@@ -96,6 +96,7 @@ function OnOff()
         }
     }
     */
+    time++;
     tstr="";
     if(time<10)
       tstr="0";
@@ -122,7 +123,7 @@ function OnOff()
           timer=0;
         }
         oldCurrentTime = stv.currentTime;
-        timer = setInterval( function() { OnOff(); }, 11000 );
+        timer = setInterval( function() { OnOff(); }, 15000 );
     }
     if(oldCurrentTime>0){
       if(oldCurrentTime==stv.currentTime) {
