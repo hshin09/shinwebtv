@@ -110,7 +110,7 @@ function OnOff()
         showErrorMessage();
         onok();
     }
-    else if( $('#secMessage').css('display')=="block" && stv.currentTime > 1 )
+    else if( $('#secMessage').css('display')=="block" && stv.currentTime > 2 )
     {
         $('#secMessage').css('display', 'none');
     }
@@ -266,9 +266,10 @@ function showVideoMessage()
     onFullscreenOnOff();
     time = 0;
     if(timer) {
-      timer = setInterval( function() { OnOff(); }, 1200 );
+      clearInterval(timer);
       timer=null;
     }
+    timer = setInterval( function() { OnOff(); }, 1200 );
     closeErrorMessage();
     $('#sec').text( "00" );
     $("#ch_name").text( x[si].innerHTML );
