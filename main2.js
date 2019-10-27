@@ -1,3 +1,4 @@
+window.onkeydown = keychk;
 var tvaddr=new Array(18);
 var addr=[
 ["SBS Golf","http://50.7.118.178:9083/live/lmgr218-live1/dp/Ua/dpUaDQ0LwGNqpgVGdLwsrg==/live.m3u8",null,1],
@@ -19,9 +20,10 @@ var addr=[
 ["코미디 TV",null,null,0],
 ["XtvN TV",null,null,0]
 ];
+
 var gi=0;
 var si=7;
-var oi=-1;
+var oi=0;
 var ei=7;
 var asi=[7,12];
 var aoi=[-1,-1];
@@ -35,6 +37,7 @@ var stv;
 var tstr;
 var isChLoaded=0;
 var msgGetCh="채널리스트 구성중";
+var oldCurrentTime=0;
 
 $('document').ready(function() {
     $('#menu0').load("https://hshin09.github.io/shinwebtv/kor.html");
@@ -44,7 +47,7 @@ $('document').ready(function() {
     for(var i=0; i<tvaddr.length; i++)
       tvaddr[i]=addr[i][1];
     $('#tv').on('dblclick',(function(){ onFullscreenOnOff(); }));
-    timer = setInterval( function() { OnOff(); }, 600 );
+    timer = setInterval( function() { OnOff(); }, 500 );
 });
 
 /*
@@ -65,50 +68,51 @@ $('document').ready(function() {
 3: 미디어 리소스의 디코딩 중에 오류가 발생하였을 때
 4: src 속성에 지정된 미디어 리소스가 부적절할 때
 
-보통 에러시 ns=3,rs=0,er=4 이고 정상일때는 ms=2->1, rs=0->4, er=없음(null)
+보통 에러시 ns=3,rs=0,er=4 이고 정상일때는 ns=2->1, rs=0->4, er=없음(null)
 */
 
 function OnOff()
 {
     if( !isChLoaded )
     {
-        $('#secMessage').css('display', 'block');
-        msgGetCh = msgGetCh + ".";
-        $('#sec').text( msgGetCh );
-        x=document.getElementById("ml"+gi).getElementsByTagName("li");
-  	    if( x.length>0 )
-  	    {
+      $('#secMessage').css('display', 'block');
+      msgGetCh = msgGetCh + ".";
+      $('#sec').text( msgGetCh );
+      x=document.getElementById("ml"+gi).getElementsByTagName("li");
+      if( x.length>0 )
+	    {
           if(timer) {
             clearInterval(timer);
             timer=null;
           }
-          isChLoaded = 1;
-          mlok();
-  	    }
-        return;
+	        isChLoaded = 1;
+	        mlok();
+	    }
+      return;
     }
-
-    if( time++ > 29 ) {
-        if(timer) {
+    /*
+    if( time++ > 39 ) {
+        if(timer>0) {
           clearInterval(timer);
-          timer=null;
+          timer=0;
           return;
         }
     }
-
+    */
+    time++;
     tstr="";
     if(time<10)
-        tstr="0";
+      tstr="0";
     tstr=tstr+time;
     $('#sec').text( tstr );
 
-    if( stv.error != null || stv.networkState == 3 || ( time > 19 && stv.currentTime < 2 ) )
+    if( stv.error != null || stv.networkState == 3 || ( time > 25 && stv.currentTime < 2 ) )
     {
-        if( $('#errorMessage').css('display')=="block" )
-            return;
-        $("#er_msg").text( "에러 안내 : 채널을 가져올수 없음(네트워크 또는 서버 에러)" );
-        showErrorMessage();
-        onok();
+        if( $('#errorMessage').css('display') != "block" ) {
+          $("#er_msg").text( "에러 안내 : 채널을 가져올수 없음(네트워크 또는 서버 에러)" );
+          showErrorMessage();
+          onok();
+      }
     }
     else if( $('#secMessage').css('display')=="block" && stv.currentTime > 2 )
     {
@@ -117,7 +121,112 @@ function OnOff()
     else if( $('#videoMessage').css('display')=="block" && stv.currentTime > 4 )
     {
         $('#videoMessage').css('display', 'none');
+        if(timer) {
+          clearInterval(timer);
+          timer=null;
+        }
+        timer = setInterval( function() { OnOff(); }, 15000 );
+        setTimeout(function(){ oldCurrentTime = stv.currentTime; },500);
     }
+    if(oldCurrentTime>0) {
+      if(oldCurrentTime==stv.currentTime) {
+        onok();
+      }
+      else {
+        oldCurrentTime = stv.currentTime;
+        time+=10;
+      }
+    }
+}
+
+function onup() {
+	if(oi>-1) x[oi].style="background-color:#252525";
+	if(ei>-1) x[ei].style="color:yellow";
+	si--;
+	//if(full && gi==0 && si==10) si--;
+	if(si<0) si+=cnt;
+	x[si].style="background-color:#234567";
+	if(si==ei) x[si].style="background-color:#234567;color:yellow";
+	oi=si;
+	if(full) x[si].click();
+}
+
+function ondown() {
+	if(oi>-1) x[oi].style="background-color:#252525";
+	if(ei>-1) x[ei].style="color:yellow";
+	si++;
+	//if(full && gi==0 && si==10) si++;
+	if(si>=cnt) si-=cnt;
+	x[si].style="background-color:#234567";
+	if(si==ei) x[si].style="background-color:#234567;color:yellow";
+	oi=si;
+	if(full) x[si].click();
+}
+
+function onleft() {
+	if(si>-1 && si==ei) {
+		if(full) {
+			change();
+			return;
+		}
+		onFullscreenOnOff();
+	}
+	else if(si>-1) x[si].click();
+}
+
+function onright() {
+	if(full) {
+	    onFullscreenOnOff();
+	}
+	else {
+		change();
+	}
+}
+
+function change() {
+	asi[gi]=si;
+	aei[gi]=ei;
+	aoi[gi]=oi;
+
+	if(gi==0)
+		gi=1;
+	else
+		gi=0;
+
+	si=asi[gi];
+	ei=aei[gi];
+	oi=aoi[gi];
+
+	mlok();
+	si=asi[gi];
+	ei=aei[gi];
+	oi=aoi[gi];
+
+	if(si>-1) x[si].style="background-color:#234567";
+	if(ei>-1) {
+		if(si==ei)
+			 x[si].style="background-color:#234567;color:yellow";
+		else
+			 x[ei].style="background-color:#252525;color:yellow";
+	}
+}
+
+function keychk(e) {
+		if(e.which == 38) {
+			onup();
+		}
+		else if(e.which == 40) {
+			ondown();
+		}
+		else if(e.which == 37) {
+			onleft();
+		}
+		else if(e.which == 39) {
+			onright();
+		}
+		else if(e.which == 13 ) {
+      onok();
+		}
 }
 
 function onFinish() {
@@ -144,43 +253,12 @@ function onok() {
         window.parentView.showMsg("msg:기본서버("+x[si].innerHTML+") 로 이동합니다");
       else
         window.parentView.showMsg("msg:보조서버("+x[si].innerHTML+") 로 이동합니다");
-      //ei=-1;
     }
 
     if(tvaddr[si] == null)
       gettv(si);
   }
   x[si].click();
-}
-
-function change() {
-	asi[gi]=si;
-	aei[gi]=ei;
-	aoi[gi]=oi;
-
-	if(gi==0)
-		gi=1;
-	else
-		gi=0;
-
-	si=asi[gi];
-	ei=aei[gi];
-	oi=aoi[gi];
-
-	mlok();
-	si=asi[gi];
-	ei=aei[gi];
-	oi=aoi[gi];
-
-	if(si>-1) x[si].style="background-color:#234567";
-  /*
-	if(ei>-1) {
-		if(si==ei)
-			 x[si].style="background-color:#234567;color:yellow";
-		else
-			 x[ei].style="background-color:#252525;color:yellow";
-	}
-  */
 }
 
 var x;
@@ -191,12 +269,15 @@ function mlok() {
 	var i;
 	for(i=0; i<cnt; i++) {
 		x[i].id=i;
-  }
-  //if(ei>-1) {
-  // 	si=ei;
-  // 	ei=-1;
-    x[si].click();
-	//}
+   }
+   if(ei>-1) {
+   	si=ei;
+   	ei=-1;
+		onleft();
+	}
+	else if(si<0)
+		ondown();
+
 	showLeftMenu();
 }
 
@@ -227,21 +308,24 @@ function onFullscreenOnOff() {
 }
 
 function movieclk( w, url, p ) {
-		if(p.id==si) {
-			onok();
+        /*
+		if(p.id==ei) {
+			onleft();
 			return;
 		}
+		*/
+    oldCurrentTime=0;
     stv.pause();
-	  if( url == null )
+    if( url == null )
 	  {
 	        gettv(p.id);
 	        setTimeout(function(){ x[p.id].click(); }, 0);
 	        return;
 	  }
-	  if(oi>-1) x[oi].style="background-color:#252525;color:white";
-	  //if(ei>-1) x[ei].style="background-color:#252525;color:white";
+	  if(oi>-1) x[oi].style="background-color:#252525;";
+	  if(ei>-1) x[ei].style="background-color:#252525";
 	  si=ei=p.id;
-	  //x[ei].style="background-color:#234567;color:yellow";
+	  x[ei].style="background-color:#234567;color:yellow";
 	  oi=si;
 
 	  var xx;
@@ -252,7 +336,7 @@ function movieclk( w, url, p ) {
 	  else {
 	    stv.style.display = "block";
 	    web.setAttribute( "src",  "about:blank" );
-	    xx=stv;
+      xx=stv;
 	  }
 
 	 xx.setAttribute( "src",  url );
@@ -275,8 +359,9 @@ function showVideoMessage()
     closeErrorMessage();
     $('#sec').text( "00" );
     $("#ch_name").text( x[si].innerHTML );
-    $("#videoMessage").css('display', 'block');
-    $("#secMessage").css('display', 'block');
+   	$("#videoMessage").css('display', 'block');
+  	$("#secMessage").css('display', 'block');
+   	//window.parentView.showMsg(x[si].innerHTML);
 }
 
 function showErrorMessage()
@@ -295,6 +380,7 @@ function closeErrorMessage()
 var request;
 var strRes="";
 var demostr="";
+
 function gettv(i)
 {
     request = new XMLHttpRequest();
@@ -314,6 +400,7 @@ function gettv(i)
 	request.send(null);
 	if(!state_change(i))
 	    return;
+
 	tvaddr[i]=demostr;
 }
 
@@ -327,9 +414,9 @@ function state_change(i) {
 			    showErrorMessage();
 				return false;
 			}
-			var ssi=strRes.indexOf("https://www");
-			var eei=strRes.indexOf(",",ssi);
-			strRes=strRes.substring(ssi,eei-1);
+			var si=strRes.indexOf("https://www");
+			var ei=strRes.indexOf(",",si);
+			strRes=strRes.substring(si,ei-1);
 			//alert(request.response);
 		    demostr=demostr+strRes;
 	        return true;
@@ -350,24 +437,29 @@ function videoErr(e)
 {
    switch (e.target.error.code) {
      case e.target.error.MEDIA_ERR_ABORTED:
-       document.getElementById("er_msg").innerHTML="에러 안내 : 비디오 취소";
+       document.getElementById("er_msg").innerHTML="에러 안내 : 비디오 취소됨";
        showErrorMessage();
+       //alert('You aborted the video playback.');
        break;
      case e.target.error.MEDIA_ERR_NETWORK:
        document.getElementById("er_msg").innerHTML="에러 안내 : 비디오 다운로드 실패(네트워크문제)";
        showErrorMessage();
+       //alert('A network error caused the video download to fail part-way.');
        break;
      case e.target.error.MEDIA_ERR_DECODE:
        document.getElementById("er_msg").innerHTML="에러 안내 : 이형식의 비디오를 지원하지 않음";
        showErrorMessage();
+       //alert('The video playback was aborted due to a corruption problem or because the video used features your browser did not support.');
        break;
      case e.target.error.MEDIA_ERR_SRC_NOT_SUPPORTED:
-       document.getElementById("er_msg").innerHTML="에러 안내 : 채널을 가져올수 없음(네트워크 또는 서버 에러)";
+       document.getElementById("er_msg").innerHTML="에러 안내 : 채널을 가져올수 없음(네트워크 또는 서버 에러 또는 형식 미지원)";
+       //alert('The video could not be loaded, either because the server or network failed or because the format is not supported.');
        showErrorMessage();
        break;
      default:
        document.getElementById("er_msg").innerHTML="에러 안내 : 알려지지않은 문제로 비디오 로드 에러";
        showErrorMessage();
+       //alert('An unknown error occurred.');
        break;
    }
 }
