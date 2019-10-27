@@ -103,7 +103,7 @@ function OnOff()
     tstr=tstr+time;
     $('#sec').text( tstr );
 
-    if( stv.error != null || stv.networkState == 3 || ( time > 29 && stv.currentTime < 2 ) )
+    if( stv.error != null || stv.networkState == 3 || ( time > 25 && stv.currentTime < 3 ) )
     {
         if( $('#errorMessage').css('display')=="block" )
             return;
@@ -131,6 +131,7 @@ function OnOff()
       }
       else {
         oldCurrentTime = stv.currentTime;
+        time+=25;
       }
     }
 }
