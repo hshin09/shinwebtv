@@ -37,6 +37,7 @@ var stv;
 var tstr;
 var isChLoaded=0;
 var msgGetCh="채널리스트 구성중";
+var oldCurrentTime=0;
 
 $('document').ready(function() {
     $('#menu0').load("https://hshin09.github.io/shinwebtv/kor.html");
@@ -73,20 +74,20 @@ function OnOff()
 {
     if( !isChLoaded )
     {
-        $('#secMessage').css('display', 'block');
-        msgGetCh = msgGetCh + ".";
-        $('#sec').text( msgGetCh );
-        x=document.getElementById("ml"+gi).getElementsByTagName("li");
-	    if( x.length>0 )
+      $('#secMessage').css('display', 'block');
+      msgGetCh = msgGetCh + ".";
+      $('#sec').text( msgGetCh );
+      x=document.getElementById("ml"+gi).getElementsByTagName("li");
+      if( x.length>0 )
 	    {
           clearInterval(timer);
           timer=0;
 	        isChLoaded = 1;
 	        mlok();
 	    }
-        return;
+      return;
     }
-
+    /*
     if( time++ > 39 ) {
         if(timer>0) {
           clearInterval(timer);
@@ -94,10 +95,10 @@ function OnOff()
           return;
         }
     }
-
+    */
     tstr="";
     if(time<10)
-        tstr="0";
+      tstr="0";
     tstr=tstr+time;
     $('#sec').text( tstr );
 
@@ -107,6 +108,7 @@ function OnOff()
             return;
         $("#er_msg").text( "에러 안내 : 채널을 가져올수 없음(네트워크 또는 서버 에러)" );
         showErrorMessage();
+        onok();
     }
     else if( $('#secMessage').css('display')=="block" && stv.currentTime > 1 )
     {
@@ -115,6 +117,20 @@ function OnOff()
     else if( $('#videoMessage').css('display')=="block" && stv.currentTime > 4 )
     {
         $('#videoMessage').css('display', 'none');
+        if(timer>0) {
+          clearInterval(timer);
+          timer=0;
+        }
+        oldCurrentTime = stv.currentTime;
+        timer = setInterval( function() { OnOff(); }, 11000 );
+    }
+    if(oldCurrentTime>0){
+      if(oldCurrentTime==stv.currentTime) {
+        onok();
+      }
+      else {
+        oldCurrentTime = stv.currentTime;
+      }
     }
 }
 
@@ -336,7 +352,12 @@ function movieclk( w, url, p ) {
 
 function showVideoMessage()
 {
+    oldCurrentTime=0;
     time = 0;
+    if(timer>0) {
+      clearInterval(timer);
+      timer=0;
+    }
     if(timer<1)
       timer = setInterval( function() { OnOff(); }, 1200 );
     closeErrorMessage();
