@@ -322,7 +322,7 @@ function movieclk( w, url, p ) {
 			onleft();
 			return;
 		}
-		*/\
+		*/
     oldCurrentTime=0;
     stv.pause();
     if( url == null )
@@ -358,7 +358,7 @@ function movieclk( w, url, p ) {
 
 function showVideoMessage()
 {
-    time = null;
+    time = 0;
     if(timer) {
       clearTimeout(timer);
       timer=null;
