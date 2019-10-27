@@ -44,7 +44,7 @@ $('document').ready(function() {
     for(var i=0; i<tvaddr.length; i++)
       tvaddr[i]=addr[i][1];
     $('#tv').on('dblclick',(function(){ onFullscreenOnOff(); }));
-    timer = setInterval( function() { OnOff(); }, 1200 );
+    timer = setInterval( function() { OnOff(); }, 600 );
 });
 
 /*
@@ -144,7 +144,7 @@ function onok() {
         window.parentView.showMsg("msg:기본서버("+x[si].innerHTML+") 로 이동합니다");
       else
         window.parentView.showMsg("msg:보조서버("+x[si].innerHTML+") 로 이동합니다");
-      ei=-1;
+      //ei=-1;
     }
 
     if(tvaddr[si] == null)
@@ -173,12 +173,14 @@ function change() {
 	oi=aoi[gi];
 
 	if(si>-1) x[si].style="background-color:#234567";
+  /*
 	if(ei>-1) {
 		if(si==ei)
 			 x[si].style="background-color:#234567;color:yellow";
 		else
 			 x[ei].style="background-color:#252525;color:yellow";
 	}
+  */
 }
 
 var x;
@@ -190,11 +192,11 @@ function mlok() {
 	for(i=0; i<cnt; i++) {
 		x[i].id=i;
   }
-  if(ei>-1) {
-   	si=ei;
-   	ei=-1;
+  //if(ei>-1) {
+  // 	si=ei;
+  // 	ei=-1;
     x[si].click();
-	}
+	//}
 	showLeftMenu();
 }
 
@@ -237,9 +239,9 @@ function movieclk( w, url, p ) {
 	        return;
 	  }
 	  if(oi>-1) x[oi].style="background-color:#252525;color:white";
-	  if(ei>-1) x[ei].style="background-color:#252525;color:white";
+	  //if(ei>-1) x[ei].style="background-color:#252525;color:white";
 	  si=ei=p.id;
-	  x[ei].style="background-color:#234567;color:yellow";
+	  //x[ei].style="background-color:#234567;color:yellow";
 	  oi=si;
 
 	  var xx;
@@ -325,9 +327,9 @@ function state_change(i) {
 			    showErrorMessage();
 				return false;
 			}
-			var si=strRes.indexOf("https://www");
-			var ei=strRes.indexOf(",",si);
-			strRes=strRes.substring(si,ei-1);
+			var ssi=strRes.indexOf("https://www");
+			var eei=strRes.indexOf(",",ssi);
+			strRes=strRes.substring(ssi,eei-1);
 			//alert(request.response);
 		    demostr=demostr+strRes;
 	        return true;
