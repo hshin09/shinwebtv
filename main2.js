@@ -161,6 +161,7 @@ function onok() {
         window.parentView.showMsg("msg:기본서버("+x[si].innerHTML+") 로 이동합니다");
       else
         window.parentView.showMsg("msg:보조서버("+x[si].innerHTML+") 로 이동합니다");
+      ei=-1;
     }
 
     if(tvaddr[si] == null)
