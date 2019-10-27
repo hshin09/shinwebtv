@@ -124,7 +124,7 @@ function OnOff()
           timer=null;
         }
         timer = setInterval( function() { OnOff(); }, 15000 );
-        setTimeout(function(){ oldCurrentTime = stv.currentTime; },500);
+        setTimeout(function(){ oldCurrentTime = stv.currentTime; },1000);
     }
     if(oldCurrentTime>0) {
       if(oldCurrentTime==stv.currentTime) {
