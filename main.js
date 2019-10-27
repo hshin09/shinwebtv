@@ -47,7 +47,7 @@ $('document').ready(function() {
     web = document.getElementById("web");
     for(var i=0; i<tvaddr.length; i++)
       tvaddr[i]=addr[i][1];
-    timer = setInterval( function() { OnOff(); }, 1200 );
+    timer = setInterval( function() { OnOff(); }, 500 );
 });
 
 /*
@@ -106,7 +106,7 @@ function OnOff()
     tstr=tstr+time;
     $('#sec').text( tstr );
 
-    if( stv.error != null || stv.networkState == 3 || ( time > 25 && stv.currentTime < 3 ) )
+    if( stv.error != null || stv.networkState == 3 || ( time > 25 && stv.currentTime < 2 ) )
     {
         if( $('#errorMessage').css('display') != "block" ) {
           $("#er_msg").text( "에러 안내 : 채널을 가져올수 없음(네트워크 또는 서버 에러)" );
@@ -114,7 +114,7 @@ function OnOff()
           onok();
       }
     }
-    else if( $('#secMessage').css('display')=="block" && stv.currentTime > 1 )
+    else if( $('#secMessage').css('display')=="block" && stv.currentTime > 2 )
     {
         $('#secMessage').css('display', 'none');
     }
@@ -129,13 +129,13 @@ function OnOff()
         isLongTimer=1;
         timer = setInterval( function() { OnOff(); }, 15000 );
     }
-    if(isLongTimer>0 && oldCurrentTime>0){
+    if(isLongTimer>0 && oldCurrentTime>0) {
       if(oldCurrentTime==stv.currentTime) {
         onok();
       }
       else {
         oldCurrentTime = stv.currentTime;
-        time+=25;
+        time+=10;
       }
     }
 }
