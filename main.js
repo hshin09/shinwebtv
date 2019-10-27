@@ -38,7 +38,6 @@ var tstr;
 var isChLoaded=0;
 var msgGetCh="채널리스트 구성중";
 var oldCurrentTime=0;
-var isLongTimer=0;
 
 $('document').ready(function() {
     $('#menu0').load("https://hshin09.github.io/shinwebtv/kor.html");
@@ -125,11 +124,10 @@ function OnOff()
           clearInterval(timer);
           timer=null;
         }
-        oldCurrentTime = stv.currentTime;
-        isLongTimer=1;
         timer = setInterval( function() { OnOff(); }, 15000 );
+        setTimeout(function(){ oldCurrentTime = stv.currentTime; },500);
     }
-    if(isLongTimer>0 && oldCurrentTime>0) {
+    if(oldCurrentTime>0) {
       if(oldCurrentTime==stv.currentTime) {
         onok();
       }
@@ -324,7 +322,6 @@ function movieclk( w, url, p ) {
 			return;
 		}
 		*/
-    isLongTimer=0;
     oldCurrentTime=0;
     stv.pause();
     if( url == null )
