@@ -95,7 +95,7 @@ function OnOff()
     tstr=tstr+time;
     $('#sec').text( tstr );
 
-    if( stv.error != null || stv.networkState == 3 || ( time > 25 && stv.currentTime < 2 ) )
+    if( stv.error != null || stv.networkState == 3 || ( time > 25 ) )//&& stv.currentTime < 2 ) )
     {
         if( $('#errorMessage').css('display') != "block" ) {
           $("#er_msg").text( "에러 안내 : 채널을 가져올수 없음(네트워크 또는 서버 에러)" );
@@ -195,6 +195,7 @@ function onok() {
   x[si].click();
 }
 
+var imsi_oi=0;
 function movieclk( w, url, p ) {
     if(p.id==oi) {
       onok();
@@ -208,10 +209,10 @@ function movieclk( w, url, p ) {
 	        setTimeout(function(){ x[p.id].click(); }, 0);
 	        return;
 	  }
-	  x[aoi[gi]].style="background-color:#252525;color=white";
+	  x[imsi_oi].style="background-color:#252525;color=white";
 	  si=p.id;
 	  x[si].style="background-color:#234567;color:yellow";
-	  oi=si;
+	  imsi_oi=oi=si;
 
 	  var xx;
 	  if( w === "web" ) {
