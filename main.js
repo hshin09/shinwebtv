@@ -1,7 +1,7 @@
 window.onkeydown = keychk;
 var tvaddr=new Array(18);
 var addr=[
-["SBS Golf",null,"http://50.7.118.178:9083/live/lmgr218-live1/dp/Ua/dpUaDQ0LwGNqpgVGdLwsrg==/live.m3u8",1],
+["SBS Golf","79","http://50.7.118.178:9083/live/lmgr218-live1/dp/Ua/dpUaDQ0LwGNqpgVGdLwsrg==/live.m3u8",1],
 ["JTBC Golf",null,"http://23.237.112.138:9083/live/lmgr218-live1/uX/0j/uX0j1KJo8eVhWnTx6uvShw==/live.m3u8",1],
 ["영화 CGV",null,null,0],
 ["영화 OCN",null,"http://50.7.118.178:9083/live/lmgr218-live1/GR/13/GR13XDGjlUsD8nZQasCIhw==/live.m3u8",1],
