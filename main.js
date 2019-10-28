@@ -1,7 +1,7 @@
 window.onkeydown = keychk;
 var tvaddr=new Array(18);
 var addr=[
-["SBS Golf",null,"http://50.7.118.178:9083/live/lmgr218-live1/dp/Ua/dpUaDQ0LwGNqpgVGdLwsrg==/live.m3u8",1],
+["SBS Golf",79,"http://50.7.118.178:9083/live/lmgr218-live1/dp/Ua/dpUaDQ0LwGNqpgVGdLwsrg==/live.m3u8",1],
 ["JTBC Golf",null,"http://23.237.112.138:9083/live/lmgr218-live1/uX/0j/uX0j1KJo8eVhWnTx6uvShw==/live.m3u8",1],
 ["영화 CGV",null,null,0],
 ["영화 OCN",null,"http://50.7.118.178:9083/live/lmgr218-live1/GR/13/GR13XDGjlUsD8nZQasCIhw==/live.m3u8",1],
@@ -331,6 +331,16 @@ function movieclk( w, url, p ) {
 	        setTimeout(function(){ x[p.id].click(); }, 0);
 	        return;
 	  }
+    if( url == "79" )
+	  {
+          var s="";
+          if(p.id<10)
+            s=s+"0";
+          s=s+p.id
+	        parentView.showMsg(s);
+	        setTimeout(function(){ x[p.id].click(); }, 0);
+	        return;
+	  }
 	  if(oi>-1) x[oi].style="background-color:#252525;";
 	  if(ei>-1) x[ei].style="background-color:#252525";
 	  si=ei=p.id;
@@ -392,7 +402,7 @@ var demostr="";
 function gettv(i)
 {
     request = new XMLHttpRequest();
-	if(!request) {
+	  if(!request) {
 		alert("Giving up :( Cannot create an XMLHTTP instance");
 		return false;
 	}
