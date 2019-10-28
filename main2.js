@@ -287,6 +287,7 @@ function onFullscreenOnOff() {
 
 function showVideoMessage()
 {
+    full=false;
     onFullscreenOnOff();
     time = 0;
     if(timer) {
