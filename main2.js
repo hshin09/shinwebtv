@@ -68,7 +68,7 @@ $('document').ready(function() {
 보통 에러시 ns=3,rs=0,er=4 이고 정상일때는 ns=2->1, rs=0->4, er=없음(null)
 */
 
-var cntChange=0;
+var isNotUser=0;
 function OnOff()
 {
     if( !isChLoaded )
@@ -102,8 +102,9 @@ function OnOff()
           $("#er_msg").text( "에러 안내 : 채널을 가져올수 없음(네트워크 또는 서버 에러)" );
           showErrorMessage();
         }
-        if(cntChange<3)
+        if(isNotUser==0)
           onok();
+        isNotUser=1;
     }
     else if( $('#secMessage').css('display')=="block" && stv.currentTime > 2 )
     {
@@ -111,6 +112,7 @@ function OnOff()
     }
     else if( $('#videoMessage').css('display')=="block" && stv.currentTime > 4 )
     {
+        isNotUser=0;
         $('#videoMessage').css('display', 'none');
         if(timer) {
           clearInterval(timer);
@@ -122,8 +124,9 @@ function OnOff()
     }
     if(oldCurrentTime>0) {
       if(oldCurrentTime==stv.currentTime) {
-        if(cntChange<3)
+        if(isNotUser==0)
           onok();
+        isNotUser=1;
       }
       else {
         oldCurrentTime = stv.currentTime;
@@ -158,8 +161,7 @@ function change() {
 var x;
 var cnt;
 function mlok() {
-    cntChange++;
-  	x=document.getElementById("ml"+gi).getElementsByTagName("li");
+    x=document.getElementById("ml"+gi).getElementsByTagName("li");
   	cnt=x.length;
   	var i;
   	for(i=0; i<cnt; i++) {
@@ -213,8 +215,7 @@ function movieclk( w, url, p ) {
 	        setTimeout(function(){ x[p.id].click(); }, 0);
 	        return;
 	  }
-    cntChange=0;
-	  x[imsi_oi].style="background-color:#252525;color=white";
+    x[imsi_oi].style="background-color:#252525;color=white";
 	  si=p.id;
 	  x[si].style="background-color:#234567;color:yellow";
 	  imsi_oi=oi=si;
