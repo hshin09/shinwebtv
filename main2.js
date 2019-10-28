@@ -216,8 +216,8 @@ function onok() {
         window.parentView.showMsg("msg:보조서버("+x[si].innerHTML+") 로 이동합니다");
     }
 
-    //if(tvaddr[si] == null)
-    //  gettv(si);
+    if(tvaddr[si] == null)
+      gettv(si);
   }
   oi=-1;
   x[si].click();
