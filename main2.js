@@ -232,8 +232,8 @@ function movieclk( w, url, p ) {
     if( url == null )
 	  {
 	        gettv(p.id);
-	        setTimeout(function(){ x[p.id].click(); }, 0);
-	        return;
+	        //setTimeout(function(){ x[p.id].click(); }, 0);
+	        //return;
 	  }
 	  x[oi].style="background-color:#252525;color=white";
 	  si=p.id;
@@ -251,12 +251,12 @@ function movieclk( w, url, p ) {
       xx=stv;
 	  }
 
-	 xx.setAttribute( "src",  url );
-	 if( w === "tv" )
-	 {
-	    showVideoMessage();
-	    xx.play();
-	 }
+	  xx.setAttribute( "src",  url );
+	  if( w === "tv" )
+	  {
+	     showVideoMessage();
+	     xx.play();
+	  }
 }
 
 function showVideoMessage()
