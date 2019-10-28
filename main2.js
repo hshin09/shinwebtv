@@ -23,10 +23,8 @@ var addr=[
 var gi=0;
 var si=7;
 var oi=0;
-var ei=7;
 var asi=[7,12];
-var aoi=[-1,-1];
-var aei=[7,12];
+var aoi=[0,0];
 var full=false;
 var timer=null;
 var time=0;
@@ -140,7 +138,6 @@ function OnOff()
 
 function change() {
 	asi[gi]=si;
-	aei[gi]=ei;
 	aoi[gi]=oi;
 
 	if(gi==0)
@@ -149,21 +146,9 @@ function change() {
 		gi=0;
 
 	si=asi[gi];
-	ei=aei[gi];
 	oi=aoi[gi];
 
 	mlok();
-	si=asi[gi];
-	ei=aei[gi];
-	oi=aoi[gi];
-
-	if(si>-1) x[si].style="background-color:#234567";
-	if(ei>-1) {
-		if(si==ei)
-			 x[si].style="background-color:#234567;color:yellow";
-		else
-			 x[ei].style="background-color:#252525;color:yellow";
-	}
 }
 
 function onFinish() {
@@ -205,21 +190,14 @@ function onok() {
 var x;
 var cnt;
 function mlok() {
-	x=document.getElementById("ml"+gi).getElementsByTagName("li");
-	cnt=x.length;
-	var i;
-	for(i=0; i<cnt; i++) {
-		x[i].id=i;
-   }
-   if(ei>-1) {
-   	si=ei;
-   	ei=-1;
-		onleft();
-	}
-	else if(si<0)
-		ondown();
-
-	showLeftMenu();
+  	x=document.getElementById("ml"+gi).getElementsByTagName("li");
+  	cnt=x.length;
+  	var i;
+  	for(i=0; i<cnt; i++) {
+  		x[i].id=i;
+    }
+  	showLeftMenu();
+    x[si].click();
 }
 
 function showLeftMenu() {
@@ -236,15 +214,15 @@ function showLeftMenu() {
 }
 
 function onFullscreenOnOff() {
-    if( full == false )
-    {
-        $('#leftmenu').css('display','none');
-        full=true;
+  if( full == false )
+  {
+      $('#leftmenu').css('display','none');
+      full=true;
 	}
 	else
 	{
-        $('#leftmenu').css('display','block');
-	      full=false;
+      $('#leftmenu').css('display','block');
+      full=false;
 	}
 }
 
@@ -261,10 +239,9 @@ function movieclk( w, url, p ) {
 	        setTimeout(function(){ x[p.id].click(); }, 0);
 	        return;
 	  }
-	  if(oi>-1) x[oi].style="background-color:#252525;";
-	  if(ei>-1) x[ei].style="background-color:#252525";
-	  si=ei=p.id;
-	  x[ei].style="background-color:#234567;color:yellow";
+	  x[oi].style="background-color:#252525;color=white";
+	  si=p.id;
+	  x[si].style="background-color:#234567;color:yellow";
 	  oi=si;
 
 	  var xx;
@@ -353,9 +330,9 @@ function state_change(i) {
 			    showErrorMessage();
 				return false;
 			}
-			var si=strRes.indexOf("https://www");
-			var ei=strRes.indexOf(",",si);
-			strRes=strRes.substring(si,ei-1);
+			var ssi=strRes.indexOf("https://www");
+			var eei=strRes.indexOf(",",ssi);
+			strRes=strRes.substring(ssi,eei-1);
 			//alert(request.response);
 		    demostr=demostr+strRes;
 	        return true;
