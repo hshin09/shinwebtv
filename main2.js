@@ -132,6 +132,14 @@ function OnOff()
     }
 }
 
+function onFinish() {
+  if(timer)
+    clearInterval(timer);
+  stv.pause();
+  stv.setAttribute( "src",  "" );
+  parentView.showMsg("finish");
+}
+
 function change() {
 	asi[gi]=si;
 	aoi[gi]=oi;
@@ -142,17 +150,9 @@ function change() {
 		gi=0;
 
 	si=asi[gi];
-	//oi=aoi[gi];
-  oi=-1;
-	mlok();
-}
+	oi=aoi[gi];
 
-function onFinish() {
-  if(timer)
-    clearInterval(timer);
-  stv.pause();
-  stv.setAttribute( "src",  "" );
-  parentView.showMsg("finish");
+	mlok();
 }
 
 var x;
@@ -165,33 +165,8 @@ function mlok() {
   		x[i].id=i;
     }
   	showLeftMenu();
+    oi=-1;
     x[si].click();
-}
-
-function showLeftMenu() {
-    if( gi == 1 )
-    {
-        document.getElementById("menu0").style.display = "none";
-        document.getElementById("menu1").style.display = "block";
-    }
-    else
-    {
-        document.getElementById("menu0").style.display = "block";
-        document.getElementById("menu1").style.display = "none";
-    }
-}
-
-function onFullscreenOnOff() {
-  if( full == false )
-  {
-      $('#leftmenu').css('display','none');
-      full=true;
-	}
-	else
-	{
-      $('#leftmenu').css('display','block');
-      full=false;
-	}
 }
 
 function onok() {
@@ -258,6 +233,32 @@ function movieclk( w, url, p ) {
 	     showVideoMessage();
 	     xx.play();
 	  }
+}
+
+function showLeftMenu() {
+    if( gi == 1 )
+    {
+        document.getElementById("menu0").style.display = "none";
+        document.getElementById("menu1").style.display = "block";
+    }
+    else
+    {
+        document.getElementById("menu0").style.display = "block";
+        document.getElementById("menu1").style.display = "none";
+    }
+}
+
+function onFullscreenOnOff() {
+  if( full == false )
+  {
+      $('#leftmenu').css('display','none');
+      full=true;
+	}
+	else
+	{
+      $('#leftmenu').css('display','block');
+      full=false;
+	}
 }
 
 function showVideoMessage()
