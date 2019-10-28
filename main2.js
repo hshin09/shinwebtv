@@ -117,7 +117,7 @@ function OnOff()
         }
         timer = setInterval( function() { OnOff(); }, 15000 );
         $('#sec').text( "119: "+time+"->"+stv.currentTime );
-        setTimeout(function(){ oldCurrentTime = stv.currentTime; },500);
+        oldCurrentTime = stv.currentTime;
     }
     if(oldCurrentTime>0) {
       if(oldCurrentTime==stv.currentTime) {
@@ -180,7 +180,7 @@ function onok() {
     if(tvaddr[si] == null)
       gettv(si);
   }
-  setTimeout(function(){ x[si].click(); }, 0);
+  x[si].click();
 }
 
 var x;
@@ -193,7 +193,7 @@ function mlok() {
   		x[i].id=i;
     }
   	showLeftMenu();
-    setTimeout(function(){ x[si].click(); }, 0);
+    x[si].click();
 }
 
 function showLeftMenu() {
@@ -335,7 +335,7 @@ function state_change(i) {
 	    }
 	    else {
 	        document.getElementById("er_msg").innerHTML="에러 안내 : 채널주소 가져오기 실패 : "+request.status;
-			showErrorMessage();
+			    showErrorMessage();
 		    //demostr="Problem retrieving XML data : "+request.status;
 		}
 	}
