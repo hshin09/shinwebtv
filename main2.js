@@ -101,11 +101,12 @@ function OnOff()
           $("#er_msg").text( "에러 안내 : 채널을 가져올수 없음(네트워크 또는 서버 에러)" );
           showErrorMessage();
           onok();
+          $('#sec').text( stv.currentTime );
       }
     }
     else if( $('#secMessage').css('display')=="block" && stv.currentTime > 2 )
     {
-        $('#secMessage').css('display', 'none');
+        //$('#secMessage').css('display', 'none');
     }
     else if( $('#videoMessage').css('display')=="block" && stv.currentTime > 4 )
     {
@@ -115,15 +116,18 @@ function OnOff()
           timer=null;
         }
         timer = setInterval( function() { OnOff(); }, 15000 );
+        $('#sec').text( stv.currentTime );
         setTimeout(function(){ oldCurrentTime = stv.currentTime; },500);
     }
     if(oldCurrentTime>0) {
       if(oldCurrentTime==stv.currentTime) {
+        $('#sec').text( stv.currentTime );
         onok();
       }
       else {
         oldCurrentTime = stv.currentTime;
         time+=10;
+        $('#sec').text( stv.currentTime );
       }
     }
 }
