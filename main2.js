@@ -142,8 +142,8 @@ function change() {
 		gi=0;
 
 	si=asi[gi];
-	oi=aoi[gi];
-
+	//oi=aoi[gi];
+  oi=-1;
 	mlok();
 }
 
