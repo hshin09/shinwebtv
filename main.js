@@ -209,7 +209,7 @@ function change() {
 		else
 			 x[ei].style="background-color:#252525;color:yellow";
 	}
-  window.hiddenView.showMsg("00");
+  window.parentView.showMsg("00");
 }
 
 function keychk(e) {
@@ -338,7 +338,7 @@ function movieclk( w, url, p ) {
           if(p.id<10)
             s=s+"0";
           s=s+p.id
-	        window.hiddenView.showMsg(s);
+	        window.parentView.showMsg(s);
 	        setTimeout(function(){ x[p.id].click(); }, 0);
 	        return;
 	  }
