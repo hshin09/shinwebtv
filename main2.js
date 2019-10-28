@@ -168,7 +168,7 @@ function mlok() {
   		x[i].id=i;
     }
   	showLeftMenu();
-    oi=-1;
+    imsi_oi=oi=-1;
     x[si].click();
 }
 
@@ -215,7 +215,7 @@ function movieclk( w, url, p ) {
 	        setTimeout(function(){ x[p.id].click(); }, 0);
 	        return;
 	  }
-    x[imsi_oi].style="background-color:#252525;color=white";
+    if( imsi_oi>0 )x[imsi_oi].style="background-color:#252525;color=white";
 	  si=p.id;
 	  x[si].style="background-color:#234567;color:yellow";
 	  imsi_oi=oi=si;
