@@ -209,7 +209,7 @@ function change() {
 		else
 			 x[ei].style="background-color:#252525;color:yellow";
 	}
-  window.parentView.showMsg("00");
+  //window.parentView.showMsg("00");
 }
 
 function keychk(e) {
@@ -332,6 +332,7 @@ function movieclk( w, url, p ) {
 	        setTimeout(function(){ x[p.id].click(); }, 0);
 	        return;
 	  }
+    /*
     if( url == "79" )
 	  {
           var s="";
@@ -342,6 +343,7 @@ function movieclk( w, url, p ) {
 	        setTimeout(function(){ x[p.id].click(); }, 0);
 	        return;
 	  }
+    */
 	  if(oi>-1) x[oi].style="background-color:#252525;";
 	  if(ei>-1) x[ei].style="background-color:#252525";
 	  si=ei=p.id;
