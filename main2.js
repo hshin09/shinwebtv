@@ -1,4 +1,3 @@
-window.onkeydown = keychk;
 var tvaddr=new Array(18);
 var addr=[
 ["SBS Golf","http://50.7.118.178:9083/live/lmgr218-live1/dp/Ua/dpUaDQ0LwGNqpgVGdLwsrg==/live.m3u8",null,1],
@@ -139,50 +138,6 @@ function OnOff()
     }
 }
 
-function onup() {
-	if(oi>-1) x[oi].style="background-color:#252525";
-	if(ei>-1) x[ei].style="color:yellow";
-	si--;
-	//if(full && gi==0 && si==10) si--;
-	if(si<0) si+=cnt;
-	x[si].style="background-color:#234567";
-	if(si==ei) x[si].style="background-color:#234567;color:yellow";
-	oi=si;
-	if(full) x[si].click();
-}
-
-function ondown() {
-	if(oi>-1) x[oi].style="background-color:#252525";
-	if(ei>-1) x[ei].style="color:yellow";
-	si++;
-	//if(full && gi==0 && si==10) si++;
-	if(si>=cnt) si-=cnt;
-	x[si].style="background-color:#234567";
-	if(si==ei) x[si].style="background-color:#234567;color:yellow";
-	oi=si;
-	if(full) x[si].click();
-}
-
-function onleft() {
-	if(si>-1 && si==ei) {
-		if(full) {
-			change();
-			return;
-		}
-		onFullscreenOnOff();
-	}
-	else if(si>-1) x[si].click();
-}
-
-function onright() {
-	if(full) {
-	    onFullscreenOnOff();
-	}
-	else {
-		change();
-	}
-}
-
 function change() {
 	asi[gi]=si;
 	aei[gi]=ei;
@@ -211,29 +166,11 @@ function change() {
 	}
 }
 
-function keychk(e) {
-		if(e.which == 38) {
-			onup();
-		}
-		else if(e.which == 40) {
-			ondown();
-		}
-		else if(e.which == 37) {
-			onleft();
-		}
-		else if(e.which == 39) {
-			onright();
-		}
-		else if(e.which == 13 ) {
-      onok();
-		}
-}
-
 function onFinish() {
   if(timer)
     clearInterval(timer);
   stv.pause();
-  stv.setAttribute( "src",  url );
+  stv.setAttribute( "src",  "" );
   parentView.showMsg("finish");
 }
 
