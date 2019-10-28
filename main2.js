@@ -312,12 +312,10 @@ function onFullscreenOnOff() {
 }
 
 function movieclk( w, url, p ) {
-        /*
-		if(p.id==ei) {
-			onleft();
-			return;
-		}
-		*/
+    if(p.id==si) {
+      onok();
+      return;
+    }
     oldCurrentTime=0;
     stv.pause();
     if( url == null )
