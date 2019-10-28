@@ -208,8 +208,8 @@ function movieclk( w, url, p ) {
     if( url == null )
 	  {
 	        gettv(p.id);
-	        //setTimeout(function(){ x[p.id].click(); }, 0);
-	        //return;
+	        setTimeout(function(){ x[p.id].click(); }, 0);
+	        return;
 	  }
 	  if(oi>0) x[oi].style="background-color:#252525;color=white";
 	  si=p.id;
