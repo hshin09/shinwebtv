@@ -213,8 +213,7 @@ function movieclk( w, url, p ) {
 	        setTimeout(function(){ x[p.id].click(); }, 0);
 	        return;
 	  }
-    if(imsi_oi!=si)
-      cntChange=0;
+    cntChange=0;
 	  x[imsi_oi].style="background-color:#252525;color=white";
 	  si=p.id;
 	  x[si].style="background-color:#234567;color:yellow";
