@@ -107,6 +107,10 @@ function OnOff()
           isNotUser=1;
         }
         else {
+          if(timer) {
+            clearInterval(timer);
+            timer=null;
+          }
           $("#er_msg").text( "기본/보조서버 모두 에러(다른체널로 바꿔보세요)" );
           showErrorMessage();
           isNotUser=0;
@@ -135,6 +139,10 @@ function OnOff()
           isNotUser=1;
         }
         else {
+          if(timer) {
+            clearInterval(timer);
+            timer=null;
+          }
           $("#er_msg").text( "기본/보조서버 모두 에러(다른체널로 바꿔보세요)" );
           showErrorMessage();
           isNotUser=0;
