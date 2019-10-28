@@ -87,15 +87,7 @@ function OnOff()
 	    }
       return;
     }
-    /*
-    if( time++ > 39 ) {
-        if(timer>0) {
-          clearInterval(timer);
-          timer=0;
-          return;
-        }
-    }
-    */
+
     time++;
     tstr="";
     if(time<10)
@@ -227,7 +219,7 @@ function onFullscreenOnOff() {
 }
 
 function movieclk( w, url, p ) {
-    if(p.id==si) {
+    if(p.id==oi) {
       onok();
       return;
     }
