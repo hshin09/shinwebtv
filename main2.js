@@ -155,34 +155,6 @@ function onFinish() {
   parentView.showMsg("finish");
 }
 
-function onok() {
-  if( gi == 0 )
-  {
-    var i_ch=addr[si][3];
-    var change_name;
-    if(i_ch != 0) { //보조 또는 대체 채널이 있음
-      if(i_ch == 1)  //본채널이었다면 보조채널로
-        i_ch=2;
-      else  //보조채널이었다면 본채널로
-        i_ch=1;
-
-      change_name=x[si].innerHTML;
-      x[si].innerHTML=addr[si][0];
-      addr[si][0]=change_name;
-      tvaddr[si]=addr[si][i_ch];
-      addr[si][3]=i_ch;
-      if(i_ch==1)
-        window.parentView.showMsg("msg:기본서버("+x[si].innerHTML+") 로 이동합니다");
-      else
-        window.parentView.showMsg("msg:보조서버("+x[si].innerHTML+") 로 이동합니다");
-    }
-
-    if(tvaddr[si] == null)
-      gettv(si);
-  }
-  x[si].click();
-}
-
 var x;
 var cnt;
 function mlok() {
@@ -222,6 +194,35 @@ function onFullscreenOnOff() {
 	}
 }
 
+function onok() {
+  if( gi == 0 )
+  {
+    var i_ch=addr[si][3];
+    var change_name;
+    if(i_ch != 0) { //보조 또는 대체 채널이 있음
+      if(i_ch == 1)  //본채널이었다면 보조채널로
+        i_ch=2;
+      else  //보조채널이었다면 본채널로
+        i_ch=1;
+
+      change_name=x[si].innerHTML;
+      x[si].innerHTML=addr[si][0];
+      addr[si][0]=change_name;
+      tvaddr[si]=addr[si][i_ch];
+      addr[si][3]=i_ch;
+      if(i_ch==1)
+        window.parentView.showMsg("msg:기본서버("+x[si].innerHTML+") 로 이동합니다");
+      else
+        window.parentView.showMsg("msg:보조서버("+x[si].innerHTML+") 로 이동합니다");
+    }
+
+    //if(tvaddr[si] == null)
+    //  gettv(si);
+  }
+  oi=-1;
+  x[si].click();
+}
+
 function movieclk( w, url, p ) {
     if(p.id==oi) {
       onok();
@@ -235,7 +236,7 @@ function movieclk( w, url, p ) {
 	        //setTimeout(function(){ x[p.id].click(); }, 0);
 	        //return;
 	  }
-	  x[oi].style="background-color:#252525;color=white";
+	  if(oi>0) x[oi].style="background-color:#252525;color=white";
 	  si=p.id;
 	  x[si].style="background-color:#234567;color:yellow";
 	  oi=si;
