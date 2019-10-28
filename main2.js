@@ -176,7 +176,7 @@ function onok() {
     if(tvaddr[si] == null)
       gettv(si);
   }
-  x[si].click();
+  setTimeout(function(){ x[si].click(); }, 0);
 }
 
 var x;
@@ -189,7 +189,7 @@ function mlok() {
   		x[i].id=i;
     }
   	showLeftMenu();
-    x[si].click();
+    setTimeout(function(){ x[si].click(); }, 0);
 }
 
 function showLeftMenu() {
@@ -291,7 +291,7 @@ var demostr="";
 
 function gettv(i)
 {
-    request = new XMLHttpRequest();
+  request = new XMLHttpRequest();
 	if(!request) {
 		alert("Giving up :( Cannot create an XMLHTTP instance");
 		return false;
