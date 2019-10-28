@@ -15,8 +15,8 @@ var addr=[
 ["MBC TV","http://50.7.118.178:9083/live/lmgr218-live1/yo/Kz/yoKzy5jIzhPSc34OXb26Hg==/live.m3u8",null,1],
 ["KBS1 TV","http://23.237.112.138:9083/live/lmgr218-live1/Z1/ck/Z1ckFeyBo9VzK1DFmR1-Hw==/live.m3u8",null,1],
 ["KBS2 TV","http://50.7.118.178:9083/live/lmgr218-live1/GJ/qP/GJqPMui6DQrYctmZxQDeig==/live.m3u8",null,1],
-["MNet TV",null,"http://50.7.118.178:9083/live/lmgr218-live1/DD/kh/DDkhewBlWWfGWPVkTkDWNA==/live.m3u8",1],
-["코미디 TV",null,null,0],
+["MNet TV","http://www.pickcom.co.kr:1935/sjp/live26/playlist.m3u8","http://50.7.118.178:9083/live/lmgr218-live1/DD/kh/DDkhewBlWWfGWPVkTkDWNA==/live.m3u8",1],
+["코미디 TV","http://www.pickcom.co.kr:1935/sjp/live26/playlist.m3u8",null,0],
 ["XtvN TV",null,null,0]
 ];
 
@@ -208,7 +208,7 @@ function movieclk( w, url, p ) {
 	        setTimeout(function(){ x[p.id].click(); }, 0);
 	        return;
 	  }
-	  if(oi>0) x[oi].style="background-color:#252525;color=white";
+	  x[aoi[gi]].style="background-color:#252525;color=white";
 	  si=p.id;
 	  x[si].style="background-color:#234567;color:yellow";
 	  oi=si;
