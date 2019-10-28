@@ -100,8 +100,8 @@ function OnOff()
         if( $('#errorMessage').css('display') != "block" ) {
           $("#er_msg").text( "에러 안내 : 채널을 가져올수 없음(네트워크 또는 서버 에러)" );
           showErrorMessage();
-          onok();
         }
+        onok();
     }
     else if( $('#secMessage').css('display')=="block" && stv.currentTime > 2 )
     {
