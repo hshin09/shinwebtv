@@ -176,6 +176,7 @@ function change() {
 	oi=aoi[gi];
 
 	mlok();
+  window.parentView.showMsg("00");
 }
 
 var x;
