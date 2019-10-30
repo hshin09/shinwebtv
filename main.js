@@ -3,9 +3,9 @@ var tvaddr=new Array(18);
 var addr=[
 ["SBS Golf",null,"http://50.7.118.178:9083/live/lmgr218-live1/dp/Ua/dpUaDQ0LwGNqpgVGdLwsrg==/live.m3u8",1],
 ["JTBC Golf",null,"http://23.237.112.138:9083/live/lmgr218-live1/uX/0j/uX0j1KJo8eVhWnTx6uvShw==/live.m3u8",1],
-["영화 CGV",null,null,0],
+["영화 CGV",null,null,1],
 ["영화 OCN",null,"http://50.7.118.178:9083/live/lmgr218-live1/GR/13/GR13XDGjlUsD8nZQasCIhw==/live.m3u8",1],
-["영화 Screen",null,null,0],
+["영화 Screen",null,null,1],
 ["채널 차이나",null,"http://23.237.112.138:9083/live/lmgr218-live1/ut/hX/uthXNC6cyUNTT6dtUu9D6A==/live.m3u8",1],
 ["Catch ON 1",null,"http://50.7.118.178:9083/live/lmgr218-live1/Wj/Nz/WjNzluqgVARhAtul5gUKtg==/live.m3u8",1],
 ["TV 조선 뉴스",null,"http://23.237.112.138:9083/live/lmgr218-live1/uN/RW/uNRWY94bN9uq-H4U6-AdGA==/live.m3u8",1],
@@ -17,8 +17,8 @@ var addr=[
 ["KBS1 TV",null,"http://23.237.112.138:9083/live/lmgr218-live1/Z1/ck/Z1ckFeyBo9VzK1DFmR1-Hw==/live.m3u8",1],
 ["KBS2 TV",null,"http://50.7.118.178:9083/live/lmgr218-live1/GJ/qP/GJqPMui6DQrYctmZxQDeig==/live.m3u8",1],
 ["MNet TV",null,"http://50.7.118.178:9083/live/lmgr218-live1/DD/kh/DDkhewBlWWfGWPVkTkDWNA==/live.m3u8",1],
-["코미디 TV",null,null,0],
-["XtvN TV",null,null,0]
+["코미디 TV",null,null,1],
+["XtvN TV",null,null,1]
 ];
 
 var gi=0;
@@ -69,7 +69,7 @@ $('document').ready(function() {
 
 보통 에러시 ns=3,rs=0,er=4 이고 정상일때는 ns=2->1, rs=0->4, er=없음(null)
 */
-
+var isNotUser=0;
 function OnOff()
 {
     if( !isChLoaded )
@@ -107,11 +107,23 @@ function OnOff()
 
     if( stv.error != null || stv.networkState == 3 || ( time > 20 && stv.currentTime < 2 ) )
     {
-        if( $('#errorMessage').css('display') != "block" ) {
-          $("#er_msg").text( "에러 안내 : 채널을 가져올수 없음(네트워크 또는 서버 에러)" );
-          showErrorMessage();
-          onok();
-      }
+       if( $('#errorMessage').css('display') != "block" ) {
+        $("#er_msg").text( "에러 안내 : 채널을 가져올수 없음(네트워크 또는 서버 에러)" );
+        showErrorMessage();
+       }
+       if(isNotUser==0) {
+         onok();
+         isNotUser=1;
+       }
+       else {
+         if(timer) {
+           clearInterval(timer);
+           timer=null;
+         }
+         $("#er_msg").text( "기본/보조서버 모두 에러(다른체널로 바꿔보세요)" );
+         showErrorMessage();
+         isNotUser=0;
+       }
     }
     else if( $('#secMessage').css('display')=="block" && stv.currentTime > 2 )
     {
@@ -119,6 +131,7 @@ function OnOff()
     }
     else if( $('#videoMessage').css('display')=="block" && stv.currentTime > 4 )
     {
+        isNotUser=0;
         $('#videoMessage').css('display', 'none');
         if(timer) {
           clearInterval(timer);
@@ -130,7 +143,19 @@ function OnOff()
     }
     if(oldCurrentTime>0) {
       if(oldCurrentTime==stv.currentTime) {
-        onok();
+        if(isNotUser==0) {
+          onok();
+          isNotUser=1;
+        }
+        else {
+          if(timer) {
+            clearInterval(timer);
+            timer=null;
+          }
+          $("#er_msg").text( "기본/보조서버 모두 에러(다른체널로 바꿔보세요)" );
+          showErrorMessage();
+          isNotUser=0;
+        }
       }
       else {
         oldCurrentTime = stv.currentTime;
