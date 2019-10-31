@@ -103,6 +103,7 @@ function OnOff()
           showErrorMessage();
         }
         if(isNotUser<2) {
+          clearAddress(addr[ei][addr[ei][6]]);
           onok();
           isNotUser++;
         }
@@ -135,6 +136,7 @@ function OnOff()
     if(oldCurrentTime>0) {
       if(oldCurrentTime==stv.currentTime) {
         if(isNotUser<2) {
+          clearAddress(addr[ei][addr[ei][6]]);
           onok();
           isNotUser++;
         }
@@ -153,6 +155,17 @@ function OnOff()
         time+=10;
       }
     }
+}
+
+function clearAddress(tar) {
+  if(tar!=null && tar!="79")
+    return;
+
+  for(var i=0; i<tvaddr.length; i++) {
+    if(addr[i][addr[i][6]]==tar) {
+        tvaddr[i]=tar;
+    }
+  }
 }
 
 function onFinish() {
