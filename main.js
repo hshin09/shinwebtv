@@ -264,10 +264,17 @@ function onok() {
     if(i_ch>3)
       i_ch=1;
     tvaddr[si]=addr[si][i_ch];
+
     change_name=x[si].innerHTML;
-    if(tvaddr[si] != null && tvaddr[si] != "79")
+    if(tvaddr[si] != null && tvaddr[si] != "79") {
+      change_name=addr[si][0];
       x[si].innerHTML=addr[si][0];
-    addr[si][0]=change_name;
+    }
+    else {
+      x[si].innerHTML=change_name;
+      addr[si][0]=change_name;
+    }
+
     addr[si][4]=i_ch;
     if(i_ch==1)
       window.parentView.showMsg("msg:기본서버("+x[si].innerHTML+") 로 이동합니다");
