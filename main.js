@@ -258,8 +258,9 @@ function keychk(e) {
 function onok() {
   if( gi == 0 )
   {
+    var change_name="";
     var i_ch=addr[si][4];
-    var change_name;
+
     i_ch++;
     if(i_ch>3)
       i_ch=1;
