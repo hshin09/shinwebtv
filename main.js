@@ -112,10 +112,7 @@ function OnOff()
         showErrorMessage();
        }
        if(isNotUser<2) {
-         int i=ei;
-         if(ei<0)
-          i=si;
-         clearAddress(addr[i][addr[i][6]]);
+         clearAddress(addr[ei][addr[ei][6]]);
          onok();
          isNotUser++;
        }
@@ -148,10 +145,7 @@ function OnOff()
     if(oldCurrentTime>0) {
       if(oldCurrentTime==stv.currentTime) {
         if(isNotUser<2) {
-          int i=ei;
-          if(ei<0)
-           i=si;
-          clearAddress(addr[i][addr[i][6]]);onok();
+          clearAddress(addr[ei][addr[ei][6]]);onok();
           isNotUser++;
         }
         else {
@@ -172,11 +166,10 @@ function OnOff()
 }
 
 function clearAddress(tar) {
-  int i;
   if(tar!=null && tar!="79")
     return;
 
-  for(i=0; i<tvaddr.length; i++) {
+  for(var i=0; i<tvaddr.length; i++) {
     if(addr[i][addr[i][6]]==tar) {
         tvaddr[i]=tar;
     }
