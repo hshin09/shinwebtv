@@ -23,6 +23,7 @@ var addr=[
 var gi=0;
 var si=7;
 var oi=0;
+var ei=-1;
 var asi=[7,12];
 var aoi=[0,0];
 var full=false;
@@ -103,6 +104,7 @@ function OnOff()
           showErrorMessage();
         }
         if(isNotUser<2) {
+          ei=si;
           clearAddress(addr[ei][addr[ei][6]]);
           onok();
           isNotUser++;
@@ -136,6 +138,7 @@ function OnOff()
     if(oldCurrentTime>0) {
       if(oldCurrentTime==stv.currentTime) {
         if(isNotUser<2) {
+          ei=si;
           clearAddress(addr[ei][addr[ei][6]]);
           onok();
           isNotUser++;
