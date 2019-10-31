@@ -1,24 +1,24 @@
 window.onkeydown = keychk;
 var tvaddr=new Array(18);
 var addr=[
-["SBS Golf",null,"http://50.7.118.178:9083/live/lmgr218-live1/dp/Ua/dpUaDQ0LwGNqpgVGdLwsrg==/live.m3u8",1],
-["JTBC Golf",null,"http://23.237.112.138:9083/live/lmgr218-live1/uX/0j/uX0j1KJo8eVhWnTx6uvShw==/live.m3u8",1],
-["영화 CGV",null,null,1],
-["영화 OCN",null,"http://50.7.118.178:9083/live/lmgr218-live1/GR/13/GR13XDGjlUsD8nZQasCIhw==/live.m3u8",1],
-["영화 Screen",null,null,1],
-["채널 차이나",null,"http://23.237.112.138:9083/live/lmgr218-live1/ut/hX/uthXNC6cyUNTT6dtUu9D6A==/live.m3u8",1],
-["Catch ON 1",null,"http://50.7.118.178:9083/live/lmgr218-live1/Wj/Nz/WjNzluqgVARhAtul5gUKtg==/live.m3u8",1],
-["TV 조선 뉴스",null,"http://23.237.112.138:9083/live/lmgr218-live1/uN/RW/uNRWY94bN9uq-H4U6-AdGA==/live.m3u8",1],
-["MBN 뉴스",null,"http://23.237.112.138:9083/live/lmgr218-live1/j7/qy/j7qybKo1-oIO_R2EKcmcIA==/live.m3u8",1],
-["JTBC 뉴스",null,"http://50.7.118.178:9083/live/lmgr218-live1/1k/C9/1kC9miPHbLuH_Xohzycp8g==/live.m3u8",1],
-["EBS1",null,"http://50.7.118.178:9083/live/lmgr218-live1/Y7/kd/Y7kdN2a2F8joMgdxPBzaAQ==/live.m3u8",1],
-["SBS TV",null,"http://50.7.118.178:9083/live/lmgr218-live1/an/Ec/anEch5GmlJzMh-jcs1OTow==/live.m3u8",1],
-["MBC TV",null,"http://50.7.118.178:9083/live/lmgr218-live1/yo/Kz/yoKzy5jIzhPSc34OXb26Hg==/live.m3u8",1],
-["KBS1 TV",null,"http://23.237.112.138:9083/live/lmgr218-live1/Z1/ck/Z1ckFeyBo9VzK1DFmR1-Hw==/live.m3u8",1],
-["KBS2 TV",null,"http://50.7.118.178:9083/live/lmgr218-live1/GJ/qP/GJqPMui6DQrYctmZxQDeig==/live.m3u8",1],
-["MNet TV",null,"http://50.7.118.178:9083/live/lmgr218-live1/DD/kh/DDkhewBlWWfGWPVkTkDWNA==/live.m3u8",1],
-["코미디 TV",null,null,1],
-["XtvN TV",null,null,1]
+["SBS Golf",null,"79","http://50.7.118.178:9083/live/lmgr218-live1/dp/Ua/dpUaDQ0LwGNqpgVGdLwsrg==/live.m3u8",1],
+["JTBC Golf",null,"79","http://23.237.112.138:9083/live/lmgr218-live1/uX/0j/uX0j1KJo8eVhWnTx6uvShw==/live.m3u8",1],
+["영화 CGV",null,"79",null,1],
+["영화 OCN",null,"79","http://50.7.118.178:9083/live/lmgr218-live1/GR/13/GR13XDGjlUsD8nZQasCIhw==/live.m3u8",1],
+["영화 Screen",null,"79",null,1],
+["채널 차이나",null,"79","http://23.237.112.138:9083/live/lmgr218-live1/ut/hX/uthXNC6cyUNTT6dtUu9D6A==/live.m3u8",1],
+["Catch ON 1",null,"79","http://50.7.118.178:9083/live/lmgr218-live1/Wj/Nz/WjNzluqgVARhAtul5gUKtg==/live.m3u8",1],
+["TV 조선 뉴스",null,"79","http://23.237.112.138:9083/live/lmgr218-live1/uN/RW/uNRWY94bN9uq-H4U6-AdGA==/live.m3u8",1],
+["MBN 뉴스",null,"79","http://23.237.112.138:9083/live/lmgr218-live1/j7/qy/j7qybKo1-oIO_R2EKcmcIA==/live.m3u8",1],
+["JTBC 뉴스",null,"79","http://50.7.118.178:9083/live/lmgr218-live1/1k/C9/1kC9miPHbLuH_Xohzycp8g==/live.m3u8",1],
+["EBS1",null,"79","http://50.7.118.178:9083/live/lmgr218-live1/Y7/kd/Y7kdN2a2F8joMgdxPBzaAQ==/live.m3u8",1],
+["SBS TV",null,"79","http://50.7.118.178:9083/live/lmgr218-live1/an/Ec/anEch5GmlJzMh-jcs1OTow==/live.m3u8",1],
+["MBC TV",null,"79","http://50.7.118.178:9083/live/lmgr218-live1/yo/Kz/yoKzy5jIzhPSc34OXb26Hg==/live.m3u8",1],
+["KBS1 TV",null,"79","http://23.237.112.138:9083/live/lmgr218-live1/Z1/ck/Z1ckFeyBo9VzK1DFmR1-Hw==/live.m3u8",1],
+["KBS2 TV",null,"79","http://50.7.118.178:9083/live/lmgr218-live1/GJ/qP/GJqPMui6DQrYctmZxQDeig==/live.m3u8",1],
+["MNet TV",null,"79","http://50.7.118.178:9083/live/lmgr218-live1/DD/kh/DDkhewBlWWfGWPVkTkDWNA==/live.m3u8",1],
+["코미디 TV",null,"79",null,1],
+["XtvN TV",null,"79",null,1]
 ];
 
 var gi=0;
@@ -111,9 +111,9 @@ function OnOff()
         $("#er_msg").text( "에러 안내 : 채널을 가져올수 없음(네트워크 또는 서버 에러)" );
         showErrorMessage();
        }
-       if(isNotUser==0) {
+       if(isNotUser<2) {
          onok();
-         isNotUser=1;
+         isNotUser++;
        }
        else {
          if(timer) {
@@ -143,9 +143,9 @@ function OnOff()
     }
     if(oldCurrentTime>0) {
       if(oldCurrentTime==stv.currentTime) {
-        if(isNotUser==0) {
+        if(isNotUser<2) {
           onok();
-          isNotUser=1;
+          isNotUser++;
         }
         else {
           if(timer) {
@@ -258,27 +258,27 @@ function keychk(e) {
 function onok() {
   if( gi == 0 )
   {
-    var i_ch=addr[si][3];
+    var i_ch=addr[si][4];
     var change_name;
-    if(i_ch != 0) { //보조 또는 대체 채널이 있음
-      if(i_ch == 1)  //본채널이었다면 보조채널로
-        i_ch=2;
-      else  //보조채널이었다면 본채널로
-        i_ch=1;
-
-      change_name=x[si].innerHTML;
-      x[si].innerHTML=addr[si][0];
-      addr[si][0]=change_name;
-      tvaddr[si]=addr[si][i_ch];
-      addr[si][3]=i_ch;
-      if(i_ch==1)
-        window.parentView.showMsg("msg:기본서버("+x[si].innerHTML+") 로 이동합니다");
-      else
-        window.parentView.showMsg("msg:보조서버("+x[si].innerHTML+") 로 이동합니다");
-    }
+    i_ch++;
+    if(i_ch>3)
+      i_ch=1;
+    change_name=x[si].innerHTML;
+    x[si].innerHTML=addr[si][0];
+    addr[si][0]=change_name;
+    tvaddr[si]=addr[si][i_ch];
+    addr[si][4]=i_ch;
+    if(i_ch==1)
+      window.parentView.showMsg("msg:기본서버("+x[si].innerHTML+") 로 이동합니다");
+    else
+      window.parentView.showMsg("msg:"+i_ch-1+"번 보조서버("+x[si].innerHTML+") 로 이동합니다");
 
     if(tvaddr[si] == null)
       gettv(si);
+    else if(tvaddr[i] == "79") {
+      get79tv(si);
+      return;
+    }
   }
   x[si].click();
 }
@@ -357,18 +357,14 @@ function movieclk( w, url, p ) {
 	        setTimeout(function(){ x[p.id].click(); }, 0);
 	        return;
 	  }
-    /*
+
     if( url == "79" )
 	  {
-          var s="";
-          if(p.id<10)
-            s=s+"0";
-          s=s+p.id
-	        window.parentView.showMsg(s);
-	        setTimeout(function(){ x[p.id].click(); }, 0);
+          si = p.id;
+          window.parentView.showMsg(get79tv(p.id));
 	        return;
 	  }
-    */
+
 	  if(oi>-1) x[oi].style="background-color:#252525;";
 	  if(ei>-1) x[ei].style="background-color:#252525";
 	  si=ei=p.id;
@@ -448,6 +444,15 @@ function gettv(i)
 	    return;
 
 	tvaddr[i]=demostr;
+}
+
+get79tv(i) {
+  return( "79"+path79+ch[i] )
+}
+
+set79tv(s) {
+  tvaddr[si]=s;
+  setTimeout(function(){ x[si].click(); }, 0);
 }
 
 function state_change(i) {
