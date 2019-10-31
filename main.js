@@ -271,7 +271,7 @@ function onok() {
     if(i_ch==1)
       window.parentView.showMsg("msg:기본서버("+x[si].innerHTML+") 로 이동합니다");
     else
-      window.parentView.showMsg("msg:"+i_ch-1+"번 보조서버("+x[si].innerHTML+") 로 이동합니다");
+      window.parentView.showMsg("msg:"+i_ch-1+"번째 보조서버("+x[si].innerHTML+") 로 이동합니다");
 
     if(tvaddr[si] == null)
       gettv(si);
