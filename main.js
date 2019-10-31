@@ -263,15 +263,17 @@ function onok() {
     i_ch++;
     if(i_ch>3)
       i_ch=1;
-    change_name=x[si].innerHTML;
-    x[si].innerHTML=addr[si][0];
-    addr[si][0]=change_name;
     tvaddr[si]=addr[si][i_ch];
+    if(tvaddr[si] != null && tvaddr[si] != "79") {
+      change_name=x[si].innerHTML;
+      x[si].innerHTML=addr[si][0];
+      addr[si][0]=change_name;
+    }
     addr[si][4]=i_ch;
     if(i_ch==1)
       window.parentView.showMsg("msg:기본서버("+x[si].innerHTML+") 로 이동합니다");
     else
-      window.parentView.showMsg("msg:"+(i_ch-1)+"번째 보조서버("+x[si].innerHTML+") 로 이동합니다");
+      window.parentView.showMsg("msg:"+i_ch+"번 보조서버("+x[si].innerHTML+") 로 이동합니다");
 
     if(tvaddr[si] == null)
       gettv(si);
