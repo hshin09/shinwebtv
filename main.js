@@ -1,24 +1,24 @@
 window.onkeydown = keychk;
 var tvaddr=new Array(18);
 var addr=[
-["SBS Golf",null,"79","http://50.7.118.178:9083/live/lmgr218-live1/dp/Ua/dpUaDQ0LwGNqpgVGdLwsrg==/live.m3u8",1],
-["JTBC Golf",null,"79","http://23.237.112.138:9083/live/lmgr218-live1/uX/0j/uX0j1KJo8eVhWnTx6uvShw==/live.m3u8",1],
-["영화 CGV",null,"79",null,1],
-["영화 OCN",null,"79","http://50.7.118.178:9083/live/lmgr218-live1/GR/13/GR13XDGjlUsD8nZQasCIhw==/live.m3u8",1],
-["영화 Screen",null,"79",null,1],
-["채널 차이나",null,"79","http://23.237.112.138:9083/live/lmgr218-live1/ut/hX/uthXNC6cyUNTT6dtUu9D6A==/live.m3u8",1],
-["Catch ON 1",null,"79","http://50.7.118.178:9083/live/lmgr218-live1/Wj/Nz/WjNzluqgVARhAtul5gUKtg==/live.m3u8",1],
-["TV 조선 뉴스",null,"79","http://23.237.112.138:9083/live/lmgr218-live1/uN/RW/uNRWY94bN9uq-H4U6-AdGA==/live.m3u8",1],
-["MBN 뉴스",null,"79","http://23.237.112.138:9083/live/lmgr218-live1/j7/qy/j7qybKo1-oIO_R2EKcmcIA==/live.m3u8",1],
-["JTBC 뉴스",null,"79","http://50.7.118.178:9083/live/lmgr218-live1/1k/C9/1kC9miPHbLuH_Xohzycp8g==/live.m3u8",1],
-["EBS1",null,"79","http://50.7.118.178:9083/live/lmgr218-live1/Y7/kd/Y7kdN2a2F8joMgdxPBzaAQ==/live.m3u8",1],
-["SBS TV",null,"79","http://50.7.118.178:9083/live/lmgr218-live1/an/Ec/anEch5GmlJzMh-jcs1OTow==/live.m3u8",1],
-["MBC TV",null,"79","http://50.7.118.178:9083/live/lmgr218-live1/yo/Kz/yoKzy5jIzhPSc34OXb26Hg==/live.m3u8",1],
-["KBS1 TV",null,"79","http://23.237.112.138:9083/live/lmgr218-live1/Z1/ck/Z1ckFeyBo9VzK1DFmR1-Hw==/live.m3u8",1],
-["KBS2 TV",null,"79","http://50.7.118.178:9083/live/lmgr218-live1/GJ/qP/GJqPMui6DQrYctmZxQDeig==/live.m3u8",1],
-["MNet TV",null,"79","http://50.7.118.178:9083/live/lmgr218-live1/DD/kh/DDkhewBlWWfGWPVkTkDWNA==/live.m3u8",1],
-["코미디 TV",null,"79",null,1],
-["XtvN TV",null,"79",null,1]
+["SBS Golf",null,"SBS Golf","SBS Golf","79","http://50.7.118.178:9083/live/lmgr218-live1/dp/Ua/dpUaDQ0LwGNqpgVGdLwsrg==/live.m3u8",3],
+["JTBC Golf","JTBC Golf","JTBC Golf",null,"79","http://23.237.112.138:9083/live/lmgr218-live1/uX/0j/uX0j1KJo8eVhWnTx6uvShw==/live.m3u8",3],
+["영화"영화 CGV","영화 CGV", CGV","영화 CGV","영화 CGV",null,"79",null,3],
+["영화 OCN","영화 OCN","영화 OCN",null,"79","http://50.7.118.178:9083/live/lmgr218-live1/GR/13/GR13XDGjlUsD8nZQasCIhw==/live.m3u8",3],
+["영화 Screen","영화 Screen","영화 Screen",null,"79",null,3],
+["Super Action","Super Action","채널 차이나",null,"79","http://23.237.112.138:9083/live/lmgr218-live1/ut/hX/uthXNC6cyUNTT6dtUu9D6A==/live.m3u8",1],
+["Catch ON 1","Catch ON 1","Catch ON 1",null,"79","http://50.7.118.178:9083/live/lmgr218-live1/Wj/Nz/WjNzluqgVARhAtul5gUKtg==/live.m3u8",1],
+["TV 조선 뉴스","TV 조선 뉴스","TV 조선 뉴스",null,"79","http://23.237.112.138:9083/live/lmgr218-live1/uN/RW/uNRWY94bN9uq-H4U6-AdGA==/live.m3u8",3],
+["채널A 뉴스","채널A 뉴스","MBN 뉴스",null,"79","http://23.237.112.138:9083/live/lmgr218-live1/j7/qy/j7qybKo1-oIO_R2EKcmcIA==/live.m3u8",3],
+["JTBC 뉴스","JTBC 뉴스","JTBC 뉴스",null,"79","http://50.7.118.178:9083/live/lmgr218-live1/1k/C9/1kC9miPHbLuH_Xohzycp8g==/live.m3u8",3],
+["YTN 뉴스","YTN 뉴스","EBS1",null,"79","http://50.7.118.178:9083/live/lmgr218-live1/Y7/kd/Y7kdN2a2F8joMgdxPBzaAQ==/live.m3u8",3],
+["SBS TV","SBS TV","SBS TV",null,"79","http://50.7.118.178:9083/live/lmgr218-live1/an/Ec/anEch5GmlJzMh-jcs1OTow==/live.m3u8",3],
+["MBC TV","MBC TV","MBC TV",null,"79","http://50.7.118.178:9083/live/lmgr218-live1/yo/Kz/yoKzy5jIzhPSc34OXb26Hg==/live.m3u8",3],
+["KBS1 TV","KBS1 TV","KBS1 TV",null,"79","http://23.237.112.138:9083/live/lmgr218-live1/Z1/ck/Z1ckFeyBo9VzK1DFmR1-Hw==/live.m3u8",3],
+["KBS2 TV","KBS2 TV","KBS2 TV",null,"79","http://50.7.118.178:9083/live/lmgr218-live1/GJ/qP/GJqPMui6DQrYctmZxQDeig==/live.m3u8",3],
+["TVN TV","TVN TV","MNet TV",null,"79","http://50.7.118.178:9083/live/lmgr218-live1/DD/kh/DDkhewBlWWfGWPVkTkDWNA==/live.m3u8",3],
+["코미디 TV","코미디 TV","코미디 TV",null,"79",null,3],
+["XtvN TV","XtvN TV","XtvN TV",null,"79",null,3]
 ];
 
 var gi=0;
@@ -259,28 +259,20 @@ function onok() {
   if( gi == 0 )
   {
     var change_name="";
-    var i_ch=addr[si][4];
+    var i_ch=addr[si][6];
 
     i_ch++;
-    if(i_ch>3)
-      i_ch=1;
+    if(i_ch>5)
+      i_ch=3;
     tvaddr[si]=addr[si][i_ch];
 
-    change_name=addr[si][0];
-    if(tvaddr[si] != null && tvaddr[si] != "79") {
-      addr[si][0]=x[si].innerHTML;
-    }
-    else {
-      change_name=x[si].innerHTML;
-      addr[si][0]=change_name;
-    }
-    x[si].innerHTML=change_name;
+    x[si].innerHTML=addr[si][i_ch-3];;
 
-    addr[si][4]=i_ch;
-    if(i_ch==1)
+    addr[si][6]=i_ch;
+    if(i_ch==3)
       window.parentView.showMsg("msg:기본서버("+x[si].innerHTML+") 로 이동합니다");
     else
-      window.parentView.showMsg("msg:"+i_ch+"번 보조서버("+x[si].innerHTML+") 로 이동합니다");
+      window.parentView.showMsg("msg:"+(i_ch-2)+"번 보조서버("+x[si].innerHTML+") 로 이동합니다");
 
     if(tvaddr[si] == null)
       gettv(si);
