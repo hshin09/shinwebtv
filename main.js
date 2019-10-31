@@ -268,12 +268,8 @@ function onok() {
     change_name=x[si].innerHTML;
     if(tvaddr[si] != null && tvaddr[si] != "79") {
       change_name=addr[si][0];
-      x[si].innerHTML=addr[si][0];
     }
-    else {
-      x[si].innerHTML=change_name;
-      addr[si][0]=change_name;
-    }
+    x[si].innerHTML=change_name;
 
     addr[si][4]=i_ch;
     if(i_ch==1)
