@@ -275,7 +275,7 @@ function onok() {
 
     if(tvaddr[si] == null)
       gettv(si);
-    else if(tvaddr[i] == "79") {
+    else if(tvaddr[si] == "79") {
       get79tv(si);
       return;
     }
