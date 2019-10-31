@@ -45,7 +45,7 @@ $('document').ready(function() {
     stv = $('#tv').get(0);
     web = document.getElementById("web");
     for(var i=0; i<tvaddr.length; i++)
-      tvaddr[i]=addr[i][1];
+      tvaddr[i]=addr[i][3];
     timer = setInterval( function() { OnOff(); }, 500 );
 });
 
