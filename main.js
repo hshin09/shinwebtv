@@ -361,7 +361,7 @@ function movieclk( w, url, p ) {
     if( url == "79" )
 	  {
           si = p.id;
-          window.parentView.showMsg(get79tv(p.id));
+          window.parentView.showMsg(get79tv(si));
 	        return;
 	  }
 
@@ -450,7 +450,7 @@ function get79tv(i) {
   return( "79:"+path79+ch[i] )
 }
 
-function settv(s) {
+function set79tv(s) {
   tvaddr[si]=s;
   setTimeout(function(){ x[si].click(); }, 0);
 }
