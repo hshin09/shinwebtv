@@ -446,11 +446,11 @@ function gettv(i)
 	tvaddr[i]=demostr;
 }
 
-get79tv(i) {
-  return( "79"+path79+ch[i] )
+function get79tv(i) {
+  return( "79:"+path79+ch[i] )
 }
 
-set79tv(s) {
+function settv(s) {
   tvaddr[si]=s;
   setTimeout(function(){ x[si].click(); }, 0);
 }
