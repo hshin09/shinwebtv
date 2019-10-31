@@ -3,7 +3,7 @@ var tvaddr=new Array(18);
 var addr=[
 ["SBS Golf","SBS Golf","SBS Golf",null,"79","http://50.7.118.178:9083/live/lmgr218-live1/dp/Ua/dpUaDQ0LwGNqpgVGdLwsrg==/live.m3u8",3],
 ["JTBC Golf","JTBC Golf","JTBC Golf",null,"79","http://23.237.112.138:9083/live/lmgr218-live1/uX/0j/uX0j1KJo8eVhWnTx6uvShw==/live.m3u8",3],
-["영화"영화 CGV","영화 CGV", CGV","영화 CGV","영화 CGV",null,"79",null,3],
+["영화 CGV","영화 CGV","영화 CGV",null,"79",null,3],
 ["영화 OCN","영화 OCN","영화 OCN",null,"79","http://50.7.118.178:9083/live/lmgr218-live1/GR/13/GR13XDGjlUsD8nZQasCIhw==/live.m3u8",3],
 ["영화 Screen","영화 Screen","영화 Screen",null,"79",null,3],
 ["Super Action","Super Action","채널 차이나",null,"79","http://23.237.112.138:9083/live/lmgr218-live1/ut/hX/uthXNC6cyUNTT6dtUu9D6A==/live.m3u8",1],
