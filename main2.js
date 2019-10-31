@@ -232,6 +232,7 @@ function movieclk( w, url, p ) {
     stv.pause();
     if( url == null )
 	  {
+          oi=-1;
 	        gettv(p.id);
 	        setTimeout(function(){ x[p.id].click(); }, 0);
 	        return;
