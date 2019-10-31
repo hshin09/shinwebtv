@@ -112,7 +112,10 @@ function OnOff()
         showErrorMessage();
        }
        if(isNotUser<2) {
-         clearAddress(addr[ei][addr[ei][6]]);
+         int i=ei;
+         if(ei<0)
+          i=si;
+         clearAddress(addr[i][addr[i][6]]);
          onok();
          isNotUser++;
        }
@@ -145,8 +148,10 @@ function OnOff()
     if(oldCurrentTime>0) {
       if(oldCurrentTime==stv.currentTime) {
         if(isNotUser<2) {
-          clearAddress(addr[ei][addr[ei][6]]);
-          onok();
+          int i=ei;
+          if(ei<0)
+           i=si;
+          clearAddress(addr[i][addr[i][6]]);onok();
           isNotUser++;
         }
         else {
