@@ -261,7 +261,8 @@ function movieclk( w, url, p ) {
 	        return;
 	  }
 
-    if( imsi_oi>-1 )x[imsi_oi].style="background-color:#252525;color=white";
+    if( imsi_oi>-1 )
+      x[imsi_oi].style="background-color:#252525;color=white";
 	  si=p.id;
 	  x[si].style="background-color:#234567;color:yellow";
 	  imsi_oi=oi=si;
