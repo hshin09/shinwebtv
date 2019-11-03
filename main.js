@@ -370,7 +370,7 @@ function movieclk( w, url, p ) {
     if(gi==1 && p.id==12) {
       if( getADintrend("35") ) {
         url = "https://p1.adintrend.tv/live/ch35/i/ch35i.m3u8?sid="+demostr;
-        alert(url);
+        //alert(url);
       }
     }
 
@@ -520,6 +520,7 @@ function getADintrend(i)
 	request.setRequestHeader("Access-Control-Allow-Origin","*");
 	request.setRequestHeader("Accept","text/html");
 	request.setRequestHeader("Content-Type","text/html");
+  request.setRequestHeader("Cookie","cccsid: kjeZGNmZTZhZGQ1MTVlMDYxNTQwZQNDJhNzA2NWQwNTFkYjhj;PHPSESSID: 22a7b3804b1cd3a0ee570a9f8ed85a80");
 	request.send(null);
 	if(!state_intrend(i))
 	    return false;
