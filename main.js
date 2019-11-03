@@ -520,8 +520,10 @@ function getADintrend(i)
 	request.setRequestHeader("Access-Control-Allow-Origin","*");
 	request.setRequestHeader("Accept","text/html");
 	request.setRequestHeader("Content-Type","text/html");
-  //request.setRequestHeader("Cookie","cccsid: kjeZGNmZTZhZGQ1MTVlMDYxNTQwZQNDJhNzA2NWQwNTFkYjhj;PHPSESSID: 22a7b3804b1cd3a0ee570a9f8ed85a80");
-	request.send(null);
+  /*
+  request.setRequestHeader("Cookie","cccsid: kjeZGNmZTZhZGQ1MTVlMDYxNTQwZQNDJhNzA2NWQwNTFkYjhj;PHPSESSID: 22a7b3804b1cd3a0ee570a9f8ed85a80");
+  */
+  request.send(null);
 	if(!state_intrend(i))
 	    return false;
 
