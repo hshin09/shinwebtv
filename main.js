@@ -368,7 +368,7 @@ function movieclk( w, url, p ) {
     stv.pause();
     if(gi==1 && p.id==12) {
       if( getADintrend("35") )
-        url = demostr;
+        url = "https://p1.adintrend.tv/live/ch35/i/ch35i.m3u8?sid="+demostr;
     }
 
     if( url == null )
