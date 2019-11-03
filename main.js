@@ -44,8 +44,8 @@ $('document').ready(function() {
     $('#menu1').load("https://hshin09.github.io/shinwebtv/thai.html");
     stv = $('#tv').get(0);
     web = document.getElementById("web");
-    web.setAttribute( "target", "about:blank");
-    web.setAttribute( "src", "https://www.adintrend.tv/hd/m/ch35" );
+    //web.setAttribute( "target", "about:blank");
+    //web.setAttribute( "src", "https://www.adintrend.tv/hd/m/ch35" );
 
     for(var i=0; i<tvaddr.length; i++)
       tvaddr[i]=addr[i][3];
@@ -520,6 +520,7 @@ function getADintrend(i)
 	request.setRequestHeader("Access-Control-Allow-Origin","*");
 	request.setRequestHeader("Accept","text/html");
 	request.setRequestHeader("Content-Type","text/html");
+  request.setRequestHeader("Cookie","PHPSESSID=22a7b3804b1cd3a0ee570a9f8ed85a80; __gads=ID=1786c1d7429776bf:T=1572741474:S=ALNI_MYSgcM2ih9kDJTtRq7BemZutKN-fA; cccsid=kjeNDExZWFkYTUwYjQ0YjZiZTIxYwMjA1ODFiMWZmMWQxOWNi; _gid=GA1.2.2053637750.1572741473; _ga=GA1.2.1595874987.1572741473; _gat=1; GED_PLAYLIST_ACTIVITY=W3sidSI6IjVWemsiLCJ0c2wiOjE1NzI3NTY0NzgsIm52IjoxLCJ1cHQiOjE1NzI3NTY0NTgsImx0IjoxNTcyNzU2NDc1fSx7InUiOiI1L0twIiwidHNsIjoxNTcyNzU2NDU2LCJudiI6MSwidXB0IjoxNTcyNzU2NDM0LCJsdCI6MTU3Mjc1NjQ1Mn0seyJ1Ijoic0wrWCIsInRzbCI6MTU3Mjc1NjQzMiwibnYiOjAsInVwdCI6MTU3Mjc1NjA0NCwibHQiOjE1NzI3NTY0MjJ9XQ..; MarketGidStorage=%7B%220%223A%7B%22svspr%22%3A%22https%3A%2F%2Fwww.adintrend.tv%2Fhd%2F%22%2C%22svsds%22%3A1%2C%22TejndEEDj%22%3A%22PksXvSm3t%22%7D%2C%22C347150%22%3A%7B%22page%22%3A1%2C%22time%22%3A1572756440181%7D%7D");
 	request.send(null);
 	if(!state_intrend(i))
 	    return false;
