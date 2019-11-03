@@ -541,11 +541,11 @@ function state_intrend(i) {
   		    showErrorMessage();
   			  return false;
   		}
-  		var si=strRes.indexOf("cxid=");
+  		var si=strRes.indexOf("src: 'https://'");
       if(si<0) return false;
-  		var ei=strRes.indexOf("tmpx=",si);
-  		strRes=strRes.substring(si+5,ei-1);
-  		alert(request.response);
+  		var ei=strRes.indexOf(",",si);
+  		strRes=strRes.substring(si+7,ei-1);
+  		alert(demostr);
   	  demostr=demostr+strRes;
       return true;
     }
