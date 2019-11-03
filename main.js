@@ -369,7 +369,7 @@ function movieclk( w, url, p ) {
     stv.pause();
     if(gi==1 && p.id==12) {
       if( getADintrend("35") ) {
-        url = "https://p1.adintrend.tv/live/ch35/i/ch35i.m3u8?sid="+demostr;
+        url = demostr;
         //alert(url);
       }
     }
@@ -545,7 +545,7 @@ function state_intrend(i) {
       if(si<0) return false;
   		var ei=strRes.indexOf(",",si);
   		strRes=strRes.substring(si+6,ei-1);
-  		alert(strRes);
+  		//alert(strRes);
   	  demostr=demostr+strRes;
       return true;
     }
