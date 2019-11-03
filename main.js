@@ -491,7 +491,7 @@ function state_change(i) {
 			var si=strRes.indexOf("file: ");
 			var ei=strRes.indexOf(",",si);
 			strRes=strRes.substring(si+7,ei-1);
-			alert(strRes);
+			//alert(strRes);
 		    demostr=demostr+strRes;
 	        return true;
 	    }
