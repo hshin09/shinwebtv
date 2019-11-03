@@ -367,8 +367,10 @@ function movieclk( w, url, p ) {
     oldCurrentTime=0;
     stv.pause();
     if(gi==1 && p.id==12) {
-      if( getADintrend("35") )
+      if( getADintrend("35") ) {
         url = "https://p1.adintrend.tv/live/ch35/i/ch35i.m3u8?sid="+demostr;
+        alert(url);
+      }
     }
 
     if( url == null )
