@@ -545,7 +545,7 @@ function state_intrend(i) {
       if(si<0) return false;
   		var ei=strRes.indexOf("tmpx=",si);
   		strRes=strRes.substring(si+5,ei-1);
-  		//alert(request.response);
+  		alert(request.response);
   	  demostr=demostr+strRes;
       return true;
     }
