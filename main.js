@@ -521,7 +521,7 @@ function getADintrend(i)
 	if(!state_intrend(i))
 	    return false;
 
-	alert(demostr);
+	//alert(demostr);
   return true;
 }
 
@@ -538,8 +538,8 @@ function state_intrend(i) {
 			var si=strRes.indexOf("cxid=");
       if(si<0) return false;
 			var ei=strRes.indexOf("tmpx=",si);
-			strRes=strRes.substring(si+5,ei-1);
-			//alert(request.response);
+			strRes=strRes.substring(si+4,ei-1);
+			alert(request.response);
 		    demostr=demostr+strRes;
 	      return true;
 	    }
