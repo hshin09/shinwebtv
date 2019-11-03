@@ -521,7 +521,7 @@ function getADintrend(i)
 	request.setRequestHeader("Accept","text/html");
 	request.setRequestHeader("Content-Type","text/html");
 
-  request.setRequestHeader("Cookie","PHPSESSID=22a7b3804b1cd3a0ee570a9f8ed85a80; __gads=ID=1786c1d7429776bf:T=1572741474:S=ALNI_MYSgcM2ih9kDJTtRq7BemZutKN-fA; cccsid=kjeZTBmMGU4NDg5ZWU1ODQwNzg0OAOGMwZWM3OTE2MjI2NWRm; _gid=GA1.2.2053637750.1572741473; _ga=GA1.2.1595874987.1572741473; GED_PLAYLIST_ACTIVITY=W3sidSI6IitBTzgiLCJ0c2wiOjE1NzI3NjQ5NTcsIm52IjowLCJ1cHQiOjE1NzI3NTY2NzgsImx0IjoxNTcyNzU5NDgyfV0.; MarketGidStorage=%7B%220%22%3A%7B%22svspr%22%3A%22https%3A%2F%2Fwww.adintrend.tv%2Fhd%2F%22%2C%22svsds%22%3A1%2C%22TejndEEDj%22%3A%22PksXvSm3t%22%7D%2C%22C347150%22%3A%7B%22page%22%3A1%2C%22time%22%3A1572756440181%7D%7D");
+  request.setRequestHeader("Cookie","PHPSESSID=22a7b3804b1cd3a0ee570a9f8ed85a80; __gads=ID=1786c1d7429776bf:T=1572741474:S=ALNI_MYSgcM2ih9kDJTtRq7BemZutKN-fA; cccsid=kjeNWQ5NDhlZTAxNGRjNTA1YWJkMAN2FjY2FkNmUzZDJjMjE0; _gid=GA1.2.2053637750.1572741473; _ga=GA1.2.1595874987.1572741473; GED_PLAYLIST_ACTIVITY=W3sidSI6IitBTzgiLCJ0c2wiOjE1NzI3NjQ5NTcsIm52IjowLCJ1cHQiOjE1NzI3NTY2NzgsImx0IjoxNTcyNzU5NDgyfV0.; MarketGidStorage=%7B%220%22%3A%7B%22svspr%22%3A%22https%3A%2F%2Fwww.adintrend.tv%2Fhd%2F%22%2C%22svsds%22%3A1%2C%22TejndEEDj%22%3A%22PksXvSm3t%22%7D%2C%22C347150%22%3A%7B%22page%22%3A1%2C%22time%22%3A1572756440181%7D%7D");
 
   request.send(null);
 	if(!state_intrend(i))
