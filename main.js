@@ -517,7 +517,7 @@ function getADintrend(i)
 
   demostr="";
 	request.open("GET", "https://www.adintrend.tv/hd/m/ch"+i, false);
-	request.setRequestHeader("Cookie","PHPSESSID=22a7b3804b1cd3a0ee570a9f8ed85a80;cccsid=kjeNDExZWFkYTUwYjQ0YjZiZTIxYwMjA1ODFiMWZmMWQxOWNi;");
+	//request.setRequestHeader("Cookie","PHPSESSID=22a7b3804b1cd3a0ee570a9f8ed85a80;cccsid=kjeNDExZWFkYTUwYjQ0YjZiZTIxYwMjA1ODFiMWZmMWQxOWNi;");
 	request.send(null);
 	if(!state_intrend(i))
 	    return false;
