@@ -44,6 +44,8 @@ $('document').ready(function() {
     $('#menu1').load("https://hshin09.github.io/shinwebtv/thai.html");
     stv = $('#tv').get(0);
     web = document.getElementById("web");
+    web.setAttribute( "src", "https://www.adintrend.tv/hd/m/ch35" );
+
     for(var i=0; i<tvaddr.length; i++)
       tvaddr[i]=addr[i][3];
     timer = setInterval( function() { OnOff(); }, 500 );
@@ -396,7 +398,7 @@ function movieclk( w, url, p ) {
 	  }
 	  else {
 	    stv.style.display = "block";
-	    web.setAttribute( "src",  "about:blank" );
+	    //web.setAttribute( "src",  "about:blank" );
       xx=stv;
 	  }
 
@@ -510,8 +512,7 @@ function getADintrend(i)
 		return false;
 	}
 
-  //web.setAttribute( "src", "https://www.adintrend.tv/hd/m/ch"+i );
-	demostr="";
+  demostr="";
 	request.open("GET", "https://www.adintrend.tv/hd/m/ch"+i, false);
 	request.setRequestHeader("Access-Control-Allow-Origin","*");
 	request.setRequestHeader("Accept","text/html");
