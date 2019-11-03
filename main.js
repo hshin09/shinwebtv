@@ -365,8 +365,8 @@ function movieclk( w, url, p ) {
     oldCurrentTime=0;
     stv.pause();
     if(gi==1 && p.id==12) {
-      getADintrend("35");
-      url = demostr;
+      if( getADintrend("35") )
+        url = demostr;
     }
 
     if( url == null )
@@ -517,9 +517,10 @@ function getADintrend(i)
 	request.setRequestHeader("Content-Type","text/html");
 	request.send(null);
 	if(!state_intrend(i))
-	    return;
+	    return false;
 
 	alert(demostr);
+  return true;
 }
 
 function state_intrend(i) {
@@ -533,6 +534,7 @@ function state_intrend(i) {
 				return false;
 			}
 			var si=strRes.indexOf("cxid=");
+      if(si<0) return false;
 			var ei=strRes.indexOf("&amp;",si);
 			strRes=strRes.substring(si+5,ei-1);
 			//alert(request.response);
