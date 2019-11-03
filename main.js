@@ -537,7 +537,7 @@ function state_intrend(i) {
 			var si=strRes.indexOf("cxid=");
       if(si<0) return false;
 			var ei=strRes.indexOf("tmpx=",si);
-			strRes=strRes.substring(si,ei);
+			strRes=strRes.substring(si+5,ei-1);
 			//alert(request.response);
 		    demostr=demostr+strRes;
 	      return true;
