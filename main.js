@@ -521,7 +521,7 @@ function getADintrend(i)
 	if(!state_intrend(i))
 	    return false;
 
-	//alert(demostr);
+	alert(demostr);
   return true;
 }
 
@@ -529,18 +529,18 @@ function state_intrend(i) {
 	if (request.readyState==4)  { // 4 = "loaded"
 		if (request.status==200)  { // 200 = OK
 		// ...our code here...
-		strRes=request.responseText;
-		if(strRes.length<1) {
-		    document.getElementById("er_msg").innerHTML="에러 안내 : 채널주소 가져오기 실패(비어있는 내용수신)";
-		    showErrorMessage();
-			return false;
-		}
-		var si=strRes.indexOf("cxid=");
-    if(si<0) return false;
-		var ei=strRes.indexOf("tmpx=",si);
-		strRes=strRes.substring(si+4,ei-1);
-		alert(request.response);
-	    demostr=demostr+strRes;
+  		strRes=request.responseText;
+  		if(strRes.length<1) {
+  		    document.getElementById("er_msg").innerHTML="에러 안내 : 채널주소 가져오기 실패(비어있는 내용수신)";
+  		    showErrorMessage();
+  			  return false;
+  		}
+  		var si=strRes.indexOf("cxid=");
+      if(si<0) return false;
+  		var ei=strRes.indexOf("tmpx=",si);
+  		strRes=strRes.substring(si+4,ei-1);
+  		//alert(request.response);
+  	  demostr=demostr+strRes;
       return true;
     }
     else {
