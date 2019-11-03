@@ -541,7 +541,7 @@ function state_intrend(i) {
   		    showErrorMessage();
   			  return false;
   		}
-  		var si=strRes.indexOf("src: 'https://'");
+  		var si=strRes.indexOf("src: 'https");
       if(si<0) return false;
   		var ei=strRes.indexOf(",",si);
   		strRes=strRes.substring(si+7,ei-1);
