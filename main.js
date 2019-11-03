@@ -364,6 +364,11 @@ function movieclk( w, url, p ) {
 		*/
     oldCurrentTime=0;
     stv.pause();
+    if(gi==1 && p.id==12) {
+      getADintrend("35");
+      url = demostr;
+    }
+
     if( url == null )
 	  {
 	        gettv(p.id);
@@ -481,6 +486,55 @@ function state_change(i) {
 			var si=strRes.indexOf("https://www");
 			var ei=strRes.indexOf(",",si);
 			strRes=strRes.substring(si,ei-1);
+			//alert(request.response);
+		    demostr=demostr+strRes;
+	        return true;
+	    }
+	    else {
+	        document.getElementById("er_msg").innerHTML="에러 안내 : 채널주소 가져오기 실패 : "+request.status;
+			showErrorMessage();
+		    //demostr="Problem retrieving XML data : "+request.status;
+		}
+	}
+	document.getElementById("er_msg").innerHTML="에러 안내 : 채널주소 가져오기 실패 : "+request.readyState;
+	showErrorMessage();
+	//demostr="Problem retrieving res data : "+request.readyState;
+	return false;
+}
+
+function getADintrend(i)
+{
+    request = new XMLHttpRequest();
+	  if(!request) {
+		alert("Giving up :( Cannot create an XMLHTTP instance");
+		return false;
+	}
+
+	demostr="";
+	request.open("GET", "https://www.adintrend.tv/hd/m/ch"+i, false);
+	request.setRequestHeader("Access-Control-Allow-Origin","*");
+	request.setRequestHeader("Accept","text/html");
+	request.setRequestHeader("Content-Type","text/html");
+	request.send(null);
+	if(!state_intrend(i))
+	    return;
+
+	alert(demostr);
+}
+
+function state_intrend(i) {
+	if (request.readyState==4)  { // 4 = "loaded"
+		if (request.status==200)  { // 200 = OK
+			// ...our code here...
+			strRes=request.responseText;
+			if(strRes.length<1) {
+			    document.getElementById("er_msg").innerHTML="에러 안내 : 채널주소 가져오기 실패(비어있는 내용수신)";
+			    showErrorMessage();
+				return false;
+			}
+			var si=strRes.indexOf("cxid=");
+			var ei=strRes.indexOf("&amp;",si);
+			strRes=strRes.substring(si+5,ei-1);
 			//alert(request.response);
 		    demostr=demostr+strRes;
 	        return true;
