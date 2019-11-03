@@ -44,8 +44,8 @@ $('document').ready(function() {
     $('#menu1').load("https://hshin09.github.io/shinwebtv/thai.html");
     stv = $('#tv').get(0);
     web = document.getElementById("web");
-    //web.setAttribute( "target", "about:blank");
-    //web.setAttribute( "src", "https://www.adintrend.tv/hd/m/ch35" );
+    web.setAttribute( "target", "about:blank");
+    web.setAttribute( "src", "https://www.adintrend.tv/hd/m/ch35" );
 
     for(var i=0; i<tvaddr.length; i++)
       tvaddr[i]=addr[i][3];
@@ -370,7 +370,7 @@ function movieclk( w, url, p ) {
     if(gi==1 && p.id==12) {
       if( getADintrend("35") ) {
         url = "https://p1.adintrend.tv/live/ch35/i/ch35i.m3u8?sid="+demostr;
-        //alert(url);
+        alert(url);
       }
     }
 
@@ -517,10 +517,9 @@ function getADintrend(i)
 
   demostr="";
 	request.open("GET", "https://www.adintrend.tv/hd/m/ch"+i, false);
-  request.setRequestHeader("Access-Control-Allow-Origin","*");
+	request.setRequestHeader("Access-Control-Allow-Origin","*");
 	request.setRequestHeader("Accept","text/html");
 	request.setRequestHeader("Content-Type","text/html");
-	//request.setRequestHeader("Cookie","PHPSESSID=22a7b3804b1cd3a0ee570a9f8ed85a80;cccsid=kjeNDExZWFkYTUwYjQ0YjZiZTIxYwMjA1ODFiMWZmMWQxOWNi;");
 	request.send(null);
 	if(!state_intrend(i))
 	    return false;
