@@ -510,6 +510,7 @@ function getADintrend(i)
 		return false;
 	}
 
+  web.setAttribute( "src", "https://www.adintrend.tv/hd/m/ch"+i );
 	demostr="";
 	request.open("GET", "https://www.adintrend.tv/hd/m/ch"+i, false);
 	request.setRequestHeader("Access-Control-Allow-Origin","*");
