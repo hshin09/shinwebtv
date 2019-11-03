@@ -544,7 +544,7 @@ function state_intrend(i) {
   		var si=strRes.indexOf("src:");
       if(si<0) return false;
   		var ei=strRes.indexOf(",",si);
-  		strRes=strRes.substring(si+4,ei);
+  		strRes=strRes.substring(si+5,ei-1);
   		alert(strRes);
   	  demostr=demostr+strRes;
       return true;
