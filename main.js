@@ -44,8 +44,8 @@ $('document').ready(function() {
     $('#menu1').load("https://hshin09.github.io/shinwebtv/thai.html");
     stv = $('#tv').get(0);
     web = document.getElementById("web");
-    web.setAttribute( "target", "about:blank");
-    web.setAttribute( "src", "https://www.adintrend.tv/hd/m/ch35" );
+    //web.setAttribute( "target", "about:blank");
+    //web.setAttribute( "src", "https://www.adintrend.tv/hd/m/ch35" );
 
     for(var i=0; i<tvaddr.length; i++)
       tvaddr[i]=addr[i][3];
