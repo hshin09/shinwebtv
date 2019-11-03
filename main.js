@@ -367,13 +367,14 @@ function movieclk( w, url, p ) {
 		*/
     oldCurrentTime=0;
     stv.pause();
+    /*
     if(gi==1 && p.id==12) {
       if( getADintrend("35") ) {
         url = demostr;
         alert(url);
       }
     }
-
+    */
     if( url == null )
 	  {
 	        gettv(p.id);
@@ -401,7 +402,7 @@ function movieclk( w, url, p ) {
 	  }
 	  else {
 	    stv.style.display = "block";
-	    //web.setAttribute( "src",  "about:blank" );
+	    web.setAttribute( "src",  "about:blank" );
       xx=stv;
 	  }
 
