@@ -370,7 +370,7 @@ function movieclk( w, url, p ) {
     if(gi==1 && p.id==12) {
       if( getADintrend("35") ) {
         url = demostr;
-        //alert(url);
+        alert(url);
       }
     }
 
