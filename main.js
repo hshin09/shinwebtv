@@ -369,8 +369,9 @@ function movieclk( w, url, p ) {
     stv.pause();
 
     if(gi==1) {
-      if(url.length>10 && url.substring(0,10)=="adintrend:") {
-        if( getADintrend(url.substring(10)) ) {
+      var s=url;
+      if(s.length>10 && s.substring(0,10)=="adintrend:") {
+        if( getADintrend(s.substring(10)) ) {
           url = demostr;
           alert(url);
         }
