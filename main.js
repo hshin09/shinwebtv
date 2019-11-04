@@ -367,14 +367,14 @@ function movieclk( w, url, p ) {
 		*/
     oldCurrentTime=0;
     stv.pause();
-    /*
+
     if(gi==1 && p.id==12) {
       if( getADintrend("35") ) {
         url = demostr;
         alert(url);
       }
     }
-    */
+
     if( url == null )
 	  {
 	        gettv(p.id);
@@ -517,12 +517,12 @@ function getADintrend(i)
 	}
 
   demostr="";
-	request.open("GET", "https://www.adintrend.tv/hd/live/i.php?ch=35&cxid=kjeNWQ5NDhlZTAxNGRjNTA1YWJkMAN2FjY2FkNmUzZDJjMjE0&tmpx=171.4.235.13&ccc=TH&device=mobile&isp=3BB", false);
-	request.setRequestHeader("Access-Control-Allow-Origin","*");
-	request.setRequestHeader("Accept","text/html");
-	request.setRequestHeader("Content-Type","text/html");
+	request.open("GET", "https://www.adintrend.tv/hd/live/i.php?ch=35&cxid=kjeZTcwYjhhNDJiOTAwZThlOGI5NANTU5ZTFmNTFlYjBjZmQ3", false);
+	//request.setRequestHeader("Access-Control-Allow-Origin","*");
+	//request.setRequestHeader("Accept","text/html");
+	//request.setRequestHeader("Content-Type","text/html");
 
-  request.setRequestHeader("Cookie","PHPSESSID=22a7b3804b1cd3a0ee570a9f8ed85a80;cccsid=kjeNWQ5NDhlZTAxNGRjNTA1YWJkMAN2FjY2FkNmUzZDJjMjE0;");
+  //request.setRequestHeader("Cookie","PHPSESSID=22a7b3804b1cd3a0ee570a9f8ed85a80;cccsid=kjeNWQ5NDhlZTAxNGRjNTA1YWJkMAN2FjY2FkNmUzZDJjMjE0;");
 
   request.send(null);
 	if(!state_intrend(i))
@@ -542,10 +542,10 @@ function state_intrend(i) {
   		    showErrorMessage();
   			  return false;
   		}
-  		var si=strRes.indexOf("src:");
+  		var si=strRes.indexOf("src: ");
       if(si<0) return false;
   		var ei=strRes.indexOf(",",si);
-  		strRes=strRes.substring(si+6,ei-1);
+  		strRes=strRes.substring(si+6,ei-2);
   		//alert(strRes);
   	  demostr=demostr+strRes;
       return true;
