@@ -528,7 +528,7 @@ function getADintrend(i)
 	request.setRequestHeader("Access-Control-Allow-Origin","*");
 	request.setRequestHeader("Accept","text/html");
 	request.setRequestHeader("Content-Type","text/html");
-  request.setRequestHeader("Cookie","PHPSESSID=22a7b3804b1cd3a0ee570a9f8ed85a80;cccsid=kjeNWQ5NDhlZTAxNGRjNTA1YWJkMAN2FjY2FkNmUzZDJjMjE0;");
+  request.setRequestHeader("Cookie","PHPSESSID=22a7b3804b1cd3a0ee570a9f8ed85a80;cccsid=kjeZTcwYjhhNDJiOTAwZThlOGI5NANTU5ZTFmNTFlYjBjZmQ3;");
 
   request.send(null);
 	if(!state_intrend(i))
