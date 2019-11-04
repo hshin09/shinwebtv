@@ -376,7 +376,6 @@ function movieclk( w, url, p ) {
           //alert(url);
         }
       }
-      alert(url);
     }
 
     if( url == null )
@@ -547,6 +546,7 @@ function state_intrend(i) {
   		    showErrorMessage();
   			  return false;
   		}
+      alert(strRes);
   		//var si=strRes.indexOf("src: ");
       var si=strRes.indexOf("cxid=");
       if(si<0) return false;
