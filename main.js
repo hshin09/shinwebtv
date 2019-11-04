@@ -373,7 +373,7 @@ function movieclk( w, url, p ) {
         s = url.substring(0,10);
         if( s=="adintrend:" && getADintrend(url.substring(10)) ) {
           url = demostr;
-          alert(url);
+          //alert(url);
         }
       }
     }
