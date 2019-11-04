@@ -520,7 +520,7 @@ function getADintrend(i)
 	}
 
   demostr="";
-  request.open("GET", "https://www.adintrend.tv/hd/m/ch="+i+"&cxid=kjeZTcwYjhhNDJiOTAwZThlOGI5NANTU5ZTFmNTFlYjBjZmQ3", false);
+  request.open("GET", "https://www.adintrend.tv/hd/m/ch"+i;//+"?cxid=kjeZTcwYjhhNDJiOTAwZThlOGI5NANTU5ZTFmNTFlYjBjZmQ3", false);
 	//request.open("GET", "https://www.adintrend.tv/hd/live/i.php?ch="+i+"&cxid=kjeZTcwYjhhNDJiOTAwZThlOGI5NANTU5ZTFmNTFlYjBjZmQ3", false);
 	//request.setRequestHeader("Access-Control-Allow-Origin","*");
 	//request.setRequestHeader("Accept","text/html");
@@ -552,7 +552,7 @@ function state_intrend(i) {
   		var ei=strRes.indexOf("tmpx=",si);
   		strRes=strRes.substring(si+5,ei-1);
   		//alert(strRes);
-  	  demostr="https://p1.adintrend.tv/live/ch="+i+"/i/ch"i+"i.m3u8?sid="+strRes;
+  	  demostr="https://p1.adintrend.tv/live/ch"+i+"/i/ch"+i+"i.m3u8?sid="+strRes;
       return true;
     }
     else {
