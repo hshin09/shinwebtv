@@ -372,7 +372,7 @@ function movieclk( w, url, p ) {
       if(url.length>10) {
         var s = url;
         var s1 = s.substring(0,10);
-        alert(s1+"="+s);
+        alert(s1+"="+s.substring(10));
         if( s1 == "adintrend:" && getADintrend(s.substring(10)) ) {
           url = demostr;
           //alert(url);
