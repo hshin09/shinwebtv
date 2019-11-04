@@ -367,7 +367,7 @@ function movieclk( w, url, p ) {
 		*/
     oldCurrentTime=0;
     stv.pause();
-
+/*
     if(gi==1) {
       if(url.length>10) {
         s = url.substring(0,10);
@@ -377,7 +377,7 @@ function movieclk( w, url, p ) {
         }
       }
     }
-
+*/
     if( url == null )
 	  {
 	        gettv(p.id);
