@@ -520,7 +520,7 @@ function getADintrend(i)
 	}
 
   demostr="";
-  request.open("GET", "https://www.adintrend.tv/hd/m/ch"+i;//+"?cxid=kjeZTcwYjhhNDJiOTAwZThlOGI5NANTU5ZTFmNTFlYjBjZmQ3", false);
+  request.open("GET", "https://www.adintrend.tv/hd/m/ch"+i);//+"?cxid=kjeZTcwYjhhNDJiOTAwZThlOGI5NANTU5ZTFmNTFlYjBjZmQ3", false);
 	//request.open("GET", "https://www.adintrend.tv/hd/live/i.php?ch="+i+"&cxid=kjeZTcwYjhhNDJiOTAwZThlOGI5NANTU5ZTFmNTFlYjBjZmQ3", false);
 	//request.setRequestHeader("Access-Control-Allow-Origin","*");
 	//request.setRequestHeader("Accept","text/html");
