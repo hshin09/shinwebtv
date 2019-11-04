@@ -370,8 +370,10 @@ function movieclk( w, url, p ) {
 
     if(gi==1) {
       if(url.length>10) {
-        s = url.substring(0,10);
-        if( s=="adintrend:" && getADintrend(url.substring(10)) ) {
+        var s = url;
+        var s1 = s.substring(0,10);
+        alert(s1+"="+s);
+        if( s1 == "adintrend:" && getADintrend(s.substring(10)) ) {
           url = demostr;
           //alert(url);
         }
@@ -546,7 +548,7 @@ function state_intrend(i) {
   		    showErrorMessage();
   			  return false;
   		}
-      alert(strRes);
+      //alert(strRes);
   		//var si=strRes.indexOf("src: ");
       var si=strRes.indexOf("cxid=");
       if(si<0) return false;
