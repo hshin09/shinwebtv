@@ -372,7 +372,6 @@ function movieclk( w, url, p ) {
       if(url.length>10) {
         var s = url;
         var s1 = s.substring(0,10);
-        alert(s1+"="+s.substring(10));
         if( s1 == "adintrend:" && getADintrend(s.substring(10)) ) {
           url = demostr;
           //alert(url);
@@ -543,12 +542,12 @@ function state_intrend(i) {
 		if (request.status==200)  { // 200 = OK
 		// ...our code here...
   		strRes=request.responseText;
+      alert(strRes);
   		if(strRes.length<1) {
   		    document.getElementById("er_msg").innerHTML="에러 안내 : 채널주소 가져오기 실패(비어있는 내용수신)";
   		    showErrorMessage();
   			  return false;
   		}
-      //alert(strRes);
   		//var si=strRes.indexOf("src: ");
       var si=strRes.indexOf("cxid=");
       if(si<0) return false;
