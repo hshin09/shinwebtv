@@ -524,11 +524,10 @@ function getADintrend(i)
 
   demostr="";
   request.open("GET", "https://www.adintrend.tv/hd/m/ch"+i);//+"?cxid=kjeZTcwYjhhNDJiOTAwZThlOGI5NANTU5ZTFmNTFlYjBjZmQ3", false);
-	//request.open("GET", "https://www.adintrend.tv/hd/live/i.php?ch="+i+"&cxid=kjeZTcwYjhhNDJiOTAwZThlOGI5NANTU5ZTFmNTFlYjBjZmQ3", false);
-	//request.setRequestHeader("Access-Control-Allow-Origin","*");
-	//request.setRequestHeader("Accept","text/html");
-	//request.setRequestHeader("Content-Type","text/html");
-
+	request.open("GET", "https://www.adintrend.tv/hd/live/i.php?ch="+i+"&cxid=kjeZTcwYjhhNDJiOTAwZThlOGI5NANTU5ZTFmNTFlYjBjZmQ3", false);
+	request.setRequestHeader("Access-Control-Allow-Origin","*");
+	request.setRequestHeader("Accept","text/html");
+	request.setRequestHeader("Content-Type","text/html");
   //request.setRequestHeader("Cookie","PHPSESSID=22a7b3804b1cd3a0ee570a9f8ed85a80;cccsid=kjeNWQ5NDhlZTAxNGRjNTA1YWJkMAN2FjY2FkNmUzZDJjMjE0;");
 
   request.send(null);
@@ -560,12 +559,12 @@ function state_intrend(i) {
       return true;
     }
     else {
-      document.getElementById("er_msg").innerHTML="에러 안내 : 채널주소 가져오기 실패 : "+request.status;
+      document.getElementById("er_msg").innerHTML="에러 안내 : 채널주소 가져오기 실패1 : "+request.status;
 		  showErrorMessage();
 	    //demostr="Problem retrieving XML data : "+request.status;
 		}
 	}
-	document.getElementById("er_msg").innerHTML="에러 안내 : 채널주소 가져오기 실패 : "+request.readyState;
+	document.getElementById("er_msg").innerHTML="에러 안내 : 채널주소 가져오기 실패2 : "+request.readyState;
 	showErrorMessage();
 	//demostr="Problem retrieving res data : "+request.readyState;
 	return false;
