@@ -514,6 +514,7 @@ function state_change(i) {
 
 function getADintrend(i)
 {
+  alert(i);
     request = new XMLHttpRequest();
 	  if(!request) {
 		alert("Giving up :( Cannot create an XMLHTTP instance");
