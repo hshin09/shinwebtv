@@ -518,7 +518,7 @@ function state_change(i) {
       si=strRes.indexOf("http",si);
 			var ei=strRes.indexOf(",",si);
 			strRes=strRes.substring(si,ei-1);
-			//alert(strRes);
+			alert(strRes);
 		    demostr=demostr+strRes;
 	        return true;
 	    }
