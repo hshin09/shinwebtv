@@ -279,6 +279,7 @@ function movieclk( w, url, p ) {
 	  }
 
 	  xx.setAttribute( "src",  url );
+    window.parentView.showMsg(url);
 	  if( w === "tv" )
 	  {
 	     showVideoMessage();
