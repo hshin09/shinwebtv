@@ -498,69 +498,6 @@ function state_change(i) {
 	return false;
 }
 
-/*
-var sabaidee=null;
-function setAdTv(s) {
-    sabaidee=s;
-}
-
-function getADintrend(i)
-{
-    request = new XMLHttpRequest();
-	  if(!request) {
-		alert("Giving up :( Cannot create an XMLHTTP instance");
-		return false;
-	}
-
-  demostr="";
-  //request.open("GET", "https://www.adintrend.tv/hd/m/ch"+i);//+"?cxid=kjeZTcwYjhhNDJiOTAwZThlOGI5NANTU5ZTFmNTFlYjBjZmQ3", false);
-	request.open("GET", "https://www.adintrend.tv/hd/live/i.php?ch="+i+"&cxid=kjeZTcwYjhhNDJiOTAwZThlOGI5NANTU5ZTFmNTFlYjBjZmQ3", false);
-	request.setRequestHeader("Access-Control-Allow-Origin","*");
-	request.setRequestHeader("Accept","text/html");
-	request.setRequestHeader("Content-Type","text/html");
-  request.setRequestHeader("Cookie","PHPSESSID=22a7b3804b1cd3a0ee570a9f8ed85a80;cccsid=kjeZTcwYjhhNDJiOTAwZThlOGI5NANTU5ZTFmNTFlYjBjZmQ3;");
-
-  request.send(null);
-	if(!state_intrend(i))
-	    return false;
-
-	//alert(demostr);
-  return true;
-}
-
-function state_intrend(i) {
-	if (request.readyState==4)  { // 4 = "loaded"
-		if (request.status==200)  { // 200 = OK
-		// ...our code here...
-  		strRes=request.responseText;
-      alert(strRes);
-  		if(strRes.length<1) {
-  		    document.getElementById("er_msg").innerHTML="에러 안내 : 채널주소 가져오기 실패(비어있는 내용수신)";
-  		    showErrorMessage();
-  			  return false;
-  		}
-  		//var si=strRes.indexOf("src: ");
-      var si=strRes.indexOf("cxid=");
-      //if(si<0) return false;
-  		var ei=strRes.indexOf("tmpx=",si);
-  		strRes=strRes.substring(si+5,ei-1);
-  		//alert(strRes);
-  	  demostr="https://p1.adintrend.tv/live/ch"+i+"/i/ch"+i+"i.m3u8?sid="+strRes;
-      return true;
-    }
-    else {
-      document.getElementById("er_msg").innerHTML="에러 안내 : 채널주소 가져오기 실패1 : "+request.status;
-		  showErrorMessage();
-	    //demostr="Problem retrieving XML data : "+request.status;
-		}
-	}
-	document.getElementById("er_msg").innerHTML="에러 안내 : 채널주소 가져오기 실패2 : "+request.readyState;
-	showErrorMessage();
-	//demostr="Problem retrieving res data : "+request.readyState;
-	return false;
-}
-*/
-
 function videoErr(e)
 {
    switch (e.target.error.code) {
