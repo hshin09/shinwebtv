@@ -518,7 +518,7 @@ function state_change(i) {
 	return false;
 }
 
-function setAdintrendTv(s) {
+function setAdTv(s) {
     alert(s);
 }
 
