@@ -514,6 +514,7 @@ function state_change(i) {
 				return false;
 			}
 			var si=strRes.indexOf("file:");
+      strRes=strRes.substring(si);
       si=strRes.indexOf("http",si);
 			var ei=strRes.indexOf(",",si);
 			strRes=strRes.substring(si,ei-1);
