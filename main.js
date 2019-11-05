@@ -380,8 +380,8 @@ function movieclk( w, url, p ) {
       }
     }
 */
-    if(gi==1&&p.id==12)
-      window.parentView.showMsg("getSid");
+    //if(gi==1&&p.id==12)
+    //  window.parentView.showMsg("getSid");
 
     if( url == null )
 	  {
