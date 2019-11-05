@@ -381,8 +381,14 @@ function movieclk( w, url, p ) {
       }
     }
 */
-    if(gi==1&&p.id==12)
-      window.parentView.showMsg("getSid");
+    if(gi==1 && p.id==12) {
+      if(sabaidee==null) {
+        window.parentView.showMsg("getSid");
+        setTimeout(function(){ x[p.id].click(); }, 0);
+        return;
+      }
+      url="https://p1.adintrend.tv/live/ch35/i/chi35.m3u8?sid="+sabaidee.substring(5);
+    }
 
     if( url == null )
 	  {
@@ -484,10 +490,6 @@ function get79tv(i) {
 }
 
 function set79tv(s) {
-  if(gi==1) {
-    alert(s);
-    return;
-  }
   tvaddr[si]=s;
   setTimeout(function(){ x[si].click(); }, 0);
 }
@@ -522,8 +524,9 @@ function state_change(i) {
 	return false;
 }
 
+var sabaidee=null;
 function setAdTv(s) {
-    alert(s);
+    sabaidee=s;
 }
 
 function getADintrend(i)
