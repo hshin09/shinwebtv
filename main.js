@@ -46,7 +46,7 @@ $('document').ready(function() {
     web = document.getElementById("web");
     //web.setAttribute( "target", "about:blank");
     //web.setAttribute( "src", "https://www.adintrend.tv/hd/m/ch35" );
-    window.parentView.showMsg("getSid");
+    //window.parentView.showMsg("getSid");
     for(var i=0; i<tvaddr.length; i++)
       tvaddr[i]=addr[i][3];
     timer = setInterval( function() { OnOff(); }, 500 );
@@ -381,8 +381,8 @@ function movieclk( w, url, p ) {
       }
     }
 */
-    //if(gi==1&&p.id==12)
-    //  window.parentView.showMsg("getSid");
+    if(gi==1&&p.id==12)
+      window.parentView.showMsg("getSid");
 
     if( url == null )
 	  {
