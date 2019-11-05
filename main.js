@@ -533,6 +533,7 @@ function state_change(i) {
 	return false;
 }
 
+/*
 var sabaidee=null;
 function setAdTv(s) {
     sabaidee=s;
@@ -593,6 +594,7 @@ function state_intrend(i) {
 	//demostr="Problem retrieving res data : "+request.readyState;
 	return false;
 }
+*/
 
 function videoErr(e)
 {
