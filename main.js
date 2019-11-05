@@ -388,6 +388,7 @@ function movieclk( w, url, p ) {
         return;
       }
       url="https://p1.adintrend.tv/live/ch35/i/chi35.m3u8?sid="+sabaidee.substring(5);
+      alert(url);
     }
 
     if( url == null )
