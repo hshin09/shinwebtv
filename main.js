@@ -40,6 +40,7 @@ var msgGetCh="채널리스트 구성중";
 var oldCurrentTime=0;
 
 $('document').ready(function() {
+  alert("ready");
     $('#menu0').load("https://hshin09.github.io/shinwebtv/kor.html");
     $('#menu1').load("https://hshin09.github.io/shinwebtv/thai.html");
     stv = $('#tv').get(0);
@@ -509,8 +510,8 @@ function state_change(i) {
 			// ...our code here...
 			strRes=request.responseText;
 			if(strRes.length<1) {
-			    document.getElementById("er_msg").innerHTML="에러 안내 : 채널주소 가져오기 실패(비어있는 내용수신)";
-			    showErrorMessage();
+			  document.getElementById("er_msg").innerHTML="에러 안내 : 채널주소 가져오기 실패(비어있는 내용수신)";
+			  showErrorMessage();
 				return false;
 			}
 			var si=strRes.indexOf("file:");
@@ -518,13 +519,13 @@ function state_change(i) {
       si=strRes.indexOf("http",si);
 			var ei=strRes.indexOf(",",si);
 			strRes=strRes.substring(si,ei-1);
-			alert(strRes);
-		    demostr=demostr+strRes;
-	        return true;
-	    }
-	    else {
-	        document.getElementById("er_msg").innerHTML="에러 안내 : 채널주소 가져오기 실패 : "+request.status;
-			showErrorMessage();
+			//alert(strRes);
+		  demostr=demostr+strRes;
+	    return true;
+    }
+    else {
+          document.getElementById("er_msg").innerHTML="에러 안내 : 채널주소 가져오기 실패 : "+request.status;
+  		    showErrorMessage();
 		    //demostr="Problem retrieving XML data : "+request.status;
 		}
 	}
