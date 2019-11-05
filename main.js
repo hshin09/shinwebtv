@@ -465,6 +465,7 @@ function get79tv(i) {
 
 function set79tv(s) {
   tvaddr[si]=s;
+  alert(s);
   setTimeout(function(){ x[si].click(); }, 0);
 }
 
@@ -483,7 +484,7 @@ function state_change(i) {
       si=strRes.indexOf("http",si);
 			var ei=strRes.indexOf(",",si);
 			strRes=strRes.substring(si,ei-1);
-			alert(strRes);
+			//alert(strRes);
 		  demostr=demostr+strRes;
 	    return true;
     }
