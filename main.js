@@ -44,9 +44,6 @@ $('document').ready(function() {
     $('#menu1').load("https://hshin09.github.io/shinwebtv/thai.html");
     stv = $('#tv').get(0);
     web = document.getElementById("web");
-    //web.setAttribute( "target", "about:blank");
-    //web.setAttribute( "src", "https://www.adintrend.tv/hd/m/ch35" );
-    //window.parentView.showMsg("getSid");
     for(var i=0; i<tvaddr.length; i++)
       tvaddr[i]=addr[i][3];
     timer = setInterval( function() { OnOff(); }, 500 );
@@ -367,31 +364,6 @@ function movieclk( w, url, p ) {
 		*/
     oldCurrentTime=0;
     stv.pause();
-/*
-    if(gi==1) {
-      if(url.length>10) {
-        var s = url;
-        var s1 = s.substring(0,10);
-        if( s1 == "adintrend:" ) {
-          if( getADintrend(s.substring(10)) ) {
-            url = demostr;
-          }
-          alert(url+"="+demostr);
-        }
-      }
-    }
-*/
-/*
-    if(gi==1 && p.id==12) {
-      if(sabaidee==null) {
-        si=p.id;
-        window.parentView.showMsg("getSid");
-        return;
-      }
-      url="https://p1.adintrend.tv/live/ch35/i/chi35.m3u8?sid="+sabaidee.substring(5);
-      alert(url);
-    }
-*/
     if( url == null )
 	  {
 	        gettv(p.id);
@@ -492,13 +464,6 @@ function get79tv(i) {
 }
 
 function set79tv(s) {
-/*
-  if(gi==1 && si==12) {
-    sabaidee = s;
-    setTimeout(function(){ x[si].click(); }, 0);
-    return;
-  }
-*/
   tvaddr[si]=s;
   setTimeout(function(){ x[si].click(); }, 0);
 }
@@ -518,7 +483,7 @@ function state_change(i) {
       si=strRes.indexOf("http",si);
 			var ei=strRes.indexOf(",",si);
 			strRes=strRes.substring(si,ei-1);
-			//alert(strRes);
+			alert(strRes);
 		  demostr=demostr+strRes;
 	    return true;
     }
