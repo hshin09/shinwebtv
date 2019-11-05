@@ -484,6 +484,10 @@ function get79tv(i) {
 }
 
 function set79tv(s) {
+  if(gi==1) {
+    alert(s);
+    return;
+  }
   tvaddr[si]=s;
   setTimeout(function(){ x[si].click(); }, 0);
 }
