@@ -391,7 +391,8 @@ function state_change(i) {
 				return false;
 			}
       var ssi=strRes.indexOf("file:");
-      ssi=strRes.indexOf("http",ssi);
+      strRes=strRes.substring(ssi);
+      ssi=strRes.indexOf("http");
 			var eei=strRes.indexOf(",",ssi);
 			strRes=strRes.substring(ssi,eei-1);
 			//alert(request.response);
