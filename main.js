@@ -515,6 +515,10 @@ function state_change(i) {
 	return false;
 }
 
+function setAdintrendTv(s) {
+    alert(s);
+}
+
 function getADintrend(i)
 {
     request = new XMLHttpRequest();
