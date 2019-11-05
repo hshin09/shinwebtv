@@ -479,11 +479,9 @@ function state_change(i) {
 			  showErrorMessage();
 				return false;
 			}
-			var si=strRes.indexOf("file:");
-      strRes=strRes.substring(si);
-      si=strRes.indexOf("http",si);
-			var ei=strRes.indexOf(",",si);
-			strRes=strRes.substring(si,ei-1);
+			var si=strRes.indexOf("file: ");
+      var ei=strRes.indexOf(",",si);
+			strRes=strRes.substring(si+7,ei-1);
 			//alert(strRes);
 		  demostr=demostr+strRes;
 	    return true;
