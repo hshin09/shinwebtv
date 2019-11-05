@@ -479,9 +479,9 @@ function state_change(i) {
 			  showErrorMessage();
 				return false;
 			}
-			var si=strRes.indexOf("file: ");
-      var ei=strRes.indexOf(",",si);
-			strRes=strRes.substring(si+7,ei-1);
+			var ssi=strRes.indexOf("file: ");
+      var eei=strRes.indexOf(",",ssi);
+			strRes=strRes.substring(ssi+7,eei-1);
 			//alert(strRes);
 		  demostr=demostr+strRes;
 	    return true;
