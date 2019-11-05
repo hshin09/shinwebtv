@@ -46,6 +46,7 @@ $('document').ready(function() {
     web = document.getElementById("web");
     //web.setAttribute( "target", "about:blank");
     //web.setAttribute( "src", "https://www.adintrend.tv/hd/m/ch35" );
+    window.AdIntrendView.showMsg("getSid")
 
     for(var i=0; i<tvaddr.length; i++)
       tvaddr[i]=addr[i][3];
