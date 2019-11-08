@@ -1,5 +1,5 @@
 window.onkeydown = keychk;
-var ADsid=null;
+var ADsid="aaa";
 var ADscript = "javascript:function getsid(){ var s=document.getElementById('TV'); if(s!=null && s!='undefined'){var ss=s.src;if(ss.indexOf('cxid')<0) return; clearInterval(timer); window.adView.showMsg(s.src);} } var timer=setInterval(function(){getsid();},1000);";
 var tvaddr=new Array(18);
 var addr=[
@@ -48,8 +48,8 @@ $('document').ready(function() {
     web = document.getElementById("web");
     for(var i=0; i<tvaddr.length; i++)
       tvaddr[i]=addr[i][3];
-    window.parentView.showMsg("msg:AD 관련채널의 정보를 요청했습니다");
-    window.parentView.showMsg("adView:"+ADscript);
+    //window.parentView.showMsg("msg:AD 관련채널의 정보를 요청했습니다");
+    //window.parentView.showMsg("adView:"+ADscript);
     timer = setInterval( function() { OnOff(); }, 500 );
 });
 
