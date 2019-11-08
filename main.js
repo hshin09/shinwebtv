@@ -47,6 +47,7 @@ $('document').ready(function() {
     web = document.getElementById("web");
     for(var i=0; i<tvaddr.length; i++)
       tvaddr[i]=addr[i][3];
+    window.parentView.showMsg("getADsid");
     timer = setInterval( function() { OnOff(); }, 500 );
 });
 
@@ -380,8 +381,11 @@ function movieclk( w, url, p ) {
 	  }
 
     if( gi==1 && p.id==11 ) {
-      if(ADsid==null)
-        alert("ADsid is null")
+      if(ADsid==null) {
+        alert("ADsid is null");
+        window.parentView.showMsg("getADsid");
+        return;
+      }
       else
         url = "https://p1.adintrend.tv/live/ch30/i/ch30i.m3u8?sid="+ADsid;
     }
@@ -480,6 +484,7 @@ function setadtv(s) {
   var ssi=s.indexOf('cxid=');
   var eei=s.indexOf('tmpx=',ssi);
   ADsid=s.substring(ssi+5,eei-1);
+  window.parentView.showMsg("msg:ADsid가 설정되었습니다:"ADsid)
 }
 
 function state_change(i) {
