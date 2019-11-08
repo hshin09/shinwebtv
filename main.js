@@ -390,7 +390,7 @@ function movieclk( w, url, p ) {
       else {
         var ss=url.substring(3);
         url = "https://p1.adintrend.tv/live/ch"+ss+"/i/ch"+ss+"i.m3u8?sid="+ADsid;
-        stv.volume=0.5;
+        stv.volume=0.2;
       }
     }
 
