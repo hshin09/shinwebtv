@@ -380,7 +380,7 @@ function movieclk( w, url, p ) {
 	        return;
 	  }
 
-    tv.volume=1;
+    stv.volume=1;
     if( gi==1 && url.substring(0,3)=="ad:") {
       if(ADsid==null) {
         alert("ADsid is null");
@@ -390,7 +390,7 @@ function movieclk( w, url, p ) {
       else {
         var ss=url.substring(3);
         url = "https://p1.adintrend.tv/live/ch"+ss+"/i/ch"+ss+"i.m3u8?sid="+ADsid;
-        tv.volume=0.5;
+        stv.volume=0.5;
       }
     }
 
