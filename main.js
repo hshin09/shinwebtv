@@ -303,6 +303,7 @@ function onok() {
       ADsid=null;
       window.parentView.showMsg("msg:AD 관련채널의 정보를 요청했습니다");
       setTimeout(function(){window.parentView.showMsg("adView:"+ADscript);},2000);
+      return;
     }
   }
   x[si].click();
