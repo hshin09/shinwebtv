@@ -26,9 +26,9 @@ var gi=0;
 var si=7;
 var oi=0;
 var ei=7;
-var asi=[7,12];
+var asi=[7,13];
 var aoi=[-1,-1];
-var aei=[7,12];
+var aei=[7,13];
 var full=false;
 var timer=null;
 var time=0;
@@ -249,9 +249,6 @@ function change() {
 		else
 			 x[ei].style="background-color:#252525;color:yellow";
 	}
-  if(gi==1) {
-    x[12].innerHTML="สบายดี TV";
-  }
   //window.parentView.showMsg("00");
 }
 
@@ -383,17 +380,15 @@ function movieclk( w, url, p ) {
 	        return;
 	  }
 
-    if( gi==1 && (p.id==11 || p.id==12) ) {
+    if( gi==1 && url.substring(3)=="ad:") {
       if(ADsid==null) {
         alert("ADsid is null");
         window.parentView.showMsg("getADsid");
         return;
       }
       else {
-        if(p.id==11)
-          url = "https://p1.adintrend.tv/live/ch30/i/ch30i.m3u8?sid="+ADsid;
-        else
-          url = "https://p1.adintrend.tv/live/ch35/i/ch35i.m3u8?sid="+ADsid;
+        var ss=url.substring(3);
+        url = "https://p1.adintrend.tv/live/ch"+ss+"/i/ch"+ss+"i.m3u8?sid="+ADsid;
       }
     }
 
