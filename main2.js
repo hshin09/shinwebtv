@@ -1,4 +1,5 @@
 var tvaddr=new Array(18);
+var ADsid=null;
 var addr=[
 ["SBS Golf","SBS Golf","SBS Golf","79","http://50.7.118.178:9083/live/lmgr218-live1/dp/Ua/dpUaDQ0LwGNqpgVGdLwsrg==/live.m3u8",null,3],
 ["JTBC Golf","JTBC Golf","JTBC Golf","79","http://23.237.112.138:9083/live/lmgr218-live1/uX/0j/uX0j1KJo8eVhWnTx6uvShw==/live.m3u8",null,3],
@@ -44,6 +45,7 @@ $('document').ready(function() {
     web = document.getElementById("web");
     for(var i=0; i<tvaddr.length; i++)
       tvaddr[i]=addr[i][3];
+    //window.parentView.showMsg("getADsid");
     $('#tv').on('dblclick',(function(){ onFullscreenOnOff(); }));
     timer = setInterval( function() { OnOff(); }, 500 );
 });
@@ -261,6 +263,18 @@ function movieclk( w, url, p ) {
 	        return;
 	  }
 
+    if( gi==1 && url.substring(3)=="ad:") {
+      if(ADsid==null) {
+        //alert("ADsid is null");
+        //window.parentView.showMsg("getADsid");
+        //return;
+      }
+      else {
+        var ss=url.substring(3);
+        url = "https://p1.adintrend.tv/live/ch"+ss+"/i/ch"+ss+"i.m3u8?sid="+ADsid;
+      }
+    }
+
     if( imsi_oi>-1 )
       x[imsi_oi].style="background-color:#252525;color=white";
 	  si=p.id;
@@ -379,6 +393,13 @@ function set79tv(s) {
   oi=-1;
   tvaddr[si]=s;
   setTimeout(function(){ x[si].click(); }, 0);
+}
+
+function setadtv(s) {
+  var ssi=s.indexOf('cxid=');
+  var eei=s.indexOf('tmpx=',ssi);
+  ADsid=s.substring(ssi+5,eei-1);
+  window.parentView.showMsg("msg:ADsid가 설정되었습니다:"+ADsid)
 }
 
 function state_change(i) {
