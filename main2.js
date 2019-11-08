@@ -263,7 +263,7 @@ function movieclk( w, url, p ) {
 	        return;
 	  }
 
-    if( gi==1 && url.substring(3)=="ad:") {
+    if( gi==1 && url.substring(0,3)=="ad:") {
       if(ADsid==null) {
         //alert("ADsid is null");
         //window.parentView.showMsg("getADsid");
