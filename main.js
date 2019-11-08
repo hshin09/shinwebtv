@@ -394,7 +394,7 @@ function movieclk( w, url, p ) {
       }
     }
     if(gi==1 && p.id==x.length-1)
-       stx.volume=0.4;
+       stv.volume=0.4;
 
 	  if(oi>-1) x[oi].style="background-color:#252525;";
 	  if(ei>-1) x[ei].style="background-color:#252525";
