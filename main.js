@@ -380,6 +380,8 @@ function movieclk( w, url, p ) {
 	  }
 
     if( gi==1 && p.id==11 ) {
+      if(ADsid==null)
+        alert("ADsid is null")
       url = "https://p1.adintrend.tv/live/ch30/i/ch30i.m3u8?sid="+ADsid;
     }
 
