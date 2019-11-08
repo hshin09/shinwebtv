@@ -379,6 +379,10 @@ function movieclk( w, url, p ) {
 	        return;
 	  }
 
+    if( gi==1 && p.id==11 ) {
+      url = "https://p1.adintrend.tv/live/ch30/i/ch30i.m3u8?sid="+ADsid;
+    }
+
 	  if(oi>-1) x[oi].style="background-color:#252525;";
 	  if(ei>-1) x[ei].style="background-color:#252525";
 	  si=ei=p.id;
@@ -473,11 +477,6 @@ function setadtv(s) {
   var ssi=s.indexOf('cxid=');
   var eei=s.indexOf('tmpx=',ssi);
   ADsid=s.substring(ssi+5,eei-1);
-  alert(ADsid);
-  /*
-  tvaddr[si]=s;
-  setTimeout(function(){ x[si].click(); }, 0);
-  */
 }
 
 function state_change(i) {
