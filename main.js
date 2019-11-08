@@ -1,4 +1,5 @@
 window.onkeydown = keychk;
+var ADsid=null;
 var tvaddr=new Array(18);
 var addr=[
 ["SBS Golf","SBS Golf","SBS Golf",null,"79","http://50.7.118.178:9083/live/lmgr218-live1/dp/Ua/dpUaDQ0LwGNqpgVGdLwsrg==/live.m3u8",3],
@@ -25,9 +26,9 @@ var gi=0;
 var si=7;
 var oi=0;
 var ei=7;
-var asi=[7,12];
+var asi=[7,11];
 var aoi=[-1,-1];
-var aei=[7,12];
+var aei=[7,11];
 var full=false;
 var timer=null;
 var time=0;
@@ -466,6 +467,17 @@ function get79tv(i) {
 function set79tv(s) {
   tvaddr[si]=s;
   setTimeout(function(){ x[si].click(); }, 0);
+}
+
+function setadtv(s) {
+  var ssi=s.indexOf('cxid=');
+  var eei=s.indexOf('tmpx=',ssi);
+  ADsid=s.substring(ssi+5,eei-1);
+  alert(ADsid);
+  /*
+  tvaddr[si]=s;
+  setTimeout(function(){ x[si].click(); }, 0);
+  */
 }
 
 function state_change(i) {
