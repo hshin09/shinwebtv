@@ -1,5 +1,6 @@
 var tvaddr=new Array(18);
 var ADsid=null;
+var ADscript = "javascript:function getsid(){ var s=document.getElementById('TV'); if(s!=null && s!='undefined'){var ss=s.src;if(ss.indexOf('cxid')<0) return; clearInterval(timer); window.adView.showMsg(s.src);} } var timer=setInterval(function(){getsid();},1000);";
 var addr=[
 ["SBS Golf","SBS Golf","SBS Golf","79","http://50.7.118.178:9083/live/lmgr218-live1/dp/Ua/dpUaDQ0LwGNqpgVGdLwsrg==/live.m3u8",null,3],
 ["JTBC Golf","JTBC Golf","JTBC Golf","79","http://23.237.112.138:9083/live/lmgr218-live1/uX/0j/uX0j1KJo8eVhWnTx6uvShw==/live.m3u8",null,3],
@@ -45,7 +46,8 @@ $('document').ready(function() {
     web = document.getElementById("web");
     for(var i=0; i<tvaddr.length; i++)
       tvaddr[i]=addr[i][3];
-    window.parentView.showMsg("getADsid");
+    window.parentView.showMsg("msg:AD 관련채널의 정보를 요청합니다");
+    window.parentView.showMsg("adView:"+ADscript);
     $('#tv').on('dblclick',(function(){ onFullscreenOnOff(); }));
     timer = setInterval( function() { OnOff(); }, 500 );
 });
@@ -236,6 +238,15 @@ function onok() {
       return;
     }
   }
+  else {
+    if( isNotUser>0 && (si==11 || si==13) ) {
+      window.parentView.showMsg("adView:javascript:location.reload();");
+      ADsid=null;
+      window.parentView.showMsg("msg:AD 관련채널의 정보를 요청했습니다");
+      setTimeout(function(){window.parentView.showMsg("adView:"+ADscript);},2000);
+      return;
+    }
+  }
   oi=-1;
   x[si].click();
 }
@@ -263,17 +274,21 @@ function movieclk( w, url, p ) {
 	        return;
 	  }
 
+    stv.volume=1;
     if( gi==1 && url.substring(0,3)=="ad:") {
       if(ADsid==null) {
-        alert("ADsid is null");
-        window.parentView.showMsg("getADsid");
+        window.parentView.showMsg("msg:AD 관련채널 정보를 아직 얻지 못했으니 잠시후 다시 시도해보세요");
+        setTimeout(function(){window.parentView.showMsg("adView:"+ADscript);},2000);
         return;
       }
       else {
         var ss=url.substring(3);
         url = "https://p1.adintrend.tv/live/ch"+ss+"/i/ch"+ss+"i.m3u8?sid="+ADsid;
+        stv.volume=0.3;
       }
     }
+    if( gi==1 && p.id==x.length-1)
+      stv.volume=0.2;
 
     if( imsi_oi>-1 )
       x[imsi_oi].style="background-color:#252525;color=white";
@@ -399,7 +414,9 @@ function setadtv(s) {
   var ssi=s.indexOf('cxid=');
   var eei=s.indexOf('tmpx=',ssi);
   ADsid=s.substring(ssi+5,eei-1);
-  //window.parentView.showMsg("msg:ADsid가 설정되었습니다:"+ADsid)
+  window.parentView.showMsg("msg:AD 채널관련 정보가 설정되었습니다");
+  if(gi==1)
+    setTimeout(function(){ x[si].click(); }, 0);
 }
 
 function state_change(i) {
