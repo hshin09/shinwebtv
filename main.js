@@ -302,7 +302,7 @@ function onok() {
       window.parentView.showMsg("adView:javascript:location.reload();");
       ADsid=null;
       window.parentView.showMsg("msg:AD 관련채널의 정보를 요청했습니다");
-      setTimeout(window.parentView.showMsg("adView:"+ADscript),3000);
+      setTimeout(window.parentView.showMsg("adView:"+ADscript),2000);
     }
   }
   x[si].click();
@@ -501,6 +501,8 @@ function setadtv(s) {
   var eei=s.indexOf('tmpx=',ssi);
   ADsid=s.substring(ssi+5,eei-1);
   window.parentView.showMsg("msg:AD 채널관련 정보가 설정되었습니다");
+  if(gi==1)
+    x.[si].click();
 }
 
 function state_change(i) {
