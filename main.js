@@ -1,5 +1,6 @@
 window.onkeydown = keychk;
 var ADsid=null;
+var ADscript = "javascript:function getsid(){ var s=document.getElementById('TV'); if(s!=null && s!='undefined'){var ss=s.src;if(ss.indexOf('cxid')<0) return; clearInterval(timer); window.adView.showMsg(s.src);} } var timer=setInterval(function(){getsid();},1000);";
 var tvaddr=new Array(18);
 var addr=[
 ["SBS Golf","SBS Golf","SBS Golf",null,"79","http://50.7.118.178:9083/live/lmgr218-live1/dp/Ua/dpUaDQ0LwGNqpgVGdLwsrg==/live.m3u8",3],
@@ -47,7 +48,8 @@ $('document').ready(function() {
     web = document.getElementById("web");
     for(var i=0; i<tvaddr.length; i++)
       tvaddr[i]=addr[i][3];
-    window.parentView.showMsg("getADsid");
+    window.parentView.showMsg("msg:AD 관련채널의 정보를 요청했습니다");
+    window.parentView.showMsg("adView:"+ADscript);
     timer = setInterval( function() { OnOff(); }, 500 );
 });
 
@@ -295,6 +297,14 @@ function onok() {
       return;
     }
   }
+  else {
+    if( isNotUser>0 && (si==11 || si==13) ) {
+      window.parentView.showMsg("adView:javascript:location.reload();");
+      ADsid=null;
+      window.parentView.showMsg("msg:AD 관련채널의 정보를 요청했습니다");
+      setTimeout(window.parentView.showMsg("adView:"+ADscript),2000);
+    }
+  }
   x[si].click();
 }
 
@@ -383,8 +393,8 @@ function movieclk( w, url, p ) {
     stv.volume=1;
     if( gi==1 && url.substring(0,3)=="ad:") {
       if(ADsid==null) {
-        alert("ADsid is null");
-        window.parentView.showMsg("getADsid");
+        window.parentView.showMsg("msg:AD 관련채널 정보를 아직 얻지 못했으니 잠시후 다시 시도해보세요");
+        window.parentView.showMsg("adView:"+ADscript);
         return;
       }
       else {
@@ -393,8 +403,8 @@ function movieclk( w, url, p ) {
         stv.volume=0.3;
       }
     }
-    if(gi==1 && p.id==x.length-1)
-       stv.volume=0.2;
+    if( gi==1 && p.id==x.length-1)
+      stv.volume=0.2;
 
 	  if(oi>-1) x[oi].style="background-color:#252525;";
 	  if(ei>-1) x[ei].style="background-color:#252525";
@@ -490,7 +500,7 @@ function setadtv(s) {
   var ssi=s.indexOf('cxid=');
   var eei=s.indexOf('tmpx=',ssi);
   ADsid=s.substring(ssi+5,eei-1);
-  window.parentView.showMsg("msg:ADsid가 설정되었습니다:"+ADsid)
+  window.parentView.showMsg("msg:AD 채널관련 정보가 설정되었습니다");
 }
 
 function state_change(i) {
