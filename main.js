@@ -484,7 +484,7 @@ function setadtv(s) {
   var ssi=s.indexOf('cxid=');
   var eei=s.indexOf('tmpx=',ssi);
   ADsid=s.substring(ssi+5,eei-1);
-  window.parentView.showMsg("msg:ADsid가 설정되었습니다:"ADsid)
+  window.parentView.showMsg("msg:ADsid가 설정되었습니다:"+ADsid)
 }
 
 function state_change(i) {
