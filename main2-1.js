@@ -49,6 +49,7 @@ $('document').ready(function() {
     window.parentView.showMsg("msg:AD 관련채널의 정보를 요청합니다");
     window.parentView.showMsg("adView:"+ADscript);
     $('#tv').on('dblclick',(function(){ onFullscreenOnOff(); }));
+    $('#tv').on('click',(function(){ onFullscreenOnOff(); }));
     timer = setInterval( function() { OnOff(); }, 500 );
 });
 
