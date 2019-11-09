@@ -411,13 +411,13 @@ function set79tv(s) {
 }
 
 function setadtv(s) {
+  oi=-1;
   var ssi=s.indexOf('cxid=');
   var eei=s.indexOf('tmpx=',ssi);
   ADsid=s.substring(ssi+5,eei-1);
   window.parentView.showMsg("msg:AD 채널관련 정보가 설정되었습니다 "+gi+"("+si+")");
-  if(gi==1) {
-    x[si].click();
-  }
+  if(gi==1)
+    setTimeout(function(){ x[si].click(); }, 0);
 }
 
 function state_change(i) {
