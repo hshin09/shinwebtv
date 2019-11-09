@@ -12,7 +12,7 @@ div {
 }
 
 #leftmenu {
-    width:25%;
+    width:24%;
     position:absolute;
     opacity:0.75;
     margin-left:75%;
@@ -28,7 +28,7 @@ ul {
 }
 
 #end_change {
-  display:inline-block;
+  display:block;
 }
 
 #finish {
