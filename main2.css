@@ -12,7 +12,7 @@ div {
 }
 
 #leftmenu {
-    width:24%;
+    width:25%;
     position:absolute;
     opacity:0.75;
     margin-left:75%;
@@ -43,7 +43,7 @@ ul {
 }
 
 #kor_thai {
-  width:12vw;
+  width:14vw;
   height:25px;
   margin-bottom:10px;
   font-size:12px;
