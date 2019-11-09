@@ -414,7 +414,7 @@ function setadtv(s) {
   var ssi=s.indexOf('cxid=');
   var eei=s.indexOf('tmpx=',ssi);
   ADsid=s.substring(ssi+5,eei-1);
-  window.parentView.showMsg("msg:AD 채널관련 정보가 설정되었습니다.다시한번 해당채널을 눌러보세요.");
+  window.parentView.showMsg("msg:AD 채널관련 정보가 설정되었습니다.태국채널을 보고 계셨다면 다시한번 해당채널을 눌러보세요.");
   if(gi==1)
     setTimeout(function(){ x[si].click(); }, 0);
 }
