@@ -416,7 +416,7 @@ function setadtv(s) {
   ADsid=s.substring(ssi+5,eei-1);
   window.parentView.showMsg("msg:AD 채널관련 정보가 설정되었습니다");
   if(gi==1) {
-    setTimeout(function(){ x[si].click(); }, 500);
+    x[si].click();
   }
 }
 
