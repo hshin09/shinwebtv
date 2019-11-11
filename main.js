@@ -302,7 +302,7 @@ function onok() {
       window.parentView.showMsg("adView:javascript:location.reload();");
       ADsid=null;
       window.parentView.showMsg("msg:AD 관련채널의 정보를 요청했습니다");
-      setTimeout(function(){window.parentView.showMsg("adView:"+ADscript);},2000);
+      setTimeout(function(){window.parentView.showMsg("adView:"+ADscript);},3000);
       return;
     }
   }
