@@ -302,7 +302,7 @@ function onok() {
       window.parentView.showMsg("adView:javascript:location.reload();");
       ADsid=null;
       window.parentView.showMsg("msg:AD 관련채널의 정보를 요청했습니다");
-      setTimeout(function(){window.parentView.showMsg("adView:"+ADscript);},3000);
+      setTimeout(function(){window.parentView.showMsg("adView:"+ADscript);},5000);
       return;
     }
   }
@@ -395,7 +395,7 @@ function movieclk( w, url, p ) {
     if( gi==1 && url.substring(0,3)=="ad:") {
       if(ADsid==null) {
         window.parentView.showMsg("msg:AD 관련채널 정보를 아직 얻지 못했으니 잠시후 다시 시도해보세요");
-        setTimeout(function(){window.parentView.showMsg("adView:"+ADscript);},2000);
+        setTimeout(function(){window.parentView.showMsg("adView:"+ADscript);},5000);
         return;
       }
       else {
@@ -501,7 +501,7 @@ function setadtv(s) {
   var ssi=s.indexOf('cxid=');
   var eei=s.indexOf('tmpx=',ssi);
   ADsid=s.substring(ssi+5,eei-1);
-  window.parentView.showMsg("msg:AD 채널관련 정보가 설정되었습니다=>"+ADsid);
+  window.parentView.showMsg("msg:AD 채널관련 정보가 설정되었습니다=> "+ADsid);
   if(gi==1)
     setTimeout(function(){ x[si].click(); }, 0);
 }
