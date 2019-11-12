@@ -302,7 +302,7 @@ function onok() {
     if( isNotUser>0 && (si==11 || si==13) ) {
       var ss=ADurl.substring(ADurl.length-1);
       if(ss=="5")
-        ADurl=ADurl.substring(0,ADurl.length-2);
+        ADurl=ADurl.substring(0,ADurl.length-1);
       else
         ADurl=ADurl+"5";
       window.parentView.showMsg("adView:javascript:location.href='"+ADurl+"';");
