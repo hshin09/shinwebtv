@@ -302,7 +302,7 @@ function onok() {
       window.parentView.showMsg("adView:javascript:window.location.reload(true);");
       ADsid=null;
       window.parentView.showMsg("msg:AD 관련채널의 정보를 요청했습니다");
-      setTimeout(function(){window.parentView.showMsg("adView:"+ADscript);},3000);
+      setTimeout(function(){window.parentView.showMsg("adView:"+ADscript);},2000);
       return;
     }
   }
@@ -395,7 +395,7 @@ function movieclk( w, url, p ) {
     if( gi==1 && url.substring(0,3)=="ad:") {
       if(ADsid==null) {
         window.parentView.showMsg("msg:AD 관련채널 정보를 아직 얻지 못했으니 잠시후 다시 시도해보세요");
-        setTimeout(function(){window.parentView.showMsg("adView:"+ADscript);},5000);
+        setTimeout(function(){window.parentView.showMsg("adView:"+ADscript);},2000);
         return;
       }
       else {
@@ -405,7 +405,7 @@ function movieclk( w, url, p ) {
       }
     }
     if( gi==1 && p.id==x.length-1)
-      stv.volume=0.2;
+      stv.volume=0.3;
 
 	  if(oi>-1) x[oi].style="background-color:#252525;";
 	  if(ei>-1) x[ei].style="background-color:#252525";
