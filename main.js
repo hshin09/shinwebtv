@@ -299,10 +299,10 @@ function onok() {
   }
   else {
     if( isNotUser>0 && (si==11 || si==13) ) {
-      window.parentView.showMsg("adView:javascript:window.location.reload(true);");
+      window.parentView.showMsg("adView:javascript:location.reload(true);");
       ADsid=null;
       window.parentView.showMsg("msg:AD 관련채널의 정보를 요청했습니다");
-      setTimeout(function(){window.parentView.showMsg("adView:"+ADscript);},2000);
+      setTimeout(function(){window.parentView.showMsg("adView:"+ADscript);},3000);
       return;
     }
   }
@@ -395,7 +395,7 @@ function movieclk( w, url, p ) {
     if( gi==1 && url.substring(0,3)=="ad:") {
       if(ADsid==null) {
         window.parentView.showMsg("msg:AD 관련채널 정보를 아직 얻지 못했으니 잠시후 다시 시도해보세요");
-        setTimeout(function(){window.parentView.showMsg("adView:"+ADscript);},2000);
+        setTimeout(function(){window.parentView.showMsg("adView:"+ADscript);},3000);
         return;
       }
       else {
