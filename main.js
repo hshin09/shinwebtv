@@ -1,4 +1,5 @@
 window.onkeydown = keychk;
+var ADurl="https://www.adintrend.tv/hd/m/ch35";
 var ADsid=null;
 var ADscript = "javascript:function getsid(){ var s=document.getElementById('TV'); if(s!=null && s!='undefined'){var ss=s.src;if(ss.indexOf('cxid')<0) return; clearInterval(timer); window.adView.showMsg(s.src);} } var timer=setInterval(function(){getsid();},1000);";
 var tvaddr=new Array(18);
@@ -299,7 +300,12 @@ function onok() {
   }
   else {
     if( isNotUser>0 && (si==11 || si==13) ) {
-      window.parentView.showMsg("adView:javascript:location.href='https://www.adintrend.tv/hd/m/';");
+      var ss=ADurl.substring(ADurl.length-1);
+      if(ss=="5")
+        ADurl=ADurl.substring(0,ADurl.length-2);
+      else
+        ADurl=ADurl+"5";
+      window.parentView.showMsg("adView:javascript:location.href='"+ADurl+"';");
       ADsid=null;
       window.parentView.showMsg("msg:AD 관련채널의 정보를 요청했습니다");
       setTimeout(function(){window.parentView.showMsg("adView:"+ADscript);},3000);
