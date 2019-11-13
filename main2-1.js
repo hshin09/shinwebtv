@@ -48,6 +48,7 @@ $('document').ready(function() {
       tvaddr[i]=addr[i][3];
     window.parentView.showMsg("msg:AD 관련채널의 정보를 요청합니다");
     window.parentView.showMsg("adView:"+ADscript);
+    $('#tv').on('dblclick',(function(){ onFullscreenOnOff(); }));
     $('#tv').on('click',(function(){ onFullscreenOnOff(); }));
     timer = setInterval( function() { OnOff(); }, 500 );
 });
@@ -288,7 +289,7 @@ function movieclk( w, url, p ) {
       }
     }
     if( gi==1 && p.id==x.length-1)
-      stv.volume=0.3;
+      stv.volume=0.2;
 
     if( imsi_oi>-1 )
       x[imsi_oi].style="background-color:#252525;color=white";

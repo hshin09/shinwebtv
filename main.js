@@ -1,6 +1,6 @@
 window.onkeydown = keychk;
 var ADsid=null;
-var ADscript = "javascript:function getsid(){ var s=document.getElementById('TV'); if(s!=null && s!='undefined'){var ss=s.src;if(ss.indexOf('cxid')<0) return; clearInterval(timer); window.adView.showMsg(s.src);} } var timer=setInterval(function(){getsid();},1000);";
+var ADscript = "javascript:function getsid(){ var s=document.getElementById('TV'); if(s!=null && s!='undefined'){var ss=s.src; if(ss.indexOf('cxid')<1) return; window.adView.showMsg(s.src);} } setTimeout(function(){getsid();},100);";
 var tvaddr=new Array(18);
 var addr=[
 ["SBS Golf","SBS Golf","SBS Golf",null,"79","http://50.7.118.178:9083/live/lmgr218-live1/dp/Ua/dpUaDQ0LwGNqpgVGdLwsrg==/live.m3u8",3],
@@ -394,8 +394,8 @@ function movieclk( w, url, p ) {
     stv.volume=1;
     if( gi==1 && url.substring(0,3)=="ad:") {
       if(ADsid==null) {
-        window.parentView.showMsg("msg:AD 관련채널 정보를 아직 얻지 못했으니 잠시후 다시 시도해보세요");
-        setTimeout(function(){window.parentView.showMsg("adView:"+ADscript);},3000);
+        window.parentView.showMsg("msg:AD 관련채널 정보를 기다리고 있습니다.");
+        setTimeout(function(){window.parentView.showMsg("adView:"+ADscript);},2000);
         return;
       }
       else {
@@ -405,7 +405,7 @@ function movieclk( w, url, p ) {
       }
     }
     if( gi==1 && p.id==x.length-1)
-      stv.volume=0.3;
+      stv.volume=0.2;
 
 	  if(oi>-1) x[oi].style="background-color:#252525;";
 	  if(ei>-1) x[ei].style="background-color:#252525";
