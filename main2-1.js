@@ -1,4 +1,4 @@
-var tvaddr=new Array(18);
+var tvaddr=new Array(20);
 var ADsid=null;
 var ADscript = "javascript:function getsid(){ var s=document.getElementById('TV'); if(s!=null && s!='undefined'){var ss=s.src;if(ss.indexOf('cxid')<0) return; clearInterval(timer); window.adView.showMsg(s.src);} } var timer=setInterval(function(){getsid();},1000);";
 var addr=[
@@ -19,7 +19,9 @@ var addr=[
 ["KBS2 TV","KBS2 TV","KBS2 TV","79","http://50.7.118.178:9083/live/lmgr218-live1/GJ/qP/GJqPMui6DQrYctmZxQDeig==/live.m3u8",null,3],
 ["TVN TV","TVN TV","MNet TV","79",null,"http://50.7.118.178:9083/live/lmgr218-live1/DD/kh/DDkhewBlWWfGWPVkTkDWNA==/live.m3u8",3],
 ["코미디 TV","코미디 TV","코미디 TV","79",null,"79",3],
-["XtvN TV","XtvN TV","XtvN TV","79",null,"79",3]
+["XtvN TV","XtvN TV","XtvN TV","79",null,"79",3],
+["투니버스","투니버스","투니버스","79",null,"79",3],
+["MBN 뉴스","MBN 뉴스","MBN 뉴스","79",null,"79",3]
 ];
 
 var gi=0;
@@ -46,8 +48,10 @@ $('document').ready(function() {
     web = document.getElementById("web");
     for(var i=0; i<tvaddr.length; i++)
       tvaddr[i]=addr[i][3];
+    /*
     window.parentView.showMsg("msg:AD 관련채널의 정보를 요청합니다");
-    window.parentView.showMsg("adView:"+ADscript);
+    window.parentView.showMsg("adView:"+ADscript);]
+    */
     $('#tv').on('dblclick',(function(){ onFullscreenOnOff(); }));
     $('#tv').on('click',(function(){ onFullscreenOnOff(); }));
     timer = setInterval( function() { OnOff(); }, 500 );
@@ -240,6 +244,7 @@ function onok() {
     }
   }
   else {
+    /*
     if( isNotUser>0 && (si==11 || si==13) ) {
       window.parentView.showMsg("adView:javascript:location.reload(true);");
       ADsid=null;
@@ -247,6 +252,7 @@ function onok() {
       setTimeout(function(){window.parentView.showMsg("adView:"+ADscript);},2000);
       return;
     }
+    */
   }
   oi=-1;
   x[si].click();
@@ -276,6 +282,7 @@ function movieclk( w, url, p ) {
 	  }
 
     stv.volume=1;
+    /*
     if( gi==1 && url.substring(0,3)=="ad:") {
       if(ADsid==null) {
         window.parentView.showMsg("msg:AD 관련채널 정보를 아직 얻지 못했으니 잠시후 다시 시도해보세요");
@@ -288,6 +295,7 @@ function movieclk( w, url, p ) {
         stv.volume=0.3;
       }
     }
+    */
     if( gi==1 && p.id==x.length-1)
       stv.volume=0.2;
 

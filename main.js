@@ -1,7 +1,7 @@
 window.onkeydown = keychk;
 var ADsid=null;
 var ADscript = "javascript:function getsid(){ var s=document.getElementById('TV'); if(s!=null && s!='undefined'){var ss=s.src; if(ss.indexOf('cxid')<1) return; window.adView.showMsg(s.src);} } setTimeout(function(){getsid();},100);";
-var tvaddr=new Array(18);
+var tvaddr=new Array(20);
 var addr=[
 ["SBS Golf","SBS Golf","SBS Golf",null,"79","http://50.7.118.178:9083/live/lmgr218-live1/dp/Ua/dpUaDQ0LwGNqpgVGdLwsrg==/live.m3u8",3],
 ["JTBC Golf","JTBC Golf","JTBC Golf",null,"79","http://23.237.112.138:9083/live/lmgr218-live1/uX/0j/uX0j1KJo8eVhWnTx6uvShw==/live.m3u8",3],
@@ -20,7 +20,9 @@ var addr=[
 ["KBS2 TV","KBS2 TV","KBS2 TV",null,"79","http://50.7.118.178:9083/live/lmgr218-live1/GJ/qP/GJqPMui6DQrYctmZxQDeig==/live.m3u8",3],
 ["TVN TV","TVN TV","MNet TV",null,"79","http://50.7.118.178:9083/live/lmgr218-live1/DD/kh/DDkhewBlWWfGWPVkTkDWNA==/live.m3u8",3],
 ["코미디 TV","코미디 TV","코미디 TV",null,"79",null,3],
-["XtvN TV","XtvN TV","XtvN TV",null,"79",null,3]
+["XtvN TV","XtvN TV","XtvN TV","79",null,"79",3],
+["투니버스","투니버스","투니버스","79",null,"79",3],
+["MBN 뉴스","MBN 뉴스","MBN 뉴스","79",null,"79",3]
 ];
 
 var gi=0;
@@ -48,8 +50,10 @@ $('document').ready(function() {
     web = document.getElementById("web");
     for(var i=0; i<tvaddr.length; i++)
       tvaddr[i]=addr[i][3];
+    /*
     window.parentView.showMsg("msg:AD 관련채널의 정보를 요청합니다");
     window.parentView.showMsg("adView:"+ADscript);
+    */
     timer = setInterval( function() { OnOff(); }, 500 );
 });
 
@@ -298,6 +302,7 @@ function onok() {
     }
   }
   else {
+    /*
     if( isNotUser>0 && (si==11 || si==13) ) {
       window.parentView.showMsg("adView:javascript:location.replace('https://www.adintrend.tv/hd/m/'); location.reload(true);");
       ADsid=null;
@@ -305,6 +310,7 @@ function onok() {
       setTimeout(function(){window.parentView.showMsg("adView:"+ADscript);},2000);
       return;
     }
+    */
   }
   x[si].click();
 }
@@ -392,6 +398,7 @@ function movieclk( w, url, p ) {
 	  }
 
     stv.volume=1;
+    /*
     if( gi==1 && url.substring(0,3)=="ad:") {
       if(ADsid==null) {
         window.parentView.showMsg("msg:AD 관련채널 정보를 기다리고 있습니다.");
@@ -404,6 +411,7 @@ function movieclk( w, url, p ) {
         stv.volume=0.3;
       }
     }
+    */
     if( gi==1 && p.id==x.length-1)
       stv.volume=0.2;
 
