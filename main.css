@@ -60,10 +60,9 @@ li {
 }
 
 #ch_name {
-  position:absolute;
   margin: 0px;
-  left:2vw;
-  top: 2vh;
+  left:10px;
+  top: 10px;
   color:yellow;
 }
 
