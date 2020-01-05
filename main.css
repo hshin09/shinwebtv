@@ -23,11 +23,11 @@ ul {
 }
 
 li {
-  padding-left:15px;
-  height:28px;
-  line-height:28px;
+  padding-left:20px;
+  height:25px;
+  line-height:25px;
   vertical-align:middle;
-  font-size:15px;
+  font-size:13px;
   color:white;
 }
 
@@ -54,7 +54,7 @@ li {
   position:absolute;
   opacity:0.9;
   left:30px;
-  top: 20px;
+  top: 15px;
   background-color:#252525;
   display:none;
 }
