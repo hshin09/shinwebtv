@@ -13,7 +13,7 @@ var addr=[
 ["TV 조선 뉴스","TV 조선 뉴스","TV 조선 뉴스",null,"79","http://23.237.112.138:9083/live/lmgr218-live1/uN/RW/uNRWY94bN9uq-H4U6-AdGA==/live.m3u8",3],
 ["채널A 뉴스","채널A 뉴스","채널A 뉴스",null,"79","http://23.237.112.138:9083/live/lmgr218-live1/5e/F8/5eF872HRwPbsKyyeCGBSQg==/live.m3u8",3],
 ["JTBC 뉴스","JTBC 뉴스","JTBC 뉴스",null,"79","http://23.237.112.138:9083/live/lmgr218-live1/1k/C9/1kC9miPHbLuH_Xohzycp8g==/live.m3u8",3],
-["YTN 뉴스","YTN 뉴스","EBS1",null,"79","http://50.7.118.178:9083/live/lmgr218-live1/Y7/kd/Y7kdN2a2F8joMgdxPBzaAQ==/live.m3u8",3],
+["YTN 뉴스","YTN 뉴스","EBS1",null,"79","http://ebsonair.ebs.co.kr:1935/groundwavefamilypc/familypc1m/chunklist_w135830683.m3u8",3],
 ["SBS TV","SBS TV","SBS TV",null,"79","http://msl.tvbayoplus.com:9083/live/lmgr218-live1/an/Ec/anEch5GmlJzMh-jcs1OTow==/live.m3u8",3],
 ["MBC TV","MBC TV","MBC TV",null,"79","http://msl.tvbayoplus.com:9083/live/lmgr218-live1/yo/Kz/yoKzy5jIzhPSc34OXb26Hg==/live.m3u8",3],
 ["KBS1 TV","KBS1 TV","KBS1 TV",null,"79","http://msl.tvbayoplus.com:9083/live/lmgr218-live1/Z1/ck/Z1ckFeyBo9VzK1DFmR1-Hw==/live.m3u8",3],
