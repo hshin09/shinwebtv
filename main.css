@@ -53,8 +53,8 @@ li {
 #videoMessage {
   position:absolute;
   opacity:0.9;
-  left:15px;
-  top: 10px;
+  left:17px;
+  top: 12px;
   background-color:#252525;
   display:none;
 }
