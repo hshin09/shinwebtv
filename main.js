@@ -524,7 +524,7 @@ function state_change(i) {
 			  showErrorMessage();
 				return false;
 			}
-			var ssi=strRes.indexOf("file: ");
+			var ssi=strRes.indexOf("file: \"http");
       var eei=strRes.indexOf(",",ssi);
 			strRes=strRes.substring(ssi+7,eei-1);
 			//alert(strRes);
