@@ -27,10 +27,10 @@ var addr=[
 
 var gi=0;
 var si=7;
-var oi=0;
+var oi=7;
 var ei=7;
 var asi=[7,12];
-var aoi=[-1,-1];
+var aoi=[7,12];
 var aei=[7,12];
 var full=false;
 var timer=null;
