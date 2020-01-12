@@ -217,7 +217,7 @@ function onleft() {
 		}
 		onFullscreenOnOff();
 	}
-	else x[si].click();
+	else if(si>-1) x[si].click();
 }
 
 function onright() {
@@ -274,6 +274,7 @@ function keychk(e) {
 		else if(e.which == 13 ) {
       onok();
 		}
+    alert(e.which);
 }
 
 function onok() {
