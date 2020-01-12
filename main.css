@@ -18,15 +18,13 @@ div {
     background-color:#252525;
 }
 
-ul li {
-  list-style: none;
-}
-
 ul {
+    list-style: none;
     height:100%;
 }
 
 li {
+  list-style: none;
   padding-left:15px;
   height:28px;
   line-height:28px;
