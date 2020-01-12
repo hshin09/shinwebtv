@@ -28,8 +28,8 @@ ul {
 
 li {
   padding-left:20px;
-  height:26px;
-  line-height:26px;
+  height:25px;
+  line-height:25px;
   vertical-align:middle;
   font-size:13px;
   color:white;
@@ -57,7 +57,7 @@ li {
 #videoMessage {
   position:absolute;
   opacity:0.9;
-  left:3vw;
+  left:2vw;
   top: 2vh;
   background-color:#252525;
   display:none;
