@@ -51,7 +51,7 @@ $('document').ready(function() {
     for(var i=0; i<tvaddr.length; i++)
       tvaddr[i]=addr[i][3];
 
-    document.body.focus();
+    $('#menu0').focus();
     /*
     window.parentView.showMsg("msg:AD 관련채널의 정보를 요청합니다");
     window.parentView.showMsg("adView:"+ADscript);
