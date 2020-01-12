@@ -18,12 +18,11 @@ div {
     background-color:#252525;
 }
 
-ul li {
-  list-style: none;
-}
-
 ul {
     height:100%;
+    list-style: none;
+    padding: 0;
+    border: 0;
 }
 
 li {
