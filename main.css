@@ -20,6 +20,8 @@ div {
 
 ul li {
   list-style: none;
+  padding: 0;
+  border: 0;
 }
 
 ul {
