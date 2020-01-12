@@ -27,11 +27,11 @@ ul {
 }
 
 li {
-  padding-left:15px;
+  padding-left:17px;
   height:25px;
   line-height:25px;
   vertical-align:middle;
-  font-size:13px;
+  font-size:12px;
   color:white;
 }
 
@@ -57,8 +57,8 @@ li {
 #videoMessage {
   position:absolute;
   opacity:0.9;
-  left:8px;
-  top: 6px;
+  left:10px;
+  top: 8px;
   background-color:#252525;
   display:none;
 }
