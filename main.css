@@ -18,20 +18,16 @@ div {
     background-color:#252525;
 }
 
-ul li {
-  list-style: none;
-}
-
 ul {
     height:100%;
 }
 
 li {
-  padding-left:20px;
-  height:25px;
-  line-height:25px;
+  padding-left:8px;
+  height:26px;
+  line-height:26px;
   vertical-align:middle;
-  font-size:13px;
+  font-size:14px;
   color:white;
 }
 
@@ -57,8 +53,8 @@ li {
 #videoMessage {
   position:absolute;
   opacity:0.9;
-  left:2vw;
-  top: 2vh;
+  left:0px;
+  top: 0px;
   background-color:#252525;
   display:none;
 }
