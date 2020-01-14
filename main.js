@@ -217,7 +217,7 @@ function onleft() {
 		}
 		onFullscreenOnOff();
 	}
-	else if(si>-1) x[si].click();
+	else  x[si].click();
 }
 
 function onright() {
