@@ -20,9 +20,9 @@ var addr=[
 ["KBS2 TV","KBS2 TV","KBS2 TV",null,"79","http://msl.tvbayoplus.com:9083/live/lmgr218-live1/GJ/qP/GJqPMui6DQrYctmZxQDeig==/live.m3u8",3],
 ["TVN TV","TVN TV","TVN TV",null,"79","http://23.237.112.138:9083/live/lmgr218-live1/F8/6x/F86xTagKpWyjsAWhpFhRYQ==/live.m3u8",3],
 ["코미디 TV","코미디 TV","코미디 TV",null,"79",null,3],
-["XtvN TV","XtvN TV","XtvN TV","79",null,"79",3],
-["투니버스","투니버스","투니버스","79",null,"79",3],
-["MBN 뉴스","MBN 뉴스","MBN 뉴스","79",null,"http://23.237.112.138:9083/live/lmgr218-live1/j7/qy/j7qybKo1-oIO_R2EKcmcIA==/live.m3u8",3]
+["XtvN TV","XtvN TV","XtvN TV",null,"79",null,3],
+["투니버스","투니버스","투니버스",null,"79",null,3],
+["MBN 뉴스","MBN 뉴스","MBN 뉴스",null,"79","http://23.237.112.138:9083/live/lmgr218-live1/j7/qy/j7qybKo1-oIO_R2EKcmcIA==/live.m3u8",3]
 ];
 
 var gi=0;
@@ -192,7 +192,7 @@ function onup() {
 	//if(full && gi==0 && si==10) si--;
 	if(si<0) si+=cnt;
 	x[si].style="background-color:#234567";
-	if(si==ei) x[si].style="background-color:#234567;color:yellow";
+	//if(si==ei) x[si].style="background-color:#234567;color:yellow";
 	oi=si;
 	if(full) x[si].click();
 }
@@ -204,7 +204,7 @@ function ondown() {
 	//if(full && gi==0 && si==10) si++;
 	if(si>=cnt) si-=cnt;
 	x[si].style="background-color:#234567";
-	if(si==ei) x[si].style="background-color:#234567;color:yellow";
+	//if(si==ei) x[si].style="background-color:#234567;color:yellow";
 	oi=si;
 	if(full) x[si].click();
 }
@@ -217,7 +217,7 @@ function onleft() {
 		}
 		onFullscreenOnOff();
 	}
-	else  x[si].click();
+	else if(si>-1) x[si].click();
 }
 
 function onright() {
@@ -386,7 +386,6 @@ function movieclk( w, url, p ) {
     stv.pause();
     if( url == null )
 	  {
-                si=p.id;
 	        gettv(p.id);
 	        setTimeout(function(){ x[p.id].click(); }, 0);
 	        return;
