@@ -386,8 +386,9 @@ function movieclk( w, url, p ) {
     stv.pause();
     if( url == null )
 	  {
-	        gettv(p.id);
-	        setTimeout(function(){ x[p.id].click(); }, 0);
+          si = p.id;
+	        gettv(si);
+	        setTimeout(function(){ x[si].click(); }, 0);
 	        return;
 	  }
 
@@ -416,10 +417,12 @@ function movieclk( w, url, p ) {
     if( gi==1 && p.id==x.length-1)
       stv.volume=0.2;
 
+    /*
 	  if(oi>-1) x[oi].style="background-color:#252525;";
 	  if(ei>-1) x[ei].style="background-color:#252525";
+    */
 	  si=ei=p.id;
-	  x[ei].style="background-color:#234567;color:yellow";
+	  //x[ei].style="background-color:#234567;color:yellow";
 	  oi=si;
 
 	  var xx;
