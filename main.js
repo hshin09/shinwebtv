@@ -186,8 +186,8 @@ function clearAddress(tar) {
 }
 
 function onup() {
-	if(oi>-1) x[oi].style="background-color:#252525";
-	if(ei>-1) x[ei].style="color:yellow";
+	x[oi].style="background-color:#252525";
+	x[ei].style="color:yellow";
 	si--;
 	//if(full && gi==0 && si==10) si--;
 	if(si<0) si+=cnt;
@@ -198,8 +198,8 @@ function onup() {
 }
 
 function ondown() {
-	if(oi>-1) x[oi].style="background-color:#252525";
-	if(ei>-1) x[ei].style="color:yellow";
+	x[oi].style="background-color:#252525";
+	x[ei].style="color:yellow";
 	si++;
 	//if(full && gi==0 && si==10) si++;
 	if(si>=cnt) si-=cnt;
@@ -210,14 +210,14 @@ function ondown() {
 }
 
 function onleft() {
-	if(si>-1 && si==ei) {
+	if(si==ei) {
 		if(full) {
 			change();
 			return;
 		}
 		onFullscreenOnOff();
 	}
-	else if(si>-1) x[si].click();
+	else x[si].click();
 }
 
 function onright() {
@@ -248,14 +248,12 @@ function change() {
 	ei=aei[gi];
 	oi=aoi[gi];
 
-	if(si>-1) x[si].style="background-color:#234567";
-	if(ei>-1) {
-		if(si==ei)
-			 x[si].style="background-color:#234567;color:yellow";
-		else
-			 x[ei].style="background-color:#252525;color:yellow";
-	}
-  //window.parentView.showMsg("00");
+	x[si].style="background-color:#234567";
+	if(si==ei)
+		 x[si].style="background-color:#234567;color:yellow";
+	else
+		 x[ei].style="background-color:#252525;color:yellow";
+//window.parentView.showMsg("00");
 }
 
 function keychk(e) {
@@ -370,8 +368,8 @@ function onFullscreenOnOff() {
 	else
 	{
 	    document.getElementById("mydiv").style.left="10%";
-        document.getElementById("mydiv").style.width="90%";
-        full=false;
+      document.getElementById("mydiv").style.width="90%";
+      full=false;
 	}
 }
 
@@ -417,12 +415,10 @@ function movieclk( w, url, p ) {
     if( gi==1 && p.id==x.length-1)
       stv.volume=0.2;
 
-    /*
-	  if(oi>-1) x[oi].style="background-color:#252525;";
-	  if(ei>-1) x[ei].style="background-color:#252525";
-    */
+	  x[oi].style="background-color:#252525;";
+	  x[ei].style="background-color:#252525";
 	  si=ei=p.id;
-	  //x[ei].style="background-color:#234567;color:yellow";
+	  x[ei].style="background-color:#234567;color:yellow";
 	  oi=si;
 
 	  var xx;
