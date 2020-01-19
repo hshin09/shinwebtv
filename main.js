@@ -192,7 +192,7 @@ function onup() {
 	//if(full && gi==0 && si==10) si--;
 	if(si<0) si+=cnt;
 	x[si].style="background-color:#234567";
-	//if(si==ei) x[si].style="background-color:#234567;color:yellow";
+	if(si==ei) x[si].style="background-color:#234567;color:yellow";
 	oi=si;
 	if(full) x[si].click();
 }
@@ -204,7 +204,7 @@ function ondown() {
 	//if(full && gi==0 && si==10) si++;
 	if(si>=cnt) si-=cnt;
 	x[si].style="background-color:#234567";
-	//if(si==ei) x[si].style="background-color:#234567;color:yellow";
+	if(si==ei) x[si].style="background-color:#234567;color:yellow";
 	oi=si;
 	if(full) x[si].click();
 }
