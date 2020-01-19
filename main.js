@@ -386,9 +386,8 @@ function movieclk( w, url, p ) {
     stv.pause();
     if( url == null )
 	  {
-          si = p.id;
-	        gettv(si);
-	        setTimeout(function(){ x[si].click(); }, 0);
+	        gettv(p.id);
+	        setTimeout(function(){ x[p.id].click(); }, 0);
 	        return;
 	  }
 
