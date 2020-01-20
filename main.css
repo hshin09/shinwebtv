@@ -1,3 +1,8 @@
+* {
+  outline: none;
+  border: none;
+}
+
 body {
   overflow:hidden;
   padding:0;
@@ -16,11 +21,6 @@ div {
     height:100%;
     float:left;
     background-color:#252525;
-}
-
-ul li {
-  outline: none;
-  border: none;
 }
 
 ul {
