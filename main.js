@@ -198,7 +198,7 @@ function onup() {
 	if(full) x[si].click();
 }
 
-function ondown()
+function ondown() {
   return;
 	if(oi>-1) x[oi].style="background-color:#252525";
 	if(ei>-1) x[ei].style="color:yellow";
