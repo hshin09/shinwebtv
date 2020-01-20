@@ -323,7 +323,6 @@ function mlok() {
 	var i;
 	for(i=0; i<cnt; i++) {
 		x[i].id=i;
-                x[i].z-index=-1;
    }
    if(ei>-1) {
    	si=ei;
