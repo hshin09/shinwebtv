@@ -3,6 +3,10 @@
   border: none;
 }
 
+*:focus {
+  outline: none;
+}
+
 body {
   overflow:hidden;
   padding:0;
