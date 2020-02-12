@@ -94,6 +94,7 @@ function OnOff()
             timer=null;
           }
 	        isChLoaded = 1;
+path79=path;
 	        mlok();
 	    }
       return;
