@@ -18,15 +18,9 @@ var addr=[
 ["KBS1 TV","KBS1 TV","KBS1 TV","http://msl.tvbayoplus.com:9083/live/lmgr218-live1/Z1/ck/Z1ckFeyBo9VzK1DFmR1-Hw==/live.m3u8","http://msl.tvbayoplus.com:9083/live/lmgr218-live1/Z1/ck/Z1ckFeyBo9VzK1DFmR1-Hw==/live.m3u8","http://msl.tvbayoplus.com:9083/live/lmgr218-live1/Z1/ck/Z1ckFeyBo9VzK1DFmR1-Hw==/live.m3u8",3],
 ["KBS2 TV","KBS2 TV","KBS2 TV","http://msl.tvbayoplus.com:9083/live/lmgr218-live1/GJ/qP/GJqPMui6DQrYctmZxQDeig==/live.m3u8","http://msl.tvbayoplus.com:9083/live/lmgr218-live1/GJ/qP/GJqPMui6DQrYctmZxQDeig==/live.m3u8","http://msl.tvbayoplus.com:9083/live/lmgr218-live1/GJ/qP/GJqPMui6DQrYctmZxQDeig==/live.m3u8",3],
 ["TVN TV","TVN TV","TVN TV","http://23.237.112.138:9083/live/lmgr218-live1/F8/6x/F86xTagKpWyjsAWhpFhRYQ==/live.m3u8","http://23.237.112.138:9083/live/lmgr218-live1/F8/6x/F86xTagKpWyjsAWhpFhRYQ==/live.m3u8","http://23.237.112.138:9083/live/lmgr218-live1/F8/6x/F86xTagKpWyjsAWhpFhRYQ==/live.m3u8",3],
-["MNet","MNet","MNet","http://23.237.112.138:9083/live/lmgr218-live1/DD/kh/DDkhewBlWWfGWPVkTkDWNA==/live.m3u8
-","http://23.237.112.138:9083/live/lmgr218-live1/DD/kh/DDkhewBlWWfGWPVkTkDWNA==/live.m3u8
-","http://23.237.112.138:9083/live/lmgr218-live1/DD/kh/DDkhewBlWWfGWPVkTkDWNA==/live.m3u8
-",3],
+["MNet","MNet","MNet","http://23.237.112.138:9083/live/lmgr218-live1/DD/kh/DDkhewBlWWfGWPVkTkDWNA==/live.m3u8","http://23.237.112.138:9083/live/lmgr218-live1/DD/kh/DDkhewBlWWfGWPVkTkDWNA==/live.m3u8","http://23.237.112.138:9083/live/lmgr218-live1/DD/kh/DDkhewBlWWfGWPVkTkDWNA==/live.m3u8",3],
 ["XtvN TV","XtvN TV","XtvN TV","","","",3],
-["투니버스","투니버스","투니버스","http://23.237.112.138:9083/live/lmgr218-live1/iz/El/izElYP02-6dsroN6VHX4hw==/live.m3u8
-","http://23.237.112.138:9083/live/lmgr218-live1/iz/El/izElYP02-6dsroN6VHX4hw==/live.m3u8
-","http://23.237.112.138:9083/live/lmgr218-live1/iz/El/izElYP02-6dsroN6VHX4hw==/live.m3u8
-",3],
+["투니버스","투니버스","투니버스","http://23.237.112.138:9083/live/lmgr218-live1/iz/El/izElYP02-6dsroN6VHX4hw==/live.m3u8","http://23.237.112.138:9083/live/lmgr218-live1/iz/El/izElYP02-6dsroN6VHX4hw==/live.m3u8","http://23.237.112.138:9083/live/lmgr218-live1/iz/El/izElYP02-6dsroN6VHX4hw==/live.m3u8",3],
 ["MBN 뉴스","MBN 뉴스","MBN 뉴스","http://23.237.112.138:9083/live/lmgr218-live1/j7/qy/j7qybKo1-oIO_R2EKcmcIA==/live.m3u8","http://23.237.112.138:9083/live/lmgr218-live1/j7/qy/j7qybKo1-oIO_R2EKcmcIA==/live.m3u8","http://23.237.112.138:9083/live/lmgr218-live1/j7/qy/j7qybKo1-oIO_R2EKcmcIA==/live.m3u8",3]
 ];
 
