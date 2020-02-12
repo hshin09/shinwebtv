@@ -1,3 +1,6 @@
+
+   Referer: http://www.youtv24.net/sites/speedtv/index.php?tg=1ch&ca=0
+
 sbs golf
 http://23.237.112.138:9083/live/lmgr218-live1/dp/Ua/dpUaDQ0LwGNqpgVGdLwsrg==/live.m3u8
 
