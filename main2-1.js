@@ -416,6 +416,7 @@ function get79tv(i) {
 }
 
 function set79tv(s) {
+  window.parentView.showMsg("msg:"+s);
   oi=-1;
   tvaddr[si]=s;
   setTimeout(function(){ x[si].click(); }, 0);
