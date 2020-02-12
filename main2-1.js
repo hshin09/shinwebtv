@@ -94,7 +94,7 @@ function OnOff()
             timer=null;
           }
 	        isChLoaded = 1;
-path79=path;
+path79="http://www.youtv24.net/sites/speedtv/pages/pc/pc_view.php?ch=live";
 	        mlok();
 	    }
       return;
