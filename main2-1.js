@@ -1,8 +1,8 @@
-var tvaddr=new Array(20);
+var tvaddr=new Array(21);
 var ADsid=null;
 var ADscript = "javascript:function getsid(){ var s=document.getElementById('TV'); if(s!=null && s!='undefined'){var ss=s.src;if(ss.indexOf('cxid')<0) return; clearInterval(timer); window.adView.showMsg(s.src);} } var timer=setInterval(function(){getsid();},1000);";
 var addr=[
-["SBS Golf","SBS Golf","SBS Golf","http://23.237.112.138:9083/live/lmgr218-live1/dp/Ua/dpUaDQ0LwGNqpgVGdLwsrg==/live.m3u8","http://23.237.112.138:9083/live/lmgr218-live1/dp/Ua/dpUaDQ0LwGNqpgVGdLwsrg==/live.m3u8","http://23.237.112.138:9083/live/lmgr218-live1/dp/Ua/dpUaDQ0LwGNqpgVGdLwsrg==/live.m3u8",3],
+["SBS Golf","SBS Golf","SBS Golf","79","http://23.237.112.138:9083/live/lmgr218-live1/dp/Ua/dpUaDQ0LwGNqpgVGdLwsrg==/live.m3u8","http://23.237.112.138:9083/live/lmgr218-live1/dp/Ua/dpUaDQ0LwGNqpgVGdLwsrg==/live.m3u8",3],
 ["JTBC Golf","JTBC Golf","JTBC Golf","http://23.237.112.138:9083/live/lmgr218-live1/uX/0j/uX0j1KJo8eVhWnTx6uvShw==/live.m3u8","http://23.237.112.138:9083/live/lmgr218-live1/uX/0j/uX0j1KJo8eVhWnTx6uvShw==/live.m3u8","http://23.237.112.138:9083/live/lmgr218-live1/uX/0j/uX0j1KJo8eVhWnTx6uvShw==/live.m3u8",3],
 ["영화 CGV","영화 CGV","영화 CGV","","","",3],
 ["영화 OCN","영화 OCN","영화 OCN","http://23.237.112.138:9083/live/lmgr218-live1/GR/13/GR13XDGjlUsD8nZQasCIhw==/live.m3u8","http://23.237.112.138:9083/live/lmgr218-live1/GR/13/GR13XDGjlUsD8nZQasCIhw==/live.m3u8","http://23.237.112.138:9083/live/lmgr218-live1/GR/13/GR13XDGjlUsD8nZQasCIhw==/live.m3u8",3],
@@ -21,7 +21,9 @@ var addr=[
 ["MNet","MNet","MNet","http://23.237.112.138:9083/live/lmgr218-live1/DD/kh/DDkhewBlWWfGWPVkTkDWNA==/live.m3u8","http://23.237.112.138:9083/live/lmgr218-live1/DD/kh/DDkhewBlWWfGWPVkTkDWNA==/live.m3u8","http://23.237.112.138:9083/live/lmgr218-live1/DD/kh/DDkhewBlWWfGWPVkTkDWNA==/live.m3u8",3],
 ["XtvN TV","XtvN TV","XtvN TV","","","",3],
 ["투니버스","투니버스","투니버스","http://23.237.112.138:9083/live/lmgr218-live1/iz/El/izElYP02-6dsroN6VHX4hw==/live.m3u8","http://23.237.112.138:9083/live/lmgr218-live1/iz/El/izElYP02-6dsroN6VHX4hw==/live.m3u8","http://23.237.112.138:9083/live/lmgr218-live1/iz/El/izElYP02-6dsroN6VHX4hw==/live.m3u8",3],
-["MBN 뉴스","MBN 뉴스","MBN 뉴스","http://23.237.112.138:9083/live/lmgr218-live1/j7/qy/j7qybKo1-oIO_R2EKcmcIA==/live.m3u8","http://23.237.112.138:9083/live/lmgr218-live1/j7/qy/j7qybKo1-oIO_R2EKcmcIA==/live.m3u8","http://23.237.112.138:9083/live/lmgr218-live1/j7/qy/j7qybKo1-oIO_R2EKcmcIA==/live.m3u8",3]
+["MBN 뉴스","MBN 뉴스","MBN 뉴스","http://23.237.112.138:9083/live/lmgr218-live1/j7/qy/j7qybKo1-oIO_R2EKcmcIA==/live.m3u8","http://23.237.112.138:9083/live/lmgr218-live1/j7/qy/j7qybKo1-oIO_R2EKcmcIA==/live.m3u8","http://23.237.112.138:9083/live/lmgr218-live1/j7/qy/j7qybKo1-oIO_R2EKcmcIA==/live.m3u8",3],
+["MNet","MNet","MNet","79","79","http://23.237.112.138:9083/live/lmgr218-live1/DD/kh/DDkhewBlWWfGWPVkTkDWNA==/live.m3u8",3]
+
 ];
 
 var gi=0;
@@ -94,9 +96,8 @@ function OnOff()
             timer=null;
           }
 	        isChLoaded = 1;
-          path79="http://www.youtv24.net/sites/speedtv/pages/pc/pc_view.php?ch=live";
-          path=path79;
-	        mlok();
+          path79 = path;
+          mlok();
 	    }
       return;
     }
