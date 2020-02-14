@@ -276,6 +276,7 @@ function keychk(e) {
 		else if(e.which == 13 ) {
       onok();
 		}
+      e.preventDefault();
 }
 
 function onok() {
