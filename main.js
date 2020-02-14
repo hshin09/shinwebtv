@@ -395,7 +395,7 @@ function movieclk( w, url, p ) {
 
     if( url == "79" )
 	  {
-          //si = p.id;
+          si = p.id;
           get79tv(p.id);
 	        return;
 	  }
