@@ -282,7 +282,6 @@ function onok() {
   if( gi == 0 )
   {
     var i_ch=addr[si][6];
-    ei = si;
 
     i_ch++;
     if(i_ch>5)
@@ -396,7 +395,6 @@ function movieclk( w, url, p ) {
 
     if( url == "79" )
 	  {
-          ei = si = p.id;
           get79tv(p.id);
 	        return;
 	  }
