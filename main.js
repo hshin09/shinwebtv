@@ -274,8 +274,11 @@ function keychk(e) {
 			onright();
 		}
 		else if(e.which == 13 ) {
-      onok();
+                        onok();
 		}
+                else {
+alert( e.which );
+                }
       e.preventDefault();
 }
 
