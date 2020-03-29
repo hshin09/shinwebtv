@@ -21,7 +21,6 @@ div {
 }
 
 #leftmenu {
-    top:0;
     padding:0;
     margin:0;
     width:10%;
@@ -38,7 +37,7 @@ ul {
 
 li {
   padding-left:8px;
-  height:25px;
+  height:24px;
   line-height:25px;
   vertical-align:middle;
   font-size:14px;
