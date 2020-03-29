@@ -1,14 +1,14 @@
 window.onkeydown = keychk;
 var ADsid=null;
 var ADscript = "javascript:function getsid(){ var s=document.getElementById('TV'); if(s!=null && s!='undefined'){var ss=s.src; if(ss.indexOf('cxid')<1) return; window.adView.showMsg(s.src);} } setTimeout(function(){getsid();},100);";
-var tvaddr=new Array(21);
+var tvaddr=new Array(22);
 var addr=[
   ["SBS Golf","SBS Golf","SBS Golf","79","79","http://23.237.112.138:9083/live/lmgr218-live1/dp/Ua/dpUaDQ0LwGNqpgVGdLwsrg==/live.m3u8",3],
   ["JTBC Golf","JTBC Golf","JTBC Golf","79","79","http://23.237.112.138:9083/live/lmgr218-live1/uX/0j/uX0j1KJo8eVhWnTx6uvShw==/live.m3u8",3],
-  ["영화 CGV","영화 CGV","영화 CGV","79","79","79",3],
-  ["영화 OCN","영화 OCN","영화 OCN","79","79","http://23.237.112.138:9083/live/lmgr218-live1/GR/13/GR13XDGjlUsD8nZQasCIhw==/live.m3u8",3],
+  ["OCN Movies","OCN Movies","OCN Movies","79","79","79",3],
+  ["OCN Original","OCN Original","OCN Original","79","79","http://23.237.112.138:9083/live/lmgr218-live1/GR/13/GR13XDGjlUsD8nZQasCIhw==/live.m3u8",3],
   ["영화 Screen","영화 Screen","영화 Screen","79","79","79",3],
-  ["Super Action","Super Action","채널 차이나","79","79","http://23.237.112.138:9083/live/lmgr218-live1/ut/hX/uthXNC6cyUNTT6dtUu9D6A==/live.m3u8",3],
+  ["OCN Thrills","OCN Thrills","채널 차이나","79","79","http://23.237.112.138:9083/live/lmgr218-live1/ut/hX/uthXNC6cyUNTT6dtUu9D6A==/live.m3u8",3],
   ["Catch ON 1","Catch ON 1","Catch ON 1","79","79","http://23.237.112.138:9083/live/lmgr218-live1/Wj/Nz/WjNzluqgVARhAtul5gUKtg==/live.m3u8",3],
   ["TV 조선 뉴스","TV 조선 뉴스","TV 조선 뉴스","79","http://23.237.112.138:9083/live/lmgr218-live1/uN/RW/uNRWY94bN9uq-H4U6-AdGA==/live.m3u8","http://live.chosun.gscdn.com/live/_definst_/tvchosun3.stream/playlist.m3u8",3],
   ["채널 A 뉴스","채널 A 뉴스","채널 A 뉴스","79","79","http://23.237.112.138:9083/live/lmgr218-live1/5e/F8/5eF872HRwPbsKyyeCGBSQg==/live.m3u8",3],
@@ -21,9 +21,10 @@ var addr=[
   ["TVN TV","TVN TV","TVN TV","79","79","http://23.237.112.138:9083/live/lmgr218-live1/F8/6x/F86xTagKpWyjsAWhpFhRYQ==/live.m3u8",3],
   ["코미디 TV","코미디 TV","코미디 TV","79","79","79",3],
   ["XtvN TV","XtvN TV","XtvN TV","79","79","79",3],
-  ["투니버스","투니버스","투니버스","79","79","http://23.237.112.138:9083/live/lmgr218-live1/iz/El/izElYP02-6dsroN6VHX4hw==/live.m3u8",3],
+  ["Xtream","Xtream","투니버스","79","79","http://23.237.112.138:9083/live/lmgr218-live1/iz/El/izElYP02-6dsroN6VHX4hw==/live.m3u8",3],
   ["MBN 뉴스","MBN 뉴스","MBN 뉴스","79","79","http://23.237.112.138:9083/live/lmgr218-live1/j7/qy/j7qybKo1-oIO_R2EKcmcIA==/live.m3u8",3],
-  ["MNet","MNet","MNet","79","79","http://23.237.112.138:9083/live/lmgr218-live1/DD/kh/DDkhewBlWWfGWPVkTkDWNA==/live.m3u8",3]
+  ["MNet","MNet","MNet","79","79","http://23.237.112.138:9083/live/lmgr218-live1/DD/kh/DDkhewBlWWfGWPVkTkDWNA==/live.m3u8",3],
+  ["FOX","FOX","FOX","79","79","79",3]
 ];
 
 var gi=0;
@@ -95,7 +96,7 @@ function OnOff()
           }
 	        isChLoaded = 1;
           path79 = path;
-          ch[20]="17";
+          ch[21]="17";
 	        mlok();
 	    }
       return;
