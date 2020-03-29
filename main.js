@@ -278,11 +278,12 @@ function keychk(e) {
 		}
                 else if(e.which == 48 ) {
 $('#menu1').load("https://hshin09.github.io/shinwebtv/thai.html");
-mlok();
                 }
                 else if(e.which == 49 ) {
 $('#menu1').load("https://hshin09.github.io/shinwebtv/svideo.html");
-mlok();
+                }
+                else if(e.which == 53 ) {
+                   mlok();
                 }
       e.preventDefault();
 }
