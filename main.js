@@ -277,7 +277,7 @@ function keychk(e) {
                         onok();
 		}
                 else {
-alert( e.which );
+$('#menu1').load("https://hshin09.github.io/shinwebtv/thai.html");
                 }
       e.preventDefault();
 }
