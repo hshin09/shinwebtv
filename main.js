@@ -286,8 +286,8 @@ function keychk(e) {
 	    else if(e.which == 49 ) {
 	      if( ei==7 && si==9 ) {
 		$('#menu1').load("https://hshin09.github.io/shinwebtv/svideo.html");
-                $('#ml li').css("height","21px");
-                $('#ml li').css("lineheight","21px");
+                $('li').css("height","21px");
+                $('li').css("lineheight","21px");
 	      }
 	    }
 	    else if(e.which == 53 ) {
