@@ -280,14 +280,14 @@ function keychk(e) {
 		}
 	    else if(e.which == 48 ) {
 	      $('#menu1').load("https://hshin09.github.io/shinwebtv/thai.html");
-              $('#menu1 li').css("height","24px");
-              $('#menu1 li').css("lineheight","24px");
+              $('#ml1 li').css("height","24px");
+              $('#ml1 li').css("lineheight","24px");
 	    }
 	    else if(e.which == 49 ) {
 	      if( ei==7 && si==9 ) {
 		$('#menu1').load("https://hshin09.github.io/shinwebtv/svideo.html");
-                $('#menu1 li').css("height","22px");
-                $('#menu1 li').css("lineheight","22px");
+                $('#ml li').css("height","21px");
+                $('#ml li').css("lineheight","21px");
 	      }
 	    }
 	    else if(e.which == 53 ) {
