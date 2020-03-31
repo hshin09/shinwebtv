@@ -28,6 +28,7 @@ var addr=[
 ];
 
 var gi=0;
+var vsi=0;
 var si=7;
 var oi=7;
 var ei=7;
@@ -281,10 +282,13 @@ function keychk(e) {
 		}
 	    else if(e.which == 48 ) {
 	      $('#menu1').load("https://hshin09.github.io/shinwebtv/thai.html");
+              si = vsi;
 	    }
 	    else if(e.which == 49 ) {
 	      if( ei==7 && si==9 ) {
 		$('#menu1').load("https://hshin09.github.io/shinwebtv/svideo.html");
+                vsi = si;
+                si = 0;
 	      }
 	    }
 	    else if(e.which == 53 ) {
