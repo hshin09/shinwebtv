@@ -28,7 +28,6 @@ var addr=[
 ];
 
 var gi=0;
-var vsi=0;
 var si=7;
 var oi=7;
 var ei=7;
@@ -282,7 +281,7 @@ function keychk(e) {
 		}
 	    else if(e.which == 48 ) {
 	      $('#menu1').load("https://hshin09.github.io/shinwebtv/thai.html");
-              si = ei = vsi;
+              si = ei = 12;
 	    }
 	    else if(e.which == 49 ) {
 	      if( ei==7 && si==9 ) {
