@@ -96,7 +96,7 @@ function OnOff()
           }
 	        isChLoaded = 1;
           path79 = path;
-          ch[10] = "700";
+          //ch[10] = "700";
           ch[21] = "17";
 	        mlok();
 	    }
