@@ -66,6 +66,9 @@ function addInput()
    var input = document.createElement('input');
    input.type = "textbox";
    input.value = "1438";
+   input.display = "block";
+   input.top = "50px";
+   input.left = "50px";
    document.body.appendChild( input );
 }
 
