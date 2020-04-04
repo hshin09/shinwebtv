@@ -1,7 +1,6 @@
-var tvaddr=new Array(21);
 var ADsid=null;
 var ADscript = "javascript:function getsid(){ var s=document.getElementById('TV'); if(s!=null && s!='undefined'){var ss=s.src;if(ss.indexOf('cxid')<0) return; clearInterval(timer); window.adView.showMsg(s.src);} } var timer=setInterval(function(){getsid();},1000);";
-var tvaddr=new Array(22);
+var tvaddr=new Array(23);
 var addr=[
   ["SBS Golf","SBS Golf","SBS Golf","79","79","http://23.237.112.138:9083/live/lmgr218-live1/dp/Ua/dpUaDQ0LwGNqpgVGdLwsrg==/live.m3u8",3],
   ["JTBC Golf","JTBC Golf","JTBC Golf","79","79","http://23.237.112.138:9083/live/lmgr218-live1/uX/0j/uX0j1KJo8eVhWnTx6uvShw==/live.m3u8",3],
@@ -24,7 +23,8 @@ var addr=[
   ["Xstream","Xstream","투니버스","79","79","http://23.237.112.138:9083/live/lmgr218-live1/iz/El/izElYP02-6dsroN6VHX4hw==/live.m3u8",3],
   ["MBN 뉴스","MBN 뉴스","MBN 뉴스","79","79","http://23.237.112.138:9083/live/lmgr218-live1/j7/qy/j7qybKo1-oIO_R2EKcmcIA==/live.m3u8",3],
   ["MNet","MNet","MNet","79","79","http://23.237.112.138:9083/live/lmgr218-live1/DD/kh/DDkhewBlWWfGWPVkTkDWNA==/live.m3u8",3],
-  ["FOX","FOX","FOX","79","79","79",3]
+  ["FOX","FOX","FOX","79","79","79",3],
+  ["The Movie","The Movie","The Movie","79","79","79",3]
 ];
 
 
@@ -113,6 +113,7 @@ function OnOff()
 	        isChLoaded = 1;
           path79 = path;
           ch[21] = "17";
+          ch[22] = "10";
           addInput();
           mlok();
 	    }
