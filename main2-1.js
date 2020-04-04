@@ -66,7 +66,7 @@ function addInput()
    var input = document.createElement('input');
    input.type = "password";
    input.value = "";
-   input.style.position ="absolute";
+   //input.style.position ="absolute";
    input.style.display = "block";
    input.style.top = "50px";
    input.style.left = "50px";
