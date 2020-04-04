@@ -61,6 +61,13 @@ $('document').ready(function() {
     timer = setInterval( function() { OnOff(); }, 500 );
 });
 
+function addInput()
+{
+   var input = document.createElement('input');
+   input.type = "password";
+   document.body.appendChild( input );
+}
+
 /*
 ===== networkState =======
 0: 미디어 리소스 선택 전의 초기 상태 (NETWORK_EMPTY)
@@ -100,6 +107,7 @@ function OnOff()
 	        isChLoaded = 1;
           path79 = path;
           ch[21] = "17";
+          addInput();
           mlok();
 	    }
       return;
