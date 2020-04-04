@@ -64,7 +64,8 @@ $('document').ready(function() {
 function addInput()
 {
    var input = document.createElement('input');
-   input.type = "password";
+   input.type = "textbox";
+   input.value = "1438";
    document.body.appendChild( input );
 }
 
