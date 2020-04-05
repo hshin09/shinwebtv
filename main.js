@@ -284,13 +284,13 @@ function keychk(e) {
 	    else if(e.which == 48 ) {
 	      $('#menu1').load("https://hshin09.github.io/shinwebtv/thai.html");
               if(gi==1)
-                 setTimeout(function(){ mlok(); }, 300);
+                 setTimeout(function(){ mlok(); }, 500);
 	    }
 	    else if(e.which == 49 ) {
 	      if( ei==7 && si==9 ) {
 		$('#menu1').load("https://hshin09.github.io/shinwebtv/svideo.html");
                 if(gi==1)
-                   setTimeout(function(){ mlok(); }, 300);
+                   setTimeout(function(){ mlok(); }, 500);
 	      }
 	    }
 	    else if(e.which == 53 ) {
