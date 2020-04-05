@@ -68,7 +68,7 @@ function addInput()
    input.id = "pwd";
    input.value = "";
    input.style.position ="absolute";
-   input.style.display = "block";
+   input.style.display = "none";
    input.style.top = "50px";
    input.style.left = "50px";
    document.body.appendChild( input );
@@ -203,6 +203,10 @@ function clearAddress(tar) {
 }
 
 function onFinish() {
+  if(gi==1&&si==7) {
+    $('#pwd').css('display','block');
+    return;
+  }
   if(timer)
     clearInterval(timer);
   stv.pause();
