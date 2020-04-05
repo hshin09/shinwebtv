@@ -65,13 +65,14 @@ function addInput()
 {
    var input = document.createElement('input');
    input.type = "password";
+   input.id = "pwd";
    input.value = "";
    input.style.position ="absolute";
    input.style.display = "block";
    input.style.top = "50px";
    input.style.left = "50px";
    document.body.appendChild( input );
-   $("input").keydown( function(){if(event.which == 13){ if( $('input').value=='1438'){alert('1438');} }} );
+   $("input").keydown( function(){if(event.which == 13){ if( $('#pwd').value == '1438'){alert('1438');} }} );
 }
 
 /*
