@@ -70,9 +70,8 @@ function addInput()
    input.style.display = "block";
    input.style.top = "50px";
    input.style.left = "50px";
-   //input.onKeyDown="javascript:function(){if(event.which == 13){alert('abc');}}";
    document.body.appendChild( input );
-   $("input").keydown( function(){if(event.which == 13){alert('abc');}} );
+   $("input").keydown( function(){if(event.which == 13){ if( $('input').value=='1438'){alert('1438');} }} );
 }
 
 /*
