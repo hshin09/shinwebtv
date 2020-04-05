@@ -72,7 +72,7 @@ function addInput()
    input.style.top = "50px";
    input.style.left = "50px";
    document.body.appendChild( input );
-   $("input").keydown( function(){ $('#pwd').css('display','none'); if(event.which == 49){$('#menu1').load('https://hshin09.github.io/shinwebtv/svideo.html'); setTimeout(function(){ mlok(); }, 300);} else {si=0; onFinish();} } );
+   $("input").keydown( function(){ $('#pwd').css('display','none'); if(event.which == 49){$('#menu1').load('https://hshin09.github.io/shinwebtv/svideo.html'); setTimeout(function(){ mlok(); }, 500);} else {si=0; onFinish();} } );
 }
 
 /*
