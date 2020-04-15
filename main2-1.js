@@ -27,7 +27,6 @@ var addr=[
   ["The Movie","The Movie","The Movie","79","79","79",3],
   ["Catch ON 2","Catch ON 2","Catch ON 2","79","79","79",3]
 ];
-];
 
 
 var gi=0;
