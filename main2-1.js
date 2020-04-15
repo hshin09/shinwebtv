@@ -24,7 +24,9 @@ var addr=[
   ["MBN 뉴스","MBN 뉴스","MBN 뉴스","79","79","http://23.237.112.138:9083/live/lmgr218-live1/j7/qy/j7qybKo1-oIO_R2EKcmcIA==/live.m3u8",3],
   ["MNet","MNet","MNet","79","79","http://23.237.112.138:9083/live/lmgr218-live1/DD/kh/DDkhewBlWWfGWPVkTkDWNA==/live.m3u8",3],
   ["FOX","FOX","FOX","79","79","79",3],
-  ["The Movie","The Movie","The Movie","79","79","79",3]
+  ["The Movie","The Movie","The Movie","79","79","79",3],
+  ["Catch ON 2","Catch ON 2","Catch ON 2","79","79","79",3]
+];
 ];
 
 
@@ -116,6 +118,7 @@ function OnOff()
           ch[18] = "32";
           ch[21] = "17";
           ch[22] = "10";
+          ch[23] = "35";
           addInput();
           mlok();
 	    }
