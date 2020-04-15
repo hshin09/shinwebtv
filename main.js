@@ -377,11 +377,11 @@ function showLeftMenu() {
 		leftMenuObj.style['oTransform'] = "translate(0px, 0px)";
 	}
 	else {
-		leftMenuObj.style['transform'] = "translate(0px, -520px)";
-		leftMenuObj.style['msTransform'] = "translate(0px, -520px)";
-		leftMenuObj.style['mozTransform'] = "translate(0px, -520px)";
-		leftMenuObj.style['webkitTransform'] = "translate(0px, -520px)";
-		leftMenuObj.style['oTransform'] = "translate(0px, -520px)";
+		leftMenuObj.style['transform'] = "translate(0px, -540px)";
+		leftMenuObj.style['msTransform'] = "translate(0px, -540px)";
+		leftMenuObj.style['mozTransform'] = "translate(0px, -540px)";
+		leftMenuObj.style['webkitTransform'] = "translate(0px, -540px)";
+		leftMenuObj.style['oTransform'] = "translate(0px, -540px)";
 	}
 }
 
