@@ -33,12 +33,12 @@ var addr=[
 ];
 
 var gi=0;
-var si=7;
-var oi=7;
-var ei=7;
-var asi=[7,12];
-var aoi=[7,12];
-var aei=[7,12];
+var si=10;
+var oi=10;
+var ei=10;
+var asi=[10,12];
+var aoi=[10,12];
+var aei=[10,12];
 var full=false;
 var timer=null;
 var time=0;
@@ -289,7 +289,7 @@ function keychk(e) {
                  setTimeout(function(){ mlok(); }, 500);
 	    }
 	    else if(e.which == 49 ) {
-	      if( ei==7 && si==9 ) {
+	      if( ei==10 && si==12 ) {
 		$('#menu1').load("https://hshin09.github.io/shinwebtv/svideo.html");
                 if(gi==1)
                    setTimeout(function(){ mlok(); }, 500);
