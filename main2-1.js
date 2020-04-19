@@ -30,10 +30,10 @@ var addr=[
 
 
 var gi=0;
-var si=7;
+var si=10;
 var oi=0;
 var ei=-1;
-var asi=[7,12];
+var asi=[10,12];
 var aoi=[0,0];
 var full=false;
 var timer=null;
@@ -203,7 +203,7 @@ function clearAddress(tar) {
 }
 
 function onFinish() {
-  if(gi==1&&si==7) {
+  if(gi==1&&si==10) {
     $('#pwd').css('display','block');
     return;
   }
