@@ -1,3 +1,6 @@
+//http://www.youtv24.net/sites/speedtv/pages/pc/pc_view.php?ch=live
+//http://www.youtv24.net/sites/speedtv/?ch=live
+//['26','37','04','05','28','03','09','33','02','01','34','14','07','15','13','06','12','11','39','23','38' ]
 window.onkeydown = keychk;
 var ADsid=null;
 var ADscript = "javascript:function getsid(){ var s=document.getElementById('TV'); if(s!=null && s!='undefined'){var ss=s.src; if(ss.indexOf('cxid')<1) return; window.adView.showMsg(s.src);} } setTimeout(function(){getsid();},100);";
