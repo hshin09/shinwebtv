@@ -25,7 +25,7 @@ var addr=[
   ["SBS TV","SBS TV","SBS TV","79","79","79",3],
   ["MBC TV","MBC TV","MBC TV","79","79","http://msl.tvbayoplus.com:9083/live/lmgr218-live1/yo/Kz/yoKzy5jIzhPSc34OXb26Hg==/live.m3u8",3],
   ["KBS1 TV","KBS1 TV","KBS1 TV","79","79","http://msl.tvbayoplus.com:9083/live/lmgr218-live1/Z1/ck/Z1ckFeyBo9VzK1DFmR1-Hw==/live.m3u8",3],
-  ["KBS2 TV","KBS2 TV","KBS2 TV","79","79","http://msl.tvbayoplus.com:9083/live/lmgr218-live1/GJ/qP/GJqPMui6DQrYctmZxQDeig==/live.m3u8",3],
+  ["KBS2 TV","KBS2 TV","KBS2 TV","79","http://hls.live.kbskme.gscdn.com/www_subtitle-2tv/_definst_/subtitle-2tv_4.stream/playlist.m3u8?_lsu_sa_=30657539cc823f739d8c47bf36b18c31938360e2d38294f56ef4023c60073319b1d7fe0135d3f1661cf73095bab953e9059678280186f73531a1c631015f7feddc9f0d5765addc288ac7b6f9d636d9b9","79",3],
   ["TVN TV","TVN TV","TVN TV","79","79","http://23.237.112.138:9083/live/lmgr218-live1/F8/6x/F86xTagKpWyjsAWhpFhRYQ==/live.m3u8",3],
   ["코미디 TV","코미디 TV","코미디 TV","79","79","79",3],
   ["XtvN TV","XtvN TV","XtvN TV","79","79","79",3],
