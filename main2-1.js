@@ -2,30 +2,30 @@ var ADsid=null;
 var ADscript = "javascript:function getsid(){ var s=document.getElementById('TV'); if(s!=null && s!='undefined'){var ss=s.src;if(ss.indexOf('cxid')<0) return; clearInterval(timer); window.adView.showMsg(s.src);} } var timer=setInterval(function(){getsid();},1000);";
 var tvaddr=new Array(24);
 var addr=[
-  ["SBS Golf","SBS Golf","SBS Golf","79","79","http://msl.tvbayoplus.com:9083/query/TQFuETgIUlgpcZInFkaaZ7T_G6C6S4hqHXU16IfyQug=.m3u8?type=live&sc_tk=szt8655F7726L1J1hRrALHVwyyUbwuZA8%2FgumM0EYg%2F04GQ2Zw2vy9fryZZ%2FrsOsI4iTFDKEnrebZz29gQe4Fw%3D%3D",3],
-  ["JTBC Golf","JTBC Golf","JTBC Golf","79","79","http://msl.tvbayoplus.com:9083/query/TQFuETgIUlgpcZInFkaaZ2SUaYSWDLxpmcj9mXJWqRm5fSPUomjx5WFadPHq69KH.m3u8?type=live&sc_tk=JgZ8DgD48CWlgaFF53%2F7nAaE9TTIbPwbbjj6d%2Fl6e6WxJuOkc40rWrLoKvVwd7EIL6UOT7rbEcmbWm514jwcow%3D%3D",3],
+  ["SBS Golf","SBS Golf","SBS Golf","79","79","79",3],
+  ["JTBC Golf","JTBC Golf","JTBC Golf","79","79","79",3],
   ["OCN Movies","OCN Movies","OCN Movies","79","79","79",3],
-  ["OCN Original","OCN Original","OCN Original","79","79","http://msl.tvbayoplus.com:9083/query/TQFuETgIUlgpcZInFkaaZ4B-j-Hb5NHkTCCvHHqbWhY=.m3u8?type=live&sc_tk=LzWdCnLvdJoAxoTF%2BVQrU13Rx%2BwXhNyrxtnF78feJAw4MTkpiDkG8NkGZCAGagu1Ix%2Flom3dUSyDCYImVa8yoQ%3D%3D",3],
+  ["OCN Original","OCN Original","OCN Original","79","79","79",3],
   ["영화 Screen","영화 Screen","영화 Screen","79","79","79",3],
-  ["OCN Thrills","OCN Thrills","채널 차이나","79","79","http://msl.tvbayoplus.com:9083/query/TQFuETgIUlgpcZInFkaaZ1h76GaZnpY9JEXBp_0LMRU=.m3u8?type=live&sc_tk=UGb9j7Q1LQV%2B64UYMl3cI3fSkiXf0GgZOE0CXlPle7lVvmy1aT%2BIB5GuUX9nAcRHCHjb%2BRXufIqbNP8xtKC3Bg%3D%3D",3],
-  ["Catch ON 1","Catch ON 1","Catch ON 1","79","79","http://msl.tvbayoplus.com:9083/query/TQFuETgIUlgpcZInFkaaZ3PPLc_cVSZQ5vIthsU-xs0=.m3u8?type=live&sc_tk=AcKUsuwGZdTTu7ySUZMnrEOk8reN12trXm3mQ43Oqch6Mgvf68EUYVGIYlSbfSYYyz%2BtRdU5vxcUe7c2Klbj1A%3D%3D",3],
+  ["OCN Thrills","OCN Thrills","채널 차이나","79","79","79",3],
+  ["Catch ON 1","Catch ON 1","Catch ON 1","79","79","79",3],
   ["Catch ON 2","Catch ON 2","Catch ON 2","79","79","79",3],
   ["The Movie","The Movie","The Movie","79","79","79",3],
   ["FOX","FOX","FOX","79","79","79",3],
-  ["TV 조선 뉴스","TV 조선 뉴스","TV 조선 뉴스","79","http://23.237.112.138:9083/live/lmgr218-live1/uN/RW/uNRWY94bN9uq-H4U6-AdGA==/live.m3u8","http://live.chosun.gscdn.com/live/_definst_/tvchosun3.stream/playlist.m3u8",3],
-  ["채널 A 뉴스","채널 A 뉴스","채널 A 뉴스","79","http://msl.tvbayoplus.com:9083/query/TQFuETgIUlgpcZInFkaaZ7x7Wfu2v9opLQbFe37AYXU=.m3u8?type=live&sc_tk=B01B1yCmZxk8%2B4BQzcdKYTWW9GB3AZa4z%2Fob8rbApIWbM2JCiMiDebz8vbbBaIdxtEt%2FszddVsqF%2FQAEtCkqKQ%3D%3D","79",3],
-  ["JTBC 뉴스","JTBC 뉴스","JTBC 뉴스","79","http://msl.tvbayoplus.com:9083/query/TQFuETgIUlgpcZInFkaaZwqdXva3ihxqfuOFaL0i2zE=.m3u8?type=live&sc_tk=3AUl27zPHM9D1ETlniqX4DF0aFaWkIe4RoVPgYssLqrbnj8VE8oWn4wgQOCuMtapqvFUmOp0mmgxewPYgjv8ew%3D%3D","79",3],
-  ["YTN 뉴스","YTN 뉴스","EBS1","79","http://msl.tvbayoplus.com:9083/query/TQFuETgIUlgpcZInFkaaZ0L7S9xSzU07ARzDGCZ8DYY=.m3u8?type=live&sc_tk=Vzc6Md7TcQyuGjCRD%2F5dtAYJ%2FQkFe2HzcrpF1Xs73rSZLwlgFlxE7q2Ucs1YXyLkVw0DBsGIqPL5RsPNhr%2B2KQ%3D%3D","http://ebsonair.ebs.co.kr:1935/groundwavefamilypc/familypc1m/chunklist_w135830683.m3u8",3],
-  ["연합 뉴스","연합 뉴스","투니버스","79","79","http://msl.tvbayoplus.com:9083/query/TQFuETgIUlgpcZInFkaaZ-hXTXXq-m-DFV3t6y9KHvk=.m3u8?type=live&sc_tk=xRd2eeseU47lE7d9okOG7DxGMdTeZT2mZZREY6sbGxdZfLo%2FXbxlgyeeS0zHlBnFh%2BD8dBCi0ktmue5GGRDJNA%3D%3D",3],
-  ["MBN 뉴스","MBN 뉴스","MBN 뉴스","79","79","http://msl.tvbayoplus.com:9083/query/TQFuETgIUlgpcZInFkaaZy8KSPaifpaaENrfe2XE-YY=.m3u8?type=live&sc_tk=1bLyReJeeIBEktYcIQof0%2FFvht9jmiPKeqYBZmDSlNeqzvOl16rmyHYrvPiuro2vgMnB5bWkb%2BDn%2BnOquMuRdQ%3D%3D",3],
-  ["SBS TV","SBS TV","SBS TV","79","http://msl.tvbayoplus.com:9083/query/TQFuETgIUlgpcZInFkaaZ1DbzfDlFji_j9yv4zjUNEs=.m3u8?type=live&sc_tk=tFGQ%2FSFfQ39eRfx2Pl8EmA%2FGslevfWCthWSIJ0CB5B4JGO4VtAsoXb8AN3V5b012V%2FS6X2xH1kwT4cy8AfN5Bg%3D%3D","79",3],
-  ["MBC TV","MBC TV","MBC TV","79","http://msl.tvbayoplus.com:9083/query/TQFuETgIUlgpcZInFkaaZ0d_V06YfOXgN28PmxxFjEQ=.m3u8?type=live&sc_tk=7FwDjP94WY0Y9kojt%2Bf8LqiGfRiTUh7maZPXebFsdi84ohlaJkzBOSFgP7zMAF6XEuQmEL4q7veaE6vDa4Koow%3D%3D","79",3],
-  ["KBS1 TV","KBS1 TV","KBS1 TV","79","http://msl.tvbayoplus.com:9083/query/TQFuETgIUlgpcZInFkaaZ94yLPtW0CoZZQ5L-S9G2ME=.m3u8?type=live&sc_tk=nZlTNeWQAqaZivTL1YZ0OeNGrnFZtEk%2BaN5ZsZOt4X%2BhlZh2XXIhyjwb8oOGLjvbNkGMp1Y%2FS6eKgrrQCXqNYw%3D%3D","79",3],
-  ["KBS2 TV","KBS2 TV","KBS2 TV","79","http://msl.tvbayoplus.com:9083/query/TQFuETgIUlgpcZInFkaaZ7cGS-2fi6VhVDpv-2O4mN0=.m3u8?type=live&sc_tk=gP0km3dSCs3MhPiYnD8xqj%2BuzLYMtUg7YOny%2Bm2L%2FZjI5uJYPopZXmrEo33rRWh04zBXF9n0U%2FVs7CQpwtPlOw%3D%3D","79",3],
-  ["TVN TV","TVN TV","TVN TV","79","79","http://23.237.112.138:9083/live/lmgr218-live1/F8/6x/F86xTagKpWyjsAWhpFhRYQ==/live.m3u8",3],
+  ["TV 조선 뉴스","TV 조선 뉴스","TV 조선 뉴스","79","79","http://live.chosun.gscdn.com/live/_definst_/tvchosun3.stream/playlist.m3u8",3],
+  ["채널 A 뉴스","채널 A 뉴스","채널 A 뉴스","79","79","79",3],
+  ["JTBC 뉴스","JTBC 뉴스","JTBC 뉴스","79","79","79",3],
+  ["YTN 뉴스","YTN 뉴스","YTN 뉴스","79","79","79",3],
+  ["연합 뉴스","연합 뉴스","연합 뉴스","79","79","79",3],
+  ["MBN 뉴스","MBN 뉴스","MBN 뉴스","79","79","79",3],
+  ["SBS TV","SBS TV","SBS TV","79","79","79",3],
+  ["MBC TV","MBC TV","MBC TV","79","79","79",3],
+  ["KBS1 TV","KBS1 TV","KBS1 TV","79","79","79",3],
+  ["KBS2 TV","KBS2 TV","KBS2 TV","79","79","79",3],
+  ["TVN TV","TVN TV","TVN TV","79","79","79",3],
   ["코미디 TV","코미디 TV","코미디 TV","79","79","79",3],
   ["XtvN TV","XtvN TV","XtvN TV","79","79","79",3],
-  ["MNet","MNet","MNet","79","79","http://23.237.112.138:9083/live/lmgr218-live1/DD/kh/DDkhewBlWWfGWPVkTkDWNA==/live.m3u8",3]
+  ["MNet","MNet","MNet","79","79","79",3]
 ];
 
 var gi=0;
