@@ -34,9 +34,9 @@ var addr=[
 ];
 
 var gi=0;
-var si=10;
-var oi=10;
-var ei=10;
+var si=5;
+var oi=5;
+var ei=5;
 var asi=[5,11];
 var aoi=[5,11];
 var aei=[5,11];
