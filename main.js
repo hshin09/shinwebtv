@@ -380,11 +380,11 @@ function showLeftMenu() {
 		leftMenuObj.style['oTransform'] = "translate(0px, 0px)";
 	}
 	else {
-		leftMenuObj.style['transform'] = "translate(0px, -330px)";
-		leftMenuObj.style['msTransform'] = "translate(0px, -330px)";
-		leftMenuObj.style['mozTransform'] = "translate(0px, -330px)";
-		leftMenuObj.style['webkitTransform'] = "translate(0px, -330px)";
-		leftMenuObj.style['oTransform'] = "translate(0px, -330px)";
+		leftMenuObj.style['transform'] = "translate(0px, -337px)";
+		leftMenuObj.style['msTransform'] = "translate(0px, -337px)";
+		leftMenuObj.style['mozTransform'] = "translate(0px, -337px)";
+		leftMenuObj.style['webkitTransform'] = "translate(0px, -337px)";
+		leftMenuObj.style['oTransform'] = "translate(0px, -337px)";
 /*
 		leftMenuObj.style['transform'] = "translate(0px, -540px)";
 		leftMenuObj.style['msTransform'] = "translate(0px, -540px)";
