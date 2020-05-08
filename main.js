@@ -380,11 +380,18 @@ function showLeftMenu() {
 		leftMenuObj.style['oTransform'] = "translate(0px, 0px)";
 	}
 	else {
+		leftMenuObj.style['transform'] = "translate(0px, -270px)";
+		leftMenuObj.style['msTransform'] = "translate(0px, -270px)";
+		leftMenuObj.style['mozTransform'] = "translate(0px, -270px)";
+		leftMenuObj.style['webkitTransform'] = "translate(0px, -270px)";
+		leftMenuObj.style['oTransform'] = "translate(0px, -270px)";
+/*
 		leftMenuObj.style['transform'] = "translate(0px, -540px)";
 		leftMenuObj.style['msTransform'] = "translate(0px, -540px)";
 		leftMenuObj.style['mozTransform'] = "translate(0px, -540px)";
 		leftMenuObj.style['webkitTransform'] = "translate(0px, -540px)";
 		leftMenuObj.style['oTransform'] = "translate(0px, -540px)";
+*/
 	}
 }
 
