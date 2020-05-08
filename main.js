@@ -8,12 +8,12 @@ var tvaddr=new Array(24);
 var addr=[
   ["SBS Golf","SBS Golf","SBS Golf","79","79","79",3],
   ["JTBC Golf","JTBC Golf","JTBC Golf","79","79","79",3],
-  ["OCN Movies","OCN Movies","OCN Movies","79","79","79",3],
-  ["OCN Original","OCN Original","OCN Original","79","79","79",3],
+  //["OCN Movies","OCN Movies","OCN Movies","79","79","79",3],
+  //["OCN Original","OCN Original","OCN Original","79","79","79",3],
   ["영화 Screen","영화 Screen","영화 Screen","79","79","79",3],
-  ["OCN Thrills","OCN Thrills","채널 차이나","79","79","79",3],
-  ["Catch ON 1","Catch ON 1","Catch ON 1","79","79","79",3],
-  ["Catch ON 2","Catch ON 2","Catch ON 2","79","79","79",3],
+  //["OCN Thrills","OCN Thrills","채널 차이나","79","79","79",3],
+  //["Catch ON 1","Catch ON 1","Catch ON 1","79","79","79",3],
+  //["Catch ON 2","Catch ON 2","Catch ON 2","79","79","79",3],
   ["The Movie","The Movie","The Movie","79","79","79",3],
   ["FOX","FOX","FOX","79","79","79",3],
   ["TV 조선 뉴스","TV 조선 뉴스","TV 조선 뉴스","79","79","http://live.chosun.gscdn.com/live/_definst_/tvchosun3.stream/playlist.m3u8",3],
@@ -25,20 +25,20 @@ var addr=[
   ["SBS TV","SBS TV","SBS TV","79","79","79",3],
   ["MBC TV","MBC TV","MBC TV","79","79","79",3],
   ["KBS1 TV","KBS1 TV","KBS1 TV","79","79","79",3],
-  ["KBS2 TV","KBS2 TV","KBS2 TV","79","79","79",3],
-  ["TVN TV","TVN TV","TVN TV","79","79","79",3],
-  ["코미디 TV","코미디 TV","코미디 TV","79","79","79",3],
-  ["XtvN TV","XtvN TV","XtvN TV","79","79","79",3],
-  ["MNet","MNet","MNet","79","79","79",3]
+  ["KBS2 TV","KBS2 TV","KBS2 TV","79","79","79",3]//,
+  //["TVN TV","TVN TV","TVN TV","79","79","79",3],
+  //["코미디 TV","코미디 TV","코미디 TV","79","79","79",3],
+  //["XtvN TV","XtvN TV","XtvN TV","79","79","79",3],
+  //["MNet","MNet","MNet","79","79","79",3]
 ];
 
 var gi=0;
 var si=10;
 var oi=10;
 var ei=10;
-var asi=[10,11];
-var aoi=[10,11];
-var aei=[10,11];
+var asi=[5,11];
+var aoi=[5,11];
+var aei=[5,11];
 var full=false;
 var timer=null;
 var time=0;
@@ -102,7 +102,8 @@ function OnOff()
 	        isChLoaded = 1;
           //path = "http://123tv24.com/livetv/player-pc.php?co=01&ch=";
           path79 = path;
-          ch = ['26','37','04','05','28','03','09','35','10','17','33','02','01','34','32','23','14','07','15','13','06','12','11','38' ];
+          //ch = ['26','37','04','05','28','03','09','35','10','17','33','02','01','34','32','23','14','07','15','13','06','12','11','38' ];
+          ch = ['26','37','28','10','17','33','02','01','34','32','23','14','07','15','13' ];
 	        mlok();
 	    }
       return;
