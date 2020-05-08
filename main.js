@@ -100,7 +100,7 @@ function OnOff()
             timer=null;
           }
 	        isChLoaded = 1;
-          path = "http://123tv24.com/livetv/player-pc.php?co=01&ch=";
+          //path = "http://123tv24.com/livetv/player-pc.php?co=01&ch=";
           path79 = path;
           ch = ['26','37','04','05','28','03','09','35','10','17','33','02','01','34','32','23','14','07','15','13','06','12','11','38' ];
 	        mlok();
