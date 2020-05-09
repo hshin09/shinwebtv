@@ -61,6 +61,7 @@ $('document').ready(function() {
     timer = setInterval( function() { OnOff(); }, 500 );
 });
 
+
 function addInput()
 {
    var input = document.createElement('input');
