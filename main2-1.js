@@ -1,15 +1,15 @@
 var ADsid=null;
 var ADscript = "javascript:function getsid(){ var s=document.getElementById('TV'); if(s!=null && s!='undefined'){var ss=s.src;if(ss.indexOf('cxid')<0) return; clearInterval(timer); window.adView.showMsg(s.src);} } var timer=setInterval(function(){getsid();},1000);";
-var tvaddr=new Array(24);
+var tvaddr=new Array(15);
 var addr=[
   ["SBS Golf","SBS Golf","SBS Golf","79","79","79",3],
   ["JTBC Golf","JTBC Golf","JTBC Golf","79","79","79",3],
-  ["OCN Movies","OCN Movies","OCN Movies","79","79","79",3],
-  ["OCN Original","OCN Original","OCN Original","79","79","79",3],
+  //["OCN Movies","OCN Movies","OCN Movies","79","79","79",3],
+  //["OCN Original","OCN Original","OCN Original","79","79","79",3],
   ["영화 Screen","영화 Screen","영화 Screen","79","79","79",3],
-  ["OCN Thrills","OCN Thrills","채널 차이나","79","79","79",3],
-  ["Catch ON 1","Catch ON 1","Catch ON 1","79","79","79",3],
-  ["Catch ON 2","Catch ON 2","Catch ON 2","79","79","79",3],
+  //["OCN Thrills","OCN Thrills","채널 차이나","79","79","79",3],
+  //["Catch ON 1","Catch ON 1","Catch ON 1","79","79","79",3],
+  //["Catch ON 2","Catch ON 2","Catch ON 2","79","79","79",3],
   ["The Movie","The Movie","The Movie","79","79","79",3],
   ["FOX","FOX","FOX","79","79","79",3],
   ["TV 조선 뉴스","TV 조선 뉴스","TV 조선 뉴스","79","79","http://live.chosun.gscdn.com/live/_definst_/tvchosun3.stream/playlist.m3u8",3],
@@ -21,11 +21,11 @@ var addr=[
   ["SBS TV","SBS TV","SBS TV","79","79","79",3],
   ["MBC TV","MBC TV","MBC TV","79","79","79",3],
   ["KBS1 TV","KBS1 TV","KBS1 TV","79","79","79",3],
-  ["KBS2 TV","KBS2 TV","KBS2 TV","79","79","79",3],
-  ["TVN TV","TVN TV","TVN TV","79","79","79",3],
-  ["코미디 TV","코미디 TV","코미디 TV","79","79","79",3],
-  ["XtvN TV","XtvN TV","XtvN TV","79","79","79",3],
-  ["MNet","MNet","MNet","79","79","79",3]
+  ["KBS2 TV","KBS2 TV","KBS2 TV","79","79","79",3]//,
+  //["TVN TV","TVN TV","TVN TV","79","79","79",3],
+  //["코미디 TV","코미디 TV","코미디 TV","79","79","79",3],
+  //["XtvN TV","XtvN TV","XtvN TV","79","79","79",3],
+  //["MNet","MNet","MNet","79","79","79",3]
 ];
 
 var gi=0;
