@@ -442,7 +442,6 @@ function get79tv(i) {
 
 function setHiddenViewTV(msg) {
   //window.parentView.showMsg("msg:"+msg);
-  alert(msg);
   oi=-1;
   tvaddr[si]=msg;
   setTimeout(function(){ x[si].click(); }, 0);
