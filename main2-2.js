@@ -443,10 +443,6 @@ function get79tv(i) {
 function setHiddenViewTV(msg) {
   //window.parentView.showMsg("msg:"+msg);
   alert(msg);
-  var ssi=msg.indexOf("file: \"http");
-  var eei=msg.indexOf(",",ssi);
-  msg=msg.substring(ssi+7,eei-1);
-
   oi=-1;
   tvaddr[si]=msg;
   setTimeout(function(){ x[si].click(); }, 0);
