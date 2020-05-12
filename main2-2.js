@@ -29,6 +29,9 @@ var addr=[
   ["MNet","MNet","MNet","79","79","79",3]
 ];
 
+var path= "http://123tv24.com/livetv/player-pc.php?co=01&ch=";
+var path79 = "http://123tv24.com/livetv/player-pc.php?co=01&ch=";
+var ch = ['26','37','04','05','28','03','09','35','10','17','33','02','01','34','32','23','14','07','15','13','06','12','11','38' ];
 var gi=0;
 var si=10;
 var oi=0;
@@ -107,19 +110,16 @@ function OnOff()
       $('#sec').text( msgGetCh );
       x=document.getElementById("ml"+gi).getElementsByTagName("li");
       if( x.length==tvaddr.length )
-	    {
+      {
           if(timer) {
             clearInterval(timer);
             timer=null;
-          }
-	        isChLoaded = 1;
-          path = "http://123tv24.com/livetv/player-pc.php?co=01&ch=";
-          path79 = path;
-          ch = ['26','37','04','05','28','03','09','35','10','17','33','02','01','34','32','23','14','07','15','13','06','12','11','38' ];
+      	  }
+          isChLoaded = 1;
           addInput();
           mlok();
-	    }
-      return;
+       }
+       return;
     }
 
     time++;
