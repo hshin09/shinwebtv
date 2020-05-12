@@ -440,10 +440,9 @@ function get79tv(i) {
   window.parentView.showMsg("79:"+path79+ch[i]);
 }
 
-function setHiddenViewTV(msg) {
-  //window.parentView.showMsg("msg:"+msg);
+function setHiddenViewTV(s) {
   oi=-1;
-  tvaddr[si]=msg;
+  tvaddr[si]=s;
   setTimeout(function(){ x[si].click(); }, 0);
 }
 
