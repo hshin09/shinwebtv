@@ -13,7 +13,7 @@ var addr=[
   ["Catch ON 2","Catch ON 2","Catch ON 2","79","79","79",3],
   ["The Movie","The Movie","The Movie","79","79","79",3],
   ["FOX","FOX","FOX","79","79","79",3],
-  ["TV 조선 뉴스","TV 조선 뉴스","TV 조선 뉴스","","79","http://live.chosun.gscdn.com/live/_definst_/tvchosun3.stream/playlist.m3u8",3],
+  ["TV 조선 뉴스","TV 조선 뉴스","TV 조선 뉴스","79","79","http://live.chosun.gscdn.com/live/_definst_/tvchosun3.stream/playlist.m3u8",3],
   ["채널 A 뉴스","채널 A 뉴스","채널 A 뉴스","79","79","79",3],
   ["JTBC 뉴스","JTBC 뉴스","JTBC 뉴스","79","79","79",3],
   ["YTN 뉴스","YTN 뉴스","YTN 뉴스","79","79","79",3],
