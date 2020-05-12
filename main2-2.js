@@ -441,7 +441,7 @@ function get79tv(i) {
 }
 
 function setHiddenViewTV(msg) {
-  //window.parentView.showMsg("msg:"+s);
+  window.parentView.showMsg("msg:"+msg);
   var ssi=msg.indexOf("file: \"http");
   var eei=msg.indexOf(",",ssi);
   msg=msg.substring(ssi+7,eei-1);
