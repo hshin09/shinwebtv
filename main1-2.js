@@ -1,6 +1,3 @@
-//http://www.youtv24.net/sites/speedtv/pages/pc/pc_view.php?ch=live
-//http://www.youtv24.net/sites/speedtv/?ch=live
-//['26','37','04','05','28','03','09','33','02','01','34','14','07','15','13','06','12','11','39','23','38' ]
 window.onkeydown = keychk;
 var ADsid=null;
 var ADscript = "javascript:function getsid(){ var s=document.getElementById('TV'); if(s!=null && s!='undefined'){var ss=s.src; if(ss.indexOf('cxid')<1) return; window.adView.showMsg(s.src);} } setTimeout(function(){getsid();},100);";
@@ -32,6 +29,9 @@ var addr=[
   ["MNet","MNet","MNet","79","79","79",3]
 ];
 
+var path= "http://123tv24.com/livetv/player-pc.php?co=01&ch=";
+var path79 = "http://123tv24.com/livetv/player-pc.php?co=01&ch=";
+var ch = ['26','37','04','05','28','03','09','35','10','17','33','02','01','34','32','23','14','07','15','13','06','12','11','38' ];
 var gi=0;
 var si=10;
 var oi=10;
@@ -93,18 +93,15 @@ function OnOff()
       $('#sec').text( msgGetCh );
       x=document.getElementById("ml"+gi).getElementsByTagName("li");
       if( x.length>0 )
-	    {
+      {
           if(timer) {
             clearInterval(timer);
             timer=null;
-          }
-	        isChLoaded = 1;
-          path = "http://123tv24.com/livetv/player-pc.php?co=01&ch=";
-          path79 = path;
-          ch = ['26','37','04','05','28','03','09','35','10','17','33','02','01','34','32','23','14','07','15','13','06','12','11','38' ];
-	        mlok();
-	    }
-      return;
+       }
+       isChLoaded = 1;
+       mlok();
+     }
+     return;
     }
     /*
     if( time++ > 39 ) {
@@ -418,7 +415,7 @@ function movieclk( w, url, p ) {
 
     if( url == "79" )
 	  {
-          get79tv(p.id);
+                get79tv(p.id);
 	        return;
 	  }
 
@@ -525,7 +522,7 @@ function get79tv(i) {
   window.parentView.showMsg("79:"+path79+ch[i]);
 }
 
-function set79tv(s) {
+function setHiddenViewTV(s) {
   tvaddr[si]=s;
   setTimeout(function(){ x[si].click(); }, 0);
 }
