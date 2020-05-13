@@ -42,6 +42,7 @@ var aei=[10,12];
 var full=false;
 var timer=null;
 var time=0;
+var trans=100;
 
 var web;
 var stv;
@@ -94,6 +95,7 @@ function OnOff()
       x=document.getElementById("ml"+gi).getElementsByTagName("li");
       if( x.length==tvaddr.length )
       {
+          trans=x.length*22.5;
           if(timer) {
             clearInterval(timer);
             timer=null;
@@ -377,7 +379,7 @@ function showLeftMenu() {
 		leftMenuObj.style['transform'] = "translate(0px, -540px)";
 		leftMenuObj.style['msTransform'] = "translate(0px, -540px)";
 		leftMenuObj.style['mozTransform'] = "translate(0px, -540px)";
-		leftMenuObj.style['webkitTransform'] = "translate(0px, -540px)";
+		leftMenuObj.style['webkitTransform'] = "translate(0px, -"+ trans +"px)";
 		leftMenuObj.style['oTransform'] = "translate(0px, -540px)";
 	}
 }
