@@ -436,8 +436,12 @@ function movieclk( w, url, p ) {
       }
     }
     */
-    if( gi==1 && p.id > 19 && p.id != 21 )
+    if( gi==1 && p.id > 19 )
+    {
       stv.volume=0.2;
+      if( p.id == 20 )
+         stv.volume=0.5;
+    }
 
 	  if(oi>-1) x[oi].style="background-color:#252525;";
 	  if(ei>-1) x[ei].style="background-color:#252525";
