@@ -434,7 +434,7 @@ function movieclk( w, url, p ) {
       }
     }
     */
-    if( gi==1 && p.id > 19)
+    if( gi==1 && p.id > 19 && p.id != 21 )
       stv.volume=0.2;
 
 	  if(oi>-1) x[oi].style="background-color:#252525;";
