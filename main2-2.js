@@ -137,8 +137,13 @@ function OnOff()
         }
         if(isNotUser<2) {
           ei=si;
-          clearAddress(addr[ei][addr[ei][6]]);
-          onok();
+          if( gi == 0 )
+          {
+             web.setAttribute( "src", path79+ch[ei] );
+             clearAddress(addr[ei][addr[ei][6]]);
+             setTimeout(function(){ onok(); }, 1000);
+             web.setAttribute( "src", "about:blank" );
+          }
           isNotUser++;
         }
         else {
