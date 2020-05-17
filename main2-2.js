@@ -141,7 +141,7 @@ function OnOff()
           {
              web.setAttribute( "src", path79+ch[ei] );
              clearAddress(addr[ei][addr[ei][6]]);
-             setTimeout(function(){ onok(); }, 1000);
+             setTimeout(function(){ onok(); }, 3000);
              web.setAttribute( "src", "about:blank" );
           }
           isNotUser++;
