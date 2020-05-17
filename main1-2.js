@@ -130,11 +130,10 @@ function OnOff()
        if(isNotUser<2) {
          if( gi == 0 )
          {
-            web.setAttribute( "src", path79+ch[si] );
-            setTimeout(function(){}, 2000);
+            web.setAttribute( "src", path79+ch[ei] );
+            clearAddress(addr[ei][addr[ei][6]]);
+            setTimeout(function(){ onok(); }, 2000);
          }
-         clearAddress(addr[ei][addr[ei][6]]);
-         onok();
          isNotUser++;
        }
        else {
