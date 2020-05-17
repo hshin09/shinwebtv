@@ -128,6 +128,10 @@ function OnOff()
         showErrorMessage();
        }
        if(isNotUser<2) {
+         if( gi == 0 )
+         {
+            web.setAttribute( "src", path79+ch[ei] );
+         }
          clearAddress(addr[ei][addr[ei][6]]);
          onok();
          isNotUser++;
