@@ -132,7 +132,7 @@ function OnOff()
          {
             web.setAttribute( "src", path79+ch[ei] );
             clearAddress(addr[ei][addr[ei][6]]);
-            setTimeout(function(){ onok(); }, 5000);
+            setTimeout(function(){ onok(); }, 2000);
          }
          isNotUser++;
        }
@@ -170,7 +170,7 @@ function OnOff()
           {
              web.setAttribute( "src", path79+ch[ei] );
              clearAddress(addr[ei][addr[ei][6]]);
-             setTimeout(function(){ onok(); }, 5000);
+             setTimeout(function(){ onok(); }, 2000);
           }
           isNotUser++;
         }
