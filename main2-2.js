@@ -141,8 +141,7 @@ function OnOff()
           {
              web.setAttribute( "src", path79+ch[ei] );
              clearAddress(addr[ei][addr[ei][6]]);
-             setTimeout(function(){ onok(); }, 3000);
-             //web.setAttribute( "src", "about:blank" );
+             setTimeout(function(){ onok(); }, 5000);
           }
           isNotUser++;
         }
@@ -159,6 +158,7 @@ function OnOff()
     else if( $('#secMessage').css('display')=="block" && stv.currentTime > 2 )
     {
         $('#secMessage').css('display', 'none');
+        web.setAttribute( "src", "about:blank" );
     }
     else if( $('#videoMessage').css('display')=="block" && stv.currentTime > 4 )
     {
@@ -180,8 +180,7 @@ function OnOff()
           {
              web.setAttribute( "src", path79+ch[ei] );
              clearAddress(addr[ei][addr[ei][6]]);
-             setTimeout(function(){ onok(); }, 3000);
-             //web.setAttribute( "src", "about:blank" );
+             setTimeout(function(){ onok(); }, 5000);
           }
           isNotUser++;
         }
