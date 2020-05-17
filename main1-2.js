@@ -165,8 +165,13 @@ function OnOff()
     if(oldCurrentTime>0) {
       if(oldCurrentTime==stv.currentTime) {
         if(isNotUser<2) {
-          clearAddress(addr[ei][addr[ei][6]]);
-          onok();
+          if( gi == 0 )
+          {
+             web.setAttribute( "src", path79+ch[ei] );
+             clearAddress(addr[ei][addr[ei][6]]);
+             setTimeout(function(){ onok(); }, 3000);
+             web.setAttribute( "src", "about:blank" );
+          }
           isNotUser++;
         }
         else {
