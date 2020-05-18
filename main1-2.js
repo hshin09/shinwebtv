@@ -449,9 +449,11 @@ function movieclk( w, url, p ) {
     {
       stv.volume=0.2;
       if( p.id == 21 )
-         stv.volume=0.5;
+         stv.volume=0.4;
+      else if( p.id == 22 )
+         stv.volume=0.4;
       else if( p.id == 23 )
-         stv.volume=0.5;
+         stv.volume=0.4;
     }
 
 	  if(oi>-1) x[oi].style="background-color:#252525;";
