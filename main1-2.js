@@ -32,7 +32,7 @@ var addr=[
 var thi= 0;
 var thName = [ "M Channel","อนุบาลที่1","อนุบาลที่2","อนุบาลที่3","ประถมที่","ประถมที่2","ประถมที่3" ];
 var thAddr = [
-"",
+"http://www.m-channel.com:1935/live/my_stream.sdp/playlist.m3u8",
 "https://www.livedoomovies.com/02_DLTV10_480p/chunklist.m3u8",
 "https://www.livedoomovies.com/02_DLTV11_480p/chunklist.m3u8",
 "https://www.livedoomovies.com/02_DLTV12_480p/chunklist.m3u8",
@@ -463,6 +463,8 @@ function movieclk( w, url, p ) {
       else if( p.id == 23 )
          stv.volume=0.4;
     }
+    if( gi == 1 && p.id == 20 )
+       url = thAddr[ thi ];
 
 	  if(oi>-1) x[oi].style="background-color:#252525;";
 	  if(ei>-1) x[ei].style="background-color:#252525";
