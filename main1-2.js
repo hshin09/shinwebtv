@@ -29,6 +29,17 @@ var addr=[
   ["MNet","MNet","MNet","79","79","79",3]
 ];
 
+var thi= 0;
+var thName = [ "M Channel","อนุบาลที่1","อนุบาลที่2","อนุบาลที่3","ประถมที่","ประถมที่2","ประถมที่3" ];
+var thAddr = [
+"",
+"https://www.livedoomovies.com/02_DLTV10_480p/chunklist.m3u8",
+"https://www.livedoomovies.com/02_DLTV11_480p/chunklist.m3u8",
+"https://www.livedoomovies.com/02_DLTV12_480p/chunklist.m3u8",
+"https://www.livedoomovies.com/02_DLTV1_480p/chunklist.m3u8",
+"https://www.livedoomovies.com/02_DLTV2_480p/chunklist.m3u8",
+"https://www.livedoomovies.com/02_DLTV3_480p/chunklist.m3u8"
+];
 var path= "http://123tv24.com/livetv/player-pc.php?co=01&ch=";
 var path79 = "http://123tv24.com/livetv/player-pc.php?co=01&ch=";
 var ch = ['26','37','04','05','28','03','09','35','10','17','33','02','01','34','32','23','14','07','15','13','06','12','11','38' ];
@@ -335,15 +346,12 @@ function onok() {
     }
   }
   else {
-    /*
-    if( isNotUser>0 && (si==11 || si==13) ) {
-      window.parentView.showMsg("adView:javascript:location.replace('https://www.adintrend.tv/hd/m/'); location.reload(true);");
-      ADsid=null;
-      window.parentView.showMsg("msg:AD 관련채널의 정보를 요청했습니다");
-      setTimeout(function(){window.parentView.showMsg("adView:"+ADscript);},2000);
-      return;
+    if(si==19) {
+      thi++;
+      if( thi > 6 ) thi = 0;
+      x[ si ].innderHtml = thName[ thi ];
+      //x[ si ].setAttribute();
     }
-    */
   }
   x[si].click();
 }
