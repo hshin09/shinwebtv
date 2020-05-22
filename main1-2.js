@@ -30,7 +30,7 @@ var addr=[
 ];
 
 var thi= 0;
-var thName = [ "M Channel","อนุบาลที่1","อนุบาลที่2","อนุบาลที่3","ประถมที่","ประถมที่2","ประถมที่3" ];
+var thName = [ "M Channel","อนุบาลที่1","อนุบาลที่2","อนุบาลที่3","ประถมที่1","ประถมที่2","ประถมที่3" ];
 var thAddr = [
 "http://www.m-channel.com:1935/live/my_stream.sdp/playlist.m3u8",
 "https://www.livedoomovies.com/02_DLTV10_480p/chunklist.m3u8",
