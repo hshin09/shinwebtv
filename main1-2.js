@@ -330,7 +330,7 @@ function onok() {
       i_ch=3;
     tvaddr[si]=addr[si][i_ch];
 
-    x[si].innerHTML=addr[si][i_ch-3];;
+    x[si].innerHTML=addr[si][i_ch-3];
 
     addr[si][6]=i_ch;
     if(i_ch==3)
@@ -349,7 +349,7 @@ function onok() {
     if(si==19) {
       thi++;
       if( thi > 6 ) thi = 0;
-      x[ si ].innderHtml = thName[ thi ];
+      x[si].innerHTML = thName[ thi ];
       //x[ si ].setAttribute();
     }
   }
