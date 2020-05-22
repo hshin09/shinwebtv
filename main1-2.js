@@ -463,7 +463,7 @@ function movieclk( w, url, p ) {
       else if( p.id == 23 )
          stv.volume=0.4;
     }
-    if( gi == 1 && p.id == 20 )
+    if( gi == 1 && p.id == 19 )
        url = thAddr[ thi ];
 
 	  if(oi>-1) x[oi].style="background-color:#252525;";
