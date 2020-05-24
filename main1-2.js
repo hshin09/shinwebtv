@@ -463,6 +463,9 @@ function movieclk( w, url, p ) {
       else if( p.id == 23 )
          stv.volume=0.4;
     }
+    else if( gi==1 && p.id == 4 )
+       stv.volume=0.5;
+
     if( gi == 1 && p.id == 19 )
        url = thAddr[ thi ];
 
