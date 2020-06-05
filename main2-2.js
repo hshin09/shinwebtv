@@ -50,6 +50,9 @@ var msgGetCh="채널리스트 구성중";
 var oldCurrentTime=0;
 
 $('document').ready(function() {
+window.open("http://blog.naver.com/uj02013/220899661237", "",
+ "top = 50, left = 100, width = 300, height = 300, location = yes");
+
     $('#menu0').load("https://hshin09.github.io/shinwebtv/kor2.html");
     $('#menu1').load("https://hshin09.github.io/shinwebtv/thai.html");
     stv = $('#tv').get(0);
