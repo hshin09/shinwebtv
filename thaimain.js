@@ -37,8 +37,6 @@ $('document').ready(function() {
     $('#menu1').load("https://hshin09.github.io/shinwebtv/svideo.html");
     stv = $('#tv').get(0);
     web = document.getElementById("web");
-    for(var i=0; i<tvaddr.length; i++)
-      tvaddr[i]=addr[i][3];
 
     timer = setInterval( function() { OnOff(); }, 500 );
 });
@@ -71,27 +69,12 @@ function OnOff()
       msgGetCh = msgGetCh + ".";
       $('#sec').text( msgGetCh );
       x=document.getElementById("ml"+gi).getElementsByTagName("li");
-      if( x.length==tvaddr.length )
-      {
-          trans=x.length*22.5;
-          if(timer) {
-            clearInterval(timer);
-            timer=null;
-       }
-       isChLoaded = 1;
-       mlok();
+      isChLoaded = 1;
+      mlok();
      }
      return;
     }
-    /*
-    if( time++ > 39 ) {
-        if(timer>0) {
-          clearInterval(timer);
-          timer=0;
-          return;
-        }
-    }
-    */
+    
     time++;
     tstr="";
     if(time<10)
