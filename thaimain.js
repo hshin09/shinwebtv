@@ -71,8 +71,7 @@ function OnOff()
       x=document.getElementById("ml"+gi).getElementsByTagName("li");
       isChLoaded = 1;
       mlok();
-     }
-     return;
+      return;
     }
     
     time++;
