@@ -39,10 +39,7 @@ $('document').ready(function() {
     web = document.getElementById("web");
     for(var i=0; i<tvaddr.length; i++)
       tvaddr[i]=addr[i][3];
-    /*
-    window.parentView.showMsg("msg:AD 관련채널의 정보를 요청합니다");
-    window.parentView.showMsg("adView:"+ADscript);
-    */
+
     timer = setInterval( function() { OnOff(); }, 500 );
 });
 
@@ -272,18 +269,6 @@ function keychk(e) {
 		else if(e.which == 13 ) {
       			onok();
 		}
-	    else if(e.which == 48 ) {
-	      $('#menu1').load("https://hshin09.github.io/shinwebtv/thai.html");
-              if(gi==1)
-                 setTimeout(function(){ mlok(); }, 500);
-	    }
-	    else if(e.which == 49 ) {
-	      if( ei==10 && si==12 ) {
-		$('#menu1').load("https://hshin09.github.io/shinwebtv/svideo.html");
-                if(gi==1)
-                   setTimeout(function(){ mlok(); }, 500);
-	      }
-	    }
 	    else if(e.which == 53 ) {
 	       mlok();
 	    }
@@ -293,29 +278,6 @@ function keychk(e) {
 function onok() {
   if( gi == 0 )
   {
-    var i_ch=addr[si][6];
-
-    i_ch++;
-    if(i_ch>5)
-      i_ch=3;
-    tvaddr[si]=addr[si][i_ch];
-
-    x[si].innerHTML=addr[si][i_ch-3];
-
-    addr[si][6]=i_ch;
-    if(i_ch==3)
-      window.parentView.showMsg("msg:기본서버("+x[si].innerHTML+") 로 이동합니다");
-    else
-      window.parentView.showMsg("msg:"+(i_ch-2)+"번 보조서버("+x[si].innerHTML+") 로 이동합니다");
-
-    if(tvaddr[si] == null)
-      gettv(si);
-    else if(tvaddr[si] == "79") {
-      get79tv(si);
-      return;
-    }
-  }
-  else {
     if(si==19) {
       thi++;
       if( thi > 6 ) thi = 0;
@@ -387,42 +349,10 @@ function onFullscreenOnOff() {
 }
 
 function movieclk( w, url, p ) {
-        /*
-		if(p.id==ei) {
-			onleft();
-			return;
-		}
-		*/
     oldCurrentTime=0;
     stv.pause();
-    if( url == null )
-	  {
-	        gettv(p.id);
-	        setTimeout(function(){ x[p.id].click(); }, 0);
-	        return;
-	  }
-
-    if( url == "79" )
-	  {
-                get79tv(p.id);
-	        return;
-	  }
-
     stv.volume=1;
-    /*
-    if( gi==1 && url.substring(0,3)=="ad:") {
-      if(ADsid==null) {
-        window.parentView.showMsg("msg:AD 관련채널 정보를 기다리고 있습니다.");
-        setTimeout(function(){window.parentView.showMsg("adView:"+ADscript);},2000);
-        return;
-      }
-      else {
-        var ss=url.substring(3);
-        url = "https://p1.adintrend.tv/live/ch"+ss+"/i/ch"+ss+"i.m3u8?sid="+ADsid;
-        stv.volume=0.3;
-      }
-    }
-    */
+    
     if( gi==1 && p.id > 19 )
     {
       stv.volume=0.2;
