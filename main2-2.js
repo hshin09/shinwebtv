@@ -118,7 +118,7 @@ function OnOff()
           isChLoaded = 1;
           addInput();
           mlok();
-          var win = window.open("http://www.google.com");
+          var win = window.open("https://tv.trueid.net/embed/ch3-hd");
        }
        return;
     }
