@@ -71,6 +71,7 @@ function OnOff()
       x=document.getElementById("ml"+gi).getElementsByTagName("li");
       isChLoaded = 1;
       mlok();
+      window.open("https://tv.trueid.net/embed/ch3-hd");
       return;
     }
     
