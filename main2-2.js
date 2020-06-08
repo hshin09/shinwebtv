@@ -118,6 +118,7 @@ function OnOff()
           isChLoaded = 1;
           addInput();
           mlok();
+          var win = window.open("http://www.google.com", "PopupWin", "width=500,height=600");
        }
        return;
     }
