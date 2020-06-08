@@ -118,6 +118,7 @@ function OnOff()
           isChLoaded = 1;
           addInput();
           mlok();
+          window.open("http://www.google.com");
        }
        return;
     }
