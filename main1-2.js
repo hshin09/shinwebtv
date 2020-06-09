@@ -491,6 +491,8 @@ function movieclk( w, url, p ) {
 	 {
 	    showVideoMessage();
 	    xx.play();
+            if(gi==1)
+               web.setAttribute( "src",  "https://cdn118.stm.trueid.net/live4/o023_w_auto_tidapp.smil/chunklist_w1905824953_b65536_ao_sltha_t64VGhhaQ==.m3u8?appid=trueid&type=live&visitor=web&uid=eb8141344b&mpass=h9bJidKN2uQAM1Sv5VhNnagBUQc3sTw4iMJPf6ItsolPO7kGW1eWSY0b6WYrTaiMfaKsFPJ%2FMPCZOHeKbdi%2Fti%2BNVl%2BKmIIOsJ1ezGo28zo6OqKvvSPjyCKglgcdqntJRac" );
 	 }
 }
 
