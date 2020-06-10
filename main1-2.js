@@ -476,18 +476,16 @@ function movieclk( w, url, p ) {
     }
     else {
        stv.style.display = "block";
-       if(gi==1 && si==13)
-          web.setAttribute( "src", "https://cdn108.stm.trueid.net/live4/o023_w_auto_tidapp.smil/chunklist_w181304763_b65536_ao_sltha_t64VGhhaQ==.m3u8?appid=trueid&type=live&visitor=web&uid=9985816e93&mpass=LvNgsNE6s5WzmMZ2cTiNui03fgDBqZEdC4Jkx%2Fbhy%2BYgf6shumboHZuZy%2FWJlzb%2F2SN%2B3uyQu9hVB%2FdKa7wmyrXBH1sr9AD1UKWz55cfCQs6Oo1DYoyAnqaOfrji%2Fwr7ZfM" );
-       else
-	  web.setAttribute( "src", "about:blank" );
+       web.setAttribute( "src", "about:blank" );
        xx=stv;
     }
-
     xx.setAttribute( "src",  url );
     if( w === "tv" )
     {
        xx.play();
        showVideoMessage();
+       if(gi==1 && si==13)
+          web.setAttribute( "src", "https://cdn108.stm.trueid.net/live4/o023_w_auto_tidapp.smil/chunklist_w181304763_b65536_ao_sltha_t64VGhhaQ==.m3u8?appid=trueid&type=live&visitor=web&uid=9985816e93&mpass=LvNgsNE6s5WzmMZ2cTiNui03fgDBqZEdC4Jkx%2Fbhy%2BYgf6shumboHZuZy%2FWJlzb%2F2SN%2B3uyQu9hVB%2FdKa7wmyrXBH1sr9AD1UKWz55cfCQs6Oo1DYoyAnqaOfrji%2Fwr7ZfM" );
     }
 }
 
