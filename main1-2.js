@@ -418,26 +418,19 @@ function onFullscreenOnOff() {
 }
 
 function movieclk( w, url, p ) {
-        /*
-		if(p.id==ei) {
-			onleft();
-			return;
-		}
-		*/
     oldCurrentTime=0;
     stv.pause();
-    if( url == null )
-	  {
-	        gettv(p.id);
-	        setTimeout(function(){ x[p.id].click(); }, 0);
-	        return;
-	  }
+    if( url == null ) {
+       gettv(p.id);
+       setTimeout(function(){ x[p.id].click(); }, 0);
+       return;
+    }
 
     if( url == "79" )
-	  {
-                get79tv(p.id);
-	        return;
-	  }
+    {
+       get79tv(p.id);
+       return;
+    }
 
     stv.volume=1;
     /*
@@ -470,31 +463,32 @@ function movieclk( w, url, p ) {
     if( gi == 1 && p.id == 19 )
        url = thAddr[ thi ];
 
-	  if(oi>-1) x[oi].style="background-color:#252525;";
-	  if(ei>-1) x[ei].style="background-color:#252525";
-	  si=ei=p.id;
-	  x[ei].style="background-color:#234567;color:yellow";
-	  oi=si;
+    if(oi>-1) x[oi].style="background-color:#252525;";
+    if(ei>-1) x[ei].style="background-color:#252525";
+    si=ei=p.id;
+    x[ei].style="background-color:#234567;color:yellow";
+    oi=si;
 
-	  var xx;
-	  if( w === "web" ) {
-	    stv.style.display = "none";
-	    xx=web;
-	  }
-	  else {
-	    stv.style.display = "block";
-	    web.setAttribute( "src",  "about:blank" );
-      xx=stv;
-	  }
+    var xx;
+    if( w === "web" ) {
+       stv.style.display = "none";
+       xx=web;
+    }
+    else {
+       stv.style.display = "block";
+       if(gi==1 && si==13)
+          web.setAttribute( "src", "https://cdn108.stm.trueid.net/live4/o023_w_auto_tidapp.smil/chunklist_w181304763_b65536_ao_sltha_t64VGhhaQ==.m3u8?appid=trueid&type=live&visitor=web&uid=9985816e93&mpass=LvNgsNE6s5WzmMZ2cTiNui03fgDBqZEdC4Jkx%2Fbhy%2BYgf6shumboHZuZy%2FWJlzb%2F2SN%2B3uyQu9hVB%2FdKa7wmyrXBH1sr9AD1UKWz55cfCQs6Oo1DYoyAnqaOfrji%2Fwr7ZfM" );
+       else
+	  web.setAttribute( "src", "about:blank" );
+       xx=stv;
+    }
 
-	 xx.setAttribute( "src",  url );
-	 if( w === "tv" )
-	 {
-	    showVideoMessage();
-            if(gi==1 && si==13)
-               web.setAttribute( "src",  "https://cdn118.stm.trueid.net/live4/o023_w_auto_tidapp.smil/chunklist_w1905824953_b65536_ao_sltha_t64VGhhaQ==.m3u8?appid=trueid&type=live&visitor=web&uid=eb8141344b&mpass=h9bJidKN2uQAM1Sv5VhNnagBUQc3sTw4iMJPf6ItsolPO7kGW1eWSY0b6WYrTaiMfaKsFPJ%2FMPCZOHeKbdi%2Fti%2BNVl%2BKmIIOsJ1ezGo28zo6OqKvvSPjyCKglgcdqntJRac" );
-	    xx.play();
-         }
+    xx.setAttribute( "src",  url );
+    if( w === "tv" )
+    {
+       xx.play();
+       showVideoMessage();
+    }
 }
 
 function showVideoMessage()
@@ -508,9 +502,9 @@ function showVideoMessage()
     closeErrorMessage();
     $('#sec').text( "00" );
     $("#ch_name").text( x[si].innerHTML );
-   	$("#videoMessage").css('display', 'block');
-  	$("#secMessage").css('display', 'block');
-   	//window.parentView.showMsg(x[si].innerHTML);
+    $("#videoMessage").css('display', 'block');
+    $("#secMessage").css('display', 'block');
+    //window.parentView.showMsg(x[si].innerHTML);
 }
 
 function showErrorMessage()
@@ -533,9 +527,9 @@ var demostr="";
 function gettv(i)
 {
     request = new XMLHttpRequest();
-	  if(!request) {
-		alert("Giving up :( Cannot create an XMLHTTP instance");
-		return false;
+	if(!request) {
+	   alert("Giving up :( Cannot create an XMLHTTP instance");
+	   return false;
 	}
 
 	demostr="";
