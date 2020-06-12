@@ -485,7 +485,7 @@ function movieclk( w, url, p ) {
        xx.play();
        showVideoMessage();
        if(gi==1 && si==13)
-          web.setAttribute( "src", "https://cdn120.stm.trueid.net/live4/o023_w_auto_tidapp.smil/chunklist_w245871984_b65536_ao_sltha_t64VGhhaQ==.m3u8?appid=trueid&type=live&visitor=web&uid=eea82217db&mpass=1%2BlPPNxhZJOQxzLFH9zZ465Rr6%2FUQzrI4iuHoleUdFimLorTZUMhjVxZpQIlIc78J1vgQ5D6TNuiSuG0OahaBmSn65av4RcRURhC7jAgURw6OtkAgkTyz%2Ffz6pvfKiBx3jE" );
+          web.setAttribute( "src", "https://cdn116.stm.trueid.net/live4/o023_w_auto_tidapp.smil/chunklist_w910571862_b65536_ao_sltha_t64VGhhaQ==.m3u8?appid=trueid&type=live&visitor=web&uid=f0f849b60b&mpass=bx0yzj9kP%2B1osajylvlQ6xo7a%2B%2BEbAyuRqgdArD2%2BYo1qFfHDt4%2B3uO6UAiaCb4PlFqqcLcB42V2shDE1CGXpz2AcPancfUYZvoU%2FvGNr1E6OjRQH3PC8LSNw7kEDItB09Q" );
     }
 }
 
