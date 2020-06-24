@@ -47,9 +47,9 @@ var gi=0;
 var si=10;
 var oi=10;
 var ei=10;
-var asi=[10,13];
-var aoi=[10,13];
-var aei=[10,13];
+var asi=[10,0];
+var aoi=[10,0];
+var aei=[10,0];
 var full=false;
 var timer=null;
 var time=0;
@@ -163,7 +163,7 @@ function OnOff()
         if(gi != 1 && si != 13 )
            web.setAttribute( "src", "about:blank" );
     }
-    else if( $('#videoMessage').css('display')=="block" && stv.currentTime > 4 )
+    else if( $('#videoMessage').css('display')=="block" && stv.currentTime > 2 )
     {
         isNotUser=0;
         $('#videoMessage').css('display', 'none');
