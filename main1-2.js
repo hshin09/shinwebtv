@@ -157,13 +157,13 @@ function OnOff()
          isNotUser=0;
        }
     }
-    else if( $('#secMessage').css('display')=="block" && stv.currentTime > 2 )
+    else if( $('#secMessage').css('display')=="block" && stv.currentTime > 1 )
     {
         $('#secMessage').css('display', 'none');
         if(gi != 1 && si != 13 )
            web.setAttribute( "src", "about:blank" );
     }
-    else if( $('#videoMessage').css('display')=="block" && stv.currentTime > 2 )
+    else if( $('#videoMessage').css('display')=="block" && stv.currentTime > 1 )
     {
         isNotUser=0;
         $('#videoMessage').css('display', 'none');
