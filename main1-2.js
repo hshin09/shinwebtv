@@ -54,6 +54,7 @@ var full=false;
 var timer=null;
 var time=0;
 var trans=100;
+var mustabout = 0;
 
 var web;
 var stv;
@@ -142,6 +143,7 @@ function OnOff()
          if( gi == 0 )
          {
             web.setAttribute( "src", path79+ch[ei] );
+            mustabout = 1;
             clearAddress(addr[ei][addr[ei][6]]);
             setTimeout(function(){ onok(); }, 2000);
          }
@@ -160,10 +162,13 @@ function OnOff()
     else if( $('#secMessage').css('display')=="block" && stv.currentTime > 1 )
     {
         $('#secMessage').css('display', 'none');
-        if(gi != 1 && si != 13 )
+        if( mustabout ) {
            web.setAttribute( "src", "about:blank" );
+           mustabout = 0;
+        }
     }
-    else if( $('#videoMessage').css('display')=="block" && stv.currentTime > 1 )
+    
+    if( $('#videoMessage').css('display')=="block" && stv.currentTime > 1 )
     {
         isNotUser=0;
         $('#videoMessage').css('display', 'none');
