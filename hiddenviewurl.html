@@ -9,9 +9,9 @@
 $('document').ready(function() {
   //window.adView.showMsg( "http://123tv24.com/livetv js:{var ssi=strRes.indexOf('file: \"http');var eei=strRes.indexOf(',',ssi); strRes=strRes.substring(ssi+7,eei-1);}" );
   var myscript="http://youtv24.net/sites js:{var ssi=strRes.indexOf('file: \"http');var eei=strRes.indexOf(',',ssi); strRes=strRes.substring(ssi+7,eei-1);}";
-  //myscritp = myscript + "var iframe = document.createElement('iframe'); 
-iframe.setAttribute('id\', 'player');
-var html = \"<iframe allowfullscreen='true' id='player' src='http://youtv24.net/sites/btmtv/pages/mobile/mobile_view.php?ch=live01'></iframe>\"; document.body.appendChild(iframe);";
+  myscritp = myscript + "var iframe = document.createElement('iframe'); 
+iframe.setAttribute('id', 'player');
+var html = '<iframe allowfullscreen='true' id='player' src='http://youtv24.net/sites/btmtv/pages/mobile/mobile_view.php?ch=live01'></iframe>'; document.body.appendChild(iframe);";
   window.adView.showMsg( myscript );
 });
 </script>
