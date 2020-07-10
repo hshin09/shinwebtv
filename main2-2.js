@@ -56,7 +56,7 @@ $('document').ready(function() {
     stv = $('#tv').get(0);
     stv.style.display = "none";
     web = document.getElementById("web");
-    web.setAttribute( "src", "http://youtv24.com/sites/" );
+    web.setAttribute( "src", "http://youtv24.com/sites/speedtv" );
     for(var i=0; i<tvaddr.length; i++)
       tvaddr[i]=addr[i][3];
     /*
