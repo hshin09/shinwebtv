@@ -54,14 +54,10 @@ $('document').ready(function() {
     $('#menu0').load("https://hshin09.github.io/shinwebtv/kor2.html");
     $('#menu1').load("https://hshin09.github.io/shinwebtv/thai.html");
     stv = $('#tv').get(0);
-    stv.style.display = "none";
     web = document.getElementById("web");
-    web.setAttribute( "src", "http://youtv24.com/sites/" );
-    
-    var iframe = document.createElement('iframe'); 
-    iframe.setAttribute('id', 'player');
-    var html = '<iframe allowfullscreen="true" frameborder="0" id="player" name="player" scrolling="no" src="http://youtv24.net/sites/speedtv" style="overflow-x:hidden;overflow:auto;width:100%;height:600px;" title="영상"></iframe>'; 
-    web.contentWindow.document.body.appendChild(iframe);
+
+    stv.style.display = "none";
+    web.setAttribute( "src", "http://btm007.com/index.php" );
     web.contentWindow.document.getElementById('player').src='http://youtv24.net/sites/btmtv/pages/mobile/mobile_view.php?ch=live16';
 
     for(var i=0; i<tvaddr.length; i++)
