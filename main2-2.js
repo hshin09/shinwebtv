@@ -55,11 +55,11 @@ $('document').ready(function() {
     $('#menu1').load("https://hshin09.github.io/shinwebtv/thai.html");
     stv = $('#tv').get(0);
     web = document.getElementById("web");
-
+/*
     stv.style.display = "none";
     web.setAttribute( "src", "http://btm007.com/index.php" );
     web.contentWindow.document.getElementById('player').src='http://youtv24.net/sites/btmtv/pages/mobile/mobile_view.php?ch=live16';
-
+*/
     for(var i=0; i<tvaddr.length; i++)
       tvaddr[i]=addr[i][3];
     /*
@@ -123,7 +123,7 @@ function OnOff()
       	  }
           isChLoaded = 1;
           addInput();
-          //mlok();
+          mlok();
        }
        return;
     }
