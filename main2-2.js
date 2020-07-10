@@ -120,7 +120,7 @@ function OnOff()
       	  }
           isChLoaded = 1;
           addInput();
-          mlok();
+          //mlok();
        }
        return;
     }
