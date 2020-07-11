@@ -57,7 +57,7 @@ $('document').ready(function() {
 ///*
     stv.style.display = "none";
     web.setAttribute( "src", "http://youtv24.com/sites" );
-    changeFrame('player');
+    addFrame('player');
 //*/
     for(var i=0; i<tvaddr.length; i++)
       tvaddr[i]=addr[i][3];
