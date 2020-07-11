@@ -436,10 +436,7 @@ function onFullscreenOnOff() {
 function movieclk( w, url, p ) {
     oldCurrentTime=0;
     stv.pause();
-    if( mustabout ) {
-       window.parentView.showMsg( "hiddenView:loadTV('')" );
-       mustabout = 0;
-    }
+
     if( url == null ) {
        gettv(p.id);
        setTimeout(function(){ x[p.id].click(); }, 0);
