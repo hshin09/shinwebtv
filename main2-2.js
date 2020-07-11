@@ -167,7 +167,8 @@ function OnOff()
            mustabout = 0;
         }
     }
-    else if( $('#videoMessage').css('display')=="block" && stv.currentTime > 4 )
+    
+    if( $('#videoMessage').css('display')=="block" && stv.currentTime > 2 )
     {
         isNotUser=0;
         $('#videoMessage').css('display', 'none');
