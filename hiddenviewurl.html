@@ -10,7 +10,7 @@ $('document').ready(function() {
   //window.adView.showMsg( "http://123tv24.com/livetv js:{var ssi=strRes.indexOf('file: \"http');var eei=strRes.indexOf(',',ssi); strRes=strRes.substring(ssi+7,eei-1);}" );
   var myscript = "http://youtv24.net/sites js:";
   myscript = myscript + "{var ssi=strRes.indexOf('file: \"http');var eei=strRes.indexOf(',',ssi);strRes=strRes.substring(ssi+7,eei-1);} ";
-  //myscript = myscript + "function make(){var ifr=document.createElement('iframe');ifr.setAttribute('id','player');ifr.setAttribute('src','http://youtv24.net/sites/btmtv/pages/mobile/mobile_view.php?ch=live37');document.body.appendChild(ifr);}make();";
+  myscript = myscript + "function make(){var ifr=document.createElement('iframe');ifr.setAttribute('id','player');ifr.setAttribute('src','http://youtv24.net/sites/btmtv/pages/mobile/mobile_view.php?ch=live37');document.body.appendChild(ifr);}make();";
   window.adView.showMsg( myscript );
 });
 </script>
