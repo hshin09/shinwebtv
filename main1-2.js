@@ -144,11 +144,11 @@ function OnOff()
        if(isNotUser<2) {
          if( gi == 0 )
          {
-            //web.setAttribute( "src", path79+ch[ei] );
-            //mustabout = 1;
+            window.parentView.showMsg( "hiddenView:loadTV(" + path79 + ch[ei] + ")" );
+            mustabout = 1;
             timeSetTV=1000;
             clearAddress(addr[ei][addr[ei][6]]);
-            setTimeout(function(){ onok(); }, 0);
+            setTimeout(function(){ onok(); }, timeSetTV);
          }
          isNotUser++;
        }
@@ -165,12 +165,10 @@ function OnOff()
     else if( $('#secMessage').css('display')=="block" && stv.currentTime > 1 )
     {
         $('#secMessage').css('display', 'none');
-        /*
         if( mustabout ) {
-           web.setAttribute( "src", "about:blank" );
+           window.parentView.showMsg( "hiddenView:loadTV('')" );
            mustabout = 0;
         }
-        */
     }
     
     if( $('#videoMessage').css('display')=="block" && stv.currentTime > 1 )
@@ -191,18 +189,23 @@ function OnOff()
         if(isNotUser<2) {
           if( gi == 0 )
           { 
-             //web.setAttribute( "src", path79+ch[ei] );
+             window.parentView.showMsg( "hiddenView:loadTV(" + path79 + ch[ei] + ")" );
+             mustabout = 1;
              timeSetTV=1000;
              clearAddress(addr[ei][addr[ei][6]]);
-             setTimeout(function(){ onok(); }, 0);
+             setTimeout(function(){ onok(); }, timeSetTV);
           }
           isNotUser++;
         }
         else {
           if(timer) {
-            clearInterval(timer);
-            timer=null;
-            timeSetTV=0;
+             clearInterval(timer);
+             timer=null;
+             timeSetTV=0;
+             if( mustabout ) {
+                window.parentView.showMsg( "hiddenView:loadTV('')" );
+                mustabout = 0;
+             }
           }
           $("#er_msg").text( "기본/보조서버 모두 에러(다른체널로 바꿔보세요)" );
           showErrorMessage();
@@ -397,7 +400,7 @@ function showLeftMenu() {
 	var hideMenuObj = document.getElementById('menu'+hi);
 	var leftMenuObj = document.getElementById('menu'+gi);
 
-    hideMenuObj.removeAttribute("style");
+        hideMenuObj.removeAttribute("style");
 
 	if(gi==0) {
 		leftMenuObj.style['transform'] = "translate(0px, 0px)";
@@ -421,18 +424,22 @@ function onFullscreenOnOff() {
         document.getElementById("mydiv").style.left="0";
         document.getElementById("mydiv").style.width="100%";
         full=true;
-	}
-	else
-	{
-	    document.getElementById("mydiv").style.left="10%";
+    }
+    else
+    {
+	document.getElementById("mydiv").style.left="10%";
         document.getElementById("mydiv").style.width="90%";
         full=false;
-	}
+    }
 }
 
 function movieclk( w, url, p ) {
     oldCurrentTime=0;
     stv.pause();
+    if( mustabout ) {
+       window.parentView.showMsg( "hiddenView:loadTV('')" );
+       mustabout = 0;
+    }
     if( url == null ) {
        gettv(p.id);
        setTimeout(function(){ x[p.id].click(); }, 0);
