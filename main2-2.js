@@ -28,7 +28,7 @@ var addr=[
   ["MNet","MNet","MNet","79","79","79",3]
 ];
 
-var path= "http://123tv24.com/livetv/player-pc.php?co=01&ch=";
+var path= "http://youtv24.net/sites/btmtv/pages/mobile/mobile_view.php?ch=live";
 //var path79 = "http://123tv24.com/livetv/player-pc.php?co=01&ch=";
 var path79 = "http://youtv24.net/sites/speedtv/pages/pc/pc_view.php?ch=live";
 var ch = ['26','37','04','05','28','03','09','35','10','17','33','02','01','34','32','23','14','07','15','13','06','12','11','38' ];
@@ -41,6 +41,8 @@ var aoi=[0,0];
 var full=false;
 var timer=null;
 var time=0;
+var mustabout = 0;
+var timeSetTV = 0;
 
 var web;
 var stv;
@@ -54,11 +56,7 @@ $('document').ready(function() {
     $('#menu1').load("https://hshin09.github.io/shinwebtv/thai.html");
     stv = $('#tv').get(0);
     web = document.getElementById("web");
-/*
-    stv.style.display = "none";
-    web.setAttribute( "src", "http://youtv24.com/sites" );
-    addFrame('player');
-*/
+
     for(var i=0; i<tvaddr.length; i++)
       tvaddr[i]=addr[i][3];
     /*
@@ -69,32 +67,6 @@ $('document').ready(function() {
     $('#tv').on('click',(function(){ onFullscreenOnOff(); }));
     timer = setInterval( function() { OnOff(); }, 500 );
 });
-
-function changeFrame(objId) {
-   var ifr = document.getElementById('web');
-   var ifrw = (ifr.contentWindow || ifr.contentDocument);
-   if( ifrw.document ) ifrw = ifrw.document;
-   alert( ifrw.body.style.backgroundColor );
-   ifrw.body.style.backgroundColor = "red";
-   var ply = ifrw.getElementById(objId);
-   
-   if( ply )ply.setAttribute('src','http://youtv24.net/sites/btmtv/pages/mobile/mobile_view.php?ch=live16');
-}
-
-function addFrame(objId) {
-   var iFrm = document.createElement('iframe');
-   iFrm.setAttribute('id', objId);
-   iFrm.setAttribute('frameborder', '1');
-   iFrm.setAttribute('border', '1');
-   iFrm.setAttribute('width', '100%');
-   iFrm.setAttribute('height', '100%');
-   iFrm.setAttribute('src', 'http://youtv24.net/sites/btmtv/pages/mobile/mobile_view.php?ch=live01');
-
-   var ifr = document.getElementById('web');
-   var ifrw = (ifr.contentWindow || ifr.contentDocument);
-   if( ifrw.document ) ifrw = ifrw.document;
-   ifrw.body.appendChild(iFrm);
-}
 
 function addInput()
 {
@@ -169,9 +141,11 @@ function OnOff()
           ei=si;
           if( gi == 0 )
           {
-             web.setAttribute( "src", path79+ch[ei] );
+             window.parentView.showMsg( "hiddenView:loadTV(" + path + ch[ei] + ")" );
+             mustabout = 1;
+             timeSetTV=3000;
              clearAddress(addr[ei][addr[ei][6]]);
-             setTimeout(function(){ onok(); }, 2000);
+             setTimeout(function(){ onok(); }, timeSetTV);
           }
           isNotUser++;
         }
@@ -188,7 +162,10 @@ function OnOff()
     else if( $('#secMessage').css('display')=="block" && stv.currentTime > 2 )
     {
         $('#secMessage').css('display', 'none');
-        web.setAttribute( "src", "about:blank" );
+        if( mustabout ) {
+           window.parentView.showMsg( "hiddenView:loadTV('')" );
+           mustabout = 0;
+        }
     }
     else if( $('#videoMessage').css('display')=="block" && stv.currentTime > 4 )
     {
@@ -197,6 +174,7 @@ function OnOff()
         if(timer) {
           clearInterval(timer);
           timer=null;
+          timeSetTV=0;
         }
         timer = setInterval( function() { OnOff(); }, 15000 );
         setTimeout(function(){ oldCurrentTime = stv.currentTime; },500);
@@ -208,9 +186,11 @@ function OnOff()
           ei=si;
           if( gi == 0 )
           {
-             web.setAttribute( "src", path79+ch[ei] );
+             window.parentView.showMsg( "hiddenView:loadTV(" + path + ch[ei] + ")" );
+             mustabout = 1;
+             timeSetTV=2000;
              clearAddress(addr[ei][addr[ei][6]]);
-             setTimeout(function(){ onok(); }, 2000);
+             setTimeout(function(){ onok(); }, timeSetTV);
           }
           isNotUser++;
         }
@@ -218,6 +198,10 @@ function OnOff()
           if(timer) {
             clearInterval(timer);
             timer=null;
+            if( mustabout ) {
+                window.parentView.showMsg( "hiddenView:loadTV('')" );
+                mustabout = 0;
+             }
           }
           $("#er_msg").text( "기본/보조서버 모두 에러(다른체널로 바꿔보세요)-2" );
           showErrorMessage();
@@ -482,7 +466,7 @@ function get79tv(i) {
 function setHiddenViewTV(s) {
   oi=-1;
   tvaddr[si]=s;
-  setTimeout(function(){ x[si].click(); }, 0);
+  setTimeout(function(){ x[si].click(); }, timeSetTV);
 }
 
 function setadtv(s) {
