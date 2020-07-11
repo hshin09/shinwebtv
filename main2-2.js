@@ -75,6 +75,7 @@ function changeFrame(objId) {
    var ifr = document.getElementById('web');
    var ifrw = (ifr.contentWindow || ifr.contentDocument);
    ifrw.document.getElementById(objId).src='http://youtv24.net/sites/btmtv/pages/mobile/mobile_view.php?ch=live16';
+}
 
 function addFrame(objId) {
    var iFrm = document.createElement('iframe');
