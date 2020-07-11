@@ -74,7 +74,7 @@ function changeFrame(objId) {
    var ifr = document.getElementById('web');
    var ifrw = (ifr.contentWindow || ifr.contentDocument);
    if( ifrw.document ) ifrw = ifrw.document;
-   alert( ifrw.body );
+   alert( ifrw.body.style.backgroundColor );
    ifrw.body.style.backgroundColor = "red";
    var ply = ifrw.getElementById(objId);
    
