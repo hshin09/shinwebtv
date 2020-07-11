@@ -9,8 +9,8 @@
 $('document').ready(function() {
   //window.adView.showMsg( "http://123tv24.com/livetv js:{var ssi=strRes.indexOf('file: \"http');var eei=strRes.indexOf(',',ssi); strRes=strRes.substring(ssi+7,eei-1);}" );
   var myscript = "http://youtv24.net/sites js:";
-  myscript = myscript + "{var i=strRes.indexOf('file: \"http');var e=strRes.indexOf(',',i);strRes=strRes.substring(i+7,e-1);} ";
-  myscript = myscript + "function change(ch){document.getElementById('player').setAttribute('src','http://youtv24.net/sites/btmtv/pages/mobile/mobile_view.php?ch=live'+ch);} function make(){var ifr=document.createElement('iframe');ifr.setAttribute('id','player');document.body.appendChild(ifr);}make();change('05');";
+  myscript = myscript + "{var i=strRes.indexOf('file: \"http');var e=strRes.indexOf(',',i);strRes=strRes.substring(i+7,e-1);e=strRes.indexOf('live',i);change(strRes.substring(i+4,i+7));} ";
+  myscript = myscript + "function change(ch){document.getElementById('player').setAttribute('src','http://youtv24.net/sites/btmtv/pages/mobile/mobile_view.php?ch=live'+ch);} function make(){var ifr=document.createElement('iframe');ifr.setAttribute('id','player');document.body.appendChild(ifr);}make();";
   window.adView.showMsg( myscript );
 });
 </script>
