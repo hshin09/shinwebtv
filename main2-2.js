@@ -73,11 +73,11 @@ $('document').ready(function() {
 function changeFrame(objId) {
    var ifr = document.getElementById('web');
    var ifrw = (ifr.contentWindow || ifr.contentDocument);
-   if(ifrw.document) ifrw = ifrw.document;
-   
+   if( ifrw.document ) ifrw = ifrw.document;
+   ifrw.body.style.backgroundColor = "red";
    var ply = ifrw.getElementById(objId);
    alert( ply );
-   ply.setAttribute('src','http://youtv24.net/sites/btmtv/pages/mobile/mobile_view.php?ch=live16');
+   if( ply )ply.setAttribute('src','http://youtv24.net/sites/btmtv/pages/mobile/mobile_view.php?ch=live16');
 }
 
 function addFrame(objId) {
@@ -91,7 +91,7 @@ function addFrame(objId) {
 
    var ifr = document.getElementById('web');
    var ifrw = (ifr.contentWindow || ifr.contentDocument);
-   if(ifrw.document) ifrw = ifrw.document;
+   if( ifrw.document ) ifrw = ifrw.document;
    ifrw.body.appendChild(iFrm);
 }
 
