@@ -146,7 +146,7 @@ function OnOff()
          {
             window.parentView.showMsg( "hiddenView:loadTV(" + path + ch[ei] + ")" );
             mustabout = 1;
-            timeSetTV=2000;
+            timeSetTV=3000;
             clearAddress(addr[ei][addr[ei][6]]);
             setTimeout(function(){ onok(); }, timeSetTV);
          }
