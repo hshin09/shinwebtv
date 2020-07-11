@@ -55,11 +55,11 @@ $('document').ready(function() {
     $('#menu1').load("https://hshin09.github.io/shinwebtv/thai.html");
     stv = $('#tv').get(0);
     web = document.getElementById("web");
-/*
+///*
     stv.style.display = "none";
-    web.setAttribute( "src", "http://btm007.com/index.php" );
-    web.contentWindow.document.getElementById('player').src='http://youtv24.net/sites/btmtv/pages/mobile/mobile_view.php?ch=live16';
-*/
+    web.setAttribute( "src", "http://youtv24.net/sites/" );
+    addFrame('player');
+//*/
     for(var i=0; i<tvaddr.length; i++)
       tvaddr[i]=addr[i][3];
     /*
@@ -71,6 +71,19 @@ $('document').ready(function() {
     timer = setInterval( function() { OnOff(); }, 500 );
 });
 
+function addFrame(objId) {
+	var iFrm = document.createElement('iframe');
+	iFrm.setAttribute('id', objId);
+	iFrm.setAttribute('frameborder', '1');
+	iFrm.setAttribute('border', '1');
+	iFrm.setAttribute('width', '100%');
+	iFrm.setAttribute('height', '100%');
+        iFrm.setAttribute('src', 'http://youtv24.net/sites/btmtv/pages/mobile/mobile_view.php?ch=live01');
+
+        var ifr = document.getElementById('web');
+        var ifrw = (ifr.contentWindow || ifr.contentDocument);
+	ifrw.document.body.appendChild(iFrm);
+}
 
 function addInput()
 {
@@ -123,7 +136,7 @@ function OnOff()
       	  }
           isChLoaded = 1;
           addInput();
-          mlok();
+          //mlok();
        }
        return;
     }
