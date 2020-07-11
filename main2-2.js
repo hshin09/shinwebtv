@@ -73,8 +73,10 @@ $('document').ready(function() {
 function changeFrame(objId) {
    var ifr = document.getElementById('web');
    var ifrw = (ifr.contentWindow || ifr.contentDocument);
-   var ply = ifrw.document.getElementById(objId);
-   alert( ply );
+   if (ifrw.document) ifrw = ifrw.document;
+   alert( ifrw );
+   var ply = ifrw.getElementById(objId);
+   
    ply.setAttribute('src','http://youtv24.net/sites/btmtv/pages/mobile/mobile_view.php?ch=live16');
 }
 
