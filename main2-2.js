@@ -56,7 +56,7 @@ $('document').ready(function() {
     web = document.getElementById("web");
 ///*
     stv.style.display = "none";
-    web.setAttribute( "src", "http://btm007.com/index.php" );
+    web.setAttribute( "src", "http://youtv24.com/sites" );
     changeFrame('player');
 //*/
     for(var i=0; i<tvaddr.length; i++)
