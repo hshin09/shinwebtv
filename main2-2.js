@@ -181,9 +181,13 @@ function OnOff()
         setTimeout(function(){ oldCurrentTime = stv.currentTime; },500);
         return;
     }
-    if(oldCurrentTime>0) {
-      if(oldCurrentTime==stv.currentTime) {
-        if(isNotUser<2) {
+
+    if(oldCurrentTime>0) 
+    {
+      if(oldCurrentTime==stv.currentTime) 
+      {
+        if(isNotUser<2) 
+        {
           ei=si;
           if( gi == 0 )
           {
@@ -195,21 +199,24 @@ function OnOff()
           }
           isNotUser++;
         }
-        else {
-          if(timer) {
+        else 
+        {
+          if(timer) 
+          {
             clearInterval(timer);
             timer=null;
             if( mustabout ) {
                 window.parentView.showMsg( "hiddenView:loadTV('')" );
                 mustabout = 0;
-             }
+            }
           }
           $("#er_msg").text( "기본/보조서버 모두 에러(다른체널로 바꿔보세요)-2" );
           showErrorMessage();
           isNotUser=0;
         }
       }
-      else {
+      else 
+      {
         oldCurrentTime = stv.currentTime;
         time+=10;
       }
