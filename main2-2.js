@@ -57,7 +57,7 @@ $('document').ready(function() {
     web = document.getElementById("web");
 ///*
     stv.style.display = "none";
-    web.setAttribute( "src", "http://youtv24.net/sites/" );
+    web.setAttribute( "src", "http://speed79.com/index.php" );
     addFrame('player');
 //*/
     for(var i=0; i<tvaddr.length; i++)
