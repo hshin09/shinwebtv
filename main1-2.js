@@ -56,6 +56,7 @@ var timer=null;
 var time=0;
 var trans=100;
 var mustabout = 0;
+var timeSetTV = 0;
 
 var web;
 var stv;
@@ -145,8 +146,9 @@ function OnOff()
          {
             //web.setAttribute( "src", path79+ch[ei] );
             //mustabout = 1;
+            timeSetTV=1000;
             clearAddress(addr[ei][addr[ei][6]]);
-            setTimeout(function(){ onok(); }, 2000);
+            setTimeout(function(){ onok(); }, 0);
          }
          isNotUser++;
        }
@@ -178,6 +180,7 @@ function OnOff()
         if(timer) {
           clearInterval(timer);
           timer=null;
+          timeSetTV=0;
         }
         timer = setInterval( function() { OnOff(); }, 15000 );
         setTimeout(function(){ oldCurrentTime = stv.currentTime; },500);
@@ -187,10 +190,11 @@ function OnOff()
       if(oldCurrentTime==stv.currentTime) {
         if(isNotUser<2) {
           if( gi == 0 )
-          {
+          { 
              //web.setAttribute( "src", path79+ch[ei] );
+             timeSetTV=1000;
              clearAddress(addr[ei][addr[ei][6]]);
-             setTimeout(function(){ onok(); }, 2000);
+             setTimeout(function(){ onok(); }, 0);
           }
           isNotUser++;
         }
@@ -198,6 +202,7 @@ function OnOff()
           if(timer) {
             clearInterval(timer);
             timer=null;
+            timeSetTV=0;
           }
           $("#er_msg").text( "기본/보조서버 모두 에러(다른체널로 바꿔보세요)" );
           showErrorMessage();
@@ -559,7 +564,7 @@ function get79tv(i) {
 
 function setHiddenViewTV(s) {
   tvaddr[si]=s;
-  setTimeout(function(){ x[si].click(); }, 1000);
+  setTimeout(function(){ x[si].click(); }, timeSetTV);
 }
 
 function setadtv(s) {
