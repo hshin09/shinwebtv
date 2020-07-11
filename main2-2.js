@@ -74,9 +74,9 @@ function changeFrame(objId) {
    var ifr = document.getElementById('web');
    var ifrw = (ifr.contentWindow || ifr.contentDocument);
    if (ifrw.document) ifrw = ifrw.document;
-   alert( ifrw );
-   var ply = ifrw.getElementById(objId);
    
+   var ply = ifrw.getElementById(objId);
+   alert( ply );
    ply.setAttribute('src','http://youtv24.net/sites/btmtv/pages/mobile/mobile_view.php?ch=live16');
 }
 
