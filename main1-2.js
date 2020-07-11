@@ -40,7 +40,7 @@ var thAddr = [
 "https://www.livedoomovies.com/02_DLTV2_480p/chunklist.m3u8",
 "https://www.livedoomovies.com/02_DLTV3_480p/chunklist.m3u8"
 ];
-var path= "http://123tv24.com/livetv/player-pc.php?co=01&ch=";
+var path= "http://youtv24.net/sites/btmtv/pages/mobile/mobile_view.php?ch=live";
 //var path79 = "http://123tv24.com/livetv/player-pc.php?co=01&ch=";
 var path79 = "http://youtv24.net/sites/speedtv/pages/pc/pc_view.php?ch=live";
 var ch = ['26','37','04','05','28','03','09','35','10','17','33','02','01','34','32','23','14','07','15','13','06','12','11','38' ];
@@ -144,7 +144,7 @@ function OnOff()
        if(isNotUser<2) {
          if( gi == 0 )
          {
-            window.parentView.showMsg( "hiddenView:loadTV(" + path79 + ch[ei] + ")" );
+            window.parentView.showMsg( "hiddenView:loadTV(" + path + ch[ei] + ")" );
             mustabout = 1;
             timeSetTV=1000;
             clearAddress(addr[ei][addr[ei][6]]);
@@ -189,7 +189,7 @@ function OnOff()
         if(isNotUser<2) {
           if( gi == 0 )
           { 
-             window.parentView.showMsg( "hiddenView:loadTV(" + path79 + ch[ei] + ")" );
+             window.parentView.showMsg( "hiddenView:loadTV(" + path + ch[ei] + ")" );
              mustabout = 1;
              timeSetTV=1000;
              clearAddress(addr[ei][addr[ei][6]]);
