@@ -73,7 +73,7 @@ $('document').ready(function() {
 function changeFrame(objId) {
    var ifr = document.getElementById('web');
    var ifrw = (ifr.contentWindow || ifr.contentDocument);
-   if (ifrw.document) ifrw = ifrw.document;
+   if(ifrw.document) ifrw = ifrw.document;
    
    var ply = ifrw.getElementById(objId);
    alert( ply );
@@ -91,7 +91,8 @@ function addFrame(objId) {
 
    var ifr = document.getElementById('web');
    var ifrw = (ifr.contentWindow || ifr.contentDocument);
-   ifrw.document.body.appendChild(iFrm);
+   if(ifrw.document) ifrw = ifrw.document;
+   ifrw.body.appendChild(iFrm);
 }
 
 function addInput()
