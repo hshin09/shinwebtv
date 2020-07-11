@@ -146,7 +146,7 @@ function OnOff()
          {
             window.parentView.showMsg( "hiddenView:loadTV(" + path + ch[ei] + ")" );
             mustabout = 1;
-            timeSetTV=1000;
+            timeSetTV=2000;
             clearAddress(addr[ei][addr[ei][6]]);
             setTimeout(function(){ onok(); }, timeSetTV);
          }
@@ -191,7 +191,7 @@ function OnOff()
           { 
              window.parentView.showMsg( "hiddenView:loadTV(" + path + ch[ei] + ")" );
              mustabout = 1;
-             timeSetTV=1000;
+             timeSetTV=2000;
              clearAddress(addr[ei][addr[ei][6]]);
              setTimeout(function(){ onok(); }, timeSetTV);
           }
