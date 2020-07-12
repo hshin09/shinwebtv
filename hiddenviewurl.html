@@ -9,7 +9,7 @@
 $('document').ready(function() {
    var myscript = "http://youtv24.net/sites js:";
    myscript = myscript + "{ var i=strRes.indexOf('file: \"http'); var e=strRes.indexOf(',',i); strRes=strRes.substring(i+7,e-1); } ";
-   myscript = myscript + "function loadTV(ch){ tvplayer.setAttribute('src',ch); /*var s='msg:'+tvplayer.src; window.hiddenView.showMsg(s);*/ } ";
+   myscript = myscript + "function loadTV(ch){ tvplayer.setAttribute('src',ch); } ";
    myscript = myscript + "function make(){ tvplayer=document.createElement('iframe'); tvplayer.setAttribute('id','player'); document.body.appendChild(tvplayer); } ";
    myscript = myscript + "var tvplayer; make();";
    window.adView.showMsg( myscript );
