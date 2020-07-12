@@ -68,6 +68,11 @@ $('document').ready(function() {
     timer = setInterval( function() { OnOff(); }, 500 );
 });
 
+function sendMsg(msg)
+{
+   window.parentView.showMsg("msg:"+msg);
+}
+
 function addInput()
 {
    var input = document.createElement('input');
