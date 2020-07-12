@@ -163,7 +163,7 @@ function OnOff()
     {
         $('#secMessage').css('display', 'none');
         if( mustabout ) {
-           window.parentView.showMsg( "hiddenView:loadTV('')" );
+           window.parentView.showMsg( "hiddenView:loadTV('http://youtv24.net/sites/btmtv/')" );
            mustabout = 0;
         }
     }
@@ -206,7 +206,7 @@ function OnOff()
             clearInterval(timer);
             timer=null;
             if( mustabout ) {
-                window.parentView.showMsg( "hiddenView:loadTV('')" );
+                window.parentView.showMsg( "hiddenView:loadTV('http://youtv24.net/sites/btmtv/')" );
                 mustabout = 0;
             }
           }
