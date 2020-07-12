@@ -60,6 +60,7 @@ $('document').ready(function() {
     for(var i=0; i<tvaddr.length; i++)
       tvaddr[i]=addr[i][3];
     /*
+    window.parentView.showMsg( "hiddenView:sendMsg('" + path + "')" );
     window.parentView.showMsg("msg:AD 관련채널의 정보를 요청합니다");
     window.parentView.showMsg("adView:"+ADscript);]
     */
@@ -146,7 +147,7 @@ function OnOff()
           ei=si;
           if( gi == 0 )
           {
-             window.parentView.showMsg( "hiddenView:loadTV(" + path + ch[ei] + ")" );
+             window.parentView.showMsg( "hiddenView:loadTV('" + path + ch[ei] + "')" );
              mustabout = 1;
              timeSetTV=2000;
              clearAddress(addr[ei][addr[ei][6]]);
@@ -168,7 +169,7 @@ function OnOff()
     {
         $('#secMessage').css('display', 'none');
         if( mustabout ) {
-           window.parentView.showMsg( "hiddenView:loadTV(" + path + "00)" );
+           window.parentView.showMsg( "hiddenView:loadTV('" + path + "00')" );
            mustabout = 0;
         }
     }
@@ -196,7 +197,7 @@ function OnOff()
           ei=si;
           if( gi == 0 )
           {
-             window.parentView.showMsg( "hiddenView:loadTV(" + path + ch[ei] + ")" );
+             window.parentView.showMsg( "hiddenView:loadTV('" + path + ch[ei] + "')" );
              mustabout = 1;
              timeSetTV=2000;
              clearAddress(addr[ei][addr[ei][6]]);
@@ -211,7 +212,7 @@ function OnOff()
             clearInterval(timer);
             timer=null;
             if( mustabout ) {
-                window.parentView.showMsg( "hiddenView:loadTV(" + path + "00)" );
+                window.parentView.showMsg( "hiddenView:loadTV('" + path + "00')" );
                 mustabout = 0;
             }
           }
