@@ -166,7 +166,7 @@ function OnOff()
     {
         $('#secMessage').css('display', 'none');
         if( mustabout ) {
-           window.parentView.showMsg( "hiddenView:loadTV('" + path + "00')" );
+           window.parentView.showMsg( "hiddenView:loadTV('')" );
            mustabout = 0;
         }
     }
@@ -203,7 +203,7 @@ function OnOff()
              timer=null;
              timeSetTV=0;
              if( mustabout ) {
-                window.parentView.showMsg( "hiddenView:loadTV('" + path + "00')" );
+                window.parentView.showMsg( "hiddenView:loadTV('')" );
                 mustabout = 0;
              }
           }
