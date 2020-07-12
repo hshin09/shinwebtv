@@ -8,8 +8,8 @@
 <script>
 $('document').ready(function() {
    var myscript = "http://youtv24.net/sites js:";
-   myscript = myscript + "{var i=strRes.indexOf('file: \"http');var e=strRes.indexOf(',',i);strRes=strRes.substring(i+7,e-1);i=strRes.indexOf('live');loadTV(tvpath+strRes.substring(i+4,i+6));} ";
-   myscript = myscript + "function change(ch){tvplayer.setAttribute('src',tvpath+ch);} ";
+   myscript = myscript + "{var i=strRes.indexOf('file: \"http');var e=strRes.indexOf(',',i);strRes=strRes.substring(i+7,e-1);i=strRes.indexOf('live');change(strRes.substring(i+4,i+6));} ";
+   myscript = myscript + "function change(ch){return; tvplayer.setAttribute('src',tvpath+ch);} ";
    myscript = myscript + "function loadTV(ch){tvplayer.setAttribute('src',ch);var s='msg:'+tvplayer.src; window.hiddenView.showMsg(s);} ";
    myscript = myscript + "function make(){tvplayer=document.createElement('iframe');tvplayer.setAttribute('id','player');document.body.appendChild(tvplayer);} ";
    myscript = myscript + "var tvplayer; var tvpath='http://youtv24.net/sites/btmtv/pages/mobile/mobile_view.php?ch=live'; ";
