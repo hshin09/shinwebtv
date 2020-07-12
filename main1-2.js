@@ -146,7 +146,7 @@ function OnOff()
          {
             window.parentView.showMsg( "hiddenView:loadTV(" + path + ch[ei] + ")" );
             mustabout = 1;
-            timeSetTV=3000;
+            timeSetTV=2000;
             clearAddress(addr[ei][addr[ei][6]]);
             setTimeout(function(){ onok(); }, timeSetTV);
          }
@@ -166,7 +166,7 @@ function OnOff()
     {
         $('#secMessage').css('display', 'none');
         if( mustabout ) {
-           window.parentView.showMsg( "hiddenView:loadTV('')" );
+           window.parentView.showMsg( "hiddenView:loadTV(" + path + "00)" );
            mustabout = 0;
         }
     }
@@ -203,7 +203,7 @@ function OnOff()
              timer=null;
              timeSetTV=0;
              if( mustabout ) {
-                window.parentView.showMsg( "hiddenView:loadTV('')" );
+                window.parentView.showMsg( "hiddenView:loadTV(" + path + "00)" );
                 mustabout = 0;
              }
           }
