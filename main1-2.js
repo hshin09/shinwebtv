@@ -113,11 +113,11 @@ function OnOff()
           if(timer) {
             clearInterval(timer);
             timer=null;
-       }
-       isChLoaded = 1;
-       mlok();
-     }
-     return;
+          }
+          isChLoaded = 1;
+          mlok();
+      }
+      return;
     }
     /*
     if( time++ > 39 ) {
@@ -138,35 +138,35 @@ function OnOff()
     if( stv.error != null || stv.networkState == 3 || ( time > 30 && stv.currentTime < 2 ) )
     {
        if( $('#errorMessage').css('display') != "block" ) {
-        $("#er_msg").text( "에러 안내 : 채널을 가져올수 없음(네트워크 또는 서버 에러)" );
-        showErrorMessage();
+          $("#er_msg").text( "에러 안내 : 채널을 가져올수 없음(네트워크 또는 서버 에러)" );
+          showErrorMessage();
        }
        if(isNotUser<2) {
-         if( gi == 0 )
-         {
-            window.parentView.showMsg( "hiddenView:loadTV(" + path + ch[ei] + ")" );
-            mustabout = 1;
-            timeSetTV=2000;
-            clearAddress(addr[ei][addr[ei][6]]);
-            setTimeout(function(){ onok(); }, timeSetTV);
-         }
-         isNotUser++;
+          if( gi == 0 )
+          {
+             setTimeout(function(){ window.parentView.showMsg( "hiddenView:loadTV(" + path + ch[ei] + ")" ); }, 0);
+             mustabout = 1;
+             timeSetTV=2000;
+             clearAddress(addr[ei][addr[ei][6]]);
+             setTimeout(function(){ onok(); }, timeSetTV);
+          }
+          isNotUser++;
        }
        else {
-         if(timer) {
-           clearInterval(timer);
-           timer=null;
-         }
-         $("#er_msg").text( "기본/보조서버 모두 에러(다른체널로 바꿔보세요)" );
-         showErrorMessage();
-         isNotUser=0;
+          if(timer) {
+             clearInterval(timer);
+             timer=null;
+          }
+          $("#er_msg").text( "기본/보조서버 모두 에러(다른체널로 바꿔보세요)" );
+          showErrorMessage();
+          isNotUser=0;
        }
     }
     else if( $('#secMessage').css('display')=="block" && stv.currentTime > 1 )
     {
         $('#secMessage').css('display', 'none');
         if( mustabout ) {
-           window.parentView.showMsg( "hiddenView:loadTV(" + path + "00)" );
+           setTimeout(function(){ window.parentView.showMsg( "hiddenView:loadTV(" + path + "00)" ); }, 0);
            mustabout = 0;
         }
     }
@@ -189,7 +189,7 @@ function OnOff()
         if(isNotUser<2) {
           if( gi == 0 )
           { 
-             window.parentView.showMsg( "hiddenView:loadTV(" + path + ch[ei] + ")" );
+             setTimeout(function(){window.parentView.showMsg( "hiddenView:loadTV(" + path + ch[ei] + ")" );}, 0);
              mustabout = 1;
              timeSetTV=2000;
              clearAddress(addr[ei][addr[ei][6]]);
@@ -203,7 +203,7 @@ function OnOff()
              timer=null;
              timeSetTV=0;
              if( mustabout ) {
-                window.parentView.showMsg( "hiddenView:loadTV(" + path + "00)" );
+                setTimeout(function(){window.parentView.showMsg( "hiddenView:loadTV(" + path + "00)" );}, 0);
                 mustabout = 0;
              }
           }
@@ -213,8 +213,8 @@ function OnOff()
         }
       }
       else {
-        oldCurrentTime = stv.currentTime;
-        time+=10;
+         oldCurrentTime = stv.currentTime;
+         time+=10;
       }
     }
 }
@@ -376,22 +376,22 @@ function onok() {
 var x;
 var cnt;
 function mlok() {
-	x=document.getElementById("ml"+gi).getElementsByTagName("li");
-	cnt=x.length;
-	var i;
-	for(i=0; i<cnt; i++) {
-		x[i].id=i;
+   x=document.getElementById("ml"+gi).getElementsByTagName("li");
+   cnt=x.length;
+   var i;
+   for(i=0; i<cnt; i++) {
+      x[i].id=i;
    }
    if(ei>-1) {
-   	si=ei;
-   	ei=-1;
-		onleft();
-    ei=si;
-	}
-	else if(si<0)
-		ondown();
+      si=ei;
+      ei=-1;
+      onleft();
+      ei=si;
+   }
+   else if(si<0)
+      ondown();
 
-	showLeftMenu();
+   showLeftMenu();
 }
 
 function showLeftMenu() {
