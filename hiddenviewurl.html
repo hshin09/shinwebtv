@@ -10,7 +10,7 @@ $('document').ready(function() {
    var myscript = "http://youtv24.net/sites js:";
    myscript = myscript + "{var i=strRes.indexOf('file: \"http');var e=strRes.indexOf(',',i);strRes=strRes.substring(i+7,e-1);i=strRes.indexOf('live');change(strRes.substring(i+4,i+6));} ";
    myscript = myscript + "function change(ch){tvplayer.setAttribute('src',tvpath+ch); window.hiddenView.showMsg('webView:sendMsg('+tvplayer.src+')');} ";
-   myscript = myscript + "function loadTV(ch){/*tvplayer.setAttribute('src',ch);*/ window.hiddenView.showMsg('msg:hi');} ";
+   myscript = myscript + "function loadTV(ch){/*tvplayer.setAttribute('src',ch);*/ window.hiddenView.showMsg('msg:'+ch);} ";
    myscript = myscript + "function make(){tvplayer=document.createElement('iframe');tvplayer.setAttribute('id','player');document.body.appendChild(tvplayer);} ";
    myscript = myscript + "var tvplayer; var tvpath='http://youtv24.net/sites/btmtv/pages/mobile/mobile_view.php?ch=live'; ";
    myscript = myscript + "make();";
