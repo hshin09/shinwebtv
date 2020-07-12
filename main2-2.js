@@ -60,7 +60,6 @@ $('document').ready(function() {
     for(var i=0; i<tvaddr.length; i++)
       tvaddr[i]=addr[i][3];
     /*
-    window.parentView.showMsg( "hiddenView:sendMsg('" + path + "')" );
     window.parentView.showMsg("msg:AD 관련채널의 정보를 요청합니다");
     window.parentView.showMsg("adView:"+ADscript);]
     */
@@ -68,11 +67,6 @@ $('document').ready(function() {
     $('#tv').on('click',(function(){ onFullscreenOnOff(); }));
     timer = setInterval( function() { OnOff(); }, 500 );
 });
-
-function sendMsg(msg)
-{
-   window.parentView.showMsg("msg:"+msg);
-}
 
 function addInput()
 {
