@@ -220,6 +220,8 @@ function OnOff()
 }
 
 function clearAddress(tar) {
+  tvaddr[ei]=tar;
+  /*
   if(tar!=null && tar!="79")
     return;
 
@@ -228,6 +230,7 @@ function clearAddress(tar) {
         tvaddr[i]=tar;
     }
   }
+  */
 }
 
 function onup() {
