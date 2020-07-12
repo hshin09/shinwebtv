@@ -144,7 +144,7 @@ function OnOff()
        if(isNotUser<2) {
           if( gi == 0 )
           {
-             setTimeout(function(){ window.parentView.showMsg( "hiddenView:loadTV(" + path + ch[ei] + ")" ); }, 0);
+             setTimeout(function(){ window.parentView.showMsg( 'hiddenView:loadTV(' + path + ch[ei] + ')' ); }, 0);
              mustabout = 1;
              timeSetTV=2000;
              clearAddress(addr[ei][addr[ei][6]]);
