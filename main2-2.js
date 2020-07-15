@@ -118,7 +118,7 @@ function OnOff()
             timer=null;
       	  }
           isChLoaded = 1;
-          addInput();
+          //addInput();
           mlok();
        }
        return;
