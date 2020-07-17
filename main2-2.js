@@ -118,8 +118,9 @@ function OnOff()
             timer=null;
       	  }
           isChLoaded = 1;
-          mlok();
-          addInput();
+          window.parentView.showMsg( "hiddenView:make()" );
+          //mlok();
+          //addInput();
        }
        return;
     }
