@@ -500,7 +500,8 @@ function movieclk( w, url, p ) {
        xx=stv;
     }
     if(gi==1 && si==13) {
-       window.open( "https://tv.trueid.net/embed/fantv","a","location=no");
+       var win = window.open( "https://tv.trueid.net/embed/fantv");
+       win.document.write("<script>document.getElementsByClassName('vjs-big-play-button')[0].click();</script>"); 
        return;
     }
     xx.setAttribute( "src",  url );
