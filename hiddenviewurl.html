@@ -10,10 +10,10 @@ $('document').ready(function() {
    var myscript = "http://youtv24.net/sites js:";
    //var myscript = "https://tv.trueid.net/embed/fantv js:";
    myscript = myscript + "{ var i=strRes.indexOf('file: \"http'); var e=strRes.indexOf(',',i); strRes=strRes.substring(i+7,e-1); } ";
-   myscript = myscript + "function loadTV(ch){ tvplayer.setAttribute('src',ch); } ";
-   myscript = myscript + "function make(){ tvplayer=document.createElement('iframe'); tvplayer.setAttribute('id','player'); document.body.appendChild(tvplayer); } ";
+   //myscript = myscript + "function loadTV(ch){ tvplayer.setAttribute('src',ch); } ";
+   //myscript = myscript + "function make(){ tvplayer=document.createElement('iframe'); tvplayer.setAttribute('id','player'); document.body.appendChild(tvplayer); } ";
    //myscript = myscript + "function make(){ tvplayer=document.getElementsByClassName('vjs-big-play-button')[0]; tvplayer.click(); } ";
-   myscript = myscript + "var tvplayer; make();";
+   //myscript = myscript + "var tvplayer; make();";
    window.adView.showMsg( myscript );
 });
 </script>
