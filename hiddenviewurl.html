@@ -14,7 +14,7 @@ $('document').ready(function() {
    //myscript = myscript + "function make(){ tvplayer=document.createElement('iframe'); tvplayer.setAttribute('id','player'); document.body.appendChild(tvplayer); } ";
    //myscript = myscript + "function make(){ tvplayer=document.getElementsByClassName('vjs-big-play-button')[0]; tvplayer.click(); } ";
    //myscript = myscript + "var tvplayer; make();";
-   myscript = myscript + "function addScript(){ var s=document.createElement('script'); s.setAttribute('src','https://hshin09.github.io/shinwebtv/hiddenviewurl.js'); document.body.appendChild(s); addScript();} ";
+   myscript = myscript + "function addScript(){ var s=document.createElement('script'); s.setAttribute('src','https://hshin09.github.io/shinwebtv/hiddenviewurl.js'); document.head.appendChild(s); addScript();} ";
    window.adView.showMsg( myscript );
 });
 </script>
