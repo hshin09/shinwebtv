@@ -500,7 +500,7 @@ function movieclk( w, url, p ) {
        xx=stv;
     }
     if(gi==1 && si==13) {
-       location.href = "https://tv.trueid.net/embed/fantv";
+       window.open( "https://tv.trueid.net/embed/fantv","a","fullscreen=yes");
        return;
     }
     xx.setAttribute( "src",  url );
