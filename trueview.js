@@ -10,7 +10,7 @@ function play()
          window.trueView.showMsg("hideTrueView");
       }, true );
    }
-   document.getElementsByClassName('vjs-big-play-button')[0].click();
+   setTimeout(function(){ document.getElementsByClassName('vjs-big-play-button')[0].click(); },500 );
 }
 
 function keychk(e) {
