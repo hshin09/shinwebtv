@@ -383,7 +383,8 @@ function movieclk( w, url, p ) {
              //var win=window.open("","abc");
              var s=win.document.createElement('script');
              s.setAttribute('src','https://hshin09.github.io/shinwebtv/trueview.js'); 
-             win.document.head.appendChild(s);
+             win.document.body.appendChild(s);
+             win.play();
              return;
           }
           else
