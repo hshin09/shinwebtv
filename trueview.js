@@ -1,5 +1,6 @@
-
+window.onkeydown = keychk;
 var init = true;
+
 function play()
 {
    if(init) {
