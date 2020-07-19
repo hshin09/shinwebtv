@@ -14,7 +14,7 @@ function play()
 }
 
 function keychk(e) {
-   if(e.which == 13 ) {
+   if(e.which == 38 ) {
       window.trueView.showMsg("hideTrueView");
    }
    e.preventDefault();
