@@ -378,13 +378,8 @@ function movieclk( w, url, p ) {
       xx=stv;
 	  }
           if(gi==1 && si==13) {
-             //location.href="https://tv.trueid.net/embed/fantv";
-             var win=window.open("https://tv.trueid.net/embed/fantv","abc");
-             //var win=window.open("","abc");
-             var s=win.document.createElement('script');
-             s.setAttribute('src','https://hshin09.github.io/shinwebtv/trueview.js'); 
-             win.document.body.appendChild(s);
-             win.play();
+             window.parentView.showMsg("trueView:showTrueView()");
+             window.parentView.showMsg("trueView:play()");
              return;
           }
           else
