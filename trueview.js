@@ -6,7 +6,7 @@ function play()
 
 window.onload = function(){
    play();
-   window.trueView.showMsg("showTrueView()");
+   window.trueView.showMsg("hideTrueView()");
 }
 
 
