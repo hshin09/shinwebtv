@@ -1,7 +1,11 @@
 function play()
 {
-   document.getElementsByClassName('vjs-big-play-button')[0].click();
+   var a=document.getElementsByClassName('vjs-big-play-button')[0];
+   alert(a);
+   a.click();
 }
 
-alert("90");
-play();
+﻿window.onload = function(){
+   alert('start');
+   play();
+} 
