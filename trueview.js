@@ -4,10 +4,10 @@ function play()
 {
    if(init) {
       init = false;
-      window.trueView.showMsg("msg:init");
-      document.getElementsByClassName('vjs-tech')[0].addEventListener( "click", function()
+      window.trueView.showMsg("msg:init1");
+      document.getElementsBytagName('body')[0].addEventListener( "click", function()
       {
-         window.trueView.showMsg("msg:dbclick");
+         window.trueView.showMsg("msg:click");
       }, true );
    }
    document.getElementsByClassName('vjs-big-play-button')[0].click();
