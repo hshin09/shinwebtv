@@ -4,7 +4,7 @@ function play()
 {
    if(init) {
       init = false;
-      alert(document.getElementsByClassName('vjs-tech')[0]);
+      window.trueView.showMsg("trueView:init");
       document.getElementsByClassName('vjs-tech')[0].addEventListener( "dbclick", function()
       {
          window.trueView.showMsg("hideTrueView");
