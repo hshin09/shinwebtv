@@ -7,9 +7,10 @@ function play()
 
 document.addEventListener( "DOMContentLoaded", function()
 {
-   document.getElementsByClassName('vjs-tech')[0].addEventListener( "click", function()
+   alert('DOMContentLoaded');
+   document.getElementsByClassName('vjs-tech')[0].addEventListener( "dbclick", function()
    {
-      alert('click');
+      alert('dbclick');
    } );
 } );
 
