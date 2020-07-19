@@ -4,8 +4,8 @@ function play()
 {
    if(init) {
       init = false;
-      window.trueView.showMsg("msg:init1");
-      document.getElementsBytagName('body')[0].addEventListener( "click", function()
+      window.trueView.showMsg("msg:init2");
+      document.getElementsByTagName('body')[0].addEventListener( "click", function()
       {
          window.trueView.showMsg("msg:click");
       }, true );
