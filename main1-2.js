@@ -504,7 +504,8 @@ function movieclk( w, url, p ) {
        window.parentView.showMsg("showTrueView");
        return;
     }
-    xx.setAttribute( "src",  url );
+    else
+       xx.setAttribute( "src",  url );
     if( w === "tv" )
     {
        xx.play();
