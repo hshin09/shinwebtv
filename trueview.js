@@ -7,7 +7,7 @@ function play()
       window.trueView.showMsg("msg:init");
       document.getElementsByClassName('vjs-custom-control-spacer vjs-spacer ')[0].addEventListener( "click", function()
       {
-         window.trueView.showMsg("msg:click");
+         window.trueView.showMsg("hideTrueView");
       }, true );
    }
    document.getElementsByClassName('vjs-big-play-button')[0].click();
