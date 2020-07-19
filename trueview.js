@@ -6,7 +6,7 @@ function play()
       init = false;
       document.getElementsByClassName('vjs-tech')[0].addEventListener( "dbclick", function()
       {
-         alert('dbclick');
+         window.trueView.showMsg("hideTrueView");
       } );
    }
    document.getElementsByClassName('vjs-big-play-button')[0].click();
@@ -14,6 +14,10 @@ function play()
 
 window.onload = function()
 {
-   alert('1');
-} );
+   init = false;
+   document.getElementsByClassName('vjs-tech')[0].addEventListener( "dbclick", function()
+   {
+      window.trueView.showMsg("hideTrueView");
+   } );
+}
 
