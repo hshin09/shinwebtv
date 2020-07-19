@@ -1,16 +1,19 @@
 
-
+var init = true;
 function play()
 {
+   if(init) {
+      init = false;
+      document.getElementsByClassName('vjs-tech')[0].addEventListener( "dbclick", function()
+      {
+         alert('dbclick');
+      } );
+   }
    document.getElementsByClassName('vjs-big-play-button')[0].click();
 }
 
-document.addEventListener( "DOMContentLoaded", function()
+window.onload = function()
 {
-   alert('DOMContentLoaded');
-   document.getElementsByClassName('vjs-tech')[0].addEventListener( "dbclick", function()
-   {
-      alert('dbclick');
-   } );
+   alert('1');
 } );
 
