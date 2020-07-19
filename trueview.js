@@ -1,10 +1,10 @@
-window.onkeydown = keychk;
 var init = true;
 
 function play()
 {
    if(init) {
       init = false;
+      window.onkeydown = keychk;
       document.getElementsByClassName('vjs-custom-control-spacer vjs-spacer ')[0].addEventListener( "click", function()
       {
          window.trueView.showMsg("hideTrueView");
