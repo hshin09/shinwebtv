@@ -5,7 +5,7 @@ function play()
 }
 
 window.onload = function(){
-   window.trueView.showMsg("showTrueView()");
+   //window.trueView.showMsg("showTrueView()");
    play();
 }
 
