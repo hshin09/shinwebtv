@@ -14,10 +14,5 @@ function play()
 
 window.onload = function()
 {
-   init = false;
-   document.getElementsByClassName('vjs-tech')[0].addEventListener( "dbclick", function()
-   {
-      window.trueView.showMsg("hideTrueView");
-   } );
 }
 
