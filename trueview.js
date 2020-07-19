@@ -4,5 +4,5 @@ function play()
 }
 
 ﻿window.onload = function(){
-   //play();
+   play();
 } 
