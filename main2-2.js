@@ -378,7 +378,7 @@ function movieclk( w, url, p ) {
       xx=stv;
 	  }
           if(gi==1 && si==13) {
-             window.parentView.showMsg("trueView:showTrueView()");
+             window.parentView.showMsg("showTrueView()");
              window.parentView.showMsg("trueView:play()");
              return;
           }
