@@ -19,13 +19,16 @@ function play()
          window.trueView.showMsg("hideTrueView");
       }, true );
    }
+   document.getElementsByClassName('vjs-poster')[0].click();
    setTimeout(function(){ document.getElementsByClassName('vjs-big-play-button')[0].click(); },500 );
    setTimeout(function(){ document.getElementsByClassName('vjs-live-status vjs-live-status-live')[0].click(); },500 );
 }
 
 function keychk(e) {
-   if(e.which == 38 || e.which == 48 || e.which == 13) {
+   if(e.which == 38 || e.which == 48 ) {
       window.trueView.showMsg("hideTrueView");
+   } else if( e.which == 13) {
+      document.getElementsByClassName('vjs-poster')[0].click();
    }
    e.preventDefault();
 }
