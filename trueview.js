@@ -32,6 +32,6 @@ function keychk(e) {
 
 window.onload = function()
 {
-   alert('play');
+   alert('onload');
 }
 
