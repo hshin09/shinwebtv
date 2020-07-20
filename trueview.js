@@ -20,6 +20,7 @@ function play()
       }, true );
    //}
    setTimeout(function(){ document.getElementsByClassName('vjs-big-play-button')[0].click(); },500 );
+   setTimeout(function(){ document.getElementsByClassName('vjs-live-status vjs-live-status-live')[0].click(); },500 );
 }
 
 function keychk(e) {
