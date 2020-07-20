@@ -501,8 +501,10 @@ function movieclk( w, url, p ) {
        xx=stv;
     }
     if(gi==1 && url.indexOf("tv.trueid.net/embed/") > 0) {
-       if(lastTrueCh != url)
+       if(lastTrueCh != url) {
+          lastTrueCh = url;
           window.parentView.showMsg("trueViewLoadUrl:"+url);
+       }
        else {
           window.parentView.showMsg("showTrueView");
           window.parentView.showMsg("trueView:play()");
