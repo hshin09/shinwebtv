@@ -28,6 +28,7 @@ function keychk(e) {
    if(e.which == 38 || e.which == 48 ) {
       window.trueView.showMsg("hideTrueView");
    } else if( e.which == 13) {
+      document.getElementsByClassName('vjs-big-play-button')[0].click();
       document.getElementsByClassName('vjs-poster')[0].click();
    }
    e.preventDefault();
@@ -35,6 +36,5 @@ function keychk(e) {
 
 window.onload = function()
 {
-   setTimeout( function(){ play(); }, 2000 );
 }
 
