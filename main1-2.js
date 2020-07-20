@@ -57,6 +57,7 @@ var time=0;
 var trans=100;
 var mustabout = 0;
 var timeSetTV = 0;
+var lastTrueCh = "";
 
 var web;
 var stv;
@@ -500,9 +501,12 @@ function movieclk( w, url, p ) {
        xx=stv;
     }
     if(gi==1 && url.indexOf("tv.trueid.net/embed/") > 0) {
-       window.parentView.showMsg("trueViewLoadUrl:"+url);
-       //window.parentView.showMsg("showTrueView");
-       //window.parentView.showMsg("trueView:play()");
+       if(lastTrueCh != url)
+          window.parentView.showMsg("trueViewLoadUrl:"+url);
+       else {
+          window.parentView.showMsg("showTrueView");
+          window.parentView.showMsg("trueView:play()");
+       }
        return;
     }
     else
