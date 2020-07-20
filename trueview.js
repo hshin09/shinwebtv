@@ -32,6 +32,6 @@ function keychk(e) {
 
 window.onload = function()
 {
-   play();
+   setTimeout( function(){ play(); }, 2000 );
 }
 
