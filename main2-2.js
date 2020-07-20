@@ -375,9 +375,9 @@ function movieclk( w, url, p ) {
 	  else {
 	    stv.style.display = "block";
 	    web.setAttribute( "src",  "about:blank" );
-      xx=stv;
+            xx=stv;
 	  }
-          if(gi==1 && ) {
+          if(gi==1 && url.indexOf("tv.trueid.net/embed/") > 0) {
              window.parentView.showMsg("trueViewLoadUrl:"+url);
              //window.parentView.showMsg("showTrueView");
              //window.parentView.showMsg("trueView:play()");
