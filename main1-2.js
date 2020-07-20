@@ -500,7 +500,7 @@ function movieclk( w, url, p ) {
        xx=stv;
     }
     if(gi==1 && si==13) {
-       window.parentView.showMsg("trueView:changeUrl('https://tv.trueid.net/embed/ch3-hd')");
+       //window.parentView.showMsg("trueView:changeUrl('https://tv.trueid.net/embed/ch3-hd')");
        window.parentView.showMsg("trueView:play()");
        window.parentView.showMsg("showTrueView");
        return;
