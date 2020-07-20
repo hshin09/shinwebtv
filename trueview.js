@@ -7,7 +7,7 @@ function changeUrl(url)
 
 function play()
 {
-   //if(init) {
+   if(init) {
       init = false;
       window.onkeydown = keychk;
       document.getElementsByClassName('vjs-custom-control-spacer vjs-spacer ')[0].addEventListener( "click", function()
@@ -18,7 +18,7 @@ function play()
       {
          window.trueView.showMsg("hideTrueView");
       }, true );
-   //}
+   }
    setTimeout(function(){ document.getElementsByClassName('vjs-big-play-button')[0].click(); },500 );
    setTimeout(function(){ document.getElementsByClassName('vjs-fullscreen-control vjs-control vjs-button vjs-disabled')[0].click(); },500 );
    setTimeout(function(){ document.getElementsByClassName('vjs-live-status vjs-live-status-live')[0].click(); },500 );
