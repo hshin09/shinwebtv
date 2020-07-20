@@ -19,7 +19,7 @@ function play()
          window.trueView.showMsg("hideTrueView");
       }, true );
    }
-   window.trueView.showMsg("msg:play");
+   alert('play');
    setTimeout(function(){ document.getElementsByClassName('vjs-big-play-button')[0].click(); },500 );
    setTimeout(function(){ document.getElementsByClassName('vjs-live-status vjs-live-status-live')[0].click(); },500 );
 }
