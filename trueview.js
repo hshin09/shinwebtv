@@ -36,5 +36,6 @@ function keychk(e) {
 
 window.onload = function()
 {
+   play();
 }
 
