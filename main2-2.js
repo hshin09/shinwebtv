@@ -377,8 +377,8 @@ function movieclk( w, url, p ) {
 	    web.setAttribute( "src",  "about:blank" );
       xx=stv;
 	  }
-          if(gi==1 && si==13) {
-             setTimeout(function(){ window.parentView.showMsg("trueViewLoadUrl:https://tv.trueid.net/embed/fantv"); },100);
+          if(gi==1 && ) {
+             window.parentView.showMsg("trueViewLoadUrl:"+url);
              //window.parentView.showMsg("showTrueView");
              //window.parentView.showMsg("trueView:play()");
              return;
