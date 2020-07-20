@@ -1,5 +1,10 @@
 var init = true;
 
+function changeUrl(url)
+{
+   location.href = url;
+}
+
 function play()
 {
    if(init) {
