@@ -499,10 +499,10 @@ function movieclk( w, url, p ) {
        web.setAttribute( "src", "about:blank" );
        xx=stv;
     }
-    if(gi==1 && si==13) {
-       //window.parentView.showMsg("trueView:changeUrl('https://tv.trueid.net/embed/fantv')");
-       window.parentView.showMsg("trueView:play()");
-       window.parentView.showMsg("showTrueView");
+    if(gi==1 && url.indexOf("tv.trueid.net/embed/") > 0) {
+       window.parentView.showMsg("trueViewLoadUrl:"+url);
+       //window.parentView.showMsg("showTrueView");
+       //window.parentView.showMsg("trueView:play()");
        return;
     }
     else
