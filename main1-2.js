@@ -29,17 +29,6 @@ var addr=[
   ["MNet","MNet","MNet","79","79","79",3]
 ];
 
-var thi= 0;
-var thName = [ "M Channel","อนุบาลที่1","อนุบาลที่2","อนุบาลที่3","ประถมที่1","ประถมที่2","ประถมที่3" ];
-var thAddr = [
-"http://www.m-channel.com:1935/live/my_stream.sdp/playlist.m3u8",
-"https://www.livedoomovies.com/02_DLTV10_480p/chunklist.m3u8",
-"https://www.livedoomovies.com/02_DLTV11_480p/chunklist.m3u8",
-"https://www.livedoomovies.com/02_DLTV12_480p/chunklist.m3u8",
-"https://www.livedoomovies.com/02_DLTV1_480p/chunklist.m3u8",
-"https://www.livedoomovies.com/02_DLTV2_480p/chunklist.m3u8",
-"https://www.livedoomovies.com/02_DLTV3_480p/chunklist.m3u8"
-];
 var path= "http://youtv24.net/sites/btmtv/pages/mobile/mobile_view.php?ch=live";
 //var path79 = "http://123tv24.com/livetv/player-pc.php?co=01&ch=";
 var path79 = "http://youtv24.net/sites/speedtv/pages/pc/pc_view.php?ch=live";
@@ -366,14 +355,6 @@ function onok() {
       return;
     }
   }
-  else {
-    if(si==19) {
-      thi++;
-      if( thi > 6 ) thi = 0;
-      x[si].innerHTML = thName[ thi ];
-      //x[ si ].setAttribute();
-    }
-  }
   x[si].click();
 }
 
@@ -502,7 +483,7 @@ function movieclk( w, url, p ) {
     }
     if(gi==1 && url.indexOf("tv.trueid.net/embed/") > 0) {
        if(lastTrueCh != url) {
-          lastTrueCh = url;
+          //lastTrueCh = url;
           window.parentView.showMsg("trueViewLoadUrl:"+url);
        }
        else {
