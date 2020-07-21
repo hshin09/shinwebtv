@@ -26,6 +26,7 @@ function sendDownKey()
 function play()
 {
    if(init) {
+      sendDownKey();
       init = false;
       window.onkeydown = keychk;
       document.getElementsByClassName('vjs-custom-control-spacer vjs-spacer ')[0].addEventListener( "click", function()
@@ -53,7 +54,6 @@ function keychk(e) {
 
 window.onload = function()
 {
-   sendDownKey();
    //window.trueView.showMsg("msg:onload function");
    document.getElementsByTagName('iframe')[1].parentNode.remove();
    setTimeout(function(){ play(); }, 500);
