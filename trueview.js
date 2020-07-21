@@ -37,6 +37,7 @@ window.onload = function()
 {
    //window.trueView.showMsg("msg:onload function");
    setTimeout(function(){ play(); }, 500);
+   document.getElementsByClassName('vjs-big-play-button')[0].dispatchEvent(new MouseEvent('click'));
    //document.getElementsByTagName('iframe')[1].parentNode.remove();
    //document.getElementsByClassName('vjs-poster')[0].dispatchEvent(new MouseEvent('click'));
 }
