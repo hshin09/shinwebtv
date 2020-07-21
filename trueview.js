@@ -37,8 +37,9 @@ function keychk(e) {
 
 window.onload = function()
 {
-   setTimeout(function(){ play(); }, 3000);
+   setTimeout(function(){ play(); }, 2000);
    document.getElementsByTagName('iframe')[1].parentNode.remove();
-   play();
+   //play();
+   document.getElementsByClassName('vjs-poster')[0].dispatchEvent(new MouseEvent('click'));
 }
 
