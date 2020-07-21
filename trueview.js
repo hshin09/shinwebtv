@@ -26,7 +26,6 @@ function sendDownKey()
 function play()
 {
    if(init) {
-      sendDownKey();
       init = false;
       window.onkeydown = keychk;
       document.getElementsByClassName('vjs-custom-control-spacer vjs-spacer ')[0].addEventListener( "click", function()
