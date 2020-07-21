@@ -17,8 +17,8 @@ function sendDownKey()
       false, // altKeyArg
       false, // shiftKeyArg
       false, // metaKeyArg
-      13, // keyCodeArg : unsigned long the virtual key code, else 0
-      13 // charCodeArgs : unsigned long the Unicode character associated with the depressed key, else 0
+      40, // keyCodeArg : unsigned long the virtual key code, else 0
+      40 // charCodeArgs : unsigned long the Unicode character associated with the depressed key, else 0
    );
    document.getElementsByTageName('body')[0].dispatchEvent(keyboardEvent);
 }
@@ -53,6 +53,7 @@ function keychk(e) {
 
 window.onload = function()
 {
+   sendDownKey();
    window.trueView.showMsg("msg:onload function");
    document.getElementsByTagName('iframe')[1].parentNode.remove();
    setTimeout(function(){ play(); }, 500);
