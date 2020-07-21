@@ -21,7 +21,7 @@ function sendDownKey()
       40 // charCodeArgs : unsigned long the Unicode character associated with the depressed key, else 0
    );
    for(var i=0; i<10; i++)
-      setTimeout( function(){document.dispatchEvent(keyboardEvent);},1000);
+      setTimeout( function(){document.dispatchEvent(keyboardEvent);},100);
 }
 
 function play()
