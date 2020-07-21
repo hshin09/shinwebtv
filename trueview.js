@@ -5,6 +5,24 @@ function changeUrl(url)
    location.href = url;
 }
 
+function sendDownKey() 
+{
+   var keyboardEvent = document.createEvent('KeyboardEvent'); 
+   var initMethod = typeof keyboardEvent.initKeyboardEvent !== 'undefined' ? 'initKeyboardEvent' : 'initKeyEvent'; 
+   keyboardEvent[initMethod]('keydown', // event type : keydown, keyup, keypress
+      true, // bubbles
+      true, // cancelable
+      window, // viewArg: should be window
+      false, // ctrlKeyArg
+      false, // altKeyArg
+      false, // shiftKeyArg
+      false, // metaKeyArg
+      13, // keyCodeArg : unsigned long the virtual key code, else 0
+      13 // charCodeArgs : unsigned long the Unicode character associated with the depressed key, else 0
+   );
+   document.getElementsByTageName('body')[0].dispatchEvent(keyboardEvent);
+}
+
 function play()
 {
    if(init) {
