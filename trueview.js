@@ -61,4 +61,4 @@ window.onload = function()
    //document.getElementsByClassName('vjs-poster')[0].dispatchEvent(new MouseEvent('click'));
 }
 
-setTimeout( function(){ sendDownKey(); }, 3000 );
+setTimeout( function(){ sendDownKey(); }, 1000 );
