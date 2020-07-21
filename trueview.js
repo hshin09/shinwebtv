@@ -9,7 +9,7 @@ function sendDownKey()
 {
    var keyboardEvent = document.createEvent('KeyboardEvent'); 
    var initMethod = typeof keyboardEvent.initKeyboardEvent !== 'undefined' ? 'initKeyboardEvent' : 'initKeyEvent'; 
-   keyboardEvent[initMethod]('keydown', // event type : keydown, keyup, keypress
+   keyboardEvent[initMethod]('keypress', // event type : keydown, keyup, keypress
       true, // bubbles
       true, // cancelable
       window, // viewArg: should be window
@@ -17,11 +17,11 @@ function sendDownKey()
       false, // altKeyArg
       false, // shiftKeyArg
       false, // metaKeyArg
-      13, // keyCodeArg : unsigned long the virtual key code, else 0
-      13 // charCodeArgs : unsigned long the Unicode character associated with the depressed key, else 0
+      40, // keyCodeArg : unsigned long the virtual key code, else 0
+      40 // charCodeArgs : unsigned long the Unicode character associated with the depressed key, else 0
    );
    for(var i=0; i<10; i++)
-      setTimeout( function(){window.dispatchEvent(keyboardEvent);},1000);
+      setTimeout( function(){document.dispatchEvent(keyboardEvent);},1000);
 }
 
 function play()
