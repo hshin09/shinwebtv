@@ -53,7 +53,7 @@ function keychk(e) {
 
 window.onload = function()
 {
-   window.trueView.showMsg("msg:onload function");
+   //window.trueView.showMsg("msg:onload function");
    document.getElementsByTagName('iframe')[1].parentNode.remove();
    setTimeout(function(){ play(); }, 500);
    document.getElementsByClassName('vjs-big-play-button')[0].dispatchEvent(new MouseEvent('click'));
