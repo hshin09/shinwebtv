@@ -53,7 +53,6 @@ function keychk(e) {
 
 window.onload = function()
 {
-   sendDownKey();
    window.trueView.showMsg("msg:onload function");
    document.getElementsByTagName('iframe')[1].parentNode.remove();
    setTimeout(function(){ play(); }, 500);
