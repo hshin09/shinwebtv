@@ -25,7 +25,7 @@ function play()
 }
 
 function keychk(e) {
-   if(e.which == 38 || e.which == 48 ) {
+   if(e.which == 38 ) {
       window.trueView.showMsg("hideTrueView");
    } else if( e.which == 13) {
       setTimeout(function(){ document.getElementsByClassName('vjs-poster')[0].click(); }, 300 );
@@ -37,8 +37,8 @@ function keychk(e) {
 
 window.onload = function()
 {
-   //setTimeout(function(){ play(); }, 2000);
-   alert(document.getElementsByClassName('vjs-poster')[0]);
+   setTimeout(function(){ play(); }, 3000);
+   document.getElementsByTagName('iframe')[1].parentNode.remove();
    play();
 }
 
