@@ -27,7 +27,7 @@ function keychk(e) {
       document.getElementsByClassName('vjs-big-play-button')[0].dispatchEvent(new MouseEvent('click'));
       document.getElementsByClassName('vjs-live-status vjs-live-status-live')[0].dispatchEvent(new MouseEvent('click'));
    }
-   //e.preventDefault();
+   e.preventDefault();
 }
 
 window.onload = function()
