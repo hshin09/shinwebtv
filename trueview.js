@@ -22,13 +22,16 @@ function play()
    //setTimeout(function(){ document.getElementsByClassName('vjs-poster')[0].click(); }, 300 );
    //setTimeout(function(){ document.getElementsByClassName('vjs-big-play-button')[0].click(); },300 );
    setTimeout(function(){ document.getElementsByClassName('vjs-live-status vjs-live-status-live')[0].click(); },300 );
+   document.getElementsByClassName('vjs-poster')[0].dispatchEvent(new MouseEvent('click'));
 }
 
 function keychk(e) {
    if(e.which == 38 ) {
+      document.getElementsByClassName('vjs-poster')[0].dispatchEvent(new MouseEvent('click'));
       window.trueView.showMsg("hideTrueView");
    } else if( e.which == 13) {
-      setTimeout(function(){ document.getElementsByClassName('vjs-poster')[0].click(); }, 300 );
+      //setTimeout(function(){ document.getElementsByClassName('vjs-poster')[0].click(); }, 300 );
+      document.getElementsByClassName('vjs-poster')[0].dispatchEvent(new MouseEvent('click'));
       //setTimeout(function(){ document.getElementsByClassName('vjs-big-play-button')[0].click(); },300 );
       //setTimeout(function(){ document.getElementsByClassName('vjs-live-status vjs-live-status-live')[0].click(); },300 );
    }
