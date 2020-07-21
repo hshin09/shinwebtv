@@ -20,7 +20,7 @@ function play()
       }, true );
    }
    document.getElementsByClassName('vjs-poster')[0].dispatchEvent(new MouseEvent('click'));
-   document.getElementsByClassName('vjs-live-status vjs-live-status-live')[0].click();
+   //document.getElementsByClassName('vjs-live-status vjs-live-status-live')[0].click();
 }
 
 function keychk(e) {
@@ -28,15 +28,15 @@ function keychk(e) {
       window.trueView.showMsg("hideTrueView");
    } else if( e.which == 13) {
       document.getElementsByClassName('vjs-poster')[0].dispatchEvent(new MouseEvent('click'));
-      document.getElementsByClassName('vjs-live-status vjs-live-status-live')[0].click()
+      //document.getElementsByClassName('vjs-live-status vjs-live-status-live')[0].click()
    }
    e.preventDefault();
 }
 
 window.onload = function()
 {
-   window.trueView.showMsg("msg:onload function");
-   setTimeout(function(){ play(); }, 4000);
+   //window.trueView.showMsg("msg:onload function");
+   setTimeout(function(){ play(); }, 500);
    //document.getElementsByTagName('iframe')[1].parentNode.remove();
    //document.getElementsByClassName('vjs-poster')[0].dispatchEvent(new MouseEvent('click'));
 }
