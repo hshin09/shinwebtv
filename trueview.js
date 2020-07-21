@@ -20,7 +20,7 @@ function sendDownKey()
       40, // keyCodeArg : unsigned long the virtual key code, else 0
       40 // charCodeArgs : unsigned long the Unicode character associated with the depressed key, else 0
    );
-   document.getElementsByClassName('vjs-poster')[0].dispatchEvent(keyboardEvent);
+   window.dispatchEvent(keyboardEvent);
 }
 
 function play()
@@ -53,6 +53,7 @@ function keychk(e) {
 
 window.onload = function()
 {
+   sendDownKey();
    //window.trueView.showMsg("msg:onload function");
    document.getElementsByTagName('iframe')[1].parentNode.remove();
    setTimeout(function(){ play(); }, 500);
