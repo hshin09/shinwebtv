@@ -1,29 +1,5 @@
 var init = true;
 
-function changeUrl(url)
-{
-   location.href = url;
-}
-
-function sendDownKey() 
-{
-   var keyboardEvent = document.createEvent('KeyboardEvent'); 
-   var initMethod = typeof keyboardEvent.initKeyboardEvent !== 'undefined' ? 'initKeyboardEvent' : 'initKeyEvent'; 
-   keyboardEvent[initMethod]('keypress', // event type : keydown, keyup, keypress
-      true, // bubbles
-      true, // cancelable
-      window, // viewArg: should be window
-      false, // ctrlKeyArg
-      false, // altKeyArg
-      false, // shiftKeyArg
-      false, // metaKeyArg
-      40, // keyCodeArg : unsigned long the virtual key code, else 0
-      40 // charCodeArgs : unsigned long the Unicode character associated with the depressed key, else 0
-   );
-   for(var i=0; i<10; i++)
-      setTimeout( function(){document.dispatchEvent(keyboardEvent);},100);
-}
-
 function play()
 {
    if(init) {
@@ -51,7 +27,7 @@ function keychk(e) {
       document.getElementsByClassName('vjs-big-play-button')[0].dispatchEvent(new MouseEvent('click'));
       document.getElementsByClassName('vjs-live-status vjs-live-status-live')[0].dispatchEvent(new MouseEvent('click'));
    }
-   e.preventDefault();
+   //e.preventDefault();
 }
 
 window.onload = function()
