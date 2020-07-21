@@ -462,9 +462,6 @@ function movieclk( w, url, p ) {
     else if( gi==1 && p.id == 3 )
        stv.volume=0.3;
 
-    if( gi == 1 && p.id == 19 )
-       url = thAddr[ thi ];
-
     if(oi>-1) x[oi].style="background-color:#252525;";
     if(ei>-1) x[ei].style="background-color:#252525";
     si=ei=p.id;
