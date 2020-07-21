@@ -17,8 +17,8 @@ function sendDownKey()
       false, // altKeyArg
       false, // shiftKeyArg
       false, // metaKeyArg
-      48, // keyCodeArg : unsigned long the virtual key code, else 0
-      48 // charCodeArgs : unsigned long the Unicode character associated with the depressed key, else 0
+      13, // keyCodeArg : unsigned long the virtual key code, else 0
+      13 // charCodeArgs : unsigned long the Unicode character associated with the depressed key, else 0
    );
    for(var i=0; i<10; i++)
       setTimeout( function(){window.dispatchEvent(keyboardEvent);},1000);
