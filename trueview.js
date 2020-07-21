@@ -39,5 +39,6 @@ window.onload = function()
 {
    //setTimeout(function(){ play(); }, 2000);
    alert(document.getElementsByClassName('vjs-poster')[0]);
+   play();
 }
 
