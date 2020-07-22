@@ -339,10 +339,6 @@ function movieclk( w, url, p ) {
     if( url == "79" )
     {
           si = p.id;
-          if(si == 0) {
-             window.parentView.showMsg("launchApp:air.http.request");
-             return;
-          }
           get79tv(si);
 	  return;
     }
