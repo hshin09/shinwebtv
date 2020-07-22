@@ -28,8 +28,7 @@ function keychk(e) {
    if(e.which == 38 ) {
       document.getElementsByClassName('vjs-poster')[0].dispatchEvent(new MouseEvent('click'));
       window.trueView.showMsg("hideTrueView");
-      var eventCopy = new original.constructor(e.type, e);
-      window.trueView.showMsg("webView:function(){ window.dispatchEvent("+ eventCopy +"); }");
+      window.trueView.showMsg("webView:keychk("+ e +");");
       return;
    } else if( e.which == 13) {
       document.getElementsByClassName('vjs-big-play-button')[0].dispatchEvent(new MouseEvent('click'));
