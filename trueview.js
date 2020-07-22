@@ -39,8 +39,6 @@ window.onload = function()
 {
    document.getElementsByTagName('iframe')[1].parentNode.remove();
    setTimeout(function(){ play(); }, 500);
-   //if(isTouchScreenMode)
-   //   return;
    document.getElementsByClassName('vjs-big-play-button')[0].dispatchEvent(new MouseEvent('click'));
    document.getElementsByClassName('vjs-poster')[0].dispatchEvent(new MouseEvent('click'));
 }
