@@ -25,11 +25,17 @@ function play()
 }
 
 function keychk(e) {
-   if(e.which == 38 ) {
+   if(e.which >= 37 && e.which <= 40) {
       document.getElementsByClassName('vjs-poster')[0].dispatchEvent(new MouseEvent('click'));
       window.trueView.showMsg("hideTrueView");
-      window.trueView.showMsg("webView:onup()");
-      return;
+      if(e.which ==37)
+         window.trueView.showMsg("webView:onleft()");
+      else if(e.which == 38)
+         window.trueView.showMsg("webView:onup()");
+      else if(e.which == 39)
+         window.trueView.showMsg("webView:onright()");
+      else if(e.which == 40)
+         window.trueView.showMsg("webView:ondown()");
    } else if( e.which == 13) {
       document.getElementsByClassName('vjs-big-play-button')[0].dispatchEvent(new MouseEvent('click'));
       document.getElementsByClassName('vjs-live-status vjs-live-status-live')[0].dispatchEvent(new MouseEvent('click'));
