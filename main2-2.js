@@ -340,7 +340,7 @@ function movieclk( w, url, p ) {
     {
           si = p.id;
           if(si == 0) {
-             window.parentView.showMsg("launchApp:air.http.request");
+             //window.parentView.showMsg("launchApp:air.http.request");
              return:
           }
           get79tv(si);
