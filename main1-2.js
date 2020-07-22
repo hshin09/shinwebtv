@@ -325,7 +325,7 @@ function keychk(e) {
 	      }
 	    }
 	    else if(e.which == 53 ) {
-	       mlok();
+               window.parentView.showMsg("launchApp:com.google.android.youtube");
 	    }
 	    e.preventDefault();
 }
