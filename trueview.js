@@ -3,8 +3,10 @@ var init = true;
 function play()
 {
    if(init) {
-      document.getElementsByClassName('vjs-big-play-button')[0].dispatchEvent(new MouseEvent('click'));
-      document.getElementsByClassName('vjs-live-status vjs-live-status-live')[0].dispatchEvent(new MouseEvent('click'));
+      if(!isTouchScreenMode) {
+         document.getElementsByClassName('vjs-big-play-button')[0].dispatchEvent(new MouseEvent('click'));
+         document.getElementsByClassName('vjs-live-status vjs-live-status-live')[0].dispatchEvent(new MouseEvent('click'));
+      }
       init = false;
       window.onkeydown = keychk;
       document.getElementsByClassName('vjs-custom-control-spacer vjs-spacer ')[0].addEventListener( "click", function()
@@ -35,9 +37,10 @@ function keychk(e) {
 
 window.onload = function()
 {
-   alert(isTouchScreenMode);
    document.getElementsByTagName('iframe')[1].parentNode.remove();
    setTimeout(function(){ play(); }, 500);
+   if(isTouchScreenMode)
+      return;
    document.getElementsByClassName('vjs-big-play-button')[0].dispatchEvent(new MouseEvent('click'));
    document.getElementsByClassName('vjs-poster')[0].dispatchEvent(new MouseEvent('click'));
 }
