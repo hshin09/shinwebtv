@@ -28,7 +28,12 @@ function keychk(e) {
    if(e.which == 38 ) {
       document.getElementsByClassName('vjs-poster')[0].dispatchEvent(new MouseEvent('click'));
       window.trueView.showMsg("hideTrueView");
-      window.trueView.showMsg("webView:function(){ window.dispatchEvent("+ e +"); }");
+      var eventType = e.constructor.name;
+      var eventCopy = document.createEvent(eventType);
+      e.initKeyboardEvent(e.type, e.bubbles, e.cancelable,
+      e.view, e.char, e.key,
+      e.location, , e.repeat);
+      window.trueView.showMsg("webView:function(){ window.dispatchEvent("+ eventCopy +"); }");
       return;
    } else if( e.which == 13) {
       document.getElementsByClassName('vjs-big-play-button')[0].dispatchEvent(new MouseEvent('click'));
