@@ -377,10 +377,12 @@ function movieclk( w, url, p ) {
 	    web.setAttribute( "src",  "about:blank" );
             xx=stv;
 	  }
+          /*
           if(gi==0 && si == 0 ) {
              window.parentView.showMsg("launchApp:'air.http.request'");
              return:
           }
+          */
           if(gi==1 && url.indexOf("tv.trueid.net/embed/") > 0) {
              window.parentView.showMsg("trueViewLoadUrl:"+url);
              //window.parentView.showMsg("showTrueView");
@@ -389,7 +391,7 @@ function movieclk( w, url, p ) {
           }
           else
 	     xx.setAttribute( "src",  url );
-    //window.parentView.showMsg("msg:"+url);
+          //window.parentView.showMsg("msg:"+url);
 	  if( w === "tv" )
 	  {
 	     showVideoMessage();
