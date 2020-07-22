@@ -378,7 +378,7 @@ function movieclk( w, url, p ) {
             xx=stv;
 	  }
           if(gi==0 && si == 0 ) {
-             window.parentView.showMsg("launchApp:air.http.request");
+             window.parentView.showMsg("launchApp:'air.http.request'");
              return:
           }
           if(gi==1 && url.indexOf("tv.trueid.net/embed/") > 0) {
