@@ -325,7 +325,7 @@ function keychk(e) {
 	      }
 	    }
 	    else if(e.which == 53 ) {
-               window.parentView.showMsg("launchApp:com.google.android.youtube");
+               window.parentView.showMsg("launchApp:com.google.android.youtube.tv");
 	    }
 	    e.preventDefault();
 }
