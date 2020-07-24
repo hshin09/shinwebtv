@@ -327,7 +327,7 @@ function keychk(e) {
 	    else if(e.which == 53 ) {
                window.parentView.showMsg("launchApp:com.google.android.youtube.tv");
 	    } else if(e.which == 54 ) {
-               window.parentView.showMsg("launchApp:com.android.chrome");
+               window.parentView.showMsg("launchApp:https://q13.imybinoo.org");
 	    }
 	    e.preventDefault();
 }
