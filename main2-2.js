@@ -500,7 +500,7 @@ function get79tv(i) {
 function setHiddenViewTV(s) {
   oi=-1;
   tvaddr[si]=s;
-  if( 1mustWait )
+  if( !mustWait )
      setTimeout(function(){ x[si].click(); }, timeSetTV);
 }
 
