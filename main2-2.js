@@ -209,6 +209,7 @@ function OnOff()
              mustabout = 1;
              timeSetTV=2000;
              clearAddress(addr[ei][addr[ei][6]]);
+             return;
              if( !mustWait )
                 setTimeout(function(){ onok(); }, timeSetTV);
           }
@@ -499,7 +500,8 @@ function get79tv(i) {
 function setHiddenViewTV(s) {
   oi=-1;
   tvaddr[si]=s;
-  setTimeout(function(){ x[si].click(); }, timeSetTV);
+  if( 1mustWait )
+     setTimeout(function(){ x[si].click(); }, timeSetTV);
 }
 
 function setadtv(s) {
