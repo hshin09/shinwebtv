@@ -43,6 +43,7 @@ var timer=null;
 var time=0;
 var mustabout = 0;
 var timeSetTV = 0;
+var mustWait = 0;
 
 var web;
 var stv;
@@ -125,6 +126,14 @@ function OnOff()
        return;
     }
 
+    if( mustWait )
+    {
+       musrWait--;
+       if( !mustWait )
+          onok();
+       return;
+    }
+
     time++;
     tstr="";
     if(time<10)
@@ -143,10 +152,12 @@ function OnOff()
           if( gi == 0 )
           {
              window.parentView.showMsg( "hiddenView:loadTV('" + path + ch[ei] + "')" );
+             mustWait = 3;
              mustabout = 1;
              timeSetTV=2000;
              clearAddress(addr[ei][addr[ei][6]]);
-             setTimeout(function(){ onok(); }, timeSetTV);
+             if( !mustWait )
+                setTimeout(function(){ onok(); }, timeSetTV);
           }
           isNotUser++;
         }
@@ -193,10 +204,12 @@ function OnOff()
           if( gi == 0 )
           {
              window.parentView.showMsg( "hiddenView:loadTV('" + path + ch[ei] + "')" );
+             mustWait = 1;
              mustabout = 1;
              timeSetTV=2000;
              clearAddress(addr[ei][addr[ei][6]]);
-             setTimeout(function(){ onok(); }, timeSetTV);
+             if( !mustWait )
+                setTimeout(function(){ onok(); }, timeSetTV);
           }
           isNotUser++;
         }
