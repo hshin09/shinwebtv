@@ -177,6 +177,7 @@ function OnOff()
         $('#secMessage').css('display', 'none');
         if( mustabout ) {
            window.parentView.showMsg( "hiddenView:loadTV('http://youtv24.net/sites/')" );
+           mustWait = 0;
            mustabout = 0;
         }
     }
@@ -205,7 +206,7 @@ function OnOff()
           if( gi == 0 )
           {
              window.parentView.showMsg( "hiddenView:loadTV('" + path + ch[ei] + "')" );
-             mustWait = 1;
+             mustWait = 3;
              mustabout = 1;
              timeSetTV=2000;
              clearAddress(addr[ei][addr[ei][6]]);
@@ -223,6 +224,7 @@ function OnOff()
             timer=null;
             if( mustabout ) {
                 window.parentView.showMsg( "hiddenView:loadTV('http://youtv24.net/sites/')" );
+                mustWait = 0;
                 mustabout = 0;
             }
           }
