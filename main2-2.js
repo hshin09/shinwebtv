@@ -130,7 +130,7 @@ function OnOff()
     {
        mustWait--;
        if( !mustWait )
-          onok();
+          setTimeout(function(){onok();},100);
        return;
     }
 
