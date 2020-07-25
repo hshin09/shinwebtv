@@ -128,7 +128,7 @@ function OnOff()
 
     if( mustWait )
     {
-       musrWait--;
+       mustWait--;
        if( !mustWait )
           onok();
        return;
