@@ -126,20 +126,20 @@ function OnOff()
        return;
     }
 
-    if( mustWait )
-    {
-       mustWait--;
-       if( !mustWait )
-          setTimeout(function(){onok();},100);
-       return;
-    }
-
     time++;
     tstr="";
     if(time<10)
       tstr="0";
     tstr=tstr+time;
     $('#sec').text( tstr );
+
+    if( mustWait )
+    {
+       mustWait--;
+       if( !mustWait )
+          setTimeout(function(){onok();},0);
+       return;
+    }
 
     if( stv.error != null || stv.networkState == 3 || ( time > 30 && stv.currentTime < 2 ) )
     {
@@ -154,7 +154,7 @@ function OnOff()
              window.parentView.showMsg( "hiddenView:loadTV('" + path + ch[ei] + "')" );
              mustWait = 3;
              mustabout = 1;
-             timeSetTV=2000;
+             //timeSetTV=2000;
              clearAddress(addr[ei][addr[ei][6]]);
              return;
              if( !mustWait )
@@ -208,7 +208,7 @@ function OnOff()
              window.parentView.showMsg( "hiddenView:loadTV('" + path + ch[ei] + "')" );
              mustWait = 3;
              mustabout = 1;
-             timeSetTV=2000;
+             //timeSetTV=2000;
              clearAddress(addr[ei][addr[ei][6]]);
              return;
              if( !mustWait )
@@ -292,7 +292,7 @@ function mlok() {
   	for(i=0; i<cnt; i++) {
   		x[i].id=i;
     }
-  	showLeftMenu();
+    showLeftMenu();
     imsi_oi=oi=-1;
     x[si].click();
 }
