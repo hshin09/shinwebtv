@@ -148,19 +148,13 @@ function OnOff()
           if( gi == 0 )
           {
              window.parentView.showMsg( "hiddenView:loadTV('" + path + ch[ei] + "')" );
-             window.parentView.showMsg( "msg:채널을 리로딩중입니다" );
+             window.parentView.showMsg( "msg:채널을 리로딩중입니다:"+isNotUser);
              mustWait = 3;
              mustabout = 1;
              timeSetTV = 500;
-             if(isNotUser<1)
-                clearAddress(addr[ei][addr[ei][6]]);
+             clearAddress(addr[ei][addr[ei][6]]);
              if( !mustWait ) {
-                if(isNotUser<1)
-                   setTimeout(function(){ onok(); }, timeSetTV);
-                else {
-                   oi=-1;
-                   x[ei].click();
-                }
+                setTimeout(function(){ onok(); }, timeSetTV);
              }
           }
           isNotUser++;
@@ -181,7 +175,7 @@ function OnOff()
         $('#secMessage').css('display', 'none');
         if( mustabout ) {
            window.parentView.showMsg( "hiddenView:loadTV('http://youtv24.net/sites/')" );
-           window.parentView.showMsg( "msg:채널로딩을 종료합니다" );
+           //window.parentView.showMsg( "msg:채널로딩을 종료합니다" );
            mustWait = 0;
            mustabout = 0;
         }
