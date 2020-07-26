@@ -131,7 +131,7 @@ function OnOff()
     {
        mustWait--;
        if( !mustWait )
-          setTimeout(function(){onok();},100);
+          setTimeout(function(){onok();},timeSetTV);
        return;
     }
     
@@ -149,7 +149,7 @@ function OnOff()
              window.parentView.showMsg( "msg:채널을 리로딩중입니다" );
              mustWait = 7;
              mustabout = 1;
-             timeSetTV = 100;
+             timeSetTV = 1000;
              clearAddress(addr[ei][addr[ei][6]]);
              return;
              //if( !mustWait )
