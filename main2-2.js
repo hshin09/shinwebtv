@@ -115,7 +115,7 @@ function OnOff()
       	  }
           isChLoaded = 1;
           mlok();
-          window.parentView.showMsg( "msg:메뉴로딩완료" );
+          //window.parentView.showMsg( "msg:메뉴로딩완료" );
           addInput();
        }
        return;
@@ -244,7 +244,7 @@ function setHiddenViewTV(s) {
    tvaddr[si]=s;
 
    if( !mustWait ) {
-      parentView.showMsg("msg:setHiddenViewTV");
+      //parentView.showMsg("msg:setHiddenViewTV");
       setTimeout(function(){ x[si].click(); }, timeSetTV);
    }
 }
@@ -389,7 +389,7 @@ function movieclk( w, url, p ) {
     if( w === "tv" )
     {
        showVideoMessage();
-       window.parentView.showMsg( "msg:"+url );
+       //window.parentView.showMsg( "msg:"+url );
        xx.play();
     }
 }
