@@ -1,5 +1,3 @@
-var ADsid=null;
-var ADscript = "javascript:function getsid(){ var s=document.getElementById('TV'); if(s!=null && s!='undefined'){var ss=s.src;if(ss.indexOf('cxid')<0) return; clearInterval(timer); window.adView.showMsg(s.src);} } var timer=setInterval(function(){getsid();},1000);";
 var tvaddr=new Array(24);
 var addr=[
   ["SBS Golf","SBS Golf","SBS Golf","79","79","79",3],
@@ -60,10 +58,7 @@ $('document').ready(function() {
 
     for(var i=0; i<tvaddr.length; i++)
       tvaddr[i]=addr[i][3];
-    /*
-    window.parentView.showMsg("msg:AD 관련채널의 정보를 요청합니다");
-    window.parentView.showMsg("adView:"+ADscript);]
-    */
+
     $('#tv').on('dblclick',(function(){ onFullscreenOnOff(); }));
     $('#tv').on('click',(function(){ onFullscreenOnOff(); }));
     timer = setInterval( function() { OnOff(); }, 500 );
@@ -131,15 +126,15 @@ function OnOff()
       tstr="0";
     tstr=tstr+time;
     $('#sec').text( tstr );
-    /*
+    
     if( mustWait )
     {
        mustWait--;
        if( !mustWait )
-          setTimeout(function(){onok();},0);
+          setTimeout(function(){onok();},100);
        return;
     }
-    */
+    
     if( stv.error != null || stv.networkState == 3 || ( time > 30 && stv.currentTime < 2 ) )
     {
         if( $('#errorMessage').css('display') != "block" ) {
@@ -154,9 +149,9 @@ function OnOff()
              window.parentView.showMsg( "msg:채널을 리로딩중입니다" );
              mustWait = 3;
              mustabout = 1;
-             timeSetTV = 3000;
+             timeSetTV = 100;
              clearAddress(addr[ei][addr[ei][6]]);
-             //return;
+             return;
              //if( !mustWait )
                 setTimeout(function(){ onok(); }, timeSetTV);
           }
@@ -323,17 +318,7 @@ function onok() {
       return;
     }
   }
-  else {
-    /*
-    if( isNotUser>0 && (si==11 || si==13) ) {
-      window.parentView.showMsg("adView:javascript:location.reload(true);");
-      ADsid=null;
-      window.parentView.showMsg("msg:AD 관련채널의 정보를 요청했습니다");
-      setTimeout(function(){window.parentView.showMsg("adView:"+ADscript);},2000);
-      return;
-    }
-    */
-  }
+
   oi=-1;
   x[si].click();
 }
@@ -362,54 +347,38 @@ function movieclk( w, url, p ) {
     }
 
     stv.volume=1;
-    /*
-    if( gi==1 && url.substring(0,3)=="ad:") {
-      if(ADsid==null) {
-        window.parentView.showMsg("msg:AD 관련채널 정보를 아직 얻지 못했으니 잠시후 다시 시도해보세요");
-        setTimeout(function(){window.parentView.showMsg("adView:"+ADscript);},2000);
-        return;
-      }
-      else {
-        var ss=url.substring(3);
-        url = "https://p1.adintrend.tv/live/ch"+ss+"/i/ch"+ss+"i.m3u8?sid="+ADsid;
-        stv.volume=0.3;
-      }
-    }
-    */
     if( gi==1 && p.id==x.length-1)
       stv.volume=0.2;
 
     if( imsi_oi>-1 )
       x[imsi_oi].style="background-color:#252525;color=white";
-	  si=p.id;
-	  x[si].style="background-color:#234567;color:yellow";
-	  imsi_oi=oi=si;
+    si=p.id;
+    x[si].style="background-color:#234567;color:yellow";
+    imsi_oi=oi=si;
 
-	  var xx;
-	  if( w === "web" ) {
-	    stv.style.display = "none";
-	    xx=web;
-	  }
-	  else {
-	    stv.style.display = "block";
-	    web.setAttribute( "src",  "about:blank" );
-            xx=stv;
-	  }
+    var xx;
+    if( w === "web" ) {
+       stv.style.display = "none";
+       xx=web;
+    }
+    else {
+       stv.style.display = "block";
+       web.setAttribute( "src",  "about:blank" );
+       xx=stv;
+    }
           
-          if(gi==1 && url.indexOf("tv.trueid.net/embed/") > 0) {
-             window.parentView.showMsg("trueViewLoadUrl:"+url);
-             //window.parentView.showMsg("showTrueView");
-             //window.parentView.showMsg("trueView:play()");
-             return;
-          }
-          else
-	     xx.setAttribute( "src",  url );
-          //window.parentView.showMsg("msg:"+url);
-	  if( w === "tv" )
-	  {
-	     showVideoMessage();
-	     xx.play();
-	  }
+    if(gi==1 && url.indexOf("tv.trueid.net/embed/") > 0) {
+       window.parentView.showMsg("trueViewLoadUrl:"+url);
+       return;
+    }
+    else
+       xx.setAttribute( "src",  url );
+    
+    if( w === "tv" )
+    {
+       showVideoMessage();
+       xx.play();
+    }
 }
 
 function showLeftMenu() {
@@ -501,7 +470,7 @@ function get79tv(i) {
 function setHiddenViewTV(s) {
    oi=-1;
    tvaddr[si]=s;
-   //if( !mustWait )
+   if( !mustWait )
       setTimeout(function(){ x[si].click(); }, timeSetTV);
 }
 
