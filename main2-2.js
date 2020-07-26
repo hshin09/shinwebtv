@@ -119,7 +119,6 @@ function OnOff()
             timer=null;
       	  }
           isChLoaded = 1;
-          //window.parentView.showMsg( "hiddenView:make()" );
           mlok();
           addInput();
        }
@@ -152,9 +151,10 @@ function OnOff()
           if( gi == 0 )
           {
              window.parentView.showMsg( "hiddenView:loadTV('" + path + ch[ei] + "')" );
+             window.parentView.showMsg( "msg:채널을 리로딩중입니다" );
              mustWait = 3;
              mustabout = 1;
-             timeSetTV=2000;
+             timeSetTV = 3000;
              clearAddress(addr[ei][addr[ei][6]]);
              //return;
              //if( !mustWait )
@@ -167,7 +167,7 @@ function OnOff()
             clearInterval(timer);
             timer=null;
           }
-          $("#er_msg").text( "기본/보조서버 모두 에러(다른체널로 바꿔보세요)-1" );
+          $("#er_msg").text( "기본/보조서버 모두 에러(다른체널로 바꿔보세요)" );
           showErrorMessage();
           isNotUser=0;
         }
@@ -195,7 +195,7 @@ function OnOff()
         setTimeout(function(){ oldCurrentTime = stv.currentTime; },500);
         return;
     }
-
+    /*
     if(oldCurrentTime>0) 
     {
       if(oldCurrentTime==stv.currentTime) 
@@ -239,6 +239,7 @@ function OnOff()
         time+=10;
       }
     }
+   */
 }
 
 function clearAddress(tar) {
@@ -268,24 +269,24 @@ function onFinish() {
 }
 
 function change() {
-	asi[gi]=si;
-	aoi[gi]=oi;
+   asi[gi]=si;
+   aoi[gi]=oi;
 
-	if(gi==0)
-		gi=1;
-	else
-		gi=0;
+   if(gi==0)
+      gi=1;
+   else
+      gi=0;
 
-	si=asi[gi];
-	oi=aoi[gi];
+   si=asi[gi];
+   oi=aoi[gi];
 
-	mlok();
-  //window.parentView.showMsg("00");
+   mlok();
 }
 
 var x;
 var cnt;
-function mlok() {
+function mlok() 
+{
     x=document.getElementById("ml"+gi).getElementsByTagName("li");
     cnt=x.length;
     var i;
@@ -425,16 +426,16 @@ function showLeftMenu() {
 }
 
 function onFullscreenOnOff() {
-  if( full == false )
-  {
+   if( full == false )
+   {
       $('#leftmenu').css('display','none');
       full=true;
-	}
-	else
-	{
+   }
+   else
+   {
       $('#leftmenu').css('display','block');
       full=false;
-	}
+   }
 }
 
 function showVideoMessage()
@@ -450,9 +451,8 @@ function showVideoMessage()
     closeErrorMessage();
     $('#sec').text( "00" );
     $("#ch_name").text( x[si].innerHTML );
-   	$("#videoMessage").css('display', 'block');
-  	$("#secMessage").css('display', 'block');
-   	//window.parentView.showMsg(x[si].innerHTML);
+    $("#videoMessage").css('display', 'block');
+    $("#secMessage").css('display', 'block');
 }
 
 function showErrorMessage()
@@ -474,29 +474,28 @@ var demostr="";
 
 function gettv(i)
 {
-  request = new XMLHttpRequest();
-	if(!request) {
-		alert("Giving up :( Cannot create an XMLHTTP instance");
-		return false;
-	}
+   request = new XMLHttpRequest();
+   if(!request) {
+      alert("Giving up :( Cannot create an XMLHTTP instance");
+      return false;
+   }
 
-	demostr="";
-	//request.onreadystatechange=state_change;
-	if(ch[i] == "0")
-	    return;
-	request.open("GET", path+ch[i], false);
-	request.setRequestHeader("Access-Control-Allow-Origin","*");
-	request.setRequestHeader("Accept","text/html");
-	request.setRequestHeader("Content-Type","text/html");
-	request.send(null);
-	if(!state_change(i))
-	    return;
-
-	tvaddr[i]=demostr;
+   demostr="";
+   //request.onreadystatechange=state_change;
+   if(ch[i] == "0")
+      return;
+   request.open("GET", path+ch[i], false);
+   request.setRequestHeader("Access-Control-Allow-Origin","*");
+   request.setRequestHeader("Accept","text/html");
+   request.setRequestHeader("Content-Type","text/html");
+   request.send(null);
+   if(!state_change(i))
+      return;
+   tvaddr[i]=demostr;
 }
 
 function get79tv(i) {
-  window.parentView.showMsg("79:"+path79+ch[i]);
+   window.parentView.showMsg("79:"+path79+ch[i]);
 }
 
 function setHiddenViewTV(s) {
