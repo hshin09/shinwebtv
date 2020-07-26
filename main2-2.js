@@ -147,9 +147,9 @@ function OnOff()
           {
              window.parentView.showMsg( "hiddenView:loadTV('" + path + ch[ei] + "')" );
              window.parentView.showMsg( "msg:채널을 리로딩중입니다" );
-             mustWait = 3;
+             mustWait = 5;
              mustabout = 1;
-             timeSetTV = 2000;
+             timeSetTV = 100;
              clearAddress(addr[ei][addr[ei][6]]);
              return;
              //if( !mustWait )
@@ -242,7 +242,7 @@ function setHiddenViewTV(s) {
    tvaddr[si]=s;
 
    //window.parentView.showMsg( "msg:mustWait="+mustWait );
-   //if( !mustWait )
+   if( !mustWait )
       setTimeout(function(){ x[si].click(); }, timeSetTV);
 }
 
