@@ -241,9 +241,10 @@ function setHiddenViewTV(s) {
    oi=-1;
    tvaddr[si]=s;
 
-   //window.parentView.showMsg( "msg:mustWait="+mustWait );
-   if( !mustWait )
+   if( !mustWait ) {
+      window.parentView.showMsg( "msg:addr="+s );
       setTimeout(function(){ x[si].click(); }, timeSetTV);
+   }
 }
 
 function clearAddress(tar) {
