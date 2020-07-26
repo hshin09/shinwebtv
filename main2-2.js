@@ -237,6 +237,15 @@ function OnOff()
    */
 }
 
+function setHiddenViewTV(s) {
+   oi=-1;
+   tvaddr[si]=s;
+
+   window.parentView.showMsg( "msg:mustWait="+mustWait );
+   if( !mustWait )
+      setTimeout(function(){ x[si].click(); }, timeSetTV);
+}
+
 function clearAddress(tar) {
   tvaddr[ei]=tar;
   /*
@@ -465,13 +474,6 @@ function gettv(i)
 
 function get79tv(i) {
    window.parentView.showMsg("79:"+path79+ch[i]);
-}
-
-function setHiddenViewTV(s) {
-   oi=-1;
-   tvaddr[si]=s;
-   if( !mustWait )
-      setTimeout(function(){ x[si].click(); }, timeSetTV);
 }
 
 function setadtv(s) {
