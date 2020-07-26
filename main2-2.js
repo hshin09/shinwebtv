@@ -149,7 +149,7 @@ function OnOff()
              window.parentView.showMsg( "msg:채널을 리로딩중입니다" );
              mustWait = 7;
              mustabout = 1;
-             timeSetTV = 1000;
+             timeSetTV = 2000;
              clearAddress(addr[ei][addr[ei][6]]);
              return;
              //if( !mustWait )
