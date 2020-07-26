@@ -138,6 +138,7 @@ function OnOff()
     
     if( stv.error != null || stv.networkState == 3 || ( time > 30 && stv.currentTime < 2 ) )
     {
+        oldCurrentTime = 0;
         if( $('#errorMessage').css('display') != "block" ) {
           $("#er_msg").text( "에러 안내 : 채널을 가져올수 없음(네트워크 또는 서버 에러)" );
           showErrorMessage();
@@ -151,9 +152,16 @@ function OnOff()
              mustWait = 3;
              mustabout = 1;
              timeSetTV = 500;
-             clearAddress(addr[ei][addr[ei][6]]);
-             if( !mustWait )
-                setTimeout(function(){ onok(); }, timeSetTV);
+             if(isNotUser<1)
+                clearAddress(addr[ei][addr[ei][6]]);
+             if( !mustWait ) {
+                if(isNotUser<1)
+                   setTimeout(function(){ onok(); }, timeSetTV);
+                else {
+                   oi=-1;
+                   x[ei].click();
+                }
+             }
           }
           isNotUser++;
         }
@@ -188,7 +196,7 @@ function OnOff()
           timer=null;
           timeSetTV=0;
         }
-        timer = setInterval( function() { OnOff(); }, 15000 );
+        //timer = setInterval( function() { OnOff(); }, 15000 );
         setTimeout(function(){ oldCurrentTime = stv.currentTime; },500);
         return;
     }
