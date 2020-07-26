@@ -242,7 +242,6 @@ function setHiddenViewTV(s) {
    tvaddr[si]=s;
 
    if( !mustWait ) {
-      window.parentView.showMsg( "msg:addr="+s );
       setTimeout(function(){ x[si].click(); }, timeSetTV);
    }
 }
@@ -387,6 +386,7 @@ function movieclk( w, url, p ) {
     if( w === "tv" )
     {
        showVideoMessage();
+       window.parentView.showMsg( "msg:"+url );
        xx.play();
     }
 }
