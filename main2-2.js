@@ -40,7 +40,7 @@ var full=false;
 var timer=null;
 var time=0;
 var mustabout = 0;
-var timeSetTV = 0;
+var timeSetTV = 500;
 var mustWait = 0;
 
 var web;
@@ -150,10 +150,9 @@ function OnOff()
              window.parentView.showMsg( "msg:채널을 리로딩중입니다" );
              mustWait = 7;
              mustabout = 1;
-             timeSetTV = 2000;
+             timeSetTV = 500;
              clearAddress(addr[ei][addr[ei][6]]);
-             return;
-             //if( !mustWait )
+             if( !mustWait )
                 setTimeout(function(){ onok(); }, timeSetTV);
           }
           isNotUser++;
