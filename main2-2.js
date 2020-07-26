@@ -241,8 +241,8 @@ function setHiddenViewTV(s) {
    oi=-1;
    tvaddr[si]=s;
 
-   window.parentView.showMsg( "msg:mustWait="+mustWait );
-   if( !mustWait )
+   //window.parentView.showMsg( "msg:mustWait="+mustWait );
+   //if( !mustWait )
       setTimeout(function(){ x[si].click(); }, timeSetTV);
 }
 
