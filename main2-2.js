@@ -132,7 +132,7 @@ function OnOff()
       tstr="0";
     tstr=tstr+time;
     $('#sec').text( tstr );
-
+    /*
     if( mustWait )
     {
        mustWait--;
@@ -140,7 +140,7 @@ function OnOff()
           setTimeout(function(){onok();},0);
        return;
     }
-
+    */
     if( stv.error != null || stv.networkState == 3 || ( time > 30 && stv.currentTime < 2 ) )
     {
         if( $('#errorMessage').css('display') != "block" ) {
@@ -154,10 +154,10 @@ function OnOff()
              window.parentView.showMsg( "hiddenView:loadTV('" + path + ch[ei] + "')" );
              mustWait = 3;
              mustabout = 1;
-             //timeSetTV=2000;
+             timeSetTV=2000;
              clearAddress(addr[ei][addr[ei][6]]);
-             return;
-             if( !mustWait )
+             //return;
+             //if( !mustWait )
                 setTimeout(function(){ onok(); }, timeSetTV);
           }
           isNotUser++;
@@ -208,10 +208,10 @@ function OnOff()
              window.parentView.showMsg( "hiddenView:loadTV('" + path + ch[ei] + "')" );
              mustWait = 3;
              mustabout = 1;
-             //timeSetTV=2000;
+             timeSetTV=2000;
              clearAddress(addr[ei][addr[ei][6]]);
-             return;
-             if( !mustWait )
+             //return;
+             //if( !mustWait )
                 setTimeout(function(){ onok(); }, timeSetTV);
           }
           isNotUser++;
@@ -287,10 +287,10 @@ var x;
 var cnt;
 function mlok() {
     x=document.getElementById("ml"+gi).getElementsByTagName("li");
-  	cnt=x.length;
-  	var i;
-  	for(i=0; i<cnt; i++) {
-  		x[i].id=i;
+    cnt=x.length;
+    var i;
+    for(i=0; i<cnt; i++) {
+       x[i].id=i;
     }
     showLeftMenu();
     imsi_oi=oi=-1;
@@ -502,7 +502,7 @@ function get79tv(i) {
 function setHiddenViewTV(s) {
    oi=-1;
    tvaddr[si]=s;
-   if( !mustWait )
+   //if( !mustWait )
       setTimeout(function(){ x[si].click(); }, timeSetTV);
 }
 
