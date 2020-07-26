@@ -115,6 +115,7 @@ function OnOff()
       	  }
           isChLoaded = 1;
           mlok();
+          window.parentView.showMsg( "msg:메뉴로딩완료" );
           addInput();
        }
        return;
