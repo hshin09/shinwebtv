@@ -45,7 +45,8 @@ var timer=null;
 var time=0;
 var trans=100;
 var mustabout = 0;
-var timeSetTV = 0;
+var timeSetTV = 500;
+var mustWait = 0;
 var lastTrueCh = "";
 
 var web;
@@ -62,10 +63,7 @@ $('document').ready(function() {
     web = document.getElementById("web");
     for(var i=0; i<tvaddr.length; i++)
       tvaddr[i]=addr[i][3];
-    /*
-    window.parentView.showMsg("msg:AD 관련채널의 정보를 요청합니다");
-    window.parentView.showMsg("adView:"+ADscript);
-    */
+
     timer = setInterval( function() { OnOff(); }, 500 );
 });
 
@@ -105,19 +103,11 @@ function OnOff()
             timer=null;
           }
           isChLoaded = 1;
-          mlok();
+          setTimeout( function(){mlok();},500 );
       }
       return;
     }
-    /*
-    if( time++ > 39 ) {
-        if(timer>0) {
-          clearInterval(timer);
-          timer=0;
-          return;
-        }
-    }
-    */
+
     time++;
     tstr="";
     if(time<10)
@@ -125,8 +115,17 @@ function OnOff()
     tstr=tstr+time;
     $('#sec').text( tstr );
 
+    if( mustWait )
+    {
+       mustWait--;
+       if( !mustWait )
+          setTimeout(function(){onok();},timeSetTV);
+       return;
+    }
+
     if( stv.error != null || stv.networkState == 3 || ( time > 30 && stv.currentTime < 2 ) )
     {
+       oldCurrentTime = 0;
        if( $('#errorMessage').css('display') != "block" ) {
           $("#er_msg").text( "에러 안내 : 채널을 가져올수 없음(네트워크 또는 서버 에러)" );
           showErrorMessage();
@@ -135,10 +134,14 @@ function OnOff()
           if( gi == 0 )
           {
              window.parentView.showMsg( "hiddenView:loadTV('" + path + ch[ei] + "')" );
+             window.parentView.showMsg( "msg:채널을 리로딩중입니다:"+isNotUser);
+             mustWait = 3;
              mustabout = 1;
-             timeSetTV=2000;
+             timeSetTV = 500;
              clearAddress(addr[ei][addr[ei][6]]);
-             setTimeout(function(){ onok(); }, timeSetTV);
+             if( !mustWait ) {
+                setTimeout(function(){ onok(); }, timeSetTV);
+             }
           }
           isNotUser++;
        }
@@ -152,11 +155,13 @@ function OnOff()
           isNotUser=0;
        }
     }
-    else if( $('#secMessage').css('display')=="block" && stv.currentTime > 1 )
+    
+    if( $('#secMessage').css('display')=="block" && stv.currentTime > 1 )
     {
         $('#secMessage').css('display', 'none');
         if( mustabout ) {
            window.parentView.showMsg( "hiddenView:loadTV('http://youtv24.net/sites/')" );
+           mustWait = 0;
            mustabout = 0;
         }
     }
@@ -170,10 +175,11 @@ function OnOff()
           timer=null;
           timeSetTV=0;
         }
-        timer = setInterval( function() { OnOff(); }, 15000 );
+        //timer = setInterval( function() { OnOff(); }, 15000 );
         setTimeout(function(){ oldCurrentTime = stv.currentTime; },500);
         return;
     }
+    /*
     if(oldCurrentTime>0) {
       if(oldCurrentTime==stv.currentTime) {
         if(isNotUser<2) {
@@ -207,6 +213,15 @@ function OnOff()
          time+=10;
       }
     }
+    */
+}
+
+function setHiddenViewTV(s) {
+  tvaddr[si]=s;
+  if( !mustWait ) {
+      //parentView.showMsg("msg:setHiddenViewTV");
+      setTimeout(function(){ x[si].click(); }, timeSetTV);
+   }
 }
 
 function clearAddress(tar) {
@@ -437,20 +452,6 @@ function movieclk( w, url, p ) {
     }
 
     stv.volume=1;
-    /*
-    if( gi==1 && url.substring(0,3)=="ad:") {
-      if(ADsid==null) {
-        window.parentView.showMsg("msg:AD 관련채널 정보를 기다리고 있습니다.");
-        setTimeout(function(){window.parentView.showMsg("adView:"+ADscript);},2000);
-        return;
-      }
-      else {
-        var ss=url.substring(3);
-        url = "https://p1.adintrend.tv/live/ch"+ss+"/i/ch"+ss+"i.m3u8?sid="+ADsid;
-        stv.volume=0.3;
-      }
-    }
-    */
     if( gi==1 && p.id > 19 )
     {
       stv.volume=0.2;
@@ -558,11 +559,6 @@ function gettv(i)
 
 function get79tv(i) {
   window.parentView.showMsg("79:"+path79+ch[i]);
-}
-
-function setHiddenViewTV(s) {
-  tvaddr[si]=s;
-  setTimeout(function(){ x[si].click(); }, timeSetTV);
 }
 
 function setadtv(s) {
