@@ -149,7 +149,7 @@ function OnOff()
           {
              window.parentView.showMsg( "hiddenView:loadTV('" + path + ch[ei] + "')" );
              //window.parentView.showMsg( "msg:채널을 리로딩중입니다:"+isNotUser);
-             mustWait = 1;
+             mustWait = 2;
              mustabout = 1;
              timeSetTV = 100;
              clearAddress(addr[ei][addr[ei][6]]);
@@ -241,10 +241,15 @@ function OnOff()
    */
 }
 
+function get79tv(i) {
+   mustWait = 2;
+   window.parentView.showMsg("79:"+path79+ch[i]);
+}
+
 function setHiddenViewTV(s) {
    oi=-1;
    tvaddr[si]=s;
-
+   mustWait = 0;
    //if( !mustWait ) {
       //parentView.showMsg("msg:setHiddenViewTV");
       setTimeout(function(){ x[si].click(); }, timeSetTV);
@@ -476,11 +481,6 @@ function gettv(i)
    if(!state_change(i))
       return;
    tvaddr[i]=demostr;
-}
-
-function get79tv(i) {
-   mustWait = 1;
-   window.parentView.showMsg("79:"+path79+ch[i]);
 }
 
 function setadtv(s) {
