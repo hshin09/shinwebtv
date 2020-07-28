@@ -250,10 +250,7 @@ function setHiddenViewTV(s) {
    oi=-1;
    tvaddr[si]=s;
    mustWait = 0;
-   //if( !mustWait ) {
-      //parentView.showMsg("msg:setHiddenViewTV");
-      setTimeout(function(){ x[si].click(); }, timeSetTV);
-   //}
+   setTimeout(function(){ x[si].click(); }, timeSetTV);
 }
 
 function clearAddress(tar) {
