@@ -153,9 +153,6 @@ function OnOff()
              mustabout = 1;
              timeSetTV = 500;
              clearAddress(addr[ei][addr[ei][6]]);
-             //if( !mustWait ) {
-             //   setTimeout(function(){ onok(); }, timeSetTV);
-             //}
           }
           isNotUser++;
         }
