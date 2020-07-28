@@ -40,7 +40,7 @@ var full=false;
 var timer=null;
 var time=0;
 var mustabout = 0;
-var timeSetTV = 500;
+var timeSetTV = 100;
 var mustWait = 0;
 
 var web;
@@ -151,11 +151,11 @@ function OnOff()
              //window.parentView.showMsg( "msg:채널을 리로딩중입니다:"+isNotUser);
              mustWait = 1;
              mustabout = 1;
-             timeSetTV = 500;
+             timeSetTV = 100;
              clearAddress(addr[ei][addr[ei][6]]);
-             if( !mustWait ) {
-                setTimeout(function(){ onok(); }, timeSetTV);
-             }
+             //if( !mustWait ) {
+             //   setTimeout(function(){ onok(); }, timeSetTV);
+             //}
           }
           isNotUser++;
         }
@@ -170,7 +170,7 @@ function OnOff()
         }
     }
     
-   if( $('#secMessage').css('display')=="block" && stv.currentTime > 1 )
+    if( $('#secMessage').css('display')=="block" && stv.currentTime > 1 )
     {
         $('#secMessage').css('display', 'none');
         if( mustabout ) {
@@ -245,10 +245,10 @@ function setHiddenViewTV(s) {
    oi=-1;
    tvaddr[si]=s;
 
-   if( !mustWait ) {
+   //if( !mustWait ) {
       //parentView.showMsg("msg:setHiddenViewTV");
       setTimeout(function(){ x[si].click(); }, timeSetTV);
-   }
+   //}
 }
 
 function clearAddress(tar) {
@@ -479,6 +479,7 @@ function gettv(i)
 }
 
 function get79tv(i) {
+   mustWait = 1;
    window.parentView.showMsg("79:"+path79+ch[i]);
 }
 
