@@ -40,7 +40,7 @@ var full=false;
 var timer=null;
 var time=0;
 var mustabout = 0;
-var timeSetTV = 100;
+var timeSetTV = 500;
 var mustWait = 0;
 
 var web;
