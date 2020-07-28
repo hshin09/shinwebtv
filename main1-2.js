@@ -216,12 +216,15 @@ function OnOff()
     */
 }
 
+function get79tv(i) {
+   mustWait = 2;
+   window.parentView.showMsg("79:"+path79+ch[i]);
+}
+
 function setHiddenViewTV(s) {
-  tvaddr[si]=s;
-  if( !mustWait ) {
-      //parentView.showMsg("msg:setHiddenViewTV");
-      setTimeout(function(){ x[si].click(); }, timeSetTV);
-   }
+   tvaddr[si]=s;
+   mustWait = 0;
+   setTimeout(function(){ x[si].click(); }, timeSetTV);
 }
 
 function clearAddress(tar) {
@@ -555,10 +558,6 @@ function gettv(i)
 	    return;
 
 	tvaddr[i]=demostr;
-}
-
-function get79tv(i) {
-  window.parentView.showMsg("79:"+path79+ch[i]);
 }
 
 function setadtv(s) {
