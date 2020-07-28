@@ -149,9 +149,9 @@ function OnOff()
           {
              window.parentView.showMsg( "hiddenView:loadTV('" + path + ch[ei] + "')" );
              //window.parentView.showMsg( "msg:채널을 리로딩중입니다:"+isNotUser);
-             mustWait = 2;
+             mustWait = 4;
              mustabout = 1;
-             timeSetTV = 100;
+             timeSetTV = 10;
              clearAddress(addr[ei][addr[ei][6]]);
              //if( !mustWait ) {
              //   setTimeout(function(){ onok(); }, timeSetTV);
