@@ -151,7 +151,7 @@ function OnOff()
              //window.parentView.showMsg( "msg:채널을 리로딩중입니다:"+isNotUser);
              mustWait = 1;
              mustabout = 1;
-             timeSetTV = 300;
+             timeSetTV = 500;
              clearAddress(addr[ei][addr[ei][6]]);
              //if( !mustWait ) {
              //   setTimeout(function(){ onok(); }, timeSetTV);
