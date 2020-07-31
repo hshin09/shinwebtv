@@ -61,7 +61,7 @@ $('document').ready(function() {
     $('#menu1').load("https://hshin09.github.io/shinwebtv/thai.html");
     stv = $('#tv').get(0);
     stv.onwaiting = function(){ onok(); }
-    stv.onabort = function(){ onok(); }
+    //stv.onabort = function(){ onok(); }
     web = document.getElementById("web");
     for(var i=0; i<tvaddr.length; i++)
       tvaddr[i]=addr[i][3];
