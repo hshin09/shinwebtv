@@ -60,8 +60,8 @@ $('document').ready(function() {
     $('#menu0').load("https://hshin09.github.io/shinwebtv/kor2.html");
     $('#menu1').load("https://hshin09.github.io/shinwebtv/thai.html");
     stv = $('#tv').get(0);
-    stv.onwaiting = function(){ window.parentView.showMsg( "msg:wating" ); }
-    //stv.onabort = function(){ window.parentView.showMsg( "msg:abort" ); }
+    //stv.onwaiting = function(){ window.parentView.showMsg( "msg:wating" ); }
+    stv.onabort = function(){ if(stv.currentTime > 2) window.parentView.showMsg( "msg:abort" ); }
     web = document.getElementById("web");
     for(var i=0; i<tvaddr.length; i++)
       tvaddr[i]=addr[i][3];
