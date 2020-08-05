@@ -439,7 +439,7 @@ function onFullscreenOnOff() {
 
 function movieclk( w, url, p ) {
     oldCurrentTime=0;
-    stv.stop();
+    stv.pause();
 
     if( url == null ) {
        gettv(p.id);
