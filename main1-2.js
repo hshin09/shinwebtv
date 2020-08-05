@@ -129,7 +129,7 @@ function OnOff()
     {
        oldCurrentTime = 0;
        if( $('#errorMessage').css('display') != "block" ) {
-          $("#er_msg").text( "에러안내 : 채널을 가져올수 없음(네트워크 또는 서버 에러)-Timer" );
+          $("#er_msg").text( "채널을 가져올수 없음(네트워크 또는 서버 에러)-Timer" );
           showErrorMessage();
        }
        if(isNotUser<2) {
@@ -439,7 +439,7 @@ function onFullscreenOnOff() {
 
 function movieclk( w, url, p ) {
     oldCurrentTime=0;
-    stv.pause();
+    stv.stop();
 
     if( url == null ) {
        gettv(p.id);
@@ -480,7 +480,7 @@ function movieclk( w, url, p ) {
     }
     else {
        stv.style.display = "block";
-       web.setAttribute( "src", "about:blank" );
+       //web.setAttribute( "src", "about:blank" );
        xx=stv;
     }
     if(gi==1 && url.indexOf("tv.trueid.net/embed/") > 0) {
@@ -601,27 +601,27 @@ function videoErr(e)
 {
    switch (e.target.error.code) {
      case e.target.error.MEDIA_ERR_ABORTED:
-       document.getElementById("er_msg").innerHTML="error : 비디오 취소됨";
+       document.getElementById("er_msg").innerHTML="비디오 취소됨";
        showErrorMessage();
        //alert('You aborted the video playback.');
        break;
      case e.target.error.MEDIA_ERR_NETWORK:
-       document.getElementById("er_msg").innerHTML="error : 비디오 다운로드 실패(네트워크문제)";
+       document.getElementById("er_msg").innerHTML="비디오 다운로드 실패(네트워크문제)";
        showErrorMessage();
        //alert('A network error caused the video download to fail part-way.');
        break;
      case e.target.error.MEDIA_ERR_DECODE:
-       document.getElementById("er_msg").innerHTML="error : 이형식의 비디오를 지원하지 않음";
+       document.getElementById("er_msg").innerHTML="이형식의 비디오를 지원하지 않음";
        showErrorMessage();
        //alert('The video playback was aborted due to a corruption problem or because the video used features your browser did not support.');
        break;
      case e.target.error.MEDIA_ERR_SRC_NOT_SUPPORTED:
-       document.getElementById("er_msg").innerHTML="error : 채널을 가져올수 없음(네트워크 또는 서버 에러 또는 형식 미지원)";
+       document.getElementById("er_msg").innerHTML="채널을 가져올수 없음(네트워크 또는 서버 에러 또는 형식 미지원)";
        //alert('The video could not be loaded, either because the server or network failed or because the format is not supported.');
        showErrorMessage();
        break;
      default:
-       document.getElementById("er_msg").innerHTML="error : 알려지지않은 문제로 비디오 로드 에러";
+       document.getElementById("er_msg").innerHTML="알려지지않은 문제로 비디오 로드 에러";
        showErrorMessage();
        //alert('An unknown error occurred.');
        break;
