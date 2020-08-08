@@ -340,6 +340,10 @@ function keychk(e) {
                    setTimeout(function(){ mlok(); }, 500);
 	      }
 	    }
+            else if(e.which == 50 ) {
+               var tt = new Date();
+               window.parentView.showMsg("msg:"+tt.getHours();+":"+tt.getMinites());
+	    } 
 	    else if(e.which == 53 ) {
                window.parentView.showMsg("launchApp:com.google.android.youtube.tv");
 	    } 
