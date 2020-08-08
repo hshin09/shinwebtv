@@ -343,8 +343,14 @@ function keychk(e) {
 	    }
 	    else if(e.which == 53 ) {
                window.parentView.showMsg("launchApp:com.google.android.youtube.tv");
-	    } else if(e.which == 54 ) {
+	    } 
+            else if(e.which == 54 ) {
                window.parentView.showMsg("launchApp:com.android.chrome");
+	    } 
+            else if(e.which == 56 ) {
+	       $('#menu0').load("https://hshin09.github.io/shinwebtv/kor2.html");
+               if(gi==0)
+                 setTimeout(function(){ mlok(); }, 500);
 	    }
 	    e.preventDefault();
 }
