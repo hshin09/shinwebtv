@@ -216,18 +216,18 @@ function OnOff()
 
 function showTime()
 {
-   var tt = new Date();
-   var stime = "";
+   var dt = new Date();
+   var sctime = "";
 
-   if( tt.getHours() < 10 )
-      stime = "0";
-   stime += tt.getHours();
-   stime += ":";
-   if( tt.getMinutes() < 10 )
-      stime += "0";
-   stime += tt.getMinutes();
+   if( dt.getHours() < 10 )
+      sctime += "0";
+   sctime += dt.getHours();
+   sctime += ":";
+   if( dt.getMinutes() < 10 )
+      sctime += "0";
+   sctime += dt.getMinutes();
 
-   $('#sec').text( stime );
+   $('#sec').text( sctime );
    $("#secMessage").css('display', 'block');
    setTimeout( function(){ $("#secMessage").css('display', 'none'); }, 2000 );
 }
