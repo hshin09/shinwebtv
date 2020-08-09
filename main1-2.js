@@ -217,8 +217,8 @@ function OnOff()
 function showTime()
 {
    var tt = new Date();
-   var stime;
-   stime = "";
+   var stime = "";
+
    if( tt.getHours() < 10 )
       stime = "0";
    stime += tt.getHours();
