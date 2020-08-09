@@ -218,6 +218,7 @@ function showTime()
 {
    var tt = new Date();
    var stime;
+   stime = "";
    if( tt.getHours() < 10 )
       stime = "0";
    stime += tt.getHours();
