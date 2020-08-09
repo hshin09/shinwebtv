@@ -214,18 +214,38 @@ function OnOff()
     */
 }
 
-function get79tv(i) {
+function showTime()
+{
+   var tt = new Date();
+   var stime;
+   if( tt.getHours() < 10 )
+      stime = "0";
+   stime += tt.getHours();
+   stime += ":";
+   if( tt.getMinutes() < 10 )
+      stime += "0";
+   stime += tt.getMinutes();
+
+   $('#sec').text( stime );
+   $("#secMessage").css('display', 'block');
+   setTimeout( function(){ $("#secMessage").css('display', 'none'); }, 2000 );
+}
+
+function get79tv(i) 
+{
    mustWait = 2;
    window.parentView.showMsg("79:"+path79+ch[i]);
 }
 
-function setHiddenViewTV(s) {
+function setHiddenViewTV(s) 
+{
    tvaddr[si]=s;
    mustWait = 0;
    setTimeout(function(){ x[si].click(); }, timeSetTV);
 }
 
-function clearAddress(tar) {
+function clearAddress(tar) 
+{
   tvaddr[ei]=tar;
   /*
   if(tar!=null && tar!="79")
@@ -341,9 +361,8 @@ function keychk(e) {
 	      }
 	    }
             else if(e.which == 50 ) {
-               var tt = new Date();
-               window.parentView.showMsg("msg:"+tt.getHours()+":"+tt.getMinutes());
-	    } 
+               showTime();
+            } 
 	    else if(e.which == 53 ) {
                window.parentView.showMsg("launchApp:com.google.android.youtube.tv");
 	    } 
@@ -519,7 +538,7 @@ function showVideoMessage()
       clearInterval(timer);
       timer=null;
     }
-    timer = setInterval( function() { OnOff(); }, 1200 );
+    timer = setInterval( function() { OnOff(); }, 1100 );
     closeErrorMessage();
     $('#sec').text( "00" );
     $("#ch_name").text( x[si].innerHTML );
