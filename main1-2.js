@@ -227,9 +227,9 @@ function showTime()
       sctime += "0";
    sctime += dt.getMinutes();
 
-   $('#sec').text( sctime );
-   $("#secMessage").css('display', 'block');
-   setTimeout( function(){ $("#secMessage").css('display', 'none'); }, 2000 );
+   $('#ch_name').text( sctime );
+   $("#videoMessage").css('display', 'block');
+   setTimeout( function(){ $("#videoMessage").css('display', 'none'); }, 2000 );
 }
 
 function get79tv(i) 
