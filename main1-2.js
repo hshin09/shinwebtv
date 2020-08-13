@@ -136,7 +136,7 @@ function OnOff()
           {
              window.parentView.showMsg( "hiddenView:loadTV('" + path + ch[ei] + "')" );
              //window.parentView.showMsg( "msg:채널을 리로딩중입니다:"+isNotUser);
-             mustWait = 1;
+             mustWait = 2;
              mustabout = 1;
              timeSetTV = 500;
              clearAddress(addr[ei][addr[ei][6]]);
@@ -229,7 +229,7 @@ function showTime()
 
    $('#ch_name').text( sctime );
    $("#videoMessage").css('display', 'block');
-   setTimeout( function(){ $("#videoMessage").css('display', 'none'); }, 2000 );
+   setTimeout( function(){ $("#videoMessage").css('display', 'none'); }, 3000 );
 }
 
 function get79tv(i) 
@@ -361,7 +361,7 @@ function keychk(e) {
                    setTimeout(function(){ mlok(); }, 500);
 	      }
 	    }
-            else if(e.which == 50 ) {
+            else if(e.which == 50 || e.which == 55 ) {
                showTime();
             } 
 	    else if(e.which == 53 ) {
