@@ -567,63 +567,61 @@ var demostr="";
 
 function gettv(i)
 {
-    request = new XMLHttpRequest();
-	if(!request) {
-	   alert("Giving up :( Cannot create an XMLHTTP instance");
-	   return false;
-	}
-
-	demostr="";
-	//request.onreadystatechange=state_change;
-	if(ch[i] == "0")
-	    return;
-	request.open("GET", path+ch[i], false);
-	request.setRequestHeader("Access-Control-Allow-Origin","*");
-	request.setRequestHeader("Accept","text/html");
-	request.setRequestHeader("Content-Type","text/html");
-	request.send(null);
-	if(!state_change(i))
-	    return;
-
-	tvaddr[i]=demostr;
+   request = new XMLHttpRequest();
+   if(!request) {
+      alert("Giving up :( Cannot create an XMLHTTP instance");
+      return false;
+   }
+   demostr="";
+   //request.onreadystatechange=state_change;
+   if(ch[i] == "0")
+      return;
+   request.open("GET", path+ch[i], false);
+   request.setRequestHeader("Access-Control-Allow-Origin","*");
+   request.setRequestHeader("Accept","text/html");
+   request.setRequestHeader("Content-Type","text/html");
+   request.send(null);
+   if(!state_change(i))
+      return;
+   tvaddr[i]=demostr;
 }
 
 function setadtv(s) {
-  var ssi=s.indexOf('cxid=');
-  var eei=s.indexOf('tmpx=',ssi);
-  ADsid=s.substring(ssi+5,eei-1);
-  window.parentView.showMsg("msg:AD 채널관련 정보가 설정되었습니다=> "+ADsid);
-  if(gi==1)
-    setTimeout(function(){ x[si].click(); }, 0);
+   var ssi=s.indexOf('cxid=');
+   var eei=s.indexOf('tmpx=',ssi);
+   ADsid=s.substring(ssi+5,eei-1);
+   window.parentView.showMsg("msg:AD 채널관련 정보가 설정되었습니다=> "+ADsid);
+   if(gi==1)
+      setTimeout(function(){ x[si].click(); }, 0);
 }
 
 function state_change(i) {
-	if (request.readyState==4)  { // 4 = "loaded"
-		if (request.status==200)  { // 200 = OK
-			// ...our code here...
-			strRes=request.responseText;
-			if(strRes.length<1) {
-			  document.getElementById("er_msg").innerHTML="에러 안내 : 채널주소 가져오기 실패(비어있는 내용수신)";
-			  showErrorMessage();
-				return false;
-			}
-			var ssi=strRes.indexOf("file: \"http");
-      var eei=strRes.indexOf(",",ssi);
-			strRes=strRes.substring(ssi+7,eei-1);
-			//alert(strRes);
-		  demostr=demostr+strRes;
-	    return true;
-    }
-    else {
-          document.getElementById("er_msg").innerHTML="에러 안내 : 채널주소 가져오기 실패 : "+request.status;
-  		    showErrorMessage();
-		    //demostr="Problem retrieving XML data : "+request.status;
-		}
-	}
-	document.getElementById("er_msg").innerHTML="에러 안내 : 채널주소 가져오기 실패 : "+request.readyState;
-	showErrorMessage();
-	//demostr="Problem retrieving res data : "+request.readyState;
-	return false;
+   if (request.readyState==4)  { // 4 = "loaded"
+      if (request.status==200)  { // 200 = OK
+         // ...our code here...
+         strRes=request.responseText;
+         if(strRes.length<1) {
+            document.getElementById("er_msg").innerHTML="에러 안내 : 채널주소 가져오기 실패(비어있는 내용수신)";
+            showErrorMessage();
+            return false;
+         }
+         var ssi=strRes.indexOf("file: \"http");
+         var eei=strRes.indexOf(",",ssi);
+         strRes=strRes.substring(ssi+7,eei-1);
+         //alert(strRes);
+         demostr=demostr+strRes;
+         return true;
+      }
+      else {
+         document.getElementById("er_msg").innerHTML="에러 안내 : 채널주소 가져오기 실패 : "+request.status;
+         showErrorMessage();
+         //demostr="Problem retrieving XML data : "+request.status;
+      }
+   }
+   document.getElementById("er_msg").innerHTML="에러 안내 : 채널주소 가져오기 실패 : "+request.readyState;
+   showErrorMessage();
+   //demostr="Problem retrieving res data : "+request.readyState;
+   return false;
 }
 
 function videoErr(e)
