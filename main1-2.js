@@ -470,6 +470,14 @@ function movieclk( w, url, p ) {
     oldCurrentTime=0;
     stv.pause();
 
+    if(oi>-1) x[oi].style="background-color:#252525;";
+    if(ei>-1) x[ei].style="background-color:#252525";
+    si=ei=p.id;
+    x[ei].style="background-color:#234567;color:yellow";
+    oi=si;
+    if( w === "tv" && url.indexOf("tv.trueid.net/embed/") < 1 )
+       showVideoMessage();
+
     if( url == null ) {
        gettv(p.id);
        setTimeout(function(){ x[p.id].click(); }, 0);
@@ -495,12 +503,6 @@ function movieclk( w, url, p ) {
     }
     else if( gi==1 && p.id == 3 )
        stv.volume=0.3;
-
-    if(oi>-1) x[oi].style="background-color:#252525;";
-    if(ei>-1) x[ei].style="background-color:#252525";
-    si=ei=p.id;
-    x[ei].style="background-color:#234567;color:yellow";
-    oi=si;
 
     var xx;
     if( w === "web" ) {
@@ -528,7 +530,7 @@ function movieclk( w, url, p ) {
     if( w === "tv" )
     {
        xx.play();
-       showVideoMessage();
+       //showVideoMessage();
     }
 }
 
