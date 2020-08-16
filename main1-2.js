@@ -537,11 +537,14 @@ function movieclk( w, url, p ) {
 function showVideoMessage()
 {
     time = 0;
+    /*
     if(timer) {
       clearInterval(timer);
       timer=null;
     }
-    timer = setInterval( function() { OnOff(); }, 1100 );
+    */
+    if(timer == null)
+       timer = setInterval( function() { OnOff(); }, 1100 );
     closeErrorMessage();
     $('#sec').text( "00" );
     $("#ch_name").text( x[si].innerHTML );
