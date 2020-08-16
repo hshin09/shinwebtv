@@ -168,7 +168,6 @@ function OnOff()
     {
         isNotUser=0;
         $('#videoMessage').css('display', 'none');
-        closeErrorMessage();
         if(timer) {
           clearInterval(timer);
           timer=null;
@@ -538,14 +537,13 @@ function movieclk( w, url, p ) {
 function showVideoMessage()
 {
     time = 0;
-    /*
+    
     if(timer) {
       clearInterval(timer);
       timer=null;
     }
-    */
-    if(timer == null)
-       timer = setInterval( function() { OnOff(); }, 1100 );
+    
+    timer = setInterval( function() { OnOff(); }, 1100 );
     closeErrorMessage();
     $('#sec').text( "00" );
     $("#ch_name").text( x[si].innerHTML );
