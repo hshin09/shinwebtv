@@ -168,6 +168,7 @@ function OnOff()
     {
         isNotUser=0;
         $('#videoMessage').css('display', 'none');
+        closeErrorMessage();
         if(timer) {
           clearInterval(timer);
           timer=null;
