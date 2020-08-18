@@ -13,6 +13,7 @@ body {
   padding:0;
   margin:0;
   background-color:#252525;
+  font-family: Sans-Serif;
 }
 
 div {
@@ -42,7 +43,7 @@ li {
   height:22.5px;
   line-height:22.5px;
   vertical-align:middle;
-  font-size:14px;
+  font-size:1rem;
   color:white;
 }
 
