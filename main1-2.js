@@ -98,13 +98,12 @@ function OnOff()
       x=document.getElementById("ml"+gi).getElementsByTagName("li");
       if( x.length==tvaddr.length )
       {
-          trans=x.length*22.5;
+          trans=x.length*screen.height*0.41;
           if(timer) {
             clearInterval(timer);
             timer=null;
           }
           isChLoaded = 1;
-          window.parentView.showMsg( "msg:"+screen.width+" * "+screen.height );
           setTimeout( function(){mlok();},500 );
       }
       return;
