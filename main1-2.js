@@ -104,6 +104,7 @@ function OnOff()
             timer=null;
           }
           isChLoaded = 1;
+          window.parentView.showMsg( "msg:"+screen.width+" * "+screen.height );
           setTimeout( function(){mlok();},500 );
       }
       return;
