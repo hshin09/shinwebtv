@@ -72,7 +72,7 @@ li {
   opacity:0.9;
   left:0px;
   top: 0px;
-  font-size:30px;
+  font-size:2rem;
   background-color:#252525;
   display:none;
 }
@@ -85,9 +85,9 @@ li {
 #secMessage {
   position:absolute;
   opacity:0.4;
-  left:30vw;
+  left:2rem;
   top:0vh;
-  font-size:40px;
+  font-size:2.5rem;
   background-color:#252525;
   display:none;
 }
