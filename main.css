@@ -15,8 +15,6 @@ body {
   background-color:#252525;
   font-family:Sans-Serif;
   font-size:1rem;
-  width:1920ox;
-  height:1080px;
 }
 
 div {
@@ -43,7 +41,7 @@ ul {
 
 li {
   padding-left:8px;
-  height:22.5px;
+  height:4.1vh;
   line-height:22.5px;
   vertical-align:middle;
   font-size:1rem;
