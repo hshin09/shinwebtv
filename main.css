@@ -85,7 +85,7 @@ li {
 #secMessage {
   position:absolute;
   opacity:0.4;
-  left:2rem;
+  left:30px;
   top:0vh;
   font-size:2.5rem;
   background-color:#252525;
