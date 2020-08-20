@@ -48,7 +48,6 @@ var mustabout = 0;
 var timeSetTV = 500;
 var mustWait = 0;
 var lastTrueCh = "";
-var isShowTime = 0;
 
 var web;
 var stv;
@@ -217,10 +216,6 @@ function OnOff()
 
 function showTime()
 {
-   if(isShowTime == 0) {
-      $("#videoMessage").css('display', 'none');
-      return;
-   }
    var dt = new Date();
    var sctime = "";
 
@@ -234,7 +229,7 @@ function showTime()
 
    $('#ch_name').text( sctime );
    $("#videoMessage").css('display', 'block');
-   setTimeout( function(){showTime();}, (61-dt.getSeconds())*1000 );
+   setTimeout( function(){$("#videoMessage").css('display', 'none');}, 3000 );
 }
 
 function get79tv(i) 
@@ -367,7 +362,6 @@ function keychk(e) {
 	      }
 	    }
             else if(e.which == 50 || e.which == 55 ) {
-               setTimeout(function(){ isShowTime = !isShowTime; }, 10);
                showTime();
             } 
 	    else if(e.which == 53 ) {
