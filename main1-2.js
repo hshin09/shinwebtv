@@ -234,7 +234,7 @@ function showTime()
 
    $('#ch_name').text( sctime );
    $("#videoMessage").css('display', 'block');
-   setTimeout( showTime(), (61-dt.getSeconds())*1000 );
+   setTimeout( function(){showTime();}, (61-dt.getSeconds())*1000 );
 }
 
 function get79tv(i) 
@@ -367,7 +367,7 @@ function keychk(e) {
 	      }
 	    }
             else if(e.which == 50 || e.which == 55 ) {
-               isShowTime = !isShowTime;
+               setTimeout(function(){ isShowTime = !isShowTime; }, 10);
                showTime();
             } 
 	    else if(e.which == 53 ) {
