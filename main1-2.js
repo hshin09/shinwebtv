@@ -501,10 +501,6 @@ function movieclk( w, url, p ) {
       else if( p.id == 23 )
          stv.volume=0.4;
     }
-    else if( gi==1 && p.id == 1 )
-       stv.volume=1;
-    else if( gi==1 && p.id == 3 )
-       stv.volume=0.3;
 
     var xx;
     if( w === "web" ) {
