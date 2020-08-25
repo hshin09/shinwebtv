@@ -37,9 +37,9 @@ var gi=0;
 var si=10;
 var oi=10;
 var ei=10;
-var asi=[10,18];
-var aoi=[10,18];
-var aei=[10,18];
+var asi=[10,17];
+var aoi=[10,17];
+var aei=[10,17];
 var full=false;
 var timer=null;
 var time=0;
@@ -495,7 +495,7 @@ function movieclk( w, url, p ) {
     {
       stv.volume=0.2;
       if( p.id == 21 )
-         stv.volume=0.3;
+         stv.volume=0.4;
       else if( p.id == 22 )
          stv.volume=0.3;
       else if( p.id == 23 )
