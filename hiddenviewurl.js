@@ -20,7 +20,6 @@ function gettv(s)
 }
 
 function mystate_change() {
-   window.hiddenView.showMsg( "msg:change" );
    strResult="79";
    if (xmlreq.readyState==4)  { // 4 = "loaded"
       if (xmlreq.status==200)  { // 200 = OK
@@ -37,7 +36,7 @@ function mystate_change() {
          }
          var eei=strResponse.indexOf(",",ssi);
          strResponse=strResponse.substring(ssi+7,eei-1);
-         strResult=strRespose;
+         strResult=strResponse;
          window.hiddenView.showMsg( "webView:setHiddenViewTV('" + strResult + "')" );
          return true;
       }
