@@ -12,7 +12,7 @@ function gettv(s)
    strResponse="";
    xmlreq.onreadystatechange=mystate_change;
    
-   xmlreq.open("GET", s, true);
+   xmlreq.open("POST", s, true);
    xmlreq.setRequestHeader("Access-Control-Allow-Origin","*");
    xmlreq.setRequestHeader("Accept","text/html");
    xmlreq.setRequestHeader("Content-Type","text/html");
