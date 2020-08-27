@@ -242,7 +242,6 @@ function get79tv(i)
 
 function setHiddenViewTV(s) 
 {
-   window.parentView.showMsg("msg:"+s);
    tvaddr[si]=s;
    mustWait = 0;
    setTimeout(function(){ x[si].click(); }, timeSetTV);
