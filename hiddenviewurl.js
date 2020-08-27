@@ -21,6 +21,7 @@ function gettv(s)
 }
 
 function mystate_change(i) {
+   strResult="79";
    if (xmlreq.readyState==4)  { // 4 = "loaded"
       if (xmlreq.status==200)  { // 200 = OK
          // ...our code here...
@@ -29,20 +30,14 @@ function mystate_change(i) {
             return false;
          }
          var ssi=strRespose.indexOf("file: \"http");
+         if(ssi<1)
+            return false;
          var eei=strRespose.indexOf(",",ssi);
          strRespose=strRespose.substring(ssi+7,eei-1);
-         strResult=strResult+strRespose;
+         strResult=strRespose;
          return true;
       }
-      else {
-         document.getElementById("er_msg").innerHTML="에러 안내 : 채널주소 가져오기 실패 : "+request.status;
-         showErrorMessage();
-         //demostr="Problem retrieving XML data : "+request.status;
-      }
    }
-   document.getElementById("er_msg").innerHTML="에러 안내 : 채널주소 가져오기 실패 : "+request.readyState;
-   showErrorMessage();
-   //demostr="Problem retrieving res data : "+request.readyState;
    return false;
 }
 
