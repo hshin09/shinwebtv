@@ -5,6 +5,7 @@ var strResult="";
 
 function gettv(s)
 {
+   window.hiddenView.showMsg( "msg:"+s );
    xmlreq = new XMLHttpRequest();
    if(!xmlreq) {
       return false;
