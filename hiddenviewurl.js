@@ -26,11 +26,13 @@ function mystate_change() {
          // ...our code here...
          strResponse=xmlreq.responseText;
          if(strResponse.length<1) {
+            strResult="00";
             window.hiddenView.showMsg( "webView:setHiddenViewTV('" + strResult + "')" );
             return false;
          }
          var ssi=strResponse.indexOf("file: \"http");
          if(ssi<1) {
+            strResult="01";
             window.hiddenView.showMsg( "webView:setHiddenViewTV('" + strResult + "')" );
             return false;
          }
