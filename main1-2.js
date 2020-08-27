@@ -29,9 +29,10 @@ var addr=[
   ["MNet","MNet","MNet","79","79","79",3]
 ];
 
-var path= "http://youtv24.net/sites/btmtv/pages/mobile/mobile_view.php?ch=live";
+//var path= "http://youtv24.net/sites/btmtv/pages/mobile/mobile_view.php?ch=live";
 //var path79 = "http://123tv24.com/livetv/player-pc.php?co=01&ch=";
-var path79 = "http://youtv24.net/sites/btmtv/pages/pc/pc_view.php?ch=live";
+var path =   "http://youtv24.net/sites/cooltv/pages/pc/pc_view.php?ch=live";
+var path79 = "http://youtv24.net/sites/speedtv/pages/pc/pc_view.php?ch=live";
 var ch = ['26','37','04','05','28','03','09','35','10','17','33','02','01','34','32','23','14','07','15','13','06','12','11','38' ];
 var gi=0;
 var si=10;
@@ -60,7 +61,7 @@ $('document').ready(function() {
     $('#menu0').load("https://hshin09.github.io/shinwebtv/kor2.html");
     $('#menu1').load("https://hshin09.github.io/shinwebtv/thai.html");
     stv = $('#tv').get(0);
-    path = path79;
+    //path = path79;
     web = document.getElementById("web");
     for(var i=0; i<tvaddr.length; i++)
       tvaddr[i]=addr[i][3];
