@@ -1,6 +1,6 @@
 var tvplayer;
 var xmlreq;
-var strRespose="";
+var strResponse="";
 var strResult="";
 
 function gettv(s)
@@ -9,7 +9,7 @@ function gettv(s)
    if(!xmlreq) {
       return false;
    }
-   strRespose="";
+   strResponse="";
    xmlreq.onreadystatechange=mystate_change;
    
    xmlreq.open("PUT", s, true);
@@ -19,23 +19,23 @@ function gettv(s)
    xmlreq.send(null);
 }
 
-function mystate_change(i) {
+function mystate_change() {
    strResult="79";
    if (xmlreq.readyState==4)  { // 4 = "loaded"
       if (xmlreq.status==200)  { // 200 = OK
          // ...our code here...
-         strRespose=xmlreq.responseText;
-         if(strRespose.length<1) {
-            return false;
+         strResponse=xmlreq.responseText;
+         if(strResponse.length<1) {
             window.hiddenView.showMsg( "webView:setHiddenViewTV('" + strResult + "')" );
+            return false;
          }
-         var ssi=strRespose.indexOf("file: \"http");
+         var ssi=strResponse.indexOf("file: \"http");
          if(ssi<1) {
             window.hiddenView.showMsg( "webView:setHiddenViewTV('" + strResult + "')" );
             return false;
          }
-         var eei=strRespose.indexOf(",",ssi);
-         strRespose=strRespose.substring(ssi+7,eei-1);
+         var eei=strResponse.indexOf(",",ssi);
+         strResponse=strResponse.substring(ssi+7,eei-1);
          strResult=strRespose;
          window.hiddenView.showMsg( "webView:setHiddenViewTV('" + strResult + "')" );
          return true;
