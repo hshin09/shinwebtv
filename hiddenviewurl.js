@@ -41,7 +41,7 @@ function mystate_change() {
          return true;
       }
    }
-   return false;
+   return true;
 }
 
 function loadTV(ch)
