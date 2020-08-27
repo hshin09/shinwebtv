@@ -7,7 +7,6 @@ function gettv(s)
 {
    xmlreq = new XMLHttpRequest();
    if(!xmlreq) {
-      alert("Giving up :( Cannot create an XMLHTTP instance");
       return false;
    }
    strRespose="";
