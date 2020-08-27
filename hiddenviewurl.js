@@ -43,6 +43,7 @@ function mystate_change() {
          return true;
       }
    }
+   strResult=xmlreq.readyState+":"+xmlreq.status;
    window.hiddenView.showMsg( "webView:setHiddenViewTV('" + strResult + "')" );
    return false;
 }
