@@ -5,7 +5,6 @@ var strResult="";
 
 function gettv(s)
 {
-   window.hiddenView.showMsg( "msg:"+s );
    xmlreq = new XMLHttpRequest();
    if(!xmlreq) {
       return false;
@@ -21,6 +20,7 @@ function gettv(s)
 }
 
 function mystate_change() {
+   window.hiddenView.showMsg( "msg:change" );
    strResult="79";
    if (xmlreq.readyState==4)  { // 4 = "loaded"
       if (xmlreq.status==200)  { // 200 = OK
