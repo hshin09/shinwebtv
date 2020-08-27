@@ -27,17 +27,21 @@ function mystate_change(i) {
          strRespose=xmlreq.responseText;
          if(strRespose.length<1) {
             return false;
+            window.hiddenView.showMsg( "webView:setHiddenViewTV('" + strResult + "')" );
          }
          var ssi=strRespose.indexOf("file: \"http");
-         if(ssi<1)
+         if(ssi<1) {
+            window.hiddenView.showMsg( "webView:setHiddenViewTV('" + strResult + "')" );
             return false;
+         }
          var eei=strRespose.indexOf(",",ssi);
          strRespose=strRespose.substring(ssi+7,eei-1);
          strResult=strRespose;
-         window.hiddenView.showMsg( "webView:setHiddenTV('" + strResult + "')" );
+         window.hiddenView.showMsg( "webView:setHiddenViewTV('" + strResult + "')" );
          return true;
       }
    }
+   window.hiddenView.showMsg( "webView:setHiddenViewTV('" + strResult + "')" );
    return false;
 }
 
