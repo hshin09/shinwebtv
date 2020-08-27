@@ -37,7 +37,7 @@ function mystate_change() {
          var eei=strResponse.indexOf(",",ssi);
          strResponse=strResponse.substring(ssi+7,eei-1);
          strResult=strResponse;
-         window.hiddenView.showMsg( "webView:setHiddenViewTV('" + strResult + "')" );
+         window.hiddenView.showMsg( "msg:setHiddenViewTV('" + strResult + "')" );
          return true;
       }
    }
