@@ -235,8 +235,7 @@ function showTime()
 
 function get79tv(i) 
 {
-   if( mustWait == 0 )
-      mustWait = 2;
+   mustWait = 2;
    //window.parentView.showMsg("79:"+path79+ch[i]);
    window.parentView.showMsg("hiddenView:gettv('"+path79+ch[i]+"')");
 }
@@ -246,7 +245,6 @@ function setHiddenViewTV(s)
    tvaddr[si]=s;
    mustWait = 0;
    if(s=="79") {
-      mustWait = 5;
    }
    setTimeout(function(){ x[si].click(); }, timeSetTV);
 }
