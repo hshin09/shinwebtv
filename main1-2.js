@@ -244,7 +244,10 @@ function setHiddenViewTV(s)
 {
    tvaddr[si]=s;
    mustWait = 0;
-   setTimeout(function(){ x[si].click(); }, timeSetTV);
+   if(s=="79")
+      setTimeout(function(){ x[si].click(); }, 5000);
+   else
+      setTimeout(function(){ x[si].click(); }, timeSetTV);
 }
 
 function clearAddress(tar) 
