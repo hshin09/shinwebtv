@@ -32,7 +32,6 @@ function mystate_change() {
          return;
       }
    }
-   return;
 }
 
 function loadTV(ch)
@@ -48,10 +47,10 @@ function make()
    
    xmlreq = new XMLHttpRequest();
    xmlreq.onreadystatechange=mystate_change;
-   xmlreq.timeout = 1500;   
+   xmlreq.timeout = 2000;   
    xmlreq.ontimeout = function (e) {
       xmlreq.abort();
-      window.hiddenView.showMsg( "msg:Timeout" );
+      //window.hiddenView.showMsg( "msg:Timeout" );
    }; 
    xmlreq.setRequestHeader("Access-Control-Allow-Origin","*");
    xmlreq.setRequestHeader("Accept","text/html");
