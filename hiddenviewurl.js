@@ -48,6 +48,11 @@ function make()
    
    xmlreq = new XMLHttpRequest();
    xmlreq.onreadystatechange=mystate_change;
+   xmlreq.timeout = 1500;   
+   xmlreq.ontimeout = function (e) {
+      xmlreq.abort();
+      window.hiddenView.showMsg( "msg:Timeout" );
+   }; 
    xmlreq.setRequestHeader("Access-Control-Allow-Origin","*");
    xmlreq.setRequestHeader("Accept","text/html");
    xmlreq.setRequestHeader("Content-Type","text/html");
