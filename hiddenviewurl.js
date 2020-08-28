@@ -5,7 +5,6 @@ var strResult="";
 
 function gettv(s)
 {
-   xmlreq = new XMLHttpRequest();
    if(!xmlreq) {
       return false;
    }
@@ -53,7 +52,8 @@ function make()
 { 
    tvplayer=document.createElement('iframe');
    tvplayer.setAttribute('id','player');
-   document.body.appendChild(tvplayer); 
+   document.body.appendChild(tvplayer);
+   xmlreq = new XMLHttpRequest();
 }
 
 make();
