@@ -5,16 +5,8 @@ var strResult="";
 
 function gettv(s)
 {
-   if(!xmlreq) {
-      return false;
-   }
-   strResponse="";
-   xmlreq.onreadystatechange=mystate_change;
-   
+   strResponse="";   
    xmlreq.open("GET", s, true);
-   xmlreq.setRequestHeader("Access-Control-Allow-Origin","*");
-   xmlreq.setRequestHeader("Accept","text/html");
-   xmlreq.setRequestHeader("Content-Type","text/html");
    xmlreq.send(null);
 }
 
@@ -53,7 +45,12 @@ function make()
    tvplayer=document.createElement('iframe');
    tvplayer.setAttribute('id','player');
    document.body.appendChild(tvplayer);
+   
    xmlreq = new XMLHttpRequest();
+   xmlreq.onreadystatechange=mystate_change;
+   xmlreq.setRequestHeader("Access-Control-Allow-Origin","*");
+   xmlreq.setRequestHeader("Accept","text/html");
+   xmlreq.setRequestHeader("Content-Type","text/html");
 }
 
 make();
