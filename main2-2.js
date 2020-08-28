@@ -240,7 +240,8 @@ function OnOff()
 
 function get79tv(i) {
    mustWait = 2;
-   window.parentView.showMsg("79:"+path79+ch[i]);
+   //window.parentView.showMsg("79:"+path79+ch[i]);
+   window.parentView.showMsg("hiddenView:gettv('"+path79+ch[i]+"')");
 }
 
 function setHiddenViewTV(s) {
