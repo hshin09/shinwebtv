@@ -336,48 +336,48 @@ function change() {
 }
 
 function keychk(e) {
-		if(e.which == 38) {
-			onup();
-		}
-		else if(e.which == 40) {
-			ondown();
-		}
-		else if(e.which == 37) {
-			onleft();
-		}
-		else if(e.which == 39) {
-			onright();
-		}
-		else if(e.which == 13 ) {
-      			onok();
-		}
-	    else if(e.which == 48 ) {
+	if(e.which == 38) {
+		onup();
+	}
+	else if(e.which == 40) {
+		ondown();
+	}
+	else if(e.which == 37) {
+		onleft();
+	}
+	else if(e.which == 39) {
+		onright();
+	}
+	else if(e.which == 13 ) {
+      		onok();
+	}
+	else if(e.which == 48 ) {
 	      $('#menu1').load("https://hshin09.github.io/shinwebtv/thai.html");
               if(gi==1)
                  setTimeout(function(){ mlok(); }, 500);
-	    }
-	    else if(e.which == 49 ) {
+	}
+	else if(e.which == 49 ) {
 	      if( ei==10 && si==12 ) {
 		$('#menu1').load("https://hshin09.github.io/shinwebtv/svideo.html");
                 if(gi==1)
                    setTimeout(function(){ mlok(); }, 500);
 	      }
-	    }
-            else if(e.which == 50 || e.which == 55 ) {
+	}
+        else if(e.which == 50 || e.which == 55 ) {
                showTime();
-            } 
-	    else if(e.which == 53 ) {
+        } 
+        else if(e.which == 53 ) {
                window.parentView.showMsg("launchApp:com.google.android.youtube.tv");
-	    } 
-            else if(e.which == 54 ) {
+	} 
+        else if(e.which == 54 ) {
                window.parentView.showMsg("launchApp:com.android.chrome");
-	    } 
-            else if(e.which == 56 ) {
-	       $('#menu0').load("https://hshin09.github.io/shinwebtv/kor2.html");
-               if(gi==0)
+	} 
+        else if(e.which == 57 ) {
+	      $('#menu1').load("https://hshin09.github.io/shinwebtv/thai_old.html");
+              if(gi==1)
                  setTimeout(function(){ mlok(); }, 500);
-	    }
-	    e.preventDefault();
+	}
+	e.preventDefault();
 }
 
 function onok() {
