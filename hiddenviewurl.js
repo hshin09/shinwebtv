@@ -50,8 +50,8 @@ function make()
    xmlreq.timeout = 2000;   
    xmlreq.ontimeout = function (e) {
       xmlreq.abort();
-      window.hiddenView.showMsg( "webView:setHiddenViewTV('79')" );
       window.hiddenView.showMsg( "msg:Timeout" );
+      window.hiddenView.showMsg( "webView:setHiddenViewTV('79')" );
    }; 
    xmlreq.setRequestHeader("Access-Control-Allow-Origin","*");
    xmlreq.setRequestHeader("Accept","text/html");
