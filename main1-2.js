@@ -244,7 +244,7 @@ function setHiddenViewTV(s)
 {
    tvaddr[si]=s;
    mustWait = 0;
-   if(s=="79") {
+   if(s=="timeout") {
    }
    setTimeout(function(){ x[si].click(); }, timeSetTV);
 }
