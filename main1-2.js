@@ -243,9 +243,9 @@ function get79tv(i)
 function setHiddenViewTV(s) 
 {
    if(s=="timeout") {
-      $("#er_msg").text( "서버가 응답이 없어 일정시간(90초내) 대기 및 재시도를 진행합니다." );
+      $("#er_msg").text( "서버가 응답이 없어 일정시간(2분내외) 대기 및 재시도를 진행합니다." );
       showErrorMessage();      
-      mustWait = 25;
+      mustWait = 20;
       return;
    }
    tvaddr[si]=s;
