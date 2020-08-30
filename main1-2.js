@@ -244,7 +244,7 @@ function setHiddenViewTV(s)
 {
    if(s=="timeout") {
       window.parentView.showMsg("msg:timeout & waitting...");
-      mustWait = 9;
+      mustWait = 20;
       return;
    }
    tvaddr[si]=s;
