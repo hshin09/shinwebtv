@@ -243,7 +243,8 @@ function get79tv(i)
 function setHiddenViewTV(s) 
 {
    if(s=="timeout") {
-      window.parentView.showMsg("msg:timeout & waitting...");
+      $("#er_msg").text( "서버의 타임아웃으로 20여초 대기합니다" );
+      showErrorMessage();      
       mustWait = 20;
       return;
    }
