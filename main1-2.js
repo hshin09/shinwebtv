@@ -242,10 +242,13 @@ function get79tv(i)
 
 function setHiddenViewTV(s) 
 {
+   if(s=="timeout") {
+      window.parentView.showMsg("msg:timeout & waitting...");
+      mustWait = 9;
+      return;
+   }
    tvaddr[si]=s;
    mustWait = 0;
-   if(s=="timeout") {
-   }
    setTimeout(function(){ x[si].click(); }, timeSetTV);
 }
 
