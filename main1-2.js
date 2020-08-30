@@ -655,7 +655,7 @@ function videoErr(e)
        //alert('The video playback was aborted due to a corruption problem or because the video used features your browser did not support.');
        break;
      case e.target.error.MEDIA_ERR_SRC_NOT_SUPPORTED:
-       document.getElementById("er_msg").innerHTML="채널을 가져올수 없음(네트워크 또는 서버 에러 또는 형식 미지원)";
+       document.getElementById("er_msg").innerHTML="채널주소가 바뀌어 다른서버에서 새주소를 찾는 작업을 진행합니다.";
        //alert('The video could not be loaded, either because the server or network failed or because the format is not supported.');
        showErrorMessage();
        break;
