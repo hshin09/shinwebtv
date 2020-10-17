@@ -378,7 +378,8 @@ function keychk(e) {
                window.parentView.showMsg("launchApp:com.google.android.youtube.tv");
 	} 
         else if(e.which == 54 ) {
-               window.parentView.showMsg("launchApp:com.android.chrome");
+               //window.parentView.showMsg("launchApp:com.android.chrome");
+               window.parentView.showMsg("launchApp:com.opera.browser.beta");
 	} 
         else if(e.which == 57 ) {
 	      $('#menu1').load("https://hshin09.github.io/shinwebtv/thai_old.html");
