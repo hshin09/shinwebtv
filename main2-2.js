@@ -22,7 +22,7 @@ var addr=[
   ["KBS2 TV","KBS2 TV","KBS2 TV","79","79","79",3],
   ["GeoGraphic","GeoGraphic","GeoGraphic","79","79","79",3],
   ["Discovery","Discovery","Discovery","79","79","79",3],
-  ["History","History,"History","79","79","79",3],
+  ["History","History","History","79","79","79",3],
   ["MNet","MNet","MNet","79","79","79",3]
 ];
 
