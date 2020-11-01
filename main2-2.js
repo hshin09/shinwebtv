@@ -20,16 +20,17 @@ var addr=[
   ["MBC TV","MBC TV","MBC TV","79","79","79",3],
   ["KBS1 TV","KBS1 TV","KBS1 TV","79","79","79",3],
   ["KBS2 TV","KBS2 TV","KBS2 TV","79","79","79",3],
-  ["TVN TV","TVN TV","TVN TV","79","79","79",3],
-  ["코미디 TV","코미디 TV","코미디 TV","79","79","79",3],
-  ["XtvN TV","XtvN TV","XtvN TV","79","79","79",3],
+  ["GeoGraphic","GeoGraphic","GeoGraphic","79","79","79",3],
+  ["Discovery","Discovery","Discovery","79","79","79",3],
+  ["History","History,"History","79","79","79",3],
   ["MNet","MNet","MNet","79","79","79",3]
 ];
 
 var path= "http://youtv24.net/sites/btmtv/pages/mobile/mobile_view.php?ch=live";
 //var path79 = "http://123tv24.com/livetv/player-pc.php?co=01&ch=";
 var path79 = "http://youtv24.net/sites/btmtv/pages/pc/pc_view.php?ch=live";
-var ch = ['26','37','04','05','28','03','09','35','10','17','33','02','01','34','32','23','14','07','15','13','06','12','11','38' ];
+//var ch = ['26','37','04','05','28','03','09','35','10','17','33','02','01','34','32','23','14','07','15','13','06','12','11','38' ];
+var ch = ['26','37','04','05','25','03','09','35','30','17','33','02','01','34','32','23','14','07','15','13','50','46','49','38' ];
 var gi=0;
 var si=10;
 var oi=0;
