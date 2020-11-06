@@ -527,6 +527,10 @@ function movieclk( w, url, p ) {
     }
     else if( gi==1 && p.id == 3 )
        stv.volume=1;
+    else if( gi == 1 ) {
+       if( url.indexOf("tv.trueid.net/embed/") > 0 )
+          stv.volume=0.4;
+    }
 
     var xx;
     if( w === "web" ) {
