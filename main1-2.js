@@ -49,6 +49,7 @@ var mustabout = 0;
 var timeSetTV = 500;
 var mustWait = 0;
 var lastTrueCh = "";
+var myshtv = 0;
 
 var web;
 var stv;
@@ -133,7 +134,7 @@ function OnOff()
           showErrorMessage();
        }
        if(isNotUser<2) {
-          if( gi == 0 )
+          if( gi == 0 && myshtv == 0 )
           {
              window.parentView.showMsg( "hiddenView:loadTV('" + path + ch[ei] + "')" );
              //window.parentView.showMsg( "msg:채널을 리로딩중입니다:"+isNotUser);
@@ -381,6 +382,18 @@ function keychk(e) {
                //window.parentView.showMsg("launchApp:com.android.chrome");
                window.parentView.showMsg("launchApp:com.opera.browser.beta");
 	} 
+        else if(e.which == 56 ) {
+              if(myshtv == 1) {
+                 $('#menu0').load("https://hshin09.github.io/shinwebtv/kor2.html");
+                 myshtv = 0;
+              }
+              else {
+	         $('#menu0').load("https://hshin09.github.io/shinwebtv/myshtv.html");
+                 myshtv = 1;
+              }
+              if(gi == 0)
+                 setTimeout(function(){ mlok(); }, 500);
+	}
         else if(e.which == 57 ) {
 	      $('#menu1').load("https://hshin09.github.io/shinwebtv/thai_old.html");
               if(gi==1)
@@ -390,7 +403,7 @@ function keychk(e) {
 }
 
 function onok() {
-  if( gi == 0 )
+  if( gi == 0 && myshtv == 0 )
   {
     var i_ch=addr[si][6];
 
