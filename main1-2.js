@@ -525,11 +525,11 @@ function movieclk( w, url, p ) {
       else if( p.id == 23 )
          stv.volume=0.3;
     }
-    else if( gi==1 && p.id == 3 )
-       stv.volume=1;
+    //else if( gi==1 && p.id == 3 )
+    //   stv.volume=1;
     else if( gi == 1 ) {
        if( url.indexOf("p1.cdn.vet") > 0 )
-          stv.volume=0.4;
+          stv.volume=0.3;
     }
 
     var xx;
