@@ -49,7 +49,7 @@ var mustabout = 0;
 var timeSetTV = 500;
 var mustWait = 0;
 var lastTrueCh = "";
-var myshtv = 0;
+var myshtv = 1;
 
 var web;
 var stv;
@@ -59,7 +59,8 @@ var msgGetCh="채널리스트 구성중";
 var oldCurrentTime=0;
 
 $('document').ready(function() {
-    $('#menu0').load("https://hshin09.github.io/shinwebtv/kor2.html");
+    //$('#menu0').load("https://hshin09.github.io/shinwebtv/kor2.html");
+    $('#menu0').load("https://hshin09.github.io/shinwebtv/myshtv.html");
     $('#menu1').load("https://hshin09.github.io/shinwebtv/thai.html");
     stv = $('#tv').get(0);
     //path = path79;
