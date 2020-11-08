@@ -1,5 +1,5 @@
 window.onkeydown = keychk;
-var ADsid=null;
+var ADsid='';
 var ADscript = "javascript:function getsid(){ var s=document.getElementById('TV'); if(s!=null && s!='undefined'){var ss=s.src; if(ss.indexOf('cxid')<1) return; window.adView.showMsg(s.src);} } setTimeout(function(){getsid();},100);";
 var tvaddr = new Array(24);
 var addr=[
@@ -529,8 +529,10 @@ function movieclk( w, url, p ) {
     //else if( gi==1 && p.id == 3 )
     //   stv.volume=1;
     else if( gi == 1 ) {
-       if( url.indexOf("p1.cdn.vet") > 0 )
+       if( url.indexOf("p1.cdn.vet") > 0 ) {
           stv.volume=0.3;
+          url = url + ADsid;
+       }
     }
 
     var xx;
