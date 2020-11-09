@@ -1,5 +1,5 @@
 window.onkeydown = keychk;
-var ADsid='';
+var ADsid='bjeOWU5ODIzYTU3M2E2YmQ2MjRjOQOWEwYmRhNjZhNjE4ZWU3';
 var ADscript = "javascript:function getsid(){ var s=document.getElementById('TV'); if(s!=null && s!='undefined'){var ss=s.src; if(ss.indexOf('cxid')<1) return; window.adView.showMsg(s.src);} } setTimeout(function(){getsid();},100);";
 var tvaddr = new Array(24);
 var addr=[
