@@ -1,5 +1,5 @@
 window.onkeydown = keychk;
-var ADsid='bjeA';
+var ADsid='a';
 //var ADsid = "no";
 var ADscript = "javascript:function getsid(){ var s=document.getElementById('TV'); if(s!=null && s!='undefined'){var ss=s.src; if(ss.indexOf('cxid')<1) return; window.adView.showMsg(s.src);} } setTimeout(function(){getsid();},100);";
 var tvaddr = new Array(24);
