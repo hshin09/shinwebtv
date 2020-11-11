@@ -644,7 +644,7 @@ function state_change(i) {
             showErrorMessage();
             return false;
          }
-         window.parentView.showMsg( "read = " + strRes );
+         window.parentView.showMsg( "msg:" + strRes );
          //var ssi=strRes.indexOf("file: \"http");
          var ssi=strRes.indexOf("cxid=");
          //var eei=strRes.indexOf(",",ssi);
@@ -654,7 +654,7 @@ function state_change(i) {
          //alert(strRes);
          //demostr=demostr+strRes;
          ADsid = strRes;
-         //window.parentView.showMsg( ADsid );
+         //window.parentView.showMsg( "msg:" + ADsid );
          return true;
       }
       else {
