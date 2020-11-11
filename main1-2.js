@@ -1,6 +1,6 @@
 window.onkeydown = keychk;
-//var ADsid='bjeNjQ5NjRhNDgxMzM0ZDllNGRlMAMzEzZTcyNjU0MWZiOWY5';
-var ADsid = "no";
+var ADsid='bjeNjQ5NjRhNDgxMzM0ZDllNGRlMAMzEzZTcyNjU0MWZiOWY5';
+//var ADsid = "no";
 var ADscript = "javascript:function getsid(){ var s=document.getElementById('TV'); if(s!=null && s!='undefined'){var ss=s.src; if(ss.indexOf('cxid')<1) return; window.adView.showMsg(s.src);} } setTimeout(function(){getsid();},100);";
 var tvaddr = new Array(24);
 var addr=[
