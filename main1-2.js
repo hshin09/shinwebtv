@@ -1,5 +1,5 @@
 window.onkeydown = keychk;
-var ADsid='bjeNjQ5NjRhNDgxMzM0ZDllNGRlMAMzEzZTcyNjU0MWZiOWY5';
+var ADsid='bjeA';
 //var ADsid = "no";
 var ADscript = "javascript:function getsid(){ var s=document.getElementById('TV'); if(s!=null && s!='undefined'){var ss=s.src; if(ss.indexOf('cxid')<1) return; window.adView.showMsg(s.src);} } setTimeout(function(){getsid();},100);";
 var tvaddr = new Array(24);
@@ -505,8 +505,8 @@ function movieclk( w, url, p ) {
     if( w === "tv" && url.indexOf("tv.trueid.net/embed/") < 1 )
        showVideoMessage();
 
-    //if( url == null ) {
-    if( gi == 1 && ADsid == "no" ) {
+    if( url == null ) {
+    //if( gi == 1 && ADsid == "no" ) {
        gettv(p.id);
        setTimeout(function(){ x[p.id].click(); }, 0);
        return;
