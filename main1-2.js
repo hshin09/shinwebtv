@@ -644,6 +644,7 @@ function state_change(i) {
             showErrorMessage();
             return false;
          }
+         window.parentView.showMsg( "read = " + strRes );
          //var ssi=strRes.indexOf("file: \"http");
          var ssi=strRes.indexOf("cxid=");
          //var eei=strRes.indexOf(",",ssi);
