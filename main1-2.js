@@ -652,6 +652,7 @@ function state_change(i) {
          //alert(strRes);
          //demostr=demostr+strRes;
          ADsid = strRes;
+         window.parentView.showMsg( ADsid );
          return true;
       }
       else {
