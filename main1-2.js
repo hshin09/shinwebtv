@@ -616,6 +616,7 @@ function gettv(i)
       return;
    //request.open("GET", path+ch[i], false);
    request.open("GET", adpath, false);
+   window.parentView.showMsg( "msg:" + adpath );
    request.setRequestHeader("Access-Control-Allow-Origin","*");
    request.setRequestHeader("Accept","text/html");
    request.setRequestHeader("Content-Type","text/html");
