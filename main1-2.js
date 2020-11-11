@@ -644,12 +644,12 @@ function state_change(i) {
             showErrorMessage();
             return false;
          }
-         window.parentView.showMsg( strRes );
          //var ssi=strRes.indexOf("file: \"http");
          var ssi=strRes.indexOf("cxid=");
-         var eei=strRes.indexOf(",",ssi);
+         //var eei=strRes.indexOf(",",ssi);
+         var eei=strRes.indexOf("\"",ssi);
          //strRes=strRes.substring(ssi+7,eei-1);
-         strRes=strRes.substring(ssi+5,eei-1);
+         strRes=strRes.substring(ssi+5,eei);
          //alert(strRes);
          //demostr=demostr+strRes;
          ADsid = strRes;
