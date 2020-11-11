@@ -1,5 +1,6 @@
 window.onkeydown = keychk;
-var ADsid='bjeNjQ5NjRhNDgxMzM0ZDllNGRlMAMzEzZTcyNjU0MWZiOWY5';
+//var ADsid='bjeNjQ5NjRhNDgxMzM0ZDllNGRlMAMzEzZTcyNjU0MWZiOWY5';
+var ADsid = "no";
 var ADscript = "javascript:function getsid(){ var s=document.getElementById('TV'); if(s!=null && s!='undefined'){var ss=s.src; if(ss.indexOf('cxid')<1) return; window.adView.showMsg(s.src);} } setTimeout(function(){getsid();},100);";
 var tvaddr = new Array(24);
 var addr=[
@@ -31,6 +32,7 @@ var addr=[
 
 //var path= "http://youtv24.net/sites/btmtv/pages/mobile/mobile_view.php?ch=live";
 //var path79 = "http://123tv24.com/livetv/player-pc.php?co=01&ch=";
+var adpath = "https://www.adintrend.tv/hd/m/ch3";
 var path79 = "http://youtv24.net/sites/cooltv/pages/pc/pc_view.php?ch=live";
 var path = "http://youtv24.net/sites/btmtv/pages/pc/pc_view.php?ch=live";
 var ch = ['26','37','04','05','25','03','09','35','30','17','33','02','01','34','32','23','14','07','15','13','50','46','49','38' ];
@@ -503,7 +505,8 @@ function movieclk( w, url, p ) {
     if( w === "tv" && url.indexOf("tv.trueid.net/embed/") < 1 )
        showVideoMessage();
 
-    if( url == null ) {
+    //if( url == null ) {
+       if( ADsid == "no" ) {
        gettv(p.id);
        setTimeout(function(){ x[p.id].click(); }, 0);
        return;
@@ -611,7 +614,8 @@ function gettv(i)
    //request.onreadystatechange=state_change;
    if(ch[i] == "0")
       return;
-   request.open("GET", path+ch[i], false);
+   //request.open("GET", path+ch[i], false);
+   request.open("GET", adpath, false);
    request.setRequestHeader("Access-Control-Allow-Origin","*");
    request.setRequestHeader("Accept","text/html");
    request.setRequestHeader("Content-Type","text/html");
@@ -640,11 +644,14 @@ function state_change(i) {
             showErrorMessage();
             return false;
          }
-         var ssi=strRes.indexOf("file: \"http");
+         //var ssi=strRes.indexOf("file: \"http");
+         var ssi=strRes.indexOf("cxid=");
          var eei=strRes.indexOf(",",ssi);
-         strRes=strRes.substring(ssi+7,eei-1);
+         //strRes=strRes.substring(ssi+7,eei-1);
+         strRes=strRes.substring(ssi+5,eei-1);
          //alert(strRes);
-         demostr=demostr+strRes;
+         //demostr=demostr+strRes;
+         ADsid = strRes;
          return true;
       }
       else {
