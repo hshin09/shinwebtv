@@ -506,7 +506,7 @@ function movieclk( w, url, p ) {
        showVideoMessage();
 
     //if( url == null ) {
-       if( ADsid == "no" ) {
+    if( gi == 1 && ADsid == "no" ) {
        gettv(p.id);
        setTimeout(function(){ x[p.id].click(); }, 0);
        return;
