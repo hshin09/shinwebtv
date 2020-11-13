@@ -1,1 +1,31 @@
-<!DOCTYPE html><html lang="ko"><head>    <meta charset="UTF-8">    <title>영상</title>    <meta http-equiv="x-ua-compatible" content="ie=edge">    <meta http-equiv="content-type" content="text/html;charset=utf-8">    <meta name="robots" content="noindex,nofollow">    <script>        var isInIFrame = (window.location != window.parent.location);        if (isInIFrame == false) {            location.href = "http://" + document.domain;        }    </script>    <style>        body {            margin: 0;        }    </style></head><body><img src='https://www.pickcom.co.kr/liveedge/live38/image.gif' style='display:none;' width='1' height='1'><div id="player"></div><script src="./../../assets/js/jquery.min.js"></script><script src="https://cdn.jwplayer.com/libraries/If8OwvrW.js"></script><script>    (function ($) {//        $.support.cors = true;        $(document).ready(function () {            var player = jwplayer("player");            player.setup({                sources: [{                file: "https://www.pickcom.co.kr/liveedge/live38/playlist.m3u8?site=mstvs&ch=live38&pm=P&wowzatokenstarttime=1605230914&wowzatokenendtime=1605241714&wowzatokenCustomParameter=live38&wowzatokenhash=vyOUpuTl8n9hu3BDwsVUFD0ht9-5IjthH_Ofv3_TsAo=",                }],                width: "100%",				                image: "../../assets/images/background.jpg?0.000037",                                stretching: "exactfit",                primary: "flash",                hlshtml: true,				aspectratio: "16:9",                autostart:                false                                            }).on("ready", function () {                if ($(window.parent.document).find("#player" + "").length !== 0) {                    $(window.parent.document).find("#player" + "").closest(".stream_box").height(document.body.scrollHeight);                }            }).on("error", function (event) {                if (event.message === "Error loading media: File could not be played" || event.message === "Cannot load M3U8: You do not have permission to access this content") {                    $(".jw-title .jw-title-primary").text("★로그인 또는 새로고침을 해주세요.★").css({                        "text-align": "center",                        "font-size": "30px"                    })                }            });        });    })(jQuery);</script></body></html>
+<!DOCTYPE html>
+<html lang="ko">
+<head>    
+<meta charset="UTF-8">    
+<title>영상</title>    
+<meta http-equiv="x-ua-compatible" content="ie=edge">    
+<meta http-equiv="content-type" content="text/html;charset=utf-8">    
+<meta name="robots" content="noindex,nofollow">    
+<script>        
+var isInIFrame = (window.location != window.parent.location);        
+if (isInIFrame == false) {            
+location.href = "http://" + document.domain;        
+}    
+</script>    
+<style>        
+body {            margin: 0;        }    
+</style>
+</head>
+<body>
+<img src='https://www.pickcom.co.kr/liveedge/live38/image.gif' style='display:none;' width='1' height='1'>
+<div id="player">
+</div>
+<script src="./../../assets/js/jquery.min.js">
+</script>
+<script src="https://cdn.jwplayer.com/libraries/If8OwvrW.js"></script>
+<script>    
+(function ($) {
+//        $.support.cors = true;        
+$(document).ready(function () {            
+var player = jwplayer("player");           
+player.setup({                sources: [{                file: "https://www.pickcom.co.kr/liveedge/live38/playlist.m3u8?site=mstvs&ch=live38&pm=P&wowzatokenstarttime=1605230914&wowzatokenendtime=1605241714&wowzatokenCustomParameter=live38&wowzatokenhash=vyOUpuTl8n9hu3BDwsVUFD0ht9-5IjthH_Ofv3_TsAo=",                }],                width: "100%",				                image: "../../assets/images/background.jpg?0.000037",                                stretching: "exactfit",                primary: "flash",                hlshtml: true,				aspectratio: "16:9",                autostart:                false                                            }).on("ready", function () {                if ($(window.parent.document).find("#player" + "").length !== 0) {                    $(window.parent.document).find("#player" + "").closest(".stream_box").height(document.body.scrollHeight);                }            }).on("error", function (event) {                if (event.message === "Error loading media: File could not be played" || event.message === "Cannot load M3U8: You do not have permission to access this content") {                    $(".jw-title .jw-title-primary").text("★로그인 또는 새로고침을 해주세요.★").css({                        "text-align": "center",                        "font-size": "30px"                    })                }            });        });    })(jQuery);</script></body></html>
