@@ -522,11 +522,11 @@ function movieclk( w, url, p ) {
     if( gi==1 && p.id > 18 )
     {
       stv.volume=0.2;
-      if( p.id == 21 )
+      if( p.id == 19 || p.id == 21 )
          stv.volume=0.4;
       else if( p.id == 22 )
          stv.volume=0.3;
-      else if( p.id == 19 || p.id == 23 )
+      else if( p.id == 23 )
          stv.volume=0.3;
     }
     //else if( gi==1 && p.id == 3 )
