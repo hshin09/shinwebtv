@@ -519,7 +519,7 @@ function movieclk( w, url, p ) {
     }
 
     stv.volume=1;
-    if( gi==1 && p.id > 19 )
+    if( gi==1 && p.id > 18 )
     {
       stv.volume=0.2;
       if( p.id == 21 )
