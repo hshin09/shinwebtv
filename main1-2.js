@@ -48,10 +48,10 @@ var timer=null;
 var time=0;
 var trans=100;
 var mustabout = 0;
-var timeSetTV = 500;
+var timeSetTV = 1000;
 var mustWait = 0;
 var lastTrueCh = "";
-var myshtv = 1;
+var myshtv = 0;
 
 var web;
 var stv;
@@ -165,7 +165,7 @@ function OnOff()
     {
         $('#secMessage').css('display', 'none');
         if( mustabout ) {
-           window.parentView.showMsg( "hiddenView:loadTV('http://youtv24.net/sites/')" );
+           //window.parentView.showMsg( "hiddenView:loadTV('http://youtv24.net/sites/')" );
            mustWait = 0;
            mustabout = 0;
         }
