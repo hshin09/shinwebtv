@@ -61,7 +61,7 @@ var msgGetCh="채널리스트 구성중";
 var oldCurrentTime=0;
 
 $('document').ready(function() {
-    if( myshtv == 1 )
+    if( myshtv == 0 )
        $('#menu0').load("https://hshin09.github.io/shinwebtv/kor2.html");
     else
        $('#menu0').load("https://hshin09.github.io/shinwebtv/myshtv.html");
@@ -368,14 +368,14 @@ function keychk(e) {
 	else if(e.which == 48 ) {
 	      $('#menu1').load("https://hshin09.github.io/shinwebtv/thai.html");
               if(gi==1)
-                 setTimeout(function(){ mlok(); }, 500);
+                 setTimeout(function(){ mlok(); }, 700);
 	}
 	else if(e.which == 49 ) {
-	      if( ei==10 && si==12 ) {
+	      //if( ei==10 && si==12 ) {
 		$('#menu1').load("https://hshin09.github.io/shinwebtv/svideo.html");
                 if(gi==1)
-                   setTimeout(function(){ mlok(); }, 500);
-	      }
+                   setTimeout(function(){ mlok(); }, 700);
+	      //}
 	}
         else if(e.which == 50 || e.which == 55 ) {
                showTime();
