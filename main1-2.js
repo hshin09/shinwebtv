@@ -48,7 +48,7 @@ var timer=null;
 var time=0;
 var trans=100;
 var mustabout = 0;
-var timeSetTV = 1000;
+var timeSetTV = 800;
 var mustWait = 0;
 var lastTrueCh = "";
 var myshtv = 0;
@@ -145,7 +145,7 @@ function OnOff()
              //window.parentView.showMsg( "msg:채널을 리로딩중입니다:"+isNotUser);
              mustWait = 3;
              mustabout = 1;
-             timeSetTV = 1000;
+             timeSetTV = 800;
              clearAddress(addr[ei][addr[ei][6]]);
           }
           isNotUser++;
