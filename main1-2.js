@@ -141,7 +141,7 @@ function OnOff()
        if(isNotUser<3) {
           if( gi == 0 && myshtv == 0 )
           {
-             window.parentView.showMsg( "hiddenView:loadTV('" + path + ch[ei] + "')" );
+             //window.parentView.showMsg( "hiddenView:loadTV('" + path + ch[ei] + "')" );
              //window.parentView.showMsg( "msg:채널을 리로딩중입니다:"+isNotUser);
              mustWait = 3;
              mustabout = 1;
@@ -243,6 +243,7 @@ function showTime()
 
 function get79tv(i) 
 {
+   window.parentView.showMsg( "hiddenView:loadTV('" + path + ch[i] + "')" );
    mustWait = 3;
    //window.parentView.showMsg("79:"+path79+ch[i]);
    window.parentView.showMsg("hiddenView:gettv('"+path79+ch[i]+"')");
