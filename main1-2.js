@@ -138,7 +138,7 @@ function OnOff()
           $("#er_msg").text( "채널을 가져올수 없음(네트워크 또는 서버 에러)-Timer" );
           showErrorMessage();
        }
-       if(isNotUser<2) {
+       if(isNotUser<3) {
           if( gi == 0 && myshtv == 0 )
           {
              window.parentView.showMsg( "hiddenView:loadTV('" + path + ch[ei] + "')" );
