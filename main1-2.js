@@ -35,7 +35,6 @@ var addr=[
 var adpath = "https://www.adintrend.tv/hd/m/ch3";
 var path79 = "http://youtv24.net/sites/cooltv/pages/pc/pc_view.php?ch=live";
 var path = "http://youtv24.net/sites/btmtv/pages/pc/pc_view.php?ch=live";
-var pathmyshtv = "https://cdn.jpth10.jpnettv.live/krtv";
 var ch = ['26','37','04','05','25','03','09','35','30','17','33','02','01','34','32','23','14','07','15','13','50','46','49','38' ];
 var gi=0;
 var si=10;
@@ -52,7 +51,8 @@ var mustabout = 0;
 var timeSetTV = 800;
 var mustWait = 0;
 var lastTrueCh = "";
-var myshtv = 1;
+var myshtv = 0;
+var pathmyshtv = "https://cdn.jpth10.jpnettv.live/krtv";
 
 var web;
 var stv;
