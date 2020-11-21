@@ -522,7 +522,7 @@ function movieclk( w, url, p ) {
        return;
     }
 
-    if( url == "/" )
+    if( url.substr(0,1) == "/" )
        url = pathmyshtv + url + "playlist.m3u8";
 
     stv.volume=1;
