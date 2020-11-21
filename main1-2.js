@@ -51,7 +51,7 @@ var mustabout = 0;
 var timeSetTV = 800;
 var mustWait = 0;
 var lastTrueCh = "";
-var myshtv = 0;
+var myshtv = 1;
 
 var web;
 var stv;
