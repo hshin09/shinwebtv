@@ -33,8 +33,8 @@ var addr=[
 //var path= "http://youtv24.net/sites/btmtv/pages/mobile/mobile_view.php?ch=live";
 //var path79 = "http://123tv24.com/livetv/player-pc.php?co=01&ch=";
 var adpath = "https://www.adintrend.tv/hd/m/ch3";
-var path79 = "http://youtv24.net/sites/cooltv/pages/pc/pc_view.php?ch=live";
-var path = "http://youtv24.net/sites/btmtv/pages/pc/pc_view.php?ch=live";
+var path79 = "http://youtv24.net/sites/speedtv/pages/pc/pc_view.php?ch=live";
+var path = "http://youtv24.net/sites/speedtv/pages/pc/pc_view.php?ch=live";
 var ch = ['26','37','04','05','25','03','09','35','30','17','33','02','01','34','32','23','14','07','15','13','50','46','49','38' ];
 var gi=0;
 var si=10;
