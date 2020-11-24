@@ -84,7 +84,6 @@ function movieclk( w, url, p ) {
        }
     }
     */
-    alert(url);
     web.src = url;
 }
 
@@ -504,7 +503,7 @@ function init() {
    loadMenu('menu0','https://hshin09.github.io/shinwebtv/kor2.html');
    loadMenu('menu1','https://hshin09.github.io/shinwebtv/thai.html');
    web = document.getElementById('web');
-   web.src = 'http://youtv24.net/sites/speedtv/pages/pc/pc_view.php?ch=live38&start=on';
+   //web.src = 'http://youtv24.net/sites/speedtv/pages/pc/pc_view.php?ch=live38&start=on';
 }
 
 init();
