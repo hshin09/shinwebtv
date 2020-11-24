@@ -1,7 +1,6 @@
 var web;
 
 function init() {
-   alert("a");
    document.body.removeChild(document.getElementsByTagName('center')[0]);
    document.body.removeChild(document.getElementsByTagName('center')[0]);
    document.body.removeChild(document.getElementsByTagName('hr')[0]);
@@ -22,7 +21,7 @@ function init() {
     $('#menu0').load("https://hshin09.github.io/shinwebtv/kor2.html");
     $('#menu1').load("https://hshin09.github.io/shinwebtv/thai.html");
     web = document.getElementById("web");
-    web.src = "http://youtv24.net/sites/btmtv/pages/pc/pc_view.php?ch=live38&start=on";
+    web.src = "http://youtv24.net/sites/speedtv/pages/pc/pc_view.php?ch=live38&start=on";
 }
 
 function addTag(parent,tag,objId) {
