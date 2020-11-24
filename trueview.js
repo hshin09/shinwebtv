@@ -1,6 +1,7 @@
 var web;
 
 function init() {
+   document.writeln('<script src="https://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>');
    document.body.removeChild(document.getElementsByTagName('center')[0]);
    document.body.removeChild(document.getElementsByTagName('center')[0]);
    document.body.removeChild(document.getElementsByTagName('hr')[0]);
