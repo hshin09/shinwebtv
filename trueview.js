@@ -267,7 +267,7 @@ var cnt;
 function mlok() {
    xx=document.getElementById("ml"+gi).getElementsByTagName("li");
    cnt=xx.length;
-alert(cnt);
+
    var i;
    for(i=0; i<cnt; i++) {
       xx[i].id=i;
