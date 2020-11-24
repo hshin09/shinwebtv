@@ -51,7 +51,6 @@ var myshtv = 0;
 var pathmyshtv = "https://cdn.jpth10.jpnettv.live/krtv";
 
 function webtvmain() {
-   alert("webtvmain");
    for(var i=0; i<tvaddr.length; i++)
       tvaddr[i]=addr[i][2];
 
@@ -61,7 +60,7 @@ function webtvmain() {
 function OnOff()
 {
    if( !isChLoaded )
-    {
+   {
       /*
       $('#secMessage').css('display', 'block');
       msgGetCh = msgGetCh + ".";
@@ -190,28 +189,31 @@ function keychk(e) {
       		onok();
 	}
 	else if(e.which == 48 ) {
+              /*
 	      $('#menu1').load("https://hshin09.github.io/shinwebtv/thai.html");
               if(gi==1)
                  setTimeout(function(){ mlok(); }, 700);
+              */
 	}
 	else if(e.which == 49 ) {
-	      //if( ei==10 && si==12 ) {
+	      /*
 		$('#menu1').load("https://hshin09.github.io/shinwebtv/svideo.html");
                 if(gi==1)
                    setTimeout(function(){ mlok(); }, 700);
-	      //}
+              */
 	}
         else if(e.which == 50 || e.which == 55 ) {
                showTime();
         } 
         else if(e.which == 53 ) {
-               window.parentView.showMsg("launchApp:com.google.android.youtube.tv");
+               //window.parentView.showMsg("launchApp:com.google.android.youtube.tv");
 	} 
         else if(e.which == 54 ) {
                //window.parentView.showMsg("launchApp:com.android.chrome");
-               window.parentView.showMsg("launchApp:com.opera.browser.beta");
+               //window.parentView.showMsg("launchApp:com.opera.browser.beta");
 	} 
         else if(e.which == 56 ) {
+              /*
               if(myshtv == 1) {
                  $('#menu0').load("https://hshin09.github.io/shinwebtv/kor2.html");
                  myshtv = 0;
@@ -222,11 +224,14 @@ function keychk(e) {
               }
               if(gi == 0)
                  setTimeout(function(){ mlok(); }, 500);
+              */
 	}
         else if(e.which == 57 ) {
+              /*
 	      $('#menu1').load("https://hshin09.github.io/shinwebtv/thai_old.html");
               if(gi==1)
                  setTimeout(function(){ mlok(); }, 500);
+              */
 	}
 	e.preventDefault();
 }
@@ -417,7 +422,6 @@ function videoErr(e)
        break;
    }
 }
-
 
 function addFrame(objId) {
 	var iFrm = document.createElement('iframe');
