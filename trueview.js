@@ -29,7 +29,7 @@ var addr=[
   ["MNet","MNet","79","/mnet_540/",2]
 ];
 
-var path = "http://youtv24.net/sites/speedtv/pages/pc/pc_view.php?ch=live";
+var path = "http://youtv24.net/sites/btmtv/pages/pc/pc_view.php?ch=live";
 var ch = ['26','37','04','05','25','03','09','35','30','17','33','02','01','34','32','23','14','07','15','13','50','46','49','38' ];
 var gi=0;
 var si=10;
