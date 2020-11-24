@@ -21,7 +21,7 @@ function addTag(parent,tag,objId) {
    return iTag;
 }
 */
-window.onload = function() {
+function init() {
    document.body.removeChild(document.getElementsByTagName('center')[0]);
    document.body.removeChild(document.getElementsByTagName('center')[0]);
    document.body.removeChild(document.getElementsByTagName('hr')[0]);
@@ -49,3 +49,5 @@ window.onload = function() {
    web.src = "http://youtv24.net/sites/speedtv/pages/pc/pc_view.php?ch=live38&start=on";
 */
 }
+
+init();
