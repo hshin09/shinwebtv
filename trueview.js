@@ -5,11 +5,11 @@ function init() {
    document.body.removeChild(document.getElementsByTagName('center')[0]);
    document.body.removeChild(document.getElementsByTagName('hr')[0]);
 
-   var p = addTag(null,'div','left');
+   var p = addTag('','div','left');
    var a = addTag(p,'div','menu0');
    a = addTag(p,'div','menu1');
 
-   p = addTag(null,'div','myid');
+   p = addTag('','div','myid');
    a = addTag(p,'iframe','web');
    a.setAttribute('frameborder','0');
    a.setAttribute('border','0');
@@ -27,10 +27,10 @@ function init() {
 function addTag(parent,tag,objId) {
    var iTag = document.createElement(tag);
    iTag.setAttribute('id', objId);
-   if(parent)
-      parent.appendChild(iTag);
-   else
+   if(parent == '')
       document.body.appendChild(iTag);
+   else
+      parent.appendChild(iTag);
    
    return iTag;
 }
