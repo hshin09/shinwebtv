@@ -2,6 +2,7 @@ var web;
 
 window.onload = function()
 {
+   alert("a");
    document.getElementsByTagName('center')[0].remove();
    document.getElementsByTagName('center')[0].remove();
    document.getElementsByTagName('hr')[0].remove();
