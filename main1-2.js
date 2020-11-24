@@ -387,11 +387,11 @@ function keychk(e) {
         }
         else if(e.which == 51) {
            if( youtv24 == 0 ) {
-              window.parentView.showMsg("showTrueView");
+              //window.parentView.showMsg("showTrueView");
               youtv24 = 1;
            }
            else {
-              window.parentView.showMsg("hideTrueView");
+              //window.parentView.showMsg("hideTrueView");
               youtv24 = 0;
            }
         }
