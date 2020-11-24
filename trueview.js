@@ -103,25 +103,25 @@ function showTime()
 }
 
 function onup() {
-	if(oi>-1) x[oi].style="background-color:#252525";
-	if(ei>-1) x[ei].style="color:yellow";
+	if(oi>-1) xx[oi].style="background-color:#252525";
+	if(ei>-1) xx[ei].style="color:yellow";
 	si--;
 	//if(full && gi==0 && si==10) si--;
 	if(si<0) si+=cnt;
-	x[si].style="background-color:#234567";
-	if(si==ei) x[si].style="background-color:#234567;color:yellow";
+	xx[si].style="background-color:#234567";
+	if(si==ei) xx[si].style="background-color:#234567;color:yellow";
 	oi=si;
 	if(full) xx[si].click();
 }
 
 function ondown() {
-	if(oi>-1) x[oi].style="background-color:#252525";
-	if(ei>-1) x[ei].style="color:yellow";
+	if(oi>-1) xx[oi].style="background-color:#252525";
+	if(ei>-1) xx[ei].style="color:yellow";
 	si++;
 	//if(full && gi==0 && si==10) si++;
 	if(si>=cnt) si-=cnt;
-	x[si].style="background-color:#234567";
-	if(si==ei) x[si].style="background-color:#234567;color:yellow";
+	xx[si].style="background-color:#234567";
+	if(si==ei) xx[si].style="background-color:#234567;color:yellow";
 	oi=si;
 	if(full) xx[si].click();
 }
@@ -165,7 +165,7 @@ function change() {
 	ei=aei[gi];
 	oi=aoi[gi];
 
-	if(si>-1) x[si].style="background-color:#234567";
+	if(si>-1) xx[si].style="background-color:#234567";
 	if(ei>-1) {
 		if(si==ei)
 			 xx[si].style="background-color:#234567;color:yellow";
@@ -359,7 +359,7 @@ function movieclk( w, url, p ) {
        }
     }
     */
-    alert(url);
+    alret(url);
     web.setAttribute( "src",  url );
 }
 
