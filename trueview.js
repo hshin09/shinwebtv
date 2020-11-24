@@ -61,8 +61,10 @@ function movieclk( w, url, p ) {
 
     if( url.substr(0,1) == "/" )
        url = pathmyshtv + url + "playlist.m3u8";
-    if( url == "79" )
+    else if( url == "79" )
        url = path + ch[ p.id ] + "&start=on";
+    else if( url.indexOf("p1.cdn.vet") > 0 )
+       url = url + ADsid;
     /*
     stv.volume=1;
     if( gi==1 && p.id > 18 )
