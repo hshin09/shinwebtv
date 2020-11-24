@@ -48,7 +48,7 @@ var isChLoaded = 0;
 var myshtv = 0;
 var pathmyshtv = "https://cdn.jpth10.jpnettv.live/krtv";
 
-window.onload = function() {
+function webtvmain() {
    for(var i=0; i<tvaddr.length; i++)
       tvaddr[i]=addr[i][2];
 
@@ -60,9 +60,11 @@ function OnOff()
 {
    if( !isChLoaded )
     {
+      /*
       $('#secMessage').css('display', 'block');
       msgGetCh = msgGetCh + ".";
       $('#sec').text( msgGetCh );
+      */
       x=document.getElementById("ml"+gi).getElementsByTagName("li");
       if( x.length==tvaddr.length )
       {
