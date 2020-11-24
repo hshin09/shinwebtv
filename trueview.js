@@ -57,6 +57,7 @@ function webtvmain() {
    timer = setInterval( function() { OnOff(); }, 500 );
 }
 
+var x;
 function OnOff()
 {
    if( !isChLoaded )
@@ -94,9 +95,11 @@ function showTime()
       sctime += "0";
    sctime += dt.getMinutes();
 
+   /*
    $('#ch_name').text( sctime );
    $("#videoMessage").css('display', 'block');
    setTimeout( function(){$("#videoMessage").css('display', 'none');}, 3000 );
+   */
 }
 
 function onup() {
@@ -260,7 +263,6 @@ function onok() {
   x[si].click();
 }
 
-var x;
 var cnt;
 function mlok() {
    x=document.getElementById("ml"+gi).getElementsByTagName("li");
