@@ -389,7 +389,7 @@ function keychk(e) {
         else if(e.which == 50 || e.which == 55 ) {
                showTime();
         }
-        else if(e.which == 51) {
+        else if(e.which == 51 ) {
            /*if( youtv24 == 0 ) {
               window.parentView.showMsg("showTrueView");
               youtv24 = 1;
