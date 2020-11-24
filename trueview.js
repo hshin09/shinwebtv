@@ -336,7 +336,7 @@ function movieclk( w, url, p ) {
        url = pathmyshtv + url + "playlist.m3u8";
     if( url == "79" )
        url = path + ch[ p.id ] + "&start=on";
-
+    /*
     stv.volume=1;
     if( gi==1 && p.id > 18 )
     {
@@ -356,7 +356,8 @@ function movieclk( w, url, p ) {
           url = url + ADsid;
        }
     }
-
+    */
+    alert(url);
     web.setAttribute( "src",  url );
 }
 
