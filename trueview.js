@@ -1,3 +1,4 @@
+var web;
 
 window.onload = function()
 {
@@ -17,6 +18,11 @@ window.onload = function()
    a.setAttribute('height','100%');
    a = addTag(p,'div','videoMessage');
    addTag(a.'p','ch_name');
+
+    $('#menu0').load("https://hshin09.github.io/shinwebtv/kor2.html");
+    $('#menu1').load("https://hshin09.github.io/shinwebtv/thai.html");
+    web = document.getElementById("web");
+    web.src = "http://youtv24.net/sites/btmtv/pages/pc/pc_view.php?ch=live38&start=on";
 }
 
 function addTag(parent,tag,objId) {
