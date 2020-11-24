@@ -8,12 +8,12 @@ var addr=[
   ["JTBC Golf","JTBC Golf","79","/jtbc_golf_720/",2],
   ["OCN Movies","OCN Movies","79","/cgv_540/",2],
   ["OCN Original","OCN Original","79","/ocn_540/",2],
-  ["중화 TV","영화 Screen","79","/chinesetv_540/",2],
+  ["영화 Screen","중화 TV","79","/chinesetv_540/",2],
   ["OCN Thrills","OCN Thrills","79","/super_action_540/",2],
-  ["Billiards TV","Catch ON 1","79","/billiardstv_540/",2],
-  ["EBS1","Catch ON 2","79","/ebs1_540/",2],
-  ["CNN","The Movie","79","/cnn_kr_540/",2],
-  ["BBC","FOX","79","/bbc_kr_540/",2],
+  ["Catch ON 1","Billiards TV","79","/billiardstv_540/",2],
+  ["Catch ON 2","EBS1","79","/ebs1_540/",2],
+  ["The Movie","CNN","79","/cnn_kr_540/",2],
+  ["FOX","BBC","79","/bbc_kr_540/",2],
   ["TV 조선 뉴스","TV 조선 뉴스","79","/tvchosun_720/",2],
   ["채널 A 뉴스","채널 A 뉴스","79","/channela_720/",2],
   ["JTBC 뉴스","JTBC 뉴스","79","/jtbc_540/",2],
@@ -26,7 +26,7 @@ var addr=[
   ["KBS2 TV","KBS2 TV","79","/kbs2_720/",2],
   ["GeoGraphic","GeoGraphic","79","/national_540/",2],
   ["Discovery","Discovery","79","/discovery_540/",2],
-  ["SpoTV2","History","79","/spotv_2_720/",2],
+  ["History","SpoTV2","79","/spotv_2_720/",2],
   ["MNet","MNet","79","/mnet_540/",2]
 ];
 
@@ -56,8 +56,7 @@ function webtvmain() {
       tvaddr[i]=addr[i][2];
 
    timer = setInterval( function() { OnOff(); }, 500 );
-});
-
+}
 
 function OnOff()
 {
