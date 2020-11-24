@@ -47,6 +47,7 @@ var mustabout = 0;
 var timeSetTV = 800;
 var mustWait = 0;
 var isChLoaded = 0;
+var xx;
 var myshtv = 0;
 var pathmyshtv = "https://cdn.jpth10.jpnettv.live/krtv";
 
@@ -57,7 +58,6 @@ function webtvmain() {
    timer = setInterval( function() { OnOff(); }, 500 );
 }
 
-var x;
 function OnOff()
 {
    if( !isChLoaded )
@@ -67,10 +67,10 @@ function OnOff()
       msgGetCh = msgGetCh + ".";
       $('#sec').text( msgGetCh );
       */
-      x=document.getElementById("ml"+gi).getElementsByTagName("li");
-      if( x.length==tvaddr.length )
+      xx=document.getElementById("ml"+gi).getElementsByTagName("li");
+      if( xx.length==tvaddr.length )
       {
-          trans=x.length*screen.height*0.041;
+          trans=xx.length*screen.height*0.041;
           if(timer) {
             clearInterval(timer);
             timer=null;
@@ -111,7 +111,7 @@ function onup() {
 	x[si].style="background-color:#234567";
 	if(si==ei) x[si].style="background-color:#234567;color:yellow";
 	oi=si;
-	if(full) x[si].click();
+	if(full) xx[si].click();
 }
 
 function ondown() {
@@ -123,7 +123,7 @@ function ondown() {
 	x[si].style="background-color:#234567";
 	if(si==ei) x[si].style="background-color:#234567;color:yellow";
 	oi=si;
-	if(full) x[si].click();
+	if(full) xx[si].click();
 }
 
 function onleft() {
@@ -134,7 +134,7 @@ function onleft() {
 		}
 		onFullscreenOnOff();
 	}
-	else if(si>-1) x[si].click();
+	else if(si>-1) xx[si].click();
 }
 
 function onright() {
@@ -168,9 +168,9 @@ function change() {
 	if(si>-1) x[si].style="background-color:#234567";
 	if(ei>-1) {
 		if(si==ei)
-			 x[si].style="background-color:#234567;color:yellow";
+			 xx[si].style="background-color:#234567;color:yellow";
 		else
-			 x[ei].style="background-color:#252525;color:yellow";
+			 xx[ei].style="background-color:#252525;color:yellow";
 	}
   //window.parentView.showMsg("00");
 }
@@ -250,26 +250,26 @@ function onok() {
       i_ch=2;
     tvaddr[si]=addr[si][i_ch];
 
-    x[si].innerHTML=addr[si][i_ch-2];
+    xx[si].innerHTML=addr[si][i_ch-2];
 
     addr[si][4]=i_ch;
     /*
     if(i_ch==2)
       window.parentView.showMsg("msg:기본서버("+x[si].innerHTML+") 로 이동합니다");
     else
-      window.parentView.showMsg("msg:"+(i_ch-2)+"번 보조서버("+x[si].innerHTML+") 로 이동합니다");
+      window.parentView.showMsg("msg:"+(i_ch-2)+"번 보조서버("+xx[si].innerHTML+") 로 이동합니다");
     */
   }
-  x[si].click();
+  xx[si].click();
 }
 
 var cnt;
 function mlok() {
-   x=document.getElementById("ml"+gi).getElementsByTagName("li");
-   cnt=x.length;
+   xx=document.getElementById("ml"+gi).getElementsByTagName("li");
+   cnt=xx.length;
    var i;
    for(i=0; i<cnt; i++) {
-      x[i].id=i;
+      xx[i].id=i;
    }
    if(ei>-1) {
       si=ei;
@@ -326,10 +326,10 @@ function movieclk( w, url, p ) {
     oldCurrentTime=0;
     stv.pause();
 
-    if(oi>-1) x[oi].style="background-color:#252525;";
-    if(ei>-1) x[ei].style="background-color:#252525";
+    if(oi>-1) xx[oi].style="background-color:#252525;";
+    if(ei>-1) xx[ei].style="background-color:#252525";
     si=ei=p.id;
-    x[ei].style="background-color:#234567;color:yellow";
+    xx[ei].style="background-color:#234567;color:yellow";
     oi=si;
     if( w === "tv" && url.indexOf("tv.trueid.net/embed/") < 1 )
        showVideoMessage();
