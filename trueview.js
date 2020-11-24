@@ -1,5 +1,4 @@
 var web;
-
 window.onkeydown = keychk;
 var ADsid='a';
 var tvaddr = new Array(24);
@@ -57,8 +56,8 @@ function movieclk( w, url, p ) {
     si=ei=p.id;
     xx[ei].style="background-color:#234567;color:yellow";
     oi=si;
-    if( w === "tv" && url.indexOf("tv.trueid.net/embed/") < 1 )
-       showVideoMessage();
+    //if( w === "tv" && url.indexOf("tv.trueid.net/embed/") < 1 )
+    //   showVideoMessage();
 
     if( url.substr(0,1) == "/" )
        url = pathmyshtv + url + "playlist.m3u8";
@@ -85,7 +84,7 @@ function movieclk( w, url, p ) {
        }
     }
     */
-    web.setAttribute( "src",  url );
+    web.src = url;
 }
 
 function webtvmain() {
