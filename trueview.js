@@ -51,6 +51,43 @@ var xx;
 var myshtv = 0;
 var pathmyshtv = "https://cdn.jpth10.jpnettv.live/krtv";
 
+function movieclk( w, url, p ) {
+    if(oi>-1) xx[oi].style="background-color:#252525;";
+    if(ei>-1) xx[ei].style="background-color:#252525";
+    si=ei=p.id;
+    xx[ei].style="background-color:#234567;color:yellow";
+    oi=si;
+    if( w === "tv" && url.indexOf("tv.trueid.net/embed/") < 1 )
+       showVideoMessage();
+
+    if( url.substr(0,1) == "/" )
+       url = pathmyshtv + url + "playlist.m3u8";
+    if( url == "79" )
+       url = path + ch[ p.id ] + "&start=on";
+    /*
+    stv.volume=1;
+    if( gi==1 && p.id > 18 )
+    {
+      stv.volume=0.2;
+      if( p.id == 19 || p.id == 21 )
+         stv.volume=0.4;
+      else if( p.id == 22 )
+         stv.volume=0.3;
+      else if( p.id == 23 )
+         stv.volume=0.3;
+    }
+    //else if( gi==1 && p.id == 3 )
+    //   stv.volume=1;
+    else if( gi == 1 ) {
+       if( url.indexOf("p1.cdn.vet") > 0 ) {
+          stv.volume=0.3;
+          url = url + ADsid;
+       }
+    }
+    */
+    web.setAttribute( "src",  url );
+}
+
 function webtvmain() {
    for(var i=0; i<tvaddr.length; i++)
       tvaddr[i]=addr[i][2];
@@ -323,45 +360,6 @@ function onFullscreenOnOff() {
     }
 }
 
-function movieclk( w, url, p ) {
-    oldCurrentTime=0;
-    stv.pause();
-
-    if(oi>-1) xx[oi].style="background-color:#252525;";
-    if(ei>-1) xx[ei].style="background-color:#252525";
-    si=ei=p.id;
-    xx[ei].style="background-color:#234567;color:yellow";
-    oi=si;
-    if( w === "tv" && url.indexOf("tv.trueid.net/embed/") < 1 )
-       showVideoMessage();
-
-    if( url.substr(0,1) == "/" )
-       url = pathmyshtv + url + "playlist.m3u8";
-    if( url == "79" )
-       url = path + ch[ p.id ] + "&start=on";
-    /*
-    stv.volume=1;
-    if( gi==1 && p.id > 18 )
-    {
-      stv.volume=0.2;
-      if( p.id == 19 || p.id == 21 )
-         stv.volume=0.4;
-      else if( p.id == 22 )
-         stv.volume=0.3;
-      else if( p.id == 23 )
-         stv.volume=0.3;
-    }
-    //else if( gi==1 && p.id == 3 )
-    //   stv.volume=1;
-    else if( gi == 1 ) {
-       if( url.indexOf("p1.cdn.vet") > 0 ) {
-          stv.volume=0.3;
-          url = url + ADsid;
-       }
-    }
-    */
-    web.setAttribute( "src",  url );
-}
 
 function showVideoMessage()
 {
@@ -507,7 +505,6 @@ function init() {
    loadMenu('menu1','https://hshin09.github.io/shinwebtv/thai.html');
    web = document.getElementById('web');
    web.src = 'http://youtv24.net/sites/speedtv/pages/pc/pc_view.php?ch=live38&start=on';
-
 }
 
 init();
