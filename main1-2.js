@@ -127,7 +127,7 @@ function OnOff()
     if( mustWait )
     {
        mustWait--;
-       if( !mustWait )
+       if( mustWait == 0 )
           setTimeout(function(){onok();},timeSetTV);
        return;
     }
@@ -139,10 +139,10 @@ function OnOff()
           $("#er_msg").text( "채널을 가져올수 없음(네트워크 또는 서버 에러)-Timer" );
           showErrorMessage();
        }
-       if(isNotUser<3) {
+       if(isNotUser<2) {
           if( gi == 0 && myshtv == 0 )
           {
-             //window.parentView.showMsg( "hiddenView:loadTV('" + path + ch[ei] + "&start=on')" );
+             window.parentView.showMsg( "hiddenView:loadTV('" + path + ch[ei] + "&start=on')" );
              //window.parentView.showMsg( "msg:채널을 리로딩중입니다:"+isNotUser);
              mustWait = 5;
              mustabout = 1;
@@ -244,8 +244,8 @@ function showTime()
 
 function get79tv(i) 
 {
-   window.parentView.showMsg( "hiddenView:loadTV('" + path + ch[i] + "&start=on')" );
-   mustWait = 5;
+   //window.parentView.showMsg( "hiddenView:loadTV('" + path + ch[i] + "&start=on')" );
+   //mustWait = 5;
    //window.parentView.showMsg("79:"+path79+ch[i]);
    window.parentView.showMsg("hiddenView:gettv('"+path79+ch[i]+"')");
 }
@@ -410,6 +410,7 @@ function keychk(e) {
 }
 
 function onok() {
+  mustWait = 0;
   if( gi == 0 && myshtv == 0 )
   {
     var i_ch=addr[si][6];
