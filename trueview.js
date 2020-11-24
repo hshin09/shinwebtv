@@ -62,7 +62,7 @@ function init() {
    var a = addTag(p,'div','menu0');
    a = addTag(p,'div','menu1');
 
-   p = addTag('','div','myid');
+   p = addTag('','div','mydiv');
    a = addTag(p,'iframe','web');
    a.setAttribute('frameborder','0');
    a.setAttribute('border','0');
