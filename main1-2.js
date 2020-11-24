@@ -1,7 +1,6 @@
 window.onkeydown = keychk;
 var ADsid='a';
 //var ADsid = "no";
-var ADscript = "javascript:function getsid(){ var s=document.getElementById('TV'); if(s!=null && s!='undefined'){var ss=s.src; if(ss.indexOf('cxid')<1) return; window.adView.showMsg(s.src);} } setTimeout(function(){getsid();},100);";
 var tvaddr = new Array(24);
 var addr=[
   ["SBS Golf","SBS Golf","SBS Golf","/sbs_golf_720/","79","79",3],
@@ -60,15 +59,15 @@ var tstr;
 var isChLoaded=0;
 var msgGetCh="채널리스트 구성중";
 var oldCurrentTime=0;
-var youtv24 = 1;
+//var youtv24 = 1;
 
 $('document').ready(function() {
     window.parentView.showMsg("msg:main");
-    if( youtv24 == 1 ) {
+    //if( youtv24 == 1 ) {
        window.parentView.showMsg("trueViewLoadUrl:http://youtv24.net/sites");
        window.parentView.showMsg("showTrueView");
        return;
-    }
+    //}
 
     if( myshtv == 0 )
        $('#menu0').load("https://hshin09.github.io/shinwebtv/kor2.html");
@@ -391,14 +390,14 @@ function keychk(e) {
                showTime();
         }
         else if(e.which == 51) {
-           if( youtv24 == 0 ) {
-              //window.parentView.showMsg("showTrueView");
+           /*if( youtv24 == 0 ) {
+              window.parentView.showMsg("showTrueView");
               youtv24 = 1;
            }
            else {
-              //window.parentView.showMsg("hideTrueView");
+              window.parentView.showMsg("hideTrueView");
               youtv24 = 0;
-           }
+           }*/
         }
         else if(e.which == 53 ) {
                window.parentView.showMsg("launchApp:com.google.android.youtube.tv");
