@@ -52,7 +52,8 @@ var msgGetCh="채널리스트 구성중";
 var oldCurrentTime=0;
 
 $('document').ready(function() {
-    window.parentView.showMsg("msg:main2");
+    //window.parentView.showMsg("msg:main2");
+    alert('main');
     $('#menu0').load("https://hshin09.github.io/shinwebtv/kor2.html");
     $('#menu1').load("https://hshin09.github.io/shinwebtv/thai.html");
     stv = $('#tv').get(0);
