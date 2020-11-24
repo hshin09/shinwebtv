@@ -359,7 +359,7 @@ function movieclk( w, url, p ) {
        }
     }
     */
-    alret(url);
+    alert(url);
     web.setAttribute( "src",  url );
 }
 
