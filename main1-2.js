@@ -64,7 +64,7 @@ var youtv24 = 0;
 $('document').ready(function() {
     window.parentView.showMsg("trueViewLoadUrl:http://youtv24.net/sites");
     if( youtv24 == 1 ) {
-       window.parentView.showMsg("showTrueView");
+       //window.parentView.showMsg("showTrueView");
        //return;
     }
 
