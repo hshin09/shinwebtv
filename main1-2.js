@@ -59,16 +59,14 @@ var tstr;
 var isChLoaded=0;
 var msgGetCh="채널리스트 구성중";
 var oldCurrentTime=0;
-//var youtv24 = 1;
+var youtv24 = 1;
 
 $('document').ready(function() {
-    //window.parentView.showMsg("msg:main");
-    alert('main');
-    //if( youtv24 == 1 ) {
-    //   window.parentView.showMsg("trueViewLoadUrl:http://youtv24.net/sites");
-    //   window.parentView.showMsg("showTrueView");
-    //   return;
-    //}
+    window.parentView.showMsg("trueViewLoadUrl:http://youtv24.net/sites");
+    if( youtv24 == 1 ) {
+       window.parentView.showMsg("showTrueView");
+       //return;
+    }
 
     if( myshtv == 0 )
        $('#menu0').load("https://hshin09.github.io/shinwebtv/kor2.html");
@@ -391,14 +389,14 @@ function keychk(e) {
                showTime();
         }
         else if(e.which == 51 ) {
-           /*if( youtv24 == 0 ) {
+           if( youtv24 == 0 ) {
               window.parentView.showMsg("showTrueView");
               youtv24 = 1;
            }
            else {
               window.parentView.showMsg("hideTrueView");
               youtv24 = 0;
-           }*/
+           }
         }
         else if(e.which == 53 ) {
                window.parentView.showMsg("launchApp:com.google.android.youtube.tv");
