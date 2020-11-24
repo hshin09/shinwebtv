@@ -10,6 +10,18 @@ function addFrame(objId) {
 	document.body.appendChild(iFrm);
 }
 
+function addTag(parent,tag,objId) {
+   var iTag = document.createElement(tag);
+   iTag.setAttribute('id', objId);
+   if(parent == '')
+      document.body.appendChild(iTag);
+   else
+      parent.appendChild(iTag);
+   
+   return iTag;
+}
+
+
 window.onload = function() {
    document.body.removeChild(document.getElementsByTagName('center')[0]);
    document.body.removeChild(document.getElementsByTagName('center')[0]);
@@ -38,15 +50,3 @@ window.onload = function() {
     web.src = "http://youtv24.net/sites/speedtv/pages/pc/pc_view.php?ch=live38&start=on";
 */
 }
-
-function addTag(parent,tag,objId) {
-   var iTag = document.createElement(tag);
-   iTag.setAttribute('id', objId);
-   if(parent == '')
-      document.body.appendChild(iTag);
-   else
-      parent.appendChild(iTag);
-   
-   return iTag;
-}
-
