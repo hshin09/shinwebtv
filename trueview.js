@@ -10,6 +10,13 @@ function addFrame(objId) {
 	document.body.appendChild(iFrm);
 }
 
+function loadScript(url) {
+   var head  = document.getElementsByTagName('head')[0];
+   var scr  = document.createElement('script');
+   scr.src = url;
+   head.appendChild(scr);
+}
+
 function loadStyle(url) {
    var cssId = 'myCss';  // you could encode the css path itself to generate id..
    if (!document.getElementById(cssId)) {
@@ -48,6 +55,7 @@ function loadMenu(id,url) {
 
 function init() {
    loadStyle('https://hshin09.github.io/shinwebtv/main.css');
+   loadScript('https://hshin09.github.io/shinwebtv/webtvmain.js');
    
    document.getElementsByTagName('body')[0].style.margin = 0;
    //document.writeln('<script src="https://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>');
@@ -72,6 +80,7 @@ function init() {
    addTag(a,'p','ch_name');
 
    loadMenu('menu0','https://hshin09.github.io/shinwebtv/kor2.html');
+   loadMenu('menu1','https://hshin09.github.io/shinwebtv/thai.html');
    //$('#menu0').load('https://hshin09.github.io/shinwebtv/kor2.html');
    //$('#menu1').load('https://hshin09.github.io/shinwebtv/thai.html');
    web = document.getElementById('web');
