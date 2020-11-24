@@ -2,30 +2,30 @@ window.onkeydown = keychk;
 var ADsid='a';
 var tvaddr = new Array(24);
 var addr=[
-  ["SBS Golf","SBS Golf","SBS Golf","/sbs_golf_720/","79",3],
-  ["JTBC Golf","JTBC Golf","JTBC Golf","/jtbc_golf_720/","79",3],
-  ["OCN Movies","OCN Movies","OCN Movies","/cgv_540/","79",3],
-  ["OCN Original","OCN Original","OCN Original","/ocn_540/","79",3],
-  ["중화 TV","영화 Screen","영화 Screen","/chinesetv_540/","79",3],
-  ["OCN Thrills","OCN Thrills","OCN Thrills","/super_action_540/","79",3],
-  ["Billiards TV","Catch ON 1","Catch ON 1","/billiardstv_540/","79",3],
-  ["EBS1","Catch ON 2","Catch ON 2","/ebs1_540/","79",3],
-  ["CNN","The Movie","The Movie","/cnn_kr_540/","79",3],
-  ["BBC","FOX","FOX","/bbc_kr_540/","79",3],
-  ["TV 조선 뉴스","TV 조선 뉴스","TV 조선 뉴스","/tvchosun_720/","79",3],
-  ["채널 A 뉴스","채널 A 뉴스","채널 A 뉴스","/channela_720/","79",3],
-  ["JTBC 뉴스","JTBC 뉴스","JTBC 뉴스","/jtbc_540/","79",3],
-  ["YTN 뉴스","YTN 뉴스","YTN 뉴스","/ytn_720/","79",3],
-  ["연합 뉴스","연합 뉴스","연합 뉴스","/newsy_720/","79",3],
-  ["MBN 뉴스","MBN 뉴스","MBN 뉴스","/mbn_720/","79",3],
-  ["SBS TV","SBS TV","SBS TV","/sbs_720/","79",3],
-  ["MBC TV","MBC TV","MBC TV","/mbc_720/","79",3],
-  ["KBS1 TV","KBS1 TV","KBS1 TV","/kbs1_720/","79",3],
-  ["KBS2 TV","KBS2 TV","KBS2 TV","/kbs2_720/","79",3],
-  ["GeoGraphic","GeoGraphic","GeoGraphic","/national_540/","79",3],
-  ["Discovery","Discovery","Discovery","/discovery_540/","79",3],
-  ["SpoTV2","History","History","/spotv_2_720/","79",3],
-  ["MNet","MNet","MNet","/mnet_540/","79",3]
+  ["SBS Golf","SBS Golf","79","/sbs_golf_720/",2],
+  ["JTBC Golf","JTBC Golf","79","/jtbc_golf_720/",2],
+  ["OCN Movies","OCN Movies","79","/cgv_540/",2],
+  ["OCN Original","OCN Original","79","/ocn_540/",2],
+  ["중화 TV","영화 Screen","79","/chinesetv_540/",2],
+  ["OCN Thrills","OCN Thrills","79","/super_action_540/",2],
+  ["Billiards TV","Catch ON 1","79","/billiardstv_540/",2],
+  ["EBS1","Catch ON 2","79","/ebs1_540/",2],
+  ["CNN","The Movie","79","/cnn_kr_540/",2],
+  ["BBC","FOX","79","/bbc_kr_540/",2],
+  ["TV 조선 뉴스","TV 조선 뉴스","79","/tvchosun_720/",2],
+  ["채널 A 뉴스","채널 A 뉴스","79","/channela_720/",2],
+  ["JTBC 뉴스","JTBC 뉴스","79","/jtbc_540/",2],
+  ["YTN 뉴스","YTN 뉴스","79","/ytn_720/",2],
+  ["연합 뉴스","연합 뉴스","79","/newsy_720/",2],
+  ["MBN 뉴스","MBN 뉴스","79","/mbn_720/",2],
+  ["SBS TV","SBS TV","79","/sbs_720/",2],
+  ["MBC TV","MBC TV","79","/mbc_720/",2],
+  ["KBS1 TV","KBS1 TV","79","/kbs1_720/",2],
+  ["KBS2 TV","KBS2 TV","79","/kbs2_720/",2],
+  ["GeoGraphic","GeoGraphic","79","/national_540/",2],
+  ["Discovery","Discovery","79","/discovery_540/",2],
+  ["SpoTV2","History","79","/spotv_2_720/",2],
+  ["MNet","MNet","79","/mnet_540/",2]
 ];
 
 var path = "http://youtv24.net/sites/speedtv/pages/pc/pc_view.php?ch=live";
@@ -48,6 +48,10 @@ var myshtv = 0;
 var pathmyshtv = "https://cdn.jpth10.jpnettv.live/krtv";
 
 window.onload = function() {
+   for(var i=0; i<tvaddr.length; i++)
+      tvaddr[i]=addr[i][2];
+
+   timer = setInterval( function() { OnOff(); }, 500 );
 });
 
 
@@ -208,16 +212,16 @@ function onok() {
   mustWait = 0;
   if( gi == 0 )
   {
-    var i_ch=addr[si][5];
+    var i_ch=addr[si][4];
 
     i_ch++;
-    if(i_ch>4)
+    if(i_ch>3)
       i_ch=2;
     tvaddr[si]=addr[si][i_ch];
 
     x[si].innerHTML=addr[si][i_ch-2];
 
-    addr[si][5]=i_ch;
+    addr[si][4]=i_ch;
     if(i_ch==2)
       window.parentView.showMsg("msg:기본서버("+x[si].innerHTML+") 로 이동합니다");
     else
@@ -300,6 +304,8 @@ function movieclk( w, url, p ) {
 
     if( url.substr(0,1) == "/" )
        url = pathmyshtv + url + "playlist.m3u8";
+    if( url == "79" )
+       url = path + ch[ p.id ] + "&start=on";
 
     stv.volume=1;
     if( gi==1 && p.id > 18 )
