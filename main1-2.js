@@ -59,16 +59,8 @@ var tstr;
 var isChLoaded=0;
 var msgGetCh="채널리스트 구성중";
 var oldCurrentTime=0;
-var youtv24 = 0;
 
 $('document').ready(function() {
-    window.parentView.showMsg("trueViewLoadUrl:http://youtv24.net/sites");
-    window.parentView.showMsg("hideTrueView");
-    if( youtv24 == 1 ) {
-       //window.parentView.showMsg("showTrueView");
-       //return;
-    }
-
     if( myshtv == 0 )
        $('#menu0').load("https://hshin09.github.io/shinwebtv/kor2.html");
     else
@@ -390,6 +382,9 @@ function keychk(e) {
                showTime();
         }
         else if(e.which == 51 ) {
+              stv.pause();
+              window.parentView.showMsg("trueViewLoadUrl:http://youtv24.net/sites");
+              //window.parentView.showMsg("hideTrueView");
               window.parentView.showMsg("showTrueView");
               window.parentView.showMsg("trueView:x[si].click()");
         }
