@@ -46,15 +46,15 @@ var mustabout = 0;
 var timeSetTV = 800;
 var mustWait = 0;
 var isChLoaded = 0;
-var xx;
+var x;
 var myshtv = 0;
 var pathmyshtv = "https://cdn.jpth10.jpnettv.live/krtv";
 
 function movieclk( w, url, p ) {
-    if(oi>-1) xx[oi].style="background-color:#252525;";
-    if(ei>-1) xx[ei].style="background-color:#252525";
+    if(oi>-1) x[oi].style="background-color:#252525;";
+    if(ei>-1) x[ei].style="background-color:#252525";
     si=ei=p.id;
-    xx[ei].style="background-color:#234567;color:yellow";
+    x[ei].style="background-color:#234567;color:yellow";
     oi=si;
     //if( w === "tv" && url.indexOf("tv.trueid.net/embed/") < 1 )
     //   showVideoMessage();
@@ -105,10 +105,10 @@ function OnOff()
       msgGetCh = msgGetCh + ".";
       $('#sec').text( msgGetCh );
       */
-      xx=document.getElementById("ml"+gi).getElementsByTagName("li");
-      if( xx.length==tvaddr.length )
+      x=document.getElementById("ml"+gi).getElementsByTagName("li");
+      if( x.length==tvaddr.length )
       {
-          trans=xx.length*screen.height*0.041;
+          trans=x.length*screen.height*0.041;
           if(timer) {
             clearInterval(timer);
             timer=null;
@@ -141,27 +141,27 @@ function showTime()
 }
 
 function onup() {
-	if(oi>-1) xx[oi].style="background-color:#252525";
-	if(ei>-1) xx[ei].style="color:yellow";
+	if(oi>-1) x[oi].style="background-color:#252525";
+	if(ei>-1) x[ei].style="color:yellow";
 	si--;
 	//if(full && gi==0 && si==10) si--;
 	if(si<0) si+=cnt;
-	xx[si].style="background-color:#234567";
-	if(si==ei) xx[si].style="background-color:#234567;color:yellow";
+	x[si].style="background-color:#234567";
+	if(si==ei) x[si].style="background-color:#234567;color:yellow";
 	oi=si;
-	if(full) xx[si].click();
+	if(full) x[si].click();
 }
 
 function ondown() {
-	if(oi>-1) xx[oi].style="background-color:#252525";
-	if(ei>-1) xx[ei].style="color:yellow";
+	if(oi>-1) x[oi].style="background-color:#252525";
+	if(ei>-1) x[ei].style="color:yellow";
 	si++;
 	//if(full && gi==0 && si==10) si++;
 	if(si>=cnt) si-=cnt;
-	xx[si].style="background-color:#234567";
-	if(si==ei) xx[si].style="background-color:#234567;color:yellow";
+	x[si].style="background-color:#234567";
+	if(si==ei) x[si].style="background-color:#234567;color:yellow";
 	oi=si;
-	if(full) xx[si].click();
+	if(full) x[si].click();
 }
 
 function onleft() {
@@ -172,7 +172,7 @@ function onleft() {
 		}
 		onFullscreenOnOff();
 	}
-	else if(si>-1) xx[si].click();
+	else if(si>-1) x[si].click();
 }
 
 function onright() {
@@ -244,7 +244,7 @@ function keychk(e) {
               */
 	}
         else if(e.which == 50 || e.which == 55 ) {
-               showTime();
+               //showTime();
         } 
         else if(e.which == 53 ) {
                //window.parentView.showMsg("launchApp:com.google.android.youtube.tv");
@@ -288,7 +288,7 @@ function onok() {
       i_ch=2;
     tvaddr[si]=addr[si][i_ch];
 
-    xx[si].innerHTML=addr[si][i_ch-2];
+    x[si].innerHTML=addr[si][i_ch-2];
 
     addr[si][4]=i_ch;
     /*
@@ -298,17 +298,17 @@ function onok() {
       window.parentView.showMsg("msg:"+(i_ch-2)+"번 보조서버("+xx[si].innerHTML+") 로 이동합니다");
     */
   }
-  xx[si].click();
+  x[si].click();
 }
 
 var cnt;
 function mlok() {
-   xx=document.getElementById("ml"+gi).getElementsByTagName("li");
-   cnt=xx.length;
+   x=document.getElementById("ml"+gi).getElementsByTagName("li");
+   cnt=x.length;
 
    var i;
    for(i=0; i<cnt; i++) {
-      xx[i].id=i;
+      x[i].id=i;
    }
    if(ei>-1) {
       si=ei;
