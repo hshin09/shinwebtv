@@ -59,7 +59,7 @@ var tstr;
 var isChLoaded=0;
 var msgGetCh="채널리스트 구성중";
 var oldCurrentTime=0;
-var youtv24 = 1;
+var youtv24 = 0;
 
 $('document').ready(function() {
     window.parentView.showMsg("trueViewLoadUrl:http://youtv24.net/sites");
