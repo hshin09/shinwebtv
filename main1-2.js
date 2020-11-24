@@ -68,6 +68,7 @@ $('document').ready(function() {
        window.parentView.showMsg("showTrueView");
        return;
     }
+
     if( myshtv == 0 )
        $('#menu0').load("https://hshin09.github.io/shinwebtv/kor2.html");
     else
