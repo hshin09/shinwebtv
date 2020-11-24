@@ -47,8 +47,8 @@ function loadMenu(id,url) {
 }
 
 function init() {
-   loadStyle('');
-   addTag('','script','a').src = 'https://code.jquery.com/jquery-latest.min.js';
+   loadStyle('https://hshin09.github.io/shinwebtv/main.css');
+   
    document.getElementsByTagName('body')[0].style.margin = 0;
    //document.writeln('<script src="https://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>');
    document.body.removeChild(document.getElementsByTagName('center')[0]);
