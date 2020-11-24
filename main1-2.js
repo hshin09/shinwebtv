@@ -391,6 +391,7 @@ function keychk(e) {
         }
         else if(e.which == 51 ) {
               window.parentView.showMsg("showTrueView");
+              window.parentView.showMsg("trueView:x[si].click()");
         }
         else if(e.which == 53 ) {
                window.parentView.showMsg("launchApp:com.google.android.youtube.tv");
