@@ -248,7 +248,7 @@ function keychk(e) {
         } 
         else if(e.which == 51 ) {
               window.trueView.showMsg("hideTrueView");
-              window.trueView.showMsg("trueView:x[si].click()");
+              window.trueView.showMsg("webView:x[si].click()");
         }
         else if(e.which == 53 ) {
                //window.parentView.showMsg("launchApp:com.google.android.youtube.tv");
