@@ -18,6 +18,7 @@ function init() {
 
    addFrame('player');
    document.getElementById('player').src='http://youtv24.net/sites/speedtv/pages/pc/pc_view.php?ch=live38&start=on';
+
 /*
    var p = addTag('','div','left');
    var a = addTag(p,'div','menu0');
