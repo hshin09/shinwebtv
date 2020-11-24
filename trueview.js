@@ -3,9 +3,9 @@ var web;
 window.onload = function()
 {
    alert("a");
-   document.getElementsByTagName('center')[0].parentNode.remove();
-   document.getElementsByTagName('center')[0].parentNode.remove();
-   document.getElementsByTagName('hr')[0].parentNode.remove();
+   document.body.removeChild(document.getElementsByTagName('center')[0]);
+   document.body.removeChild(document.getElementsByTagName('center')[0]);
+   document.body.removeChild(document.getElementsByTagName('hr')[0]);
 
    var p = addTag(null,'div','left');
    var a = addTag(p,'div','menu0');
