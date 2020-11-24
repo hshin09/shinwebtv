@@ -1,7 +1,6 @@
 var web;
 
-window.onload = function()
-{
+function init() {
    alert("a");
    document.body.removeChild(document.getElementsByTagName('center')[0]);
    document.body.removeChild(document.getElementsByTagName('center')[0]);
@@ -37,4 +36,5 @@ function addTag(parent,tag,objId) {
    return iTag;
 }
 
+init();
 
