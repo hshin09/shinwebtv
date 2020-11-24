@@ -17,7 +17,7 @@ function init() {
    a.setAttribute('width','100%');
    a.setAttribute('height','100%');
    a = addTag(p,'div','videoMessage');
-   addTag(a.'p','ch_name');
+   addTag(a,'p','ch_name');
 
     $('#menu0').load("https://hshin09.github.io/shinwebtv/kor2.html");
     $('#menu1').load("https://hshin09.github.io/shinwebtv/thai.html");
@@ -26,7 +26,7 @@ function init() {
 }
 
 function addTag(parent,tag,objId) {
-   var iTag = document.createElement('tag');
+   var iTag = document.createElement(tag);
    iTag.setAttribute('id', objId);
    if(parent)
       parent.appendChild(iTag);
