@@ -389,14 +389,7 @@ function keychk(e) {
                showTime();
         }
         else if(e.which == 51 ) {
-           if( youtv24 == 0 ) {
               window.parentView.showMsg("showTrueView");
-              youtv24 = 1;
-           }
-           else {
-              window.parentView.showMsg("hideTrueView");
-              youtv24 = 0;
-           }
         }
         else if(e.which == 53 ) {
                window.parentView.showMsg("launchApp:com.google.android.youtube.tv");
