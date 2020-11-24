@@ -63,7 +63,7 @@ var oldCurrentTime=0;
 var youtv24 = 1;
 
 $('document').ready(function() {
-    alret('a');
+    window.parentView.showMsg("msg:main");
     if( youtv24 == 1 ) {
        window.parentView.showMsg("trueViewLoadUrl:http://youtv24.net/sites");
        window.parentView.showMsg("showTrueView");
