@@ -62,11 +62,12 @@ var oldCurrentTime=0;
 //var youtv24 = 1;
 
 $('document').ready(function() {
-    window.parentView.showMsg("msg:main");
+    //window.parentView.showMsg("msg:main");
+    alert('main');
     //if( youtv24 == 1 ) {
-       window.parentView.showMsg("trueViewLoadUrl:http://youtv24.net/sites");
-       window.parentView.showMsg("showTrueView");
-       return;
+    //   window.parentView.showMsg("trueViewLoadUrl:http://youtv24.net/sites");
+    //   window.parentView.showMsg("showTrueView");
+    //   return;
     //}
 
     if( myshtv == 0 )
@@ -364,7 +365,7 @@ function keychk(e) {
 	}
 	else if(e.which == 40) {
 		ondown();
-	}.
+	}
 	else if(e.which == 37) {
 		onleft();
 	}
