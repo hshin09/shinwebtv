@@ -1,11 +1,24 @@
 var web;
 
+function addFrame(objId) {
+	var iFrm = document.createElement('iframe');
+	iFrm.setAttribute('id', objId);
+	iFrm.setAttribute('frameborder', '0');
+	iFrm.setAttribute('border', '0');
+	iFrm.setAttribute('width', '100%');
+	iFrm.setAttribute('height', '100%');
+	document.body.appendChild(iFrm);
+}
+
 function init() {
-   document.writeln('<script src="https://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>');
+   //document.writeln('<script src="https://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>');
    document.body.removeChild(document.getElementsByTagName('center')[0]);
    document.body.removeChild(document.getElementsByTagName('center')[0]);
    document.body.removeChild(document.getElementsByTagName('hr')[0]);
 
+   addFrame('player');
+   document.getElementById('player').src='http://youtv24.net/sites/speedtv/pages/pc/pc_view.php?ch=live38&start=on';
+/*
    var p = addTag('','div','left');
    var a = addTag(p,'div','menu0');
    a = addTag(p,'div','menu1');
@@ -23,6 +36,7 @@ function init() {
     $('#menu1').load("https://hshin09.github.io/shinwebtv/thai.html");
     web = document.getElementById("web");
     web.src = "http://youtv24.net/sites/speedtv/pages/pc/pc_view.php?ch=live38&start=on";
+/*
 }
 
 function addTag(parent,tag,objId) {
