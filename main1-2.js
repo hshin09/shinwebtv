@@ -63,7 +63,7 @@ var oldCurrentTime=0;
 var youtv24 = 0;
 
 $('document').ready(function() {
-    window.parentView.showMsg("trueViewLoadUrl:http://youtv24.net/sites");
+    //window.parentView.showMsg("trueViewLoadUrl:http://youtv24.net/sites");
 
     if( myshtv == 0 )
        $('#menu0').load("https://hshin09.github.io/shinwebtv/kor2.html");
