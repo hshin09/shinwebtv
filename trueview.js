@@ -425,16 +425,6 @@ function videoErr(e)
    }
 }
 
-function addFrame(objId) {
-	var iFrm = document.createElement('iframe');
-	iFrm.setAttribute('id', objId);
-	iFrm.setAttribute('frameborder', '0');
-	iFrm.setAttribute('border', '0');
-	iFrm.setAttribute('width', '100%');
-	iFrm.setAttribute('height', '100%');
-	document.body.appendChild(iFrm);
-}
-
 function loadScript(url) {
    var head  = document.getElementsByTagName('head')[0];
    var scr  = document.createElement('script');
@@ -485,9 +475,6 @@ function init() {
    document.body.removeChild(document.getElementsByTagName('center')[0]);
    document.body.removeChild(document.getElementsByTagName('center')[0]);
    document.body.removeChild(document.getElementsByTagName('hr')[0]);
-
-//   addFrame('player');
-//   document.getElementById('player').src='http://youtv24.net/sites/speedtv/pages/pc/pc_view.php?ch=live38&start=on';
 
    var p = addTag('','div','leftmenu');
    var a = addTag(p,'div','menu0');
