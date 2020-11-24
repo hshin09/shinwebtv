@@ -10,6 +10,20 @@ function addFrame(objId) {
 	document.body.appendChild(iFrm);
 }
 
+function loadStyle(url) {
+   var cssId = 'myCss';  // you could encode the css path itself to generate id..
+   if (!document.getElementById(cssId)) {
+      var head  = document.getElementsByTagName('head')[0];
+      var link  = document.createElement('link');
+      link.id   = cssId;
+      link.rel  = 'stylesheet';
+      link.type = 'text/css';
+      link.href = url;
+      link.media = 'all';
+      head.appendChild(link);
+   }
+}
+
 function addTag(parent,tag,objId) {
    var iTag = document.createElement(tag);
    iTag.setAttribute('id', objId);
@@ -33,6 +47,7 @@ function loadMenu(id,url) {
 }
 
 function init() {
+   loadStyle('');
    addTag('','script','a').src = 'https://code.jquery.com/jquery-latest.min.js';
    document.getElementsByTagName('body')[0].style.margin = 0;
    //document.writeln('<script src="https://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>');
