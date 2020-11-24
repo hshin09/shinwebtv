@@ -84,6 +84,7 @@ function movieclk( w, url, p ) {
        }
     }
     */
+    alert(url);
     web.src = url;
 }
 
