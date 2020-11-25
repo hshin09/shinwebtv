@@ -185,6 +185,10 @@ function onright() {
 }
 
 function change() {
+        window.trueView.showMsg("hideTrueView");
+        window.trueView.showMsg("webView:x[si].click()");
+        return;
+
 	asi[gi]=si;
 	aei[gi]=ei;
 	aoi[gi]=oi;
