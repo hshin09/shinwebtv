@@ -392,7 +392,7 @@ function keychk(e) {
                showTime();
         }
         else if(e.which == 51 ) {
-              window.parentView.showMsg("trueView:webtvmain()");
+              window.parentView.showMsg("trueView:callOk()");
               stv.pause();
               if(timer) {
                  clearInterval(timer);
