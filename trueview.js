@@ -48,7 +48,7 @@ var mustWait = 0;
 var isChLoaded = 1;
 var loadMode = 0;
 var x;
-var strResponse;
+var strResponse = "79";
 var myshtv = 0;
 var pathmyshtv = "https://cdn.jpth10.jpnettv.live/krtv";
 
@@ -512,7 +512,7 @@ function loadVideo(url) {
    //alert( strResponse );
    var ssi = strResponse.indexOf("file: \"http");
    if(ssi<1) {
-         strResponse = "79":
+         strResponse = "79";
          window.trueView.showMsg( "webView:setHiddenViewTV('" + strResponse + "')" );
          return;
    }
