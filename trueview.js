@@ -91,14 +91,16 @@ function movieclk( w, url, p ) {
 }
 
 function webtvmain() {
-   if( isInit == 1 )
-      return;
-   isInit = 1;
    isChLoaded = 0;
    for(var i=0; i<tvaddr.length; i++)
       tvaddr[i]=addr[i][2];
 
    timer = setInterval( function() { OnOff(); }, 500 );
+}
+
+function callOk()
+{
+   setTimeout( function(){mlok();},500 );
 }
 
 function OnOff()
@@ -119,7 +121,6 @@ function OnOff()
             timer=null;
           }
           isChLoaded = 1;
-          setTimeout( function(){mlok();},500 );
       }
       return;
     }
@@ -585,4 +586,4 @@ function init() {
 }
 
 init();
-//webtvmain();
+webtvmain();
