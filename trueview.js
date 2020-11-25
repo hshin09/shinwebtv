@@ -250,16 +250,16 @@ function keychk(e) {
 	else if(e.which == 13 ) {
                 if( loadMode == 0 ) {
       		   onok();
-                   break;;
-                }
-                if(timer) {
-                   clearInterval(timer);
-                   timer=null;
-                }
-                window.trueView.showMsg( "webView:setHiddenViewTV('" + strResponse + "')" );
-                window.trueView.showMsg( "hideTrueView" );
-                //window.trueView.showMsg( "webView:x[si].click()" );
-	}
+                } else {
+                   if(timer) {
+                      clearInterval(timer);
+                      timer=null;
+                   }
+                   window.trueView.showMsg( "webView:setHiddenViewTV('" + strResponse + "')" );
+                   window.trueView.showMsg( "hideTrueView" );
+                   //window.trueView.showMsg( "webView:x[si].click()" );
+	        }
+        }
 	else if(e.which == 48 ) {
               /*
 	      $('#menu1').load("https://hshin09.github.io/shinwebtv/thai.html");
