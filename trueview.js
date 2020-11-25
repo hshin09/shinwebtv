@@ -45,7 +45,7 @@ var trans=100;
 var mustabout = 0;
 var timeSetTV = 800;
 var mustWait = 0;
-var isChLoaded = 0;
+var isChLoaded = 1;
 var x;
 var strResponse;
 var myshtv = 0;
@@ -89,6 +89,7 @@ function movieclk( w, url, p ) {
 }
 
 function webtvmain() {
+   isChLoaded = 0;
    for(var i=0; i<tvaddr.length; i++)
       tvaddr[i]=addr[i][2];
 
@@ -498,7 +499,6 @@ function loadVideo(url) {
    //if( mustWait > 0 )
    //   return;
    web.src = url;
-   //strResponse = web.contentWindow.document.body.innerHTML;
    strResponse = web.contentDocument.getElementsByTagName('body')[0].getElementsByTagName('script')[2].innerHTML;
    //alert( strResponse );
    var ssi = strResponse.indexOf("file: \"http");
@@ -508,7 +508,11 @@ function loadVideo(url) {
    }
    var eei=strResponse.indexOf(",",ssi);
    strResponse = strResponse.substring(ssi+7,eei-1);
-   mustWait = 4;
+   mustWait = 10;
+   if(timer) {
+      clearInterval(timer);
+      timer=null;
+   }
    timer = setInterval( function() { OnOff(); }, 1100 );
    
    /*
