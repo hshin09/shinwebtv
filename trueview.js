@@ -488,7 +488,7 @@ function loadVideo(url) {
       var ssi = strResponse.indexOf("file: \"http");
       if(ssi<1) {
             window.trueView.showMsg( "webView:setHiddenViewTV('" + strResponse + "')" );
-            return null;
+            return;
       }
       var eei=strResponse.indexOf(",",ssi);
       strResponse=strResponse.substring(ssi+7,eei-1);
