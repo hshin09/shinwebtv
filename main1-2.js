@@ -142,9 +142,8 @@ function OnOff()
        if(isNotUser<2) {
           if( gi == 0 && myshtv == 0 )
           {
-             window.parentView.showMsg( "hiddenView:loadTV('" + path + ch[ei] + "&start=on')" );
-             //window.parentView.showMsg( "msg:채널을 리로딩중입니다:"+isNotUser);
-             mustWait = 5;
+             //window.parentView.showMsg( "hiddenView:loadTV('" + path + ch[ei] + "&start=on')" );
+             //mustWait = 5;
              mustabout = 1;
              timeSetTV = 800;
              clearAddress(addr[ei][addr[ei][6]]);
@@ -249,9 +248,11 @@ function get79tv(i)
       youtv24 = 1;
       window.parentView.showMsg("trueViewLoadUrl:http://youtv24.net/sites");
    }
+   window.parentView.showMsg("trueView:si=ei=" + si);
    window.parentView.showMsg("showTrueView");
    var url = path + ch[i] + "&start=on";
    window.parentView.showMsg("trueView:loadVideo('" + url + "')");
+   stv.pause();
 }
 
 function setHiddenViewTV(s) 
@@ -259,11 +260,11 @@ function setHiddenViewTV(s)
    if(s=="timeout") {
       $("#er_msg").text( "서버가 응답이 없어 일정시간(2분내외) 대기 및 재시도를 진행합니다." );
       showErrorMessage();      
-      mustWait = 5;
+      mustWait = 10;
       return;
    }
    tvaddr[si]=s;
-   mustWait = 10;
+   mustWait = 0;
    setTimeout(function(){ x[si].click(); }, timeSetTV);
 }
 
@@ -438,7 +439,6 @@ function keychk(e) {
 }
 
 function onok() {
-  mustWait = 0;
   if( gi == 0 && myshtv == 0 )
   {
     var i_ch=addr[si][6];
