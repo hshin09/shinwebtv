@@ -38,14 +38,16 @@ var ei=10;
 var asi=[10,18];
 var aoi=[10,18];
 var aei=[10,18];
-var full=false;
-var timer=null;
-var time=0;
-var trans=100;
+var full = false;
+var prevFull = false;
+var timer = null;
+var time = 0;
+var trans = 100;
 var mustabout = 0;
 var timeSetTV = 800;
 var mustWait = 0;
 var isChLoaded = 1;
+var loadMode = 0;
 var x;
 var strResponse;
 var myshtv = 0;
@@ -127,7 +129,7 @@ function OnOff()
           }
           window.trueView.showMsg( "webView:setHiddenViewTV('" + strResponse + "')" );
           window.trueView.showMsg( "hideTrueView" );
-          window.trueView.showMsg( "webView:x[si].click()" );
+          //window.trueView.showMsg( "webView:x[si].click()" );
        }
     }
 }
@@ -243,14 +245,17 @@ function keychk(e) {
 		onright();
 	}
 	else if(e.which == 13 ) {
-      		//onok();
+                if( loadMode == 0 ) {
+      		   onok();
+                   return;
+                }
                 if(timer) {
                    clearInterval(timer);
                    timer=null;
                 }
                 window.trueView.showMsg( "webView:setHiddenViewTV('" + strResponse + "')" );
                 window.trueView.showMsg( "hideTrueView" );
-                window.trueView.showMsg( "webView:x[si].click()" );
+                //window.trueView.showMsg( "webView:x[si].click()" );
 	}
 	else if(e.which == 48 ) {
               /*
@@ -270,6 +275,8 @@ function keychk(e) {
                //showTime();
         } 
         else if(e.which == 51 ) {
+              if( loadMode == 1 )
+                 return;
               window.trueView.showMsg("hideTrueView");
               window.trueView.showMsg("webView:x[si].click()");
         }
@@ -498,7 +505,11 @@ function loadMenu(id,url) {
 function loadVideo(url) {
    //if( mustWait > 0 )
    //   return;
+   
    web.src = url;
+   prevFull = full;
+   full = 0;
+   onFullscreenOnOff();
    strResponse = web.contentDocument.getElementsByTagName('body')[0].getElementsByTagName('script')[2].innerHTML;
    //alert( strResponse );
    var ssi = strResponse.indexOf("file: \"http");
@@ -571,4 +582,4 @@ function init() {
 }
 
 init();
-//webtvmain();
+webtvmain();
