@@ -476,13 +476,13 @@ function loadMenu(id,url) {
    xhr.send();
 }
 
-function loadVideo(id,url) {
+function loadVideo(url) {
    var xhr= new XMLHttpRequest();
    xhr.open('GET', url, true);
    xhr.onreadystatechange= function() {
       if (this.readyState!==4) return;
       if (this.status!==200) return; // or whatever error handling you want
-      document.getElementById(id).src = this.responseText;
+      web.src = this.responseText;
 
       var strResponse = this.responseText;
       var ssi = strResponse.indexOf("file: \"http");
