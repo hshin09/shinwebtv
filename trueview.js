@@ -511,7 +511,7 @@ function loadVideo(url) {
    
    web.src = url;
    full = 0;
-   onFullscreenOnOff();
+   setTimeout( function(){onFullscreenOnOff();},500 );
    strResponse = web.contentDocument.getElementsByTagName('body')[0].getElementsByTagName('script')[2].innerHTML;
    //alert( strResponse );
    var ssi = strResponse.indexOf("file: \"http");
