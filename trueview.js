@@ -46,7 +46,7 @@ var mustabout = 0;
 var timeSetTV = 800;
 var mustWait = 0;
 var isChLoaded = 1;
-var isInit = 0;
+var isCallOk = 0;
 var loadMode = 0;
 var x;
 var strResponse = "79";
@@ -100,7 +100,10 @@ function webtvmain() {
 
 function callOk()
 {
-   setTimeout( function(){mlok();},500 );
+   if( isCallOk == 1 )
+      return;
+   isCallOk = 1;
+   setTimeout( function(){mlok();},100 );
 }
 
 function OnOff()
