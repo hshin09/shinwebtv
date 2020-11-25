@@ -78,8 +78,6 @@ function movieclk( w, url, p ) {
       else if( p.id == 23 )
          stv.volume=0.3;
     }
-    //else if( gi==1 && p.id == 3 )
-    //   stv.volume=1;
     else if( gi == 1 ) {
        if( url.indexOf("p1.cdn.vet") > 0 ) {
           stv.volume=0.3;
@@ -118,6 +116,18 @@ function OnOff()
           setTimeout( function(){mlok();},500 );
       }
       return;
+    }
+    if( mustWait ) {
+       mustWait--;
+       if( mustWait == 0 ) {
+          if(timer) {
+             clearInterval(timer);
+             timer=null;
+          }
+          window.trueView.showMsg( "webView:setHiddenViewTV('" + strResponse + "')" );
+          window.trueView.showMsg( "hideTrueView" );
+          window.trueView.showMsg( "webView:x[si].click()" );
+       }
     }
 }
 
@@ -232,7 +242,14 @@ function keychk(e) {
 		onright();
 	}
 	else if(e.which == 13 ) {
-      		onok();
+      		//onok();
+                if(timer) {
+                   clearInterval(timer);
+                   timer=null;
+                }
+                window.trueView.showMsg( "webView:setHiddenViewTV('" + strResponse + "')" );
+                window.trueView.showMsg( "hideTrueView" );
+                window.trueView.showMsg( "webView:x[si].click()" );
 	}
 	else if(e.which == 48 ) {
               /*
@@ -493,7 +510,7 @@ function loadVideo(url) {
       }
       var eei=strResponse.indexOf(",",ssi);
       strResponse = strResponse.substring(ssi+7,eei-1);
-      window.trueView.showMsg( "webView:setHiddenViewTV('" + strResponse + "')" );
+      mustWait = 4;
       timer = setInterval( function() { OnOff(); }, 1100 );
    };
    xhr.send();
