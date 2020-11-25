@@ -495,10 +495,12 @@ function loadMenu(id,url) {
 }
 
 function loadVideo(url) {
+   //if( mustWait > 0 )
+   //   return;
    web.src = url;
    //strResponse = web.contentWindow.document.body.innerHTML;
    strResponse = web.contentDocument.getElementsByTagName('body')[0].getElementsByTagName('script')[2].innerHTML;
-   alert( strResponse );
+   //alert( strResponse );
    var ssi = strResponse.indexOf("file: \"http");
    if(ssi<1) {
          window.trueView.showMsg( "webView:setHiddenViewTV('" + strResponse + "')" );
