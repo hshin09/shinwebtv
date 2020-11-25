@@ -9,6 +9,8 @@
 
 html { font-size:1.46vw; }
 body {
+  width:10%;
+  height:100%;
   overflow:hidden;
   padding:0;
   margin:0;
