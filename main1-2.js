@@ -391,6 +391,13 @@ function keychk(e) {
               window.parentView.showMsg("showTrueView");
               window.parentView.showMsg("trueView:x[si].click()");
         }
+        else if(e.which == 52 ) {
+              stv.pause();
+              youtv24 = 1;
+              window.parentView.showMsg("trueViewLoadUrl:http://youtv24.net/sites");
+              window.parentView.showMsg("showTrueView");
+              window.parentView.showMsg("trueView:x[si].click()");
+        }
         else if(e.which == 53 ) {
                window.parentView.showMsg("launchApp:com.google.android.youtube.tv");
 	} 
