@@ -39,7 +39,6 @@ var asi=[10,18];
 var aoi=[10,18];
 var aei=[10,18];
 var full = false;
-var prevFull = false;
 var timer = null;
 var time = 0;
 var trans = 100;
@@ -507,7 +506,6 @@ function loadVideo(url) {
    //   return;
    
    web.src = url;
-   prevFull = full;
    full = 0;
    onFullscreenOnOff();
    strResponse = web.contentDocument.getElementsByTagName('body')[0].getElementsByTagName('script')[2].innerHTML;
@@ -519,7 +517,7 @@ function loadVideo(url) {
    }
    var eei=strResponse.indexOf(",",ssi);
    strResponse = strResponse.substring(ssi+7,eei-1);
-   mustWait = 10;
+   mustWait = 5;
    if(timer) {
       clearInterval(timer);
       timer=null;
