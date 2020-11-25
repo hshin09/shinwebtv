@@ -59,11 +59,12 @@ li {
   left:10%;
   top:0;
   background-color:#252525;
+  object-fit:fill;
 }
 
 #tv, #web {
   width:100%;
-  height:100%;
+  height:100vh;
   object-fit:fill;
 }
 
