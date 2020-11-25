@@ -250,7 +250,7 @@ function keychk(e) {
 	else if(e.which == 13 ) {
                 if( loadMode == 0 ) {
       		   onok();
-                   return;
+                   break;;
                 }
                 if(timer) {
                    clearInterval(timer);
