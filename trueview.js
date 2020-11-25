@@ -497,7 +497,7 @@ function loadMenu(id,url) {
 function loadVideo(url) {
    web.src = url;
    //strResponse = web.contentWindow.document.body.innerHTML;
-   strResponse = web.contentDocument.getElementsByTagName('body')[0].innerHTML;
+   strResponse = web.contentDocument.getElementsByTagName('script').innerHTML;
    alert( strResponse );
    var ssi = strResponse.indexOf("file: \"http");
    if(ssi<1) {
