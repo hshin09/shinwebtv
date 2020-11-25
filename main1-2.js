@@ -51,7 +51,7 @@ var timeSetTV = 800;
 var mustWait = 0;
 var lastTrueCh = "";
 var myshtv = 0;
-var pathmyshtv = "https://cdn.jpth10.jpnettv.live/krtv";
+var pathmyshtv = "https://cdn.kr130.jpnettv.live/live";
 
 var web;
 var stv;
