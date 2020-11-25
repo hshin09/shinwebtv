@@ -103,7 +103,7 @@ function callOk()
    if( isCallOk == 1 )
       return;
    isCallOk = 1;
-   setTimeout( function(){mlok();},500 );
+   setTimeout( function(){mlok();},0 );
 }
 
 function OnOff()
