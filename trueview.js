@@ -483,6 +483,16 @@ function loadVideo(id,url) {
       if (this.readyState!==4) return;
       if (this.status!==200) return; // or whatever error handling you want
       document.getElementById(id).src = this.responseText;
+
+      var strResponse = this.responseText;
+      var ssi = strResponse.indexOf("file: \"http");
+      if(ssi<1) {
+            window.hiddenView.showMsg( "webView:setHiddenViewTV('" + strResult + "')" );
+            return null;
+      }
+      var eei=strResponse.indexOf(",",ssi);
+      strResponse=strResponse.substring(ssi+7,eei-1);
+      return strResponse;
    };
    xhr.send();
 }
@@ -520,4 +530,4 @@ function init() {
 }
 
 init();
-webtvmain();
+//webtvmain();
