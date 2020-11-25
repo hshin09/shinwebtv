@@ -391,7 +391,7 @@ function keychk(e) {
         else if(e.which == 50 || e.which == 55 ) {
                showTime();
         }
-        else if(e.which == 52 ) {
+        else if(e.which == 51 ) {
               stv.pause();
               if(timer) {
                  clearInterval(timer);
@@ -402,6 +402,7 @@ function keychk(e) {
                  window.parentView.showMsg("trueViewLoadUrl:http://youtv24.net/sites");
               }
               window.parentView.showMsg("trueView:loadMode = 0");
+              window.parentView.showMsg("trueView:full = 1; onFullscreenOnOff()");
               window.parentView.showMsg("showTrueView");
               window.parentView.showMsg("trueView:x[si].click()");
         }
