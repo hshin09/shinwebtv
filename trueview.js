@@ -103,7 +103,7 @@ function callOk()
    if( isCallOk == 1 )
       return;
    isCallOk = 1;
-   setTimeout( function(){mlok();},0 );
+   setTimeout( function(){mlok();},500 );
 }
 
 function OnOff()
@@ -124,6 +124,7 @@ function OnOff()
             timer=null;
           }
           isChLoaded = 1;
+          setTimeout( function(){mlok();},500 );
       }
       return;
     }
