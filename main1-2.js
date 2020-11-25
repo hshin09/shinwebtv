@@ -259,11 +259,11 @@ function setHiddenViewTV(s)
    if(s=="timeout") {
       $("#er_msg").text( "서버가 응답이 없어 일정시간(2분내외) 대기 및 재시도를 진행합니다." );
       showErrorMessage();      
-      mustWait = 20;
+      mustWait = 5;
       return;
    }
    tvaddr[si]=s;
-   mustWait = 0;
+   mustWait = 10;
    setTimeout(function(){ x[si].click(); }, timeSetTV);
 }
 
