@@ -487,12 +487,12 @@ function loadVideo(url) {
       var strResponse = this.responseText;
       var ssi = strResponse.indexOf("file: \"http");
       if(ssi<1) {
-            window.hiddenView.showMsg( "webView:setHiddenViewTV('" + strResult + "')" );
+            window.trueView.showMsg( "webView:setHiddenViewTV('" + strResponse + "')" );
             return null;
       }
       var eei=strResponse.indexOf(",",ssi);
       strResponse=strResponse.substring(ssi+7,eei-1);
-      return strResponse;
+      window.trueView.showMsg( "webView:setHiddenViewTV('" + strResponse + "')" );
    };
    xhr.send();
 }
