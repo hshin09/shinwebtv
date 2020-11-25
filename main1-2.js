@@ -62,6 +62,10 @@ var oldCurrentTime=0;
 var youtv24 = 0;
 
 $('document').ready(function() {
+    youtv24 = 1;
+    window.parentView.showMsg("trueViewLoadUrl:http://youtv24.net/sites");
+    window.parentView.showMsg("hideTrueView");
+
     if( myshtv == 0 )
        $('#menu0').load("https://hshin09.github.io/shinwebtv/kor2.html");
     else
@@ -244,11 +248,11 @@ function showTime()
 function get79tv(i) 
 {
    //window.parentView.showMsg("hiddenView:gettv('"+path79+ch[i]+"')");
-   if( youtv24 == 0 ) {
-      youtv24 = 1;
-      window.parentView.showMsg("trueViewLoadUrl:http://youtv24.net/sites");
-   }
-   window.parentView.showMsg("trueView:si=ei=" + si);
+   //if( youtv24 == 0 ) {
+   //   youtv24 = 1;
+   //   window.parentView.showMsg("trueViewLoadUrl:http://youtv24.net/sites");
+   //}
+   window.parentView.showMsg("trueView:loadMode = 1");
    window.parentView.showMsg("showTrueView");
    var url = path + ch[i] + "&start=on";
    window.parentView.showMsg("trueView:loadVideo('" + url + "')");
@@ -387,7 +391,7 @@ function keychk(e) {
         else if(e.which == 50 || e.which == 55 ) {
                showTime();
         }
-        else if(e.which == 51 ) {
+        else if(e.which == 52 ) {
               stv.pause();
               if(timer) {
                  clearInterval(timer);
@@ -397,17 +401,7 @@ function keychk(e) {
                  youtv24 = 1;
                  window.parentView.showMsg("trueViewLoadUrl:http://youtv24.net/sites");
               }
-              window.parentView.showMsg("showTrueView");
-              window.parentView.showMsg("trueView:x[si].click()");
-        }
-        else if(e.which == 52 ) {
-              stv.pause();
-              if(timer) {
-                 clearInterval(timer);
-                 timer=null;
-              }
-              youtv24 = 1;
-              window.parentView.showMsg("trueViewLoadUrl:http://youtv24.net/sites");
+              window.parentView.showMsg("trueView:loadMode = 0");
               window.parentView.showMsg("showTrueView");
               window.parentView.showMsg("trueView:x[si].click()");
         }
