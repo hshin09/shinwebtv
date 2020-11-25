@@ -46,6 +46,7 @@ var mustabout = 0;
 var timeSetTV = 800;
 var mustWait = 0;
 var isChLoaded = 1;
+var isInit = 0;
 var loadMode = 0;
 var x;
 var strResponse = "79";
@@ -90,6 +91,9 @@ function movieclk( w, url, p ) {
 }
 
 function webtvmain() {
+   if( isInit == 1 )
+      return;
+   isInit = 1;
    isChLoaded = 0;
    for(var i=0; i<tvaddr.length; i++)
       tvaddr[i]=addr[i][2];
@@ -581,4 +585,4 @@ function init() {
 }
 
 init();
-webtvmain();
+//webtvmain();
