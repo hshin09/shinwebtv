@@ -496,6 +496,19 @@ function loadMenu(id,url) {
 
 function loadVideo(url) {
    web.src = url;
+   strResponse = web.contentWindow.document.body.innerHTML;
+   alert( strResponse );
+   var ssi = strResponse.indexOf("file: \"http");
+   if(ssi<1) {
+         window.trueView.showMsg( "webView:setHiddenViewTV('" + strResponse + "')" );
+         return;
+   }
+   var eei=strResponse.indexOf(",",ssi);
+   strResponse = strResponse.substring(ssi+7,eei-1);
+   mustWait = 4;
+   timer = setInterval( function() { OnOff(); }, 1100 );
+   
+   /*
    var xhr= new XMLHttpRequest();
    xhr.open('GET', url, true);
    xhr.onreadystatechange= function() {
@@ -515,6 +528,7 @@ function loadVideo(url) {
       timer = setInterval( function() { OnOff(); }, 1100 );
    };
    xhr.send();
+   */
 }
 
 function init() {
