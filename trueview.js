@@ -512,6 +512,7 @@ function loadVideo(url) {
    //alert( strResponse );
    var ssi = strResponse.indexOf("file: \"http");
    if(ssi<1) {
+         strResponse = "79":
          window.trueView.showMsg( "webView:setHiddenViewTV('" + strResponse + "')" );
          return;
    }
