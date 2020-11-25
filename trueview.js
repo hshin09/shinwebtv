@@ -186,7 +186,7 @@ function onright() {
 
 function change() {
         window.trueView.showMsg("hideTrueView");
-        window.trueView.showMsg("webView:x[si].click()");
+        window.trueView.showMsg("webView:change()");
         return;
 
 	asi[gi]=si;
