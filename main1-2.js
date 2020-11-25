@@ -244,10 +244,14 @@ function showTime()
 
 function get79tv(i) 
 {
-   //window.parentView.showMsg( "hiddenView:loadTV('" + path + ch[i] + "&start=on')" );
-   //mustWait = 5;
-   //window.parentView.showMsg("79:"+path79+ch[i]);
-   window.parentView.showMsg("hiddenView:gettv('"+path79+ch[i]+"')");
+   //window.parentView.showMsg("hiddenView:gettv('"+path79+ch[i]+"')");
+   if( youtv24 == 0 ) {
+      youtv24 = 1;
+      window.parentView.showMsg("trueViewLoadUrl:http://youtv24.net/sites");
+   }
+   window.parentView.showMsg("showTrueView");
+   var url = path + ch[i] + "&start=on";
+   window.parentView.showMsg("trueView:loadVideo('" + url + "')");
 }
 
 function setHiddenViewTV(s) 
@@ -543,17 +547,7 @@ function movieclk( w, url, p ) {
 
     if( url == "79" )
     {
-       /*
        get79tv(p.id);
-       return;
-       */
-       if( youtv24 == 0 ) {
-          youtv24 = 1;
-          window.parentView.showMsg("trueViewLoadUrl:http://youtv24.net/sites");
-       }
-       window.parentView.showMsg("showTrueView");
-       url = path + ch[p.id] + "&start=on";
-       window.parentView.showMsg("trueView:loadVideo('" + url + "')");
        return;
     }
 
