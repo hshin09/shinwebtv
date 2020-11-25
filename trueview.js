@@ -47,6 +47,7 @@ var timeSetTV = 800;
 var mustWait = 0;
 var isChLoaded = 0;
 var x;
+var strResponse;
 var myshtv = 0;
 var pathmyshtv = "https://cdn.jpth10.jpnettv.live/krtv";
 
@@ -484,15 +485,16 @@ function loadVideo(url) {
       if (this.status!==200) return; // or whatever error handling you want
       web.src = this.responseText;
 
-      var strResponse = this.responseText;
+      strResponse = this.responseText;
       var ssi = strResponse.indexOf("file: \"http");
       if(ssi<1) {
             window.trueView.showMsg( "webView:setHiddenViewTV('" + strResponse + "')" );
             return;
       }
       var eei=strResponse.indexOf(",",ssi);
-      strResponse=strResponse.substring(ssi+7,eei-1);
+      strResponse = strResponse.substring(ssi+7,eei-1);
       window.trueView.showMsg( "webView:setHiddenViewTV('" + strResponse + "')" );
+      timer = setInterval( function() { OnOff(); }, 1100 );
    };
    xhr.send();
 }
@@ -530,4 +532,4 @@ function init() {
 }
 
 init();
-webtvmain();
+//webtvmain();
