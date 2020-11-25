@@ -9,8 +9,6 @@
 
 html { font-size:1.46vw; }
 body {
-  width:100%;
-  height:100%;
   overflow:hidden;
   padding:0;
   margin:0;
@@ -61,6 +59,7 @@ li {
   left:10%;
   top:0;
   background-color:#252525;
+  object-fit:fill;
 }
 
 #tv, #web {
