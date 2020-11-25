@@ -497,7 +497,7 @@ function init() {
    loadMenu('menu1','https://hshin09.github.io/shinwebtv/thai.html');
    web = document.getElementById('web');
    var audio = document.createElement('audio');
-   audio.volumn = 10;
+   audio.volume = 0.9;
 }
 
 init();
