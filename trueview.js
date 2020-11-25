@@ -45,8 +45,8 @@ var trans = 100;
 var mustabout = 0;
 var timeSetTV = 800;
 var mustWait = 0;
+var isFirst = 1;
 var isChLoaded = 1;
-var isCallOk = 0;
 var loadMode = 0;
 var x;
 var strResponse = "79";
@@ -98,12 +98,17 @@ function webtvmain() {
    timer = setInterval( function() { OnOff(); }, 500 );
 }
 
-function callOk()
+function getTvUrl()
 {
-   if( isCallOk == 1 )
+   strResponse = web.contentDocument.getElementsByTagName('body')[0].getElementsByTagName('script')[2].innerHTML;
+   var ssi = strResponse.indexOf("file: \"http");
+   if(ssi<1) {
+      strResponse = "79";
+      window.trueView.showMsg( "webView:setHiddenViewTV('" + strResponse + "')" );
       return;
-   isCallOk = 1;
-   setTimeout( function(){mlok();},500 );
+   }
+   var eei=strResponse.indexOf(",",ssi);
+   strResponse = strResponse.substring(ssi+7,eei-1);
 }
 
 function OnOff()
@@ -135,6 +140,7 @@ function OnOff()
              clearInterval(timer);
              timer=null;
           }
+          getTvUrl();
           window.trueView.showMsg( "webView:setHiddenViewTV('" + strResponse + "')" );
           window.trueView.showMsg( "hideTrueView" );
           //window.trueView.showMsg( "webView:x[si].click()" );
@@ -260,6 +266,7 @@ function keychk(e) {
                       clearInterval(timer);
                       timer=null;
                    }
+                   getTvUrl();
                    window.trueView.showMsg( "webView:setHiddenViewTV('" + strResponse + "')" );
                    window.trueView.showMsg( "hideTrueView" );
                    //window.trueView.showMsg( "webView:x[si].click()" );
@@ -352,10 +359,13 @@ function mlok() {
    for(i=0; i<cnt; i++) {
       x[i].id=i;
    }
+
    if(ei>-1) {
       si=ei;
       ei=-1;
-      onleft();
+      if(isFirst == 0)
+         onleft();
+      isFirst = 0;
       ei=si;
    }
    else if(si<0)
@@ -516,17 +526,7 @@ function loadVideo(url) {
    
    web.src = url;
    full = 0;
-   setTimeout( function(){onFullscreenOnOff();},500 );
-   strResponse = web.contentDocument.getElementsByTagName('body')[0].getElementsByTagName('script')[2].innerHTML;
-   //alert( strResponse );
-   var ssi = strResponse.indexOf("file: \"http");
-   if(ssi<1) {
-         strResponse = "79";
-         window.trueView.showMsg( "webView:setHiddenViewTV('" + strResponse + "')" );
-         return;
-   }
-   var eei=strResponse.indexOf(",",ssi);
-   strResponse = strResponse.substring(ssi+7,eei-1);
+   onFullscreenOnOff();
    mustWait = 5;
    if(timer) {
       clearInterval(timer);
