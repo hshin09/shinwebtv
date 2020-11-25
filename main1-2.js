@@ -552,7 +552,7 @@ function movieclk( w, url, p ) {
           window.parentView.showMsg("trueViewLoadUrl:http://youtv24.net/sites");
        }
        window.parentView.showMsg("showTrueView");
-       url = path + ch[i] + "&start=on";
+       url = path + ch[p.id] + "&start=on";
        window.parentView.showMsg("trueView:loadVideo(" + url + ")");
        return;
     }
