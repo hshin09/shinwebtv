@@ -543,8 +543,17 @@ function movieclk( w, url, p ) {
 
     if( url == "79" )
     {
+       /*
        get79tv(p.id);
        return;
+       */
+       if( youtv24 == 0 ) {
+          youtv24 = 1;
+          window.parentView.showMsg("trueViewLoadUrl:http://youtv24.net/sites");
+       }
+       window.parentView.showMsg("showTrueView");
+       url = path + ch[i] + "&start=on";
+       window.parentView.showMsg("trueView:url=loadVideo(" + url + ")");
     }
 
     if( url.substr(0,1) == "/" )
