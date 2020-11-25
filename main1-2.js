@@ -553,7 +553,7 @@ function movieclk( w, url, p ) {
        }
        window.parentView.showMsg("showTrueView");
        url = path + ch[p.id] + "&start=on";
-       window.parentView.showMsg("trueView:loadVideo(" + url + ")");
+       window.parentView.showMsg("trueView:loadVideo('" + url + "')");
        return;
     }
 
