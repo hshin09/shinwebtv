@@ -530,4 +530,4 @@ function init() {
 }
 
 init();
-//webtvmain();
+webtvmain();
