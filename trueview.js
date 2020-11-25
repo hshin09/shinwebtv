@@ -496,7 +496,8 @@ function init() {
    loadMenu('menu0','https://hshin09.github.io/shinwebtv/youtvkor.html');
    loadMenu('menu1','https://hshin09.github.io/shinwebtv/thai.html');
    web = document.getElementById('web');
-   //web.src = 'http://youtv24.net/sites/speedtv/pages/pc/pc_view.php?ch=live38&start=on';
+   var audio = document.createElement('audio');
+   audio.volumn = 10;
 }
 
 init();
