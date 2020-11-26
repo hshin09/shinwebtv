@@ -592,6 +592,7 @@ function init() {
    loadMenu('menu1','https://hshin09.github.io/shinwebtv/thai.html');
    web = document.getElementById('web');
    web.onload() = function() {
+      alert('11');
       if( loadMode )
          getTvUrl();
    }
