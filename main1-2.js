@@ -138,7 +138,7 @@ function OnOff()
 
     if( stv.error != null || stv.networkState == 3 || ( time > 30 && stv.currentTime < 2 ) )
     {
-       if( stv.substring(0,4) == "file" )
+       if( stv.src.substring(0,4) == "file" )
           return;
        oldCurrentTime = 0;
        if( $('#errorMessage').css('display') != "block" ) {
@@ -251,7 +251,6 @@ function get79tv(i)
 {
    stv.pause();
    stv.src = "empty";
-   alert( stv.src );
    $("#ch_name").text( x[si].innerHTML + "(주소요청중)" );
    $("#videoMessage").css('display', 'block');
    window.parentView.showMsg("trueView:loadMode = 1");
