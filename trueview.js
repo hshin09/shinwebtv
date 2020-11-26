@@ -63,7 +63,7 @@ function movieclk( w, url, p ) {
     if( url.substr(0,1) == "/" )
        url = pathmyshtv + url + "playlist.m3u8";
     else if( url == "79" )
-       url = path + ch[ p.id ] + "&start=on";
+       url = path + ch[ p.id ] + "&start=on&background_on=off&logo_on=off";
  
     web.src = url;
 }
