@@ -249,7 +249,7 @@ function showTime()
 function get79tv(i) 
 {
    stv.pause();
-   $("#ch_name").text( x[si].innerHTML );
+   $("#ch_name").text( x[si].innerHTML + " 주소 얻는중(잠시만요)" );
    $("#videoMessage").css('display', 'block');
    window.parentView.showMsg("trueView:loadMode = 1");
    var url = path + ch[i];
