@@ -100,11 +100,6 @@ function webtvmain() {
 
 function getTvUrl()
 {
-   mustWait = 0;
-   if(timer) {
-      clearInterval(timer);
-      timer=null;
-   }
    strResponse = web.contentDocument.getElementsByTagName('body')[0].getElementsByTagName('script')[2].innerHTML;
    var ssi = strResponse.indexOf("file: \"http");
    if(ssi<1) {
@@ -115,6 +110,11 @@ function getTvUrl()
    var eei=strResponse.indexOf(",",ssi);
    strResponse = strResponse.substring(ssi+7,eei-1);
    window.trueView.showMsg( "webView:setHiddenViewTV('" + strResponse + "')" );
+   mustWait = 0;
+   if(timer) {
+      clearInterval(timer);
+      timer=null;
+   }
 }
 
 function OnOff()
@@ -592,9 +592,12 @@ function init() {
    loadMenu('menu1','https://hshin09.github.io/shinwebtv/thai.html');
    web = document.getElementById('web');
    web.onload() = function() {
-      alert('11');
+      alert('suc');
       if( loadMode )
          getTvUrl();
+   }
+   web.onerror() = function() {
+      alert('err');
    }
 }
 
