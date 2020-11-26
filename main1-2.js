@@ -253,8 +253,9 @@ function get79tv(i)
    //   window.parentView.showMsg("trueViewLoadUrl:http://youtv24.net/sites");
    //}
    window.parentView.showMsg("trueView:loadMode = 1");
-   window.parentView.showMsg("showTrueView");
-   var url = path + ch[i] + "&start=on";
+   //window.parentView.showMsg("showTrueView");
+   //var url = path + ch[i] + "&start=on";
+   var url = path + ch[i];
    window.parentView.showMsg("trueView:loadVideo('" + url + "')");
    stv.pause();
 }
