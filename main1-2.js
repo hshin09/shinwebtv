@@ -128,9 +128,6 @@ function OnOff()
     tstr=tstr+time;
     $('#sec').text( tstr );
 
-    if( stv.src == "empty" )
-          return;
-
     if( mustWait )
     {
        mustWait--;
@@ -141,6 +138,8 @@ function OnOff()
 
     if( stv.error != null || stv.networkState == 3 || ( time > 30 && stv.currentTime < 2 ) )
     {
+       if( stv.substring(0,4) == "file" )
+          return;
        oldCurrentTime = 0;
        if( $('#errorMessage').css('display') != "block" ) {
           $("#er_msg").text( "채널을 가져올수 없음(네트워크 또는 서버 에러)-Timer" );
@@ -684,9 +683,6 @@ function state_change(i) {
 
 function videoErr(e)
 {
-   if( stv.src == "empty" )
-          return;
-
    switch (e.target.error.code) {
      case e.target.error.MEDIA_ERR_ABORTED:
        document.getElementById("er_msg").innerHTML="비디오 취소됨";
