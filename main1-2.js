@@ -252,7 +252,7 @@ function get79tv(i)
    $("#ch_name").text( x[si].innerHTML + "(잠시만)" );
    $("#videoMessage").css('display', 'block');
    window.parentView.showMsg("trueView:loadMode = 1");
-   var url = path + ch[i];
+   var url = path + ch[i] + "&background_on=off&logo_on=off";
    window.parentView.showMsg("trueView:loadVideo('" + url + "')");
 }
 
