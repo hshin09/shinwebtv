@@ -47,7 +47,7 @@ var timer=null;
 var time=0;
 var trans=100;
 var mustabout = 0;
-var timeSetTV = 800;
+var timeSetTV = 500;
 var mustWait = 0;
 var lastTrueCh = "";
 var myshtv = 0;
@@ -149,7 +149,7 @@ function OnOff()
              //window.parentView.showMsg( "hiddenView:loadTV('" + path + ch[ei] + "&start=on')" );
              //mustWait = 5;
              mustabout = 1;
-             timeSetTV = 800;
+             timeSetTV = 500;
              clearAddress(addr[ei][addr[ei][6]]);
           }
           isNotUser++;
@@ -247,17 +247,12 @@ function showTime()
 
 function get79tv(i) 
 {
-   //window.parentView.showMsg("hiddenView:gettv('"+path79+ch[i]+"')");
-   //if( youtv24 == 0 ) {
-   //   youtv24 = 1;
-   //   window.parentView.showMsg("trueViewLoadUrl:http://youtv24.net/sites");
-   //}
+   stv.pause();
    window.parentView.showMsg("trueView:loadMode = 1");
    //window.parentView.showMsg("showTrueView");
    //var url = path + ch[i] + "&start=on";
    var url = path + ch[i];
    window.parentView.showMsg("trueView:loadVideo('" + url + "')");
-   stv.pause();
 }
 
 function setHiddenViewTV(s) 
@@ -270,7 +265,7 @@ function setHiddenViewTV(s)
    }
    tvaddr[si]=s;
    mustWait = 0;
-   setTimeout(function(){ x[si].click(); }, timeSetTV);
+   setTimeout(function(){ x[si].click(); }, 10);
 }
 
 function clearAddress(tar) 
@@ -562,8 +557,6 @@ function movieclk( w, url, p ) {
       else if( p.id == 23 )
          stv.volume=0.3;
     }
-    //else if( gi==1 && p.id == 3 )
-    //   stv.volume=1;
     else if( gi == 1 ) {
        if( url.indexOf("p1.cdn.vet") > 0 ) {
           stv.volume=0.3;
@@ -604,7 +597,6 @@ function movieclk( w, url, p ) {
 function showVideoMessage()
 {
     time = 0;
-    
     if(timer) {
       clearInterval(timer);
       timer=null;
@@ -616,7 +608,6 @@ function showVideoMessage()
     $("#ch_name").text( x[si].innerHTML );
     $("#videoMessage").css('display', 'block');
     $("#secMessage").css('display', 'block');
-    //window.parentView.showMsg(x[si].innerHTML);
 }
 
 function showErrorMessage()
