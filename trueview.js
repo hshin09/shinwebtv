@@ -100,6 +100,11 @@ function webtvmain() {
 
 function getTvUrl()
 {
+   mustWait = 0;
+   if(timer) {
+      clearInterval(timer);
+      timer=null;
+   }
    strResponse = web.contentDocument.getElementsByTagName('body')[0].getElementsByTagName('script')[2].innerHTML;
    var ssi = strResponse.indexOf("file: \"http");
    if(ssi<1) {
@@ -109,6 +114,7 @@ function getTvUrl()
    }
    var eei=strResponse.indexOf(",",ssi);
    strResponse = strResponse.substring(ssi+7,eei-1);
+   window.trueView.showMsg( "webView:setHiddenViewTV('" + strResponse + "')" );
 }
 
 function OnOff()
@@ -140,10 +146,9 @@ function OnOff()
              clearInterval(timer);
              timer=null;
           }
-          getTvUrl();
-          window.trueView.showMsg( "webView:setHiddenViewTV('" + strResponse + "')" );
-          window.trueView.showMsg( "hideTrueView" );
-          //window.trueView.showMsg( "webView:x[si].click()" );
+          //getTvUrl();
+          //window.trueView.showMsg( "webView:setHiddenViewTV('" + strResponse + "')" );
+          //window.trueView.showMsg( "hideTrueView" );
        }
     }
 }
@@ -586,6 +591,10 @@ function init() {
    loadMenu('menu0','https://hshin09.github.io/shinwebtv/youtvkor.html');
    loadMenu('menu1','https://hshin09.github.io/shinwebtv/thai.html');
    web = document.getElementById('web');
+   web.onload() = function() {
+      if( loadMode )
+         getTvUrl();
+   }
 }
 
 init();
