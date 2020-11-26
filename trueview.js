@@ -392,7 +392,7 @@ function loadVideo(url) {
    web.src = url;
    full = 0;
    onFullscreenOnOff();
-   mustWait = 4;
+   mustWait = 5;
    if(timer) {
       clearInterval(timer);
       timer=null;
