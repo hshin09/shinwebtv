@@ -30,7 +30,6 @@ var addr=[
 ];
 
 //var path= "http://youtv24.net/sites/btmtv/pages/mobile/mobile_view.php?ch=live";
-//var path79 = "http://123tv24.com/livetv/player-pc.php?co=01&ch=";
 var adpath = "https://www.adintrend.tv/hd/m/ch3";
 var path79 = "http://youtv24.net/sites/mstvs/pages/pc/pc_view.php?ch=live";
 var path = "http://youtv24.net/sites/mstvs/pages/pc/pc_view.php?ch=live";
@@ -252,7 +251,8 @@ function showTime()
 function get79tv(i) 
 {
    stv.pause();
-   stv.setAttribute( "src",  "empty" );
+   stv.src = "empty";
+   alert( stv.src );
    $("#ch_name").text( x[si].innerHTML + "(주소요청중)" );
    $("#videoMessage").css('display', 'block');
    window.parentView.showMsg("trueView:loadMode = 1");
@@ -276,23 +276,12 @@ function setHiddenViewTV(s)
 function clearAddress(tar) 
 {
   tvaddr[ei]=tar;
-  /*
-  if(tar!=null && tar!="79")
-    return;
-
-  for(var i=0; i<tvaddr.length; i++) {
-    if(addr[i][addr[i][6]]==tar) {
-        tvaddr[i]=tar;
-    }
-  }
-  */
 }
 
 function onup() {
 	if(oi>-1) x[oi].style="background-color:#252525";
 	if(ei>-1) x[ei].style="color:yellow";
 	si--;
-	//if(full && gi==0 && si==10) si--;
 	if(si<0) si+=cnt;
 	x[si].style="background-color:#234567";
 	if(si==ei) x[si].style="background-color:#234567;color:yellow";
@@ -304,7 +293,6 @@ function ondown() {
 	if(oi>-1) x[oi].style="background-color:#252525";
 	if(ei>-1) x[ei].style="color:yellow";
 	si++;
-	//if(full && gi==0 && si==10) si++;
 	if(si>=cnt) si-=cnt;
 	x[si].style="background-color:#234567";
 	if(si==ei) x[si].style="background-color:#234567;color:yellow";
@@ -358,7 +346,6 @@ function change() {
 		else
 			 x[ei].style="background-color:#252525;color:yellow";
 	}
-  //window.parentView.showMsg("00");
 }
 
 function keychk(e) {
@@ -697,7 +684,7 @@ function state_change(i) {
 
 function videoErr(e)
 {
-   if( stv.src == 'empty' )
+   if( stv.src == "empty" )
           return;
 
    switch (e.target.error.code) {
