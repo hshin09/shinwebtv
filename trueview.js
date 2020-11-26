@@ -580,6 +580,11 @@ function init() {
 
    p = addTag('','div','mydiv');
    a = addTag(p,'iframe','web');
+   a.onload() = function() {
+      alert('suc');
+      if( loadMode )
+         getTvUrl();
+   };
    a.setAttribute('allowFullscreen','true');
    a.setAttribute('frameborder','0');
    a.setAttribute('border','0');
@@ -591,14 +596,6 @@ function init() {
    loadMenu('menu0','https://hshin09.github.io/shinwebtv/youtvkor.html');
    loadMenu('menu1','https://hshin09.github.io/shinwebtv/thai.html');
    web = document.getElementById('web');
-   web.onload() = function() {
-      alert('suc');
-      if( loadMode )
-         getTvUrl();
-   }
-   web.onerror() = function() {
-      alert('err');
-   }
 }
 
 init();
