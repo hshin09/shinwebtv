@@ -413,7 +413,6 @@ function onFullscreenOnOff() {
     }
 }
 
-
 function showVideoMessage()
 {
     time = 0;
