@@ -389,13 +389,10 @@ function loadMenu(id,url) {
 }
 
 function loadVideo(url) {
-   //if( mustWait > 0 )
-   //   return;
-   
    web.src = url;
    full = 0;
    onFullscreenOnOff();
-   mustWait = 3;
+   mustWait = 4;
    if(timer) {
       clearInterval(timer);
       timer=null;
