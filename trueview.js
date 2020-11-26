@@ -110,11 +110,6 @@ function getTvUrl()
    var eei=strResponse.indexOf(",",ssi);
    strResponse = strResponse.substring(ssi+7,eei-1);
    window.trueView.showMsg( "webView:setHiddenViewTV('" + strResponse + "')" );
-   mustWait = 0;
-   if(timer) {
-      clearInterval(timer);
-      timer=null;
-   }
 }
 
 function OnOff()
@@ -146,7 +141,7 @@ function OnOff()
              clearInterval(timer);
              timer=null;
           }
-          //getTvUrl();
+          getTvUrl();
           //window.trueView.showMsg( "webView:setHiddenViewTV('" + strResponse + "')" );
           //window.trueView.showMsg( "hideTrueView" );
        }
@@ -220,8 +215,7 @@ function onright() {
 function change() {
         window.trueView.showMsg("hideTrueView");
         window.trueView.showMsg("webView:gi=0; change()");
-        return;
-
+/*
 	asi[gi]=si;
 	aei[gi]=ei;
 	aoi[gi]=oi;
@@ -247,7 +241,7 @@ function change() {
 		else
 			 xx[ei].style="background-color:#252525;color:yellow";
 	}
-  //window.parentView.showMsg("00");
+*/
 }
 
 function keychk(e) {
@@ -272,9 +266,8 @@ function keychk(e) {
                       timer=null;
                    }
                    getTvUrl();
-                   window.trueView.showMsg( "webView:setHiddenViewTV('" + strResponse + "')" );
-                   window.trueView.showMsg( "hideTrueView" );
-                   //window.trueView.showMsg( "webView:x[si].click()" );
+                   //window.trueView.showMsg( "webView:setHiddenViewTV('" + strResponse + "')" );
+                   //window.trueView.showMsg( "hideTrueView" );
 	        }
         }
 	else if(e.which == 48 ) {
@@ -580,11 +573,6 @@ function init() {
 
    p = addTag('','div','mydiv');
    a = addTag(p,'iframe','web');
-   a.onload() = function() {
-      alert('suc');
-      if( loadMode )
-         getTvUrl();
-   };
    a.setAttribute('allowFullscreen','true');
    a.setAttribute('frameborder','0');
    a.setAttribute('border','0');
@@ -594,7 +582,7 @@ function init() {
    addTag(a,'p','ch_name');
 
    loadMenu('menu0','https://hshin09.github.io/shinwebtv/youtvkor.html');
-   loadMenu('menu1','https://hshin09.github.io/shinwebtv/thai.html');
+   //loadMenu('menu1','https://hshin09.github.io/shinwebtv/thai.html');
    web = document.getElementById('web');
 }
 
