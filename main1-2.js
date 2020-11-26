@@ -249,7 +249,7 @@ function showTime()
 function get79tv(i) 
 {
    stv.pause();
-   stv.setAttribute( "src",  "about:blank" );
+   stv.setAttribute( "src",  "/" );
    $("#ch_name").text( x[si].innerHTML + "(주소요청중)" );
    $("#videoMessage").css('display', 'block');
    window.parentView.showMsg("trueView:loadMode = 1");
