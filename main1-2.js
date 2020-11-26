@@ -132,7 +132,7 @@ function OnOff()
     {
        mustWait--;
        if( mustWait == 0 )
-          setTimeout(function(){onok();},timeSetTV);
+          setTimeout(function(){onok();},10);
        return;
     }
 
