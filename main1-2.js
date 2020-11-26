@@ -129,6 +129,9 @@ function OnOff()
     tstr=tstr+time;
     $('#sec').text( tstr );
 
+    if( stv.src == "empty" )
+          return;
+
     if( mustWait )
     {
        mustWait--;
@@ -139,8 +142,6 @@ function OnOff()
 
     if( stv.error != null || stv.networkState == 3 || ( time > 30 && stv.currentTime < 2 ) )
     {
-       if( stv.src == "empty" )
-          return;
        oldCurrentTime = 0;
        if( $('#errorMessage').css('display') != "block" ) {
           $("#er_msg").text( "채널을 가져올수 없음(네트워크 또는 서버 에러)-Timer" );
