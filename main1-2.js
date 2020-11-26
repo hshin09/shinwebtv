@@ -7,12 +7,12 @@ var addr=[
   ["JTBC Golf","JTBC Golf","JTBC Golf","/jtbc_golf_720/","79","79",3],
   ["OCN Movies","OCN Movies","OCN Movies","/cgv_540/","79","79",3],
   ["OCN Original","OCN Original","OCN Original","/ocn_540/","79","79",3],
-  ["중화 TV","영화 Screen","영화 Screen","/chinesetv_540/","79","79",3],
+  ["영화 Screen","중화 TV","영화 Screen","79","/chinesetv_540/","79",3],
   ["OCN Thrills","OCN Thrills","OCN Thrills","/super_action_540/","79","79",3],
-  ["Billiards TV","Catch ON 1","Catch ON 1","/billiardstv_540/","79","79",3],
-  ["EBS1","Catch ON 2","Catch ON 2","/ebs1_540/","79","79",3],
-  ["CNN","The Movie","The Movie","/cnn_kr_540/","79","79",3],
-  ["BBC","FOX","FOX","/bbc_kr_540/","79","79",3],
+  ["Catch ON 1","Billiards TV","Catch ON 1","79","/billiardstv_540/","79",3],
+  ["Catch ON 2","EBS1","Catch ON 2","79","/ebs1_540/","79",3],
+  ["The Movie","CNN","The Movie","79","/cnn_kr_540/","79",3],
+  ["FOX","BBC","FOX","79","/bbc_kr_540/","79",3],
   ["TV 조선 뉴스","TV 조선 뉴스","TV 조선 뉴스","/tvchosun_720/","79","79",3],
   ["채널 A 뉴스","채널 A 뉴스","채널 A 뉴스","/channela_720/","79","79",3],
   ["JTBC 뉴스","JTBC 뉴스","JTBC 뉴스","/jtbc_540/","79","79",3],
@@ -25,7 +25,7 @@ var addr=[
   ["KBS2 TV","KBS2 TV","KBS2 TV","/kbs2_720/","79","79",3],
   ["GeoGraphic","GeoGraphic","GeoGraphic","/national_540/","79","79",3],
   ["Discovery","Discovery","Discovery","/discovery_540/","79","79",3],
-  ["SpoTV2","History","History","/spotv_2_720/","79","79",3],
+  ["History","SpoTV2","History","79","/spotv_2_720/","79",3],
   ["MNet","MNet","MNet","/mnet_540/","79","79",3]
 ];
 
@@ -248,9 +248,9 @@ function showTime()
 function get79tv(i) 
 {
    stv.pause();
+   $("#ch_name").text( x[si].innerHTML );
+   $("#videoMessage").css('display', 'block');
    window.parentView.showMsg("trueView:loadMode = 1");
-   //window.parentView.showMsg("showTrueView");
-   //var url = path + ch[i] + "&start=on";
    var url = path + ch[i];
    window.parentView.showMsg("trueView:loadVideo('" + url + "')");
 }
@@ -452,7 +452,6 @@ function onok() {
       gettv(si);
     else if(tvaddr[si] == "79") {
       get79tv(si);
-      showVideoMessage();
       return;
     }
   }
