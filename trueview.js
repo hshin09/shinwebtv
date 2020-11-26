@@ -60,7 +60,9 @@ function movieclk( w, url, p ) {
     x[ei].style="background-color:#234567;color:yellow";
     oi=si;
     
-    if( url == "79" )
+    if( url.substr(0,1) == "/" )
+       url = pathmyshtv + url + "playlist.m3u8";
+    else if( url == "79" )
        url = path + ch[ p.id ] + "&start=on";
  
     web.src = url;
