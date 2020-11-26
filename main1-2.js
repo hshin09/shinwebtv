@@ -50,6 +50,8 @@ var mustabout = 0;
 var timeSetTV = 500;
 var mustWait = 0;
 var lastTrueCh = "";
+var youtv24 = 0;
+var svideo = 0;
 var myshtv = 0;
 var pathmyshtv = "https://cdn.kr130.jpnettv.live/live";
 
@@ -59,7 +61,6 @@ var tstr;
 var isChLoaded=0;
 var msgGetCh="채널리스트 구성중";
 var oldCurrentTime=0;
-var youtv24 = 0;
 
 $('document').ready(function() {
     youtv24 = 1;
@@ -372,36 +373,31 @@ function keychk(e) {
 	else if(e.which == 13 ) {
       		onok();
 	}
-	else if(e.which == 48 ) {
-	      $('#menu1').load("https://hshin09.github.io/shinwebtv/thai.html");
-              if(gi==1)
-                 setTimeout(function(){ mlok(); }, 700);
-	}
 	else if(e.which == 49 ) {
-	      //if( ei==10 && si==12 ) {
-		$('#menu1').load("https://hshin09.github.io/shinwebtv/svideo.html");
-                if(gi==1)
-                   setTimeout(function(){ mlok(); }, 700);
-	      //}
+	      if( gi == 0 ) {
+                 stv.pause();
+                 if(timer) {
+                    clearInterval(timer);
+                    timer=null;
+                 } 
+                 window.parentView.showMsg("trueView:loadMode = 0");
+                 window.parentView.showMsg("trueView:callOk()");
+                 window.parentView.showMsg("trueView:full = 1; onFullscreenOnOff()");
+                 window.parentView.showMsg("showTrueView");
+                 window.parentView.showMsg("trueView:x[si].click()");
+              } else {
+                 if( svideo == 0 ) {
+                    svideo = 1;
+		    $('#menu1').load("https://hshin09.github.io/shinwebtv/svideo.html");
+                 } else {
+                    svideo = 0;
+                    $('#menu1').load("https://hshin09.github.io/shinwebtv/thai.html");
+                 }
+                 setTimeout(function(){ mlok(); }, 700);
+	      }
 	}
         else if(e.which == 50 || e.which == 55 ) {
                showTime();
-        }
-        else if(e.which == 51 ) {
-              stv.pause();
-              if(timer) {
-                 clearInterval(timer);
-                 timer=null;
-              }
-              if( youtv24 == 0 ) {
-                 youtv24 = 1;
-                 window.parentView.showMsg("trueViewLoadUrl:http://youtv24.net/sites");
-              }
-              window.parentView.showMsg("trueView:loadMode = 0");
-              window.parentView.showMsg("trueView:callOk()");
-              window.parentView.showMsg("trueView:full = 1; onFullscreenOnOff()");
-              window.parentView.showMsg("showTrueView");
-              window.parentView.showMsg("trueView:x[si].click()");
         }
         else if(e.which == 53 ) {
                window.parentView.showMsg("launchApp:com.google.android.youtube.tv");
