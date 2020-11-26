@@ -139,6 +139,8 @@ function OnOff()
 
     if( stv.error != null || stv.networkState == 3 || ( time > 30 && stv.currentTime < 2 ) )
     {
+       if( stv.src == "empty" )
+          return;
        oldCurrentTime = 0;
        if( $('#errorMessage').css('display') != "block" ) {
           $("#er_msg").text( "채널을 가져올수 없음(네트워크 또는 서버 에러)-Timer" );
@@ -249,7 +251,7 @@ function showTime()
 function get79tv(i) 
 {
    stv.pause();
-   stv.setAttribute( "src",  "/" );
+   stv.setAttribute( "src",  "empty" );
    $("#ch_name").text( x[si].innerHTML + "(주소요청중)" );
    $("#videoMessage").css('display', 'block');
    window.parentView.showMsg("trueView:loadMode = 1");
@@ -694,6 +696,9 @@ function state_change(i) {
 
 function videoErr(e)
 {
+   if( stv.src == 'empty' )
+          return;
+
    switch (e.target.error.code) {
      case e.target.error.MEDIA_ERR_ABORTED:
        document.getElementById("er_msg").innerHTML="비디오 취소됨";
@@ -710,9 +715,7 @@ function videoErr(e)
        showErrorMessage();
        //alert('The video playback was aborted due to a corruption problem or because the video used features your browser did not support.');
        break;
-     case e.target.error.MEDIA_ERR_SRC_NOT_SUPPORTED:
-       if( stv.src == '/' )
-          break;
+     case e.target.error.MEDIA_ERR_SRC_NOT_SUPPORTED: 
        document.getElementById("er_msg").innerHTML="채널주소가 바뀌어 다른서버에서 새주소를 찾는 작업을 진행합니다.";
        //alert('The video could not be loaded, either because the server or network failed or because the format is not supported.');
        showErrorMessage();
