@@ -59,34 +59,10 @@ function movieclk( w, url, p ) {
     si=ei=p.id;
     x[ei].style="background-color:#234567;color:yellow";
     oi=si;
-    //if( w === "tv" && url.indexOf("tv.trueid.net/embed/") < 1 )
-    //   showVideoMessage();
-
-    if( url.substr(0,1) == "/" )
-       url = pathmyshtv + url + "playlist.m3u8";
-    else if( url == "79" )
+    
+    if( url == "79" )
        url = path + ch[ p.id ] + "&start=on";
-    else if( url.indexOf("p1.cdn.vet") > 0 )
-       url = url + ADsid;
-    /*
-    stv.volume=1;
-    if( gi==1 && p.id > 18 )
-    {
-      stv.volume=0.2;
-      if( p.id == 19 || p.id == 21 )
-         stv.volume=0.4;
-      else if( p.id == 22 )
-         stv.volume=0.3;
-      else if( p.id == 23 )
-         stv.volume=0.3;
-    }
-    else if( gi == 1 ) {
-       if( url.indexOf("p1.cdn.vet") > 0 ) {
-          stv.volume=0.3;
-          url = url + ADsid;
-       }
-    }
-    */
+ 
     web.src = url;
 }
 
@@ -116,11 +92,6 @@ function OnOff()
 {
    if( !isChLoaded )
    {
-      /*
-      $('#secMessage').css('display', 'block');
-      msgGetCh = msgGetCh + ".";
-      $('#sec').text( msgGetCh );
-      */
       x=document.getElementById("ml"+gi).getElementsByTagName("li");
       if( x.length==tvaddr.length )
       {
@@ -142,8 +113,6 @@ function OnOff()
              timer=null;
           }
           getTvUrl();
-          //window.trueView.showMsg( "webView:setHiddenViewTV('" + strResponse + "')" );
-          //window.trueView.showMsg( "hideTrueView" );
        }
     }
 }
@@ -160,19 +129,12 @@ function showTime()
    if( dt.getMinutes() < 10 )
       sctime += "0";
    sctime += dt.getMinutes();
-
-   /*
-   $('#ch_name').text( sctime );
-   $("#videoMessage").css('display', 'block');
-   setTimeout( function(){$("#videoMessage").css('display', 'none');}, 3000 );
-   */
 }
 
 function onup() {
 	if(oi>-1) x[oi].style="background-color:#252525";
 	if(ei>-1) x[ei].style="color:yellow";
 	si--;
-	//if(full && gi==0 && si==10) si--;
 	if(si<0) si+=cnt;
 	x[si].style="background-color:#234567";
 	if(si==ei) x[si].style="background-color:#234567;color:yellow";
@@ -184,7 +146,6 @@ function ondown() {
 	if(oi>-1) x[oi].style="background-color:#252525";
 	if(ei>-1) x[ei].style="color:yellow";
 	si++;
-	//if(full && gi==0 && si==10) si++;
 	if(si>=cnt) si-=cnt;
 	x[si].style="background-color:#234567";
 	if(si==ei) x[si].style="background-color:#234567;color:yellow";
@@ -215,33 +176,6 @@ function onright() {
 function change() {
         window.trueView.showMsg("hideTrueView");
         window.trueView.showMsg("webView:gi=0; change()");
-/*
-	asi[gi]=si;
-	aei[gi]=ei;
-	aoi[gi]=oi;
-
-	if(gi==0)
-		gi=1;
-	else
-		gi=0;
-
-	si=asi[gi];
-	ei=aei[gi];
-	oi=aoi[gi];
-
-	mlok();
-	si=asi[gi];
-	ei=aei[gi];
-	oi=aoi[gi];
-
-	if(si>-1) xx[si].style="background-color:#234567";
-	if(ei>-1) {
-		if(si==ei)
-			 xx[si].style="background-color:#234567;color:yellow";
-		else
-			 xx[ei].style="background-color:#252525;color:yellow";
-	}
-*/
 }
 
 function keychk(e) {
@@ -258,69 +192,16 @@ function keychk(e) {
 		onright();
 	}
 	else if(e.which == 13 ) {
-                if( loadMode == 0 ) {
-      		   onok();
-                } else {
-                   if(timer) {
-                      clearInterval(timer);
-                      timer=null;
-                   }
-                   getTvUrl();
-                   //window.trueView.showMsg( "webView:setHiddenViewTV('" + strResponse + "')" );
-                   //window.trueView.showMsg( "hideTrueView" );
-	        }
+              if( loadMode == 0 )
+      	         onok();
         }
-	else if(e.which == 48 ) {
-              /*
-	      $('#menu1').load("https://hshin09.github.io/shinwebtv/thai.html");
-              if(gi==1)
-                 setTimeout(function(){ mlok(); }, 700);
-              */
-	}
 	else if(e.which == 49 ) {
-	      /*
-		$('#menu1').load("https://hshin09.github.io/shinwebtv/svideo.html");
-                if(gi==1)
-                   setTimeout(function(){ mlok(); }, 700);
-              */
-	}
-        else if(e.which == 50 || e.which == 55 ) {
-               //showTime();
-        } 
-        else if(e.which == 51 ) {
-              if( loadMode == 1 )
+	      if( loadMode == 1 )
                  return;
               window.trueView.showMsg("hideTrueView");
               window.trueView.showMsg("webView:x[si].click()");
-        }
-        else if(e.which == 53 ) {
-               //window.parentView.showMsg("launchApp:com.google.android.youtube.tv");
-	} 
-        else if(e.which == 54 ) {
-               //window.parentView.showMsg("launchApp:com.android.chrome");
-               //window.parentView.showMsg("launchApp:com.opera.browser.beta");
-	} 
-        else if(e.which == 56 ) {
-              /*
-              if(myshtv == 1) {
-                 $('#menu0').load("https://hshin09.github.io/shinwebtv/kor2.html");
-                 myshtv = 0;
-              }
-              else {
-	         $('#menu0').load("https://hshin09.github.io/shinwebtv/myshtv.html");
-                 myshtv = 1;
-              }
-              if(gi == 0)
-                 setTimeout(function(){ mlok(); }, 500);
-              */
 	}
-        else if(e.which == 57 ) {
-              /*
-	      $('#menu1').load("https://hshin09.github.io/shinwebtv/thai_old.html");
-              if(gi==1)
-                 setTimeout(function(){ mlok(); }, 500);
-              */
-	}
+        
 	e.preventDefault();
 }
 
@@ -338,12 +219,6 @@ function onok() {
     x[si].innerHTML=addr[si][i_ch-2];
 
     addr[si][4]=i_ch;
-    /*
-    if(i_ch==2)
-      window.parentView.showMsg("msg:기본서버("+x[si].innerHTML+") 로 이동합니다");
-    else
-      window.parentView.showMsg("msg:"+(i_ch-2)+"번 보조서버("+xx[si].innerHTML+") 로 이동합니다");
-    */
   }
   x[si].click();
 }
@@ -422,12 +297,6 @@ function showVideoMessage()
     
     timer = setInterval( function() { OnOff(); }, 1100 );
     closeErrorMessage();
-    /*
-    $('#sec').text( "00" );
-    $("#ch_name").text( x[si].innerHTML );
-    $("#videoMessage").css('display', 'block');
-    $("#secMessage").css('display', 'block');
-    */
 }
 
 function showErrorMessage()
