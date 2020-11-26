@@ -452,6 +452,7 @@ function onok() {
       gettv(si);
     else if(tvaddr[si] == "79") {
       get79tv(si);
+      showVideoMessage();
       return;
     }
   }
