@@ -485,6 +485,19 @@ function onok() {
 
 var x;
 var cnt;
+function mlok() 
+{
+    x=document.getElementById("ml"+gi).getElementsByTagName("li");
+    cnt=x.length;
+    var i;
+    for(i=0; i<cnt; i++) {
+       x[i].id=i;
+    }
+    showLeftMenu();
+    oi=-1;
+    x[si].click();
+}
+/*
 function mlok() {
    x=document.getElementById("ml"+gi).getElementsByTagName("li");
    cnt=x.length;
@@ -505,6 +518,7 @@ function mlok() {
    oi=-1;
    x[si].click();
 }
+*/
 
 function showLeftMenu() {
     if( gi == 1 )
