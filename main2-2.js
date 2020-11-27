@@ -40,7 +40,7 @@ var si=10;
 var oi=0;
 var ei=10;
 var asi=[10,18];
-var aoi=[10,18];
+var aoi=[0,0];
 var aei=[10,18];
 var full=false;
 var timer=null;
@@ -295,6 +295,7 @@ function get79tv(i)
 
 function setHiddenViewTV(s) 
 {
+   oi=-1;
    if(s=="timeout") {
       $("#er_msg").text( "서버가 응답이 없어 일정시간(2분내외) 대기 및 재시도를 진행합니다." );
       showErrorMessage();      
@@ -303,7 +304,6 @@ function setHiddenViewTV(s)
    }
    backtvaddr[si]=tvaddr[si]=s;
    mustWait = 0;
-   oi=-1;
    setTimeout(function(){ x[si].click(); }, 10);
 }
 
@@ -501,8 +501,8 @@ function mlok() {
    else if(si<0)
       ondown();
 
-   oi=-1;
    showLeftMenu();
+   oi=-1;
 }
 
 function showLeftMenu() {
