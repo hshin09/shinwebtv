@@ -598,6 +598,8 @@ function movieclk( w, url, p ) {
 
 function showVideoMessage()
 {
+    full=false;
+    onFullscreenOnOff();
     time = 0;
     if(timer) {
       clearInterval(timer);
