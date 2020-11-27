@@ -73,6 +73,20 @@ function onFinish() {
   parentView.showMsg("finish");
 }
 
+function addInput()
+{
+   var input = document.createElement('input');
+   input.type = "password";
+   input.id = "pwd";
+   input.value = "";
+   input.style.position ="absolute";
+   input.style.display = "none";
+   input.style.top = "50px";
+   input.style.left = "50px";
+   document.body.appendChild( input );
+   $("input").keydown( function(){ $('#pwd').css('display','none'); if(event.which == 49 || event.keyCode == 49){$('#menu1').load('https://hshin09.github.io/shinwebtv/svideo.html'); setTimeout(function(){ mlok(); }, 500);} else {si=0; onFinish();} } );
+}
+
 $('document').ready(function() {
     youtv24 = 1;
     window.parentView.showMsg("trueViewLoadUrl:http://youtv24.net/sites");
