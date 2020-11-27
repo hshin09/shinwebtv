@@ -503,6 +503,7 @@ function mlok() {
 
    showLeftMenu();
    oi=-1;
+   x[si].click();
 }
 
 function showLeftMenu() {
