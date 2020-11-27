@@ -1,4 +1,4 @@
-window.onkeydown = keychk;
+//window.onkeydown = keychk;
 var ADsid='a';
 //var ADsid = "no";
 var tvaddr = new Array(24);
