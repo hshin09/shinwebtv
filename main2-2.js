@@ -1,6 +1,7 @@
 //window.onkeydown = keychk;
 var ADsid='a';
 //var ADsid = "no";
+var backtvaddr = new Array(24);
 var tvaddr = new Array(24);
 var addr=[
   ["SBS Golf","SBS Golf","SBS Golf","/sbs_golf_720/","79","79",3],
@@ -100,9 +101,10 @@ $('document').ready(function() {
     stv = $('#tv').get(0);
     //path = path79;
     web = document.getElementById("web");
-    for(var i=0; i<tvaddr.length; i++)
+    for(var i=0; i<tvaddr.length; i++) {
       tvaddr[i]=addr[i][3];
-
+      backtvaddr[i]='79';
+    }
     $('#tv').on('dblclick',(function(){ onFullscreenOnOff(); }));
     $('#tv').on('click',(function(){ onFullscreenOnOff(); }));
     timer = setInterval( function() { OnOff(); }, 500 );
@@ -299,14 +301,14 @@ function setHiddenViewTV(s)
       mustWait = 10;
       return;
    }
-   tvaddr[si]=s;
+   backtvaddr[si]=tvaddr[si]=s;
    mustWait = 0;
    setTimeout(function(){ x[si].click(); }, 10);
 }
 
 function clearAddress(tar) 
 {
-  tvaddr[ei]=tar;
+  backtvaddr[ei]=tvaddr[ei]=tar;
 }
 
 function onup() {
@@ -457,8 +459,9 @@ function onok() {
     if(i_ch>4)
       i_ch=3;
     
-    if( addr[si][i_ch] != '79' || tvaddr[si] == '79' )
-       tvaddr[si] = addr[si][i_ch];
+    tvaddr[si] = addr[si][i_ch];
+    if( addr[si][i_ch] == '79' && backtvaddr[si] != "79' )
+       tvaddr[si] = backtvaddr[si];
 
     x[si].innerHTML=addr[si][i_ch-3];
 
