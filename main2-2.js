@@ -37,10 +37,10 @@ var path = "http://youtv24.net/sites/mstvs/pages/pc/pc_view.php?ch=live";
 var ch = ['26','37','04','05','25','03','09','35','30','17','33','02','01','34','32','23','14','07','15','13','50','46','49','38' ];
 var gi=0;
 var si=10;
-var oi=-1;
+var oi=0;
 var ei=10;
 var asi=[10,18];
-var aoi=[-1,-1];
+var aoi=[10,18];
 var aei=[10,18];
 var full=false;
 var timer=null;
@@ -303,6 +303,7 @@ function setHiddenViewTV(s)
    }
    backtvaddr[si]=tvaddr[si]=s;
    mustWait = 0;
+   oi=-1;
    setTimeout(function(){ x[si].click(); }, 10);
 }
 
@@ -478,6 +479,7 @@ function onok() {
       return;
     }
   }
+  oi=-1;
   x[si].click();
 }
 
@@ -499,6 +501,7 @@ function mlok() {
    else if(si<0)
       ondown();
 
+   oi=-1;
    showLeftMenu();
 }
 
