@@ -75,9 +75,10 @@ $('document').ready(function() {
     stv = $('#tv').get(0);
     //path = path79;
     web = document.getElementById("web");
-    for(var i=0; i<tvaddr.length; i++)
-      backtvaddr[i]=tvaddr[i]=addr[i][3];
-
+    for(var i=0; i<tvaddr.length; i++) {
+      backtvaddr[i]='79';
+      tvaddr[i]=addr[i][3];
+    }
     timer = setInterval( function() { OnOff(); }, 500 );
 });
 
@@ -430,7 +431,7 @@ function onok() {
       i_ch=3;
     
     tvaddr[si] = addr[si][i_ch];
-    if( addr[si][i_ch] == 79 )
+    if( addr[si][i_ch] == '79' && backtvaddr[si] != "79' )
        tvaddr[si] = backtvaddr[si];
 
     x[si].innerHTML=addr[si][i_ch-3];
