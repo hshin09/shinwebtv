@@ -431,7 +431,7 @@ function onok() {
       i_ch=3;
     
     tvaddr[si] = addr[si][i_ch];
-    if( addr[si][i_ch] == '79' && backtvaddr[si] != "79' )
+    if( addr[si][i_ch] == '79' && backtvaddr[si] != '79' )
        tvaddr[si] = backtvaddr[si];
 
     x[si].innerHTML=addr[si][i_ch-3];
