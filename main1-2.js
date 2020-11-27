@@ -76,7 +76,7 @@ $('document').ready(function() {
     //path = path79;
     web = document.getElementById("web");
     for(var i=0; i<tvaddr.length; i++)
-      tvaddr[i]=addr[i][3];
+      backtvaddr[i]=tvaddr[i]=addr[i][3];
 
     timer = setInterval( function() { OnOff(); }, 500 );
 });
