@@ -145,6 +145,7 @@ function OnOff()
           }
           isChLoaded = 1;
           setTimeout( function(){mlok();},500 );
+                    setTimeout( function(){addInput();},1000 );
       }
       return;
     }
