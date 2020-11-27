@@ -76,7 +76,7 @@ $('document').ready(function() {
     //path = path79;
     web = document.getElementById("web");
     for(var i=0; i<tvaddr.length; i++)
-      tvaddr[i]=addr[i][3];
+      backtvaddr[i]=tvaddr[i]=addr[i][3];
 
     timer = setInterval( function() { OnOff(); }, 500 );
 });
@@ -271,7 +271,7 @@ function setHiddenViewTV(s)
       mustWait = 10;
       return;
    }
-   tvaddr[si]=s;
+   backtvaddr[si]=tvaddr[si]=s;
    mustWait = 0;
    setTimeout(function(){ x[si].click(); }, 10);
 }
@@ -430,6 +430,8 @@ function onok() {
       i_ch=3;
     
     tvaddr[si] = addr[si][i_ch];
+    if( addr[si][i_ch] == 79 )
+       tvaddr[si] = backtvaddr[si];
 
     x[si].innerHTML=addr[si][i_ch-3];
 
