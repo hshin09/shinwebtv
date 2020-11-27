@@ -531,10 +531,13 @@ function onFullscreenOnOff() {
 function movieclk( w, url, p ) {
     oldCurrentTime=0;
     stv.pause();
-
+    if(p.id==oi) {
+      onok();
+      return;
+    }
     if(oi>-1) x[oi].style="background-color:#252525;";
     if(ei>-1) x[ei].style="background-color:#252525";
-    si=ei=p.id;
+    oi=si=ei=p.id;
     x[ei].style="background-color:#234567;color:yellow";
     oi=si;
     if( w === "tv" && url.indexOf("tv.trueid.net/embed/") < 1 )
