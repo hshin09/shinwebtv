@@ -1,6 +1,7 @@
 window.onkeydown = keychk;
 var ADsid='a';
 //var ADsid = "no";
+var backtvaddr = new Array(24);
 var tvaddr = new Array(24);
 var addr=[
   ["SBS Golf","SBS Golf","SBS Golf","/sbs_golf_720/","79","79",3],
@@ -270,7 +271,7 @@ function setHiddenViewTV(s)
       mustWait = 10;
       return;
    }
-   tvaddr[si]=s;
+   backtvaddr[si]=tvaddr[si]=s;
    mustWait = 0;
    setTimeout(function(){ x[si].click(); }, 10);
 }
@@ -428,7 +429,9 @@ function onok() {
     if(i_ch>4)
       i_ch=3;
     
-    if( addr[si][i_ch] != '79' || tvaddr[si] == '79' )
+    if( tvaddr[si] == '79' )
+       tvaddr[si] = backtvaddr[si];
+    else
        tvaddr[si] = addr[si][i_ch];
 
     x[si].innerHTML=addr[si][i_ch-3];
