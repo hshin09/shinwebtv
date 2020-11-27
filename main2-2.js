@@ -493,42 +493,29 @@ function mlok() {
 }
 
 function showLeftMenu() {
-	var hi=0;
-	if(gi==0) hi=1;
-	var hideMenuObj = document.getElementById('menu'+hi);
-	var leftMenuObj = document.getElementById('menu'+gi);
-
-        hideMenuObj.removeAttribute("style");
-
-	if(gi==0) {
-		leftMenuObj.style['transform'] = "translate(0px, 0px)";
-		leftMenuObj.style['msTransform'] = "translate(0px, 0px)";
-		leftMenuObj.style['mozTransform'] = "translate(0px, 0px)";
-		leftMenuObj.style['webkitTransform'] = "translate(0px, 0px)";
-		leftMenuObj.style['oTransform'] = "translate(0px, 0px)";
-	}
-	else {
-		leftMenuObj.style['transform'] = "translate(0px, -"+ trans +"px)";
-		leftMenuObj.style['msTransform'] = "translate(0px, -"+ trans +"px)";
-		leftMenuObj.style['mozTransform'] = "translate(0px, -"+ trans +"px)";
-		leftMenuObj.style['webkitTransform'] = "translate(0px, -"+ trans +"px)";
-		leftMenuObj.style['oTransform'] = "translate(0px, -"+ trans +"px)";
-	}
-}
-
-function onFullscreenOnOff() {
-    if( full == false )
+    if( gi == 1 )
     {
-        document.getElementById("mydiv").style.left="0";
-        document.getElementById("mydiv").style.width="100%";
-        full=true;
+        document.getElementById("menu0").style.display = "none";
+        document.getElementById("menu1").style.display = "block";
     }
     else
     {
-	document.getElementById("mydiv").style.left="10%";
-        document.getElementById("mydiv").style.width="90%";
-        full=false;
+        document.getElementById("menu0").style.display = "block";
+        document.getElementById("menu1").style.display = "none";
     }
+}
+
+function onFullscreenOnOff() {
+   if( full == false )
+   {
+      $('#leftmenu').css('display','none');
+      full=true;
+   }
+   else
+   {
+      $('#leftmenu').css('display','block');
+      full=false;
+   }
 }
 
 function movieclk( w, url, p ) {
