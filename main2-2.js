@@ -77,6 +77,8 @@ $('document').ready(function() {
     for(var i=0; i<tvaddr.length; i++)
       tvaddr[i]=addr[i][3];
 
+    $('#tv').on('dblclick',(function(){ onFullscreenOnOff(); }));
+    $('#tv').on('click',(function(){ onFullscreenOnOff(); }));
     timer = setInterval( function() { OnOff(); }, 500 );
 });
 
