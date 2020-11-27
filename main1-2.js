@@ -279,7 +279,7 @@ function setHiddenViewTV(s)
 
 function clearAddress(tar) 
 {
-  tvaddr[ei]=tar;
+  backtvaddr[ei]=tvaddr[ei]=tar;
 }
 
 function onup() {
