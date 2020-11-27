@@ -145,7 +145,7 @@ function OnOff()
           }
           isChLoaded = 1;
           setTimeout( function(){mlok();},500 );
-                    setTimeout( function(){addInput();},1000 );
+          setTimeout( function(){addInput();},1000 );
       }
       return;
     }
@@ -174,7 +174,7 @@ function OnOff()
           $("#er_msg").text( "채널을 가져올수 없음(네트워크 또는 서버 에러)-Timer" );
           showErrorMessage();
        }
-       if(isNotUser<2) {
+       if(isNotUser<1) {
           if( gi == 0 && myshtv == 0 )
           {
              //window.parentView.showMsg( "hiddenView:loadTV('" + path + ch[ei] + "&start=on')" );
@@ -456,7 +456,8 @@ function onok() {
     i_ch++;
     if(i_ch>4)
       i_ch=3;
-    tvaddr[si]=addr[si][i_ch];
+    
+    //tvaddr[si]=addr[si][i_ch];
 
     x[si].innerHTML=addr[si][i_ch-3];
 
