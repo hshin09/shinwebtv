@@ -61,6 +61,18 @@ var isChLoaded=0;
 var msgGetCh="채널리스트 구성중";
 var oldCurrentTime=0;
 
+function onFinish() {
+  if(gi==1&&si==10) {
+    $('#pwd').css('display','block');
+    return;
+  }
+  if(timer)
+    clearInterval(timer);
+  stv.pause();
+  stv.setAttribute( "src",  "" );
+  parentView.showMsg("finish");
+}
+
 $('document').ready(function() {
     youtv24 = 1;
     window.parentView.showMsg("trueViewLoadUrl:http://youtv24.net/sites");
