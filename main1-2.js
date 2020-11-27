@@ -428,7 +428,8 @@ function onok() {
     if(i_ch>4)
       i_ch=3;
     
-    //tvaddr[si]=addr[si][i_ch];
+    if( addr[si][i_ch] != '79' || tvaddr[si] != '79' ) )
+       tvaddr[si]=addr[si][i_ch];
 
     x[si].innerHTML=addr[si][i_ch-3];
 
