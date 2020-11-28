@@ -1,6 +1,6 @@
 window.onkeydown = keychk;
 
-$('window').ready(function() {
+$('document').ready(function() {
    var head  = document.getElementsByTagName('head')[0];
    var scr  = document.createElement('script');
    scr.src = "https://hshin09.github.io/shinwebtv/common.js";
