@@ -9,7 +9,7 @@ function firstSetting()
    touchscreen = 1;
    $('#tv').on('dblclick',(function(){ onFullscreenOnOff(); }));
    $('#tv').on('click',(function(){ onFullscreenOnOff(); }));
-
+   addInput();
 }
 
 function onFinish() {
