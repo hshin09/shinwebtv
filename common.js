@@ -82,18 +82,18 @@ alert('2');
    else
       $('#menu0').load("https://hshin09.github.io/shinwebtv/myshtv.html");
 alert('3');
-   /*
+   
    $('#menu1').load("https://hshin09.github.io/shinwebtv/thai.html");
 
    stv = $('#tv').get(0);
-   */
+alert('4');   
    web = document.getElementById("web");
    for(var i=0; i<tvaddr.length; i++) {
       backtvaddr[i]='79';
       tvaddr[i]=addr[i][3];
    }
    //timer = setInterval( function() { OnOff(); }, 500 );
-alert('4');
+alert('5');
 }
 
 /*
