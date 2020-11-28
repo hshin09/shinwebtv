@@ -7,7 +7,7 @@ head.appendChild(scr);
 
 scr.onload = function() {
    alert('s1');
-   Init();
+   //Init();
    alert('e2');
 }
 /*
