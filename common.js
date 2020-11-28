@@ -228,6 +228,7 @@ function get79tv(i)
 
 function setHiddenViewTV(s) 
 {
+   oi = -1;
    if(s=="timeout") {
       $("#er_msg").text( "서버가 응답이 없어 일정시간(2분내외) 대기 및 재시도를 진행합니다." );
       showErrorMessage();      
@@ -236,41 +237,40 @@ function setHiddenViewTV(s)
    }
    backtvaddr[si]=tvaddr[si]=s;
    mustWait = 0;
-   oi = -1;
    setTimeout(function(){ x[si].click(); }, 10);
 }
 
 function clearAddress(tar) 
 {
-  backtvaddr[ei]=tvaddr[ei]=tar;
+   backtvaddr[ei]=tvaddr[ei]=tar;
 }
 
 function change() {
-	asi[gi]=si;
-	aei[gi]=ei;
-	aoi[gi]=oi;
+   asi[gi]=si;
+   aei[gi]=ei;
+   aoi[gi]=oi;
 
-	if(gi==0)
-		gi=1;
-	else
-		gi=0;
+   if(gi==0)
+      gi=1;
+   else
+      gi=0;
 
-	si=asi[gi];
-	ei=aei[gi];
-	oi=aoi[gi];
+   si=asi[gi];
+   ei=aei[gi];
+   oi=aoi[gi];
 
-	mlok();
-	si=asi[gi];
-	ei=aei[gi];
-	oi=aoi[gi];
+   mlok();
+   si=asi[gi];
+   ei=aei[gi];
+   oi=aoi[gi];
 
-	if(si>-1) x[si].style="background-color:#234567";
-	if(ei>-1) {
-		if(si==ei)
-			 x[si].style="background-color:#234567;color:yellow";
-		else
-			 x[ei].style="background-color:#252525;color:yellow";
-	}
+   if(si>-1) x[si].style="background-color:#234567";
+   if(ei>-1) {
+      if(si==ei)
+         x[si].style="background-color:#234567;color:yellow";
+      else
+         x[ei].style="background-color:#252525;color:yellow";
+   }
 }
 
 function onok() {
@@ -314,55 +314,86 @@ function mlok() {
    for(i=0; i<cnt; i++) {
       x[i].id=i;
    }
-   if(ei>-1) {
-      si=ei;
-      ei=-1;
-      onleft();
-      ei=si;
+
+   if( !touchscreen ) {
+      if(ei>-1) {
+         si=ei;
+         ei=-1;
+         onleft();
+         ei=si;
+      }
+      else if(si<0)
+         ondown();
    }
-   else if(si<0)
-      ondown();
 
    showLeftMenu();
 }
 
 function showLeftMenu() {
-	var hi=0;
-	if(gi==0) hi=1;
-	var hideMenuObj = document.getElementById('menu'+hi);
-	var leftMenuObj = document.getElementById('menu'+gi);
+   if() {
+      if( gi == 1 )
+      {
+         document.getElementById("menu0").style.display = "none";
+         document.getElementById("menu1").style.display = "block";
+      }
+      else
+      {
+         document.getElementById("menu0").style.display = "block";
+         document.getElementById("menu1").style.display = "none";
+      }
+   }
+   else {
+      var hi=0;
+      if(gi==0) hi=1;
+      var hideMenuObj = document.getElementById('menu'+hi);
+      var leftMenuObj = document.getElementById('menu'+gi);
 
-        hideMenuObj.removeAttribute("style");
+      hideMenuObj.removeAttribute("style");
 
-	if(gi==0) {
-		leftMenuObj.style['transform'] = "translate(0px, 0px)";
-		leftMenuObj.style['msTransform'] = "translate(0px, 0px)";
-		leftMenuObj.style['mozTransform'] = "translate(0px, 0px)";
-		leftMenuObj.style['webkitTransform'] = "translate(0px, 0px)";
-		leftMenuObj.style['oTransform'] = "translate(0px, 0px)";
-	}
-	else {
-		leftMenuObj.style['transform'] = "translate(0px, -"+ trans +"px)";
-		leftMenuObj.style['msTransform'] = "translate(0px, -"+ trans +"px)";
-		leftMenuObj.style['mozTransform'] = "translate(0px, -"+ trans +"px)";
-		leftMenuObj.style['webkitTransform'] = "translate(0px, -"+ trans +"px)";
-		leftMenuObj.style['oTransform'] = "translate(0px, -"+ trans +"px)";
-	}
+      if(gi==0) {
+         leftMenuObj.style['transform'] = "translate(0px, 0px)";
+         leftMenuObj.style['msTransform'] = "translate(0px, 0px)";
+         leftMenuObj.style['mozTransform'] = "translate(0px, 0px)";
+         leftMenuObj.style['webkitTransform'] = "translate(0px, 0px)";
+         leftMenuObj.style['oTransform'] = "translate(0px, 0px)";
+      }
+      else {
+         leftMenuObj.style['transform'] = "translate(0px, -"+ trans +"px)";
+         leftMenuObj.style['msTransform'] = "translate(0px, -"+ trans +"px)";
+         leftMenuObj.style['mozTransform'] = "translate(0px, -"+ trans +"px)";
+         leftMenuObj.style['webkitTransform'] = "translate(0px, -"+ trans +"px)";
+         leftMenuObj.style['oTransform'] = "translate(0px, -"+ trans +"px)";
+      }
+   }
 }
 
 function onFullscreenOnOff() {
-    if( full == false )
-    {
-        document.getElementById("mydiv").style.left="0";
-        document.getElementById("mydiv").style.width="100%";
-        full=true;
-    }
-    else
-    {
-	document.getElementById("mydiv").style.left="10%";
-        document.getElementById("mydiv").style.width="90%";
-        full=false;
-    }
+   if( touchscreen ) {
+      if( full == false )
+      {
+         $('#leftmenu').css('display','none');
+         full=true;
+      }
+      else
+      {
+         $('#leftmenu').css('display','block');
+         full=false;
+      }
+   }
+   else {
+      if( full == false )
+      {
+         document.getElementById("mydiv").style.left="0";
+         document.getElementById("mydiv").style.width="100%";
+         full=true;
+      }
+      else
+      {
+	 document.getElementById("mydiv").style.left="10%";
+         document.getElementById("mydiv").style.width="90%";
+         full=false;
+      }
+   }
 }
 
 function movieclk( w, url, p ) {
