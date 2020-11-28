@@ -72,7 +72,7 @@ function Init() {
 alert('1');
    firstSetting();
    youtv24 = 1;
-   //window.parentView.showMsg("trueViewLoadUrl:http://youtv24.net/sites");
+   window.parentView.showMsg("trueViewLoadUrl:http://youtv24.net/sites");
 alert('1-1');
    //window.parentView.showMsg("hideTrueView");
 alert('2');
