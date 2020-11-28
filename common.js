@@ -60,7 +60,7 @@ var msgGetCh="채널리스트 구성중";
 var oldCurrentTime=0;
 
 //function Init() {
-$('document').ready(function() {
+$('window').ready(function() {
 alert('1');
    youtv24 = 1;
    window.parentView.showMsg("trueViewLoadUrl:http://youtv24.net/sites");
