@@ -225,7 +225,7 @@ function showTime()
    $("#videoMessage").css('display', 'block');
    setTimeout( function(){$("#videoMessage").css('display', 'none');}, 3000 );
 }
-/*
+
 function get79tv(i) 
 {
    stv.pause();
@@ -250,7 +250,7 @@ function setHiddenViewTV(s)
    mustWait = 0;
    setTimeout(function(){ x[si].click(); }, 10);
 }
-
+/*
 function clearAddress(tar) 
 {
    backtvaddr[ei]=tvaddr[ei]=tar;
