@@ -5,9 +5,9 @@ $('document').ready(function() {
    var scr  = document.createElement('script');
    scr.src = "https://hshin09.github.io/shinwebtv/common.js";
    head.appendChild(scr);
-   alert('1');
+   alert('s');
    Init();
-   alert('2');
+   alert('e');
    //touchscreen = 0;
 });
 
