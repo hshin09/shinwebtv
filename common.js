@@ -28,7 +28,7 @@ var addr=[
   ["MNet","MNet","MNet","/mnet_540/","79","79",3]
 ];
 
-var touchscreen;
+var touchscreen = 0;;
 var path79 = "http://youtv24.net/sites/mstvs/pages/pc/pc_view.php?ch=live";
 var path = "http://youtv24.net/sites/mstvs/pages/pc/pc_view.php?ch=live";
 var ch = ['26','37','04','05','25','03','09','35','30','17','33','02','01','34','32','23','14','07','15','13','50','46','49','38' ];
