@@ -1,4 +1,5 @@
 //window.onkeydown = keychk;
+var ppp = 'ppp';
 var head  = document.getElementsByTagName('head')[0];
 var scr  = document.createElement('script');
 scr.type = 'text/javascript';
