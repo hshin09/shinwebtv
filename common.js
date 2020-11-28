@@ -62,7 +62,7 @@ var oldCurrentTime=0;
 
 Init();
 function Init() {
-   alert('init');
+   alert(path);
 }
 /*
 function Init() {
