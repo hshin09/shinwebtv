@@ -62,7 +62,8 @@ var oldCurrentTime=0;
 
 Init();
 function Init() {
-   alert(ppp+":"+path);
+   aaa();
+   bbb();
 }
 /*
 function Init() {
