@@ -59,8 +59,11 @@ var isChLoaded=0;
 var msgGetCh="채널리스트 구성중";
 var oldCurrentTime=0;
 
-alert('123');
-//Init();
+
+Init();
+function Init() {
+   alert('init');
+}
 /*
 function Init() {
 alert('1');
