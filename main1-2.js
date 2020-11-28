@@ -32,7 +32,7 @@ $('document').ready(function() {
    //touchscreen = 0;
 });
 */
-/*
+
 function onup() {
 	if(oi>-1) x[oi].style="background-color:#252525";
 	if(ei>-1) x[ei].style="color:yellow";
@@ -143,4 +143,4 @@ function keychk(e) {
 	}
 	e.preventDefault();
 }
-*/
+
