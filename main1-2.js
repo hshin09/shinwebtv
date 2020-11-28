@@ -3,7 +3,7 @@ window.onkeydown = keychk;
 $('document').ready(function() {
    var head  = document.getElementsByTagName('head')[0];
    var scr  = document.createElement('script');
-   scr.src = "";
+   scr.src = "https://hshin09.github.io/shinwebtv/common.js";
    head.appendChild(scr);
    Init();
    touchscreen = 0;
