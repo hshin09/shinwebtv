@@ -61,12 +61,6 @@ var oldCurrentTime=0;
 
 
 Init();
-/*
-function Init() {
-   firstSetting();
-   youtv24 = 1;
-}
-*/
 
 function Init() {
    firstSetting();
@@ -87,7 +81,6 @@ function Init() {
       tvaddr[i]=addr[i][3];
    }
    timer = setInterval( function() { OnOff(); }, 500 );
-alert('5');
 }
 
 /*
