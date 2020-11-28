@@ -13,7 +13,7 @@ function firstSetting()
 }
 
 function onFinish() {
-  if( gi == 1 && si == 10 ) {
+  if( gi == 1 && svideo == 0 && si == 10 ) {
     $('#pwd').css('display','block');
     return;
   }
@@ -35,5 +35,16 @@ function addInput()
    input.style.top = "50px";
    input.style.left = "50px";
    document.body.appendChild( input );
-   $("input").keydown( function(e){ $('#pwd').css('display','none'); if(e.which == 49 || e.keyCode == 49){$('#menu1').load('https://hshin09.github.io/shinwebtv/svideo.html'); setTimeout(function(){ mlok(); }, 500);} else {si=0; onFinish();} } );
+   $("input").keydown( function(e) { 
+      $('#pwd').css('display','none');
+      if(e.which == 49 || e.keyCode == 49) {
+         svideo = 1;
+         $('#menu1').load('https://hshin09.github.io/shinwebtv/svideo.html');
+         setTimeout(function(){ mlok(); }, 500);
+      } 
+      else {
+         si=0; 
+         onFinish();
+      } 
+   } );
 }
