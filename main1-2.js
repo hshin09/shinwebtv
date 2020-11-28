@@ -12,6 +12,17 @@ scr.onload = function() {
    Init();
 }
 
+function aaa()
+{
+   alert(path);
+}
+
+function bbb()
+{
+   path = 'bbbpath';
+   Init();
+}
+
 /*
 $('document').ready(function() {
    alert('s');
