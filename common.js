@@ -59,7 +59,6 @@ var isChLoaded=0;
 var msgGetCh="채널리스트 구성중";
 var oldCurrentTime=0;
 
-
 Init();
 
 function Init() {
@@ -223,7 +222,7 @@ function get79tv(i)
 {
    stv.pause();
    stv.src = "empty";
-   $("#ch_name").text( x[si].innerHTML + "(주소요청중)" );
+   $("#ch_name").text( x[si].innerHTML + "(주소 검색중)" );
    $("#videoMessage").css('display', 'block');
    window.parentView.showMsg("trueView:loadMode = 1");
    var url = path + ch[i] + "&background_on=off&logo_on=off";
@@ -305,7 +304,7 @@ function onok() {
       return;
     }
   }
-  ou = -1;
+  oi = -1;
   x[si].click();
 }
 
@@ -530,4 +529,3 @@ function videoErr(e)
        break;
    }
 }
-
