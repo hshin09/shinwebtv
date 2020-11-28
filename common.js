@@ -61,12 +61,16 @@ var oldCurrentTime=0;
 
 
 Init();
-function Init() {
-   aaa();
-}
 /*
 function Init() {
+   firstSetting();
+   youtv24 = 1;
+}
+*/
+
+function Init() {
 alert('1');
+   firstSetting();
    youtv24 = 1;
    //window.parentView.showMsg("trueViewLoadUrl:http://youtv24.net/sites");
 alert('1-1');
@@ -85,9 +89,9 @@ alert('3');
       backtvaddr[i]='79';
       tvaddr[i]=addr[i][3];
    }
-   timer = setInterval( function() { OnOff(); }, 500 );
+   //timer = setInterval( function() { OnOff(); }, 500 );
 }
-*/
+
 /*
 ===== networkState =======
 0: 미디어 리소스 선택 전의 초기 상태 (NETWORK_EMPTY)
