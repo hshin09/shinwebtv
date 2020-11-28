@@ -6,7 +6,7 @@ $('document').ready(function() {
    scr.src = "https://hshin09.github.io/shinwebtv/common.js";
    head.appendChild(scr);
    alert('s');
-   scr.onload = function() {
+   window.onload = function() {
       alert('o');
       Init();
    }
