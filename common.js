@@ -225,7 +225,7 @@ function showTime()
    $("#videoMessage").css('display', 'block');
    setTimeout( function(){$("#videoMessage").css('display', 'none');}, 3000 );
 }
-
+/*
 function get79tv(i) 
 {
    stv.pause();
@@ -537,4 +537,4 @@ function videoErr(e)
        break;
    }
 }
-
+*/
