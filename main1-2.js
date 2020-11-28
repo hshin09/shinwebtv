@@ -1,17 +1,17 @@
-//window.onkeydown = keychk;
+window.onkeydown = keychk;
 var ppp = 'ppp';
 var head  = document.getElementsByTagName('head')[0];
 var scr  = document.createElement('script');
 scr.type = 'text/javascript';
 scr.src = 'https://hshin09.github.io/shinwebtv/common.js';
 head.appendChild(scr);
-
+/*
 scr.onload = function() {
    alert('ss');
    path = 'mypath';
    Init();
 }
-
+*/
 function aaa()
 {
    alert(path);
