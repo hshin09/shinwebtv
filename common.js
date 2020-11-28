@@ -76,6 +76,7 @@ alert('1');
 alert('1-1');
    //window.parentView.showMsg("hideTrueView");
 alert('2');
+   /*
    if( myshtv == 0 )
       $('#menu0').load("https://hshin09.github.io/shinwebtv/kor2.html");
    else
@@ -84,6 +85,7 @@ alert('3');
    $('#menu1').load("https://hshin09.github.io/shinwebtv/thai.html");
 
    stv = $('#tv').get(0);
+   */
    web = document.getElementById("web");
    for(var i=0; i<tvaddr.length; i++) {
       backtvaddr[i]='79';
