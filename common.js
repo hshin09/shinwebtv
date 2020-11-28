@@ -148,7 +148,7 @@ function OnOff()
           $("#er_msg").text( "채널을 가져올수 없음(네트워크 또는 서버 에러)-Timer" );
           showErrorMessage();
        }
-       if(isNotUser<1) {
+       if(isNotUser<0) {
           if( gi == 0 && myshtv == 0 )
           {
              //window.parentView.showMsg( "hiddenView:loadTV('" + path + ch[ei] + "&start=on')" );
@@ -171,6 +171,7 @@ function OnOff()
              var ich = addr[ei][6];
              if( addr[ei][ich] == '79' )
                 addr[ei][6] = ich-1;
+             clearAddress(addr[ei][addr[ei][6]]);
              setTimeout(function(){onok();},timeSetTV);
           }
        }
