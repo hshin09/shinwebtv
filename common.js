@@ -1,4 +1,5 @@
 alert('11');
+/*
 var ADsid='a';
 var backtvaddr = new Array(24);
 var tvaddr = new Array(24);
@@ -82,8 +83,7 @@ alert('3');
    }
    timer = setInterval( function() { OnOff(); }, 500 );
 }
-
-
+*/
 /*
 ===== networkState =======
 0: 미디어 리소스 선택 전의 초기 상태 (NETWORK_EMPTY)
@@ -103,6 +103,7 @@ alert('3');
 4: src 속성에 지정된 미디어 리소스가 부적절할 때
 보통 에러시 ns=3,rs=0,er=4 이고 정상일때는 ns=2->1, rs=0->4, er=없음(null)
 */
+/*
 var isNotUser=0;
 function OnOff()
 {
@@ -530,3 +531,4 @@ function videoErr(e)
        break;
    }
 }
+*/
