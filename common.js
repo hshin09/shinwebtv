@@ -80,7 +80,7 @@ alert('3');
       tvaddr[i]=addr[i][3];
    }
    timer = setInterval( function() { OnOff(); }, 500 );
-});
+}
 
 /*
 ===== networkState =======
