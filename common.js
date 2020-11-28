@@ -63,7 +63,6 @@ var oldCurrentTime=0;
 Init();
 function Init() {
    aaa();
-   bbb();
 }
 /*
 function Init() {
