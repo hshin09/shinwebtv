@@ -12,15 +12,10 @@ scr.onload = function() {
    Init();
 }
 */
-function aaa()
+function firstSetting()
 {
    alert(path);
-}
-
-function bbb()
-{
-   path = 'bbbpath';
-   Init();
+   touchscreen = 0;
 }
 
 /*
