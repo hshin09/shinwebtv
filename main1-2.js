@@ -4,12 +4,13 @@ var scr  = document.createElement('script');
 scr.type = 'text/javascript';
 scr.src = 'https://hshin09.github.io/shinwebtv/common.js';
 head.appendChild(scr);
-
+/*
 scr.onload = function() {
    alert('s1');
    //Init();
    alert('e2');
 }
+*/
 /*
 $('document').ready(function() {
    alert('s');
