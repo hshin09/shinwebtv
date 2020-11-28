@@ -250,7 +250,7 @@ function setHiddenViewTV(s)
    mustWait = 0;
    setTimeout(function(){ x[si].click(); }, 10);
 }
-/*
+
 function clearAddress(tar) 
 {
    backtvaddr[ei]=tvaddr[ei]=tar;
@@ -341,7 +341,7 @@ function mlok() {
 }
 
 function showLeftMenu() {
-   if() {
+   if( touchscreen ) {
       if( gi == 1 )
       {
          document.getElementById("menu0").style.display = "none";
@@ -537,4 +537,4 @@ function videoErr(e)
        break;
    }
 }
-*/
+
