@@ -7,6 +7,7 @@ $('document').ready(function() {
    head.appendChild(scr);
    alert('s');
    scr.onload = function() {
+      alert('o');
       Init();
    }
    alert('e');
