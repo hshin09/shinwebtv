@@ -1,15 +1,14 @@
-window.onkeydown = keychk;
+//window.onkeydown = keychk;
 var head  = document.getElementsByTagName('head')[0];
 var scr  = document.createElement('script');
 scr.type = 'text/javascript';
 scr.src = 'https://hshin09.github.io/shinwebtv/common.js';
 head.appendChild(scr);
 
-
 scr.onload = function() {
-   alert('s');
+   alert('s1');
    Init();
-   alert('e');
+   alert('e2');
 }
 /*
 $('document').ready(function() {
@@ -20,6 +19,7 @@ $('document').ready(function() {
    //touchscreen = 0;
 });
 */
+/*
 function onup() {
 	if(oi>-1) x[oi].style="background-color:#252525";
 	if(ei>-1) x[ei].style="color:yellow";
@@ -130,3 +130,4 @@ function keychk(e) {
 	}
 	e.preventDefault();
 }
+*/
