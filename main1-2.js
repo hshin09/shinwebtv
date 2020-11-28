@@ -1,9 +1,17 @@
 window.onkeydown = keychk;
 var head  = document.getElementsByTagName('head')[0];
 var scr  = document.createElement('script');
+scr.type = 'text/javascript';
 scr.src = 'https://hshin09.github.io/shinwebtv/common.js';
 head.appendChild(scr);
 
+
+scr.onload = function() {
+   alert('s');
+   Init();
+   alert('e');
+}
+/*
 $('document').ready(function() {
    alert('s');
    Init();
@@ -11,7 +19,7 @@ $('document').ready(function() {
    
    //touchscreen = 0;
 });
-
+*/
 function onup() {
 	if(oi>-1) x[oi].style="background-color:#252525";
 	if(ei>-1) x[ei].style="color:yellow";
