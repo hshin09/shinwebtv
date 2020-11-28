@@ -311,6 +311,7 @@ function onok() {
 var x;
 var cnt;
 function mlok() {
+   oi=-1;
    x=document.getElementById("ml"+gi).getElementsByTagName("li");
    cnt=x.length;
    var i;
@@ -330,6 +331,8 @@ function mlok() {
    }
 
    showLeftMenu();
+
+   if( touchscreen ) x[si].click();
 }
 
 function showLeftMenu() {
