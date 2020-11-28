@@ -207,7 +207,7 @@ function OnOff()
         return;
     }
 }
-/*
+
 function showTime()
 {
    var dt = new Date();
@@ -537,4 +537,4 @@ function videoErr(e)
        break;
    }
 }
-*/
+
