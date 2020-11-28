@@ -69,30 +69,24 @@ function Init() {
 */
 
 function Init() {
-alert('1');
    firstSetting();
    youtv24 = 1;
    window.parentView.showMsg("trueViewLoadUrl:http://youtv24.net/sites");
-alert('1-1');
    window.parentView.showMsg("hideTrueView");
-alert('2');
    
    if( myshtv == 0 )
       $('#menu0').load("https://hshin09.github.io/shinwebtv/kor2.html");
    else
-      $('#menu0').load("https://hshin09.github.io/shinwebtv/myshtv.html");
-alert('3');
-   
+      $('#menu0').load("https://hshin09.github.io/shinwebtv/myshtv.html");   
    $('#menu1').load("https://hshin09.github.io/shinwebtv/thai.html");
 
    stv = $('#tv').get(0);
-alert('4');   
    web = document.getElementById("web");
    for(var i=0; i<tvaddr.length; i++) {
       backtvaddr[i]='79';
       tvaddr[i]=addr[i][3];
    }
-   //timer = setInterval( function() { OnOff(); }, 500 );
+   timer = setInterval( function() { OnOff(); }, 500 );
 alert('5');
 }
 
@@ -115,7 +109,7 @@ alert('5');
 4: src 속성에 지정된 미디어 리소스가 부적절할 때
 보통 에러시 ns=3,rs=0,er=4 이고 정상일때는 ns=2->1, rs=0->4, er=없음(null)
 */
-/*
+
 var isNotUser=0;
 function OnOff()
 {
@@ -213,7 +207,7 @@ function OnOff()
         return;
     }
 }
-
+/*
 function showTime()
 {
    var dt = new Date();
