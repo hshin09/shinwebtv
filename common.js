@@ -1,3 +1,4 @@
+alert('11');
 var ADsid='a';
 var backtvaddr = new Array(24);
 var tvaddr = new Array(24);
