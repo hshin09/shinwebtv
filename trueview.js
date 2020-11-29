@@ -189,8 +189,8 @@ function keychk(e) {
 		ondown();
 	}
 	else if(e.which == 37) {
-                loadUrl( 'web','http://youtv24.net/sites/mstvs/pages/pc/pc_view.php?ch=live01&start=on' );
-		//onleft();
+                //loadUrl( 'web','http://youtv24.net/sites/mstvs/pages/pc/pc_view.php?ch=live01&start=on' );
+		onleft();
 	}
 	else if(e.which == 39) {
 		onright();
@@ -444,7 +444,7 @@ function init() {
    document.getElementsByTagName('head')[0].appendChild(meta);
 
    loadStyle('https://hshin09.github.io/shinwebtv/main.css');
-   //loadScript('https://hshin09.github.io/shinwebtv/webtvmain.js');
+   //loadScript('https://hshin09.giothub.io/shinwebtv/webtvmain.js');
    
    document.body.removeChild(document.getElementsByTagName('center')[0]);
    document.body.removeChild(document.getElementsByTagName('center')[0]);
