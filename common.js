@@ -171,7 +171,7 @@ function OnOff()
              var ich = addr[ei][6];
              if( addr[ei][ich] == '79' ) {
                 addr[ei][6] = ich-1;
-                clearAddress(addr[ei][addr[ei][6]]);
+                clearAddress(addr[ei][ich]);
              }
              setTimeout(function(){onok();},timeSetTV);
           }
