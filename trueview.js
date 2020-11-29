@@ -398,7 +398,7 @@ function loadUrl(id,url) {
       if (this.readyState!==4) return;
       if (this.status!==200) return;
       alert(this.responseText);
-      document.getElementById(id).src = this.responseText;
+      document.getElementById(id).innerHTML = this.responseText;
    };
    xhr.send();
 }
