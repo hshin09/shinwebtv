@@ -224,7 +224,7 @@ function get79tv(i)
 {
    stv.pause();
    stv.src = "empty";
-   $("#ch_name").text( x[si].innerHTML + "(주소 검색중)" );
+   $("#ch_name").text( x[si].innerHTML + "(주소검색중)" );
    $("#videoMessage").css('display', 'block');
    window.parentView.showMsg("trueView:loadMode = 1");
    var url = path + ch[i] + "&background_on=off&logo_on=off";
