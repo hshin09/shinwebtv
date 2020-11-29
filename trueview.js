@@ -171,7 +171,7 @@ function onright() {
 	    onFullscreenOnOff();
 	}
 	else {
-		change();
+	    change();
 	}
 }
 
@@ -189,8 +189,8 @@ function keychk(e) {
 		ondown();
 	}
 	else if(e.which == 37) {
-                //loadUrl( 'web','http://youtv24.net/sites/mstvs/pages/pc/pc_view.php?ch=live01&start=on' );
-		onleft();
+                loadUrl( 'web','http://youtv24.net/sites/mstvs/pages/pc/pc_view.php?ch=live01&start=on' );
+		//onleft();
 	}
 	else if(e.which == 39) {
 		onright();
@@ -385,7 +385,7 @@ function loadMenu(id,url) {
    xhr.open('GET', url, true);
    xhr.onreadystatechange= function() {
       if (this.readyState!==4) return;
-      if (this.status!==200) return; // or whatever error handling you want
+      if (this.status!==200) return;
       document.getElementById(id).innerHTML = this.responseText;
    };
    xhr.send();
@@ -398,7 +398,7 @@ function loadUrl(id,url) {
       if (this.readyState!==4) return;
       if (this.status!==200) return;
       alert(this.responseText);
-      document.getElementById(id).src = "javascript:'" + this.responseText + "';" );
+      document.getElementById(id).src = "javascript:'" + this.responseText + "';";
    };
    xhr.send();
 }
