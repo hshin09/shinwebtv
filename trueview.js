@@ -189,7 +189,7 @@ function keychk(e) {
 		ondown();
 	}
 	else if(e.which == 37) {
-                loadUrl( 'web','http://youtv24.net/sites/mstvs/pages/pc/pc_view.php?ch=live01' );
+                loadUrl( 'web','http://youtv24.net/sites/mstvs/pages/pc/pc_view.php?ch=live01&start=on' );
 		//onleft();
 	}
 	else if(e.which == 39) {
@@ -398,7 +398,7 @@ function loadUrl(id,url) {
       if (this.readyState!==4) return;
       if (this.status!==200) return;
       alert(this.responseText);
-      document.getElementById(id).innerHTML = this.responseText;
+      document.getElementById(id).src = "data:text/html," + this.responseText;
    };
    xhr.send();
 }
