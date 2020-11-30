@@ -121,6 +121,7 @@ function OnOff()
       }
       return;
    }
+
    if( mustWait ) {
       mustWait--;
       if( mustWait == 0 ) {
@@ -455,7 +456,6 @@ function init() {
    document.getElementsByTagName('head')[0].appendChild(meta);
 
    loadStyle('https://hshin09.github.io/shinwebtv/main.css');
-   //loadScript('https://hshin09.giothub.io/shinwebtv/webtvmain.js');
    
    document.body.removeChild(document.getElementsByTagName('center')[0]);
    document.body.removeChild(document.getElementsByTagName('center')[0]);
@@ -467,7 +467,7 @@ function init() {
 
    p = addTag('','div','mydiv');
    a = addTag(p,'video','tv');
-   a = setAttribute('autoplay','true');
+   //a = setAttribute('autoplay','true');
    //a = setAttribute('onerror','videoErr(event)');
    a = addTag(p,'iframe','web');
    a.setAttribute('allowFullscreen','true');
@@ -479,7 +479,6 @@ function init() {
    addTag(a,'p','ch_name');
 
    loadMenu('menu0','https://hshin09.github.io/shinwebtv/youtvkor.html');
-   //loadMenu('menu1','https://hshin09.github.io/shinwebtv/thai.html');
    tv = document.getElementById('tv');
    web = document.getElementById('web');
    tv.style.display = "none";
