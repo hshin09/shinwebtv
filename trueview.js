@@ -57,12 +57,8 @@ var pathmyshtv = "https://cdn.jpth10.jpnettv.live/krtv";
 function loadVideo(lm,url) {
    loadMode = lm;
    web.src = url;
-   if( loadMode == 1 ) {
-      //full = 0;
-      //onFullscreenOnOff();
+   //if( loadMode == 1 )
       mustWait = 3;
-      alert('3');
-   }
    
    if(timer) {
       clearInterval(timer);
@@ -76,14 +72,13 @@ function movieclk( w, url, p ) {
    tv.pause();
    if(oi>-1) x[oi].style="background-color:#252525;";
    if(ei>-1) x[ei].style="background-color:#252525";
-   si=ei=p.id;
+   oi=si=ei=p.id;
    x[ei].style="background-color:#234567;color:yellow";
-   oi=si;
 
    if( url.substr(0,1) == "/" )
       url = pathmyshtv + url + "playlist.m3u8";
    else if( url == "79" )
-      url = path + ch[ p.id ] + "&start=on&background_on=off&logo_on=off";
+      url = path + ch[ p.id ] + "&start=on";
    loadVideo( 0, url );
 }
 
@@ -114,7 +109,7 @@ function OnOff()
       if( x.length==tvaddr.length )
       {
          trans=x.length*screen.height*0.041;
-         if(timer) {
+         if(loadMode && timer) {
             clearInterval(timer);
             timer=null;
          }
@@ -127,7 +122,7 @@ function OnOff()
    if( mustWait ) {
       mustWait--;
       if( mustWait == 0 ) {
-         if(timer) {
+         if( loadMode && timer ) {
             clearInterval(timer);
             timer=null;
          }
@@ -135,19 +130,17 @@ function OnOff()
       }
       return;
    }
-
+   /*
    if( tv.error != null || tv.networkState == 3 )
    {
       if( tv.src.substring(0,4) == "file" )
          return;
-      /*
       if( $('#errorMessage').css('display') != "block" ) {
           $("#er_msg").text( "채널을 가져올수 없음(네트워크 또는 서버 에러)-Timer" );
           showErrorMessage();
       }
-      */
    }
-    
+   */
    if( tv.currentTime > 3 )
    {
       if(timer) {
