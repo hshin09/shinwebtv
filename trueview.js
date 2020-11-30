@@ -56,7 +56,7 @@ var pathmyshtv = "https://cdn.jpth10.jpnettv.live/krtv";
 
 function loadVideo(url) {
    web.src = url;
-   if( loadMode ) {
+   if( loadMode == 1 ) {
       //full = 0;
       //onFullscreenOnOff();
       mustWait = 3;
