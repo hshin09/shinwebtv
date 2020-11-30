@@ -37,8 +37,8 @@ function movieclk( url, p ) {
    oi=si=ei=p.id;
    x[ei].style="background-color:#234567;color:yellow";
 
-   url = path + url + "&start=on";
-   loadVideo( 0, url );
+   var url1 = path + url + "&start=on";
+   loadVideo( 0, url1 );
 }
 
 function getTvUrl()
@@ -232,12 +232,14 @@ function mlok() {
 }
 
 function showLeftMenu() {
+   /*
    var leftMenuObj = document.getElementById('menu'+gi);
    leftMenuObj.style['transform'] = "translate(0px, 0px)";
    leftMenuObj.style['msTransform'] = "translate(0px, 0px)";
    leftMenuObj.style['mozTransform'] = "translate(0px, 0px)";
    leftMenuObj.style['webkitTransform'] = "translate(0px, 0px)";
    leftMenuObj.style['oTransform'] = "translate(0px, 0px)";
+   */
 }
 
 function onFullscreenOnOff() {
@@ -378,7 +380,7 @@ function init() {
    meta.setAttribute('content','width=device-width, height=device-height, initial-scale=1.0');
    document.getElementsByTagName('head')[0].appendChild(meta);
 
-   loadStyle('https://hshin09.github.io/shinwebtv/main.css');
+   loadStyle('https://hshin09.github.io/shinwebtv/youtvkor.css');
    
    document.body.removeChild(document.getElementsByTagName('center')[0]);
    document.body.removeChild(document.getElementsByTagName('center')[0]);
