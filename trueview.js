@@ -57,8 +57,8 @@ var pathmyshtv = "https://cdn.jpth10.jpnettv.live/krtv";
 function loadVideo(url) {
    web.src = url;
    if( loadMode ) {
-      full = 0;
-      onFullscreenOnOff();
+      //full = 0;
+      //onFullscreenOnOff();
       mustWait = 3;
    }
    
@@ -452,7 +452,7 @@ function webtvmain() {
 function init() {
    var meta=document.createElement('meta');
    meta.name='viewport';
-   meta.setAttribute('content', 'width=device-width, height=device-height, initial-scale=1.0');
+   meta.setAttribute('content','width=device-width, height=device-height, initial-scale=1.0');
    document.getElementsByTagName('head')[0].appendChild(meta);
 
    loadStyle('https://hshin09.github.io/shinwebtv/main.css');
