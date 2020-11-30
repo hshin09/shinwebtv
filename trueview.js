@@ -382,7 +382,7 @@ function init() {
    a.setAttribute('frameborder','0');
    a.setAttribute('border','0');
    a.setAttribute('width','100%');
-   a.setAttribute('height','100vh');
+   a.setAttribute('height','120%');
    /*
    a = addTag(p,'div','videoMessage');
    addTag(a,'p','ch_name');
