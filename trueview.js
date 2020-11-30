@@ -168,9 +168,10 @@ function onright() {
 }
 
 function change() {
-        web.src = '';
-        window.trueView.showMsg("hideTrueView");
-        window.trueView.showMsg("webView:gi=0; change()");
+   tv.pause();
+   web.src = '';
+   window.trueView.showMsg("hideTrueView");
+   window.trueView.showMsg("webView:gi=0; change()");
 }
 
 function keychk(e) {
@@ -193,6 +194,7 @@ function keychk(e) {
 	else if(e.which == 49 ) {
 	      if( loadMode == 1 )
                  return;
+              tv.pause();
               web.src = '';
               window.trueView.showMsg("hideTrueView");
               window.trueView.showMsg("webView:x[si].click()");
