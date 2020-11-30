@@ -70,17 +70,18 @@ function loadVideo(url) {
 }
 
 function movieclk( w, url, p ) {
-  tv.pause();
-  if(oi>-1) x[oi].style="background-color:#252525;";
-  if(ei>-1) x[ei].style="background-color:#252525";
-  si=ei=p.id;
-  x[ei].style="background-color:#234567;color:yellow";
-  oi=si;
+   tv.style.display = "none";
+   tv.pause();
+   if(oi>-1) x[oi].style="background-color:#252525;";
+   if(ei>-1) x[ei].style="background-color:#252525";
+   si=ei=p.id;
+   x[ei].style="background-color:#234567;color:yellow";
+   oi=si;
 
-  if( url.substr(0,1) == "/" )
-     url = pathmyshtv + url + "playlist.m3u8";
+   if( url.substr(0,1) == "/" )
+      url = pathmyshtv + url + "playlist.m3u8";
    else if( url == "79" )
-     url = path + ch[ p.id ] + "&start=on&background_on=off&logo_on=off";
+      url = path + ch[ p.id ] + "&start=on&background_on=off&logo_on=off";
    loadVideo( url );
 }
 
@@ -110,26 +111,49 @@ function OnOff()
       x=document.getElementById("ml"+gi).getElementsByTagName("li");
       if( x.length==tvaddr.length )
       {
-          trans=x.length*screen.height*0.041;
-          if(timer) {
+         trans=x.length*screen.height*0.041;
+         if(timer) {
             clearInterval(timer);
             timer=null;
-          }
-          isChLoaded = 1;
-          setTimeout( function(){mlok();},500 );
+         }
+         isChLoaded = 1;
+         setTimeout( function(){mlok();},500 );
       }
       return;
-    }
-    if( mustWait ) {
-       mustWait--;
-       if( mustWait == 0 ) {
-          if(timer) {
-             clearInterval(timer);
-             timer=null;
-          }
-          getTvUrl();
-       }
-    }
+   }
+   if( mustWait ) {
+      mustWait--;
+      if( mustWait == 0 ) {
+         if(timer) {
+            clearInterval(timer);
+            timer=null;
+         }
+         getTvUrl();
+      }
+      return;
+   }
+
+   if( tv.error != null || tv.networkState == 3 )
+   {
+      if( tv.src.substring(0,4) == "file" )
+         return;
+      /*
+      if( $('#errorMessage').css('display') != "block" ) {
+          $("#er_msg").text( "채널을 가져올수 없음(네트워크 또는 서버 에러)-Timer" );
+          showErrorMessage();
+      }
+      */
+   }
+    
+   if( tv.currentTime > 3 )
+   {
+      if(timer) {
+         clearInterval(timer);
+         timer=null;
+      }
+      web.src = '';
+      tv.style.display = "block";
+   }
 }
 
 function showTime()
