@@ -1,3 +1,4 @@
+var tv;
 var web;
 window.onkeydown = keychk;
 var ADsid='a';
@@ -53,27 +54,34 @@ var strResponse = "79";
 var myshtv = 0;
 var pathmyshtv = "https://cdn.jpth10.jpnettv.live/krtv";
 
-function movieclk( w, url, p ) {
-    if(oi>-1) x[oi].style="background-color:#252525;";
-    if(ei>-1) x[ei].style="background-color:#252525";
-    si=ei=p.id;
-    x[ei].style="background-color:#234567;color:yellow";
-    oi=si;
-    
-    if( url.substr(0,1) == "/" )
-       url = pathmyshtv + url + "playlist.m3u8";
-    else if( url == "79" )
-       url = path + ch[ p.id ] + "&start=on&background_on=off&logo_on=off";
- 
-    web.src = url;
+function loadVideo(url) {
+   web.src = url;
+   if( loadMode ) {
+      full = 0;
+      onFullscreenOnOff();
+      mustWait = 3;
+   }
+   
+   if(timer) {
+      clearInterval(timer);
+      timer=null;
+   }
+   timer = setInterval( function() { OnOff(); }, 1100 );
 }
 
-function webtvmain() {
-   isChLoaded = 0;
-   for(var i=0; i<tvaddr.length; i++)
-      tvaddr[i]=addr[i][2];
+function movieclk( w, url, p ) {
+  tv.pause();
+  if(oi>-1) x[oi].style="background-color:#252525;";
+  if(ei>-1) x[ei].style="background-color:#252525";
+  si=ei=p.id;
+  x[ei].style="background-color:#234567;color:yellow";
+  oi=si;
 
-   timer = setInterval( function() { OnOff(); }, 500 );
+  if( url.substr(0,1) == "/" )
+     url = pathmyshtv + url + "playlist.m3u8";
+   else if( url == "79" )
+     url = path + ch[ p.id ] + "&start=on&background_on=off&logo_on=off";
+   loadVideo( url );
 }
 
 function getTvUrl()
@@ -87,7 +95,12 @@ function getTvUrl()
    }
    var eei=strResponse.indexOf(",",ssi);
    strResponse = strResponse.substring(ssi+7,eei-1);
-   window.trueView.showMsg( "webView:setHiddenViewTV('" + strResponse + "')" );
+   if( loadMode )
+      window.trueView.showMsg( "webView:setHiddenViewTV('" + strResponse + "')" );
+   else {
+      tv.src = strResponse;
+      tv.play();
+   }
 }
 
 function OnOff()
@@ -403,38 +416,12 @@ function loadUrl(id,url) {
    xhr.send();
 }
 
-function loadVideo(url) {
-   web.src = url;
-   full = 0;
-   onFullscreenOnOff();
-   mustWait = 3;
-   if(timer) {
-      clearInterval(timer);
-      timer=null;
-   }
-   timer = setInterval( function() { OnOff(); }, 1100 );
-   
-   /*
-   var xhr= new XMLHttpRequest();
-   xhr.open('GET', url, true);
-   xhr.onreadystatechange= function() {
-      if (this.readyState!==4) return;
-      if (this.status!==200) return; // or whatever error handling you want
-      //web.innerHTML = this.responseText;
+function webtvmain() {
+   isChLoaded = 0;
+   for(var i=0; i<tvaddr.length; i++)
+      tvaddr[i]=addr[i][2];
 
-      strResponse = this.responseText;
-      var ssi = strResponse.indexOf("file: \"http");
-      if(ssi<1) {
-            window.trueView.showMsg( "webView:setHiddenViewTV('" + strResponse + "')" );
-            return;
-      }
-      var eei=strResponse.indexOf(",",ssi);
-      strResponse = strResponse.substring(ssi+7,eei-1);
-      mustWait = 4;
-      timer = setInterval( function() { OnOff(); }, 1100 );
-   };
-   xhr.send();
-   */
+   timer = setInterval( function() { OnOff(); }, 500 );
 }
 
 function init() {
@@ -456,7 +443,8 @@ function init() {
 
    p = addTag('','div','mydiv');
    a = addTag(p,'video','tv');
-   a = setAttribute('onerror','videoErr()');
+   a = setAttribute('autoplay','true');
+   //a = setAttribute('onerror','videoErr(event)');
    a = addTag(p,'iframe','web');
    a.setAttribute('allowFullscreen','true');
    a.setAttribute('frameborder','0');
@@ -468,6 +456,7 @@ function init() {
 
    loadMenu('menu0','https://hshin09.github.io/shinwebtv/youtvkor.html');
    //loadMenu('menu1','https://hshin09.github.io/shinwebtv/thai.html');
+   tv = document.getElementById('tv');
    web = document.getElementById('web');
 }
 
