@@ -382,10 +382,11 @@ function init() {
    a.setAttribute('frameborder','0');
    a.setAttribute('border','0');
    a.setAttribute('width','100%');
-   a.setAttribute('height','100%');
+   a.setAttribute('height','100vh');
+   /*
    a = addTag(p,'div','videoMessage');
    addTag(a,'p','ch_name');
-
+   */
    tv = document.getElementById('tv');
    web = document.getElementById('web');
    tv.style.display = "none";
