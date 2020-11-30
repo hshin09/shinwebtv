@@ -8,14 +8,13 @@ var oi=10;
 var ei=10;
 var full = false;
 var timer = null;
-var timeSetTV = 800;
 var mustWait = 0;
 var isFirst = 1;
 var isChLoaded = 1;
 var loadMode = 0;
 var x;
+var cnt;
 var strResponse = "79";
-var pathmyshtv = "https://cdn.jpth10.jpnettv.live/krtv";
 
 function loadVideo(lm,url) {
    loadMode = lm;
@@ -29,16 +28,16 @@ function loadVideo(lm,url) {
    timer = setInterval( function() { OnOff(); }, 1100 );
 }
 
-function movieclk( url, p ) {
+function movieclk( ch, p ) {
    tv.style.display = "none";
    tv.pause();
-   if(oi>-1) x[oi].style="background-color:#252525;";
+   if(oi>-1) x[oi].style="background-color:#252525";
    if(ei>-1) x[ei].style="background-color:#252525";
    oi=si=ei=p.id;
    x[ei].style="background-color:#234567;color:yellow";
 
-   var url1 = path + url + "&start=on";
-   loadVideo( 0, url1 );
+   var url = path + ch + "&start=on";
+   loadVideo( 0, url );
 }
 
 function getTvUrl()
@@ -181,7 +180,6 @@ function keychk(e) {
 		ondown();
 	}
 	else if(e.which == 37) {
-                //loadUrl( 'web','http://youtv24.net/sites/mstvs/pages/pc/pc_view.php?ch=live01&start=on' );
 		onleft();
 	}
 	else if(e.which == 39) {
@@ -207,7 +205,6 @@ function onok() {
   x[si].click();
 }
 
-var cnt;
 function mlok() {
    x=document.getElementById("ml"+gi).getElementsByTagName("li");
    cnt=x.length;
@@ -259,8 +256,6 @@ function onFullscreenOnOff() {
 
 function showVideoMessage()
 {
-    time = 0;
-    
     if(timer) {
       clearInterval(timer);
       timer=null;
@@ -322,7 +317,7 @@ function loadScript(url) {
 }
 
 function loadStyle(url) {
-   var cssId = 'myCss';  // you could encode the css path itself to generate id..
+   var cssId = 'myCss';
    if (!document.getElementById(cssId)) {
       var head  = document.getElementsByTagName('head')[0];
       var link  = document.createElement('link');
@@ -357,18 +352,6 @@ function loadMenu(id,url) {
    xhr.send();
 }
 
-function loadUrl(id,url) {
-   var xhr= new XMLHttpRequest();
-   xhr.open('GET', url, true);
-   xhr.onreadystatechange= function() {
-      if (this.readyState!==4) return;
-      if (this.status!==200) return;
-      alert(this.responseText);
-      document.getElementById(id).src = "javascript:'" + this.responseText + "';";
-   };
-   xhr.send();
-}
-
 function webtvmain() {
    isChLoaded = 0;
    timer = setInterval( function() { OnOff(); }, 500 );
@@ -388,7 +371,7 @@ function init() {
 
    var p = addTag('','div','leftmenu');
    var a = addTag(p,'div','menu0');
-   a = addTag(p,'div','menu1');
+   loadMenu('menu0','https://hshin09.github.io/shinwebtv/youtvkor.html');
 
    p = addTag('','div','mydiv');
    a = addTag(p,'video','tv');
@@ -403,7 +386,6 @@ function init() {
    a = addTag(p,'div','videoMessage');
    addTag(a,'p','ch_name');
 
-   loadMenu('menu0','https://hshin09.github.io/shinwebtv/youtvkor.html');
    tv = document.getElementById('tv');
    web = document.getElementById('web');
    tv.style.display = "none";
