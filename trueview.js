@@ -15,6 +15,7 @@ var loadMode = 0;
 var x;
 var cnt;
 var strResponse = "79";
+var tvaddr = new Array(24);
 
 function loadVideo(lm,url) {
    loadMode = lm;
@@ -36,6 +37,17 @@ function movieclk( ch, p ) {
    oi=si=ei=p.id;
    x[ei].style="background-color:#234567;color:yellow";
 
+   if( tvaddr[si].length > 10 ) {
+      tv.src = tvaddr[si];
+      tv.play();
+      if(timer) {
+         clearInterval(timer);
+         timer=null;
+      }
+      mustWait = 0;
+      timer = setInterval( function() { OnOff(); }, 1100 );
+      return;
+   }
    var url = path + ch + "&start=on";
    loadVideo( 0, url );
 }
@@ -54,7 +66,7 @@ function getTvUrl()
    if( loadMode )
       window.trueView.showMsg( "webView:setHiddenViewTV('" + strResponse + "')" );
    else {
-      tv.src = strResponse;
+      tvaddr[si] = tv.src = strResponse;
       tv.play();
    }
 }
@@ -96,6 +108,7 @@ function OnOff()
          clearInterval(timer);
          timer=null;
       }
+      tvaddr[si] = si;
       onok();
    }
    
@@ -210,7 +223,7 @@ function onok() {
 function mlok() {
    var i;
    for(i=0; i<cnt; i++) {
-      x[i].id=i;
+      tvaddr[i]=x[i].id=i;
    }
 
    if(ei>-1) {
