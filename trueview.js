@@ -387,7 +387,7 @@ function init() {
 
    p = addTag('','div','mydiv');
    a = addTag(p,'video','tv');
-   //a = setAttribute('autoplay','true');
+   a = setAttribute('poster','https://hshin09.github.io/shinwebtv/poster.png');
    //a = setAttribute('onerror','videoErr(event)');
    a = addTag(p,'iframe','web');
    a.setAttribute('allowFullscreen','true');
