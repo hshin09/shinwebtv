@@ -64,8 +64,9 @@ function OnOff()
    if( !isChLoaded )
    {
       x=document.getElementById("ml"+gi).getElementsByTagName("li");
-      if( x.length==tvaddr.length )
+      if( x.length == 24 )
       {
+         cnt=x.length;
          trans=x.length*screen.height*0.041;
          if(loadMode && timer) {
             clearInterval(timer);
@@ -206,9 +207,6 @@ function onok() {
 }
 
 function mlok() {
-   x=document.getElementById("ml"+gi).getElementsByTagName("li");
-   cnt=x.length;
-
    var i;
    for(i=0; i<cnt; i++) {
       x[i].id=i;
