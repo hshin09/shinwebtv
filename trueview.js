@@ -54,7 +54,8 @@ var strResponse = "79";
 var myshtv = 0;
 var pathmyshtv = "https://cdn.jpth10.jpnettv.live/krtv";
 
-function loadVideo(url) {
+function loadVideo(lm,url) {
+   loadMode = lm;
    web.src = url;
    if( loadMode == 1 ) {
       //full = 0;
@@ -83,7 +84,7 @@ function movieclk( w, url, p ) {
       url = pathmyshtv + url + "playlist.m3u8";
    else if( url == "79" )
       url = path + ch[ p.id ] + "&start=on&background_on=off&logo_on=off";
-   loadVideo( url );
+   loadVideo( 0, url );
 }
 
 function getTvUrl()
