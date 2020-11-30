@@ -226,6 +226,7 @@ function mlok() {
       ondown();
 
    showLeftMenu();
+   web.style.height = window.screen.height;
 }
 
 function showLeftMenu() {
