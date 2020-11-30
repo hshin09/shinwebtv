@@ -89,17 +89,16 @@ function OnOff()
       }
       return;
    }
-   /*
+   
    if( tv.error != null || tv.networkState == 3 )
    {
-      if( tv.src.substring(0,4) == "file" )
-         return;
-      if( $('#errorMessage').css('display') != "block" ) {
-          $("#er_msg").text( "채널을 가져올수 없음(네트워크 또는 서버 에러)-Timer" );
-          showErrorMessage();
+      if( timer ) {
+         clearInterval(timer);
+         timer=null;
       }
+      onok();
    }
-   */
+   
    if( tv.currentTime > 0 )
    {
       if(timer) {
