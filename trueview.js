@@ -100,7 +100,7 @@ function OnOff()
       }
    }
    */
-   if( tv.currentTime > 1 )
+   if( tv.currentTime > 0 )
    {
       if(timer) {
          clearInterval(timer);
