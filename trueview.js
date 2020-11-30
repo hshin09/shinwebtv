@@ -369,9 +369,6 @@ function loadUrl(id,url) {
 
 function webtvmain() {
    isChLoaded = 0;
-   for(var i=0; i<tvaddr.length; i++)
-      tvaddr[i]=addr[i][2];
-
    timer = setInterval( function() { OnOff(); }, 500 );
 }
 
