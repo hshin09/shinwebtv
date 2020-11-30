@@ -76,7 +76,7 @@ function keychk(e) {
                     timer=null;
                  } 
                  window.parentView.showMsg("trueView:loadMode = 0");
-                 window.parentView.showMsg("trueView:callOk()");
+                 //window.parentView.showMsg("trueView:callOk()");
                  window.parentView.showMsg("trueView:full = 1; onFullscreenOnOff()");
                  window.parentView.showMsg("showTrueView");
                  window.parentView.showMsg("trueView:x[si].click()");
