@@ -226,9 +226,9 @@ function get79tv(i)
    stv.src = "empty";
    $("#ch_name").text( x[si].innerHTML + "(주소검색중)" );
    $("#videoMessage").css('display', 'block');
-   window.parentView.showMsg("trueView:loadMode = 1");
+   //window.parentView.showMsg("trueView:loadMode = 1");
    var url = path + ch[si];
-   window.parentView.showMsg("trueView:loadVideo('" + url + "')");
+   window.parentView.showMsg("trueView:loadVideo(1,'" + url + "')");
 }
 
 function setHiddenViewTV(s) 
