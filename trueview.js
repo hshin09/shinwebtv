@@ -482,6 +482,7 @@ function init() {
    //loadMenu('menu1','https://hshin09.github.io/shinwebtv/thai.html');
    tv = document.getElementById('tv');
    web = document.getElementById('web');
+   tv.style.display = "none";
 }
 
 init();
