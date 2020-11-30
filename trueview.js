@@ -455,6 +455,8 @@ function init() {
    a = addTag(p,'div','menu1');
 
    p = addTag('','div','mydiv');
+   a = addTag(p,'video','tv');
+   a = setAttribute('onerror','videoErr()');
    a = addTag(p,'iframe','web');
    a.setAttribute('allowFullscreen','true');
    a.setAttribute('frameborder','0');
