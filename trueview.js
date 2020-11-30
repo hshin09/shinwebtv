@@ -1,49 +1,13 @@
 var tv;
 var web;
 window.onkeydown = keychk;
-var ADsid='a';
-var tvaddr = new Array(24);
-var addr=[
-  ["SBS Golf","SBS Golf","79","/sbs_golf_720/",2],
-  ["JTBC Golf","JTBC Golf","79","/jtbc_golf_720/",2],
-  ["OCN Movies","OCN Movies","79","/cgv_540/",2],
-  ["OCN Original","OCN Original","79","/ocn_540/",2],
-  ["영화 Screen","중화 TV","79","/chinesetv_540/",2],
-  ["OCN Thrills","OCN Thrills","79","/super_action_540/",2],
-  ["Catch ON 1","Billiards TV","79","/billiardstv_540/",2],
-  ["Catch ON 2","EBS1","79","/ebs1_540/",2],
-  ["The Movie","CNN","79","/cnn_kr_540/",2],
-  ["FOX","BBC","79","/bbc_kr_540/",2],
-  ["TV 조선 뉴스","TV 조선 뉴스","79","/tvchosun_720/",2],
-  ["채널 A 뉴스","채널 A 뉴스","79","/channela_720/",2],
-  ["JTBC 뉴스","JTBC 뉴스","79","/jtbc_540/",2],
-  ["YTN 뉴스","YTN 뉴스","79","/ytn_720/",2],
-  ["연합 뉴스","연합 뉴스","79","/newsy_720/",2],
-  ["MBN 뉴스","MBN 뉴스","79","/mbn_720/",2],
-  ["SBS TV","SBS TV","79","/sbs_720/",2],
-  ["MBC TV","MBC TV","79","/mbc_720/",2],
-  ["KBS1 TV","KBS1 TV","79","/kbs1_720/",2],
-  ["KBS2 TV","KBS2 TV","79","/kbs2_720/",2],
-  ["GeoGraphic","GeoGraphic","79","/national_540/",2],
-  ["Discovery","Discovery","79","/discovery_540/",2],
-  ["History","SpoTV2","79","/spotv_2_720/",2],
-  ["MNet","MNet","79","/mnet_540/",2]
-];
-
 var path = "http://youtv24.net/sites/mstvs/pages/pc/pc_view.php?ch=live";
-var ch = ['26','37','04','05','25','03','09','35','30','17','33','02','01','34','32','23','14','07','15','13','50','46','49','38' ];
 var gi=0;
 var si=10;
 var oi=10;
 var ei=10;
-var asi=[10,18];
-var aoi=[10,18];
-var aei=[10,18];
 var full = false;
 var timer = null;
-var time = 0;
-var trans = 100;
-var mustabout = 0;
 var timeSetTV = 800;
 var mustWait = 0;
 var isFirst = 1;
@@ -51,14 +15,12 @@ var isChLoaded = 1;
 var loadMode = 0;
 var x;
 var strResponse = "79";
-var myshtv = 0;
 var pathmyshtv = "https://cdn.jpth10.jpnettv.live/krtv";
 
 function loadVideo(lm,url) {
    loadMode = lm;
    web.src = url;
-   //if( loadMode == 1 )
-      mustWait = 3;
+   mustWait = 3;
    
    if(timer) {
       clearInterval(timer);
@@ -67,7 +29,7 @@ function loadVideo(lm,url) {
    timer = setInterval( function() { OnOff(); }, 1100 );
 }
 
-function movieclk( w, url, p ) {
+function movieclk( url, p ) {
    tv.style.display = "none";
    tv.pause();
    if(oi>-1) x[oi].style="background-color:#252525;";
@@ -75,10 +37,7 @@ function movieclk( w, url, p ) {
    oi=si=ei=p.id;
    x[ei].style="background-color:#234567;color:yellow";
 
-   if( url.substr(0,1) == "/" )
-      url = pathmyshtv + url + "playlist.m3u8";
-   else if( url == "79" )
-      url = path + ch[ p.id ] + "&start=on";
+   url = path + url + "&start=on";
    loadVideo( 0, url );
 }
 
@@ -141,7 +100,7 @@ function OnOff()
       }
    }
    */
-   if( tv.currentTime > 3 )
+   if( tv.currentTime > 1 )
    {
       if(timer) {
          clearInterval(timer);
@@ -245,19 +204,6 @@ function keychk(e) {
 
 function onok() {
   mustWait = 0;
-  if( gi == 0 )
-  {
-    var i_ch=addr[si][4];
-
-    i_ch++;
-    if(i_ch>3)
-      i_ch=2;
-    tvaddr[si]=addr[si][i_ch];
-
-    x[si].innerHTML=addr[si][i_ch-2];
-
-    addr[si][4]=i_ch;
-  }
   x[si].click();
 }
 
@@ -286,27 +232,12 @@ function mlok() {
 }
 
 function showLeftMenu() {
-	var hi=0;
-	if(gi==0) hi=1;
-	var hideMenuObj = document.getElementById('menu'+hi);
-	var leftMenuObj = document.getElementById('menu'+gi);
-
-        hideMenuObj.removeAttribute("style");
-
-	if(gi==0) {
-		leftMenuObj.style['transform'] = "translate(0px, 0px)";
-		leftMenuObj.style['msTransform'] = "translate(0px, 0px)";
-		leftMenuObj.style['mozTransform'] = "translate(0px, 0px)";
-		leftMenuObj.style['webkitTransform'] = "translate(0px, 0px)";
-		leftMenuObj.style['oTransform'] = "translate(0px, 0px)";
-	}
-	else {
-		leftMenuObj.style['transform'] = "translate(0px, -"+ trans +"px)";
-		leftMenuObj.style['msTransform'] = "translate(0px, -"+ trans +"px)";
-		leftMenuObj.style['mozTransform'] = "translate(0px, -"+ trans +"px)";
-		leftMenuObj.style['webkitTransform'] = "translate(0px, -"+ trans +"px)";
-		leftMenuObj.style['oTransform'] = "translate(0px, -"+ trans +"px)";
-	}
+   var leftMenuObj = document.getElementById('menu'+gi);
+   leftMenuObj.style['transform'] = "translate(0px, 0px)";
+   leftMenuObj.style['msTransform'] = "translate(0px, 0px)";
+   leftMenuObj.style['mozTransform'] = "translate(0px, 0px)";
+   leftMenuObj.style['webkitTransform'] = "translate(0px, 0px)";
+   leftMenuObj.style['oTransform'] = "translate(0px, 0px)";
 }
 
 function onFullscreenOnOff() {
