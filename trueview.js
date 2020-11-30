@@ -60,6 +60,7 @@ function loadVideo(url) {
       //full = 0;
       //onFullscreenOnOff();
       mustWait = 3;
+      alert('3');
    }
    
    if(timer) {
