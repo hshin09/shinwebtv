@@ -381,8 +381,8 @@ function init() {
    a.setAttribute('allowFullscreen','true');
    a.setAttribute('frameborder','0');
    a.setAttribute('border','0');
-   a.setAttribute('width','100%');
-   a.setAttribute('height','120%');
+   //a.setAttribute('width','100%');
+   //a.setAttribute('height','100%');
    /*
    a = addTag(p,'div','videoMessage');
    addTag(a,'p','ch_name');
