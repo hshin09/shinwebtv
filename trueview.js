@@ -1,5 +1,6 @@
 var tv;
 var web;
+var ch_name;
 window.onkeydown = keychk;
 var path = "http://youtv24.net/sites/mstvs/pages/pc/pc_view.php?ch=live";
 var gi=0;
@@ -92,7 +93,7 @@ function OnOff()
       return;
    }
 
-   $('#ch_name').text( $('#ch_name').text + "." );
+   ch_name.innerHTML( ch_name.innerHTML + "." );
 
    if( mustWait ) {
       mustWait--;
@@ -120,7 +121,7 @@ function OnOff()
    {
       if( tv.currentTime > 2 )
       {
-         $('#videoMessage').css('display', 'none');
+         document.getElementById('videoMessage').style.display = 'none';
          if(timer) {
             clearInterval(timer);
             timer=null;
@@ -284,8 +285,8 @@ function showVideoMessage()
    }  
    timer = setInterval( function() { OnOff(); }, 1100 );
    //closeErrorMessage();
-   $("#ch_name").text( x[si].innerHTML );
-   $("#videoMessage").css('display', 'block');
+   ch_name.innerHTML( x[si].innerHTML );
+   document.getElementById('videoMessage').style.display = 'block';
 }
 
 function showErrorMessage()
@@ -409,6 +410,7 @@ function init() {
    */
    tv = document.getElementById('tv');
    web = document.getElementById('web');
+   ch_name = document.getElementById('ch_name');
    tv.style.display = "none";
 }
 
