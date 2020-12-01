@@ -37,7 +37,7 @@ function movieclk( ch, p ) {
    x[ei].style="background-color:#234567;color:yellow";
 
    if( tvaddr[si].length > 10 ) {
-      //tv.style.display = "block";
+      tv.style.display = "block";
       tv.src = tvaddr[si];
       tv.play();
       if(timer) {
@@ -48,7 +48,7 @@ function movieclk( ch, p ) {
       timer = setInterval( function() { OnOff(); }, 1100 );
       return;
    }
-   //tv.style.display = "none";
+   tv.style.display = "none";
    var url = path + ch + "&start=on";
    loadVideo( 0, url );
 }
@@ -67,7 +67,7 @@ function getTvUrl()
    if( loadMode )
       window.trueView.showMsg( "webView:setHiddenViewTV('" + strResponse + "')" );
    else {
-      tv.style.display = "block";
+      //tv.style.display = "block";
       tvaddr[si] = tv.src = strResponse;
       tv.play();
    }
@@ -397,10 +397,10 @@ function init() {
    a.setAttribute('allowFullscreen','true');
    a.setAttribute('frameborder','0');
    a.setAttribute('border','0');
-   
+   /*
    a = addTag(p,'div','videoMessage');
    addTag(a,'p','ch_name');
-   
+   */
    tv = document.getElementById('tv');
    web = document.getElementById('web');
    tv.style.display = "none";
