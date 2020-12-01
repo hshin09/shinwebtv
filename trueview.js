@@ -37,6 +37,7 @@ function movieclk( ch, p ) {
    x[ei].style="background-color:#234567;color:yellow";
 
    if( tvaddr[si].length > 10 ) {
+      web.src = 'https://hshin09.github.io/shinwebtv/poster.png';
       tv.src = tvaddr[si];
       tv.play();
       tv.style.display = "block";
@@ -389,7 +390,7 @@ function init() {
 
    p = addTag('','div','mydiv');
    a = addTag(p,'video','tv');
-   a.setAttribute('poster','https://hshin09.github.io/shinwebtv/poster.png');
+   //a.setAttribute('poster','https://hshin09.github.io/shinwebtv/poster.png');
    //a.setAttribute('onerror','videoErr(event)');
    a = addTag(p,'iframe','web');
    a.setAttribute('allowFullscreen','true');
