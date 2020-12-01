@@ -404,10 +404,10 @@ function init() {
    a.setAttribute('allowFullscreen','true');
    a.setAttribute('frameborder','0');
    a.setAttribute('border','0');
-   /*
+   
    a = addTag(p,'div','videoMessage');
    addTag(a,'p','ch_name');
-   */
+   
    tv = document.getElementById('tv');
    web = document.getElementById('web');
    ch_name = document.getElementById('ch_name');
