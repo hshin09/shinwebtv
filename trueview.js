@@ -112,12 +112,17 @@ function OnOff()
       tvaddr[si] = si;
       onok();
    }
-   
+
    if( tv.currentTime > 0 )
    {
-      if(timer) {
-         clearInterval(timer);
-         timer=null;
+      if( tv.currentTime > 2 )
+      {
+         $('#videoMessage').css('display', 'none');
+         if(timer) {
+            clearInterval(timer);
+            timer=null;
+         }
+         return;
       }
       web.src = '';
       tv.style.display = "block";
