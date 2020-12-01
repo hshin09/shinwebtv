@@ -93,7 +93,7 @@ function OnOff()
       return;
    }
 
-   ch_name.innerHTML( ch_name.innerHTML + "." );
+   //ch_name.innerHTML( ch_name.innerHTML + "." );
 
    if( mustWait ) {
       mustWait--;
@@ -400,6 +400,7 @@ function init() {
    p = addTag('','div','mydiv');
    a = addTag(p,'video','tv');
    //a.setAttribute('onerror','videoErr(event)');
+
    a = addTag(p,'iframe','web');
    a.setAttribute('allowFullscreen','true');
    a.setAttribute('frameborder','0');
