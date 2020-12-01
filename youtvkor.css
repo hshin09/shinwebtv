@@ -55,7 +55,7 @@ li {
   padding:0;
   margin:0;
   width:90%;
-  height:100vh;
+  height:100%;
   left:10%;
   top:0;
   background-color:#252525;
@@ -72,8 +72,8 @@ video {
 }
 
 iframe {
-  width:100%;
-  height:100%;
+  width:100vw;
+  height:100vh;
 }
 
 #videoMessage {
