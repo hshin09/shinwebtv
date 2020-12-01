@@ -30,7 +30,6 @@ function loadVideo(lm,url) {
 }
 
 function movieclk( ch, p ) {
-   tv.style.display = "none";
    tv.pause();
    if(oi>-1) x[oi].style="background-color:#252525";
    if(ei>-1) x[ei].style="background-color:#252525";
@@ -49,6 +48,7 @@ function movieclk( ch, p ) {
       timer = setInterval( function() { OnOff(); }, 1100 );
       return;
    }
+   tv.style.display = "none";
    var url = path + ch + "&start=on";
    loadVideo( 0, url );
 }
