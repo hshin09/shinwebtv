@@ -139,45 +139,45 @@ function showTime()
 }
 
 function onup() {
-	if(oi>-1) x[oi].style="background-color:#252525";
-	if(ei>-1) x[ei].style="color:yellow";
-	si--;
-	if(si<0) si+=cnt;
-	x[si].style="background-color:#234567";
-	if(si==ei) x[si].style="background-color:#234567;color:yellow";
-	oi=si;
-	if(full) x[si].click();
+   if(oi>-1) x[oi].style="background-color:#252525";
+   if(ei>-1) x[ei].style="color:yellow";
+   si--;
+   if(si<0) si+=cnt;
+   x[si].style="background-color:#234567";
+   if(si==ei) x[si].style="background-color:#234567;color:yellow";
+   oi=si;
+   if(full) x[si].click();
 }
 
 function ondown() {
-	if(oi>-1) x[oi].style="background-color:#252525";
-	if(ei>-1) x[ei].style="color:yellow";
-	si++;
-	if(si>=cnt) si-=cnt;
-	x[si].style="background-color:#234567";
-	if(si==ei) x[si].style="background-color:#234567;color:yellow";
-	oi=si;
-	if(full) x[si].click();
+   if(oi>-1) x[oi].style="background-color:#252525";
+   if(ei>-1) x[ei].style="color:yellow";
+   si++;
+   if(si>=cnt) si-=cnt;
+   x[si].style="background-color:#234567";
+   if(si==ei) x[si].style="background-color:#234567;color:yellow";
+   oi=si;
+   if(full) x[si].click();
 }
 
 function onleft() {
-	if(si>-1 && si==ei) {
-		if(full) {
-			change();
-			return;
-		}
-		onFullscreenOnOff();
-	}
-	else if(si>-1) x[si].click();
+   if(si>-1 && si==ei) {
+      if(full) {
+         change();
+         return;
+      }
+      onFullscreenOnOff();
+   }
+   else if(si>-1) x[si].click();
 }
 
 function onright() {
-	if(full) {
-	    onFullscreenOnOff();
-	}
-	else {
-	    change();
-	}
+   if(full) {
+      onFullscreenOnOff();
+   }
+   else {
+      change();
+   }
 }
 
 function change() {
@@ -217,8 +217,9 @@ function keychk(e) {
 }
 
 function onok() {
-  mustWait = 0;
-  x[si].click();
+   mustWait = 0;
+   tvaddr[si] = si;
+   x[si].click();
 }
 
 function mlok() {
@@ -389,6 +390,7 @@ function init() {
    p = addTag('','div','mydiv');
    a = addTag(p,'video','tv');
    a.setAttribute('poster','https://hshin09.github.io/shinwebtv/poster.png');
+   a.load();
    //a.setAttribute('onerror','videoErr(event)');
    a = addTag(p,'iframe','web');
    a.setAttribute('allowFullscreen','true');
