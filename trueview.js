@@ -92,6 +92,8 @@ function OnOff()
       return;
    }
 
+   $('#ch_name').text( $('#ch_name').text + "." );
+
    if( mustWait ) {
       mustWait--;
       if( mustWait == 0 ) {
@@ -279,8 +281,7 @@ function showVideoMessage()
    if(timer) {
      clearInterval(timer);
      timer=null;
-   }
-    
+   }  
    timer = setInterval( function() { OnOff(); }, 1100 );
    //closeErrorMessage();
    $("#ch_name").text( x[si].innerHTML );
