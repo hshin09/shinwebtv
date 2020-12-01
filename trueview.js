@@ -37,10 +37,9 @@ function movieclk( ch, p ) {
    x[ei].style="background-color:#234567;color:yellow";
 
    if( tvaddr[si].length > 10 ) {
-      tv.style.display = "block";
-      web.style.display = "none";
       tv.src = tvaddr[si];
       tv.play();
+      tv.style.display = "block";
       if(timer) {
          clearInterval(timer);
          timer=null;
@@ -49,8 +48,6 @@ function movieclk( ch, p ) {
       timer = setInterval( function() { OnOff(); }, 1100 );
       return;
    }
-   tv.style.display = "none";
-   web.style.display = "block";
    var url = path + ch + "&start=on";
    loadVideo( 0, url );
 }
@@ -69,10 +66,8 @@ function getTvUrl()
    if( loadMode )
       window.trueView.showMsg( "webView:setHiddenViewTV('" + strResponse + "')" );
    else {
-      tv.style.display = "block";
       tvaddr[si] = tv.src = strResponse;
       tv.play();
-      tv.style.display = "none";
    }
 }
 
@@ -125,7 +120,6 @@ function OnOff()
       }
       web.src = '';
       tv.style.display = "block";
-      web.style.display = "none";
    }
 }
 
@@ -245,7 +239,6 @@ function mlok() {
       ondown();
 
    showLeftMenu();
-   tv.setAttribute('poster','https://hshin09.github.io/shinwebtv/poster.png');
 }
 
 function showLeftMenu() {
@@ -395,7 +388,7 @@ function init() {
 
    p = addTag('','div','mydiv');
    a = addTag(p,'video','tv');
-   //a.setAttribute('poster','https://hshin09.github.io/shinwebtv/poster.png');
+   a.setAttribute('poster','https://hshin09.github.io/shinwebtv/poster.png');
    //a.setAttribute('onerror','videoErr(event)');
    a = addTag(p,'iframe','web');
    a.setAttribute('allowFullscreen','true');
