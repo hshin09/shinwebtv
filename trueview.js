@@ -38,6 +38,7 @@ function movieclk( ch, p ) {
 
    if( tvaddr[si].length > 10 ) {
       tv.style.display = "block";
+      web.style.display = "none";
       tv.src = tvaddr[si];
       tv.play();
       if(timer) {
@@ -49,6 +50,7 @@ function movieclk( ch, p ) {
       return;
    }
    tv.style.display = "none";
+   web.style.display = "block";
    var url = path + ch + "&start=on";
    loadVideo( 0, url );
 }
@@ -67,7 +69,6 @@ function getTvUrl()
    if( loadMode )
       window.trueView.showMsg( "webView:setHiddenViewTV('" + strResponse + "')" );
    else {
-      //tv.style.display = "block";
       tvaddr[si] = tv.src = strResponse;
       tv.play();
    }
@@ -122,6 +123,7 @@ function OnOff()
       }
       web.src = '';
       tv.style.display = "block";
+      web.style.display = "none";
    }
 }
 
