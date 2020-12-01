@@ -70,9 +70,9 @@ function getTvUrl()
       window.trueView.showMsg( "webView:setHiddenViewTV('" + strResponse + "')" );
    else {
       tv.style.display = "block";
-      web.style.display = "none";
       tvaddr[si] = tv.src = strResponse;
       tv.play();
+      tv.style.display = "none";
    }
 }
 
