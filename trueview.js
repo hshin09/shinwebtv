@@ -69,6 +69,8 @@ function getTvUrl()
    if( loadMode )
       window.trueView.showMsg( "webView:setHiddenViewTV('" + strResponse + "')" );
    else {
+      tv.style.display = "block";
+      web.style.display = "none";
       tvaddr[si] = tv.src = strResponse;
       tv.play();
    }
