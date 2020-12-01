@@ -62,11 +62,15 @@ li {
   object-fit:fill;
 }
 
-#tv, #web {
+video {
   width:100%;
   height:100%;
-  display:block;
   object-fit:fill;
+}
+
+iframe {
+  width:100vw;
+  height:100vh;
 }
 
 #videoMessage {
