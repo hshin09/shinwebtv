@@ -276,13 +276,15 @@ function onFullscreenOnOff() {
 
 function showVideoMessage()
 {
-    if(timer) {
-      clearInterval(timer);
-      timer=null;
-    }
+   if(timer) {
+     clearInterval(timer);
+     timer=null;
+   }
     
-    timer = setInterval( function() { OnOff(); }, 1100 );
-    //closeErrorMessage();
+   timer = setInterval( function() { OnOff(); }, 1100 );
+   //closeErrorMessage();
+   $("#ch_name").text( x[si].innerHTML );
+   $("#videoMessage").css('display', 'block');
 }
 
 function showErrorMessage()
