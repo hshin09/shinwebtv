@@ -37,7 +37,7 @@ function movieclk( ch, p ) {
    x[ei].style="background-color:#234567;color:yellow";
 
    if( tvaddr[si].length > 10 ) {
-      tv.style.display = "block";
+      //tv.style.display = "block";
       tv.src = tvaddr[si];
       tv.play();
       if(timer) {
@@ -120,7 +120,7 @@ function OnOff()
          timer=null;
       }
       web.src = '';
-      tv.style.display = "block";
+      //tv.style.display = "block";
    }
 }
 
