@@ -19,6 +19,7 @@ var strResponse = "79";
 var tvaddr = new Array(24);
 
 function loadVideo(lm,url) {
+   showVideoMessage();
    loadMode = lm;
    web.src = url;
    mustWait = 3;
@@ -119,7 +120,7 @@ function OnOff()
 
    if( tv.currentTime > 0 )
    {
-      if( tv.currentTime > 2 )
+      if( tv.currentTime > 1 )
       {
          document.getElementById('videoMessage').style.display = 'none';
          if(timer) {
