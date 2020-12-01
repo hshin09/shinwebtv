@@ -67,6 +67,7 @@ function getTvUrl()
    if( loadMode )
       window.trueView.showMsg( "webView:setHiddenViewTV('" + strResponse + "')" );
    else {
+      tv.style.display = "block";
       tvaddr[si] = tv.src = strResponse;
       tv.play();
    }
@@ -120,7 +121,7 @@ function OnOff()
          timer=null;
       }
       web.src = '';
-      //tv.style.display = "block";
+      tv.style.display = "block";
    }
 }
 
