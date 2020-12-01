@@ -48,7 +48,7 @@ function movieclk( ch, p ) {
       timer = setInterval( function() { OnOff(); }, 1100 );
       return;
    }
-   tv.style.display = "none";
+   //tv.style.display = "none";
    var url = path + ch + "&start=on";
    loadVideo( 0, url );
 }
