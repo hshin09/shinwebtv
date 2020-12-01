@@ -93,7 +93,7 @@ function OnOff()
       return;
    }
 
-   //ch_name.innerHTML( ch_name.innerHTML + "." );
+   ch_name.innerHTML = ch_name.innerHTML + ".";
 
    if( mustWait ) {
       mustWait--;
@@ -131,6 +131,18 @@ function OnOff()
       web.src = '';
       tv.style.display = "block";
    }
+}
+
+function showVideoMessage()
+{
+   if(timer) {
+     clearInterval(timer);
+     timer=null;
+   }  
+   timer = setInterval( function() { OnOff(); }, 1100 );
+   //closeErrorMessage();
+   ch_name.innerHTML = x[si].innerHTML;
+   document.getElementById('videoMessage').style.display = 'block';
 }
 
 function showTime()
@@ -275,18 +287,6 @@ function onFullscreenOnOff() {
         document.getElementById("mydiv").style.width="90%";
         full=false;
     }
-}
-
-function showVideoMessage()
-{
-   if(timer) {
-     clearInterval(timer);
-     timer=null;
-   }  
-   timer = setInterval( function() { OnOff(); }, 1100 );
-   //closeErrorMessage();
-   ch_name.innerHTML( x[si].innerHTML );
-   document.getElementById('videoMessage').style.display = 'block';
 }
 
 function showErrorMessage()
