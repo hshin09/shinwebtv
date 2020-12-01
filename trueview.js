@@ -37,6 +37,7 @@ function movieclk( ch, p ) {
    x[ei].style="background-color:#234567;color:yellow";
 
    if( tvaddr[si].length > 10 ) {
+      showVideoMessage();
       tv.src = tvaddr[si];
       tv.play();
       tv.style.display = "block";
@@ -281,7 +282,7 @@ function showVideoMessage()
     }
     
     timer = setInterval( function() { OnOff(); }, 1100 );
-    closeErrorMessage();
+    //closeErrorMessage();
 }
 
 function showErrorMessage()
