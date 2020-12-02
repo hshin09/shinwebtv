@@ -16,9 +16,9 @@ function loadUrl(url) {
       var str = this.responseText;
       var si = str.IndexOf('var urlFirst');
       alert(si);
-      si = str.IndexOf(si, 'http');
+      si = str.IndexOf('http', si);
       alert(si);
-      var ei = str.IndexOf('/ytn_720');
+      var ei = str.IndexOf('/ytn_720/');
       alert(ei);
       str = str.substring(si,ei);
       alert(str);
