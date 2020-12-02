@@ -76,9 +76,6 @@ function keychk(e) {
       window.parentView.showMsg("launchApp:com.opera.browser.beta");
    }
    else if( e.which == 55 ) { //7
-      showTime();
-   }
-   else if( e.which == 56 ) { //8
       if( gi == 0 ) {
          stv.pause();
          if(timer) {
@@ -100,7 +97,9 @@ function keychk(e) {
             setTimeout(function(){ mlok(); }, 700);
 	 }
    }
+   else if( e.which == 56 ) { //8
+      showTime();
+   }
 
    e.preventDefault();
 }
-
