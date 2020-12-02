@@ -50,7 +50,7 @@ var lastTrueCh = "";
 var youtv24 = 0;
 var svideo = 0;
 var myshtv = 0;
-var pathmyshtv = "https://cdn.kr130.jpnettv.live/live";
+var pathmyshtv; // = "https://cdn.kr130.jpnettv.live/live";
 
 var web;
 var stv;
@@ -58,7 +58,6 @@ var tstr;
 var isChLoaded=0;
 var msgGetCh="채널리스트 구성중";
 var oldCurrentTime=0;
-
 
 Init();
 
@@ -96,7 +95,6 @@ function loadMyShTV(url) {
       ssi = str.indexOf('http', ssi);
       var eei = str.indexOf('/ytn_720/');
       str = str.substring(ssi,eei);
-      alert(str);
       pathmyshtv = str;
    }; 
    xhr.send();
