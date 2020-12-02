@@ -68,6 +68,12 @@ function keychk(e) {
    else if( e.which == 13 ) {
       onok();
    }
+   else if( e.which == 49 ) { //1
+      x[0].click();
+   }
+   else if( e.which == 52 ) { //4
+      x[gi?18:10].click();
+   }
    else if( e.which == 53 ) { //5
       window.parentView.showMsg("launchApp:com.google.android.youtube.tv");
    } 
