@@ -1,7 +1,8 @@
+window.onkeydown = keychk;
 var tv;
 var web;
 var ch_name;
-window.onkeydown = keychk;
+var touchscreen = 0;
 var path = "http://youtv24.net/sites/mstvs/pages/pc/pc_view.php?ch=live";
 var gi=0;
 var si=10;
@@ -17,6 +18,10 @@ var x;
 var cnt;
 var strResponse = "79";
 var tvaddr = new Array(24);
+
+function getTouchScreen() {
+   window.trueView.showMsg( "webView:getTouchScreen()" );
+}
 
 function loadVideo(lm,url) {
    showVideoMessage();
