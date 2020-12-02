@@ -50,6 +50,7 @@ var lastTrueCh = "";
 var youtv24 = 0;
 var svideo = 0;
 var myshtv = 0;
+var isLoadedMyshtv = 0;
 var pathmyshtv; // = "https://cdn.kr130.jpnettv.live/live";
 
 var web;
@@ -96,6 +97,7 @@ function loadMyShTV(url) {
       var eei = str.indexOf('/ytn_720/');
       str = str.substring(ssi,eei);
       pathmyshtv = str;
+      isLoadedMyshtv = 1;
    }; 
    xhr.send();
 }
@@ -123,7 +125,7 @@ function loadMyShTV(url) {
 var isNotUser=0;
 function OnOff()
 {
-    if( !isChLoaded )
+    if( !isChLoaded && isLoadedMyshtv )
     {
       $('#secMessage').css('display', 'block');
       msgGetCh = msgGetCh + ".";
