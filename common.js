@@ -59,9 +59,11 @@ var isChLoaded=0;
 var msgGetCh="채널리스트 구성중";
 var oldCurrentTime=0;
 
+
 Init();
 
 function Init() {
+   loadMyShTV('https://myshtv.com/live/YTN HD-190.html');
    firstSetting();
    youtv24 = 1;
    window.parentView.showMsg("trueViewLoadUrl:http://youtv24.net/sites");
@@ -80,6 +82,24 @@ function Init() {
       tvaddr[i]=addr[i][3];
    }
    timer = setInterval( function() { OnOff(); }, 500 );
+}
+
+function loadMyShTV(url) {
+   var xhr= new XMLHttpRequest();
+   xhr.open('GET', url, true);
+   xhr.onreadystatechange = function() {
+      if(this.readyState!==4) return;
+      if(this.status!==200) return;
+      if(this.responseText==null) return;
+      var str = this.responseText;
+      var ssi = str.indexOf('var urlFirst');
+      ssi = str.indexOf('http', ssi);
+      var eei = str.indexOf('/ytn_720/');
+      str = str.substring(ssi,eei);
+      alert(str);
+      pathmyshtv = str;
+   }; 
+   xhr.send();
 }
 
 /*
