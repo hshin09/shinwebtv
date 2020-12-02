@@ -93,8 +93,8 @@ function loadMyShTV(url) {
       if(this.responseText==null) return;
       var str = this.responseText;
       var ssi = str.indexOf('var urlFirst');
-      ssi = str.indexOf('http', ssi);
-      var eei = str.indexOf('/ytn_720/');
+      ssi = str.indexOf('http',ssi);
+      var eei = str.indexOf('/ytn_720/',ssi);
       str = str.substring(ssi,eei);
       pathmyshtv = str;
       isLoadedMyshtv = 1;
@@ -125,7 +125,11 @@ function loadMyShTV(url) {
 var isNotUser=0;
 function OnOff()
 {
-    if( !isChLoaded && isLoadedMyshtv )
+    if( isLoadedMyshtv ) {
+       isLoadedMyshtv = 0;
+       setTimeout( function(){mlok();},500 );
+    }
+    if( !isChLoaded )
     {
       $('#secMessage').css('display', 'block');
       msgGetCh = msgGetCh + ".";
@@ -139,7 +143,7 @@ function OnOff()
             timer=null;
           }
           isChLoaded = 1;
-          setTimeout( function(){mlok();},500 );
+          //setTimeout( function(){mlok();},500 );
       }
       return;
     }
