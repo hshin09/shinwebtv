@@ -13,15 +13,15 @@ function firstSetting()
 }
 
 function onFinish() {
-  if( gi == 1 && svideo == 0 && si == 10 ) {
-    $('#pwd').css('display','block');
-    return;
-  }
-  if(timer)
-    clearInterval(timer);
-  stv.pause();
-  stv.setAttribute( "src",  "" );
-  parentView.showMsg("finish");
+   if( gi == 1 && svideo == 0 && si == 10 ) {
+      $('#pwd').css('display','block');
+      return;
+   }
+   if(timer)
+      clearInterval(timer);
+   stv.pause();
+   stv.setAttribute( "src",  "" );
+   parentView.showMsg("finish");
 }
 
 function addInput()
@@ -46,5 +46,5 @@ function addInput()
          si=0; 
          onFinish();
       } 
-   } );
+   });
 }
