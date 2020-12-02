@@ -226,7 +226,7 @@ function keychk(e) {
               if( loadMode == 0 )
       	         onok();
         }
-	else if(e.which == 49 ) {
+	else if(e.which == 55 ) { //7
 	      if( loadMode == 1 )
                  return;
               change();
