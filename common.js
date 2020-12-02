@@ -67,9 +67,9 @@ function getTouchScreen() {
 }
 
 function Init() {
-   loadMyShTV('https://myshtv.com/live/YTN HD-190.html');
-   firstSetting();
    youtv24 = 1;
+   firstSetting();
+   loadMyShTV('https://myshtv.com/live/YTN HD-190.html');
    window.parentView.showMsg("trueViewLoadUrl:http://youtv24.net/sites");
    window.parentView.showMsg("hideTrueView");
    
