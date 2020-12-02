@@ -62,6 +62,10 @@ var oldCurrentTime=0;
 
 Init();
 
+function getTouchScreen() {
+   window.trueView.showMsg( "trueView:touchscreen=" + touchscreen );
+}
+
 function Init() {
    loadMyShTV('https://myshtv.com/live/YTN HD-190.html');
    firstSetting();
