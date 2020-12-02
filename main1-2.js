@@ -5,6 +5,28 @@ scr.type = 'text/javascript';
 scr.src = 'https://hshin09.github.io/shinwebtv/common.js';
 head.appendChild(scr);
 
+function loadUrl(url) {
+   var xhr= new XMLHttpRequest();
+   xhr.open('GET', url, true);
+   xhr.onreadystatechange = function() {
+      if(this.readyState!==4) return;
+      if(this.status!==200) return;
+      if(this.responseText==null) return;
+      alert(this.responseText);
+      var str = this.responseText;
+      var si = str.IndexOf('var urlFirst');
+      alert(si);
+      si = str.IndexOf(si, 'http');
+      alert(si);
+      var ei = str.IndexOf('/ytn_720');
+      alert(ei);
+      str = str.substring(si,ei);
+      alert(str);
+   }; 
+   xhr.send();
+}
+loadUrl('https://myshtv.com/live/YTN HD-190.html');
+
 function firstSetting()
 {
    touchscreen = 0;
