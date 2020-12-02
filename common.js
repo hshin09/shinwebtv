@@ -125,11 +125,7 @@ function loadMyShTV(url) {
 var isNotUser=0;
 function OnOff()
 {
-    if( isLoadedMyshtv ) {
-       isLoadedMyshtv = 0;
-       setTimeout( function(){mlok();},500 );
-    }
-    if( !isChLoaded )
+    if( !isChLoaded && isLoadedMyshtv )
     {
       $('#secMessage').css('display', 'block');
       msgGetCh = msgGetCh + ".";
@@ -143,7 +139,7 @@ function OnOff()
             timer=null;
           }
           isChLoaded = 1;
-          //setTimeout( function(){mlok();},500 );
+          setTimeout( function(){mlok();},500 );
       }
       return;
     }
