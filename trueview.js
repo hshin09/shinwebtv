@@ -206,7 +206,7 @@ function change() {
    tv.pause();
    web.src = '';
    window.trueView.showMsg("hideTrueView");
-   window.trueView.showMsg("webView:gi=0; change()");
+   window.trueView.showMsg("webView:x[si].click()");
 }
 
 function keychk(e) {
@@ -229,10 +229,7 @@ function keychk(e) {
 	else if(e.which == 49 ) {
 	      if( loadMode == 1 )
                  return;
-              tv.pause();
-              web.src = '';
-              window.trueView.showMsg("hideTrueView");
-              window.trueView.showMsg("webView:x[si].click()");
+              change();
 	}
         
 	e.preventDefault();
