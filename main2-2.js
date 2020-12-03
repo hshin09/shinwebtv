@@ -29,7 +29,7 @@ function handleTouchEnd(evt) {
    var yDiff = yDown - yUp;
 
    if( Math.abs( xDiff ) > Math.abs( yDiff ) ) {
-      if ( xDiff > 500 ) { //left swipe
+      if ( xDiff > 300 ) { //left swipe
          if( gi == 0 ) {
             stv.pause();
             if(timer) {
