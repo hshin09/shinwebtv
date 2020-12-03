@@ -13,7 +13,8 @@ function firstSetting()
 }
 
 function onFinish() {
-   if( gi == 1 && svideo == 0 && si == 10 ) {
+   //if( gi == 1 && svideo == 0 && si == 10 ) {
+   if( si == 22 )
       $('#pwd').css('display','block');
       return;
    }
