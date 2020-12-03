@@ -24,7 +24,6 @@ function getTouchScreen() {
 }
 
 function loadVideo(lm,url) {
-   alert(touchscreen);
    showVideoMessage();
    loadMode = lm;
    web.src = url;
