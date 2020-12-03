@@ -184,14 +184,10 @@ function OnOff()
 
    if( tv.currentTime > 0 )
    {
-      if( tv.currentTime > 1 )
-      {
-         document.getElementById('videoMessage').style.display = 'none';
-         if(timer) {
-            clearInterval(timer);
-            timer=null;
-         }
-         return;
+      document.getElementById('videoMessage').style.display = 'none';
+      if(timer) {
+         clearInterval(timer);
+         timer=null;
       }
       web.src = '';
       tv.style.display = "block";
