@@ -20,7 +20,7 @@ var tvaddr = new Array(24);
 
 var xDown = null;                                                        
 var yDown = null;
-
+/*
 function getTouches(evt) {
    return evt.touches;// || evt.originalEvent.touches;
 }                                                     
@@ -58,7 +58,7 @@ function handleTouchMove(evt) {
    xDown = null;
    yDown = null;                                             
 }
-
+*/
 function getTouchScreen() {
    window.trueView.showMsg( "webView:getTouchScreen()" );
 } 
@@ -70,8 +70,8 @@ function putTouchScreen( ts ) {
       tv.ondblclick = function(){ onFullscreenOnOff(); };
       tv.onclick = function(){ onFullscreenOnOff(); };
 
-      document.addEventListener('touchstart', handleTouchStart, false);        
-      document.addEventListener('touchmove', handleTouchMove, false);
+      //document.addEventListener('touchstart', handleTouchStart, false);        
+      //document.addEventListener('touchmove', handleTouchMove, false);
    }
    else {
       loadStyle('https://hshin09.github.io/shinwebtv/youtvkor.css');
