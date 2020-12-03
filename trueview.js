@@ -42,17 +42,17 @@ function handleTouchMove(evt) {
    var yDiff = yDown - yUp;
 
    if( Math.abs( xDiff ) > Math.abs( yDiff ) )
-      if ( xDiff > 0 ) {
-            /* left swipe */ 
-      } else {
-            /* right swipe */
+      if ( xDiff > 0 ) { //left swipe
+      
+      } else { //right swipe
+      
       }                       
    } 
    else {
-      if ( yDiff > 0 ) {
-            /* up swipe */ 
-      } else { 
-            /* down swipe */
+      if ( yDiff > 0 ) { //up swipe
+      
+      } else { //down swipe
+      
       }                                                                 
    }
    xDown = null;
