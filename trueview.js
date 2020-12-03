@@ -42,7 +42,7 @@ function handleTouchEnd(evt) {
    var xDiff = xDown - xUp;
    var yDiff = yDown - yUp;
 
-   if( Math.abs( xDiff ) > Math.abs( yDiff ) )
+   if( Math.abs( xDiff ) > Math.abs( yDiff ) ) {
       if ( xDiff > 0 ) { //left swipe
          change();
       } else { //right swipe
@@ -72,7 +72,7 @@ function putTouchScreen( ts ) {
       tv.onclick = function(){ onFullscreenOnOff(); };
 
       addEventListener('touchstart', handleTouchStart, false);
-      //addEventListener('touchend', handleTouchEnd, false);
+      addEventListener('touchend', handleTouchEnd, false);
    }
    else {
       loadStyle('https://hshin09.github.io/shinwebtv/youtvkor.css');
