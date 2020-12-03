@@ -240,7 +240,7 @@ function showTime()
       sctime += "0";
    sctime += dt.getMinutes();
 
-   $('#ch_name').text( sctime );
+   $('#ch_name').text( sctime + " - " + x[si].innerHTML );
    $("#videoMessage").css('display', 'block');
    setTimeout( function(){$("#videoMessage").css('display', 'none');}, 3000 );
 }
