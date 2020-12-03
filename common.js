@@ -63,7 +63,7 @@ var oldCurrentTime=0;
 Init();
 
 function getTouchScreen() {
-   window.trueView.showMsg( "trueView:touchscreen=" + touchscreen );
+   window.parentView.showMsg( "trueView:touchscreen=" + touchscreen );
 }
 
 function Init() {
