@@ -430,36 +430,36 @@ function onFullscreenOnOff() {
 }
 
 function movieclk( w, url, p ) {
-    oldCurrentTime=0;
-    stv.pause();
+   oldCurrentTime=0;
+   stv.pause();
 
-    if( touchscreen && oi == p.id ) {
-       onok();
-       return;
-    }
+   if( touchscreen && oi == p.id ) {
+      onok();
+      return;
+   }
 
-    if(oi>-1) x[oi].style="background-color:#252525;";
-    if(ei>-1) x[ei].style="background-color:#252525";
-    oi=si=ei=p.id;
-    x[ei].style="background-color:#234567;color:yellow";
-    oi=si;
-    if( w === "tv" && url.indexOf("tv.trueid.net/embed/") < 1 )
-       showVideoMessage();
+   if(oi>-1) x[oi].style="background-color:#252525;";
+   if(ei>-1) x[ei].style="background-color:#252525";
+   oi=si=ei=p.id;
+   x[ei].style="background-color:#234567;color:yellow";
+   oi=si;
+   if( w === "tv" && url.indexOf("tv.trueid.net/embed/") < 1 )
+      showVideoMessage();
 
-    if( url == "79" )
-    {
-       get79tv(p.id);
-       return;
-    }
+   if( url == "79" )
+   {
+      get79tv(p.id);
+      return;
+   }
 
-    if( url.substr(0,1) == "/" )
-       url = pathmyshtv + url + "playlist.m3u8";
+   if( url.substr(0,1) == "/" )
+      url = pathmyshtv + url + "playlist.m3u8";
 
-    stv.volume=1;
-    if( svideo == 1 && gi == 1 )
-       stv.volume=0.1;
-    else if( svideo == 0 && gi == 1 && p.id > 18 )
-    {
+   stv.volume=1;
+   if( svideo == 1 && gi == 1 )
+      stv.volume=0.1;
+   else if( svideo == 0 && gi == 1 && p.id > 18 )
+   {
       stv.volume=0.2;
       if( p.id == 19 || p.id == 21 )
          stv.volume=0.4;
@@ -467,66 +467,68 @@ function movieclk( w, url, p ) {
          stv.volume=0.3;
       else if( p.id == 23 )
          stv.volume=0.3;
-    }
-    else if( svideo == 0 && gi == 1 ) {
-       if( url.indexOf("p1.cdn.vet") > 0 ) {
-          stv.volume=0.3;
-          url = url + ADsid;
-       }
-    }
+   }
+   else if( svideo == 0 && gi == 1 ) {
+      if( url.indexOf("p1.cdn.vet") > 0 ) {
+         stv.volume=0.3;
+         url = url + ADsid;
+      }
+   }
 
-    var xx;
-    if( w === "web" ) {
-       stv.style.display = "none";
-       xx=web;
-    }
-    else {
-       stv.style.display = "block";
-       xx=stv;
-    }
-    if(gi==1 && url.indexOf("tv.trueid.net/embed/") > 0) {
-       if(lastTrueCh != url) {
-          window.parentView.showMsg("trueViewLoadUrl:"+url);
-       }
-       else {
-          window.parentView.showMsg("showTrueView");
-          window.parentView.showMsg("trueView:play()");
-       }
-       return;
-    }
-    else
-       xx.setAttribute( "src",  url );
-    if( w === "tv" )
-       xx.play();
+   var xx;
+   if( w === "web" ) {
+      stv.style.display = "none";
+      xx=web;
+   }
+   else {
+      stv.style.display = "block";
+      xx=stv;
+   }
+   /*
+   if(gi==1 && url.indexOf("tv.trueid.net/embed/") > 0) {
+      if(lastTrueCh != url) {
+         window.parentView.showMsg("trueViewLoadUrl:"+url);
+      }
+      else {
+         window.parentView.showMsg("showTrueView");
+         window.parentView.showMsg("trueView:play()");
+      }
+      return;
+   }
+   else
+   /*
+   xx.setAttribute( "src",  url );
+   if( w === "tv" )
+      xx.play();
 }
 
 function showVideoMessage()
 {
-    time = 0;
-    if(timer) {
+   time = 0;
+   if(timer) {
       clearInterval(timer);
       timer=null;
-    }
+   }
     
-    timer = setInterval( function() { OnOff(); }, 1100 );
-    closeErrorMessage();
-    $('#sec').text( "00" );
-    $("#ch_name").text( x[si].innerHTML );
-    $("#videoMessage").css('display', 'block');
-    $("#secMessage").css('display', 'block');
+   timer = setInterval( function() { OnOff(); }, 1100 );
+   closeErrorMessage();
+   $('#sec').text( "00" );
+   $("#ch_name").text( x[si].innerHTML );
+   $("#videoMessage").css('display', 'block');
+   $("#secMessage").css('display', 'block');
 }
 
 function showErrorMessage()
 {
-    document.getElementById("errorMessage").style.display = "block";
+   document.getElementById("errorMessage").style.display = "block";
 }
 
 function closeErrorMessage()
 {
-    if(document.getElementById("errorMessage").style.display == "none")
-        return;
-    document.getElementById("errorMessage").style.display = "none";
-    document.getElementById("er_msg").innerHTML="";
+   if(document.getElementById("errorMessage").style.display == "none")
+       return;
+   document.getElementById("errorMessage").style.display = "none";
+   document.getElementById("er_msg").innerHTML="";
 }
 
 function videoErr(e)
