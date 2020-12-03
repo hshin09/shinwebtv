@@ -100,8 +100,8 @@ function keychk(e) {
             svideo = 0;
             $('#menu1').load("https://hshin09.github.io/shinwebtv/thai.html");
          }
-            setTimeout(function(){ mlok(); }, 700);
-	 }
+         setTimeout(function(){ mlok(); }, 700);
+      }
    }
    else if( e.which == 56 ) { //8
       showTime();
