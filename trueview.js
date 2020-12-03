@@ -218,6 +218,10 @@ function showTime()
    if( dt.getMinutes() < 10 )
       sctime += "0";
    sctime += dt.getMinutes();
+
+   ch_name.innerHTML( sctime ) + " - " + x[si].innerHTML;
+   document.getElementById('videoMessage').style.display = 'block';
+   setTimeout( function(){document.getElementById('videoMessage').style.display = 'none';}, 3000 );
 }
 
 function onup() {
