@@ -23,8 +23,16 @@ function getTouchScreen() {
    window.trueView.showMsg( "webView:getTouchScreen()" );
 } 
 
+function putTouchScreen( ts ) {
+   touchscreen = ts
+   if( touchscreen )
+      loadStyle('https://hshin09.github.io/shinwebtv/main2.css');
+   else
+      loadStyle('https://hshin09.github.io/shinwebtv/youtvkor.css');
+} 
+
 function loadVideo(lm,url) {
-   showVideoMessage(); alert(touchscreen);
+   showVideoMessage();
    loadMode = lm;
    web.src = url;
    mustWait = 3;
@@ -390,8 +398,6 @@ function init() {
    meta.name='viewport';
    meta.setAttribute('content','width=device-width, height=device-height, initial-scale=1.0');
    document.getElementsByTagName('head')[0].appendChild(meta);
-
-   loadStyle('https://hshin09.github.io/shinwebtv/youtvkor.css');
    
    document.body.removeChild(document.getElementsByTagName('center')[0]);
    document.body.removeChild(document.getElementsByTagName('center')[0]);
