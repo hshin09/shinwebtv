@@ -70,7 +70,7 @@ function putTouchScreen( ts ) {
       tv.ondblclick = function(){ onFullscreenOnOff(); };
       tv.onclick = function(){ onFullscreenOnOff(); };
 
-      //addEventListener('touchstart', handleTouchStart, false);        
+      addEventListener('touchstart', handleTouchStart, false);        
       //addEventListener('touchend', handleTouchEnd, false);
    }
    else {
