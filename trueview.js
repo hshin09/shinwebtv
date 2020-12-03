@@ -73,6 +73,8 @@ function putTouchScreen( ts ) {
 
       addEventListener('touchstart', handleTouchStart, false);
       addEventListener('touchend', handleTouchEnd, false);
+      web.addEventListener('touchstart', handleTouchStart, false);
+      web.addEventListener('touchend', handleTouchEnd, false);
    }
    else {
       loadStyle('https://hshin09.github.io/shinwebtv/youtvkor.css');
