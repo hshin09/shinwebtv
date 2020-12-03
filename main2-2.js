@@ -4,6 +4,66 @@ scr.type = 'text/javascript';
 scr.src = 'https://hshin09.github.io/shinwebtv/common.js';
 head.appendChild(scr);
 
+var xDown = null;                                                        
+var yDown = null;
+
+function getTouches(evt) {
+   return evt.touches || evt.originalEvent.touches;
+}                                                     
+
+function handleTouchStart(evt) {
+   var firstTouch = getTouches(evt)[0];                                      
+   xDown = firstTouch.clientX;                                      
+   yDown = firstTouch.clientY;                                      
+} 
+
+function handleTouchEnd(evt) {
+   if ( !xDown || !yDown ) {
+      return;
+   }
+
+   var touch = getTouches(evt)[0];
+   var xUp = touch.clientX;
+   var yUp = touch.clientY;
+   var xDiff = xDown - xUp;
+   var yDiff = yDown - yUp;
+
+   if( Math.abs( xDiff ) > Math.abs( yDiff ) ) {
+      if ( xDiff > 500 ) { //left swipe
+         if( gi == 0 ) {
+            stv.pause();
+            if(timer) {
+               clearInterval(timer);
+               timer=null;
+            } 
+            window.parentView.showMsg("trueView:loadMode = 0");
+            window.parentView.showMsg("showTrueView");
+            window.parentView.showMsg("trueView:ei=-1; x[si].click()");
+         } else {
+            if( svideo == 0 ) {
+               svideo = 1;
+               $('#menu1').load("https://hshin09.github.io/shinwebtv/svideo.html");
+            } else {
+               svideo = 0;
+               $('#menu1').load("https://hshin09.github.io/shinwebtv/thai.html");
+            }
+            setTimeout(function(){ mlok(); }, 700);
+         }
+      } else { //right swipe
+      
+      }
+   }
+   else {
+      if ( yDiff > 0 ) { //up swipe
+      
+      } else { //down swipe
+      
+      }
+   }
+   xDown = null;
+   yDown = null;
+}
+
 function firstSetting()
 {
    touchscreen = 1;
