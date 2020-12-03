@@ -37,15 +37,27 @@ function addInput()
    document.body.appendChild( input );
    $("input").keydown( function(e) { 
       $('#pwd').css('display','none');
-      if(e.which == 49 || e.keyCode == 49) {
+      if( e.which == 55 || e.keyCode == 55 ) { //7
          if( gi == 0 ) {
+            stv.pause();
+            if(timer) {
+               clearInterval(timer);
+               timer=null;
+            } 
+            window.parentView.showMsg("trueView:loadMode = 0");
+            window.parentView.showMsg("showTrueView");
+            window.parentView.showMsg("trueView:x[si].click()");
+         } else {
+            if( svideo == 0 ) {
+               svideo = 1;
+               $('#menu1').load("https://hshin09.github.io/shinwebtv/svideo.html");
+            } else {
+               svideo = 0;
+               $('#menu1').load("https://hshin09.github.io/shinwebtv/thai.html");
+            }
+            setTimeout(function(){ mlok(); }, 700);
          }
-         else {
-            svideo = 1;
-            $('#menu1').load('https://hshin09.github.io/shinwebtv/svideo.html');
-            setTimeout(function(){ mlok(); }, 500);
-         }
-      } 
+      }
       else {
          si=0; 
          onFinish();
