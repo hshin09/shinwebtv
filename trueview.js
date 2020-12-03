@@ -95,6 +95,10 @@ function loadVideo(lm,url) {
 
 function movieclk( ch, p ) {
    tv.pause();
+   if( touchscreen && oi == p.id ) {
+      onok();
+      return;
+   }
    if(oi>-1) x[oi].style="background-color:#252525";
    if(ei>-1) x[ei].style="background-color:#252525";
    oi=si=ei=p.id;
@@ -268,7 +272,7 @@ function change() {
    tv.pause();
    web.src = '';
    window.trueView.showMsg("hideTrueView");
-   window.trueView.showMsg("webView:x[si].click()");
+   window.trueView.showMsg("webView:ei=-1; x[si].click()");
 }
 
 function keychk(e) {
