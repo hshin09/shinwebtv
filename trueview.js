@@ -26,24 +26,24 @@ function getTouches(evt) {
 }                                                     
 
 function handleTouchStart(evt) {
-   const firstTouch = getTouches(evt)[0];                                      
+   var firstTouch = getTouches(evt)[0];                                      
    xDown = firstTouch.clientX;                                      
    yDown = firstTouch.clientY;                                      
 } 
-/*
+
 function handleTouchEnd(evt) {
    if ( ! xDown || ! yDown ) {
       return;
    }
 
-   var xUp = evt.touches[0].clientX;                                    
-   var yUp = evt.touches[0].clientY;
+   var xUp = getTouches(evt)[0].clientX;                                    
+   var yUp = getTouches(evt)[0].clientY;
    var xDiff = xDown - xUp;
    var yDiff = yDown - yUp;
 
    if( Math.abs( xDiff ) > Math.abs( yDiff ) )
       if ( xDiff > 0 ) { //left swipe
-         //change();
+         change();
       } else { //right swipe
       
       }                       
@@ -58,7 +58,7 @@ function handleTouchEnd(evt) {
    xDown = null;
    yDown = null;                                             
 }
-*/
+
 function getTouchScreen() {
    window.trueView.showMsg( "webView:getTouchScreen()" );
 } 
