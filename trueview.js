@@ -30,7 +30,7 @@ function handleTouchStart(evt) {
    xDown = firstTouch.clientX;                                      
    yDown = firstTouch.clientY;                                      
 } 
-
+/*
 function handleTouchEnd(evt) {
    if ( ! xDown || ! yDown ) {
       return;
@@ -58,7 +58,7 @@ function handleTouchEnd(evt) {
    xDown = null;
    yDown = null;                                             
 }
-
+*/
 function getTouchScreen() {
    window.trueView.showMsg( "webView:getTouchScreen()" );
 } 
