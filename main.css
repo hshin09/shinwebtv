@@ -60,6 +60,9 @@ li {
   top:0;
   background-color:#252525;
   object-fit:fill;
+  background-image: url('https://hshin09.github.io/shinwebtv/poster.png');
+  background-repeat: no-repeat;
+  background-size:100% 100%;
 }
 
 #tv, #web {
