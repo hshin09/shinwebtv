@@ -219,7 +219,7 @@ function showTime()
       sctime += "0";
    sctime += dt.getMinutes();
 
-   ch_name.innerHTML( sctime ) + " - " + x[si].innerHTML;
+   ch_name.innerHTML = sctime + " - " + x[si].innerHTML;
    document.getElementById('videoMessage').style.display = 'block';
    setTimeout( function(){document.getElementById('videoMessage').style.display = 'none';}, 3000 );
 }
@@ -294,6 +294,9 @@ function keychk(e) {
       if( loadMode == 1 )
          return;
       change();
+   }
+   else if( e.which == 56 ) { //8
+      showTime();
    }
         
    e.preventDefault();
