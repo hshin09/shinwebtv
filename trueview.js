@@ -70,8 +70,8 @@ function putTouchScreen( ts ) {
       tv.ondblclick = function(){ onFullscreenOnOff(); };
       tv.onclick = function(){ onFullscreenOnOff(); };
 
-      addEventListener('touchstart', handleTouchStart, false);        
-      addEventListener('touchend', handleTouchEnd, false);
+      //addEventListener('touchstart', handleTouchStart, false);        
+      //addEventListener('touchend', handleTouchEnd, false);
    }
    else {
       loadStyle('https://hshin09.github.io/shinwebtv/youtvkor.css');
