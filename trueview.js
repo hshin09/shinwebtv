@@ -21,9 +21,7 @@ var tvaddr = new Array(24);
 
 function getTouchScreen() {
    window.trueView.showMsg( "webView:getTouchScreen()" );
-   touchscreen = ( 'ontouchstart' in window ) ||  
-           ( navigator.maxTouchPoints > 0 ) ||  
-           ( navigator.msMaxTouchPoints > 0 ); 
+   touchscreen = 'createTouch' in window; 
 } 
 }
 
@@ -394,7 +392,7 @@ function init() {
    meta.name='viewport';
    meta.setAttribute('content','width=device-width, height=device-height, initial-scale=1.0');
    document.getElementsByTagName('head')[0].appendChild(meta);
-alert(touchscreen);
+alert("ts="+touchscreen);
    loadStyle('https://hshin09.github.io/shinwebtv/youtvkor.css');
    
    document.body.removeChild(document.getElementsByTagName('center')[0]);
