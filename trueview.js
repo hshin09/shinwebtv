@@ -21,7 +21,10 @@ var tvaddr = new Array(24);
 
 function getTouchScreen() {
    window.trueView.showMsg( "webView:getTouchScreen()" );
-   touchscreen = 'ontouchstart' in document.documentElement;
+   touchscreen = ( 'ontouchstart' in window ) ||  
+           ( navigator.maxTouchPoints > 0 ) ||  
+           ( navigator.msMaxTouchPoints > 0 ); 
+} 
 }
 
 function loadVideo(lm,url) {
