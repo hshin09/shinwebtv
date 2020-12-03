@@ -43,7 +43,7 @@ function handleTouchEnd(evt) {
 
    if( Math.abs( xDiff ) > Math.abs( yDiff ) )
       if ( xDiff > 0 ) { //left swipe
-         change();
+         //change();
       } else { //right swipe
       
       }                       
