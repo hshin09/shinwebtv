@@ -102,7 +102,7 @@ function loadMyShTV(url) {
       str = str.substring(ssi,eei);
       pathmyshtv = str;
       isLoadedMyshtv = 1;
-      window.parentView.showMsg("msg:"+pathmyshtv + " ts=" + touchscreen);
+      window.parentView.showMsg("msg:" + pathmyshtv);
    }; 
    xhr.send();
 }
