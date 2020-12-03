@@ -1,4 +1,3 @@
-window.onkeydown = keychk;
 var tv;
 var web;
 var ch_name;
@@ -19,6 +18,46 @@ var cnt;
 var strResponse = "79";
 var tvaddr = new Array(24);
 
+var xDown = null;                                                        
+var yDown = null;
+
+function getTouches(evt) {
+   return evt.touches || evt.originalEvent.touches;
+}                                                     
+
+function handleTouchStart(evt) {
+   const firstTouch = getTouches(evt)[0];                                      
+   xDown = firstTouch.clientX;                                      
+   yDown = firstTouch.clientY;                                      
+};                                                
+
+function handleTouchMove(evt) {
+   if ( ! xDown || ! yDown ) {
+      return;
+   }
+
+   var xUp = evt.touches[0].clientX;                                    
+   var yUp = evt.touches[0].clientY;
+   var xDiff = xDown - xUp;
+   var yDiff = yDown - yUp;
+
+   if( Math.abs( xDiff ) > Math.abs( yDiff ) )
+      if ( xDiff > 0 ) {
+            /* left swipe */ 
+      } else {
+            /* right swipe */
+      }                       
+   } else {
+      if ( yDiff > 0 ) {
+            /* up swipe */ 
+      } else { 
+            /* down swipe */
+      }                                                                 
+   }
+   xDown = null;
+   yDown = null;                                             
+};
+
 function getTouchScreen() {
    window.trueView.showMsg( "webView:getTouchScreen()" );
 } 
@@ -29,9 +68,14 @@ function putTouchScreen( ts ) {
       loadStyle('https://hshin09.github.io/shinwebtv/main2.css');
       tv.ondblclick = function(){ onFullscreenOnOff(); };
       tv.onclick = function(){ onFullscreenOnOff(); };
+
+      document.addEventListener('touchstart', handleTouchStart, false);        
+      document.addEventListener('touchmove', handleTouchMove, false);
    }
-   else
+   else {
       loadStyle('https://hshin09.github.io/shinwebtv/youtvkor.css');
+      window.onkeydown = keychk;
+   }
 } 
 
 function loadVideo(lm,url) {
