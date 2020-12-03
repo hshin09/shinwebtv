@@ -29,7 +29,7 @@ function handleTouchStart(evt) {
    const firstTouch = getTouches(evt)[0];                                      
    xDown = firstTouch.clientX;                                      
    yDown = firstTouch.clientY;                                      
-};                                                
+} 
 
 function handleTouchMove(evt) {
    if ( ! xDown || ! yDown ) {
@@ -47,7 +47,8 @@ function handleTouchMove(evt) {
       } else {
             /* right swipe */
       }                       
-   } else {
+   } 
+   else {
       if ( yDiff > 0 ) {
             /* up swipe */ 
       } else { 
@@ -56,14 +57,14 @@ function handleTouchMove(evt) {
    }
    xDown = null;
    yDown = null;                                             
-};
+}
 
 function getTouchScreen() {
    window.trueView.showMsg( "webView:getTouchScreen()" );
 } 
 
 function putTouchScreen( ts ) {
-   touchscreen = ts
+   touchscreen = ts;
    if( touchscreen ) {
       loadStyle('https://hshin09.github.io/shinwebtv/main2.css');
       tv.ondblclick = function(){ onFullscreenOnOff(); };
