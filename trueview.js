@@ -32,12 +32,13 @@ function handleTouchStart(evt) {
 } 
 
 function handleTouchEnd(evt) {
-   if ( ! xDown || ! yDown ) {
+   if ( !xDown || !yDown ) {
       return;
    }
 
-   var xUp = getTouches(evt)[0].clientX;                                    
-   var yUp = getTouches(evt)[0].clientY;
+   var touch = getTouches(evt)[0];
+   var xUp = touch.clientX;
+   var yUp = touch.clientY;
    var xDiff = xDown - xUp;
    var yDiff = yDown - yUp;
 
@@ -46,17 +47,17 @@ function handleTouchEnd(evt) {
          change();
       } else { //right swipe
       
-      }                       
-   } 
+      }
+   }
    else {
       if ( yDiff > 0 ) { //up swipe
       
       } else { //down swipe
       
-      }                                                                 
+      }
    }
    xDown = null;
-   yDown = null;                                             
+   yDown = null;
 }
 
 function getTouchScreen() {
@@ -70,7 +71,7 @@ function putTouchScreen( ts ) {
       tv.ondblclick = function(){ onFullscreenOnOff(); };
       tv.onclick = function(){ onFullscreenOnOff(); };
 
-      addEventListener('touchstart', handleTouchStart, false);        
+      addEventListener('touchstart', handleTouchStart, false);
       //addEventListener('touchend', handleTouchEnd, false);
    }
    else {
