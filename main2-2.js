@@ -38,9 +38,13 @@ function addInput()
    $("input").keydown( function(e) { 
       $('#pwd').css('display','none');
       if(e.which == 49 || e.keyCode == 49) {
-         svideo = 1;
-         $('#menu1').load('https://hshin09.github.io/shinwebtv/svideo.html');
-         setTimeout(function(){ mlok(); }, 500);
+         if( gi == 0 ) {
+         }
+         else {
+            svideo = 1;
+            $('#menu1').load('https://hshin09.github.io/shinwebtv/svideo.html');
+            setTimeout(function(){ mlok(); }, 500);
+         }
       } 
       else {
          si=0; 
