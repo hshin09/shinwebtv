@@ -21,7 +21,6 @@ var tvaddr = new Array(24);
 
 function getTouchScreen() {
    window.trueView.showMsg( "webView:getTouchScreen()" );
-   touchscreen = 'createTouch' in document; 
 } 
 
 function loadVideo(lm,url) {
