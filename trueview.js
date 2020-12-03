@@ -21,10 +21,10 @@ var tvaddr = new Array(24);
 
 function getTouchScreen() {
    window.trueView.showMsg( "webView:getTouchScreen()" );
-alert(touchscreen);
 }
 
 function loadVideo(lm,url) {
+   alert(touchscreen);
    showVideoMessage();
    loadMode = lm;
    web.src = url;
