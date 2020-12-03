@@ -22,7 +22,7 @@ var xDown = null;
 var yDown = null;
 
 function getTouches(evt) {
-   return evt.touches || evt.originalEvent.touches;
+   return evt.touches;// || evt.originalEvent.touches;
 }                                                     
 
 function handleTouchStart(evt) {
