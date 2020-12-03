@@ -28,7 +28,7 @@ var addr=[
   ["MNet","MNet","MNet","/mnet_540/","79","79",3]
 ];
 
-var touchscreen = 0;;
+var touchscreen = 0;
 var path79 = "http://youtv24.net/sites/mstvs/pages/pc/pc_view.php?ch=live";
 var path = "http://youtv24.net/sites/mstvs/pages/pc/pc_view.php?ch=live";
 var ch = ['26','37','04','05','25','03','09','35','30','17','33','02','01','34','32','23','14','07','15','13','50','46','49','38' ];
@@ -102,7 +102,7 @@ function loadMyShTV(url) {
       str = str.substring(ssi,eei);
       pathmyshtv = str;
       isLoadedMyshtv = 1;
-      window.parentView.showMsg("msg:" + pathmyshtv);
+      window.parentView.showMsg("msg:" + pathmyshtv + " ts=" + touchscreen);
    }; 
    xhr.send();
 }
@@ -251,7 +251,6 @@ function get79tv(i)
    stv.src = "empty";
    $("#ch_name").text( x[si].innerHTML + "(주소검색중)" );
    $("#videoMessage").css('display', 'block');
-   //window.parentView.showMsg("trueView:loadMode = 1");
    var url = path + ch[si];
    window.parentView.showMsg("trueView:loadVideo(1,'" + url + "')");
 }
@@ -304,35 +303,35 @@ function change() {
 }
 
 function onok() {
-  if( gi == 0 && myshtv == 0 )
-  {
-    var i_ch=addr[si][6];
+   if( gi == 0 && myshtv == 0 )
+   {
+      var i_ch=addr[si][6];
 
-    i_ch++;
-    if(i_ch>4)
-      i_ch=3;
+      i_ch++;
+      if(i_ch>4)
+         i_ch=3;
     
-    tvaddr[si] = addr[si][i_ch];
-    if( addr[si][i_ch] == '79' && backtvaddr[si] != '79' )
-       tvaddr[si] = backtvaddr[si];
+      tvaddr[si] = addr[si][i_ch];
+      if( addr[si][i_ch] == '79' && backtvaddr[si] != '79' )
+         tvaddr[si] = backtvaddr[si];
 
-    x[si].innerHTML=addr[si][i_ch-3];
+      x[si].innerHTML=addr[si][i_ch-3];
 
-    addr[si][6]=i_ch;
-    if(i_ch==3)
-      window.parentView.showMsg("msg:기본서버("+x[si].innerHTML+") 로 이동합니다");
-    else
-      window.parentView.showMsg("msg:"+(i_ch-2)+"번 보조서버("+x[si].innerHTML+") 로 이동합니다");
+      addr[si][6]=i_ch;
+      if(i_ch==3)
+         window.parentView.showMsg("msg:기본서버("+x[si].innerHTML+") 로 이동합니다");
+      else
+         window.parentView.showMsg("msg:"+(i_ch-2)+"번 보조서버("+x[si].innerHTML+") 로 이동합니다");
 
-    if(tvaddr[si] == null)
-      gettv(si);
-    else if(tvaddr[si] == "79") {
-      get79tv(si);
-      return;
-    }
-  }
-  oi = -1;
-  x[si].click();
+      if(tvaddr[si] == null)
+         gettv(si);
+      else if(tvaddr[si] == "79") {
+         get79tv(si);
+         return;
+      }
+   }
+   oi = -1;
+   x[si].click();
 }
 
 var x;
@@ -496,7 +495,7 @@ function movieclk( w, url, p ) {
       return;
    }
    else
-   /*
+   */
    xx.setAttribute( "src",  url );
    if( w === "tv" )
       xx.play();
@@ -534,30 +533,30 @@ function closeErrorMessage()
 function videoErr(e)
 {
    switch (e.target.error.code) {
-     case e.target.error.MEDIA_ERR_ABORTED:
-       document.getElementById("er_msg").innerHTML="비디오 취소됨";
-       showErrorMessage();
-       //alert('You aborted the video playback.');
-       break;
-     case e.target.error.MEDIA_ERR_NETWORK:
-       document.getElementById("er_msg").innerHTML="비디오 다운로드 실패(네트워크문제)";
-       showErrorMessage();
-       //alert('A network error caused the video download to fail part-way.');
-       break;
-     case e.target.error.MEDIA_ERR_DECODE:
-       document.getElementById("er_msg").innerHTML="이형식의 비디오를 지원하지 않음";
-       showErrorMessage();
-       //alert('The video playback was aborted due to a corruption problem or because the video used features your browser did not support.');
-       break;
-     case e.target.error.MEDIA_ERR_SRC_NOT_SUPPORTED: 
-       document.getElementById("er_msg").innerHTML="채널주소가 바뀌어 다른서버에서 새주소를 찾는 작업을 진행합니다.";
-       //alert('The video could not be loaded, either because the server or network failed or because the format is not supported.');
-       showErrorMessage();
-       break;
-     default:
-       document.getElementById("er_msg").innerHTML="알려지지않은 문제로 비디오 로드 에러";
-       showErrorMessage();
-       //alert('An unknown error occurred.');
-       break;
+      case e.target.error.MEDIA_ERR_ABORTED:
+         document.getElementById("er_msg").innerHTML="비디오 취소됨";
+         showErrorMessage();
+         //alert('You aborted the video playback.');
+         break;
+      case e.target.error.MEDIA_ERR_NETWORK:
+         document.getElementById("er_msg").innerHTML="비디오 다운로드 실패(네트워크문제)";
+         showErrorMessage();
+         //alert('A network error caused the video download to fail part-way.');
+         break;
+      case e.target.error.MEDIA_ERR_DECODE:
+         document.getElementById("er_msg").innerHTML="이형식의 비디오를 지원하지 않음";
+         showErrorMessage();
+         //alert('The video playback was aborted due to a corruption problem or because the video used features your browser did not support.');
+         break;
+      case e.target.error.MEDIA_ERR_SRC_NOT_SUPPORTED: 
+         document.getElementById("er_msg").innerHTML="채널주소가 바뀌어 다른서버에서 새주소를 찾는 작업을 진행합니다.";
+         //alert('The video could not be loaded, either because the server or network failed or because the format is not supported.');
+         showErrorMessage();
+         break;
+      default:
+         document.getElementById("er_msg").innerHTML="알려지지않은 문제로 비디오 로드 에러";
+         showErrorMessage();
+         //alert('An unknown error occurred.');
+         break;
    }
 }
