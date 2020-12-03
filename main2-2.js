@@ -67,6 +67,8 @@ function handleTouchEnd(evt) {
 function firstSetting()
 {
    touchscreen = 1;
+   addEventListener('touchstart', handleTouchStart, false);
+   addEventListener('touchend', handleTouchEnd, false);
    $('#tv').on('dblclick',(function(){ onFullscreenOnOff(); }));
    $('#tv').on('click',(function(){ onFullscreenOnOff(); }));
    addInput();
