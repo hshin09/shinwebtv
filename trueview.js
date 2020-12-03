@@ -27,8 +27,8 @@ function putTouchScreen( ts ) {
    touchscreen = ts
    if( touchscreen ) {
       loadStyle('https://hshin09.github.io/shinwebtv/main2.css');
-      $('#tv').on('dblclick',(function(){ onFullscreenOnOff(); }));
-      $('#tv').on('click',(function(){ onFullscreenOnOff(); }));
+      tv.ondblclick = function(){ onFullscreenOnOff(); };
+      tv.onclick = function(){ onFullscreenOnOff(); };
    }
    else
       loadStyle('https://hshin09.github.io/shinwebtv/youtvkor.css');
