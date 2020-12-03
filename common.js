@@ -164,7 +164,7 @@ function OnOff()
        return;
     }
 
-    if( stv.error != null || stv.networkState == 3 || ( time > 30 && stv.currentTime < 2 ) )
+    if( stv.error != null || stv.networkState == 3 || ( time > 15 && stv.currentTime < 2 ) )
     {
        if( stv.src.substring(0,4) == "file" )
           return;
