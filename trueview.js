@@ -21,7 +21,7 @@ var tvaddr = new Array(24);
 
 function getTouchScreen() {
    window.trueView.showMsg( "webView:getTouchScreen()" );
-   touchscreen = 'createTouch' in window; 
+   touchscreen = 'createTouch' in document; 
 } 
 
 function loadVideo(lm,url) {
@@ -391,7 +391,7 @@ function init() {
    meta.name='viewport';
    meta.setAttribute('content','width=device-width, height=device-height, initial-scale=1.0');
    document.getElementsByTagName('head')[0].appendChild(meta);
-alert("ts="+touchscreen);
+alert("ts1="+touchscreen);
    loadStyle('https://hshin09.github.io/shinwebtv/youtvkor.css');
    
    document.body.removeChild(document.getElementsByTagName('center')[0]);
