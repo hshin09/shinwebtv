@@ -24,7 +24,7 @@ function getTouchScreen() {
 } 
 
 function loadVideo(lm,url) {
-   showVideoMessage();
+   showVideoMessage(); alert(touchscreen);
    loadMode = lm;
    web.src = url;
    mustWait = 3;
@@ -215,29 +215,29 @@ function change() {
 }
 
 function keychk(e) {
-	if(e.which == 38) {
-		onup();
-	}
-	else if(e.which == 40) {
-		ondown();
-	}
-	else if(e.which == 37) {
-		onleft();
-	}
-	else if(e.which == 39) {
-		onright();
-	}
-	else if(e.which == 13 ) {
-              if( loadMode == 0 )
-      	         onok();
-        }
-	else if(e.which == 55 ) { //7
-	      if( loadMode == 1 )
-                 return;
-              change();
-	}
+   if(e.which == 38) {
+      onup();
+   }
+   else if(e.which == 40) {
+      ondown();
+   }
+   else if(e.which == 37) {
+      onleft();
+   }
+   else if(e.which == 39) {
+      onright();
+   }
+   else if(e.which == 13 ) {
+      if( loadMode == 0 )
+         onok();
+   }
+   else if(e.which == 55 ) { //7
+      if( loadMode == 1 )
+         return;
+      change();
+   }
         
-	e.preventDefault();
+   e.preventDefault();
 }
 
 function onok() {
@@ -278,31 +278,31 @@ function showLeftMenu() {
 }
 
 function onFullscreenOnOff() {
-    if( full == false )
-    {
-        document.getElementById("mydiv").style.left="0";
-        document.getElementById("mydiv").style.width="100%";
-        full=true;
-    }
-    else
-    {
-	document.getElementById("mydiv").style.left="10%";
-        document.getElementById("mydiv").style.width="90%";
-        full=false;
-    }
+   if( full == false )
+   {
+      document.getElementById("mydiv").style.left="0";
+      document.getElementById("mydiv").style.width="100%";
+      full=true;
+   }
+   else
+   {
+      document.getElementById("mydiv").style.left="10%";
+      document.getElementById("mydiv").style.width="90%";
+      full=false;
+   }
 }
 
 function showErrorMessage()
 {
-    document.getElementById("errorMessage").style.display = "block";
+   document.getElementById("errorMessage").style.display = "block";
 }
 
 function closeErrorMessage()
 {
-    if(document.getElementById("errorMessage").style.display == "none")
-        return;
-    document.getElementById("errorMessage").style.display = "none";
-    document.getElementById("er_msg").innerHTML="";
+   if(document.getElementById("errorMessage").style.display == "none")
+      return;
+   document.getElementById("errorMessage").style.display = "none";
+   document.getElementById("er_msg").innerHTML="";
 }
 
 function videoErr(e)
@@ -390,7 +390,7 @@ function init() {
    meta.name='viewport';
    meta.setAttribute('content','width=device-width, height=device-height, initial-scale=1.0');
    document.getElementsByTagName('head')[0].appendChild(meta);
-alert(touchscreen);
+
    loadStyle('https://hshin09.github.io/shinwebtv/youtvkor.css');
    
    document.body.removeChild(document.getElementsByTagName('center')[0]);
