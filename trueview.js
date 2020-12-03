@@ -270,7 +270,7 @@ function change() {
    tv.pause();
    web.src = '';
    window.trueView.showMsg("hideTrueView");
-   window.trueView.showMsg("webView:ei=-1; x[si].click()");
+   window.trueView.showMsg("webView:oi=-1; x[si].click()");
 }
 
 function keychk(e) {
