@@ -20,9 +20,9 @@ var tvaddr = new Array(24);
 
 var xDown = null;                                                        
 var yDown = null;
-/*
+
 function getTouches(evt) {
-   return evt.touches;// || evt.originalEvent.touches;
+   return evt.touches || evt.originalEvent.touches;
 }                                                     
 
 function handleTouchStart(evt) {
@@ -58,7 +58,7 @@ function handleTouchMove(evt) {
    xDown = null;
    yDown = null;                                             
 }
-*/
+
 function getTouchScreen() {
    window.trueView.showMsg( "webView:getTouchScreen()" );
 } 
