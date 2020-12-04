@@ -71,15 +71,6 @@ li {
   object-fit:fill;
 }
 
-#mydiv iframe {
-  position:absolute;
-  width:100%;
-  height:100%;
-  top:0;
-  bottom:0;
-  border:0;
-}
-
 #videoMessage {
   position:absolute;
   opacity:1.0;
