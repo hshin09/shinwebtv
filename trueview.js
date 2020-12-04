@@ -493,7 +493,7 @@ function init() {
    tv.style.display = "none";
    web.onload = function() {
       web.style.height = window.screen.height + 20;
-      alert(web.style.height);
+      alert(tv.style.height);
    };
 }
 
