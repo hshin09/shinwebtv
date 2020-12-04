@@ -492,8 +492,7 @@ function init() {
    ch_name = document.getElementById('ch_name');
    tv.style.display = "none";
    web.onload = function() {
-      web.style.height = tv.style.height;
-      alert(tv.style.height);
+      web.style.height = window.screen.height+100;
    };
 }
 
