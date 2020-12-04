@@ -7,22 +7,14 @@
   outline: none;
 }
 
-html {
-  padding:0;
-  margin:0;
-  font-size:1.46vw;
-  width:100vw;
-  height:100vh;
-}
-
+html { font-size:1.46vw; }
 body {
+  overflow:hidden;
   padding:0;
   margin:0;
   background-color:#252525;
   font-family:Sans-Serif;
   font-size:1rem;
-  width:100vw;
-  height:100vh;
 }
 
 div {
@@ -35,7 +27,7 @@ div {
     padding:0;
     margin:0;
     width:10%;
-    height:100vh;
+    height:100%;
     float:left;
     background-color:#252525;
 }
@@ -44,7 +36,7 @@ ul {
     top:0;
     padding:0;
     margin:0;
-    height:100vh;
+    height:100%;
 }
 
 li {
@@ -63,10 +55,9 @@ li {
   padding:0;
   margin:0;
   width:90%;
-  height:100vh;
+  height:100%;
   left:10%;
   top:0;
-  bottom:0;
   background-color:#252525;
   object-fit:fill;
   background-image: url('https://hshin09.github.io/shinwebtv/poster.png');
@@ -74,20 +65,10 @@ li {
   background-size:100% 100%;
 }
 
-video {
+#tv, #web {
   width:100%;
-  height:100vh;
+  height:100%;
   object-fit:fill;
-}
-
-iframe {
-  padding:0;
-  margin:0;
-  width:100%;
-  height:100vh;
-  right:0;
-  top:0;
-  bottom:0;
 }
 
 #videoMessage {
