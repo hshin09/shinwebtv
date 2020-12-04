@@ -476,7 +476,7 @@ function init() {
    loadMenu('menu0','https://hshin09.github.io/shinwebtv/youtvkor.html');
 
    p = addTag('','div','mydiv');
-   a = addTag(p,'video','player');
+   a = addTag(p,'video','tv');
    //a.setAttribute('onerror','videoErr(event)');
 
    a = addTag(p,'iframe','web');
@@ -487,7 +487,7 @@ function init() {
    a = addTag(p,'div','videoMessage');
    addTag(a,'p','ch_name');
    
-   tv = document.getElementById('player');
+   tv = document.getElementById('tv');
    web = document.getElementById('web');
    ch_name = document.getElementById('ch_name');
    tv.style.display = "none";
