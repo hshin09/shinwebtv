@@ -4,9 +4,9 @@ var ch_name;
 var touchscreen = 0;
 var path = "http://youtv24.net/sites/mstvs/pages/pc/pc_view.php?ch=live";
 var gi=0;
-var si=11;
+var si=9;
 var oi=-1;
-var ei=11;
+var ei=9;
 var full = false;
 var timer = null;
 var mustWait = 0;
@@ -289,6 +289,12 @@ function keychk(e) {
    else if(e.which == 13 ) {
       if( loadMode == 0 )
          onok();
+   }
+   else if( e.which == 49 ) { //1
+      x[9].click();
+   }
+   else if( e.which == 52 ) { //4
+      x[14].click();
    }
    else if(e.which == 55 ) { //7
       if( loadMode == 1 )
