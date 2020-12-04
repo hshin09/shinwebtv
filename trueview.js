@@ -491,9 +491,6 @@ function init() {
    web = document.getElementById('web');
    ch_name = document.getElementById('ch_name');
    tv.style.display = "none";
-   web.onload = function() {
-      web.style.height = window.screen.height+100;
-   };
 }
 
 init();
