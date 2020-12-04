@@ -493,7 +493,8 @@ function init() {
    tv.style.display = "none";
    web.onload = function() {
       alert('11');
-   }
+   };
+}
 
 init();
 webtvmain();
