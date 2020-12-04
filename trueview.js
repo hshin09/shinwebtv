@@ -4,7 +4,7 @@ var ch_name;
 var touchscreen = 0;
 var path = "http://youtv24.net/sites/mstvs/pages/pc/pc_view.php?ch=live";
 var gi=0;
-var si=10;
+var si=11;
 var oi=10;
 var ei=10;
 var full = false;
