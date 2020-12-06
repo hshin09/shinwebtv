@@ -17,7 +17,7 @@ var cnt;
 var strResponse = "79";
 var tvaddr = new Array(24);
 
-var xDown = null;                                                        
+var xDown = null;
 var yDown = null;
 
 function getTouches(evt) {
@@ -44,15 +44,14 @@ function handleTouchEnd(evt) {
    if( Math.abs( xDiff ) > Math.abs( yDiff ) ) {
       if ( xDiff > 0 ) { //left swipe
          change();
-      } else { //right swipe
-      
+      }
+      else { //right swipe
       }
    }
    else {
       if ( yDiff > 0 ) { //up swipe
-      
-      } else { //down swipe
-      
+      }
+      else { //down swipe
       }
    }
    xDown = null;
@@ -312,14 +311,6 @@ function mlok() {
 }
 
 function showLeftMenu() {
-   /*
-   var leftMenuObj = document.getElementById('menu'+gi);
-   leftMenuObj.style['transform'] = "translate(0px, 0px)";
-   leftMenuObj.style['msTransform'] = "translate(0px, 0px)";
-   leftMenuObj.style['mozTransform'] = "translate(0px, 0px)";
-   leftMenuObj.style['webkitTransform'] = "translate(0px, 0px)";
-   leftMenuObj.style['oTransform'] = "translate(0px, 0px)";
-   */
 }
 
 function onFullscreenOnOff() {
@@ -404,7 +395,7 @@ function loadScript(url) {
 
 function loadStyle(url) {
    var cssId = 'myCss';
-   if (!document.getElementById(cssId)) {
+   if(!document.getElementById(cssId)) {
       var head  = document.getElementsByTagName('head')[0];
       var link  = document.createElement('link');
       link.id   = cssId;
@@ -431,8 +422,8 @@ function loadMenu(id,url) {
    var xhr= new XMLHttpRequest();
    xhr.open('GET', url, true);
    xhr.onreadystatechange= function() {
-      if (this.readyState!==4) return;
-      if (this.status!==200) return;
+      if(this.readyState!==4) return;
+      if(this.status!==200) return;
       document.getElementById(id).innerHTML = this.responseText;
    };
    xhr.send();
@@ -444,12 +435,9 @@ function webtvmain() {
 }
 
 function init() {
-alert(window.location.hostname);
+   //alert(window.location.hostname);
    if( isTouchScreenMode ) {
-      loadStyle('https://hshin09.github.io/shinwebtv/main2.css');
-      tv.ondblclick = function(){ onFullscreenOnOff(); };
-      tv.onclick = function(){ onFullscreenOnOff(); };
-
+      loadStyle('https://hshin09.github.io/shinwebtv/main2.css'); 
       addEventListener('touchstart', handleTouchStart, false);
       addEventListener('touchend', handleTouchEnd, false);
       web.addEventListener('touchstart', handleTouchStart, false);
@@ -489,6 +477,10 @@ alert(window.location.hostname);
    web = document.getElementById('web');
    ch_name = document.getElementById('ch_name');
    tv.style.display = "none";
+   if( isTouchScreenMode ) {
+      tv.ondblclick = function(){ onFullscreenOnOff(); };
+      tv.onclick = function(){ onFullscreenOnOff(); };
+   }
 }
 
 init();
