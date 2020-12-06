@@ -1,7 +1,6 @@
 var tv;
 var web;
 var ch_name;
-var touchscreen = 0;
 var path = "http://youtv24.net/sites/mstvs/pages/pc/pc_view.php?ch=live";
 var gi=0;
 var si=9;
@@ -59,28 +58,6 @@ function handleTouchEnd(evt) {
    xDown = null;
    yDown = null;
 }
-
-function getTouchScreen() {
-   window.trueView.showMsg( "webView:getTouchScreen()" );
-} 
-
-function putTouchScreen( ts ) {
-   touchscreen = ts;
-   if( isTouchScreenMode ) {
-      loadStyle('https://hshin09.github.io/shinwebtv/main2.css');
-      tv.ondblclick = function(){ onFullscreenOnOff(); };
-      tv.onclick = function(){ onFullscreenOnOff(); };
-
-      addEventListener('touchstart', handleTouchStart, false);
-      addEventListener('touchend', handleTouchEnd, false);
-      web.addEventListener('touchstart', handleTouchStart, false);
-      web.addEventListener('touchend', handleTouchEnd, false);
-   }
-   else {
-      loadStyle('https://hshin09.github.io/shinwebtv/youtvkor.css');
-      window.onkeydown = keychk;
-   }
-} 
 
 function loadVideo(lm,url) {
    showVideoMessage();
@@ -346,7 +323,7 @@ function showLeftMenu() {
 }
 
 function onFullscreenOnOff() {
-   if( touchscreen ) {
+   if( isTouchScreenMode ) {
       if( full == false )
       {
          document.getElementById('leftmenu').style.display = 'none';
@@ -467,7 +444,21 @@ function webtvmain() {
 }
 
 function init() {
-   getTouchScreen();
+   if( isTouchScreenMode ) {
+      loadStyle('https://hshin09.github.io/shinwebtv/main2.css');
+      tv.ondblclick = function(){ onFullscreenOnOff(); };
+      tv.onclick = function(){ onFullscreenOnOff(); };
+
+      addEventListener('touchstart', handleTouchStart, false);
+      addEventListener('touchend', handleTouchEnd, false);
+      web.addEventListener('touchstart', handleTouchStart, false);
+      web.addEventListener('touchend', handleTouchEnd, false);
+   }
+   else {
+      loadStyle('https://hshin09.github.io/shinwebtv/youtvkor.css');
+      window.onkeydown = keychk;
+   }
+
    var meta=document.createElement('meta');
    meta.name='viewport';
    meta.setAttribute('content','width=device-width, height=device-height, initial-scale=1.0');
