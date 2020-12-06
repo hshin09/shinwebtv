@@ -464,8 +464,9 @@ function init() {
    document.body.removeChild(document.getElementsByTagName('hr')[0]);
 
    var p, a;
+   var pp = p = addTag('','div','leftmenu');
    if( isTouchScreenMode ) {
-      p = addTag('','div','end_change');
+      p = addTag(pp,'div','end_change');
       a = addTag(p,'input','finish');
       a.setAttribute('type','button');
       a.setAttribute('value','종료');
@@ -479,7 +480,6 @@ function init() {
       a.setAttribute('onclick','change');
    }
 
-   p = addTag('','div','leftmenu');
    a = addTag(p,'div','menu0');
    loadMenu('menu0','https://hshin09.github.io/shinwebtv/youtvkor.html');
 
