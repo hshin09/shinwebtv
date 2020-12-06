@@ -429,6 +429,14 @@ function loadMenu(id,url) {
    xhr.send();
 }
 
+function onFinish() {
+   if(timer)
+      clearInterval(timer);
+   tv.pause();
+   tv.setAttribute( "src",  "" );
+   window.trueView.showMsg("webView:onFinish()");
+}
+
 function webtvmain() {
    isChLoaded = 0;
    timer = setInterval( function() { OnOff(); }, 500 );
