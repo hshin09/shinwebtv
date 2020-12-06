@@ -318,12 +318,12 @@ function onFullscreenOnOff() {
       if( full )
       {
          document.getElementById('leftmenu').style.display = 'none';
-         full=true;
+         full=false;
       }
       else
       {
          document.getElementById('leftmenu').style.display = 'block';
-         full=false;
+         full=true;
       }
    }
    else {
