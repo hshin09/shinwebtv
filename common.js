@@ -62,10 +62,6 @@ var oldCurrentTime=0;
 
 Init();
 
-function getTouchScreen() {
-   window.parentView.showMsg( "trueView:putTouchScreen(" + touchscreen + ")" );
-}
-
 function Init() {
    youtv24 = 1;
    firstSetting();
