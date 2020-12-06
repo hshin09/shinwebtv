@@ -435,7 +435,6 @@ function webtvmain() {
 }
 
 function init() {
-   //alert(window.location.hostname);
    if( isTouchScreenMode ) {
       loadStyle('https://hshin09.github.io/shinwebtv/main2.css'); 
       addEventListener('touchstart', handleTouchStart, false);
@@ -456,8 +455,24 @@ function init() {
    document.body.removeChild(document.getElementsByTagName('center')[0]);
    document.body.removeChild(document.getElementsByTagName('hr')[0]);
 
-   var p = addTag('','div','leftmenu');
-   var a = addTag(p,'div','menu0');
+   var p, a;
+   if( isTouchScreenMode ) {
+      p = addTag('','div','end_change');
+      a = addTag(p,'input','finish');
+      a.setAttribute('type','button');
+      a.setAttribute('value','종료');
+      a.setAttribute('align','center');
+      a.setAttribute('onclick','onFinish');
+
+      a = addTag(p,'input','kor_thai');
+      a.setAttribute('type','button');
+      a.setAttribute('value','Return');
+      a.setAttribute('align','center');
+      a.setAttribute('onclick','change');
+   }
+
+   p = addTag('','div','leftmenu');
+   a = addTag(p,'div','menu0');
    loadMenu('menu0','https://hshin09.github.io/shinwebtv/youtvkor.html');
 
    p = addTag('','div','mydiv');
