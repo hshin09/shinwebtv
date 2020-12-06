@@ -66,7 +66,7 @@ function getTouchScreen() {
 
 function putTouchScreen( ts ) {
    touchscreen = ts;
-   if( touchscreen ) {
+   if( isTouchScreenMode ) {
       loadStyle('https://hshin09.github.io/shinwebtv/main2.css');
       tv.ondblclick = function(){ onFullscreenOnOff(); };
       tv.onclick = function(){ onFullscreenOnOff(); };
