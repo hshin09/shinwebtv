@@ -466,7 +466,7 @@ function movieclk( w, url, p ) {
    else if( svideo == 0 && gi == 1 ) {
       if( url.indexOf("p1.cdn.vet") > 0 ) {
          stv.volume=0.3;
-         url = url + ADsid; alert(ADsid);
+         url = url + ADsid;
       }
    }
 
