@@ -9,4 +9,4 @@ function addFrame(objId)
 addFrame('TV');
 document.getElementById('TV').src='https://www.adintrend.tv/hd/live/i.php?ch=3&cxid=sh';
 window.hiddenView.showMsg( "webView:ADsid = 'sh';" );
-alert('hiddenView');
+
