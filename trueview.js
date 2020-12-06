@@ -440,6 +440,7 @@ function init() {
       loadStyle('https://hshin09.github.io/shinwebtv/main2.css'); 
       addEventListener('touchstart', handleTouchStart, false);
       addEventListener('touchend', handleTouchEnd, false);
+      window.onclick = onFullscreenOnOff;
    }
    else {
       loadStyle('https://hshin09.github.io/shinwebtv/youtvkor.css');
@@ -475,10 +476,12 @@ function init() {
    web = document.getElementById('web');
    ch_name = document.getElementById('ch_name');
    tv.style.display = "none";
+/*
    if( isTouchScreenMode ) {
       tv.ondblclick = function(){ onFullscreenOnOff(); };
       tv.onclick = function(){ onFullscreenOnOff(); };
    }
+*/
 }
 
 init();
