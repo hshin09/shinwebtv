@@ -315,7 +315,7 @@ function showLeftMenu() {
 
 function onFullscreenOnOff() {
    if( isTouchScreenMode ) {
-      if( full == false )
+      if( full )
       {
          document.getElementById('leftmenu').style.display = 'none';
          full=true;
