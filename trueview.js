@@ -476,12 +476,6 @@ function init() {
    web = document.getElementById('web');
    ch_name = document.getElementById('ch_name');
    tv.style.display = "none";
-/*
-   if( isTouchScreenMode ) {
-      tv.ondblclick = function(){ onFullscreenOnOff(); };
-      tv.onclick = function(){ onFullscreenOnOff(); };
-   }
-*/
 }
 
 init();
