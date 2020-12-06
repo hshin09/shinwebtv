@@ -498,6 +498,7 @@ function init() {
    tv = document.getElementById('tv');
    web = document.getElementById('web');
    ch_name = document.getElementById('ch_name');
+   document.getElementById('mydiv').onclick = onFullscreenOnOff;
    tv.style.display = "none";
 }
 
