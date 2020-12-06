@@ -315,15 +315,15 @@ function showLeftMenu() {
 
 function onFullscreenOnOff() {
    if( isTouchScreenMode ) {
-      if( full )
+      if( full == false )
       {
          document.getElementById('leftmenu').style.display = 'none';
-         full=false;
+         full=true;
       }
       else
       {
          document.getElementById('leftmenu').style.display = 'block';
-         full=true;
+         full=false;
       }
    }
    else {
@@ -499,8 +499,6 @@ function init() {
    web = document.getElementById('web');
    ch_name = document.getElementById('ch_name');
    tv.onclick = onFullscreenOnOff;
-   web.onclick = onFullscreenOnOff;
-   document.getElementById('mydiv').onclick = onFullscreenOnOff;
    tv.style.display = "none";
 }
 
