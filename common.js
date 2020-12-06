@@ -1,4 +1,4 @@
-var ADsid='sh';
+var ADsid = 'a';
 var backtvaddr = new Array(24);
 var tvaddr = new Array(24);
 var addr=[
@@ -63,6 +63,7 @@ var oldCurrentTime=0;
 Init();
 
 function Init() {
+alert(ADsid);
    youtv24 = 1;
    firstSetting();
    loadMyShTV('https://myshtv.com/live/YTN HD-190.html');
