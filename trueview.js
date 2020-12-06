@@ -471,13 +471,13 @@ function init() {
       a.setAttribute('type','button');
       a.setAttribute('value','종료');
       a.setAttribute('align','center');
-      a.setAttribute('onclick','onFinish');
+      a.onclick = onFinish;
 
       a = addTag(p,'input','kor_thai');
       a.setAttribute('type','button');
       a.setAttribute('value','Return');
       a.setAttribute('align','center');
-      a.setAttribute('onclick','change');
+      a.onclick = change;
    }
 
    a = addTag(p,'div','menu0');
@@ -499,6 +499,7 @@ function init() {
    web = document.getElementById('web');
    ch_name = document.getElementById('ch_name');
    document.getElementById('mydiv').onclick = onFullscreenOnOff;
+   web.onclick = onFullscreenOnOff;
    tv.style.display = "none";
 }
 
