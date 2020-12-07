@@ -1,4 +1,3 @@
-window.onkeydown = keychk;
 var head  = document.getElementsByTagName('head')[0];
 var scr  = document.createElement('script');
 scr.type = 'text/javascript';
@@ -8,6 +7,7 @@ head.appendChild(scr);
 function firstSetting()
 {
    touchscreen = 0;
+   window.onkeydown = keychk;
 }
 
 function onup() {
