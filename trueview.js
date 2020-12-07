@@ -165,8 +165,8 @@ function OnOff()
          clearInterval(timer);
          timer=null;
       }
-      web.src = '';
       tv.style.display = "block";
+      web.src = '';
    }
 }
 
@@ -243,10 +243,10 @@ function onright() {
 }
 
 function change() {
+   window.trueView.showMsg("webView:oi=-1; x[si].click()");
+   window.trueView.showMsg("hideTrueView");
    tv.pause();
    web.src = '';
-   window.trueView.showMsg("hideTrueView");
-   window.trueView.showMsg("webView:oi=-1; x[si].click()");
 }
 
 function keychk(e) {
@@ -432,6 +432,7 @@ function loadMenu(id,url) {
 function onFinish() {
    if(timer)
       clearInterval(timer);
+   window.trueView.showMsg("hideTrueView");
    tv.pause();
    tv.setAttribute( "src",  "" );
    window.trueView.showMsg("webView:onFinish()");
