@@ -63,7 +63,7 @@ var oldCurrentTime = 0;
 Init();
 
 function Init() {
-   youtv24 = 12;
+   youtv24 = 1;
    firstSetting();
    loadMyShTV('https://myshtv.com/live/YTN HD-190.html');
    window.parentView.showMsg("trueViewLoadUrl:http://youtv24.net/sites");
