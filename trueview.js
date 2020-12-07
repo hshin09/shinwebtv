@@ -22,12 +22,12 @@ var yDown = null;
 
 function getTouches(evt) {
    return evt.touches || evt.originalEvent.touches;
-}                                                     
+}
 
 function handleTouchStart(evt) {
-   var firstTouch = getTouches(evt)[0];                                      
-   xDown = firstTouch.clientX;                                      
-   yDown = firstTouch.clientY;                                      
+   var firstTouch = getTouches(evt)[0];
+   xDown = firstTouch.clientX;
+   yDown = firstTouch.clientY;
 } 
 
 function handleTouchEnd(evt) {
