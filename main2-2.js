@@ -38,6 +38,7 @@ function handleTouchEnd(evt) {
             } 
             window.parentView.showMsg("trueView:loadMode = 0");
             window.parentView.showMsg("showTrueView");
+            window.parentView.showMsg("trueView:full=false; onFullscreenOnOff()");
             window.parentView.showMsg("trueView:ei=-1; x[si].click()");
          } else {
             if( svideo == 0 ) {
