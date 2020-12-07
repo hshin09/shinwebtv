@@ -67,7 +67,7 @@ function Init() {
    firstSetting();
    loadMyShTV('https://myshtv.com/live/YTN HD-190.html');
    window.parentView.showMsg("trueViewLoadUrl:http://youtv24.net/sites");
-   window.parentView.showMsg("hideTrueV iew");
+   window.parentView.showMsg("hideTrueView");
 
    if (myshtv == 0)
       $('#menu0').load("https://hshin09.github.io/shinwebtv/kor2.html");
