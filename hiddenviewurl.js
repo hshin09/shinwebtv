@@ -1,10 +1,7 @@
-var ADsid = 'r';
-
-//window.onload = function() {
-   addFrame('TV');
-   document.getElementById('TV').src='https://www.adintrend.tv/hd/live/i.php?ch=3&cxid='+ADsid;
-   //window.hiddenView.showMsg( "webView:ADsid = '" + ADsid + "';" );
-//}
+var ADsid = "shin";
+var url = "https://www.adintrend.tv/hd/live/i.php?ch=3&cxid=" + ADsid;
+addFrame("TV");
+document.getElementById("TV").src = url;
 
 function getADsid() {
    window.hiddenView.showMsg( "webView:setADsid('" + ADsid + "')" );
