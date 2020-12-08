@@ -1,4 +1,4 @@
-var ADsid = '2';
+var ADsid = '?';
 var backtvaddr = new Array(24);
 var tvaddr = new Array(24);
 var addr = [
@@ -63,7 +63,7 @@ var oldCurrentTime = 0;
 //window.parentView.showMsg("hiddenView:getADsid()");
 
 window.onload = function() {
-	//window.parentView.showMsg("hiddenView:getADsid()");
+	window.parentView.showMsg("hiddenView:getADsid()");
    Init();
 }
 
@@ -464,6 +464,9 @@ function movieclk(w, url, p) {
    } else if (svideo == 0 && gi == 1) {
       if (url.indexOf("p1.cdn.vet") > 0) {
          stv.volume = 0.3;
+         if(ADsid == '?') {
+         	window.parentView.showMsg("msg:" + pathmyshtv + " ts=" + touchscreen + " ADsid=" + ADsid);
+         }
          url = url + ADsid;
       }
    }
