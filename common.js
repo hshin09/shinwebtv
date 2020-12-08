@@ -465,7 +465,7 @@ function movieclk(w, url, p) {
       if (url.indexOf("p1.cdn.vet") > 0) {
          stv.volume = 0.3;
          if(ADsid == '?') {
-         	window.parentView.showMsg("msg:" + pathmyshtv + " ts=" + touchscreen + " ADsid=" + ADsid);
+            window.parentView.showMsg("hiddenView:getADsid()");
          }
          url = url + ADsid;
       }
