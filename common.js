@@ -69,7 +69,6 @@ window.onload = function() {
 
 function setADsid(sid) {
 	ADsid = sid;
-	alert(sid);
 }
 
 function Init() {
