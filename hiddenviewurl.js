@@ -9,7 +9,7 @@ function addFrame(objId)
 
 window.onload = function() {
    addFrame('TV');
-   var ADsid = 'p';
+   var ADsid = 'o';
    document.getElementById('TV').src='https://www.adintrend.tv/hd/live/i.php?ch=3&cxid='+ADsid;
    window.hiddenView.showMsg( "webView:var ADsid = '" + ADsid + "';" );
 }
