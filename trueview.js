@@ -1,7 +1,7 @@
 var tv;
 var web;
 var ch_name;
-var path = "http://youtv24.net/sites/mstvs/pages/pc/pc_view.php?ch=live";
+var path = "http://btm007.com/stream/m_index.php?ch=live";
 var gi=0;
 var si=9;
 var oi=-1;
@@ -98,7 +98,7 @@ function movieclk( ch, p ) {
 
 function getTvUrl()
 {
-   strResponse = web.contentDocument.getElementsByTagName('body')[0].getElementsByTagName('script')[2].innerHTML;
+   strResponse = web.contentDocument.getElementsByTagName('body')[0].getElementsByTagName('script')[5].innerHTML;
    var ssi = strResponse.indexOf("file: \"http");
    if(ssi<1) {
       strResponse = "79";
