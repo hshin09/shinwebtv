@@ -1,4 +1,4 @@
-//var ADsid = 'a';
+var ADsid = 'x';
 var backtvaddr = new Array(24);
 var tvaddr = new Array(24);
 var addr = [
