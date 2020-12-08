@@ -5,9 +5,7 @@ addFrame("TV");
 document.getElementById("TV").src = url;
 
 function getADsid() {
-	setTimeout(function() {
-      window.hiddenView.showMsg( "webView:setADsid('" + ADsid + "')" );
-   }, 1000);
+   window.hiddenView.showMsg( "webView:setADsid('" + ADsid + "')" );
 }
 
 function addFrame(objId)
