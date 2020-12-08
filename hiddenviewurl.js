@@ -6,8 +6,10 @@ function addFrame(objId)
    iFrm.setAttribute('height', '100%');
    document.body.appendChild(iFrm);
 }
-addFrame('TV');
-var ADsid = 'p';
-document.getElementById('TV').src='https://www.adintrend.tv/hd/live/i.php?ch=3&cxid='+ADsid;
-window.hiddenView.showMsg( "webView:var ADsid = '" + ADsid + "';" );
 
+window.onload = function() {
+   addFrame('TV');
+   var ADsid = 'p';
+   document.getElementById('TV').src='https://www.adintrend.tv/hd/live/i.php?ch=3&cxid='+ADsid;
+   window.hiddenView.showMsg( "webView:var ADsid = '" + ADsid + "';" );
+}
