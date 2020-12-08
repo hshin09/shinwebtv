@@ -488,7 +488,7 @@ function init() {
    a = addTag(p,'video','tv');
    //a.setAttribute('onerror','videoErr(event)');
 
-   a = addTag(p,'iframe','web');
+   a = addTag(p,'iframe','player');
    a.setAttribute('allowFullscreen','true');
    a.setAttribute('frameborder','0');
    a.setAttribute('border','0');
@@ -497,7 +497,7 @@ function init() {
    addTag(a,'p','ch_name');
    
    tv = document.getElementById('tv');
-   web = document.getElementById('web');
+   web = document.getElementById('player');
    ch_name = document.getElementById('ch_name');
    tv.style.display = "none";
 }
