@@ -1,4 +1,4 @@
-var ADsid = 'w';
+var ADsid = 'r';
 
 //window.onload = function() {
    addFrame('TV');
