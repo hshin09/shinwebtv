@@ -93,7 +93,6 @@ function Init() {
    timer = setInterval(function() {
       OnOff();
    }, 500);
-   window.parentView.showMsg("msg:" + pathmyshtv + " ts=" + touchscreen + " ADsid=" + ADsid);
 }
 
 function loadMyShTV(url) {
@@ -152,6 +151,7 @@ function OnOff() {
          setTimeout(function() {
             mlok();
          }, 500);
+         window.parentView.showMsg("msg:" + pathmyshtv + " ts=" + touchscreen + " ADsid=" + ADsid);
       }
       return;
    }
