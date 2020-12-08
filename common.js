@@ -1,4 +1,4 @@
-var ADsid = '?';
+var ADsid = '2';
 var backtvaddr = new Array(24);
 var tvaddr = new Array(24);
 var addr = [
@@ -63,7 +63,7 @@ var oldCurrentTime = 0;
 //window.parentView.showMsg("hiddenView:getADsid()");
 
 window.onload = function() {
-	window.parentView.showMsg("hiddenView:getADsid()");
+	//window.parentView.showMsg("hiddenView:getADsid()");
    Init();
 }
 
