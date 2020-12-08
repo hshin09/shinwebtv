@@ -62,11 +62,12 @@ var oldCurrentTime = 0;
 
 window.onload = function() {
 	window.parentView.showMsg("hiddenView:getADsid()");
-   Init();
+   //Init();
 }
 
 function setADsid(sid) {
 	ADsid = sid;
+	Init();
 }
 
 function Init() {
