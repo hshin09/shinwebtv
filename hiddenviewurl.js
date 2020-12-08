@@ -7,7 +7,7 @@ document.getElementById("TV").src = url;
 function getADsid() {
 	setTimeout(function() {
       window.hiddenView.showMsg( "webView:setADsid('" + ADsid + "')" );
-   }, 500);
+   }, 1000);
 }
 
 function addFrame(objId)
