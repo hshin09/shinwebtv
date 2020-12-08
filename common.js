@@ -465,8 +465,8 @@ function movieclk(w, url, p) {
          if(ADsid == '?') {
             window.parentView.showMsg("hiddenView:getADsid()");
             setTimeout(function() {
-               x[p.id].click();
-            }, 100);
+               onok();
+            }, 500);
             return;
          }
          url = url + ADsid;
