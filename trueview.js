@@ -98,7 +98,7 @@ function movieclk( ch, p ) {
 
 function getTvUrl()
 {
-   strResponse = web.contentDocument.getElementsByTagName('body')[0].getElementsByTagName('script')[5].innerHTML;
+   strResponse = web.contentDocument.getElementsByTagName('body')[0].getElementsByTagName('script')[2].innerHTML;
    var ssi = strResponse.indexOf("file: \"http");
    if(ssi<1) {
       strResponse = "79";
