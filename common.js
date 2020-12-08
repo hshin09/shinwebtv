@@ -93,6 +93,7 @@ function Init() {
    timer = setInterval(function() {
       OnOff();
    }, 500);
+   window.parentView.showMsg("msg:" + pathmyshtv + " ts=" + touchscreen + " ADsid=" + ADsid);
 }
 
 function loadMyShTV(url) {
@@ -109,7 +110,6 @@ function loadMyShTV(url) {
       str = str.substring(ssi, eei);
       pathmyshtv = str;
       isLoadedMyshtv = 1;
-      window.parentView.showMsg("msg:" + pathmyshtv + " ts=" + touchscreen + " ADsid=" + ADsid);
    };
    xhr.send();
 }
