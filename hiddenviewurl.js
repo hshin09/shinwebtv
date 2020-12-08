@@ -1,4 +1,4 @@
-var ADsid = "aa";
+var ADsid = "1";
 var url = "https://www.adintrend.tv/hd/live/i.php?ch=3&cxid=" + ADsid;
 addFrame("TV");
 document.getElementById("TV").src = url;
