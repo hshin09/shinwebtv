@@ -492,8 +492,8 @@ function init() {
 
    a = addTag(p,'iframe','web');
    a.setAttribute('allowFullscreen','true');
-   //a.setAttribute('frameborder','0');
-   //a.setAttribute('border','0');
+   a.setAttribute('frameborder','0');
+   a.setAttribute('border','0');
    
    a = addTag(p,'div','videoMessage');
    addTag(a,'p','ch_name');
