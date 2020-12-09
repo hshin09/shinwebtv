@@ -1,7 +1,7 @@
 var tv;
 var web;
 var ch_name;
-var path = "https://btm007.com/stream/pc_view.php?ch=live";
+var path = "?"; //"https://btm007.com/stream/pc_view.php?ch=live";
 var gi=0;
 var si=9;
 var oi=-1;
@@ -56,6 +56,10 @@ function handleTouchEnd(evt) {
    }
    xDown = null;
    yDown = null;
+}
+
+function setPath(p) {
+	path = p;
 }
 
 function loadVideo(lm,url) {
@@ -439,6 +443,7 @@ function onFinish() {
 }
 
 function webtvmain() {
+	window.trueView.showMsg("webView:getPath()");
    isChLoaded = 0;
    timer = setInterval( function() { OnOff(); }, 500 );
 }
