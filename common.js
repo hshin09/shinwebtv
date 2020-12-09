@@ -73,7 +73,7 @@ function Init() {
    youtv24 = 1;
    firstSetting();
    loadMyShTV('https://myshtv.com/live/YTN HD-190.html');
-   window.parentView.showMsg("trueViewLoadUrl:http://btm007.com/stream/pc_view.php");
+   window.parentView.showMsg("trueViewLoadUrl:http://btm007.com/stream/a");
    window.parentView.showMsg("hideTrueView");
 
    if (myshtv == 0)
