@@ -511,7 +511,7 @@ function init() {
    if(autoHideTvMode)
       tv.style.display = "none";
    else
-      web.style.top = "0";
+      web.style.top = "100vh";
 }
 
 init();
