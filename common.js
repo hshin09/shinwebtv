@@ -70,6 +70,10 @@ function setADsid(sid) {
 	ADsid = sid;
 }
 
+function getPath() {
+	window.parentView.showMsg( "trueView:setPath('" + path + "')" );
+}
+
 function Init() {
    youtv24 = 1;
    firstSetting();
