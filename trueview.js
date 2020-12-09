@@ -1,7 +1,7 @@
 var tv;
 var web;
 var ch_name;
-var path = "?"; //"https://btm007.com/stream/pc_view.php?ch=live";
+var path;
 var gi=0;
 var si=9;
 var oi=-1;
@@ -31,7 +31,7 @@ function handleTouchStart(evt) {
 } 
 
 function handleTouchEnd(evt) {
-   if ( !xDown || !yDown ) {
+   if( !xDown || !yDown ) {
       return;
    }
 
@@ -42,14 +42,14 @@ function handleTouchEnd(evt) {
    var yDiff = yDown - yUp;
 
    if( Math.abs( xDiff ) > Math.abs( yDiff ) ) {
-      if ( xDiff > 0 ) { //left swipe
+      if( xDiff > 0 ) { //left swipe
          change();
       }
       else { //right swipe
       }
    }
    else {
-      if ( yDiff > 0 ) { //up swipe
+      if( yDiff > 0 ) { //up swipe
       }
       else { //down swipe
       }
@@ -104,7 +104,7 @@ function getTvUrl()
 {
    strResponse = web.contentDocument.getElementsByTagName('body')[0].getElementsByTagName('script')[2].outerHTML;
    var ssi = strResponse.indexOf("file: \"http");
-   if(ssi<1) {
+   if( ssi<1 ) {
       strResponse = "79";
       window.trueView.showMsg( "webView:setHiddenViewTV('" + strResponse + "')" );
       return;
@@ -276,7 +276,7 @@ function keychk(e) {
    else if( e.which == 52 ) { //4
       x[14].click();
    }
-   else if(e.which == 55 ) { //7
+   else if( e.which == 55 ) { //7
       if( loadMode == 1 )
          return;
       change();
@@ -361,7 +361,7 @@ function closeErrorMessage()
 
 function videoErr(e)
 {
-   switch (e.target.error.code) {
+   switch(e.target.error.code) {
      case e.target.error.MEDIA_ERR_ABORTED:
        document.getElementById("er_msg").innerHTML="비디오 취소됨";
        showErrorMessage();
