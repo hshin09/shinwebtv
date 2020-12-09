@@ -1,7 +1,7 @@
 var tv;
 var web;
 var ch_name;
-var path; // = "https://btm007.com/stream/pc_view.php?ch=live";
+//var path; // = "https://btm007.com/stream/pc_view.php?ch=live";
 var gi=0;
 var si=9;
 var oi=-1;
