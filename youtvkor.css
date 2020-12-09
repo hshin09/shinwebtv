@@ -50,6 +50,7 @@ li {
 }
 
 #mydiv {
+  position:absolute;
   float:left;
   overflow:hidden;
   padding:0;
