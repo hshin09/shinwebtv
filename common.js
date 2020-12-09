@@ -30,7 +30,7 @@ var addr = [
 
 var touchscreen = 0;
 var path79 = "http://youtv24.net/sites/mstvs/pages/pc/pc_view.php?ch=live";
-var path = "http://btm007.com/stream/pc_view.php?ch=live";
+var path = "https://btm007.com/stream/pc_view.php?ch=live";
 var ch = ['26', '37', '04', '05', '25', '03', '09', '35', '30', '17', '33', '02', '01', '34', '32', '23', '14', '07', '15', '13', '50', '46', '49', '38'];
 var gi = 0;
 var si = 10;
@@ -73,7 +73,7 @@ function Init() {
    youtv24 = 1;
    firstSetting();
    loadMyShTV('https://myshtv.com/live/YTN HD-190.html');
-   window.parentView.showMsg("trueViewLoadUrl:http://btm007.com/stream/a");
+   window.parentView.showMsg("trueViewLoadUrl:https://btm007.com/stream/a");
    window.parentView.showMsg("hideTrueView");
 
    if (myshtv == 0)
