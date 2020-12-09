@@ -75,7 +75,7 @@ function Init() {
    firstSetting();
    loadMyShTV('https://myshtv.com/live/YTN HD-190.html');
    window.parentView.showMsg("trueViewLoadUrl:" + trueLoadUrl);
-   window.parentView.showMsg("trueView:path=" + path);
+   window.parentView.showMsg("trueView:var path = " + path);
    window.parentView.showMsg("hideTrueView");
 
    if (myshtv == 0)
