@@ -54,11 +54,12 @@ li {
   overflow:hidden;
   padding:0;
   margin:0;
-  width:90vw;
+  width:90%;
   height:100vh;
-  left:10vw;
+  left:10%;
   top:0;
   bottom:0;
+  right:0;
   background-color:#252525;
   object-fit:fill;
   background-image: url('https://hshin09.github.io/shinwebtv/poster.png');
@@ -67,10 +68,11 @@ li {
 }
 
 #tv, #web {
-  width:90vw;
+  width:100%;
   height:100vh;
   top:0;
   bottom:0;
+  right:0;
   object-fit:fill;
 }
 
