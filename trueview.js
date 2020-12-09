@@ -1,4 +1,4 @@
-var autoHideTvMode = 1;
+var autoHideTvMode = 0;
 var tv;
 var web;
 var ch_name;
