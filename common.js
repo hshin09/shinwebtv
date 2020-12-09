@@ -81,7 +81,7 @@ function Init() {
    window.parentView.showMsg("trueViewLoadUrl:" + trueLoadUrl);
    window.parentView.showMsg("hideTrueView");
 
-   if (myshtv == 0)
+   if(myshtv == 0)
       $('#menu0').load("https://hshin09.github.io/shinwebtv/kor2.html");
    else
       $('#menu0').load("https://hshin09.github.io/shinwebtv/myshtv.html");
@@ -89,7 +89,7 @@ function Init() {
 
    stv = $('#tv').get(0);
    web = document.getElementById("web");
-   for (var i = 0; i < tvaddr.length; i++) {
+   for(var i = 0; i < tvaddr.length; i++) {
       backtvaddr[i] = '79';
       tvaddr[i] = addr[i][3];
    }
@@ -102,9 +102,9 @@ function loadMyShTV(url) {
    var xhr = new XMLHttpRequest();
    xhr.open('GET', url, true);
    xhr.onreadystatechange = function() {
-      if (this.readyState !== 4) return;
-      if (this.status !== 200) return;
-      if (this.responseText == null) return;
+      if(this.readyState !== 4) return;
+      if(this.status !== 200) return;
+      if(this.responseText == null) return;
       var str = this.responseText;
       var ssi = str.indexOf('var urlFirst');
       ssi = str.indexOf('http', ssi);
@@ -139,14 +139,14 @@ function loadMyShTV(url) {
 var isNotUser = 0;
 
 function OnOff() {
-   if (!isChLoaded && isLoadedMyshtv) {
+   if(!isChLoaded && isLoadedMyshtv) {
       $('#secMessage').css('display', 'block');
       msgGetCh = msgGetCh + ".";
       $('#sec').text(msgGetCh);
       x = document.getElementById("ml" + gi).getElementsByTagName("li");
-      if (x.length == tvaddr.length) {
+      if(x.length == tvaddr.length) {
          trans = x.length * screen.height * 0.041;
-         if (timer) {
+         if(timer) {
             clearInterval(timer);
             timer = null;
          }
@@ -162,30 +162,30 @@ function OnOff() {
 
    time++;
    tstr = "";
-   if (time < 10)
+   if(time < 10)
       tstr = "0";
    tstr = tstr + time;
    $('#sec').text(tstr);
 
-   if (mustWait) {
+   if(mustWait) {
       mustWait--;
-      if (mustWait == 0)
+      if(mustWait == 0)
          setTimeout(function() {
             onok();
          }, 10);
       return;
    }
 
-   if (stv.error != null || stv.networkState == 3 || (time > 10 && stv.currentTime < 2)) {
-      if (stv.src.substring(0, 4) == "file")
+   if(stv.error != null || stv.networkState == 3 || (time > 10 && stv.currentTime < 2)) {
+      if(stv.src.substring(0, 4) == "file")
          return;
       oldCurrentTime = 0;
-      if ($('#errorMessage').css('display') != "block") {
+      if($('#errorMessage').css('display') != "block") {
          $("#er_msg").text("채널을 가져올수 없음(네트워크 또는 서버 에러)-Timer");
          showErrorMessage();
       }
-      if (isNotUser < 0) {
-         if (gi == 0 && myshtv == 0) {
+      if(isNotUser < 0) {
+         if(gi == 0 && myshtv == 0) {
             //window.parentView.showMsg( "hiddenView:loadTV('" + path + ch[ei] + "&start=on')" );
             //mustWait = 5;
             mustabout = 1;
@@ -194,16 +194,16 @@ function OnOff() {
          }
          isNotUser++;
       } else {
-         if (timer) {
+         if(timer) {
             clearInterval(timer);
             timer = null;
          }
          $("#er_msg").text("기본/보조서버 모두 에러(다른체널로 바꿔보세요)");
          showErrorMessage();
          isNotUser = 0;
-         if (gi == 0) {
+         if(gi == 0) {
             var ich = addr[ei][6];
-            if (addr[ei][ich] == '79') {
+            if(addr[ei][ich] == '79') {
                addr[ei][6] = ich - 1;
                clearAddress(addr[ei][ich]);
             }
@@ -214,19 +214,19 @@ function OnOff() {
       }
    }
 
-   if ($('#secMessage').css('display') == "block" && stv.currentTime > 1) {
+   if($('#secMessage').css('display') == "block" && stv.currentTime > 1) {
       $('#secMessage').css('display', 'none');
-      if (mustabout) {
+      if(mustabout) {
          //window.parentView.showMsg( "hiddenView:loadTV('http://youtv24.net/sites/')" );
          mustWait = 0;
          mustabout = 0;
       }
    }
 
-   if ($('#videoMessage').css('display') == "block" && stv.currentTime > 1) {
+   if($('#videoMessage').css('display') == "block" && stv.currentTime > 1) {
       isNotUser = 0;
       $('#videoMessage').css('display', 'none');
-      if (timer) {
+      if(timer) {
          clearInterval(timer);
          timer = null;
          timeSetTV = 0;
@@ -242,11 +242,11 @@ function showTime() {
    var dt = new Date();
    var sctime = "";
 
-   if (dt.getHours() < 10)
+   if(dt.getHours() < 10)
       sctime += "0";
    sctime += dt.getHours();
    sctime += ":";
-   if (dt.getMinutes() < 10)
+   if(dt.getMinutes() < 10)
       sctime += "0";
    sctime += dt.getMinutes();
 
@@ -268,7 +268,7 @@ function get79tv(i) {
 
 function setHiddenViewTV(s) {
    oi = -1;
-   if (s == "timeout") {
+   if(s == "timeout") {
       $("#er_msg").text("서버가 응답이 없어 일정시간(2분내외) 대기 및 재시도를 진행합니다.");
       showErrorMessage();
       mustWait = 10;
@@ -290,7 +290,7 @@ function change() {
    aei[gi] = ei;
    aoi[gi] = oi;
 
-   if (gi == 0)
+   if(gi == 0)
       gi = 1;
    else
       gi = 0;
@@ -304,9 +304,9 @@ function change() {
    ei = aei[gi];
    oi = aoi[gi];
 
-   if (si > -1) x[si].style = "background-color:#234567";
-   if (ei > -1) {
-      if (si == ei)
+   if(si > -1) x[si].style = "background-color:#234567";
+   if(ei > -1) {
+      if(si == ei)
          x[si].style = "background-color:#234567;color:yellow";
       else
          x[ei].style = "background-color:#252525;color:yellow";
@@ -314,28 +314,28 @@ function change() {
 }
 
 function onok() {
-   if (gi == 0 && myshtv == 0) {
+   if(gi == 0 && myshtv == 0) {
       var i_ch = addr[si][6];
 
       i_ch++;
-      if (i_ch > 4)
+      if(i_ch > 4)
          i_ch = 3;
 
       tvaddr[si] = addr[si][i_ch];
-      if (addr[si][i_ch] == '79' && backtvaddr[si] != '79')
+      if(addr[si][i_ch] == '79' && backtvaddr[si] != '79')
          tvaddr[si] = backtvaddr[si];
 
       x[si].innerHTML = addr[si][i_ch - 3];
 
       addr[si][6] = i_ch;
-      if (i_ch == 3)
+      if(i_ch == 3)
          window.parentView.showMsg("msg:기본서버(" + x[si].innerHTML + ") 로 이동합니다");
       else
          window.parentView.showMsg("msg:" + (i_ch - 2) + "번 보조서버(" + x[si].innerHTML + ") 로 이동합니다");
 
-      if (tvaddr[si] == null)
+      if(tvaddr[si] == null)
          gettv(si);
-      else if (tvaddr[si] == "79") {
+      else if(tvaddr[si] == "79") {
          get79tv(si);
          return;
       }
@@ -352,28 +352,28 @@ function mlok() {
    x = document.getElementById("ml" + gi).getElementsByTagName("li");
    cnt = x.length;
    var i;
-   for (i = 0; i < cnt; i++) {
+   for(i = 0; i < cnt; i++) {
       x[i].id = i;
    }
 
-   if (!touchscreen) {
-      if (ei > -1) {
+   if(!touchscreen) {
+      if(ei > -1) {
          si = ei;
          ei = -1;
          onleft();
          ei = si;
-      } else if (si < 0)
+      } else if(si < 0)
          ondown();
    }
 
    showLeftMenu();
 
-   if (touchscreen) x[si].click();
+   if(touchscreen) x[si].click();
 }
 
 function showLeftMenu() {
-   if (touchscreen) {
-      if (gi == 1) {
+   if(touchscreen) {
+      if(gi == 1) {
          document.getElementById("menu0").style.display = "none";
          document.getElementById("menu1").style.display = "block";
       } else
@@ -383,13 +383,13 @@ function showLeftMenu() {
       }
    } else {
       var hi = 0;
-      if (gi == 0) hi = 1;
+      if(gi == 0) hi = 1;
       var hideMenuObj = document.getElementById('menu' + hi);
       var leftMenuObj = document.getElementById('menu' + gi);
 
       hideMenuObj.removeAttribute("style");
 
-      if (gi == 0) {
+      if(gi == 0) {
          leftMenuObj.style['transform'] = "translate(0px, 0px)";
          leftMenuObj.style['msTransform'] = "translate(0px, 0px)";
          leftMenuObj.style['mozTransform'] = "translate(0px, 0px)";
@@ -406,8 +406,8 @@ function showLeftMenu() {
 }
 
 function onFullscreenOnOff() {
-   if (touchscreen) {
-      if (full == false) {
+   if(touchscreen) {
+      if(full == false) {
          $('#leftmenu').css('display', 'none');
          full = true;
       } else
@@ -416,7 +416,7 @@ function onFullscreenOnOff() {
          full = false;
       }
    } else {
-      if (full == false) {
+      if(full == false) {
          document.getElementById("mydiv").style.left = "0";
          document.getElementById("mydiv").style.width = "100%";
          full = true;
@@ -433,40 +433,40 @@ function movieclk(w, url, p) {
    oldCurrentTime = 0;
    stv.pause();
 
-   if (touchscreen && oi == p.id) {
+   if(touchscreen && oi == p.id) {
       onok();
       return;
    }
 
-   if (oi > -1) x[oi].style = "background-color:#252525;";
-   if (ei > -1) x[ei].style = "background-color:#252525";
+   if(oi > -1) x[oi].style = "background-color:#252525;";
+   if(ei > -1) x[ei].style = "background-color:#252525";
    oi = si = ei = p.id;
    x[ei].style = "background-color:#234567;color:yellow";
    oi = si;
-   if (w === "tv" && url.indexOf("tv.trueid.net/embed/") < 1)
+   if(w === "tv" && url.indexOf("tv.trueid.net/embed/") < 1)
       showVideoMessage();
 
-   if (url == "79") {
+   if(url == "79") {
       get79tv(p.id);
       return;
    }
 
-   if (url.substr(0, 1) == "/")
+   if(url.substr(0, 1) == "/")
       url = pathmyshtv + url + "playlist.m3u8";
 
    stv.volume = 1;
-   if (svideo == 1 && gi == 1)
+   if(svideo == 1 && gi == 1)
       stv.volume = 0.1;
-   else if (svideo == 0 && gi == 1 && p.id > 18) {
+   else if(svideo == 0 && gi == 1 && p.id > 18) {
       stv.volume = 0.2;
-      if (p.id == 19 || p.id == 21)
+      if(p.id == 19 || p.id == 21)
          stv.volume = 0.4;
-      else if (p.id == 22)
+      else if(p.id == 22)
          stv.volume = 0.3;
-      else if (p.id == 23)
+      else if(p.id == 23)
          stv.volume = 0.3;
-   } else if (svideo == 0 && gi == 1) {
-      if (url.indexOf("p1.cdn.vet") > 0) {
+   } else if(svideo == 0 && gi == 1) {
+      if(url.indexOf("p1.cdn.vet") > 0) {
          stv.volume = 0.3;
          if(ADsid == '?') {
             window.parentView.showMsg("hiddenView:getADsid()");
@@ -480,7 +480,7 @@ function movieclk(w, url, p) {
    }
 
    var xx;
-   if (w === "web") {
+   if(w === "web") {
       stv.style.display = "none";
       xx = web;
    } else {
@@ -501,13 +501,13 @@ function movieclk(w, url, p) {
     else
     */
    xx.setAttribute("src", url);
-   if (w === "tv")
+   if(w === "tv")
       xx.play();
 }
 
 function showVideoMessage() {
    time = 0;
-   if (timer) {
+   if(timer) {
       clearInterval(timer);
       timer = null;
    }
@@ -527,14 +527,14 @@ function showErrorMessage() {
 }
 
 function closeErrorMessage() {
-   if (document.getElementById("errorMessage").style.display == "none")
+   if(document.getElementById("errorMessage").style.display == "none")
       return;
    document.getElementById("errorMessage").style.display = "none";
    document.getElementById("er_msg").innerHTML = "";
 }
 
 function videoErr(e) {
-   switch (e.target.error.code) {
+   switch(e.target.error.code) {
       case e.target.error.MEDIA_ERR_ABORTED:
          document.getElementById("er_msg").innerHTML = "비디오 취소됨";
          showErrorMessage();
