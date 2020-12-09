@@ -508,10 +508,10 @@ function init() {
    tv = document.getElementById('tv');
    web = document.getElementById('web');
    ch_name = document.getElementById('ch_name');
-   if(autoHideTvMode) {
+   if(autoHideTvMode)
       tv.style.display = "none";
+   else
       web.style.top = "0";
-   }
 }
 
 init();
