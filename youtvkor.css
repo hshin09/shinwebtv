@@ -54,8 +54,8 @@ li {
   overflow:hidden;
   padding:0;
   margin:0;
-  width:90%;
-  height:100%;
+  width:90vw;
+  height:100vh;
   left:10%;
   top:0;
   bottom:0;
@@ -68,7 +68,7 @@ li {
 
 #tv, #web {
   width:100%;
-  height:100%;
+  height:100vh;
   top:0;
   bottom:0;
   object-fit:fill;
