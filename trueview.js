@@ -78,6 +78,7 @@ function loadVideo(lm,url) {
 
 function movieclk( ch, p ) {
    tv.pause();
+   tv.src = "";
    if(oi>-1) x[oi].style="background-color:#252525";
    if(ei>-1) x[ei].style="background-color:#252525";
    oi=si=ei=p.id;
