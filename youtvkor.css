@@ -56,7 +56,7 @@ li {
   margin:0;
   width:90vw;
   height:100vh;
-  left:10%;
+  left:10vw;
   top:0;
   bottom:0;
   background-color:#252525;
@@ -67,7 +67,7 @@ li {
 }
 
 #tv, #web {
-  width:100vw;
+  width:90vw;
   height:100vh;
   top:0;
   bottom:0;
