@@ -459,11 +459,9 @@ function init() {
    meta.name='viewport';
    meta.setAttribute('content','width=device-width, height=device-height, initial-scale=1.0');
    document.getElementsByTagName('head')[0].appendChild(meta);
-/*   
-   document.body.removeChild(document.getElementsByTagName('center')[0]);
-   document.body.removeChild(document.getElementsByTagName('center')[0]);
-   document.body.removeChild(document.getElementsByTagName('hr')[0]);
-*/
+   
+   document.body.innerHTML = "";
+   
    var p, a;
    var pp = p = addTag('','div','leftmenu');
    if( isTouchScreenMode ) {
