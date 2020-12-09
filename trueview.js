@@ -454,13 +454,12 @@ function init() {
       loadStyle('https://hshin09.github.io/shinwebtv/youtvkor.css');
       window.onkeydown = keychk;
    }
+   document.body.innerHTML = "";
 
    var meta=document.createElement('meta');
    meta.name='viewport';
    meta.setAttribute('content','width=device-width, height=device-height, initial-scale=1.0');
    document.getElementsByTagName('head')[0].appendChild(meta);
-   
-   document.body.innerHTML = "";
    
    var p, a;
    var pp = p = addTag('','div','leftmenu');
@@ -486,7 +485,7 @@ function init() {
    a = addTag(p,'video','tv');
    //a.setAttribute('onerror','videoErr(event)');
 
-   a = addTag(p,'iframe','player');
+   a = addTag(p,'iframe','web');
    a.setAttribute('allowFullscreen','true');
    a.setAttribute('frameborder','0');
    a.setAttribute('border','0');
@@ -495,7 +494,7 @@ function init() {
    addTag(a,'p','ch_name');
    
    tv = document.getElementById('tv');
-   web = document.getElementById('player');
+   web = document.getElementById('web');
    ch_name = document.getElementById('ch_name');
    tv.style.display = "none";
 }
