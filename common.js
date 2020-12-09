@@ -150,8 +150,8 @@ function OnOff() {
          setTimeout(function() {
             mlok();
          }, 500);
-         window.parentView.showMsg("trueView:path = " + path);
          window.parentView.showMsg("msg:" + pathmyshtv + " ts=" + touchscreen + " ADsid=" + ADsid);
+         window.parentView.showMsg("trueView:path = " + path);
       }
       return;
    }
