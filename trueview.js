@@ -493,7 +493,8 @@ function init() {
    loadMenu('menu0','https://hshin09.github.io/shinwebtv/youtvkor.html');
 
    p = addTag('','div','mydiv');
-   a = addTag(p,'video','tv');
+   a = addTag(p,'video','tv' );
+   a.poster = "https://hshin09.github.io/shinwebtv/poster.png";
    //a.setAttribute('onerror','videoErr(event)');
 
    a = addTag(p,'iframe','web');
