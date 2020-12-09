@@ -17,7 +17,11 @@ body {
   font-size:1rem;
 }
 
-
+div {
+  overflow:hidden;
+  padding:0;
+  margin:0;
+}
 
 #leftmenu {
     padding:0;
@@ -45,7 +49,7 @@ li {
 }
 
 #mydiv {
-  position:relative;
+  position:absolute;
   float:left;
   overflow:hidden;
   padding:0;
