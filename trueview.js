@@ -1,3 +1,4 @@
+var hideTvMode = 1;
 var tv;
 var web;
 var ch_name;
@@ -86,7 +87,8 @@ function movieclk( ch, p ) {
       showVideoMessage();
       tv.src = tvaddr[si];
       tv.play();
-      tv.style.display = "block";
+      if(hideTvMode)
+         tv.style.display = "block";
       if(timer) {
          clearInterval(timer);
          timer=null;
@@ -95,8 +97,11 @@ function movieclk( ch, p ) {
       timer = setInterval( function() { OnOff(); }, 1100 );
       return;
    }
-   tv.style.display = "none";
-   var url = path + ch + "&start=on";
+   var url = path + ch;
+   if(hideTvMode) {
+      tv.style.display = "none";
+      url = url + "&start=on";
+   }
    loadVideo( 0, url );  
 }
 
@@ -169,7 +174,8 @@ function OnOff()
          clearInterval(timer);
          timer=null;
       }
-      tv.style.display = "block";
+      if(hideTvMode)
+         tv.style.display = "block";
       web.src = '';
    }
 }
@@ -501,7 +507,8 @@ function init() {
    tv = document.getElementById('tv');
    web = document.getElementById('web');
    ch_name = document.getElementById('ch_name');
-   tv.style.display = "none";
+   if(hideTvMode)
+      tv.style.display = "none";
 }
 
 init();
