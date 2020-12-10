@@ -274,10 +274,8 @@ function keychk(e) {
       onright();
    }
    else if(e.which == 13 ) {
-      if( loadMode == 0 ) {
-      	ei = si;
+      if( loadMode == 0 )
          onok();
-      }
    }
    else if( e.which == 49 ) { //1
       x[9].click();
@@ -306,8 +304,8 @@ function keychk(e) {
 
 function onok() {
    mustWait = 0;
-   tvaddr[ei] = ei;
-   x[ei].click();
+   tvaddr[si] = si;
+   x[si].click();
 }
 
 function mlok() {
