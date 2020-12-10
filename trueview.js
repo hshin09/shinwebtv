@@ -294,9 +294,7 @@ function keychk(e) {
    else if( e.which == 57 ) { //9
       showYouTvMode = !showYouTvMode;
       web.style.top = "4vh";
-      if(showYouTvMode)
-         tv.style.display = "none";
-      else
+      if(!showYouTvMode)
          web.style.top = "100vh";
    }
         
