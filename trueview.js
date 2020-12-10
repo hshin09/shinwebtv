@@ -293,8 +293,9 @@ function keychk(e) {
    }
    else if( e.which == 57 ) { //9
       showYouTvMode = !showYouTvMode;
+      web.style.top = "4vh";
       if(showYouTvMode)
-         web.style.top = "0";
+         tv.style.display = "none";
       else
          web.style.top = "100vh";
    }
@@ -516,6 +517,7 @@ function init() {
    tv = document.getElementById('tv');
    web = document.getElementById('web');
    ch_name = document.getElementById('ch_name');
+   web.style.top = "4vh";
    if(showYouTvMode)
       tv.style.display = "none";
    else
