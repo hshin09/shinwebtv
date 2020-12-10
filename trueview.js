@@ -254,7 +254,7 @@ function onright() {
 }
 
 function change() {
-   window.trueView.showMsg("webView:oi=-1; x[ei].click()");
+   window.trueView.showMsg("webView:si=oi; oi=-1; x[ei].click()");
    window.trueView.showMsg("hideTrueView");
    tv.pause();
    web.src = '';
