@@ -258,6 +258,7 @@ function showTime() {
 }
 
 function get79tv(i) {
+	ei = i;
    stv.pause();
    stv.src = "empty";
    $("#ch_name").text(x[ei].innerHTML + "(주소검색중)");
