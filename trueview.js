@@ -293,6 +293,13 @@ function keychk(e) {
    else if( e.which == 56 ) { //8
       showTime();
    }
+   else if( e.which == 57 ) { //9
+      showYouTvMode = !showYouTvMode;
+      if(showYouTvMode)
+         web.style.top = "0";
+      else
+         web.style.top = "100vh";
+   }
         
    e.preventDefault();
 }
