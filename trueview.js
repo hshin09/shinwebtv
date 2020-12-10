@@ -254,7 +254,8 @@ function onright() {
 }
 
 function change() {
-   window.trueView.showMsg("webView:if(touchscreen) oi=-1; x[ei].click()");
+	//window.trueView.showMsg("webView:if(touchscreen) oi=-1; x[ei].click()");
+   window.trueView.showMsg("webView:gi=1; change()");
    window.trueView.showMsg("hideTrueView");
    tv.pause();
    web.src = '';
