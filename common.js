@@ -315,33 +315,33 @@ function change() {
 
 function onok() {
    if(gi == 0 && myshtv == 0) {
-      var i_ch = addr[ei][6];
+      var i_ch = addr[si][6];
 
       i_ch++;
       if(i_ch > 4)
          i_ch = 3;
 
-      tvaddr[ei] = addr[ei][i_ch];
-      if(addr[ei][i_ch] == '79' && backtvaddr[ei] != '79')
-         tvaddr[ei] = backtvaddr[ei];
+      tvaddr[si] = addr[si][i_ch];
+      if(addr[si][i_ch] == '79' && backtvaddr[si] != '79')
+         tvaddr[si] = backtvaddr[si];
 
-      x[ei].innerHTML = addr[ei][i_ch - 3];
+      x[si].innerHTML = addr[si][i_ch - 3];
 
-      addr[ei][6] = i_ch;
+      addr[si][6] = i_ch;
       if(i_ch == 3)
-         window.parentView.showMsg("msg:기본서버(" + x[ei].innerHTML + ") 로 이동합니다");
+         window.parentView.showMsg("msg:기본서버(" + x[si].innerHTML + ") 로 이동합니다");
       else
-         window.parentView.showMsg("msg:" + (i_ch - 2) + "번 보조서버(" + x[ei].innerHTML + ") 로 이동합니다");
+         window.parentView.showMsg("msg:" + (i_ch - 2) + "번 보조서버(" + x[si].innerHTML + ") 로 이동합니다");
 
-      if(tvaddr[ei] == null)
-         gettv(ei);
-      else if(tvaddr[ei] == "79") {
-         get79tv(ei);
+      if(tvaddr[si] == null)
+         gettv(si);
+      else if(tvaddr[si] == "79") {
+         get79tv(si);
          return;
       }
    }
    oi = -1;
-   x[ei].click();
+   x[si].click();
 }
 
 var x;
