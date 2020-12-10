@@ -91,7 +91,7 @@ function keychk(e) {
          window.parentView.showMsg("trueView:loadMode = 0");
          //window.parentView.showMsg("trueView:full = 1; onFullscreenOnOff()");
          window.parentView.showMsg("showTrueView");
-         window.parentView.showMsg("trueView:x[si].click()");
+         window.parentView.showMsg("trueView:x[ei].click()");
       } else {
          if( svideo == 0 ) {
             svideo = 1;
