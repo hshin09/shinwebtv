@@ -84,9 +84,9 @@ function movieclk( ch, p ) {
    oi=si=ei=p.id;
    x[ei].style="background-color:#234567;color:yellow";
 
-   if( tvaddr[si].length > 10 ) {
+   if( tvaddr[ei].length > 10 ) {
       showVideoMessage();
-      tv.src = tvaddr[si];
+      tv.src = tvaddr[ei];
       tv.play();
       if(showYouTvMode)
          tv.style.display = "block";
@@ -120,7 +120,7 @@ function getTvUrl()
    if( loadMode )
       window.trueView.showMsg( "webView:setHiddenViewTV('" + strResponse + "')" );
    else {
-      tvaddr[si] = tv.src = strResponse;
+      tvaddr[ei] = tv.src = strResponse;
       tv.play();
    }
 }
@@ -164,7 +164,7 @@ function OnOff()
          clearInterval(timer);
          timer=null;
       }
-      tvaddr[si] = si;
+      tvaddr[ei] = ei;
       onok();
    }
 
@@ -189,7 +189,7 @@ function showVideoMessage()
    }  
    timer = setInterval( function() { OnOff(); }, 1100 );
    //closeErrorMessage();
-   ch_name.innerHTML = x[si].innerHTML;
+   ch_name.innerHTML = x[ei].innerHTML;
    document.getElementById('videoMessage').style.display = 'block';
 }
 
@@ -206,7 +206,7 @@ function showTime()
       sctime += "0";
    sctime += dt.getMinutes();
 
-   ch_name.innerHTML = sctime + " - " + x[si].innerHTML;
+   ch_name.innerHTML = sctime + " - " + x[ei].innerHTML;
    document.getElementById('videoMessage').style.display = 'block';
    setTimeout( function(){document.getElementById('videoMessage').style.display = 'none';}, 3000 );
 }
@@ -254,7 +254,7 @@ function onright() {
 }
 
 function change() {
-   window.trueView.showMsg("webView:oi=-1; x[si].click()");
+   window.trueView.showMsg("webView:oi=-1; x[ei].click()");
    window.trueView.showMsg("hideTrueView");
    tv.pause();
    web.src = '';
@@ -274,8 +274,10 @@ function keychk(e) {
       onright();
    }
    else if(e.which == 13 ) {
-      if( loadMode == 0 )
+      if( loadMode == 0 ) {
+      	ei = si;
          onok();
+      }
    }
    else if( e.which == 49 ) { //1
       x[9].click();
@@ -297,8 +299,8 @@ function keychk(e) {
 
 function onok() {
    mustWait = 0;
-   tvaddr[si] = si;
-   x[si].click();
+   tvaddr[ei] = ei;
+   x[ei].click();
 }
 
 function mlok() {
