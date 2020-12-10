@@ -315,7 +315,7 @@ function change() {
 }
 
 function onok() {
-	if(oi > -1) x[oi].style = "background-color:#252525;colir:white";
+	if(ei > -1) x[ei].style = "background-color:#252525";
    if(gi == 0 && myshtv == 0) {
       var i_ch = addr[si][6];
 
