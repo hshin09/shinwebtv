@@ -250,7 +250,7 @@ function showTime() {
       sctime += "0";
    sctime += dt.getMinutes();
 
-   $('#ch_name').text(sctime + " - " + x[si].innerHTML);
+   $('#ch_name').text(sctime + " - " + x[ei].innerHTML);
    $("#videoMessage").css('display', 'block');
    setTimeout(function() {
       $("#videoMessage").css('display', 'none');
@@ -260,9 +260,9 @@ function showTime() {
 function get79tv(i) {
    stv.pause();
    stv.src = "empty";
-   $("#ch_name").text(x[si].innerHTML + "(주소검색중)");
+   $("#ch_name").text(x[ei].innerHTML + "(주소검색중)");
    $("#videoMessage").css('display', 'block');
-   var url = path + ch[si];
+   var url = path + ch[ei];
    window.parentView.showMsg("trueView:loadVideo(1,'" + url + "')");
 }
 
@@ -274,10 +274,10 @@ function setHiddenViewTV(s) {
       mustWait = 10;
       return;
    }
-   backtvaddr[si] = tvaddr[si] = s;
+   backtvaddr[ei] = tvaddr[ei] = s;
    mustWait = 0;
    setTimeout(function() {
-      x[si].click();
+      x[ei].click();
    }, 10);
 }
 
@@ -307,7 +307,7 @@ function change() {
    if(si > -1) x[si].style = "background-color:#234567";
    if(ei > -1) {
       if(si == ei)
-         x[si].style = "background-color:#234567;color:yellow";
+         x[ei].style = "background-color:#234567;color:yellow";
       else
          x[ei].style = "background-color:#252525;color:yellow";
    }
@@ -517,7 +517,7 @@ function showVideoMessage() {
    }, 1100);
    closeErrorMessage();
    $('#sec').text("00");
-   $("#ch_name").text(x[si].innerHTML);
+   $("#ch_name").text(x[ei].innerHTML);
    $("#videoMessage").css('display', 'block');
    $("#secMessage").css('display', 'block');
 }
