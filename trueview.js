@@ -357,6 +357,12 @@ function onFullscreenOnOff() {
          full=false;
       }
    }
+   if(showYouTvMode) {
+   	if(full)
+   	   web.style.top = "0";
+   	else
+   	   web.style.top = "4vh";
+   }
 }
 
 function showErrorMessage()
