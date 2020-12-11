@@ -108,6 +108,7 @@ function keychk(e) {
    }
    else if( e.which == 57 ) { //9
       clearAddress("79");
+      x[ei].click();
    }
 
    e.preventDefault();
