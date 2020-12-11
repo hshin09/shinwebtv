@@ -106,6 +106,9 @@ function keychk(e) {
    else if( e.which == 56 ) { //8
       showTime();
    }
+   else if( e.which == 57 ) { //9
+      clearAddress("79");
+   }
 
    e.preventDefault();
 }
