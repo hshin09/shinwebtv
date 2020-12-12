@@ -40,6 +40,7 @@ var ei = 10;
 var asi = [10, 18];
 var aoi = [10, 18];
 var aei = [10, 18];
+var alc = [10, 18];
 var full = false;
 var timer = null;
 var time = 0;
@@ -285,6 +286,7 @@ function change() {
    asi[gi] = si;
    aei[gi] = ei;
    aoi[gi] = oi;
+   alc[gi] = lastCh;
 
    if(gi == 0)
       gi = 1;
@@ -294,11 +296,13 @@ function change() {
    si = asi[gi];
    ei = aei[gi];
    oi = aoi[gi];
+   lastCh = alc[gi];
 
    mlok();
    si = asi[gi];
    ei = aei[gi];
    oi = aoi[gi];
+   lastCh = alc[gi];
 
    if(si > -1) x[si].style = "background-color:#234567";
    if(ei > -1) {
