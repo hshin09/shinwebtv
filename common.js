@@ -48,6 +48,7 @@ var trans = 100;
 var mustabout = 0;
 var timeSetTV = 500;
 var mustWait = 0;
+var isHotKey = 0;
 var lastCh = -1;
 var youtv24 = 0;
 var svideo = 0;
@@ -314,6 +315,7 @@ function change() {
 }
 
 function onok() {
+	isHotKey = 1;
 	if(ei > -1) x[ei].style = "background-color:#252525";
    if(gi == 0 && myshtv == 0) {
       var i_ch = addr[si][6];
@@ -429,7 +431,9 @@ function onFullscreenOnOff() {
 }
 
 function movieclk(w, url, p) {
-   lastCh = ei;
+	if( isHotKey == 0 )
+      lastCh = ei;
+   isHotKey = 0;
    stv.pause();
 
    if(touchscreen && oi == p.id) {
