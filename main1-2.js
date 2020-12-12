@@ -68,6 +68,9 @@ function keychk(e) {
    else if( e.which == 13 ) {
       onok();
    }
+   else if( e.which == 49 ) { //1
+      x[0].click();
+   }
    else if( e.which == 50 ) { //2
       x[lastCh].click();
    }
