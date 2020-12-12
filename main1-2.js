@@ -66,9 +66,11 @@ function keychk(e) {
       onright();
    }
    else if( e.which == 13 ) {
+   	isHotKey = 1;
       onok();
    }
    else if( e.which == 49 ) { //1
+      isHotKey = 1;
       x[0].click();
    }
    else if( e.which == 50 ) { //2
@@ -79,6 +81,7 @@ function keychk(e) {
       window.parentView.showMsg("launchApp:com.opera.browser.beta");
    }
    else if( e.which == 52 ) { //4
+      isHotKey = 1;
       x[gi?18:10].click();
    }
    else if( e.which == 53 ) { //5
