@@ -47,7 +47,7 @@ var trans = 100;
 var mustabout = 0;
 var timeSetTV = 500;
 var mustWait = 0;
-var lastTrueCh = "";
+var lastCh = -1;
 var youtv24 = 0;
 var svideo = 0;
 var myshtv = 0;
@@ -59,7 +59,6 @@ var stv;
 var tstr;
 var isChLoaded = 0;
 var msgGetCh = "채널리스트 구성중";
-var oldCurrentTime = 0;
 
 window.onload = function() {
 	window.parentView.showMsg("hiddenView:getADsid()");
@@ -179,7 +178,6 @@ function OnOff() {
    if(stv.error != null || stv.networkState == 3 || (time > 10 && stv.currentTime < 2)) {
       if(stv.src.substring(0, 4) == "file")
          return;
-      oldCurrentTime = 0;
       if($('#errorMessage').css('display') != "block") {
          $("#er_msg").text("채널을 가져올수 없음(네트워크 또는 서버 에러)-Timer");
          showErrorMessage();
@@ -231,9 +229,6 @@ function OnOff() {
          timer = null;
          timeSetTV = 0;
       }
-      setTimeout(function() {
-         oldCurrentTime = stv.currentTime;
-      }, 500);
       return;
    }
 }
@@ -335,9 +330,7 @@ function onok() {
       else
          window.parentView.showMsg("msg:" + (i_ch - 2) + "번 보조서버(" + x[si].innerHTML + ") 로 이동합니다");
 
-      if(tvaddr[si] == null)
-         gettv(si);
-      else if(tvaddr[si] == "79") {
+      if(tvaddr[si] == "79") {
          get79tv(si);
          return;
       }
@@ -432,7 +425,7 @@ function onFullscreenOnOff() {
 }
 
 function movieclk(w, url, p) {
-   oldCurrentTime = 0;
+	lastCh = ei;
    stv.pause();
 
    if(touchscreen && oi == p.id) {
@@ -489,19 +482,6 @@ function movieclk(w, url, p) {
       stv.style.display = "block";
       xx = stv;
    }
-   /*
-    if(gi==1 && url.indexOf("tv.trueid.net/embed/") > 0) {
-       if(lastTrueCh != url) {
-          window.parentView.showMsg("trueViewLoadUrl:"+url);
-       }
-       else {
-          window.parentView.showMsg("showTrueView");
-          window.parentView.showMsg("trueView:play()");
-       }
-       return;
-    }
-    else
-    */
    xx.setAttribute("src", url);
    if(w === "tv")
       xx.play();
