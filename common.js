@@ -429,7 +429,8 @@ function onFullscreenOnOff() {
 }
 
 function movieclk(w, url, p) {
-	lastCh = ei;
+	if( lastCh != ei )
+	   lastCh = ei;
    stv.pause();
 
    if(touchscreen && oi == p.id) {
