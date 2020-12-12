@@ -66,7 +66,6 @@ function keychk(e) {
       onright();
    }
    else if( e.which == 13 ) {
-   	isHotKey = 1;
       onok();
    }
    else if( e.which == 49 ) { //1
