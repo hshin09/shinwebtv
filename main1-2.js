@@ -73,11 +73,13 @@ function keychk(e) {
       x[0].click();
    }
    else if( e.which == 50 ) { //2
-      window.parentView.showMsg("launchApp:com.google.android.youtube.tv");
+      x[di].click();
+      //window.parentView.showMsg("launchApp:com.google.android.youtube.tv");
    } 
    else if( e.which == 51 ) { //3
+      di = si;
       //window.parentView.showMsg("launchApp:com.android.chrome");
-      window.parentView.showMsg("launchApp:com.opera.browser.beta");
+      //window.parentView.showMsg("launchApp:com.opera.browser.beta");
    }
    else if( e.which == 52 ) { //4
       //isHotKey = 1;
