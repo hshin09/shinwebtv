@@ -72,17 +72,17 @@ function keychk(e) {
       x[0].click();
    }
    else if( e.which == 50 ) { //2
-      x[lastCh].click();
+      window.parentView.showMsg("launchApp:com.google.android.youtube.tv");
+   } 
+   else if( e.which == 51 ) { //3
+      //window.parentView.showMsg("launchApp:com.android.chrome");
+      window.parentView.showMsg("launchApp:com.opera.browser.beta");
    }
    else if( e.which == 52 ) { //4
       x[gi?18:10].click();
    }
    else if( e.which == 53 ) { //5
-      window.parentView.showMsg("launchApp:com.google.android.youtube.tv");
-   } 
-   else if( e.which == 54 ) { //6
-      //window.parentView.showMsg("launchApp:com.android.chrome");
-      window.parentView.showMsg("launchApp:com.opera.browser.beta");
+      x[lastCh].click();
    }
    else if( e.which == 55 ) { //7
       if( gi == 0 ) {
