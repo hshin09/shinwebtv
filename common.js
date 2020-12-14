@@ -29,9 +29,12 @@ var addr = [
 ];
 
 var touchscreen = 0;
-var trueHostUrl = "https://btm007.com/stream";
-var trueLoadUrl = trueHostUrl + "/a";
-var path = trueHostUrl + "/pc_view.php?ch=live";
+//var trueHostUrl = "https://btm007.com/stream";
+//var trueLoadUrl = trueHostUrl + "/a";
+//var path = trueHostUrl + "/pc_view.php?ch=live";
+var trueHostUrl = "https://youtv24.net";
+var trueLoadUrl = trueHostUrl + "/sites";
+var path = trueLoadUrl + "/mstvs/pages/pc/pc_view.php?ch=live";
 var ch = ['26', '37', '04', '05', '25', '03', '09', '35', '30', '17', '33', '02', '01', '34', '32', '23', '14', '07', '15', '13', '50', '46', '49', '38'];
 var gi = 0;
 var si = 10;
