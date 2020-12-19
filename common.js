@@ -213,6 +213,7 @@ function OnOff() {
                clearAddress(addr[ei][ich]);
             }
             else {
+            	addr[ei][6] = ich - 1;
             	addr[ei][ich].replace("720","540");
             }
             setTimeout(function() {
