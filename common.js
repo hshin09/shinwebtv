@@ -212,6 +212,9 @@ function OnOff() {
                addr[ei][6] = ich - 1;
                clearAddress(addr[ei][ich]);
             }
+            else {
+            	addr[ei][ich].replace("720","540");
+            }
             setTimeout(function() {
                onok();
             }, timeSetTV);
