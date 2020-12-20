@@ -215,6 +215,7 @@ function OnOff() {
             else {
             	addr[ei][6] = ich - 1;
             	addr[ei][ich] = addr[ei][ich].replace("720","540");
+            	addr[ei][ich] = addr[ei][ich].replace("jtbc","j");
             }
             setTimeout(function() {
                onok();
