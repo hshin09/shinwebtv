@@ -105,6 +105,9 @@ function Init() {
 }
 
 function loadMyShTV(url) {
+	pathmyshtv = "https://cdn.jpth10.jpnettv.live/krtv";
+	return;
+	
    var xhr = new XMLHttpRequest();
    xhr.open('GET', url, true);
    xhr.onreadystatechange = function() {
