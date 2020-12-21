@@ -89,7 +89,7 @@ function keychk(e) {
       x[lastCh].click();
    }
    else if( e.which == 54 ) { //6
-      ist = !ist;
+      ist = ist?0:1;
       window.parentView.showMsg("msg:" + pathmyshtv[ist]);
       x[si].click();
    }
