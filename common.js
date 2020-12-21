@@ -188,7 +188,7 @@ function OnOff() {
       return;
    }
 
-   if(stv.error != null || stv.networkState == 3 || (time > 20 && stv.currentTime < 1)) {
+   if(stv.error != null || stv.networkState == 3 || (time > 15 && stv.currentTime < 1)) {
       if(stv.src.substring(0, 4) == "file")
          return;
       if($('#errorMessage').css('display') != "block") {
