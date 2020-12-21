@@ -83,7 +83,9 @@ function getPath() {
 function Init() {
    youtv24 = 1;
    firstSetting();
-   loadMyShTV('https://myshtv.com/live/YTN HD-190.html');
+   pathmyshtv = "https://cdn.jpth10.jpnettv.live/krtv";
+   isLoadedMyshtv = 1;
+   //loadMyShTV('https://myshtv.com/live/YTN HD-190.html');
    window.parentView.showMsg("trueViewLoadUrl:" + trueLoadUrl);
    window.parentView.showMsg("hideTrueView");
 
@@ -105,8 +107,6 @@ function Init() {
 }
 
 function loadMyShTV(url) {
-	pathmyshtv = "https://cdn.jpth10.jpnettv.live/krtv";
-/*	
    var xhr = new XMLHttpRequest();
    xhr.open('GET', url, true);
    xhr.onreadystatechange = function() {
@@ -122,7 +122,6 @@ function loadMyShTV(url) {
       isLoadedMyshtv = 1;
    };
    xhr.send();
-   */
 }
 
 /*
