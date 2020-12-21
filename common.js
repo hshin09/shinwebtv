@@ -59,10 +59,11 @@ var youtv24 = 0;
 var svideo = 0;
 var myshtv = 0;
 var isLoadedMyshtv = 0;
-//var pathmyshtv = "?";
-//var pathmyshtv = "https://cdn.jpth10.jpnettv.live/krtv";
-var pathmyshtv = "https://cdn.kr130.jpnettv.live/live";
-
+var pathmyshtv[2] = [
+"https://cdn.jpth10.jpnettv.live/krtv",
+"https://cdn.kr130.jpnettv.live/live"
+];
+var ist = 0;
 var web;
 var stv;
 var tstr;
@@ -85,7 +86,7 @@ function getPath() {
 function Init() {
    youtv24 = 1;
    firstSetting();
-   if( pathmyshtv == "?" )
+   if( pathmyshtv[ist] == "?" )
       loadMyShTV('https://myshtv.com/live/YTN HD-190.html');
    else
       isLoadedMyshtv = 1;
@@ -121,7 +122,7 @@ function loadMyShTV(url) {
       ssi = str.indexOf('http', ssi);
       var eei = str.indexOf('/ytn_720/', ssi);
       str = str.substring(ssi, eei);
-      pathmyshtv = str;
+      pathmyshtv[ist] = str;
       isLoadedMyshtv = 1;
    };
    xhr.send();
@@ -165,7 +166,7 @@ function OnOff() {
          setTimeout(function() {
             mlok();
          }, 500);
-         window.parentView.showMsg("msg:" + pathmyshtv + " ts=" + touchscreen + " ADsid=" + ADsid);
+         window.parentView.showMsg("msg:" + pathmyshtv[ist] + " ts=" + touchscreen + " ADsid=" + ADsid);
          window.parentView.showMsg("trueView:path = " + path);
       }
       return;
@@ -473,7 +474,7 @@ function movieclk(w, url, p) {
    }
 
    if(url.substr(0, 1) == "/")
-      url = pathmyshtv + url + "playlist.m3u8";
+      url = pathmyshtv[ist] + url + "playlist.m3u8";
 
    stv.volume = 1;
    if(svideo == 1 && gi == 1)
