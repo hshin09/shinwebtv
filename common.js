@@ -59,7 +59,7 @@ var youtv24 = 0;
 var svideo = 0;
 var myshtv = 0;
 var isLoadedMyshtv = 0;
-var pathmyshtv[2] = [
+var pathmyshtv = [
 "https://cdn.jpth10.jpnettv.live/krtv",
 "https://cdn.kr130.jpnettv.live/live"
 ];
