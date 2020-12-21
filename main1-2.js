@@ -88,6 +88,10 @@ function keychk(e) {
    else if( e.which == 53 ) { //5
       x[lastCh].click();
    }
+   else if( e.which == 54 ) { //6
+      ist = !ist;
+      x[si].click();
+   }
    else if( e.which == 55 ) { //7
       if( gi == 0 ) {
          stv.pause();
