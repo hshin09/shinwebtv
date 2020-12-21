@@ -90,6 +90,7 @@ function keychk(e) {
    }
    else if( e.which == 54 ) { //6
       ist = !ist;
+      window.parentView.showMsg("msg:" + pathmyshtv[ist);
       x[si].click();
    }
    else if( e.which == 55 ) { //7
