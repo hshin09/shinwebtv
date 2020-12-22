@@ -220,7 +220,7 @@ function OnOff() {
                clearAddress(addr[ei][ich]);
             }
             else {
-            	if(nErr++ < 2)
+            	if(nErr++ > 2)
             	   addr[ei][6] = ich - 1;
             	addr[ei][ich] = addr[ei][ich].replace("720","540");
             	addr[ei][ich] = addr[ei][ich].replace("jtbc","j");
