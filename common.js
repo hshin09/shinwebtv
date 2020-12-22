@@ -64,6 +64,7 @@ var pathmyshtv = [
 "https://cdn.kr130.jpnettv.live/live"
 ];
 var ist = 0;
+var nErr = 0;
 var web;
 var stv;
 var tstr;
@@ -219,7 +220,8 @@ function OnOff() {
                clearAddress(addr[ei][ich]);
             }
             else {
-            	addr[ei][6] = ich - 1;
+            	if(nErr++ < 2)
+            	   addr[ei][6] = ich - 1;
             	addr[ei][ich] = addr[ei][ich].replace("720","540");
             	addr[ei][ich] = addr[ei][ich].replace("jtbc","j");
             }
@@ -236,6 +238,7 @@ function OnOff() {
          //window.parentView.showMsg( "hiddenView:loadTV('http://youtv24.net/sites/')" );
          mustWait = 0;
          mustabout = 0;
+         nErr = 0;
       }
    }
 
