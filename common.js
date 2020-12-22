@@ -220,10 +220,11 @@ function OnOff() {
                clearAddress(addr[ei][ich]);
             }
             else {
-            	if(nErr++ > 2)
+            	if(nErr++ < 2) {
             	   addr[ei][6] = ich - 1;
-            	addr[ei][ich] = addr[ei][ich].replace("720","540");
-            	addr[ei][ich] = addr[ei][ich].replace("jtbc","j");
+            	   addr[ei][ich] = addr[ei][ich].replace("720","540");
+            	   addr[ei][ich] = addr[ei][ich].replace("jtbc","j");
+            	}
             }
             setTimeout(function() {
                onok();
@@ -234,11 +235,11 @@ function OnOff() {
 
    if($('#secMessage').css('display') == "block" && stv.currentTime > 1) {
       $('#secMessage').css('display', 'none');
+      nErr = 0;
       if(mustabout) {
          //window.parentView.showMsg( "hiddenView:loadTV('http://youtv24.net/sites/')" );
          mustWait = 0;
          mustabout = 0;
-         nErr = 0;
       }
    }
 
