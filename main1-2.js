@@ -89,8 +89,10 @@ function keychk(e) {
       x[lastCh].click();
    }
    else if( e.which == 54 ) { //6
-      ist = ist?0:1;
-      window.parentView.showMsg("msg:" + pathmyshtv[ist]);
+      if( gi == 0 ) {
+         ist = ist?0:1;
+         window.parentView.showMsg("msg:" + pathmyshtv[ist]);
+      }
    }
    else if( e.which == 55 ) { //7
       if( gi == 0 ) {
@@ -118,8 +120,10 @@ function keychk(e) {
       showTime();
    }
    else if( e.which == 57 ) { //9
-      clearAddress("79");
-      x[ei].click();
+      if( gi == 0 ) {
+         clearAddress("79");
+         x[ei].click();
+      }
    }
 
    e.preventDefault();
