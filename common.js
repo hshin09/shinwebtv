@@ -6,8 +6,8 @@ var addr = [
   ["JTBC Golf", "JTBC Golf", "JTBC Golf", "/jtbc_golf_720/", "79", "79", 3],
   ["OCN Movies", "OCN Movies", "OCN Movies", "/cgv_540/", "79", "79", 3],
   ["OCN Original", "OCN Original", "OCN Original", "/ocn_540/", "79", "79", 3],
-  ["영화 Screen", "중화 TV", "영화 Screen", "79", "/chinesetv_540/", "79", 3],
   ["OCN Thrills", "OCN Thrills", "OCN Thrills", "/super_action_540/", "79", "79", 3],
+  ["영화 Screen", "중화 TV", "영화 Screen", "79", "/chinesetv_540/", "79", 3],
   ["Catch ON 1", "Billiards TV", "Catch ON 1", "79", "/billiardstv_540/", "79", 3],
   ["Catch ON 2", "EBS1", "Catch ON 2", "79", "/ebs1_540/", "79", 3],
   ["The Movie", "CNN", "The Movie", "79", "/cnn_kr_540/", "79", 3],
@@ -35,7 +35,7 @@ var touchscreen = 0;
 var trueHostUrl = "http://www.youtv24.net";
 var trueLoadUrl = trueHostUrl + "/sites";
 var path = trueLoadUrl + "/mstvs/pages/pc/pc_view.php?ch=live";
-var ch = ['26', '37', '04', '05', '25', '03', '09', '35', '30', '17', '33', '02', '01', '34', '32', '23', '14', '07', '15', '13', '50', '46', '49', '38'];
+var ch = ['26', '37', '04', '05', '03', '25', '09', '35', '30', '17', '33', '02', '01', '34', '32', '23', '14', '07', '15', '13', '50', '46', '49', '38'];
 var gi = 0;
 var si = 10;
 var oi = 10;
