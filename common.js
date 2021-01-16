@@ -487,7 +487,7 @@ function movieclk(w, url, p) {
    if(svideo == 1 && gi == 1)
       stv.volume = 0.1;
    else if(svideo == 0 && gi == 1 && p.id > 18) {
-      stv.volume = 0.2;
+      stv.volume = 0.3;
       if(p.id == 19 || p.id == 21)
          stv.volume = 0.4;
       else if(p.id == 22)
