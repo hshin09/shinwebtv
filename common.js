@@ -61,7 +61,7 @@ var myshtv = 0;
 var isLoadedMyshtv = 0;
 var pathmyshtv = [
 "https://cdn.kr130.jpnettv.live/live",
-"https://cdn.jpth10.jpnettv.live/krtv" 
+"https://cdn.jpth10.jpnettv.live/krtv"
 ];
 var ist = 0;
 var nErr = 0;
