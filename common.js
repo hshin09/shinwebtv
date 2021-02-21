@@ -12,7 +12,7 @@ var addr = [
   ["Catch ON 2", "EBS1", "Catch ON 2", "79", "/ebs1_540/", "79", 3],
   ["The Movie", "CNN", "The Movie", "79", "/cnn_kr_540/", "79", 3],
   ["NOW", "BBC", "NOW", "79", "/bbc_kr_540/", "79", 3],
-  ["TV 조선 뉴스", "TV 조선 뉴스", "TV 조선 뉴스", "79", "/tvchosun_720/", "79", 3],
+  ["TV 조선 뉴스", "TV 조선 뉴스", "TV 조선 뉴스", "/tvchosun_720/", "79", "79", 3],
   ["채널 A 뉴스", "채널 A 뉴스", "채널 A 뉴스", "/channela_720/", "79", "79", 3],
   ["JTBC 뉴스", "JTBC 뉴스", "JTBC 뉴스", "/jtbc_540/", "79", "79", 3],
   ["YTN 뉴스", "YTN 뉴스", "YTN 뉴스", "/ytn_720/", "79", "79", 3],
@@ -104,7 +104,7 @@ function Init() {
    web = document.getElementById("web");
    for(var i = 0; i < tvaddr.length; i++) {
       backtvaddr[i] = '79';
-      addr[i][3] = '79';
+      if( i != 10 ) addr[i][3] = '79';
       tvaddr[i] = addr[i][3];
    }
    timer = setInterval(function() {
