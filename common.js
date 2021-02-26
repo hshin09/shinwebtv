@@ -107,6 +107,7 @@ function Init() {
       if( i != 10 ) addr[i][3] = '79';
       tvaddr[i] = addr[i][3];
    }
+   mustWait = 2;
    timer = setInterval(function() {
       OnOff();
    }, 500);
