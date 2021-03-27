@@ -497,7 +497,7 @@ function movieclk(w, url, p) {
       else if(p.id == 23)
          stv.volume = 0.3;
    } else if(svideo == 0 && gi == 1) {
-      if(url.indexOf("p0.cdn.vet") > 0) {
+      if(url.indexOf("cdn.vet") > 0) {
          stv.volume = 0.3;
          if(ADsid == '?') {
             window.parentView.showMsg("hiddenView:getADsid()");
