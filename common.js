@@ -9,7 +9,7 @@ var addr = [
   ["OCN Thrills", "OCN Thrills", "OCN Thrills", "/super_action_540/", "79", "79", 3],
   ["영화 Screen", "중화 TV", "영화 Screen", "79", "/chinesetv_540/", "79", 3],
   ["Catch ON 1", "Billiards TV", "Catch ON 1", "79", "/billiardstv_540/", "79", 3],
-  ["Catch ON 2", "EBS1", "Catch ON 2", "79", "/ebs1_540/", "79", 3],
+  ["Catch ON 2", "EBS1", "Catch ON 2", "79", "/ebs_1_540/", "79", 3],
   ["The Movie", "CNN", "The Movie", "79", "/cnn_kr_540/", "79", 3],
   ["NOW", "BBC", "NOW", "79", "/bbc_kr_540/", "79", 3],
   ["TV 조선 뉴스", "TV 조선 뉴스", "TV 조선 뉴스", "/tvchosun_540/", "79", "79", 3],
