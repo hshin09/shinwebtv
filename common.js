@@ -3,7 +3,7 @@ var backtvaddr = new Array(24);
 var tvaddr = new Array(24);
 var addr = [
   ["SBS Golf", "SBS Golf", "SBS Golf", "/sbs_golf_540/", "79", "79", 3],
-  ["JTBC Golf", "JTBC Golf", "JTBC Golf", "/jtbc_golf_540/", "79", "79", 3],
+  ["JTBC Golf", "JTBC Golf", "JTBC Golf", "/j_golf_540/", "79", "79", 3],
   ["OCN Movies", "OCN Movies", "OCN Movies", "/cgv_540/", "79", "79", 3],
   ["OCN Original", "OCN Original", "OCN Original", "/ocn_540/", "79", "79", 3],
   ["OCN Thrills", "OCN Thrills", "OCN Thrills", "/super_action_540/", "79", "79", 3],
