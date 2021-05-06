@@ -24,7 +24,7 @@ var addr = [
   ["KBS2 TV", "KBS2 TV", "KBS2 TV", "/kbs2_540/", "79", "79", 3],
   ["GeoGraphic", "GeoGraphic", "GeoGraphic", "/national_540/", "79", "79", 3],
   ["Discovery", "Discovery", "Discovery", "/discovery_540/", "79", "79", 3],
-  ["History", "SpoTV2", "History", "79", "/spotv_2_540/", "79", 3],
+  ["History", "History", "History", "/history_540/", "79", "79", 3],
   ["MNet", "MNet", "MNet", "/mnet_540/", "79", "79", 3]
 ];
 
