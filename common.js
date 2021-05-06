@@ -2,8 +2,8 @@ var ADsid = '?';
 var backtvaddr = new Array(24);
 var tvaddr = new Array(24);
 var addr = [
-  ["SBS Golf", "SBS Golf", "SBS Golf", "/sbs_golf_720/", "79", "79", 3],
-  ["JTBC Golf", "JTBC Golf", "JTBC Golf", "/jtbc_golf_720/", "79", "79", 3],
+  ["SBS Golf", "SBS Golf", "SBS Golf", "/sbs_golf_540/", "79", "79", 3],
+  ["JTBC Golf", "JTBC Golf", "JTBC Golf", "/jtbc_golf_540/", "79", "79", 3],
   ["OCN Movies", "OCN Movies", "OCN Movies", "/cgv_540/", "79", "79", 3],
   ["OCN Original", "OCN Original", "OCN Original", "/ocn_540/", "79", "79", 3],
   ["OCN Thrills", "OCN Thrills", "OCN Thrills", "/super_action_540/", "79", "79", 3],
@@ -12,19 +12,19 @@ var addr = [
   ["Catch ON 2", "EBS1", "Catch ON 2", "79", "/ebs1_540/", "79", 3],
   ["The Movie", "CNN", "The Movie", "79", "/cnn_kr_540/", "79", 3],
   ["NOW", "BBC", "NOW", "79", "/bbc_kr_540/", "79", 3],
-  ["TV 조선 뉴스", "TV 조선 뉴스", "TV 조선 뉴스", "/tvchosun_720/", "79", "79", 3],
-  ["채널 A 뉴스", "채널 A 뉴스", "채널 A 뉴스", "/channela_720/", "79", "79", 3],
+  ["TV 조선 뉴스", "TV 조선 뉴스", "TV 조선 뉴스", "/tvchosun_540/", "79", "79", 3],
+  ["채널 A 뉴스", "채널 A 뉴스", "채널 A 뉴스", "/channela_540/", "79", "79", 3],
   ["JTBC 뉴스", "JTBC 뉴스", "JTBC 뉴스", "/jtbc_540/", "79", "79", 3],
-  ["YTN 뉴스", "YTN 뉴스", "YTN 뉴스", "/ytn_720/", "79", "79", 3],
-  ["연합 뉴스", "연합 뉴스", "연합 뉴스", "/newsy_720/", "79", "79", 3],
-  ["MBN 뉴스", "MBN 뉴스", "MBN 뉴스", "/mbn_720/", "79", "79", 3],
-  ["SBS TV", "SBS TV", "SBS TV", "/sbs_720/", "79", "79", 3],
-  ["MBC TV", "MBC TV", "MBC TV", "/mbc_720/", "79", "79", 3],
-  ["KBS1 TV", "KBS1 TV", "KBS1 TV", "/kbs1_720/", "79", "79", 3],
-  ["KBS2 TV", "KBS2 TV", "KBS2 TV", "/kbs2_720/", "79", "79", 3],
+  ["YTN 뉴스", "YTN 뉴스", "YTN 뉴스", "/ytn_540/", "79", "79", 3],
+  ["연합 뉴스", "연합 뉴스", "연합 뉴스", "/newsy_540/", "79", "79", 3],
+  ["MBN 뉴스", "MBN 뉴스", "MBN 뉴스", "/mbn_540/", "79", "79", 3],
+  ["SBS TV", "SBS TV", "SBS TV", "/sbs_540/", "79", "79", 3],
+  ["MBC TV", "MBC TV", "MBC TV", "/mbc_540/", "79", "79", 3],
+  ["KBS1 TV", "KBS1 TV", "KBS1 TV", "/kbs1_540/", "79", "79", 3],
+  ["KBS2 TV", "KBS2 TV", "KBS2 TV", "/kbs2_540/", "79", "79", 3],
   ["GeoGraphic", "GeoGraphic", "GeoGraphic", "/national_540/", "79", "79", 3],
   ["Discovery", "Discovery", "Discovery", "/discovery_540/", "79", "79", 3],
-  ["History", "SpoTV2", "History", "79", "/spotv_2_720/", "79", 3],
+  ["History", "SpoTV2", "History", "79", "/spotv_2_540/", "79", 3],
   ["MNet", "MNet", "MNet", "/mnet_540/", "79", "79", 3]
 ];
 
@@ -61,7 +61,7 @@ var myshtv = 0;
 var isLoadedMyshtv = 0;
 var pathmyshtv = [
 "https://cdn.us195.jpnettv.live/krtv",
-"https://cdn.jpth10.jpnettv.live/krtv"
+"https://cdn.kr130.jpnettv.live/krtv"
 ];
 var ist = 0;
 var nErr = 0;
