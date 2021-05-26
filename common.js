@@ -104,10 +104,10 @@ function Init() {
    web = document.getElementById("web");
    for(var i = 0; i < tvaddr.length; i++) {
       backtvaddr[i] = '79';
-      //addr[i][3] = '79';
+      addr[i][3] = '79';
       tvaddr[i] = addr[i][3];
    }
-   //mustWait = 2;
+   mustWait = 2;
    timer = setInterval(function() {
       OnOff();
    }, 500);
