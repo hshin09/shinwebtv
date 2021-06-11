@@ -459,7 +459,7 @@ function onFullscreenOnOff() {
 }
 
 function movieclk(w, url, p) {
-	if( isHotKey == 0 )
+   if( isHotKey == 0 )
       lastCh = ei;
    isHotKey = 0;
    stv.pause();
