@@ -70,7 +70,7 @@ function keychk(e) {
    }
    else if( e.which == 49 ) { //1
       //isHotKey = 1;
-      x[0].click();
+      x[gi?0:1].click();
    }
    else if( e.which == 50 ) { //2
       x[di].click();
