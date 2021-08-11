@@ -283,7 +283,7 @@ function get79tv(i) {
 	ei = i;
    stv.pause();
    stv.src = "empty";
-   $("#ch_name").text(x[ei].innerHTML + "(주소검색중)");
+   $("#ch_name").text(x[ei].innerHTML + "(검색중)");
    $("#videoMessage").css('display', 'block');
    var url = path + ch[ei];
    window.parentView.showMsg("trueView:loadVideo(1,'" + url + "')");
