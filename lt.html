@@ -30,7 +30,7 @@ $('document').ready(function() {
 function addList(p,n)
 {
    var obj = document.createElement('li');
-   obj.setAttribute('innerText', n);
+   obj.appendChild( document.createTextNode( n ) );
    p.appendChild(obj);
 }
 </script>
