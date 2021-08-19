@@ -21,16 +21,17 @@
 var obj10;
 var obj1;
 $('document').ready(function() {
-   obj10 = document.get
+   obj10 = document.getElementById( "u10" );
+   obj1 = document.getElementById( "u1" );
+   addList(obj10,1);
+   addList(obj1,2);
 });
 
-function addList(objId)
+function addList(p,n)
 {
    var obj = document.createElement('li');
-   obj.setAttribute('id', objId);
-   obj.setAttribute('width', '100%');
-   obj.setAttribute('height', '100%');
-   document.body.appendChild(obj);
+   obj.setAttribute('innerText', n);
+   p.appendChild(obj);
 }
 </script>
 </body>
