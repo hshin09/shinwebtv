@@ -15,7 +15,7 @@
    </div>
 <script>
 var tobj, obj10, obj1;
-var max = 5;
+var max = 10;
 var cnt10 = 0, cnt1 = 0, sum, ss;
 var i6,i5,i4,i3,i2,i1,j2,j1;
 var a = [
@@ -40,12 +40,14 @@ $('document').ready(function() {
                         ss = sum+(a[1][6]*j2);
                         if(ss == a[0][6]) {
                            cnt10++;
+                           tobj.innerHTML = cnt10 + "," + cnt1;
                         }
                      }
                      for(j1=1; j1<max; j1++) {
                         ss = sum+(a[1][7]*j1);
                         if(ss == a[0][7]) {
                            cnt1++;
+                           tobj.innerHTML = cnt10 + "," + cnt1;
                         }
                      }
                   }
