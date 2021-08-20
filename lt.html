@@ -50,12 +50,17 @@ $('document').ready(function() {
                               ss = ss+(a[3][6]*j2);
                               ss = ss % 10;
                               if(ss == a[2][6]) {
-                                 cnt10++;
-                                 tobj.innerHTML = cnt10 + "," + cnt1;
-                                 ss = (a[0][0]*i6)+(a[0][1]*i5)+(a[0][2]*i4)+(a[0][3]*i3)+(a[0][4]*i2)+(a[0][5]*i1);
-                                 ss = ss+(a[0][6]*j2);
+                                 ss = (a[4][0]*i6)+(a[4][1]*i5)+(a[4][2]*i4)+(a[4][3]*i3)+(a[4][4]*i2)+(a[4][5]*i1);
+                                 ss = ss+(a[4][6]*j2);
                                  ss = ss % 10;
-                                 addList(obj10,ss);
+                                 if(ss == a[3][6]) {
+                                    cnt10++;
+                                    tobj.innerHTML = cnt10 + "," + cnt1;
+                                    ss = (a[0][0]*i6)+(a[0][1]*i5)+(a[0][2]*i4)+(a[0][3]*i3)+(a[0][4]*i2)+(a[0][5]*i1);
+                                    ss = ss+(a[0][6]*j2);
+                                    ss = ss % 10;
+                                    addList(obj10,ss);
+                                 }
                               }
                            }
                         }
@@ -72,12 +77,17 @@ $('document').ready(function() {
                               ss = ss+(a[3][7]*j1);
                               ss = ss % 10;
                               if(ss == a[2][7]) {
-                                 cnt1++;
-                                 tobj.innerHTML = cnt10 + "," + cnt1;
-                                 ss = (a[0][0]*i6)+(a[0][1]*i5)+(a[0][2]*i4)+(a[0][3]*i3)+(a[0][4]*i2)+(a[0][5]*i1);
-                                 ss = ss+(a[0][7]*j1);
+                                 ss = (a[4][0]*i6)+(a[4][1]*i5)+(a[4][2]*i4)+(a[4][3]*i3)+(a[4][4]*i2)+(a[4][5]*i1);
+                                 ss = ss+(a[4][7]*j1);
                                  ss = ss % 10;
-                                 addList(obj1,ss);
+                                 if(ss == a[3][7]) {
+                                    cnt1++;
+                                    tobj.innerHTML = cnt10 + "," + cnt1;
+                                    ss = (a[0][0]*i6)+(a[0][1]*i5)+(a[0][2]*i4)+(a[0][3]*i3)+(a[0][4]*i2)+(a[0][5]*i1);
+                                    ss = ss+(a[0][7]*j1);
+                                    ss = ss % 10;
+                                    addList(obj1,ss);
+                                 }
                               }
                            }
                         }
