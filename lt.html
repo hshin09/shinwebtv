@@ -39,6 +39,7 @@ $('document').ready(function() {
                      for(j2=1; j2<max; j2++) {
                         ss = sum+(a[1][6]*j2);
                         ss = ss % 10;
+                        tobj.innerHTML = ss;
                         if(ss == a[0][6]) {
                            cnt10++;
                            tobj.innerHTML = cnt10 + "," + cnt1;
