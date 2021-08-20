@@ -14,17 +14,18 @@
       </ul>
    </div>
 <script>
-var obj10;
-var obj1;
+var tobj, obj10, obj1;
 var max = 5;
-var cnt10 = 0, cnt1 = 0;
+var cnt10 = 0, cnt1 = 0, sum, ss;
 var i6,i5,i4,i3,i2,i1,j2,j1;
 var a = [
-   [],
-   [],
-   []
-]
+   [5,5,6,7,2,5,7,0],
+   [7,1,3,5,1,7,2,9],
+   [6,9,1,8,6,1,1,7]
+];
+
 $('document').ready(function() {
+   tobj = document.getElementById( "title" );
    obj10 = document.getElementById( "u10" );
    obj1 = document.getElementById( "u1" );
    
@@ -34,9 +35,18 @@ $('document').ready(function() {
             for(i3=1; i3<max; i3++) {
                for(i2=1; i2<max; i2++) {
                   for(i1=1; i1<max; i1++) {
+                     sum = (a[1][0]*i6)+(a[1][1]*i5)+(a[1][2]*i4)+(a[1][3]*i3)+(a[1][4]*i2)+(a[1][5]*i1);
                      for(j2=1; j2<max; j2++) {
+                        ss = sum+(a[1][6]*j2);
+                        if(ss == a[0][6]) {
+                           cnt10++;
+                        }
                      }
                      for(j1=1; j1<max; j1++) {
+                        ss = sum+(a[1][7]*j1);
+                        if(ss == a[0][7]) {
+                           cnt1++;
+                        }
                      }
                   }
                }
@@ -45,7 +55,7 @@ $('document').ready(function() {
       }
    }
 
-   document.getElementById( "title" ).innerHTML = cnt10 + ",," + cnt1;
+   tobj.innerHTML = cnt10 + "," + cnt1;
 });
 
 function addList(p,n)
