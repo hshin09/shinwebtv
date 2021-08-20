@@ -4,7 +4,7 @@
    <script src="https://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
 </head>
 <body style="background-color:white">
-   <h1>LT</h1>
+   <h1 id="title">start</h1>
    <div style="float:left; width=20%">
       <ul id="u10" style="list-style-type:none;">
       </ul>
@@ -21,6 +21,8 @@ $('document').ready(function() {
    obj1 = document.getElementById( "u1" );
    addList(obj10,5);
    addList(obj1,6);
+
+   document.getElementById( "title" ).innerHTML = "end";
 });
 
 function addList(p,n)
