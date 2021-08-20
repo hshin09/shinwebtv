@@ -16,7 +16,7 @@
 <script>
 var tobj, obj10, obj1;
 var max = 6;
-var cnt10 = 0, cnt1 = 0, sum, ss;
+var cnt10 = 0, cnt1 = 0, sum, ss, s;
 var i6,i5,i4,i3,i2,i1,j2,j1;
 var a = [
    [5,5,6,7,2,5,7,0],
@@ -39,10 +39,14 @@ $('document').ready(function() {
                      for(j2=1; j2<max; j2++) {
                         ss = sum+(a[1][6]*j2);
                         ss = ss % 10;
-                        //tobj.innerHTML = ss;
                         if(ss == a[0][6]) {
-                           cnt10++;
-                           tobj.innerHTML = cnt10 + "," + cnt1;
+                           s = (a[2][0]*i6)+(a[2][1]*i5)+(a[2][2]*i4)+(a[2][3]*i3)+(a[2][4]*i2)+(a[2][5]*i1);
+                           s = s+(a[2][6]*j2));
+                           s = s % 10;
+                           if(ss == a[1][6]) {
+                              cnt10++;
+                              tobj.innerHTML = cnt10 + "," + cnt1;
+                           }
                         }
                      }
                      for(j1=1; j1<max; j1++) {
