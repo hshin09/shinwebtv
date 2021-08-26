@@ -72,13 +72,13 @@ $('document').ready(function() {
       }
    }
 
-   tobj.innerHTML = cnt10 + "," + cnt1 + " End";
+   tobj.innerHTML = cnt10 + "," + cnt1 + " End.";
 });
 
 function calc(n,x)
 {
    var s = (a[n][0]*i6)+(a[n][1]*i5)+(a[n][2]*i4)+(a[n][3]*i3)+(a[n][4]*i2)+(a[n][5]*i1);
-   //s = s + a[n][6];
+   s = s + a[n][6];
    //s = s + a[n][7];
    if( x != 0 )
       s = s % x;
