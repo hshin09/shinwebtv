@@ -52,8 +52,8 @@ $('document').ready(function() {
                         if(ss == a[0][6]) {
                            ss = calc(2,100);
                            if(ss == a[1][6]) {
-                              //ss = calc(3,100);
-                              //if(ss == a[2][6]) {
+                              ss = calc(3,100);
+                              if(ss == a[2][6]) {
                                  //ss = calc(4,10);
                                  //if(ss == a[3][6]) {
                                     cnt10++;
@@ -61,7 +61,7 @@ $('document').ready(function() {
                                     ss = calc(0,100);
                                     addList(obj10,ss);
                                  //}
-                              //}
+                              }
                            }
                         }
                      }
@@ -72,7 +72,7 @@ $('document').ready(function() {
       }
    }
 
-   tobj.innerHTML = cnt10 + "," + cnt1 + " End.";
+   tobj.innerHTML = cnt10 + "," + cnt1 + " End";
 });
 
 function calc(n,x)
