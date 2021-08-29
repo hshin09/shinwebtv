@@ -4,9 +4,9 @@ var tvaddr = new Array(24);
 var addr = [
   ["SBS Golf", "SBS Golf", "SBS Golf", "/sbs_golf_540/", "79", "79", 3],
   ["JTBC Golf", "JTBC Golf", "JTBC Golf", "/j_golf_540/", "79", "79", 3],
-  ["OCN Movies", "OCN Movies", "OCN Movies", "79", "/cgv_540/", "79", 3],
+  ["OCN Movies", "OCN Movies", "OCN Movies", "/cgv_540/", "79", "79", 3],
   ["OCN Original", "OCN Original", "OCN Original", "/ocn_540/", "79", "79", 3],
-  ["OCN Thrills", "OCN Thrills", "OCN Thrills", "79", "/super_action_540/", "79", 3],
+  ["OCN Thrills", "OCN Thrills", "OCN Thrills", "/super_action_540/", "79", "79", 3],
   ["영화 Screen", "중화 TV", "영화 Screen", "79", "/chinesetv_540/", "79", 3],
   ["Catch ON 1", "Billiards TV", "Catch ON 1", "79", "/billiardstv_540/", "79", 3],
   ["Catch ON 2", "EBS1", "Catch ON 2", "79", "/ebs_1_540/", "79", 3],
