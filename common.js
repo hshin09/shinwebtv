@@ -103,7 +103,7 @@ function Init() {
    stv = $('#tv').get(0);
    web = document.getElementById("web");
    for(var i = 0; i < tvaddr.length; i++) {
-      //backtvaddr[i] = '79';
+      backtvaddr[i] = '79';
       //addr[i][3] = '79';
       tvaddr[i] = addr[i][3];
    }
