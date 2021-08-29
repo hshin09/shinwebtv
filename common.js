@@ -22,7 +22,7 @@ var addr = [
   ["MBC TV", "MBC TV", "MBC TV", "/mbc_540/", "79", "79", 3],
   ["KBS1 TV", "KBS1 TV", "KBS1 TV", "/kbs1_540/", "79", "79", 3],
   ["KBS2 TV", "KBS2 TV", "KBS2 TV", "/kbs2_540/", "79", "79", 3],
-  ["GeoGraphic", "GeoGraphic", "GeoGraphic", "79", "/national_540/", "79", 3],
+  ["GeoGraphic", "GeoGraphic", "GeoGraphic", "/national_540/", "79", "79", 3],
   ["Discovery", "Discovery", "Discovery", "/discovery_540/", "79", "79", 3],
   ["History", "History", "History", "/history_540/", "79", "79", 3],
   ["MNet", "MNet", "MNet", "/mnet_540/", "79", "79", 3]
