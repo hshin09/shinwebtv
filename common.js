@@ -60,7 +60,7 @@ var svideo = 0;
 var myshtv = 0;
 var isLoadedMyshtv = 0;
 var pathmyshtv = [
-"https://cdn.th136.jpnettv.live/krtv",
+"https://cdn.us195.jpnettv.live/krtv",
 "https://cdn.us195.jpnettv.live/krtv"
 ];
 var ist = 0;
@@ -103,8 +103,8 @@ function Init() {
    stv = $('#tv').get(0);
    web = document.getElementById("web");
    for(var i = 0; i < tvaddr.length; i++) {
-      backtvaddr[i] = '79';
-      addr[i][3] = '79';
+      //backtvaddr[i] = '79';
+      //addr[i][3] = '79';
       tvaddr[i] = addr[i][3];
    }
    mustWait = 2;
