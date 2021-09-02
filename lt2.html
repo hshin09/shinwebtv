@@ -18,7 +18,7 @@ var tobj, obj10, obj1;
 var max = 10;
 var cnt10 = 0, cnt1 = 0, sum, ss;
 var i6,i5,i4,i3,i2,i1,j2,j1;
-var e[100];
+var e = new Array(100);
 var a = [
 /* [1,1,4,4,7,5,79,9,1],  
 */   [0,4,6,7,5,0,23,8,16],
@@ -44,8 +44,7 @@ $('document').ready(function() {
    obj10 = document.getElementById( "u10" );
    obj1 = document.getElementById( "u1" );
    
-   for(i=0; i<100; i++)
-      e[i] = 0;
+   e.fill(0);
 
    for(i6=1; i6<max; i6++) {
       for(i5=1; i5<max; i5++) {
@@ -81,7 +80,7 @@ $('document').ready(function() {
 
    for(i=0; i<100; i++)
       if(e[i]>0) addList(obj1,e[i]);
-   tobj.innerHTML = cnt10 + "," + cnt1 + " End";
+   tobj.innerHTML = cnt10 + "," + cnt1 + " End.";
 });
 
 function calc(n,x)
