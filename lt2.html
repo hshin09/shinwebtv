@@ -104,20 +104,20 @@ function exec()
                            }
                         }
                      }
-                  }
-                  ss = calc(7,rbi+1,10);
-                  for(j2=1; j2<2; j2++) {
-                     if(ss == a[rbi+0][7]) {
-                        ss = calc(7,rbi+2,10);
-                        if(ss == a[rbi+1][7]) {
-                           ss = calc(7,rbi+3,10);
-                           if(ss == a[rbi+2][7]) {
-                              ss = calc(7,rbi+4,10);
-                              if(ss == a[rbi+3][7]) {
-                                 cnt1++;
-                                 tobj.innerHTML = cnt10 + "," + cnt1;
-                                 ss = calc(7,rbi+0,10);
-                                 e1[ss]++;
+                     ss = calc(7,rbi+1,10);
+                     for(j2=1; j2<2; j2++) {
+                        if(ss == a[rbi+0][7]) {
+                           ss = calc(7,rbi+2,10);
+                           if(ss == a[rbi+1][7]) {
+                              ss = calc(7,rbi+3,10);
+                              if(ss == a[rbi+2][7]) {
+                                 ss = calc(7,rbi+4,10);
+                                 if(ss == a[rbi+3][7]) {
+                                    cnt1++;
+                                    tobj.innerHTML = cnt10 + "," + cnt1;
+                                    ss = calc(7,rbi+0,10);
+                                    e1[ss]++;
+                                 }
                               }
                            }
                         }
