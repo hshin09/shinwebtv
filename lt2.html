@@ -4,7 +4,10 @@
    <script src="https://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
 </head>
 <body style="background-color:white">
-   <h1 id="title">start</h1>
+   <div><h1 id="title">start</h1></div>
+   <div style="float:left">
+      <input style="number" id="max" value="7"></input>
+   </div>
    <div id="drb" style="float:left; width=50%"></div>
    <div style="float:left; width=10%">
       <ul id="u10" style="list-style-type:none;">
@@ -15,7 +18,7 @@
       </ul>
    </div>
 <script>
-var tobj, obj10, obj1;
+var tobj, tmax, obj10, obj1;
 var max = 7;
 var cnt10 = 0, cnt1 = 0, sum, ss;
 var i6,i5,i4,i3,i2,i1,j2,i;
@@ -42,6 +45,7 @@ var a = [
 
 $('document').ready(function() {
    tobj = document.getElementById( "title" );
+   tmax = document.getElementById( "max" );
    obj10 = document.getElementById( "u10" );
    obj1 = document.getElementById( "u1" );
    
@@ -72,6 +76,7 @@ $('document').ready(function() {
 
 function exec(rbi)
 {
+   max = tmax.value;
    cnt10 = 0;
    cnt1 = 0;
    e10.fill(0);  
