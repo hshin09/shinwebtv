@@ -63,7 +63,8 @@ $('document').ready(function() {
       radio.setAttribute('onchange','clkRadio(this)');
 							
       label.setAttribute('for','trb'+i);
-      label.innerHTML = a[i][0]+a[i][1]+a[i][2]+a[i][3]+a[i][4]+a[i][5]+","+a[i][6]+a[i][7];
+      label.innerHTML = a[i][0]+a[i][1];
+      //label.innerHTML = a[i][0]+a[i][1]+a[i][2]+a[i][3]+a[i][4]+a[i][5]+","+a[i][6]+a[i][7];
 			
       drb.appendChild(radio);
       drb.appendChild(label);
@@ -74,7 +75,8 @@ $('document').ready(function() {
 
 function exec()
 {
-   cnt10 = cnt1 = 0;
+   cnt10 = 0;
+   cnt1 = 0;
    e10.fill(0);  
    e1.fill(0);
    obj10.innerHTML = "";
@@ -96,7 +98,7 @@ function exec()
                                  ss = calc(6,rbi+4,10);
                                  if(ss == a[rbi+3][6]) {
                                     cnt10++;
-                                    tobj.innerHTML = cnt10 + "," + cnt1;
+                                    //tobj.innerHTML = cnt10 + "," + cnt1;
                                     ss = calc(6,rbi+0,10);
                                     e10[ss]++;
                                  }
@@ -114,7 +116,7 @@ function exec()
                                  ss = calc(7,rbi+4,10);
                                  if(ss == a[rbi+3][7]) {
                                     cnt1++;
-                                    tobj.innerHTML = cnt10 + "," + cnt1;
+                                    //tobj.innerHTML = cnt10 + "," + cnt1;
                                     ss = calc(7,rbi+0,10);
                                     e1[ss]++;
                                  }
