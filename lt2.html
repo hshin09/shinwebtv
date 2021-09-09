@@ -51,10 +51,10 @@ $('document').ready(function() {
    var br;
    var drb = document.getElementById('drb');
 		
-   for (i = 0; i < a.length-4; i++) {
+   for(i = 0; i < a.length-4; i++) {
       radio = document.createElement('INPUT');
       label = document.createElement('LABEL');
-      br = document.createElement('BR');
+      tbr = document.createElement('BR');
 			
       radio.setAttribute('type','radio');
       radio.setAttribute('name','trb');
@@ -63,11 +63,11 @@ $('document').ready(function() {
       radio.setAttribute('onclick','clkRadio(this)');
 							
       label.setAttribute('for','trb'+i);
-      label.innerHTML = a[i][0]+a[i][1]+a[i][2]+a[i][3]+a[i][4]+a[i][5]+","a[i][6]+a[i][7];
+      label.innerHTML = a[i][0]+a[i][1]+a[i][2]+a[i][3]+a[i][4]+a[i][5]+","+a[i][6]+a[i][7];
 			
       drb.appendChild(radio);
       drb.appendChild(label);
-      drb.appendChild(br);
+      drb.appendChild(tbr);
    }
 });
 
