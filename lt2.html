@@ -91,7 +91,7 @@ function exec()
                   for(i1=1; i1<max; i1++) {
                      ss = calc(6,(rbi+1),10);
                      for(j2=1; j2<2; j2++) {
-                        if(ss == a[rbi+0][6]) {
+                        if(ss == a[(rbi+0)][6]) {
                            ss = calc(6,(rbi+2),10);
                            if(ss == a[(rbi+1)][6]) {
                               ss = calc(6,(rbi+3),10);
@@ -131,7 +131,7 @@ function exec()
          }
       }
    }
-
+   alert("end1");
    for(i=0; i<10; i++) {
       if(e10[i] > 0) {
          addList(obj10,i);
@@ -141,7 +141,7 @@ function exec()
       }
    }
    tobj.innerHTML = cnt10 + "," + cnt1 + " End.";
-   alert("end");
+   alert("end2");
 }
 
 function clkRadio(param)
