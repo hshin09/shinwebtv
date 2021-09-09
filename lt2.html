@@ -79,8 +79,6 @@ function exec(rbi)
    obj10.innerHTML = " ";
    obj1.innerHTML = " ";
 
-   tobj.innerHTML = "start.";
-
    for(i6=1; i6<max; i6++) {
       for(i5=1; i5<max; i5++) {
          for(i4=1; i4<max; i4++) {
@@ -127,7 +125,7 @@ function exec(rbi)
          }
       }
    }
-   alert("end1");
+
    for(i=0; i<10; i++) {
       if(e10[i] > 0) {
          addList(obj10,i);
@@ -137,7 +135,6 @@ function exec(rbi)
       }
    }
    tobj.innerHTML = cnt10 + "," + cnt1 + " End.";
-   alert("end2");
 }
 
 function clkRadio(param)
@@ -149,7 +146,6 @@ function clkRadio(param)
 
 function calc(c,n,x)
 {
-alert(c+","+n+","+x);
    var s = (a[n][0]*i6)+(a[n][1]*i5)+(a[n][2]*i4)+(a[n][3]*i3)+(a[n][4]*i2)+(a[n][5]*i1);
    s = s + a[n][c];
    s = s + a[n][8] + a[n][9];
