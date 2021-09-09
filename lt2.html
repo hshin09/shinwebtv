@@ -13,6 +13,7 @@
       <ul id="u1" style="list-style-type:none;">
       </ul>
    </div>
+   <div id="drb"></div>
 <script>
 var tobj, obj10, obj1;
 var max = 7;
@@ -21,7 +22,7 @@ var i6,i5,i4,i3,i2,i1,j2,j1;
 var e10 = new Array(100);
 var e1 = new Array(100);
 var a = [
-/* [1,1,4,4,7,5,7,9,9,1],  
+   [1,1,4,4,7,5,7,9,9,1],  
    [0,4,6,7,5,0,2,3,8,16],
    [9,1,0,2,6,1,6,9,8,1],
    [5,5,6,7,2,5,7,0,7,16],
@@ -31,20 +32,49 @@ var a = [
    [6,8,4,5,7,9,1,4,5,16],
    [5,0,1,2,7,2,1,8,5,2],
    [1,0,0,7,8,7,5,6,4,16],
-*/   [4,7,2,2,7,0,0,5,4,1],
+   [4,7,2,2,7,0,0,5,4,1],
    [8,9,0,4,2,2,1,9,3,16],
    [8,3,5,5,3,8,7,3,3,1],
    [4,2,4,6,0,3,3,9,2,16],
    [9,1,2,3,0,7,9,7,2,1],
    [3,8,4,3,9,5,1,5,1,17]
 ];
-var i;
+var i,rbi=0;
 
 $('document').ready(function() {
    tobj = document.getElementById( "title" );
    obj10 = document.getElementById( "u10" );
    obj1 = document.getElementById( "u1" );
+   
+   var radio;
+   var label;
+   var br;
+   var drb = document.getElementById('drb');
+		
+   for (i = 0; i < a.length-5; i++) {
+      radio = document.createElement('INPUT');
+      label = document.createElement('LABEL');
+      br = document.createElement('BR');
+			
+      radio.setAttribute('type','radio');
+      radio.setAttribute('name','trb');
+      radio.setAttribute('value',i);
+      radio.setAttribute('id','trb'+i);
+      radio.setAttribute('onclick','clkRadio(this)');
+							
+      label.setAttribute('for','trb'+i);
+      label.innerHTML = a[i][0]+a[i][1]+a[i][2]+a[i][3]+a[i][4]+a[i][5]+","a[i][6]+a[i][7];
+			
+      drb.appendChild(radio);
+      drb.appendChild(label);
+      drb.appendChild(br);
+   }
+});
 
+
+function exec()
+{
+   cnt10 = cnt1 = 0;
    e10.fill(0);  
    e1.fill(0);
 
@@ -54,18 +84,18 @@ $('document').ready(function() {
             for(i3=1; i3<max; i3++) {
                for(i2=1; i2<max; i2++) {
                   for(i1=1; i1<max; i1++) {
-                     ss = calc(6,1,10);
+                     ss = calc(6,rbi+1,10);
                      for(j2=1; j2<2; j2++) {
-                        if(ss == a[0][6]) {
-                           ss = calc(6,2,10);
-                           if(ss == a[1][6]) {
-                              ss = calc(6,3,10);
-                              if(ss == a[2][6]) {
-                                 ss = calc(6,4,10);
-                                 if(ss == a[3][6]) {
+                        if(ss == a[rbi+0][6]) {
+                           ss = calc(6,rbi+2,10);
+                           if(ss == a[rbi+1][6]) {
+                              ss = calc(6,rbi+3,10);
+                              if(ss == a[rbi+2][6]) {
+                                 ss = calc(6,rbi+4,10);
+                                 if(ss == a[rbi+3][6]) {
                                     cnt10++;
                                     tobj.innerHTML = cnt10 + "," + cnt1;
-                                    ss = calc(6,0,10);
+                                    ss = calc(6,rbi+0,10);
                                     e10[ss]++;
                                  }
                               }
@@ -73,18 +103,18 @@ $('document').ready(function() {
                         }
                      }
                   }
-                  ss = calc(7,1,10);
+                  ss = calc(7,rbi+1,10);
                   for(j2=1; j2<2; j2++) {
-                     if(ss == a[0][7]) {
-                        ss = calc(7,2,10);
-                        if(ss == a[1][7]) {
-                           ss = calc(7,3,10);
-                           if(ss == a[2][7]) {
-                              ss = calc(7,4,10);
-                              if(ss == a[3][7]) {
+                     if(ss == a[rbi+0][7]) {
+                        ss = calc(7,rbi+2,10);
+                        if(ss == a[rbi+1][7]) {
+                           ss = calc(7,rbi+3,10);
+                           if(ss == a[rbi+2][7]) {
+                              ss = calc(7,rbi+4,10);
+                              if(ss == a[rbi+3][7]) {
                                  cnt1++;
                                  tobj.innerHTML = cnt10 + "," + cnt1;
-                                 ss = calc(7,0,10);
+                                 ss = calc(7,rbi+0,10);
                                  e1[ss]++;
                               }
                            }
@@ -106,7 +136,15 @@ $('document').ready(function() {
       }
    }
    tobj.innerHTML = cnt10 + "," + cnt1 + " End.";
-});
+}
+
+function clkRadio(param)
+{
+   if(param.checked == true ){
+      rbi = param.getAttribute('id');
+      exec();
+   }
+}
 
 function calc(c,n,x)
 {
