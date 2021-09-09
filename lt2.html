@@ -19,8 +19,8 @@ var tobj, obj10, obj1;
 var max = 7;
 var cnt10 = 0, cnt1 = 0, sum, ss;
 var i6,i5,i4,i3,i2,i1,j2,j1;
-var e10 = new Array(100);
-var e1 = new Array(100);
+var e10 = new Array(10);
+var e1 = new Array(10);
 var a = [
    [1,1,4,4,7,5,7,9,9,1],  
    [0,4,6,7,5,0,2,3,8,16],
@@ -51,7 +51,7 @@ $('document').ready(function() {
    var tbr;
    var drb = document.getElementById('drb');
 		
-   for(i = 0; i < a.length-4; i++) {
+   for(i=0; i<a.length-4; i++) {
       radio = document.createElement('INPUT');
       label = document.createElement('LABEL');
       tbr = document.createElement('BR');
@@ -63,7 +63,7 @@ $('document').ready(function() {
       radio.setAttribute('onchange','clkRadio(this)');
 							
       label.setAttribute('for','trb'+i);
-      label.innerHTML = a[i][0]+""+a[i][1]+""+a[i][2]+""+a[i][3]+""+a[i][4]+""+a[i][5]+","+a[i][6]+""+a[i][7];
+      label.innerHTML = a[i][0]+""+a[i][1]+""+a[i][2]+""+a[i][3]+""+a[i][4]+""+a[i][5]+", "+a[i][6]+""+a[i][7];
 			
       drb.appendChild(radio);
       drb.appendChild(label);
@@ -130,7 +130,7 @@ function exec()
       }
    }
 
-   for(i=0; i<100; i++) {
+   for(i=0; i<10; i++) {
       if(e10[i] > 0) {
          addList(obj10,i);
       }
@@ -145,7 +145,6 @@ function clkRadio(param)
 {
    if(param.checked == true ){
       rbi = param.getAttribute('value');
-      alert(rbi);
       exec();
    }
 }
@@ -155,7 +154,7 @@ function calc(c,n,x)
    var s = (a[n][0]*i6)+(a[n][1]*i5)+(a[n][2]*i4)+(a[n][3]*i3)+(a[n][4]*i2)+(a[n][5]*i1);
    s = s + a[n][c];
    s = s + a[n][8] + a[n][9];
-   if( x != 0 )
+   if( x > 0 )
       s = s % x;
    return s;
 }
