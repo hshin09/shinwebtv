@@ -5,7 +5,7 @@
 </head>
 <body style="background-color:white">
    <div>
-      <input style="width=50" type="number" id="max" value="7"></input>
+      <input style="width=50" type="number" id="max" "onchange=exec()" value="7"></input>
    </div>
    <h1 id="title">start</h1>
    <div id="drb" style="float:left; width=50%"></div>
@@ -21,7 +21,7 @@
 var tobj, tmax, obj10, obj1;
 var max = 7;
 var cnt10 = 0, cnt1 = 0, sum, ss;
-var i6,i5,i4,i3,i2,i1,j2,i;
+var i6,i5,i4,i3,i2,i1,j2,i,rbi;
 var e10 = new Array(10);
 var e1 = new Array(10);
 var a = [
@@ -74,7 +74,7 @@ $('document').ready(function() {
    }
 });
 
-function exec(rbi)
+function exec()
 {
    max = tmax.value;
    cnt10 = 0;
@@ -145,7 +145,8 @@ function exec(rbi)
 function clkRadio(param)
 {
    if(param.checked == true ){
-      exec(Number(param.getAttribute('value')));
+      rdi = Number(param.getAttribute('value'));
+      exec();
    }
 }
 
