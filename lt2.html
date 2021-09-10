@@ -6,6 +6,7 @@
 <body style="background-color:white">
    <div>
       <input style="width=50" type="number" id="max" onchange="exec()" value="7"></input>
+      <label><input style="checkbox" id="ckb" onchange="exec()"></input>Date</label>
    </div>
    <h1 id="title">start</h1>
    <div id="drb" style="float:left; width=50%"></div>
@@ -26,10 +27,10 @@ h3 {
 </style>
 
 <script>
-var tobj, tmax, obj10, obj1;
+var tobj, tmax, tckb, obj10, obj1;
 var max = 7;
 var cnt10 = 0, cnt1 = 0, sum, ss;
-var i6,i5,i4,i3,i2,i1,j2,i,rbi;
+var i6,i5,i4,i3,i2,i1,j2,i,rbi,ckb = false;
 var e10 = new Array(10);
 var e1 = new Array(10);
 var a = [
@@ -54,6 +55,7 @@ var a = [
 $('document').ready(function() {
    tobj = document.getElementById( "title" );
    tmax = document.getElementById( "max" );
+   tckb = document.getElementById( "ckb" );
    obj10 = document.getElementById( "u10" );
    obj1 = document.getElementById( "u1" );
    
@@ -85,6 +87,7 @@ $('document').ready(function() {
 function exec()
 {
    max = tmax.value;
+   ckb = tckb.checked;
    cnt10 = 0;
    cnt1 = 0;
    e10.fill(0);  
@@ -162,7 +165,8 @@ function calc(c,n,x)
 {
    var s = (a[n][0]*i6)+(a[n][1]*i5)+(a[n][2]*i4)+(a[n][3]*i3)+(a[n][4]*i2)+(a[n][5]*i1);
    s = s + a[n][c];
-   s = s + a[n][8] + a[n][9];
+   if(ckb)
+      s = s + a[n][8] + a[n][9];
    if( x > 0 )
       s = s % x;
    return s;
