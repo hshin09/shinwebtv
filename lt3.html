@@ -5,8 +5,8 @@
 </head>
 <body style="background-color:white">
    <div>
-      <input style="float:left; width:10%" type="number" id="max" onchange="exec()" value="7"></input>
-      <input style="float:left; width:20" type="number" id="mcnt" onchange="exec()" value="4"></input>
+      <input style="float:left; width:5%" type="number" id="max" onchange="exec()" value="7"></input>
+      <input style="float:left; width:5%" type="number" id="mcnt" onchange="exec()" value="4"></input>
       <label><input type="checkbox" id="ckb" onchange="exec()" checked></input>Date</label>
    </div>
    <h1 id="title">start</h1>
@@ -28,7 +28,7 @@ h3 {
 </style>
 
 <script>
-var tobj, tmax, tckb, obj10, obj1;
+var tobj, tmax, tmcnt, tckb, obj10, obj1;
 var max = 7, mcnt = 4;
 var cnt10 = 0, cnt1 = 0, sum, ss;
 var i6,i5,i4,i3,i2,i1,j2,i,rbi,ckb = true;
@@ -57,6 +57,7 @@ var a = [
 $('document').ready(function() {
    tobj = document.getElementById( "title" );
    tmax = document.getElementById( "max" );
+   tmcnt = document.getElementById( "mcnt" );
    tckb = document.getElementById( "ckb" );
    obj10 = document.getElementById( "u10" );
    obj1 = document.getElementById( "u1" );
@@ -89,6 +90,7 @@ $('document').ready(function() {
 function exec()
 {
    max = tmax.value;
+   mcnt = tmcnt.value;
    ckb = tckb.checked;
    cnt10 = 0;
    cnt1 = 0;
