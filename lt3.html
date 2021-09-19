@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <script src="https://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
+</head>
+<body style="background-color:white">
+   <div>
+      <input style="float:left; width=10%" type="number" id="max" onchange="exec()" value="7"></input>
+      <input style="float:left; width=10%" type="number" id="mcnt" onchange="exec()" value="4"></input>
+      <label><input type="checkbox" id="ckb" onchange="exec()" checked></input>Date</label>
+   </div>
+   <h1 id="title">start</h1>
+   <div id="drb" style="float:left; width=50%"></div>
+   <div style="float:left; width=10%">
+      <h3>X0</h3>
+      <ul id="u10" style="list-style-type:none;">
+      </ul>
+   </div>
+   <div style="float:left; width=10%">
+      <h3>0X</h3>
+      <ul id="u1" style="list-style-type:none;">
+      </ul>
+   </div>
+<style>
+h3 {
+   text-align: right;
+}
+</style>
+
+<script>
+var tobj, tmax, tckb, obj10, obj1;
+var max = 7, mcnt = 4;
+var cnt10 = 0, cnt1 = 0, sum, ss;
+var i6,i5,i4,i3,i2,i1,j2,i,rbi,ckb = true;
+var e10 = new Array(10);
+var e1 = new Array(10);
+var a = [
+   [0,7,0,9,3,5,9,0,9,16],
+   [1,1,4,4,7,5,7,9,9,1],  
+   [0,4,6,7,5,0,2,3,8,16],
+   [9,1,0,2,6,1,6,9,8,1],
+   [5,5,6,7,2,5,7,0,7,16],
+   [7,1,3,5,1,7,2,9,7,1],
+   [6,9,1,8,6,1,1,7,6,16],
+   [2,9,2,9,7,2,4,5,6,1],
+   [6,8,4,5,7,9,1,4,5,16],
+   [5,0,1,2,7,2,1,8,5,2],
+   [1,0,0,7,8,7,5,6,4,16],
+   [4,7,2,2,7,0,0,5,4,1],
+   [8,9,0,4,2,2,1,9,3,16],
+   [8,3,5,5,3,8,7,3,3,1],
+   [4,2,4,6,0,3,3,9,2,16],
+   [9,1,2,3,0,7,9,7,2,1],
+   [3,8,4,3,9,5,1,5,1,17]
+];
+
+$('document').ready(function() {
+   tobj = document.getElementById( "title" );
+   tmax = document.getElementById( "max" );
+   tckb = document.getElementById( "ckb" );
+   obj10 = document.getElementById( "u10" );
+   obj1 = document.getElementById( "u1" );
+   
+   var radio;
+   var label;
+   var tbr;
+   var drb = document.getElementById('drb');
+		
+   for(i=0; i<a.length-4; i++) {
+      radio = document.createElement('INPUT');
+      label = document.createElement('LABEL');
+      tbr = document.createElement('BR');
+			
+      radio.setAttribute('type','radio');
+      radio.setAttribute('name','trb');
+      radio.setAttribute('value',i);
+      radio.setAttribute('id','trb'+i);
+      radio.setAttribute('onchange','clkRadio(this)');
+							
+      label.setAttribute('for','trb'+i);
+      label.innerHTML = a[i][0]+""+a[i][1]+""+a[i][2]+""+a[i][3]+""+a[i][4]+""+a[i][5]+", "+a[i][6]+""+a[i][7]+", "+a[i][8]+"/"+a[i][9];
+			
+      drb.appendChild(radio);
+      drb.appendChild(label);
+      drb.appendChild(tbr);
+   }
+});
+
+function exec()
+{
+   max = tmax.value;
+   ckb = tckb.checked;
+   cnt10 = 0;
+   cnt1 = 0;
+   e10.fill(0);  
+   e1.fill(0);
+   obj10.innerHTML = " ";
+   obj1.innerHTML = " ";
+
+   for(i6=1; i6<max; i6++) {
+      for(i5=1; i5<max; i5++) {
+         for(i4=1; i4<max; i4++) {
+            for(i3=1; i3<max; i3++) {
+               for(i2=1; i2<max; i2++) {
+                  for(i1=1; i1<max; i1++) {
+                     ss = calc(6,(rbi+1),10);
+                     for(j2=1; j2<2; j2++) {
+                        if(ss == a[(rbi+0)][6]) {
+                           ss = calc(6,(rbi+2),10);
+                           if(ss == a[(rbi+1)][6]) {
+                              ss = calc(6,(rbi+3),10);
+                              if(ss == a[(rbi+2)][6]) {
+                                 ss = calc(6,(rbi+4),10);
+                                 if(ss == a[(rbi+3)][6]) {
+                                    cnt10++;
+                                    ss = calc(6,(rbi+0),10);
+                                    e10[ss]++;
+                                 }
+                              }
+                           }
+                        }
+                     }
+                     ss = calc(7,(rbi+1),10);
+                     for(j2=1; j2<2; j2++) {
+                        if(ss == a[(rbi+0)][7]) {
+                           ss = calc(7,(rbi+2),10);
+                           if(ss == a[(rbi+1)][7]) {
+                              ss = calc(7,(rbi+3),10);
+                              if(ss == a[(rbi+2)][7]) {
+                                 ss = calc(7,(rbi+4),10);
+                                 if(ss == a[(rbi+3)][7]) {
+                                    cnt1++;
+                                    ss = calc(7,(rbi+0),10);
+                                    e1[ss]++;
+                                 }
+                              }
+                           }
+                        }
+                     }
+                  }
+               }
+            }
+         }
+      }
+   }
+
+   for(i=0; i<10; i++) {
+      if(e10[i] > 0) {
+         addList(obj10,i);
+      }
+      if(e1[i] > 0) {
+         addList(obj1,i);
+      }
+   }
+   tobj.innerHTML = cnt10 + "," + cnt1 + " End.";
+}
+
+function clkRadio(param)
+{
+   if(param.checked == true ){
+      rbi = Number(param.getAttribute('value'));
+      exec();
+   }
+}
+
+function calc(c,n,x)
+{
+   var s = (a[n][0]*i6)+(a[n][1]*i5)+(a[n][2]*i4)+(a[n][3]*i3)+(a[n][4]*i2)+(a[n][5]*i1);
+   s = s + a[n][c];
+   if(ckb)
+      s = s + a[n][8] + a[n][9];
+   if( x > 0 )
+      s = s % x;
+   return s;
+}
+
+function addList(p,n)
+{
+   var obj = document.createElement('li');
+   obj.appendChild( document.createTextNode( n ) );
+   p.appendChild(obj);
+}
+</script>
+</body>
+</html>
