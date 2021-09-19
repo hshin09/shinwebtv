@@ -5,7 +5,7 @@
 </head>
 <body style="background-color:white">
    <div>
-      <input style="float:left; width:5%" type="number" id="max" onchange="exec()" value="5"></input>
+      <input style="float:left; width:5%" type="number" id="max" onchange="exec()" value="6"></input>
       <input style="float:left; width:5%" type="number" id="mcnt" onchange="exec()" value="6"></input>
       <label><input type="checkbox" id="ckb" onchange="exec()" checked></input>Date</label>
    </div>
@@ -89,7 +89,7 @@ $('document').ready(function() {
 
 function exec()
 {
-   max = tmax.value+1;
+   max = tmax.value;
    mcnt = tmcnt.value;
    ckb = tckb.checked;
    cnt10 = 0;
