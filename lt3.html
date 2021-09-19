@@ -105,38 +105,28 @@ function exec()
             for(i3=1; i3<max; i3++) {
                for(i2=1; i2<max; i2++) {
                   for(i1=1; i1<max; i1++) {
-                     ss = calc(6,(rbi+1),10);
                      for(j2=1; j2<max; j2++) {
-                        if(ss == a[(rbi+0)][6]) {
-                           ss = calc(6,(rbi+2),10);
-                           if(ss == a[(rbi+1)][6]) {
-                              ss = calc(6,(rbi+3),10);
-                              if(ss == a[(rbi+2)][6]) {
-                                 ss = calc(6,(rbi+4),10);
-                                 if(ss == a[(rbi+3)][6]) {
-                                    cnt10++;
-                                    ss = calc(6,(rbi+0),10);
-                                    e10[ss]++;
-                                 }
-                              }
-                           }
+                        for(i=0; i<mcnt; i++) {
+                           ss = calc(6,(rbi+i+1),10);
+                           if(ss != a[(rbi+i)][6])
+                              break;
                         }
-                     }
-                     ss = calc(7,(rbi+1),10);
+                        if(i == mcnt) {
+                           cnt10++;
+                           ss = calc(6,(rbi+0),10);
+                           e10[ss]++;
+                        }
+                     }                     
                      for(j2=1; j2<max; j2++) {
-                        if(ss == a[(rbi+0)][7]) {
-                           ss = calc(7,(rbi+2),10);
-                           if(ss == a[(rbi+1)][7]) {
-                              ss = calc(7,(rbi+3),10);
-                              if(ss == a[(rbi+2)][7]) {
-                                 ss = calc(7,(rbi+4),10);
-                                 if(ss == a[(rbi+3)][7]) {
-                                    cnt1++;
-                                    ss = calc(7,(rbi+0),10);
-                                    e1[ss]++;
-                                 }
-                              }
-                           }
+                        for(i=0; i<mcnt; i++) {
+                           ss = calc(7,(rbi+i+1),10);
+                           if(ss != a[(rbi+i)][7])
+                              break;
+                        }
+                        if(i == mcnt) {
+                           cnt1++;
+                           ss = calc(7,(rbi+0),10);
+                           e1[ss]++;
                         }
                      }
                   }
