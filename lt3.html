@@ -100,13 +100,13 @@ function exec()
    obj10.innerHTML = " ";
    obj1.innerHTML = " ";
 
-   for(i6=1; i6<max; i6++) {
-      for(i5=1; i5<max; i5++) {
-         for(i4=1; i4<max; i4++) {
-            for(i3=1; i3<max; i3++) {
-               for(i2=1; i2<max; i2++) {
-                  for(i1=1; i1<max; i1++) {
-                     for(j2=1; j2<max; j2++) {
+   for(i6=0; i6<max; i6++) {
+      for(i5=0; i5<max; i5++) {
+         for(i4=0; i4<max; i4++) {
+            for(i3=0; i3<max; i3++) {
+               for(i2=0; i2<max; i2++) {
+                  for(i1=0; i1<max; i1++) {
+                     for(j2=0; j2<max; j2++) {
                         for(i=0; i<mcnt; i++) {
                            ss = calc(6,(rbi+i+1),10);
                            if(ss != a[(rbi+i)][6])
@@ -118,7 +118,7 @@ function exec()
                            e10[ss]++;
                         }
                      }                     
-                     for(j2=1; j2<max; j2++) {
+                     for(j2=0; j2<max; j2++) {
                         for(i=0; i<mcnt; i++) {
                            ss = calc(7,(rbi+i+1),10);
                            if(ss != a[(rbi+i)][7])
