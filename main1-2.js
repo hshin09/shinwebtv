@@ -75,7 +75,7 @@ function keychk(e) {
             clearInterval(timer);
             timer=null;
          }
-         window.parentView.showMsg("trueViewLoadUrl:" + "https://tvchak6.com/a");
+         //window.parentView.showMsg("trueViewLoadUrl:" + "https://tvchak6.com/a");
          window.parentView.showMsg("trueView:loadMode = 0");
          window.parentView.showMsg("trueView:showYouTvMode = 1;");
          window.parentView.showMsg("trueView:full = 1; onFullscreenOnOff()");
@@ -117,7 +117,7 @@ function keychk(e) {
             clearInterval(timer);
             timer=null;
          }
-         window.parentView.showMsg("trueViewLoadUrl:" + trueLoadUrl);  
+         //window.parentView.showMsg("trueViewLoadUrl:" + trueLoadUrl);  
          window.parentView.showMsg("trueView:loadMode = 0");
          //window.parentView.showMsg("trueView:full = 1; onFullscreenOnOff()");
          window.parentView.showMsg("showTrueView");
