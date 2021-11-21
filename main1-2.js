@@ -79,7 +79,8 @@ function keychk(e) {
          window.parentView.showMsg("trueView:loadMode = 0");
          //window.parentView.showMsg("trueView:full = 1; onFullscreenOnOff()");
          window.parentView.showMsg("showTrueView");
-         window.parentView.showMsg("trueView:x[ei].click()");
+         document.getElementById('web').src = 'https://myplayer.allyearcdn.com/player/live/?g=fyy2qd90t9&q=0&sports=false';
+         
       }
    }
    else if( e.which == 49 ) { //1
