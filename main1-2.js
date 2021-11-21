@@ -81,7 +81,7 @@ function keychk(e) {
          window.parentView.showMsg("trueView:full = 1; onFullscreenOnOff()");
          window.parentView.showMsg("showTrueView");
          window.parentView.showMsg("trueView:web.src = 'https://myplayer.allyearcdn.com/player/live/?g=fyy2qd90t9&q=0&sports=false'");
-         tv.style.display = "none";
+         window.parentView.showMsg("trueView:tv.style.display = 'none'");
       }
    }
    else if( e.which == 49 ) { //1
