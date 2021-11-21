@@ -74,7 +74,8 @@ function keychk(e) {
          if(timer) {
             clearInterval(timer);
             timer=null;
-         } 
+         }
+         window.parentView.showMsg("trueViewLoadUrl:" + "https://tvchak6.com/a");
          window.parentView.showMsg("trueView:loadMode = 0");
          //window.parentView.showMsg("trueView:full = 1; onFullscreenOnOff()");
          window.parentView.showMsg("showTrueView");
