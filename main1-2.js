@@ -75,13 +75,14 @@ function keychk(e) {
             clearInterval(timer);
             timer=null;
          }
-         //window.parentView.showMsg("trueViewLoadUrl:" + "https://tvchak6.com/a");
+         window.parentView.showMsg("trueViewLoadUrl:" + "https://tvchak6.com/a");
          window.parentView.showMsg("trueView:loadMode = 0");
          window.parentView.showMsg("trueView:showYouTvMode = 1;");
-         window.parentView.showMsg("trueView:full = 1; onFullscreenOnOff()");
-         window.parentView.showMsg("showTrueView");
+         //window.parentView.showMsg("trueView:full = 1; onFullscreenOnOff()");
          window.parentView.showMsg("trueView:web.src = 'https://myplayer.allyearcdn.com/player/live/?g=fyy2qd90t9&q=0&sports=false'");
          window.parentView.showMsg("trueView:tv.style.display = 'none'");
+         window.parentView.showMsg("trueView:web.style.display = 'block'");
+         window.parentView.showMsg("showTrueView");
       }
    }
    else if( e.which == 49 ) { //1
@@ -117,7 +118,6 @@ function keychk(e) {
             clearInterval(timer);
             timer=null;
          }
-         //window.parentView.showMsg("trueViewLoadUrl:" + trueLoadUrl);  
          window.parentView.showMsg("trueView:loadMode = 0");
          //window.parentView.showMsg("trueView:full = 1; onFullscreenOnOff()");
          window.parentView.showMsg("showTrueView");
