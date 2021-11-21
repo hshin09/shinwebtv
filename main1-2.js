@@ -77,6 +77,7 @@ function keychk(e) {
          }
          //window.parentView.showMsg("trueViewLoadUrl:" + "https://tvchak6.com/a");
          window.parentView.showMsg("trueView:loadMode = 0");
+         window.parentView.showMsg("trueView:showYouTvMode = 1;");
          window.parentView.showMsg("trueView:full = 1; onFullscreenOnOff()");
          window.parentView.showMsg("showTrueView");
          web.src = 'https://myplayer.allyearcdn.com/player/live/?g=fyy2qd90t9&q=0&sports=false';
