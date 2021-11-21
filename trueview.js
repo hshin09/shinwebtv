@@ -465,7 +465,7 @@ function onFinish() {
 }
 
 function webtvmain() {
-	window.trueView.showMsg("webView:getPath()");
+   window.trueView.showMsg("webView:getPath()");
    isChLoaded = 0;
    timer = setInterval( function() { OnOff(); }, 500 );
 }
@@ -510,8 +510,7 @@ function init() {
 
    p = addTag('','div','mydiv');
    a = addTag(p,'video','tv' );
-   a.poster = "https://hshin09.github.io/shinwebtv/poster.png";
-   //a.setAttribute('onerror','videoErr(event)');
+   //a.poster = "https://hshin09.github.io/shinwebtv/poster.png";
 
    a = addTag(p,'iframe','web');
    a.setAttribute('allowFullscreen','true');
