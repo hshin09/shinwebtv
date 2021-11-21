@@ -528,6 +528,8 @@ function init() {
       tv.style.display = "none";
    else
       web.style.top = "100vh";
+
+   tv.style.display = "none";
 }
 
 init();
