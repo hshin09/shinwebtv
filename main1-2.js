@@ -68,6 +68,19 @@ function keychk(e) {
    else if( e.which == 13 ) {
       onok();
    }
+   else if( e.which == 48 ) { //0
+      if( gi == 0 ) {
+         stv.pause();
+         if(timer) {
+            clearInterval(timer);
+            timer=null;
+         } 
+         window.parentView.showMsg("trueView:loadMode = 0");
+         //window.parentView.showMsg("trueView:full = 1; onFullscreenOnOff()");
+         window.parentView.showMsg("showTrueView");
+         window.parentView.showMsg("trueView:x[ei].click()");
+      }
+   }
    else if( e.which == 49 ) { //1
       //isHotKey = 1;
       x[gi?0:1].click();
