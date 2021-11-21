@@ -277,6 +277,9 @@ function keychk(e) {
       if( loadMode == 0 )
          onok();
    }
+   else if( e.which == 48 ) { //0
+      tv.style.display = "none";
+   }
    else if( e.which == 49 ) { //1
       x[9].click();
    }
