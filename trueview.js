@@ -510,7 +510,7 @@ function init() {
 
    p = addTag('','div','mydiv');
    a = addTag(p,'video','tv' );
-   //a.poster = "https://hshin09.github.io/shinwebtv/poster.png";
+   a.poster = "https://hshin09.github.io/shinwebtv/poster.png";
 
    a = addTag(p,'iframe','web');
    a.setAttribute('allowFullscreen','true');
@@ -528,8 +528,6 @@ function init() {
       tv.style.display = "none";
    else
       web.style.top = "100vh";
-
-   tv.style.display = "none";
 }
 
 init();
