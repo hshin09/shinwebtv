@@ -92,7 +92,8 @@ function Init() {
       loadMyShTV('https://myshtv.com/live/YTN HD-190.html');
    else
       isLoadedMyshtv = 1;
-   window.parentView.showMsg("trueViewLoadUrl:" + trueLoadUrl);
+   //window.parentView.showMsg("trueViewLoadUrl:" + trueLoadUrl);
+   window.parentView.showMsg("trueViewLoadUrl:" + "https://tvchak6.com/a");
    window.parentView.showMsg("hideTrueView");
 
    if(myshtv == 0)
