@@ -60,7 +60,6 @@ function init() {
 
    p = addTag('','div','mydiv');
    a = addTag(p,'video','tv' );
-   a.poster = "https://hshin09.github.io/shinwebtv/poster.png";
 
    a = addTag(p,'iframe','web');
    a.setAttribute('allowFullscreen','true');
@@ -69,12 +68,13 @@ function init() {
    
    a = addTag(p,'div','videoMessage');
    addTag(a,'p','ch_name');
-   
+/*   
    tv = document.getElementById('tv');
    web = document.getElementById('web');
    ch_name = document.getElementById('ch_name');
    web.style.top = "4vh";
-   //tv.style.display = "none";
+   tv.style.display = "none";
+*/
 }
 
 init();
