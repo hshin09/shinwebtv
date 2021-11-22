@@ -6,7 +6,6 @@ head.appendChild(scr);
 
 function firstSetting()
 {
-	alert(document.domain);
    touchscreen = 0;
    window.onkeydown = keychk;
 }
