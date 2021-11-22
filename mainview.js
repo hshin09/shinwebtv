@@ -90,7 +90,7 @@ function init() {
    web.style.top = "4vh";
    tv.style.display = "none";
 */
-   alert( document.getElementsByTagName('html')[0].innerHTML );
+   alert( "a" );
    Init();
    alert( document.getElementsByTagName('html')[0].innerHTML );
 }
