@@ -85,7 +85,8 @@ function getHtml(url)
    xhr.onreadystatechange= function() {
       if(this.readyState!==4) return;
       if(this.status!==200) return;
-      document.getElementsByTagName('body')[0] = this.responseText;
+      alert(this.responseText);
+      document.getElementsByTagName('html')[0].innerHTML = this.responseText;
    };
    xhr.send();
 } 
