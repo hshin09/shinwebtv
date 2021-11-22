@@ -44,14 +44,14 @@ function loadMenu(id,url) {
 function init() {
    document.body.innerHTML = "";
 
-   loadStyle('https://hshin09.github.io/shinwebtv/main.css');
-   loadScript('https://code.jquery.com/jquery-latest.min.js');
-   loadScript('https://hshin09.github.io/shinwebtv/main1-2.js');
-      
    var meta=document.createElement('meta');
    meta.name='viewport';
    meta.setAttribute('content','width=device-width, height=device-height, initial-scale=1.0');
    document.getElementsByTagName('head')[0].appendChild(meta);
+   
+   loadStyle('https://hshin09.github.io/shinwebtv/main.css');
+   loadScript('https://code.jquery.com/jquery-latest.min.js');
+   loadScript('https://hshin09.github.io/shinwebtv/main1-2.js');
    
    var p, a;
    var pp = p = addTag('','div','leftmenu');
@@ -69,15 +69,14 @@ function init() {
    
    a = addTag(p,'div','videoMessage');
    addTag(a,'p','ch_name');
-  
+/*  
    tv = document.getElementById('tv');
    web = document.getElementById('web');
    ch_name = document.getElementById('ch_name');
-   //web.style.top = "4vh";
+   web.style.top = "4vh";
    tv.style.display = "none";
-
+*/
    alert( document.getElementsByTagName('html')[0].innerHTML );
-   web.src = 'https://myplayer.allyearcdn.com/player/live/?g=fyy2qd90t9&q=0&sports=false';
 }
  
 function getHtml(url)
