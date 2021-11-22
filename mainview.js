@@ -44,9 +44,9 @@ function loadMenu(id,url) {
 function init() {
    document.body.innerHTML = "";
 
-   //loadStyle('https://hshin09.github.io/shinwebtv/main.css');
-   //loadScript('https://hshin09.github.io/shinwebtv/main1-2.js');
-   
+   loadScript('https://hshin09.github.io/shinwebtv/main1-2.js');
+   loadStyle('https://hshin09.github.io/shinwebtv/main.css');
+      
    var meta=document.createElement('meta');
    meta.name='viewport';
    meta.setAttribute('content','width=device-width, height=device-height, initial-scale=1.0');
