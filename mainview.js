@@ -45,7 +45,7 @@ function init() {
    document.body.innerHTML = "";
 
    loadStyle('https://hshin09.github.io/shinwebtv/main.css');
-   loadScript('https://hshin09.github.io/shinwebtv/main1-2.js');
+   //loadScript('https://hshin09.github.io/shinwebtv/main1-2.js');
    
    var meta=document.createElement('meta');
    meta.name='viewport';
