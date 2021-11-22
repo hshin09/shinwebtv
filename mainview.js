@@ -78,4 +78,4 @@ function init() {
    web.src = 'https://myplayer.allyearcdn.com/player/live/?g=fyy2qd90t9&q=0&sports=false';
 }
 
-init();
+//init();
