@@ -44,7 +44,7 @@ function loadMenu(id,url) {
 function init() {
    document.body.innerHTML = "";
 
-   loadStyle('https://hshin09.github.io/shinwebtv/youtvkor.css');
+   loadStyle('https://hshin09.github.io/shinwebtv/main.css');
    loadScript('https://hshin09.github.io/shinwebtv/main1-2.js');
    
    var meta=document.createElement('meta');
@@ -75,7 +75,7 @@ function init() {
    //web.style.top = "4vh";
    tv.style.display = "none";
 
-   web.src = 'https://myplayer.allyearcdn.com/player/live/?g=fyy2qd90t9&q=0&sports=false';
+   //web.src = 'https://myplayer.allyearcdn.com/player/live/?g=fyy2qd90t9&q=0&sports=false';
 }
 
 var request; 
@@ -103,5 +103,5 @@ function state_change()
    } 
 }
 
-getHtml();
-//init();
+//getHtml();
+init();
