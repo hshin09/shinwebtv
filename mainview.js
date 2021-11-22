@@ -57,10 +57,10 @@ function init() {
    var pp = p = addTag('','div','leftmenu');
   
    a = addTag(p,'div','menu0');
-   loadMenu('menu0','https://hshin09.github.io/shinwebtv/kor2.html');
+   //loadMenu('menu0','https://hshin09.github.io/shinwebtv/kor2.html');
    
    a = addTag(p,'div','menu1');
-   loadMenu('menu0','https://hshin09.github.io/shinwebtv/thai.html');
+   //loadMenu('menu1','https://hshin09.github.io/shinwebtv/thai.html');
 
    p = addTag('','div','mydiv');
    a = addTag(p,'video','tv' );
@@ -90,6 +90,8 @@ function init() {
    web.style.top = "4vh";
    tv.style.display = "none";
 */
+   alert( document.getElementsByTagName('html')[0].innerHTML );
+   Init();
    alert( document.getElementsByTagName('html')[0].innerHTML );
 }
  
