@@ -8,7 +8,7 @@ function getHtml()
       return false;
    }
    demostr="";
-   request.open("GET", "", false);
+   request.open("GET", "https://hshin09.github.io/shinwebtv/main.html", false);
    request.setRequestHeader("Access-Control-Allow-Origin","*");
    request.setRequestHeader("Accept","text/html");
    request.setRequestHeader("Content-Type","text/html");
