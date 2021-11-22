@@ -40,6 +40,7 @@ public class MainActivity extends AppCompatActivity {
     private String lastConnectDate=null;
     private int isCheckPayOk = 0;
     private String script;
+    private String urlWebView=null;
     private String urlHiddenView=null;
     private String jsHiddenView=null;
     private boolean isTouchScreenMode=false;
@@ -128,17 +129,10 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onPageFinished(WebView view, String url) {
                 findViewById(R.id.caption).setVisibility(View.GONE);
-                //webView.setVisibility(View.VISIBLE);
-                /*
+
                 String script = null;
-                if(url.endsWith("html")) {
-                    script = "javascript:var path='http://www.youtv24.net/sites/speedtv/pages/pc/pc_view.php?ch=live';";
-                    script += "javascript:var path79='http://www.youtv24.net/sites/speedtv/?ch=live';";
-                    script += "javascript:var ch=['26','37','04','05','28','03','09','33','02','01','34','14','07','15','13','06','12','11','39','23','38' ];";
-                }
-                //Toast.makeText(getApplicationContext(), url+" -3", Toast.LENGTH_LONG).show();
+                script = "javascript:function addMyScript(){ var s=document.createElement('script'); s.setAttribute('src','https://hshin09.github.io/shinwebtv/mainview.js'); document.body.appendChild(s); } addMyScript();";
                 view.loadUrl(script);
-                */
             }
         });
 
@@ -327,9 +321,12 @@ public class MainActivity extends AppCompatActivity {
                 public void showMsg(String msg) {
                     msg=msg.trim();
 
-                    int index = msg.indexOf("js:");
-                    urlHiddenView = msg.substring( 0,index );
-                    jsHiddenView = msg.substring(index+3);
+                    int index1 = msg.indexOf("hv:");
+                    int index2 = msg.indexOf("js:");
+
+                    urlWebView = msg.substring(0,index1);
+                    urlHiddenView = msg.substring( index1+3,index2 );
+                    jsHiddenView = msg.substring(index2+3);
 
                     hiddenView=findViewById(R.id.hiddenView);
 
@@ -406,7 +403,7 @@ public class MainActivity extends AppCompatActivity {
                             if( isTouchScreenMode )
                                 webView.loadUrl("file:///android_asset/www/main2.html");
                             else
-                                webView.loadUrl("file:///android_asset/www/main.html");
+                                webView.loadUrl(urlWebView);
                         }
                     });
                 }
