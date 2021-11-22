@@ -55,7 +55,7 @@ function init() {
    var pp = p = addTag('','div','leftmenu');
   
    a = addTag(p,'div','menu0');
-   loadMenu('menu0','https://hshin09.github.io/shinwebtv/youtvkor.html');
+   loadMenu('menu0','https://hshin09.github.io/shinwebtv/kor2.html');
 
    p = addTag('','div','mydiv');
    a = addTag(p,'video','tv' );
@@ -74,6 +74,8 @@ function init() {
    ch_name = document.getElementById('ch_name');
    web.style.top = "4vh";
    tv.style.display = "none";
+   
+   loadScript('https://hshin09.github.io/shinwebtv/main1-2.js');
 }
 
 init();
