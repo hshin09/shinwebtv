@@ -109,4 +109,4 @@ function getHtml(url)
 } 
 
 //getHtml('https://hshin09.github.io/shinwebtv/main.html');
-init();
+//init();
