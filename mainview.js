@@ -91,7 +91,7 @@ function init() {
    tv.style.display = "none";
 */
    alert( "a" );
-   Init();
+   //Init();
    alert( document.getElementsByTagName('html')[0].innerHTML );
 }
  
