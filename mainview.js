@@ -58,9 +58,14 @@ function init() {
   
    a = addTag(p,'div','menu0');
    loadMenu('menu0','https://hshin09.github.io/shinwebtv/kor2.html');
+   
+   a = addTag(p,'div','menu1');
+   loadMenu('menu0','https://hshin09.github.io/shinwebtv/thai.html');
 
    p = addTag('','div','mydiv');
    a = addTag(p,'video','tv' );
+   a.setAttribute('autoplay','true');
+   a.setAttribute('onerror','videoErr(event)');
 
    a = addTag(p,'iframe','web');
    a.setAttribute('allowFullscreen','true');
@@ -69,6 +74,13 @@ function init() {
    
    a = addTag(p,'div','videoMessage');
    addTag(a,'p','ch_name');
+   
+   a = addTag(p,'div','secMessage');
+   addTag(a,'p','sec');
+   
+   a = addTag(p,'div','errorMessage');
+   addTag(a,'H2','er_msg');
+   a.setAttribute('align','center'); 
 /*  
    tv = document.getElementById('tv');
    web = document.getElementById('web');
