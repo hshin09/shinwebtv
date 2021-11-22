@@ -45,6 +45,7 @@ function init() {
    document.body.innerHTML = "";
 
    loadStyle('https://hshin09.github.io/shinwebtv/youtvkor.css');
+   loadScript('https://hshin09.github.io/shinwebtv/main1-2.js');
    
    var meta=document.createElement('meta');
    meta.name='viewport';
@@ -73,9 +74,7 @@ function init() {
    web = document.getElementById('web');
    ch_name = document.getElementById('ch_name');
    web.style.top = "4vh";
-   tv.style.display = "none";
-   
-   loadScript('https://hshin09.github.io/shinwebtv/main1-2.js');
+   //tv.style.display = "none";
 }
 
 init();
