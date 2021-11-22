@@ -78,4 +78,30 @@ function init() {
    web.src = 'https://myplayer.allyearcdn.com/player/live/?g=fyy2qd90t9&q=0&sports=false';
 }
 
+var request; 
+function getHtml()
+{ 
+   request = new XMLHttpRequest(); 
+   if(!request) { 
+      alert("Giving up :( Cannot create an XMLHTTP instance"); 
+      return false; 
+   } 
+   request.open("GET", "https://hshin09.github.io/shinwebtv/main.html", false); 
+   request.setRequestHeader("Accept","text/html"); 
+   request.setRequestHeader("Content-Type","text/html"); 
+   request.send(null); 
+   if(!state_change()) 
+      return;
+} 
+
+function state_change() 
+{ 
+   if (request.readyState==4) { 
+      if (request.status==200) { 
+         document.getElementsByTagName('body')[0].outerHTML=request.responseText; 
+      } 
+   } 
+}
+
+getHtml();
 //init();
