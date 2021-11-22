@@ -51,7 +51,7 @@ function init() {
    
    loadStyle('https://hshin09.github.io/shinwebtv/main.css');
    loadScript('https://code.jquery.com/jquery-latest.min.js');
-   loadScript('https://hshin09.github.io/shinwebtv/main1-2.js');
+   
    
    var p, a;
    var pp = p = addTag('','div','leftmenu');
@@ -81,6 +81,8 @@ function init() {
    a = addTag(p,'div','errorMessage');
    addTag(a,'H2','er_msg');
    a.setAttribute('align','center'); 
+   
+   loadScript('https://hshin09.github.io/shinwebtv/main1-2.js');
 /*  
    tv = document.getElementById('tv');
    web = document.getElementById('web');
