@@ -75,6 +75,7 @@ function init() {
    web.style.top = "4vh";
    tv.style.display = "none";
 */
+   alert(document.domain);
 }
 
 init();
