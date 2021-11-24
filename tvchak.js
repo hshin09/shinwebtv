@@ -54,8 +54,7 @@ function init() {
    loadScript('https://hshin09.github.io/shinwebtv/main1-2.js');
    
    var p = addTag('','div','m');
-   $('#m').load("https://hshin09.github.io/shinwebtv/main.html");
-   Init();
+   $('html').load("https://hshin09.github.io/shinwebtv/main.html");
 }
  
 function getHtml(url)
