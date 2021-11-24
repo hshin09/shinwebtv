@@ -1,3 +1,8 @@
+var ss = document.createElement('script');
+   ss.type = "text/javascript";
+   ss.src = "https://code.jquery.com/jquery-latest.min.js";
+   document.querySelector('head').appendChild(ss);
+
 function loadScript(url) {
    var head  = document.getElementsByTagName('head')[0];
    var scr  = document.createElement('script');
@@ -43,11 +48,6 @@ function loadMenu(id,url) {
 
 function init() {
    document.body.innerHTML = "";
-  
-   var ss = document.createElement('script');
-   ss.type = "text/javascript";
-   ss.src = "https://code.jquery.com/jquery-latest.min.js";
-   document.querySelector('head').appendChild(ss);
 
    document.querySelector('head').id="head";
    document.querySelector('body').id="body"; 
