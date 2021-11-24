@@ -125,4 +125,4 @@ function init2() {
 }
 //getHtml('https://hshin09.github.io/shinwebtv/main.html');
 //init();
-init2();
+//init2();
