@@ -12,7 +12,7 @@ var addr = [
   ["Catch ON 2", "EBS1", "Catch ON 2", "79", "/ebs_1_540/", "79", 3],
   ["The Movie", "CNN", "The Movie", "79", "/cnn_kr_540/", "79", 3],
   ["NOW", "BBC", "NOW", "79", "/bbc_kr_540/", "79", 3],
-  ["TV 조선 뉴스", "TV 조선 뉴스", "TV 조선 뉴스", "/tvchosun_540/", "79", "79", 3],
+  ["TV 조선 뉴스", "TV 조선 뉴스", "TV 조선 뉴스", "79", "*4b1cksgsle", "79", 3],
   ["채널 A 뉴스", "채널 A 뉴스", "채널 A 뉴스", "/channela_540/", "79", "79", 3],
   ["JTBC 뉴스", "JTBC 뉴스", "JTBC 뉴스", "/jtbc_540/", "79", "79", 3],
   ["YTN 뉴스", "YTN 뉴스", "YTN 뉴스", "/ytn_540/", "79", "79", 3],
@@ -485,8 +485,13 @@ function movieclk(w, url, p) {
       get79tv(p.id);
       return;
    }
+ 
+   if(url.substr(0,1) == "*") {
+      w = "web";
+      url = "https://myplayer.allyearcdn.com/player/live/?g=" + substr(1) + "&q=0&sports=false";
+   }
 
-   if(url.substr(0, 1) == "/")
+   if(url.substr(0,1) == "/")
       url = pathmyshtv[ist] + url + "playlist.m3u8";
 
    stv.volume = 1;
