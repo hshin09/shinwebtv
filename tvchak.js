@@ -53,8 +53,8 @@ function init() {
    loadScript('https://code.jquery.com/jquery-latest.min.js');
    loadScript('https://hshin09.github.io/shinwebtv/main1-2.js');
    
-   var p = addTag('','div','main');
-   loadMenu('main','https://hshin09.github.io/shinwebtv/main.html');
+   var p = addTag('','div','m');
+   $('#m').load("https://hshin09.github.io/shinwebtv/main.html");
    Init();
 }
  
