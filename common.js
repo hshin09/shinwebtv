@@ -516,8 +516,10 @@ function movieclk(w, url, p) {
 
    var xx;
    if(w === "web") {
-      if(tvchak)
+      if(tvchak) {
          url = pathTvChak + url + optTvChak;
+         showTime();
+      }
       stv.style.display = "none";
       xx = web;
    } else {
