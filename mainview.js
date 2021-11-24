@@ -1,22 +1,27 @@
-function init()
-{
-   document.body.innerHTML = "";
+function loadMenu(id,url) {
+   var xhr= new XMLHttpRequest();
+   xhr.open('GET', url, true);
+   xhr.onreadystatechange= function() {
+      if(this.readyState!==4) return;
+      if(this.status!==200) return;
+      document.getElementById(id).innerHTML = this.responseText;
+   };
+   xhr.send();
+}
 
-   var ss = document.createElement('script');
-   ss.type = "text/javascript";
-   ss.src = "https://code.jquery.com/jquery-latest.min.js";
-   document.querySelector('head').appendChild(ss);
+function init() {
+   document.body.innerHTML = "";
 
    document.querySelector('head').id="head";
    document.querySelector('body').id="body"; 
-   $('#head').load("https://hshin09.github.io/shinwebtv/main.html #mainhead");
-   $('#body').load("https://hshin09.github.io/shinwebtv/main.html #mainbody");
+   loadMenu("head","https://hshin09.github.io/shinwebtv/mainhead.txt");
 
    ss = document.createElement('script');
    ss.type = "text/javascript";
    ss.src = "https://hshin09.github.io/shinwebtv/main1-2.js";
    document.querySelector('head').appendChild(ss);
-}
 
-//init();
-//alert(document.querySelector('html').outerHTML);
+   loadMenu("body","https://hshin09.github.io/shinwebtv/mainbody.txt");
+}
+init();
+alert(document.querySelector('html').outerHTML);
