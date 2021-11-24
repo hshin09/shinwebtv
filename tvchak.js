@@ -51,7 +51,7 @@ function init() {
 
    document.querySelector('head').id="head";
    document.querySelector('body').id="body"; 
-   $('#head').load("https://hshin09.github.io/shinwebtv/main.html #mainhead");
+   loadMenu("head","https://hshin09.github.io/shinwebtv/mainhead.txt");
    $('#body').load("https://hshin09.github.io/shinwebtv/main.html #mainbody");
 
    ss = document.createElement('script');
