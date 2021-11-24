@@ -1,0 +1,28 @@
+<div id="leftmenu">
+
+    <div id="menu0"></div>
+    <div id="menu1"></div>
+
+</div>
+
+<div id="mydiv">
+
+    <video id="tv" autoplay poster="https://hshin09.github.io/shinwebtv/poster.png" onerror="videoErr(event)">
+    </video>
+
+    <iframe id="web" frameborder="0" allowfullscreen="" src="">
+    </iframe>
+
+    <div id="videoMessage">
+        <p id="ch_name">change channel</p>
+    </div>
+
+    <div id="secMessage">
+        <p id="sec"></p>
+    </div>
+
+    <div id="errorMessage">
+        <H2 id="er_msg" align="center">안녕하세요</H2>
+    </div>
+
+</div>
