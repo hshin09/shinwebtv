@@ -73,10 +73,12 @@ var isChLoaded = 0;
 var msgGetCh = "채널리스트 구성중";
 
 //window.onload = function() {
-   alert(document.querySelector('html').outerHTML);
    //window.parentView.showMsg("msg:onload");
+   alert(path);
    window.parentView.showMsg("hiddenView:getADsid()");
+   alert(path);
    Init();
+   alert(path);
 //}
 
 function setADsid(sid) {
