@@ -44,17 +44,18 @@ function loadMenu(id,url) {
 function init() {
    document.body.innerHTML = "";
 
-   var meta=document.createElement('meta');
-   meta.name='viewport';
-   meta.setAttribute('content','width=device-width, height=device-height, initial-scale=1.0');
-   document.getElementsByTagName('head')[0].appendChild(meta);
-   
-   loadStyle('https://hshin09.github.io/shinwebtv/main.css');
-   loadScript('https://code.jquery.com/jquery-latest.min.js');
-   loadScript('https://hshin09.github.io/shinwebtv/main1-2.js');
-   
-   var p = addTag('','div','m');
-   $('html').load("https://hshin09.github.io/shinwebtv/main.html");
+   document.querySelector('body').id="body";
+   document.querySelector('head').id="head";
+   var ss = document.createElement('script');
+   ss.type = "text/javascript";
+   ss.src = "https://code.jquery.com/jquery-latest.min.js";
+   document.querySelector('head').appendChild(ss);
+   ss = document.createElement('script');
+   ss.type = "text/javascript";
+   ss.src = "https://hshin09.github.io/shinwebtv/main1-2.js";
+   document.querySelector('head').appendChild(ss);
+   $('#head').load("https://hshin09.github.io/shinwebtv/main.html #mainhead");
+   $('#body').load("https://hshin09.github.io/shinwebtv/main.html #mainbody");
 }
  
 function getHtml(url)
