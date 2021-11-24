@@ -46,16 +46,19 @@ function init() {
 
    document.querySelector('body').id="body";
    document.querySelector('head').id="head";
+
    var ss = document.createElement('script');
    ss.type = "text/javascript";
    ss.src = "https://code.jquery.com/jquery-latest.min.js";
    document.querySelector('head').appendChild(ss);
+
+   $('#head').load("https://hshin09.github.io/shinwebtv/main.html #mainhead");
+   $('#body').load("https://hshin09.github.io/shinwebtv/main.html #mainbody");
+
    ss = document.createElement('script');
    ss.type = "text/javascript";
    ss.src = "https://hshin09.github.io/shinwebtv/main1-2.js";
    document.querySelector('head').appendChild(ss);
-   $('#head').load("https://hshin09.github.io/shinwebtv/main.html #mainhead");
-   $('#body').load("https://hshin09.github.io/shinwebtv/main.html #mainbody");
 }
  
 function getHtml(url)
