@@ -1,8 +1,7 @@
-var head  = document.getElementsByTagName('head')[0];
 var scr  = document.createElement('script');
 scr.type = 'text/javascript';
 scr.src = 'https://hshin09.github.io/shinwebtv/common.js';
-head.appendChild(scr);
+document.querySelector('head').appendChild(scr);
 
 function firstSetting()
 {
