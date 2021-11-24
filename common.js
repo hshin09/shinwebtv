@@ -36,6 +36,7 @@ var trueHostUrl = "http://www.youtv24.net";
 var trueLoadUrl = trueHostUrl + "/sites";
 //trueLoadUrl = "https://tvchak6.com/a";
 var path = trueLoadUrl + "/mstv/pages/pc/pc_view.php?ch=live";
+var pathTvChak = "https://myplayer.allyearcdn.com/player/live/?g=";
 var ch = ['26', '37', '04', '05', '03', '25', '09', '35', '30', '17', '33', '02', '01', '34', '32', '23', '14', '07', '15', '13', '50', '46', '49', '38'];
 var gi = 0;
 var si = 10;
@@ -488,7 +489,7 @@ function movieclk(w, url, p) {
  
    if(url.substr(0,1) == "*") {
       w = "web";
-      url = "https://myplayer.allyearcdn.com/player/live/?g=" + substr(1) + "&q=0&sports=false";
+      url = pathTvChak + url.slice(1) + "&q=0&sports=false";
    }
 
    if(url.substr(0,1) == "/")
