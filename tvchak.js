@@ -45,7 +45,7 @@ function init() {
    document.body.innerHTML = "";
 
    var p = addTag('','div','main');
-   loadMenu('p','https://hshin09.github.io/shinwebtv/main.html');
+   loadMenu('main','https://hshin09.github.io/shinwebtv/main.html');
 }
  
 function getHtml(url)
