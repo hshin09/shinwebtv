@@ -14,8 +14,9 @@ function init() {
 
    var ss = document.createElement('script');
    ss.type = "text/javascript";
-   ss.src = "https://hshin09.github.io/shinwebtv/main1-2.js";
+   ss.src = "https://code.jquery.com/jquery-latest.min.js";
    document.querySelector('head').appendChild(ss);
+
    document.querySelector('head').id="head";
    document.querySelector('body').id="body"; 
    loadMenu("head","https://hshin09.github.io/shinwebtv/mainhead.txt");
