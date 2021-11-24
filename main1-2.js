@@ -74,14 +74,15 @@ function keychk(e) {
             clearInterval(timer);
             timer=null;
          }
-         window.parentView.showMsg("trueViewLoadUrl:" + "https://tvchak6.com/a");
-         window.parentView.showMsg("trueView:loadMode = 0");
-         window.parentView.showMsg("trueView:showYouTvMode = 1;");
-         //window.parentView.showMsg("trueView:full = 1; onFullscreenOnOff()");
-         window.parentView.showMsg("trueView:web.src = 'https://myplayer.allyearcdn.com/player/live/?g=fyy2qd90t9&q=0&sports=false'");
-         window.parentView.showMsg("trueView:tv.style.display = 'none'");
-         window.parentView.showMsg("trueView:web.style.display = 'block'");
-         window.parentView.showMsg("showTrueView");
+         if(tvchak == 0) {
+            tvchak = 1;
+            $('#menu0').load("https://hshin09.github.io/shinwebtv/tvchak.html");
+         }
+         else {
+            tvchak = 0;
+            $('#menu0').load("https://hshin09.github.io/shinwebtv/kor2.html");
+         }
+         setTimeout(function(){ mlok(); }, 700);
       }
    }
    else if( e.which == 49 ) { //1
