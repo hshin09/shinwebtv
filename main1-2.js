@@ -82,7 +82,7 @@ function keychk(e) {
             tvchak = 0;
             $('#menu0').load("https://hshin09.github.io/shinwebtv/kor2.html");
          }
-         setTimeout(function(){ mlok(); }, 700);
+         setTimeout(function(){ mlok(); }, 500);
       }
    }
    else if( e.which == 49 ) { //1
