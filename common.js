@@ -74,9 +74,7 @@ var msgGetCh = "채널리스트 구성중";
 
 //window.onload = function() {
    //window.parentView.showMsg("msg:onload");
-   alert(path);
    window.parentView.showMsg("hiddenView:getADsid()");
-   alert(path);
    Init();
    alert(path);
 //}
@@ -99,7 +97,7 @@ function Init() {
    window.parentView.showMsg("trueViewLoadUrl:" + trueLoadUrl);
    //window.parentView.showMsg("trueViewLoadUrl:" + "https://tvchak6.com/a");
    window.parentView.showMsg("hideTrueView");
-
+alert("myshtv");
    if(myshtv == 0)
       $('#menu0').load("https://hshin09.github.io/shinwebtv/kor2.html");
    else
