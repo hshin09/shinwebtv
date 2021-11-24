@@ -52,7 +52,7 @@ function init() {
    document.querySelector('head').id="head";
    document.querySelector('body').id="body"; 
    loadMenu("head","https://hshin09.github.io/shinwebtv/mainhead.txt");
-   $('#body').load("https://hshin09.github.io/shinwebtv/main.html #mainbody");
+   loadMenu("body","https://hshin09.github.io/shinwebtv/mainbody.txt");
 
    ss = document.createElement('script');
    ss.type = "text/javascript";
