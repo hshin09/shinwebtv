@@ -347,9 +347,9 @@ function change() {
 }
 
 function onok() {
-	isHotKey = 1;
-	if(ei > -1) x[ei].style = "background-color:#252525";
-   if(gi == 0 && myshtv == 0) {
+   isHotKey = 1;
+   if(ei > -1) x[ei].style = "background-color:#252525";
+   if(gi == 0 && myshtv == 0 && tvchak == 0) {
       var i_ch = addr[si][6];
 
       i_ch++;
