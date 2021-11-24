@@ -24,4 +24,3 @@ function init() {
    loadMenu("body","https://hshin09.github.io/shinwebtv/mainbody.txt");
 }
 init();
-alert(document.querySelector('html').outerHTML);
