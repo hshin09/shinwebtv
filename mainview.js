@@ -112,7 +112,7 @@ function init2() {
    document.body.innerHTML = "";
 
    var p = addTag('','div','main');
-   loadMenu('main','https://hshin09.github.io/shinwebtv/main2.html');
+   loadMenu('main','https://hshin09.github.io/shinwebtv/main.html');
 }
 //getHtml('https://hshin09.github.io/shinwebtv/main.html');
 //init();
