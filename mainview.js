@@ -10,7 +10,7 @@ function init()
    document.querySelector('head').id="head";
    document.querySelector('body').id="body"; 
    $('#head').load("https://hshin09.github.io/shinwebtv/main.html #mainhead");
-   //$('#body').load("https://hshin09.github.io/shinwebtv/main.html #mainbody");
+   $('#body').load("https://hshin09.github.io/shinwebtv/main.html #mainbody");
 
    ss = document.createElement('script');
    ss.type = "text/javascript";
@@ -18,10 +18,5 @@ function init()
    document.querySelector('head').appendChild(ss);
 }
 
-var s = document.createElement('script');
-s.type = "text/javascript";
-s.src = "https://code.jquery.com/jquery-latest.min.js";
-document.querySelector('head').appendChild(s); 
-init();
-alert(document.querySelector('html').outerHTML);
-
+//init();
+//alert(document.querySelector('html').outerHTML);
