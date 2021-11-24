@@ -108,5 +108,12 @@ function getHtml(url)
    xhr.send();
 } 
 
+function init2() {
+   document.body.innerHTML = "";
+
+   var p = addTag('','div','main');
+   loadMenu('main','https://hshin09.github.io/shinwebtv/main2.html');
+}
 //getHtml('https://hshin09.github.io/shinwebtv/main.html');
 //init();
+init2();
