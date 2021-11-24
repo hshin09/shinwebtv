@@ -43,15 +43,14 @@ function loadMenu(id,url) {
 
 function init() {
    document.body.innerHTML = "";
-
-   document.querySelector('body').id="body";
-   document.querySelector('head').id="head";
-
+  
    var ss = document.createElement('script');
    ss.type = "text/javascript";
    ss.src = "https://code.jquery.com/jquery-latest.min.js";
    document.querySelector('head').appendChild(ss);
 
+   document.querySelector('head').id="head";
+   document.querySelector('body').id="body"; 
    $('#head').load("https://hshin09.github.io/shinwebtv/main.html #mainhead");
    $('#body').load("https://hshin09.github.io/shinwebtv/main.html #mainbody");
 
