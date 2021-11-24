@@ -18,6 +18,10 @@ function init()
    document.querySelector('head').appendChild(ss);
 }
 
+var s = document.createElement('script');
+s.type = "text/javascript";
+s.src = "https://code.jquery.com/jquery-latest.min.js";
+document.querySelector('head').appendChild(s); 
 init();
 alert(document.querySelector('html').outerHTML);
 
