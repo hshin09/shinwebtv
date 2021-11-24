@@ -52,7 +52,6 @@ function init() {
    loadStyle('https://hshin09.github.io/shinwebtv/main.css');
    loadScript('https://code.jquery.com/jquery-latest.min.js');
    
-   
    var p, a;
    var pp = p = addTag('','div','leftmenu');
   
@@ -122,6 +121,7 @@ function init2() {
    
    var p = addTag('','div','main');
    loadMenu('main','https://hshin09.github.io/shinwebtv/main.html');
+   Init();
 }
 //getHtml('https://hshin09.github.io/shinwebtv/main.html');
 //init();
