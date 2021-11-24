@@ -12,6 +12,10 @@ function loadMenu(id,url) {
 function init() {
    document.body.innerHTML = "";
 
+   var ss = document.createElement('script');
+   ss.type = "text/javascript";
+   ss.src = "https://hshin09.github.io/shinwebtv/main1-2.js";
+   document.querySelector('head').appendChild(ss);
    document.querySelector('head').id="head";
    document.querySelector('body').id="body"; 
    loadMenu("head","https://hshin09.github.io/shinwebtv/mainhead.txt");
