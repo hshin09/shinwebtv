@@ -21,3 +21,5 @@ alert(document.querySelector('html').outerHTML);
 }
 
 init();
+alert(document.querySelector('html').outerHTML);
+
