@@ -80,6 +80,7 @@ function keychk(e) {
          }
          else {
             tvchak = 0;
+            web.src = "";
             $('#menu0').load("https://hshin09.github.io/shinwebtv/kor2.html");
          }
          setTimeout(function(){ mlok(); }, 500);
