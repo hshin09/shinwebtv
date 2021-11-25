@@ -76,6 +76,7 @@ function keychk(e) {
          }
          if(tvchak == 0) {
             tvchak = 1;
+            aei[0] = ei;
             si = aei[2];
             $("#videoMessage").css('display', 'none');
             $("#secMessage").css('display', 'none');
@@ -84,6 +85,7 @@ function keychk(e) {
          }
          else {
             tvchak = 0;
+            aei[2] = ei;
             si = aei[0];
             web.src = "";
             $('#menu0').load("https://hshin09.github.io/shinwebtv/kor2.html");
