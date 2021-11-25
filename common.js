@@ -314,7 +314,10 @@ function clearAddress(tar) {
 
 function change() {
    asi[gi] = si;
-   aei[gi] = ei;
+   if(tvchak==1 && gi==0)
+      aei[2] = ei;
+   else
+      aei[gi] = ei;
    aoi[gi] = oi;
    adi[gi] = di;
    alc[gi] = lastCh;
@@ -325,7 +328,10 @@ function change() {
       gi = 0;
 
    si = asi[gi];
-   ei = aei[gi];
+   if(tvchak==1 && gi==0)
+      ei = aei[2];
+   else
+      ei = aei[gi];
    oi = aoi[gi];
    di = adi[gi];
    lastCh = alc[gi];
