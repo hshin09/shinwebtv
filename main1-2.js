@@ -7,6 +7,7 @@ function firstSetting()
 {
    touchscreen = 0;
    window.onkeydown = keychk;
+   $('#menux').load("https://hshin09.github.io/shinwebtv/tvchak.html");
 }
 
 function onup() {
@@ -70,10 +71,16 @@ function changeKorTv() {
    adi[3] = adi[4];
    alc[3] = alc[4];
 
-   if(tvchak == 0)
+   if(tvchak == 0) {
       tvchak = 1;
-   else
+      $("#videoMessage").css('display', 'none');
+      $("#secMessage").css('display', 'none');
+      $("#errorMessage").css('display', 'none');
+   }
+   else {
       tvchak = 0;
+      web.src = "";
+   }
 
    si = asi[0]; 
    ei = aei[0];
@@ -100,27 +107,7 @@ function keychk(e) {
    }
    else if( e.which == 48 ) { //0
       if( gi == 0 ) {
-         stv.pause();
-         if(timer) {
-            clearInterval(timer);
-            timer=null;
-         }
-         if(tvchak == 0) {
-            tvchak = 1;
-            aei[0] = ei;
-            ei = aei[2];
-            $("#videoMessage").css('display', 'none');
-            $("#secMessage").css('display', 'none');
-            $("#errorMessage").css('display', 'none');
-            $('#menu0').load("https://hshin09.github.io/shinwebtv/tvchak.html");
-         }
-         else {
-            tvchak = 0;
-            aei[2] = ei;
-            ei = aei[0];
-            web.src = "";
-            $('#menu0').load("https://hshin09.github.io/shinwebtv/kor2.html");
-         }
+         changeKorTv();
          setTimeout(function(){ mlok(); }, 500);
       }
    }
