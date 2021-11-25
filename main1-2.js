@@ -142,7 +142,10 @@ function keychk(e) {
    }
    else if( e.which == 57 ) { //9
       if( gi == 0 ) {
-         clearAddress("79");
+         if(tvchack == 1)
+            ei = 2;
+         else
+            clearAddress("79");
          x[ei].click();
       }
    }
