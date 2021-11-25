@@ -76,6 +76,9 @@ function keychk(e) {
          }
          if(tvchak == 0) {
             tvchak = 1;
+            $("#videoMessage").css('display', 'none');
+            $("#secMessage").css('display', 'none');
+            $("#errorMessage").css('display', 'none');
             $('#menu0').load("https://hshin09.github.io/shinwebtv/tvchak.html");
          }
          else {
