@@ -53,6 +53,10 @@ function onright() {
 }
 
 function changeKorTv() {
+   document.querySelector('menuy').id="menu0";
+   document.querySelector('menu0').id="menux";
+   document.querySelector('menux').id="menuy";
+
    asi[4] = asi[0];
    aei[4] = aei[0];
    aoi[4] = aoi[0];
