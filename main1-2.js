@@ -118,7 +118,7 @@ function keychk(e) {
    else if( e.which == 48 ) { //0
       if( gi == 0 ) {
          changeKorTv();
-         setTimeout(function(){ x[ei].click(); }, 500);
+         setTimeout(function(){ mlok(); }, 500);
       }
    }
    else if( e.which == 49 ) { //1
