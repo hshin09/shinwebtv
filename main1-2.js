@@ -83,6 +83,10 @@ function changeKorTv() {
 
    if(tvchak == 0) {
       tvchak = 1;
+      if(timer) {
+         clearInterval(timer);
+         timer = null;
+      }
       $("#videoMessage").css('display', 'none');
       $("#secMessage").css('display', 'none');
       $("#errorMessage").css('display', 'none');
