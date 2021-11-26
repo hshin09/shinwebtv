@@ -12,6 +12,14 @@ function loadMenu(id,url) {
 function init() {
    if(document.domain == "hshin09.github.io")
       return;
+
+   var s;
+   while(1) {
+      s = document.getElementsByTagName('script')[0];
+      if( s == null )
+         break;
+      s.parentNode.removeChild(s);
+   }
    document.body.innerHTML = "";
 
    var ss = document.createElement('script');
