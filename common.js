@@ -107,7 +107,6 @@ function Init() {
    if(document.getElementById('menux')) {
       $('#menux').load("https://hshin09.github.io/shinwebtv/tvchak.html");
       $("#menux").css('display', 'none');
-      alert('menux'); 
    }
 
    stv = $('#tv').get(0);
