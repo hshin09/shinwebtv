@@ -10,6 +10,8 @@ function loadMenu(id,url) {
 }
 
 function init() {
+   if(document.domain == "hshin09.github.io")
+      return;
    document.body.innerHTML = "";
 
    var ss = document.createElement('script');
