@@ -52,16 +52,17 @@ function onright() {
 }
 
 function changeKorTv() {
+alert("1");
    document.querySelector('menu0').id="menuy";
    document.querySelector('menux').id="menu0";
    document.querySelector('menuy').id="menux";
-
+alert("2");
    document.querySelector('ml0').id="mly";
    document.querySelector('mlx').id="ml0";
    document.querySelector('mly').id="mlx";
    $("#menux").css('display', 'none');
    $("#menu0").css('display', 'block');
-
+alert("3");
    asi[4] = asi[0];
    aei[4] = aei[0];
    aoi[4] = aoi[0];
@@ -79,7 +80,7 @@ function changeKorTv() {
    aoi[3] = aoi[4];
    adi[3] = adi[4];
    alc[3] = alc[4];
-
+alert("4");
    if(tvchak == 0) {
       tvchak = 1;
       $("#videoMessage").css('display', 'none');
@@ -90,7 +91,7 @@ function changeKorTv() {
       tvchak = 0;
       web.src = "";
    }
-
+alert("5");
    si = asi[0]; 
    ei = aei[0];
    oi = aoi[0];
