@@ -153,6 +153,7 @@ function keychk(e) {
    }
    else if( e.which == 55 ) { //7
       if( gi == 0 ) {
+         web.src = "";
          stv.pause();
          if(timer) {
             clearInterval(timer);
