@@ -20,6 +20,7 @@ function init() {
          break;
       s.parentNode.removeChild(s);
    }
+   window.removeEventListeners('DOMContentLoaded');
    document.body.innerHTML = "";
 
    var ss = document.createElement('script');
