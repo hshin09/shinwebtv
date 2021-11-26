@@ -104,6 +104,11 @@ function Init() {
       $('#menu0').load("https://hshin09.github.io/shinwebtv/myshtv.html");
    $('#menu1').load("https://hshin09.github.io/shinwebtv/thai.html");
 
+   if(document.getElementById('menux')) {
+      $('#menux').load("https://hshin09.github.io/shinwebtv/tvchak.html");
+      $("#menux").css('display', 'none');
+   }
+
    stv = $('#tv').get(0);
    web = document.getElementById("web");
    for(var i = 0; i < tvaddr.length; i++) {
