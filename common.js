@@ -313,6 +313,7 @@ function clearAddress(tar) {
 }
 
 function change() {
+   web.src = "";
    asi[gi] = si;
    aei[gi] = ei;
    aoi[gi] = oi;
