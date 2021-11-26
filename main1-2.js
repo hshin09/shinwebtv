@@ -8,6 +8,7 @@ function firstSetting()
    touchscreen = 0;
    window.onkeydown = keychk;
    $('#menux').load("https://hshin09.github.io/shinwebtv/tvchak.html");
+   $("#menux").css('display', 'none');
 }
 
 function onup() {
@@ -53,11 +54,15 @@ function onright() {
 }
 
 function changeKorTv() {
+   document.querySelector('menu0').id="menuy";
+   document.querySelector('menux').id="menu0";
+   document.querySelector('menuy').id="menux";
+
    document.querySelector('ml0').id="mly";
    document.querySelector('mlx').id="ml0";
    document.querySelector('mly').id="mlx";
-   $("#mlx").css('display', 'none');
-   $("#ml0").css('display', 'block');
+   $("#menux").css('display', 'none');
+   $("#menu0").css('display', 'block');
 
    asi[4] = asi[0];
    aei[4] = aei[0];
