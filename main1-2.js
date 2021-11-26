@@ -7,8 +7,6 @@ function firstSetting()
 {
    touchscreen = 0;
    window.onkeydown = keychk;
-   $('#menux').load("https://hshin09.github.io/shinwebtv/tvchak.html");
-   $("#menux").css('display', 'none');
 }
 
 function onup() {
