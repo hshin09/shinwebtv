@@ -55,12 +55,12 @@ function changeKorTv() {
 alert("1");
    document.getElementById('menu0').id="menuy";
 alert("1-1");
-   document.querySelector('menux').id="menu0";
-   document.querySelector('menuy').id="menux";
+   document.getElementById('menux').id="menu0";
+   document.getElementById('menuy').id="menux";
 alert("2");
-   document.querySelector('ml0').id="mly";
-   document.querySelector('mlx').id="ml0";
-   document.querySelector('mly').id="mlx";
+   document.getElementById('ml0').id="mly";
+   document.getElementById('mlx').id="ml0";
+   document.getElementById('mly').id="mlx";
    $("#menux").css('display', 'none');
    $("#menu0").css('display', 'block');
 alert("3");
