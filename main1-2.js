@@ -52,18 +52,17 @@ function onright() {
 }
 
 function changeKorTv() {
-alert("1");
    document.getElementById('menu0').id="menuy";
-alert("1-1");
    document.getElementById('menux').id="menu0";
    document.getElementById('menuy').id="menux";
-alert("2");
+
    document.getElementById('ml0').id="mly";
    document.getElementById('mlx').id="ml0";
    document.getElementById('mly').id="mlx";
+
    $("#menux").css('display', 'none');
    $("#menu0").css('display', 'block');
-alert("3");
+
    asi[4] = asi[0];
    aei[4] = aei[0];
    aoi[4] = aoi[0];
@@ -81,7 +80,7 @@ alert("3");
    aoi[3] = aoi[4];
    adi[3] = adi[4];
    alc[3] = alc[4];
-alert("4");
+
    if(tvchak == 0) {
       tvchak = 1;
       $("#videoMessage").css('display', 'none');
@@ -92,7 +91,7 @@ alert("4");
       tvchak = 0;
       web.src = "";
    }
-alert("5");
+
    si = asi[0]; 
    ei = aei[0];
    oi = aoi[0];
@@ -119,7 +118,7 @@ function keychk(e) {
    else if( e.which == 48 ) { //0
       if( gi == 0 ) {
          changeKorTv();
-         setTimeout(function(){ mlok(); }, 500);
+         setTimeout(function(){ x[ei].click(); }, 500);
       }
    }
    else if( e.which == 49 ) { //1
