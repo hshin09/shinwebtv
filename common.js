@@ -105,6 +105,7 @@ function Init() {
    $('#menu1').load("https://hshin09.github.io/shinwebtv/thai.html");
 
    if(document.getElementById('menux')) {
+      alert('menux');
       $('#menux').load("https://hshin09.github.io/shinwebtv/tvchak.html");
       $("#menux").css('display', 'none');
    }
