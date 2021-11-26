@@ -53,7 +53,7 @@ function onright() {
 
 function changeKorTv() {
 alert("1");
-   document.querySelector('menu0').id="menuy";
+   document.getElementById('menu0').id="menuy";
 alert("1-1");
    document.querySelector('menux').id="menu0";
    document.querySelector('menuy').id="menux";
