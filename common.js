@@ -95,7 +95,7 @@ function setVol(vol)
 
 function setADsid(sid) {
    ADsid = sid;
-   window.location.replace("http://kakotv.com/");
+   window.location.replace("http://kakotv.com");
 }
 
 function getPath() {
