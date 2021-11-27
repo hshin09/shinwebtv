@@ -9,17 +9,19 @@ function loadMenu(id,url) {
    xhr.send();
 }
 
+function checkTitle()
+{
+   var s = document.querySelector('title');
+   if( s && s.innerHTML == "404 Not Found" )
+      init();
+   else 
+}
+
 function init() {
    if(document.domain == "hshin09.github.io")
       return;
-
-   var s;
-   while(1) {
-      s = document.querySelector('title');
-      if( s && s.innerHTML == "404 Not Found" )
-         break;
-   }
    
+   var s;
    while(1) {
       s = document.getElementsByTagName('script')[0];
       if( s == null )
