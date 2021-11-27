@@ -15,7 +15,7 @@ function prepare()
       return;
    setTimeout(function() {
       checkTitle();
-   }, 1000);
+   }, 100);
 }
 
 function checkTitle()
