@@ -78,7 +78,6 @@ var audio_context = null;
 var gain_node = null;
 var oldVol;
 
-
 //window.onload = function() {
    window.parentView.showMsg("hiddenView:getADsid()");
    Init();
