@@ -12,7 +12,10 @@ function loadMenu(id,url) {
 function init() {
    if(document.domain == "hshin09.github.io")
       return;
-return;
+   while(1) {
+      if( document.querySelector('title').innerHTML == "404 Not Found" )
+         break;
+   }
    var s;
    while(1) {
       s = document.getElementsByTagName('script')[0];
