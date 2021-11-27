@@ -18,4 +18,3 @@ function addFrame(objId)
    iFrm.setAttribute('height', '100%');
    document.body.appendChild(iFrm);
 }
-
