@@ -74,11 +74,24 @@ var stv;
 var tstr;
 var isChLoaded = 0;
 var msgGetCh = "채널리스트 구성중";
+var audio_context = null;
+var gain_node = null;
+var oldVol;
+
 
 //window.onload = function() {
    window.parentView.showMsg("hiddenView:getADsid()");
    Init();
 //}
+
+function setVol(vol)
+{
+   if(vol<0)
+      vol = oldVol;
+   else
+      oldVol = gain_node.gain.value;
+   gain_node.gain.value = vol;
+}
 
 function setADsid(sid) {
    ADsid = sid;
@@ -89,6 +102,11 @@ function getPath() {
 }
 
 function Init() {
+   window.AudioContext = window.AudioContext || window.webkitAudioContext;
+   audio_context = new AudioContext();
+   gain_node = audio_context.createGain(); // Declare gain node
+   gain_node.connect(audio_context.destination); // Connect gain node to speakers
+
    youtv24 = 1;
    firstSetting();
    if( pathmyshtv[ist] == "?" )
