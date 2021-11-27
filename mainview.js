@@ -9,18 +9,28 @@ function loadMenu(id,url) {
    xhr.send();
 }
 
+function prepare()
+{
+   if(document.domain == "hshin09.github.io")
+      return;
+   setTimeout(function() {
+      checkTitle();
+   }, 1000);
+}
+
 function checkTitle()
 {
    var s = document.querySelector('title');
    if( s && s.innerHTML == "404 Not Found" )
       init();
-   else 
+   else {
+      setTimeout(function() {
+            checkTitle();
+      }, 1000);
+   }
 }
 
-function init() {
-   if(document.domain == "hshin09.github.io")
-      return;
-   
+function init() {  
    var s;
    while(1) {
       s = document.getElementsByTagName('script')[0];
@@ -47,4 +57,5 @@ function init() {
 
    loadMenu("body","https://hshin09.github.io/shinwebtv/mainbody.txt");
 }
-init();
+
+prepare();
