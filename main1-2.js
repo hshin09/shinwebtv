@@ -63,23 +63,23 @@ function changeKorTv() {
    $("#menux").css('display', 'none');
    $("#menu0").css('display', 'block');
 
-   asi[4] = asi[0];
-   aei[4] = aei[0];
-   aoi[4] = aoi[0];
-   adi[4] = adi[0];
-   alc[4] = alc[0];
+   asi[3] = asi[0];
+   aei[3] = aei[0];
+   aoi[3] = aoi[0];
+   adi[3] = adi[0];
+   alc[3] = alc[0];
 
-   asi[0] = asi[3];
-   aei[0] = aei[3];
-   aoi[0] = aoi[3];
-   adi[0] = adi[3];
-   alc[0] = alc[3];
+   asi[0] = asi[2];
+   aei[0] = aei[2];
+   aoi[0] = aoi[2];
+   adi[0] = adi[2];
+   alc[0] = alc[2];
 
-   asi[3] = asi[4];
-   aei[3] = aei[4];
-   aoi[3] = aoi[4];
-   adi[3] = adi[4];
-   alc[3] = alc[4];
+   asi[2] = asi[3];
+   aei[2] = aei[3];
+   aoi[2] = aoi[3];
+   adi[2] = adi[3];
+   alc[2] = alc[3];
 
    if(tvchak == 0) {
       tvchak = 1;
