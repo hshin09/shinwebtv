@@ -12,7 +12,7 @@ function loadMenu(id,url) {
 function init() {
    if(document.domain == "hshin09.github.io")
       return;
-alert('a');
+return;
    var s;
    while(1) {
       s = document.getElementsByTagName('script')[0];
