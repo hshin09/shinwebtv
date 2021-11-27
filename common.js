@@ -117,7 +117,7 @@ function Init() {
       tvaddr[i] = addr[i][3];
    }
    
-   window.removeEventListeners('DOMContentLoaded');
+   //window.removeEventListeners('DOMContentLoaded');
 
    timer = setInterval(function() {
       OnOff();
