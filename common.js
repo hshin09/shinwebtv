@@ -201,7 +201,7 @@ function OnOff() {
          }, 500);
          //window.parentView.showMsg("msg:" + pathmyshtv[ist] + " ts=" + touchscreen + " ADsid=" + ADsid);
          window.parentView.showMsg("trueView:path = " + path);
-         //window.location.replace("http://kakotv.com");
+         //window.location.replace("https://kakotv.com");
       }
       return;
    }
