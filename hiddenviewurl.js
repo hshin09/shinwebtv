@@ -1,20 +1,20 @@
 var timer = null;
 var web = null;
-var cnt=1;
+var cnt=0;
 var ADsid = "shin";
 var url = "https://www.adintrend.tv/hd/live/i.php?ch=3&cxid=" + ADsid;
 
 function prepare()
 {
    if( document.domain == "kakotv.com" ) {
-      window.hiddenView.showMsg( "msg:" + cnt );
       window.hiddenView.showMsg( "webView:setcnt(" + cnt + ")" );
       /* if( location.href == "https://kakotv.com/live/JTBC-76.html" ) {
          getkakotvurl();
          return;
       } */
       if(location.href == "https://kakotv.com/live/list.html" )
-         initkakotv();    
+         initkakotv();
+      window.hiddenView.showMsg( "msg:" + cnt );
       return;
    }
 
@@ -66,7 +66,6 @@ function initkakotv()
    web = document.getElementById("web");
    url = "https://kakotv.com/live/JTBC-76.html"
    web.src = url;
-window.hiddenView.showMsg( "msg:" + web.src );
 }
 
 function getkakotvurl()
