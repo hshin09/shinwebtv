@@ -88,6 +88,8 @@ function setcnt(n)
 {
    cnt=cnt+1;
    window.parentView.showMsg( "msg:" + n + " = " + cnt );
+   if(cnt>25)
+      window.parentView.showMsg( "hiddenView:initkakotv()" );
 }
 
 function setVol(vol)
