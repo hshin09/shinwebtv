@@ -319,6 +319,30 @@ function get79tv(i) {
    window.parentView.showMsg("trueView:loadVideo(1,'" + url + "')");
 }
 
+function getkakotv(url) {
+   ei = i;
+   stv.pause();
+   stv.src = "empty";
+   $("#ch_name").text(x[ei].innerHTML + "(검색중)");
+   $("#videoMessage").css('display', 'block');
+   window.parentView.showMsg("hiddenView:loadVideo('" + url + "')");
+}
+
+function setkakotv(s) {
+   oi = -1;
+   if(s == "timeout") {
+      $("#er_msg").text("서버가 응답이 없어 일정시간(2분내외) 대기 및 재시도를 진행합니다.");
+      showErrorMessage();
+      mustWait = 10;
+      return;
+   }
+   backtvaddr[ei] = tvaddr[ei] = s;
+   mustWait = 0;
+   setTimeout(function() {
+      x[ei].click();
+   }, 10);
+}
+
 function setHiddenViewTV(s) {
    oi = -1;
    if(s == "timeout") {
@@ -514,7 +538,7 @@ function movieclk(w, url, p) {
    }
 
    if(url.substr(0,1) == "/") {
-      getkakotv(p.id);
+      getkakotv(url);
       return;
    }
 
