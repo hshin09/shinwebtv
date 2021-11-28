@@ -14,7 +14,6 @@ function prepare()
       } */
       if(location.href == "https://kakotv.com/live/list.html" )
          initkakotv();
-      window.hiddenView.showMsg( "msg:" + cnt );
       return;
    }
 
