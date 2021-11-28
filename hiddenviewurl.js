@@ -6,12 +6,11 @@ var url = "https://www.adintrend.tv/hd/live/i.php?ch=3&cxid=" + ADsid;
 
 function prepare()
 {
-window.hiddenView.showMsg( "msg:" + location.href );
    if( document.domain == "kakotv.com" ) {
-      if( location.href == "https://kakotv.com/live/JTBC-76.html" ) {
+      /* if( location.href == "https://kakotv.com/live/JTBC-76.html" ) {
          getkakotvurl();
          return;
-      }
+      } */
       if(location.href == "https://kakotv.com/live/list.html" )
          initkakotv();    
       return;
@@ -64,8 +63,8 @@ function initkakotv()
    addFrame("web");
    web = document.getElementById("web");
    url = "https://kakotv.com/live/JTBC-76.html"
-   web.src=url;
-   getkakotvurl();
+   web.src = url;
+window.hiddenView.showMsg( "msg:" + web.src );
 }
 
 function getkakotvurl()
@@ -79,7 +78,7 @@ function getkakotvurl()
    var j=s.indexOf("`");
    s=s.substr(0,j);
    s=s.replace(/&amp;/g,"&");
-window.hiddenView.showMsg( "msg:" + f.innerHTML );
+window.hiddenView.showMsg( "msg:" + f );
 }
 
 prepare();
