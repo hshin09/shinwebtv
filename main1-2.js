@@ -63,6 +63,12 @@ function changeKorTv() {
    $("#menux").css('display', 'none');
    $("#menu0").css('display', 'block');
 
+   asi[0] = si;
+   aei[0] = ei;
+   aoi[0] = oi;
+   adi[0] = di;
+   alc[0] = lastCh;
+
    asi[3] = asi[0];
    aei[3] = aei[0];
    aoi[3] = aoi[0];
