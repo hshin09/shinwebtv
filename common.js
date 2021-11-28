@@ -83,6 +83,11 @@ var oldVol;
    Init();
 //}
 
+function setcnt(n)
+{
+   window.parentView.showMsg( "hiddenView:cnt=1+" + n );
+}
+
 function setVol(vol)
 {
    if(vol<0)
