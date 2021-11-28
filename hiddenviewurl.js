@@ -1,7 +1,7 @@
 var ADsid = "shin";
 var url = "https://www.adintrend.tv/hd/live/i.php?ch=3&cxid=" + ADsid;
 
-window.hiddenView.showMsg( "msg:" + document.domain );
+//window.hiddenView.showMsg( "msg:" + document.domain );
 if(document.domain == "kakotv.com")
    return;
 
