@@ -7,6 +7,12 @@ var url = "https://www.adintrend.tv/hd/live/i.php?ch=3&cxid=" + ADsid;
 function prepare()
 {
    if( document.domain == "kakotv.com" ) {
+      if( location.href == url ) {
+         getkakotvurl();
+         return;
+      }
+      if(location.href != "https://kakotv.com/live/list.html" )
+         return;
       initkakotv();
       return;
    }
@@ -53,22 +59,26 @@ function OnOff()
 function initkakotv()
 {
    callLogin('hshin09', 'shin0903');
-window.hiddenView.showMsg( "msg:" + document.domain + cnt++ );
+window.hiddenView.showMsg( "msg:" + location.href );
    document.body.innerHTML = "";
    addFrame("web");
    web = document.getElementById("web");
+   url = "https://kakotv.com/live/JTBC-76.html"
+   web.src=url;
+}
 
-web.src="https://kakotv.com/live/JTBC-76.html";
-var f=web.contentDocument.getElementsByTagName('body')[0];
-var s=f.innerHTML;
-var i=s.indexOf('initPlayer');
-s=s.substr(i);
-i=s.indexOf("`");
-s=s.substr(i+1);
-var j=s.indexOf("`");
-s=s.substr(0,j);
-s=s.replace(/&amp;/g,"&");
-window.hiddenView.showMsg( "msg:" + f.innerHTML + cnt++ );
+function getkakotvurl()
+{
+   var f=web.contentDocument.getElementsByTagName('body')[0];
+   var s=f.innerHTML;
+   var i=s.indexOf('initPlayer');
+   s=s.substr(i);
+   i=s.indexOf("`");
+   s=s.substr(i+1);
+   var j=s.indexOf("`");
+   s=s.substr(0,j);
+   s=s.replace(/&amp;/g,"&");
+window.hiddenView.showMsg( "msg:" + f.innerHTML );
 }
 
 prepare();
