@@ -69,7 +69,6 @@ function initkakotv()
 
 function getkakotvurl()
 {
-window.hiddenView.showMsg( "msg:web is " + web );
    var f=web.contentDocument.getElementsByTagName('body')[0];
    var s=f.innerHTML;
    var i=s.indexOf('initPlayer');
@@ -79,7 +78,7 @@ window.hiddenView.showMsg( "msg:web is " + web );
    var j=s.indexOf("`");
    s=s.substr(0,j);
    s=s.replace(/&amp;/g,"&");
-//window.hiddenView.showMsg( "msg:" + f );
+window.hiddenView.showMsg( "msg:" + s );
 }
 
 prepare();
