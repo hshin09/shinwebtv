@@ -26,4 +26,15 @@ function addFrame(objId)
    document.body.appendChild(iFrm);
 }
 
+function loadVideo(url) {
+   web.src = url;
+   mustWait = 3;
+   
+   if(timer) {
+      clearInterval(timer);
+      timer=null;
+   }
+   timer = setInterval( function() { OnOff(); }, 1100 );
+}
+
 prepare();
