@@ -6,8 +6,11 @@ var url = "https://www.adintrend.tv/hd/live/i.php?ch=3&cxid=" + ADsid;
 function prepare()
 {
    window.hiddenView.showMsg( "msg:" + document.domain );
-   if( document.domain == "kakotv.com" )
+   if( document.domain == "kakotv.com" ) {
+      initkakotv();
       return;
+   }
+
    addFrame("TV");
    document.getElementById("TV").src = url;
 }
@@ -19,11 +22,6 @@ function getADsid() {
 
 function addFrame(objId)
 {
-   if(document.domain == "kakotv.com") {
-      initkakotv();
-      return;
-   }
-
    var iFrm = document.createElement('iframe');
    iFrm.setAttribute('id', objId);
    iFrm.setAttribute('width', '100%');
@@ -56,11 +54,8 @@ function initkakotv()
 {
    callLogin('hshin09', 'shin0903');
    document.body.innerHTML = "";
-   var iFrm = document.createElement('iframe');
-   iFrm.setAttribute('id', 'web');
-   iFrm.setAttribute('width', '100%');
-   iFrm.setAttribute('height', '100%');
-   document.body.appendChild(iFrm);
+   addFrame("web");
+   web = document.getElementById("web");
 }
 
 prepare();
