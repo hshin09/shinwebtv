@@ -77,6 +77,7 @@ var msgGetCh = "채널리스트 구성중";
 var audio_context = null;
 var gain_node = null;
 var oldVol;
+var cnt = 0;
 
 //window.onload = function() {
    window.parentView.showMsg("hiddenView:getADsid()");
@@ -85,7 +86,8 @@ var oldVol;
 
 function setcnt(n)
 {
-   window.parentView.showMsg( "hiddenView:cnt=1+" + n );
+   cnt=cnt+1;
+   window.parentView.showMsg( "hiddenView:cnt=" + cnt );
 }
 
 function setVol(vol)
