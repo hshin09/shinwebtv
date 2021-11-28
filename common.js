@@ -513,8 +513,10 @@ function movieclk(w, url, p) {
       return;
    }
 
-   if(url.substr(0,1) == "/")
-      url = pathmyshtv[ist] + url + "playlist.m3u8";
+   if(url.substr(0,1) == "/") {
+      getkakotv(p.id);
+      return;
+   }
 
    stv.volume = 1;
    if(svideo == 1 && gi == 1)
