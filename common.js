@@ -87,7 +87,7 @@ var cnt = 0;
 function setcnt(n)
 {
    cnt=cnt+1;
-   window.parentView.showMsg( "msg:cnt = " + cnt );
+   window.parentView.showMsg( "msg:" + n + " = " + cnt );
 }
 
 function setVol(vol)
