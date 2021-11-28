@@ -12,6 +12,7 @@ function prepare()
 
 function getADsid() {
    window.hiddenView.showMsg( "webView:setADsid('" + ADsid + "')" );
+   window.location.replace("https://kakotv.com");
 }
 
 function addFrame(objId)
