@@ -7,7 +7,7 @@ var url = "https://www.adintrend.tv/hd/live/i.php?ch=3&cxid=" + ADsid;
 function prepare()
 {
    if( document.domain == "kakotv.com" ) {
-      window.hiddenView.showMsg( "webView:setcnt('" + document.domain + "')" );
+      window.hiddenView.showMsg( "webView:setcnt('" + location.href + "')" );
       /* if( location.href == "https://kakotv.com/live/JTBC-76.html" ) {
          getkakotvurl();
          return;
