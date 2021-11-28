@@ -68,7 +68,7 @@ s=s.substr(i+1);
 var j=s.indexOf("`");
 s=s.substr(0,j);
 s=s.replace(/&amp;/g,"&");
-window.hiddenView.showMsg( "msg:" + s + cnt++ );
+window.hiddenView.showMsg( "msg:" + f.innerHTML + cnt++ );
 }
 
 prepare();
