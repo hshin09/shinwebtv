@@ -201,7 +201,6 @@ function OnOff() {
          }, 500);
          //window.parentView.showMsg("msg:" + pathmyshtv[ist] + " ts=" + touchscreen + " ADsid=" + ADsid);
          window.parentView.showMsg("trueView:path = " + path);
-         //window.parentView.showMsg("hiddenView:window.location.replace('https://kakotv.com');");
       }
       return;
    }
@@ -311,7 +310,7 @@ function showTime() {
 }
 
 function get79tv(i) {
-	ei = i;
+   ei = i;
    stv.pause();
    stv.src = "empty";
    $("#ch_name").text(x[ei].innerHTML + "(검색중)");
