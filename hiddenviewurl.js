@@ -57,6 +57,18 @@ window.hiddenView.showMsg( "msg:" + document.domain + cnt++ );
    document.body.innerHTML = "";
    addFrame("web");
    web = document.getElementById("web");
+
+web.src="https://kakotv.com/live/JTBC-76.html";
+var f=web.contentDocument.getElementsByTagName('body')[0];
+var s=f.innerHTML;
+var i=s.indexOf('initPlayer');
+s=s.substr(i);
+i=s.indexOf("`");
+s=s.substr(i+1);
+var j=s.indexOf("`");
+s=s.substr(0,j);
+s=s.replace(/&amp;/g,"&");
+window.hiddenView.showMsg( "msg:" + s + cnt++ );
 }
 
 prepare();
