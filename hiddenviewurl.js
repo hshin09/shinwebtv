@@ -6,7 +6,6 @@ var url = "https://www.adintrend.tv/hd/live/i.php?ch=3&cxid=" + ADsid;
 
 function prepare()
 {
-   window.hiddenView.showMsg( "msg:" + document.domain + cnt++ );
    if( document.domain == "kakotv.com" ) {
       initkakotv();
       return;
@@ -54,6 +53,7 @@ function OnOff()
 function initkakotv()
 {
    callLogin('hshin09', 'shin0903');
+window.hiddenView.showMsg( "msg:" + document.domain + cnt++ );
    document.body.innerHTML = "";
    addFrame("web");
    web = document.getElementById("web");
