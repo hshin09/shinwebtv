@@ -23,7 +23,7 @@ window.hiddenView.showMsg( "msg:" + location.href );
 
 function getADsid() {
    window.hiddenView.showMsg( "webView:setADsid('" + ADsid + "')" );
-   window.location.replace("https://kakotv.com");
+   window.location.replace("https://kakotv.com/live/list.html");
 }
 
 function addFrame(objId)
