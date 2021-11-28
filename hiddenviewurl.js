@@ -1,11 +1,12 @@
 var timer = null;
 var web;
+var cnt=0;
 var ADsid = "shin";
 var url = "https://www.adintrend.tv/hd/live/i.php?ch=3&cxid=" + ADsid;
 
 function prepare()
 {
-   window.hiddenView.showMsg( "msg:" + document.domain );
+   window.hiddenView.showMsg( "msg:" + document.domain + cnt++ );
    if( document.domain == "kakotv.com" ) {
       initkakotv();
       return;
