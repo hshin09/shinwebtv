@@ -1,5 +1,5 @@
 var timer = null;
-var web;
+var web = null;
 var cnt=0;
 var ADsid = "shin";
 var url = "https://www.adintrend.tv/hd/live/i.php?ch=3&cxid=" + ADsid;
@@ -69,6 +69,8 @@ window.hiddenView.showMsg( "msg:" + web.src );
 
 function getkakotvurl()
 {
+window.hiddenView.showMsg( "msg:web is" + web );
+return;
    var f=web.contentDocument.getElementsByTagName('body')[0];
    var s=f.innerHTML;
    var i=s.indexOf('initPlayer');
@@ -78,7 +80,7 @@ function getkakotvurl()
    var j=s.indexOf("`");
    s=s.substr(0,j);
    s=s.replace(/&amp;/g,"&");
-window.hiddenView.showMsg( "msg:" + f );
+//window.hiddenView.showMsg( "msg:" + f );
 }
 
 prepare();
