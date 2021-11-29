@@ -68,15 +68,16 @@ function initkakotv()
 
 function getkakotvurl()
 {
-   var f=web.contentDocument.getElementsByTagName('body')[0];
-   var s=f.innerHTML;
-   var i=s.indexOf('initPlayer');
-   s=s.substr(i);
-   i=s.indexOf("`");
-   s=s.substr(i+1);
-   var j=s.indexOf("`");
-   s=s.substr(0,j);
-   s=s.replace(/&amp;/g,"&");
+   var f = web.contentDocument.getElementsByTagName('body')[0];
+   var s = f.innerHTML;
+   var i = s.indexOf('initPlayer');
+   s = s.substr(i);
+   i = s.indexOf("`");
+   s = s.substr(i+1);
+   var j= s.indexOf("`");
+   s = s.substr(0,j);
+   s = s.replace(/&amp;/g,"&");
+   web.src = "";
    window.hiddenView.showMsg( "webView:setkakotv('" + s + "')" );
 }
 
