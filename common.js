@@ -76,10 +76,10 @@ var gain_node = null;
 var oldVol;
 var cnt = 0;
 
-//window.onload = function() {
+window.onload = function() {
    window.parentView.showMsg("hiddenView:getADsid()");
    Init();
-//}
+}
 
 function setcnt(n)
 {
