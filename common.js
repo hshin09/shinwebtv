@@ -29,12 +29,9 @@ var addr = [
 ];
 
 var touchscreen = 0;
-//var trueHostUrl = "https://btm007.com/stream";
-//var trueLoadUrl = trueHostUrl + "/a";
-//var path = trueHostUrl + "/pc_view.php?ch=live";
 var trueHostUrl = "http://www.youtv24.net";
 var trueLoadUrl = trueHostUrl + "/sites";
-//trueLoadUrl = "https://tvchak6.com/a";
+//trueLoadUrl = "https://v1.tvchak.com/a";
 var path = trueLoadUrl + "/mstv/pages/pc/pc_view.php?ch=live";
 var pathTvChak = "https://myplayer.allyearcdn.com/player/live/?g=";
 var optTvChak = "&q=0&sports=false";
@@ -87,7 +84,7 @@ var cnt = 0;
 function setcnt(n)
 {
    cnt=cnt+1;
-   window.parentView.showMsg( "msg:" + n + " = " + cnt );
+   //window.parentView.showMsg( "msg:" + n + " = " + cnt );
    if(cnt>25)
       window.parentView.showMsg( "hiddenView:initkakotv()" );
 }
@@ -103,8 +100,6 @@ function setVol(vol)
 
 function setADsid(sid) {
    ADsid = sid;
-   //alert("aaa");
-   //window.location.replace("https://kakotv.com");
 }
 
 function getPath() {
@@ -141,12 +136,10 @@ function Init() {
    web = document.getElementById("web");
    for(var i = 0; i < tvaddr.length; i++) {
       backtvaddr[i] = '79';
-      addr[i][3] = '79'; mustWait = 2;
+      //addr[i][3] = '79'; mustWait = 2;
       tvaddr[i] = addr[i][3];
    }
    
-   //window.removeEventListeners('DOMContentLoaded');
-
    timer = setInterval(function() {
       OnOff();
    }, 500);
