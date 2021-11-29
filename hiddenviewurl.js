@@ -39,6 +39,8 @@ function addFrame(objId)
 function loadVideo(url) 
 {
 window.hiddenView.showMsg( "msg:hidden = " + url );
+   if(web == null )
+      initkakotv();
    web.src = "https://kakotv.com/live" + url + ".html";
    mustWait = 3;
    
