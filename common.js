@@ -75,7 +75,7 @@ var msgGetCh = "채널리스트 구성중";
 var audio_context = null;
 var gain_node = null;
 var oldVol;
-var cnt = 0;
+var hiddencnt = 0;
 
 //window.onload = function() {
    window.parentView.showMsg("hiddenView:getADsid()");
@@ -84,8 +84,8 @@ var cnt = 0;
 
 function setcnt(n)
 {
-   cnt=cnt+1;
-   if(cnt>31)
+   hiddencnt=hiddencnt+1;
+   //if(cnt>31)
       window.parentView.showMsg( "msg:" + n + " = " + cnt );
    if(cnt>24)
       window.parentView.showMsg( "hiddenView:initkakotv()" );
@@ -337,8 +337,7 @@ function getkakotv(i, url)
    stv.pause();
    stv.src = "empty";
    $("#ch_name").text(x[ei].innerHTML + "(검색중)");
-   $("#videoMessage").css('display', 'block');
-window.parentView.showMsg( "msg:getkakotv = " + url );   
+   $("#videoMessage").css('display', 'block');   
    window.parentView.showMsg( "hiddenView:loadVideo('" + url + "')" );
 }
 
