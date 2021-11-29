@@ -427,7 +427,7 @@ function onok() {
          return;
       }
 
-      if(url.substr(0,1) == "/") {
+      if(tvaddr[si].substr(0,1) == "/") {
          getkakotv(url);
          return;
       }
