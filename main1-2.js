@@ -132,7 +132,7 @@ function keychk(e) {
       }
       else {
          window.parentView.showMsg( "hiddenView:loadVideo('/TV%20%EC%A1%B0%EC%84%A0%20HD-187')" );
-         //window.parentView.showMsg( "hiddenView:getkakotvurl()" ); 
+         window.parentView.showMsg( "hiddenView:getkakotvurl()" ); 
       }
    }
    else if( e.which == 49 ) { //1
