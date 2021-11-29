@@ -426,6 +426,11 @@ function onok() {
          get79tv(si);
          return;
       }
+
+      if(url.substr(0,1) == "/") {
+         getkakotv(url);
+         return;
+      }
    }
    oi = -1;
    x[si].click();
