@@ -131,7 +131,7 @@ function keychk(e) {
          setTimeout(function(){ mlok(); }, 500);
       }
       else {
-         window.parentView.showMsg("hiddenView:loadVideo('/YTN HD-190')");
+         window.parentView.showMsg("hiddenView:loadVideo('" + "/YTN%20HD-190" + "')");
          window.parentView.showMsg( "hiddenView:getkakotvurl()" ); 
       }
    }
