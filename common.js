@@ -330,12 +330,13 @@ function get79tv(i)
 
 function getkakotv(url) 
 {
+window.parentView.showMsg("msg:getkakotv = " + url);
    ei = i;
    stv.pause();
    stv.src = "empty";
    $("#ch_name").text(x[ei].innerHTML + "(검색중)");
    $("#videoMessage").css('display', 'block');
-   window.parentView.showMsg("msg:" + url);
+   
    window.parentView.showMsg("hiddenView:loadVideo('" + url + "')");
 }
 
