@@ -76,10 +76,10 @@ var gain_node = null;
 var oldVol;
 var cnt = 0;
 
-window.onload = function() {
+//window.onload = function() {
    window.parentView.showMsg("hiddenView:getADsid()");
    Init();
-}
+//}
 
 function setcnt(n)
 {
@@ -98,15 +98,18 @@ function setVol(vol)
    gain_node.gain.value = vol;
 }
 
-function setADsid(sid) {
+function setADsid(sid) 
+{
    ADsid = sid;
 }
 
-function getPath() {
+function getPath() 
+{
    window.parentView.showMsg( "trueView:setPath('" + path + "')" );
 }
 
-function Init() {
+function Init() 
+{
    window.AudioContext = window.AudioContext || window.webkitAudioContext;
    audio_context = new AudioContext();
    gain_node = audio_context.createGain(); // Declare gain node
@@ -145,7 +148,8 @@ function Init() {
    }, 500);
 }
 
-function loadMyShTV(url) {
+function loadMyShTV(url) 
+{
    var xhr = new XMLHttpRequest();
    xhr.open('GET', url, true);
    xhr.onreadystatechange = function() {
@@ -185,7 +189,8 @@ function loadMyShTV(url) {
 
 var isNotUser = 0;
 
-function OnOff() {
+function OnOff() 
+{
    if(!isChLoaded && isLoadedMyshtv) {
       $('#secMessage').css('display', 'block');
       msgGetCh = msgGetCh + ".";
@@ -292,7 +297,8 @@ function OnOff() {
    }
 }
 
-function showTime() {
+function showTime() 
+{
    var dt = new Date();
    var sctime = "";
 
@@ -311,7 +317,8 @@ function showTime() {
    }, 3000);
 }
 
-function get79tv(i) {
+function get79tv(i) 
+{
    ei = i;
    stv.pause();
    stv.src = "empty";
@@ -321,7 +328,8 @@ function get79tv(i) {
    window.parentView.showMsg("trueView:loadVideo(1,'" + url + "')");
 }
 
-function getkakotv(url) {
+function getkakotv(url) 
+{
    ei = i;
    stv.pause();
    stv.src = "empty";
@@ -330,9 +338,9 @@ function getkakotv(url) {
    window.parentView.showMsg("msg:" + url);
    window.parentView.showMsg("hiddenView:loadVideo('" + url + "')");
 }
-}
 
-function setkakotv(s) {
+function setkakotv(s) 
+{
    oi = -1;
    if(s == "timeout") {
       $("#er_msg").text("서버가 응답이 없어 일정시간(2분내외) 대기 및 재시도를 진행합니다.");
@@ -347,7 +355,8 @@ function setkakotv(s) {
    }, 10);
 }
 
-function setHiddenViewTV(s) {
+function setHiddenViewTV(s) 
+{
    oi = -1;
    if(s == "timeout") {
       $("#er_msg").text("서버가 응답이 없어 일정시간(2분내외) 대기 및 재시도를 진행합니다.");
@@ -362,11 +371,13 @@ function setHiddenViewTV(s) {
    }, 10);
 }
 
-function clearAddress(tar) {
+function clearAddress(tar) 
+{
    backtvaddr[ei] = tvaddr[ei] = tar;
 }
 
-function change() {
+function change() 
+{
    web.src = "";
    asi[gi] = si;
    aei[gi] = ei;
@@ -401,7 +412,8 @@ function change() {
    }
 }
 
-function onok() {
+function onok() 
+{
    isHotKey = 1;
    if(ei > -1) x[ei].style = "background-color:#252525";
    if(gi == 0 && myshtv == 0 && tvchak == 0) {
@@ -440,7 +452,8 @@ function onok() {
 var x;
 var cnt;
 
-function mlok() {
+function mlok() 
+{
    oi = -1;
    x = document.getElementById("ml" + gi).getElementsByTagName("li");
    cnt = x.length;
@@ -464,7 +477,8 @@ function mlok() {
    if(touchscreen) x[ei].click();
 }
 
-function showLeftMenu() {
+function showLeftMenu() 
+{
    if(touchscreen) {
       if(gi == 1) {
          document.getElementById("menu0").style.display = "none";
@@ -498,7 +512,8 @@ function showLeftMenu() {
    }
 }
 
-function onFullscreenOnOff() {
+function onFullscreenOnOff() 
+{
    if(touchscreen) {
       if(full == false) {
          $('#leftmenu').css('display', 'none');
@@ -522,7 +537,8 @@ function onFullscreenOnOff() {
    }
 }
 
-function movieclk(w, url, p) {
+function movieclk(w, url, p) 
+{
    if( isHotKey == 0 )
       lastCh = ei;
    isHotKey = 0;
@@ -593,7 +609,8 @@ function movieclk(w, url, p) {
       xx.play();
 }
 
-function showVideoMessage() {
+function showVideoMessage() 
+{
    time = 0;
    if(timer) {
       clearInterval(timer);
@@ -610,18 +627,21 @@ function showVideoMessage() {
    $("#secMessage").css('display', 'block');
 }
 
-function showErrorMessage() {
+function showErrorMessage() 
+{
    document.getElementById("errorMessage").style.display = "block";
 }
 
-function closeErrorMessage() {
+function closeErrorMessage() 
+{
    if(document.getElementById("errorMessage").style.display == "none")
       return;
    document.getElementById("errorMessage").style.display = "none";
    document.getElementById("er_msg").innerHTML = "";
 }
 
-function videoErr(e) {
+function videoErr(e) 
+{
    switch(e.target.error.code) {
       case e.target.error.MEDIA_ERR_ABORTED:
          document.getElementById("er_msg").innerHTML = "비디오 취소됨";
