@@ -58,11 +58,11 @@ function OnOff()
    if( mustWait ) {
       mustWait--;
       if( mustWait == 0 ) {
-         if( loadMode && timer ) {
+         if( timer ) {
             clearInterval(timer);
             timer=null;
          }
-         //getkakotvurl();
+         getkakotvurl();
       }
       return;
    }
