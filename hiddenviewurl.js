@@ -62,7 +62,7 @@ function OnOff()
             clearInterval(timer);
             timer=null;
          }
-         getkakotvurl();
+         //getkakotvurl();
       }
       return;
    }
