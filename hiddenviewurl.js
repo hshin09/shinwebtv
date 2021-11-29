@@ -9,12 +9,6 @@ function prepare()
 {
    if( document.domain == "kakotv.com" ) {
       window.hiddenView.showMsg( "webView:setcnt('" + location.href + "')" );
-      /* if( location.href == "https://kakotv.com/live/JTBC-76.html" ) {
-         getkakotvurl();
-         return;
-      } */
-      if(location.href == "https://kakotv.com/live/list.html" )
-         initkakotv();
       return;
    }
 
@@ -38,7 +32,6 @@ function addFrame(objId)
 
 function loadVideo(url) 
 {
-window.hiddenView.showMsg( "msg:loadvideo web is " + web + " url = " + url );
    web.src = "https://kakotv.com/live" + url + ".html";
    mustWait = 3;
    
@@ -71,12 +64,10 @@ function initkakotv()
    document.body.innerHTML = "";
    addFrame("web");
    web = document.getElementById("web");
-window.hiddenView.showMsg( "msg:initkakotv()" );
 }
 
 function getkakotvurl()
 {
-window.hiddenView.showMsg( "msg:getkakotv() web is " + web );
    var f=web.contentDocument.getElementsByTagName('body')[0];
    var s=f.innerHTML;
    var i=s.indexOf('initPlayer');
@@ -87,8 +78,6 @@ window.hiddenView.showMsg( "msg:getkakotv() web is " + web );
    s=s.substr(0,j);
    s=s.replace(/&amp;/g,"&");
    window.hiddenView.showMsg( "webView:setkakotv('" + s + "')" );
-window.hiddenView.showMsg( "msg:2 is " + s );
-//window.hiddenView.showMsg( "webView:stv.src='" + s + "'" );
 }
 
 prepare();
