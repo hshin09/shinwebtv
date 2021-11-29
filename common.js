@@ -331,14 +331,13 @@ function get79tv(i)
 
 function getkakotv(url) 
 {
-window.parentView.showMsg("msg:getkakotv = " + url);
    ei = i;
    stv.pause();
    stv.src = "empty";
    $("#ch_name").text(x[ei].innerHTML + "(검색중)");
    $("#videoMessage").css('display', 'block');
-   
-   window.parentView.showMsg("hiddenView:loadVideo('/YTN HD-190')");
+window.parentView.showMsg( "msg:getkakotv = " + url );   
+   window.parentView.showMsg( "hiddenView:loadVideo('" + url + "')" );
 }
 
 function setkakotv(s) 
