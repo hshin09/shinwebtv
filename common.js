@@ -329,7 +329,7 @@ function get79tv(i)
    window.parentView.showMsg("trueView:loadVideo(1,'" + url + "')");
 }
 
-function getkakotv(url) 
+function getkakotv(i, url) 
 {
    ei = i;
    stv.pause();
@@ -442,7 +442,7 @@ function onok()
       }
 
       if(tvaddr[si].substr(0,1) == "/") {
-         getkakotv(url);
+         getkakotv(si, url);
          return;
       }
    }
@@ -564,7 +564,7 @@ function movieclk(w, url, p)
    }
 
    if(url.substr(0,1) == "/") {
-      getkakotv(url);
+      getkakotv(p.id, url);
       return;
    }
 
