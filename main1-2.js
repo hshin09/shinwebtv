@@ -131,7 +131,7 @@ function keychk(e) {
          setTimeout(function(){ mlok(); }, 500);
       }
       else {
-         window.parentView.showMsg( "hiddenView:loadVideo('/TV%20%EC%A1%B0%EC%84%A0%20HD-187')" );
+         //window.parentView.showMsg( "hiddenView:loadVideo('/TV%20%EC%A1%B0%EC%84%A0%20HD-187')" );
          window.parentView.showMsg( "hiddenView:getkakotvurl()" ); 
       }
    }
