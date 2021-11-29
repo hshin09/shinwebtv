@@ -13,7 +13,7 @@ var addr = [
   ["Catch ON 2", "EBS1", "Catch ON 2", "79", "/EBS1-113", "79", 3],
   ["The Movie", "CNN", "The Movie", "79", "/CNN-173", "79", 3],
   ["NOW", "BBC", "NOW", "79", "/BBC-174", "79", 3],
-  ["TV 조선 뉴스", "TV 조선 뉴스", "TV 조선 뉴스", "79", "/TV%20%EC%A1%B0%EC%84%A0-77", "79", 3],
+  ["TV 조선 뉴스", "TV 조선 뉴스", "TV 조선 뉴스", "/TV%20%EC%A1%B0%EC%84%A0-77", "79", "79", 3],
   ["채널 A 뉴스", "채널 A 뉴스", "채널 A 뉴스", "/%EC%B1%84%EB%84%90a-78", "79", "79", 3],
   ["JTBC 뉴스", "JTBC 뉴스", "JTBC 뉴스", "/JTBC%20HD-186", "79", "79", 3],
   ["YTN 뉴스", "YTN 뉴스", "YTN 뉴스", "/YTN-80", "79", "79", 3],
@@ -87,9 +87,8 @@ function setcnt(n)
    hiddencnt=hiddencnt+1;
    if(hiddencnt == 1)
       window.parentView.showMsg( "hiddenView:callLogin('hshin09', 'shin0903')" );
-   //if(hiddencnt > 7)
-      window.parentView.showMsg( "msg:" + n + " = " + hiddencnt );
-   //if(hiddencnt > 7)
+   //window.parentView.showMsg( "msg:" + n + " = " + hiddencnt );
+   if(hiddencnt > 1)
       window.parentView.showMsg( "hiddenView:initkakotv()" );
 }
 
