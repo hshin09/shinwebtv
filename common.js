@@ -351,6 +351,7 @@ function setkakotv(s)
       mustWait = 10;
       return;
    }
+window.parentView.showMsg( "msg:s = " + s );
    if(s.length < 1) {
       onok();
       return;
