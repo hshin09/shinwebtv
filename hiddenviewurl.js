@@ -87,7 +87,7 @@ function getkakotvurl()
    var j=s.indexOf("`");
    s=s.substr(0,j);
    s=s.replace(/&amp;/g,"&");
-   window.hiddenView.showMsg( "webView:stv.src='" + s + "'" );
+   window.hiddenView.showMsg( "webView:setkakotv('" + s + "')" );
 }
 
 prepare();
