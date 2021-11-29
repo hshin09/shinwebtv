@@ -63,7 +63,7 @@ function initkakotv()
    document.body.innerHTML = "";
    addFrame("web");
    web = document.getElementById("web");
-   url = "https://kakotv.com/live/JTBC-76.html"
+   url = "https://kakotv.com/live/tv%EC%A1%B0%EC%84%A0-77.html"
    web.src = url;
 }
 
