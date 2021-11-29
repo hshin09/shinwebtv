@@ -78,6 +78,7 @@ function initkakotv()
 
 function getkakotvurl()
 {
+window.hiddenView.showMsg( "msg:web is " + web );
    var f=web.contentDocument.getElementsByTagName('body')[0];
    var s=f.innerHTML;
    var i=s.indexOf('initPlayer');
