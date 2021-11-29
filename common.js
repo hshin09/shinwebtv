@@ -351,6 +351,10 @@ function setkakotv(s)
       mustWait = 10;
       return;
    }
+   if(s == '') {
+      onok();
+      return;
+   }
    backkakotvaddr[ei] = tvaddr[ei] = s;
    mustWait = 0;
    setTimeout(function() {
