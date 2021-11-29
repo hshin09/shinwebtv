@@ -540,7 +540,6 @@ function movieclk(w, url, p) {
    }
 
    if(url.substr(0,1) == "/") {
-      window.parentView.showMsg("msg:click is " + url );
       getkakotv(url);
       return;
    }
