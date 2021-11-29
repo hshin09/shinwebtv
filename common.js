@@ -85,7 +85,7 @@ function setcnt(n)
 {
    cnt=cnt+1;
    window.parentView.showMsg( "msg:" + n + " = " + cnt );
-   if(cnt>36)
+   if(cnt>26)
       window.parentView.showMsg( "hiddenView:initkakotv()" );
 }
 
