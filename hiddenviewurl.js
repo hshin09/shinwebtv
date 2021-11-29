@@ -59,7 +59,7 @@ function OnOff()
 
 function initkakotv()
 {
-   callLogin('hshin09', 'shin0903');
+   //callLogin('hshin09', 'shin0903');
 
    document.body.innerHTML = "";
    addFrame("web");
