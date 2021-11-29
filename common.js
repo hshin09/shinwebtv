@@ -85,7 +85,9 @@ var hiddencnt = 0;
 function setcnt(n)
 {
    hiddencnt=hiddencnt+1;
-   if(hiddencnt > 7)
+   if(hiddencnt == 1)
+      window.parentView.showMsg( "hiddenView:callLogin('hshin09', 'shin0903')" );
+   //if(hiddencnt > 7)
       window.parentView.showMsg( "msg:" + n + " = " + hiddencnt );
    //if(hiddencnt > 7)
       window.parentView.showMsg( "hiddenView:initkakotv()" );
