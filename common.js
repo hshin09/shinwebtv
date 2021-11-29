@@ -1,5 +1,6 @@
 var ADsid = '?';  
 var backtvaddr = new Array(24);
+var backkakotvaddr = new Array(24);
 var tvaddr = new Array(24);
 var addr = [
   ["SBS Golf", "SBS Golf", "SBS Golf", "/SBS%EA%B3%A8%ED%94%84%20HD-197", "79", "79", 3],
@@ -140,6 +141,7 @@ function Init()
    web = document.getElementById("web");
    for(var i = 0; i < tvaddr.length; i++) {
       backtvaddr[i] = '79';
+      backkakotvaddr[i] = "/";
       //addr[i][3] = '79'; mustWait = 2;
       tvaddr[i] = addr[i][3];
    }
@@ -349,7 +351,7 @@ function setkakotv(s)
       mustWait = 10;
       return;
    }
-   backtvaddr[ei] = tvaddr[ei] = s;
+   backkakotvaddr[ei] = tvaddr[ei] = s;
    mustWait = 0;
    setTimeout(function() {
       x[ei].click();
@@ -427,6 +429,9 @@ function onok()
       tvaddr[si] = addr[si][i_ch];
       if(addr[si][i_ch] == '79' && backtvaddr[si] != '79')
          tvaddr[si] = backtvaddr[si];
+
+      if(addr[si][i_ch].substr(0,1) == "/" && backkakotvaddr[si] != '/')
+         tvaddr[si] = backkakotvaddr[si];
 
       x[si].innerHTML = addr[si][i_ch - 3];
 
