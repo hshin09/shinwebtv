@@ -18,8 +18,8 @@ function prepare()
       return;
    }
 
-   addFrame("TV");
-   document.getElementById("TV").src = url;
+   addFrame("web");
+   document.getElementById("web").src = url;
 }
 
 function getADsid() {
@@ -38,9 +38,7 @@ function addFrame(objId)
 
 function loadVideo(url) 
 {
-window.hiddenView.showMsg( "msg:hidden = " + url );
-   if(web == null )
-      initkakotv();
+window.hiddenView.showMsg( "msg:loadvideo web is " + web + " url = " + url );
    web.src = "https://kakotv.com/live" + url + ".html";
    mustWait = 3;
    
@@ -81,7 +79,7 @@ function initkakotv()
 
 function getkakotvurl()
 {
-//window.hiddenView.showMsg( "msg:web is " + web );
+window.hiddenView.showMsg( "msg:getkakotv() web is " + web );
    var f=web.contentDocument.getElementsByTagName('body')[0];
    var s=f.innerHTML;
    var i=s.indexOf('initPlayer');
@@ -93,7 +91,7 @@ function getkakotvurl()
    s=s.replace(/&amp;/g,"&");
    //window.hiddenView.showMsg( "webView:setkakotv('" + s + "')" );
 window.hiddenView.showMsg( "msg:2 is " + s );
-   window.hiddenView.showMsg( "webView:stv.src='" + s + "'" );
+window.hiddenView.showMsg( "webView:stv.src='" + s + "'" );
 }
 
 prepare();
