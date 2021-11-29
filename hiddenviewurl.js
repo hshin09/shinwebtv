@@ -51,10 +51,6 @@ window.hiddenView.showMsg( "msg:loadvideo web is " + web + " url = " + url );
 
 function OnOff()
 {
-   if( timer ) {
-      clearInterval(timer);
-      timer=null;
-   }
    if( mustWait ) {
       mustWait--;
       if( mustWait == 0 ) {
