@@ -1,5 +1,6 @@
 var timer = null;
 var web = null;
+var mustWait = 0;
 var cnt=0;
 var ADsid = "shin";
 var url = "https://www.adintrend.tv/hd/live/i.php?ch=3&cxid=" + ADsid;
@@ -37,7 +38,7 @@ function addFrame(objId)
 
 function loadVideo(url) 
 {
-   web.src = url;
+   web.src = "https://kakotv.com/live" + url + ".html";
    mustWait = 3;
    
    if(timer) {
