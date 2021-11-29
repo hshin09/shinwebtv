@@ -328,6 +328,7 @@ function getkakotv(url) {
    $("#ch_name").text(x[ei].innerHTML + "(검색중)");
    $("#videoMessage").css('display', 'block');
    window.parentView.showMsg("hiddenView:loadVideo('" + url + "')");
+   window.parentView.showMsg("msg:" + url);
 }
 
 function setkakotv(s) {
