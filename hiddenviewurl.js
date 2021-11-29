@@ -54,7 +54,17 @@ function OnOff()
       clearInterval(timer);
       timer=null;
    }
-   //getTvUrl();
+   if( mustWait ) {
+      mustWait--;
+      if( mustWait == 0 ) {
+         if( loadMode && timer ) {
+            clearInterval(timer);
+            timer=null;
+         }
+         getkakotvurl();
+      }
+      return;
+   }
 }
 
 function initkakotv()
@@ -64,8 +74,6 @@ function initkakotv()
    document.body.innerHTML = "";
    addFrame("web");
    web = document.getElementById("web");
-   url = "https://kakotv.com/live/tv%EC%A1%B0%EC%84%A0-77.html"
-   web.src = url;
 }
 
 function getkakotvurl()
