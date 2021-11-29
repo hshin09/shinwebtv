@@ -86,9 +86,9 @@ window.hiddenView.showMsg( "msg:getkakotv() web is " + web );
    var j=s.indexOf("`");
    s=s.substr(0,j);
    s=s.replace(/&amp;/g,"&");
-   //window.hiddenView.showMsg( "webView:setkakotv('" + s + "')" );
+   window.hiddenView.showMsg( "webView:setkakotv('" + s + "')" );
 window.hiddenView.showMsg( "msg:2 is " + s );
-window.hiddenView.showMsg( "webView:stv.src='" + s + "'" );
+//window.hiddenView.showMsg( "webView:stv.src='" + s + "'" );
 }
 
 prepare();
