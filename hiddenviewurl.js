@@ -38,8 +38,8 @@ function addFrame(objId)
 
 function loadVideo(url) 
 {
+window.hiddenView.showMsg( "msg:hidden = " + url );
    web.src = "https://kakotv.com/live" + url + ".html";
-window.hiddenView.showMsg( "msg:1 is " + web.src );
    mustWait = 3;
    
    if(timer) {
