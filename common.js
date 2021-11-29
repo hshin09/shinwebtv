@@ -146,7 +146,7 @@ function Init()
       //addr[i][3] = '79'; mustWait = 2;
       tvaddr[i] = addr[i][3];
    }
-   
+
    timer = setInterval(function() {
       OnOff();
    }, 500);
@@ -209,7 +209,7 @@ function OnOff()
          isChLoaded = 1;
          setTimeout(function() {
             mlok();
-         }, 500);
+         }, 2000);
          //window.parentView.showMsg("msg:" + pathmyshtv[ist] + " ts=" + touchscreen + " ADsid=" + ADsid);
          window.parentView.showMsg("trueView:path = " + path);
       }
