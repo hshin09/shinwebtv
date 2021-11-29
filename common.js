@@ -84,7 +84,8 @@ var cnt = 0;
 function setcnt(n)
 {
    cnt=cnt+1;
-   window.parentView.showMsg( "msg:" + n + " = " + cnt );
+   if(cnt>31)
+      window.parentView.showMsg( "msg:" + n + " = " + cnt );
    if(cnt>24)
       window.parentView.showMsg( "hiddenView:initkakotv()" );
 }
