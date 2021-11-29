@@ -351,7 +351,7 @@ function setkakotv(s)
       mustWait = 10;
       return;
    }
-   if(s == '') {
+   if(s.length < 1) {
       onok();
       return;
    }
