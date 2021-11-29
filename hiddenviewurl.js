@@ -39,6 +39,7 @@ function addFrame(objId)
 function loadVideo(url) 
 {
    web.src = "https://kakotv.com/live" + url + ".html";
+window.hiddenView.showMsg( "msg:1 is " + web.src );
    mustWait = 3;
    
    if(timer) {
@@ -89,7 +90,7 @@ function getkakotvurl()
    s=s.substr(0,j);
    s=s.replace(/&amp;/g,"&");
    //window.hiddenView.showMsg( "webView:setkakotv('" + s + "')" );
-window.hiddenView.showMsg( "msg:web is " + s );
+window.hiddenView.showMsg( "msg:2 is " + web.src );
    //window.hiddenView.showMsg( "webView:stv.src='" + s + "'" );
 }
 
