@@ -130,10 +130,6 @@ function keychk(e) {
          changeKorTv();
          setTimeout(function(){ mlok(); }, 500);
       }
-      else {
-         window.parentView.showMsg("hiddenView:loadVideo('" + "/YTN%20HD-190" + "')");
-         //window.parentView.showMsg( "hiddenView:getkakotvurl()" ); 
-      }
    }
    else if( e.which == 49 ) { //1
       //isHotKey = 1;
