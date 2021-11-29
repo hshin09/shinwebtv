@@ -440,7 +440,7 @@ function onok()
          get79tv(si);
          return;
       }
-
+window.parentView.showMsg("msg:onok() tvaddr = " + tvaddr[si] );
       if(tvaddr[si].substr(0,1) == "/") {
          getkakotv(si, url);
          return;
