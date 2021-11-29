@@ -71,6 +71,7 @@ function initkakotv()
    document.body.innerHTML = "";
    addFrame("web");
    web = document.getElementById("web");
+window.hiddenView.showMsg( "msg:initkakotv()" );
 }
 
 function getkakotvurl()
