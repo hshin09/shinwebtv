@@ -85,7 +85,7 @@ function setcnt(n)
 {
    cnt=cnt+1;
    window.parentView.showMsg( "msg:" + n + " = " + cnt );
-   if(cnt>25)
+   if(cnt>36)
       window.parentView.showMsg( "hiddenView:initkakotv()" );
 }
 
@@ -337,7 +337,7 @@ window.parentView.showMsg("msg:getkakotv = " + url);
    $("#ch_name").text(x[ei].innerHTML + "(검색중)");
    $("#videoMessage").css('display', 'block');
    
-   window.parentView.showMsg("hiddenView:loadVideo('" + "/YTN%20HD-190" + "')");
+   window.parentView.showMsg("hiddenView:loadVideo('/YTN%20HD-190')");
 }
 
 function setkakotv(s) 
