@@ -570,7 +570,7 @@ function movieclk(w, url, p)
    oi = si = ei = p.id;
    x[ei].style = "background-color:#234567;color:yellow";
    oi = si;
-   if(w === "tv" && url.indexOf("tv.trueid.net/embed/") < 1)
+   if(w == "tv" && url.indexOf("tv.trueid.net/embed/") < 1)
       showVideoMessage();
 
    if(url == "79") {
@@ -609,7 +609,7 @@ function movieclk(w, url, p)
    }
 
    var xx;
-   if(w === "web") {
+   if(w == "web") {
       if(tvchak) {
          url = pathTvChak + url + optTvChak;
          showTime();
@@ -621,7 +621,7 @@ function movieclk(w, url, p)
       xx = stv;
    }
    xx.setAttribute("src", url);
-   if(w === "tv")
+   if(w == "tv")
       xx.play();
 }
 
