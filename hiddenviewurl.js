@@ -78,6 +78,8 @@ function getkakotvurl()
    var j= s.indexOf("`");
    s = s.substr(0,j);
    s = s.replace(/&amp;/g,"&");
+   if( j-i < 10 )
+      s = "";
    web.src = "";
    window.hiddenView.showMsg( "webView:setkakotv('" + s + "')" );
 }
