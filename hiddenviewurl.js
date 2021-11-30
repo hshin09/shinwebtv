@@ -64,13 +64,13 @@ function initkakotv()
    document.body.innerHTML = "";
    addFrame("web");
    web = document.getElementById("web");
+   web.src = "";
 }
 
 function getkakotvurl()
 {
    var f = web.contentDocument.getElementsByTagName('body')[0];
-   var s = null;
-   s = f.innerHTML;
+   var s = f.innerHTML;
    var i = s.indexOf('initPlayer');
    s = s.substr(i);
    i = s.indexOf("`");
