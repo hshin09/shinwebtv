@@ -353,7 +353,9 @@ function setkakotv(s)
    }
 window.parentView.showMsg( "msg:s = " + s );
    if(s.length < 1) {
-      onok();
+      setTimeout(function() {
+               onok();
+            }, 500);
       return;
    }
    backkakotvaddr[ei] = tvaddr[ei] = s;
