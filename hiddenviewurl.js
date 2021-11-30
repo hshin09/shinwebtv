@@ -69,7 +69,8 @@ function initkakotv()
 function getkakotvurl()
 {
    var f = web.contentDocument.getElementsByTagName('body')[0];
-   var s = f.innerHTML;
+   var s = null;
+   s = f.innerHTML;
    var i = s.indexOf('initPlayer');
    s = s.substr(i);
    i = s.indexOf("`");
