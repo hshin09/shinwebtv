@@ -138,7 +138,7 @@ function Init()
 
    timer = setInterval(function() {
       OnOff();
-   }, 1000);
+   }, 500);
 }
 
 function loadMyShTV(url) 
@@ -196,9 +196,11 @@ function OnOff()
             timer = null;
          }
          isChLoaded = 1;
-         setTimeout(function() {
-            mlok();
-         }, 1500);
+         if( touchscreen ) {
+            setTimeout(function() {
+               mlok();
+            }, 500);
+         }
          //window.parentView.showMsg("msg:" + pathmyshtv[ist] + " ts=" + touchscreen + " ADsid=" + ADsid);
          window.parentView.showMsg("trueView:path = " + path);
       }
