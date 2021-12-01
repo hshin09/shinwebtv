@@ -603,6 +603,7 @@ function movieclk(w, url, p)
          showTime();
       }
       stv.style.display = "none";
+      web.style.display = "block";
       xx = web;
    } else {
       stv.style.display = "block";
