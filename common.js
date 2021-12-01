@@ -138,7 +138,7 @@ function Init()
 
    timer = setInterval(function() {
       OnOff();
-   }, 500);
+   }, 1500);
 }
 
 function loadMyShTV(url) 
