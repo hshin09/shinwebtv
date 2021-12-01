@@ -63,7 +63,7 @@ function initkakotv()
    addFrame("web");
    web = document.getElementById("web");
    web.contentWindow.callLogin('hshin09', 'shin0903');
-   window.hiddenView.showMsg( "msg:kakotv login OK" );
+   window.hiddenView.showMsg( "msg:로그인 되었습니다" );
    web.src = "";
 }
 
@@ -73,6 +73,7 @@ function getkakotvurl()
    var s = f.innerHTML;
    var i = s.indexOf('initPlayer');
    if( i < 0 ) {
+      window.hiddenView.showMsg( "msg:다시 로그인 합니다" );
       web.contentWindow.callLogin('hshin09', 'shin0903');
       web.src = "";
       return;
