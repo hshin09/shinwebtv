@@ -19,7 +19,7 @@ function prepare()
 
    addFrame("web");
    document.getElementById("web").src = url;
-   window.location.replace("https://kakotv.com/live/list.html");
+   window.location.replace("https://kakotv.com");
 }
 
 function getADsid() {
