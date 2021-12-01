@@ -62,9 +62,10 @@ function initkakotv()
    document.body.innerHTML = "";
    addFrame("web");
    web = document.getElementById("web");
+   web.src = "https://kakotv.com";
    web.contentWindow.callLogin('hshin09', 'shin0903');
    window.hiddenView.showMsg( "msg:로그인 되었습니다" );
-   web.src = "";
+   web.src ="";
 }
 
 function getkakotvurl()
