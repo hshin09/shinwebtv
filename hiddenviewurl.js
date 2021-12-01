@@ -8,17 +8,17 @@ var url = "https://www.adintrend.tv/hd/live/i.php?ch=3&cxid=" + ADsid;
 function prepare()
 {
    if( document.domain == "kakotv.com" ) {
-      
+      initkakotv();
       return;
    }
 
    addFrame("web");
    document.getElementById("web").src = url;
+   window.location.replace("https://kakotv.com");
 }
 
 function getADsid() {
    window.hiddenView.showMsg( "webView:setADsid('" + ADsid + "')" );
-   window.location.replace("https://kakotv.com");
 }
 
 function addFrame(objId)
