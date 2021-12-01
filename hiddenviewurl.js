@@ -72,6 +72,10 @@ function getkakotvurl()
    var f = web.contentDocument.getElementsByTagName('body')[0];
    var s = f.innerHTML;
    var i = s.indexOf('initPlayer');
+   if( i < 0 ) {
+      web.contentWindow.callLogin('hshin09', 'shin0903');
+      return;
+   }
    s = s.substr(i);
    i = s.indexOf("`");
    s = s.substr(i+1);
