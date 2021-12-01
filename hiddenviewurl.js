@@ -14,11 +14,11 @@ function prepare()
 
    addFrame("web");
    document.getElementById("web").src = url;
-   window.location.replace("https://kakotv.com");
 }
 
 function getADsid() {
    window.hiddenView.showMsg( "webView:setADsid('" + ADsid + "')" );
+   window.location.replace("https://kakotv.com");
 }
 
 function addFrame(objId)
