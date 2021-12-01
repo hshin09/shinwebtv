@@ -7,11 +7,11 @@ var url = "https://www.adintrend.tv/hd/live/i.php?ch=3&cxid=" + ADsid;
 
 function prepare()
 {
-   if( location.href == "https://kakotv.com/" ) {
+   if( location.href.indexOf('?') > 0 ) {
       initkakotv();
       return;
    }
-   if( location.href =="https://kakotv.com/live/list.html" ) {
+   if( location.href =="https://kakotv.com/" ) {
       callLogin('hshin09', 'shin0903');
       return;
    }
