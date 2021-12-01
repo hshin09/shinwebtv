@@ -7,18 +7,22 @@ var url = "https://www.adintrend.tv/hd/live/i.php?ch=3&cxid=" + ADsid;
 
 function prepare()
 {
-   if( document.domain == "kakotv.com" ) {
+   if( location.href == "https://kakotv.com/" ) {
       initkakotv();
+      return;
+   }
+   if( location.href =="https://kakotv.com/live/list.html" ) {
+      callLogin('hshin09', 'shin0903');
       return;
    }
 
    addFrame("web");
    document.getElementById("web").src = url;
+   window.location.replace("https://kakotv.com/live/list.html");
 }
 
 function getADsid() {
    window.hiddenView.showMsg( "webView:setADsid('" + ADsid + "')" );
-   window.location.replace("https://kakotv.com");
 }
 
 function addFrame(objId)
@@ -62,10 +66,8 @@ function initkakotv()
    document.body.innerHTML = "";
    addFrame("web");
    web = document.getElementById("web");
-   web.src = "https://kakotv.com";
-   setTimeout( "function(){ web.contentWindow.callLogin('hshin09', 'shin0903'); }, 1000 );
+   web.src = "";
    window.hiddenView.showMsg( "msg:로그인 되었습니다" );
-   //web.src ="";
 }
 
 function getkakotvurl()
