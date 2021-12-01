@@ -75,25 +75,11 @@ var msgGetCh = "채널리스트 구성중";
 var audio_context = null;
 var gain_node = null;
 var oldVol;
-var hiddencnt = 0;
 
 //window.onload = function() {
    window.parentView.showMsg("hiddenView:getADsid()");
    Init();
 //}
-
-function setcnt(n)
-{
-   hiddencnt = hiddencnt +1 ;
-   if(hiddencnt == 1) {
-      window.parentView.showMsg( "hiddenView:callLogin('hshin09', 'shin0903')" );
-      window.parentView.showMsg( "msg:logined" );
-   }
-   if(hiddencnt > 1) {
-      window.parentView.showMsg( "hiddenView:initkakotv()" );
-      hiddencnt = 0;
-   }
-}
 
 function setVol(vol)
 {
