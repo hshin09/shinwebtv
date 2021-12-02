@@ -70,7 +70,7 @@ function initkakotv()
    web = document.getElementById("web");
    web.src = "";
    window.hiddenView.showMsg( "msg:로그인 되었습니다" );
-   window.hiddenView.showMsg( "webView:mlclk()" );
+   window.hiddenView.showMsg( "webView:setTimeout('function(){mlclk();}',500)" );
 }
 
 function getkakotvurl()
