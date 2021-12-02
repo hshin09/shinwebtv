@@ -1,7 +1,7 @@
 var timer = null;
 var web = null;
 var mustWait = 0;
-var cnt=0;
+var cmdurl = "";
 var ADsid = "shin";
 var url = "https://www.adintrend.tv/hd/live/i.php?ch=3&cxid=" + ADsid;
 
@@ -36,7 +36,8 @@ function addFrame(objId)
 
 function loadVideo(url) 
 {
-   web.src = "https://kakotv.com/live" + url + ".html";
+   cmdurl = "https://kakotv.com/live" + url + ".html";
+   web.src = cmdurl;
    mustWait = 3;
    
    if(timer) {
@@ -67,19 +68,24 @@ function initkakotv()
    addFrame("web");
    web = document.getElementById("web");
    web.src = "";
+   window.hiddenView.showMsg( "webView:kakotvmode = 1" );
    window.hiddenView.showMsg( "msg:로그인 되었습니다" );
-   window.hiddenView.showMsg( "webView:mlok()" );
 }
 
 function getkakotvurl()
 {
+   if( web.contentWindow == null ||
+       web.contentWindow.location.href != cmdurl ) {
+      window.hiddenView.showMsg( "msg:다시 로그인 합니다" );
+      web.contentWindow.callLogin('hshin09', 'shin0903');
+      return;
+   }
    var f = web.contentDocument.getElementsByTagName('body')[0];
    var s = f.innerHTML;
    var i = s.indexOf('initPlayer');
    if( i < 0 ) {
       window.hiddenView.showMsg( "msg:다시 로그인 합니다" );
       web.contentWindow.callLogin('hshin09', 'shin0903');
-      web.src = "";
       return;
    }
    s = s.substr(i);
