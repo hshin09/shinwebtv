@@ -11,13 +11,8 @@ function loadMenu(id,url) {
 
 function prepare()
 {
-   if(location.href.indexOf("file://") >= 0 ) 
-      return;
-   if(document.domain == "hshin09.github.io")
-      return;
-   setTimeout(function() {
+   if( location.href.indexOf("tvchak") > 0 )
       checkTitle();
-   }, 100);
 }
 
 function checkTitle()
