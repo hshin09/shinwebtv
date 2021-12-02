@@ -69,7 +69,7 @@ function initkakotv()
    addFrame("web");
    web = document.getElementById("web");
    web.src = "";
-   window.hiddenView.showMsg( "webView:setTimeout('function(){mlclk();}',500)" );
+   window.hiddenView.showMsg( "webView:setTimeout(function(){mlclk();},100)" );
    window.hiddenView.showMsg( "msg:로그인 되었습니다" );
 }
 
