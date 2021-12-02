@@ -18,10 +18,10 @@ function prepare()
 
    addFrame("web");
    document.getElementById("web").src = url;
-   window.location.replace("https://kakotv.com");
 }
 
 function getADsid() {
+   window.location.replace("https://kakotv.com");
    window.hiddenView.showMsg( "webView:setADsid('" + ADsid + "')" );
 }
 
