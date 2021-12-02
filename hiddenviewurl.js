@@ -74,8 +74,11 @@ function initkakotv()
 
 function getkakotvurl()
 {
-   if( web.contentWindow == null ||
-       web.contentWindow.location.href != cmdurl ) {
+   if( web.contentWindow == null ) {
+      window.location.replace("https://kakotv.com");
+      return;
+   }
+   if( web.contentWindow.location.href != cmdurl ) {
       window.hiddenView.showMsg( "msg:다시 로그인 합니다" );
       web.contentWindow.callLogin('hshin09', 'shin0903');
       return;
