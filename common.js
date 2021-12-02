@@ -67,7 +67,6 @@ var stv;
 var tstr;
 var isChLoaded = 0;
 var msgGetCh = "채널리스트 구성중";
-var kakotvmode = 0;
 
 //window.onload = function() {
    window.parentView.showMsg("hiddenView:getADsid()");
