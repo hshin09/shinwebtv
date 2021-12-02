@@ -67,6 +67,7 @@ function handleTouchEnd(evt) {
 
 function firstSetting()
 {
+   kakotvmode = 1;
    touchscreen = 1;
    addEventListener('touchstart', handleTouchStart, false);
    addEventListener('touchend', handleTouchEnd, false);
