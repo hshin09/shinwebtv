@@ -68,7 +68,7 @@ function initkakotv()
    addFrame("web");
    web = document.getElementById("web");
    web.src = "";
-   window.hiddenView.showMsg( "webView:kakotvmode = 1" );
+   window.hiddenView.showMsg( "webView:mlok()" );
    window.hiddenView.showMsg( "msg:로그인 되었습니다" );
 }
 
