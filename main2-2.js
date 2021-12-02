@@ -67,8 +67,8 @@ function handleTouchEnd(evt) {
 
 function firstSetting()
 {
-   kakotvmode = 1;
    touchscreen = 1;
+   kakotvmode = 1;
    addEventListener('touchstart', handleTouchStart, false);
    addEventListener('touchend', handleTouchEnd, false);
    $('#tv').on('dblclick',(function(){ onFullscreenOnOff(); }));
