@@ -321,7 +321,7 @@ function clearAddress(tar)
       backtvaddr[ei] = tvaddr[ei] = tar;
    else {
       backkakotvaddr[ei] = "/";
-      tvaddr[ei] = addr[ei][ addr[ei][6] ]:
+      tvaddr[ei] = addr[ei][ addr[ei][6] ];
    }
 }
 
