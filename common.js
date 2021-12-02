@@ -319,8 +319,10 @@ function clearAddress(tar)
 {
    if( addr[ei][ addr[ei][6] ] == "79" )
       backtvaddr[ei] = tvaddr[ei] = tar;
-   else
-      backkakotvaddr[ei] = tvaddr[ei] = "/";
+   else {
+      backkakotvaddr[ei] = "/";
+      tvaddr[ei] = addr[ei][ addr[ei][6] ]:
+   }
 }
 
 function change() 
