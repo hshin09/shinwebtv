@@ -59,36 +59,20 @@ var lastCh = -1;
 var youtv24 = 0;
 var tvchak = 0;
 var svideo = 0;
-var myshtv = 0;
-var isLoadedMyshtv = 0;
-var pathmyshtv = [
-"https://cdn.kr130.jpnettv.live/krtv",
-"https://cdn.us195.jpnettv.live/krtv"
-];
-var ist = 0;
+var x;
+var cnt;
 var nErr = 0;
 var web;
 var stv;
 var tstr;
 var isChLoaded = 0;
 var msgGetCh = "채널리스트 구성중";
-var audio_context = null;
-var gain_node = null;
-var oldVol;
+var kakotvmode = 0;
 
 //window.onload = function() {
    window.parentView.showMsg("hiddenView:getADsid()");
    Init();
 //}
-
-function setVol(vol)
-{
-   if(vol<0)
-      vol = oldVol;
-   else
-      oldVol = gain_node.gain.value;
-   gain_node.gain.value = vol;
-}
 
 function setADsid(sid) 
 {
@@ -102,24 +86,12 @@ function getPath()
 
 function Init() 
 {
-   window.AudioContext = window.AudioContext || window.webkitAudioContext;
-   audio_context = new AudioContext();
-   gain_node = audio_context.createGain(); // Declare gain node
-   gain_node.connect(audio_context.destination); // Connect gain node to speakers
-
    youtv24 = 1;
    firstSetting();
-   if( pathmyshtv[ist] == "?" )
-      loadMyShTV('https://myshtv.com/live/YTN HD-190.html');
-   else
-      isLoadedMyshtv = 1;
    window.parentView.showMsg("trueViewLoadUrl:" + trueLoadUrl);
    window.parentView.showMsg("hideTrueView");
 
-   if(myshtv == 0)
-      $('#menu0').load("https://hshin09.github.io/shinwebtv/kor2.html");
-   else
-      $('#menu0').load("https://hshin09.github.io/shinwebtv/myshtv.html");
+   $('#menu0').load("https://hshin09.github.io/shinwebtv/kor2.html");
    $('#menu1').load("https://hshin09.github.io/shinwebtv/thai.html");
 
    if(document.getElementById('menux')) {
@@ -139,25 +111,6 @@ function Init()
    timer = setInterval(function() {
       OnOff();
    }, 500);
-}
-
-function loadMyShTV(url) 
-{
-   var xhr = new XMLHttpRequest();
-   xhr.open('GET', url, true);
-   xhr.onreadystatechange = function() {
-      if(this.readyState !== 4) return;
-      if(this.status !== 200) return;
-      if(this.responseText == null) return;
-      var str = this.responseText;
-      var ssi = str.indexOf('var urlFirst');
-      ssi = str.indexOf('http', ssi);
-      var eei = str.indexOf('/ytn_720/', ssi);
-      str = str.substring(ssi, eei);
-      pathmyshtv[ist] = str;
-      isLoadedMyshtv = 1;
-   };
-   xhr.send();
 }
 
 /*
@@ -184,7 +137,7 @@ var isNotUser = 0;
 
 function OnOff() 
 {
-   if(!isChLoaded && isLoadedMyshtv) {
+   if( !isChLoaded ) {
       $('#secMessage').css('display', 'block');
       msgGetCh = msgGetCh + ".";
       $('#sec').text(msgGetCh);
@@ -196,12 +149,11 @@ function OnOff()
             timer = null;
          }
          isChLoaded = 1;
-         if( touchscreen ) {
+         if( kakotvmode ) {
             setTimeout(function() {
                mlok();
             }, 500);
          }
-         //window.parentView.showMsg("msg:" + pathmyshtv[ist] + " ts=" + touchscreen + " ADsid=" + ADsid);
          window.parentView.showMsg("trueView:path = " + path);
       }
       return;
@@ -231,12 +183,9 @@ function OnOff()
          showErrorMessage();
       }
       if(isNotUser < 0) {
-         if(gi == 0 && myshtv == 0) {
-            //window.parentView.showMsg( "hiddenView:loadTV('" + path + ch[ei] + "&start=on')" );
-            //mustWait = 5;
+         if(gi == 0) {
             mustabout = 1;
             timeSetTV = 500;
-            //clearAddress(addr[ei][addr[ei][6]]);
          }
          isNotUser++;
       } else {
@@ -256,11 +205,6 @@ function OnOff()
             else {
             	if(nErr++ < 2) {
             	   addr[ei][6] = ich - 1;
-            	   /*
-            	   addr[ei][ich] = addr[ei][ich].replace("720","540");
-            	   addr[ei][ich] = addr[ei][ich].replace("jtbc","j");
-            	   */
-            	   ist = ist?0:1;
             	}
             }
             setTimeout(function() {
@@ -452,9 +396,6 @@ function onok()
    oi = -1;
    x[si].click();
 }
-
-var x;
-var cnt;
 
 function mlok() 
 {
