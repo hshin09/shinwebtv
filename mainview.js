@@ -12,7 +12,7 @@ function loadMenu(id,url) {
 function prepare()
 {
    if(location.href.indexOf("file://") >= 0 ) 
-      window.parentView.showMsg( "msg:" + location.href );
+      return;
    if(document.domain == "hshin09.github.io")
       return;
    setTimeout(function() {
