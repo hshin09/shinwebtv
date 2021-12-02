@@ -148,11 +148,11 @@ function OnOff()
             timer = null;
          }
          isChLoaded = 1;
-         if( touchscreen ) {
-            setTimeout(function() {
-               mlok();
-            }, 500);
-         }
+         
+         setTimeout(function() {
+            premlok();
+         }, 500);
+         
          window.parentView.showMsg("trueView:path = " + path);
       }
       return;
@@ -401,7 +401,13 @@ function onok()
    x[si].click();
 }
 
-function mlok() 
+function mlok()
+{
+   premlok();
+   mlclk()
+}
+
+function premlok() 
 {
    oi = -1;
    x = document.getElementById("ml" + gi).getElementsByTagName("li");
@@ -411,6 +417,11 @@ function mlok()
       x[i].id = i;
    }
 
+   showLeftMenu();
+}
+
+function mlclk()
+{
    if(!touchscreen) {
       if(ei > -1) {
          si = ei;
@@ -420,10 +431,8 @@ function mlok()
       } else if(si < 0)
          ondown();
    }
-
-   showLeftMenu();
-
-   if(touchscreen) x[ei].click();
+   else
+      x[ei].click();
 }
 
 function showLeftMenu() 
