@@ -149,7 +149,7 @@ function OnOff()
             timer = null;
          }
          isChLoaded = 1;
-         if( kakotvmode ) {
+         if( touchscreen ) {
             setTimeout(function() {
                mlok();
             }, 500);
