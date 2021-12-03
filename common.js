@@ -319,8 +319,10 @@ function setHiddenViewTV(s)
 
 function clearAddress(tar) 
 {
-   if( addr[ei][ addr[ei][6] ] == "79" )
+   if( addr[ei][ addr[ei][6] ] == "79" ) {
       backtvaddr[ei] = tvaddr[ei] = tar;
+      x[ei].click();
+   }
    else {
       backkakotvaddr[ei] = "/";
       tvaddr[ei] = addr[ei][ addr[ei][6] ];
