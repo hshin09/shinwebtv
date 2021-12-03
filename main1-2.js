@@ -185,11 +185,12 @@ function keychk(e) {
    }
    else if( e.which == 57 ) { //9
       if( gi == 0 ) {
-         if(tvchak == 1)
+         if(tvchak == 1) {
             ei = 2;
+            x[ei].click();
+         }
          else
-            clearAddress("79");
-         x[ei].click();
+            clearAddress("79");         
       }
    }
 
