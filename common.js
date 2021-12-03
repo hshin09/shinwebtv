@@ -563,7 +563,8 @@ function movieclk(w, url, p)
       stv.style.display = "block";
       xx = stv;
    }
-   xx.setAttribute("src", url);
+   //xx.setAttribute("src", url);
+   document.getElementById("tv1").setAttribute("src", url);
    if(w == "tv")
       xx.play();
 }
