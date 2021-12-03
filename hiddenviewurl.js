@@ -71,6 +71,7 @@ function reloginkakotv()
    web.contentWindow.location.href = "https://kakotv.com/member/logout";
    window.hiddenView.showMsg( "msg:다시 로그인 합니다" );
    web.contentWindow.callLogin('hshin09', 'shin0903');
+   window.hiddenView.showMsg( "webView:setTimeout(function(){x[ei].click()},500)" );
 }
 
 function initkakotv()
