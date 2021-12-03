@@ -66,6 +66,13 @@ function OnOff()
    }
 }
 
+function reloginkakotv()
+{
+   web.contentWindow.location.href = "https://kakotv.com/member/logout";
+   window.hiddenView.showMsg( "msg:다시 로그인 합니다" );
+   web.contentWindow.callLogin('hshin09', 'shin0903');
+}
+
 function initkakotv()
 {
    if(web != null)
@@ -80,21 +87,11 @@ function initkakotv()
 
 function getkakotvurl()
 {
-   if( web.contentWindow == null ) {
-      window.location.replace("https://kakotv.com");
-      return;
-   }
-   if( web.contentWindow.location.href != cmdurl ) {
-      window.hiddenView.showMsg( "msg:다시 로그인 합니다" );
-      web.contentWindow.callLogin('hshin09', 'shin0903');
-      return;
-   }
    var f = web.contentDocument.getElementsByTagName('body')[0];
    var s = f.innerHTML;
    var i = s.indexOf('initPlayer');
    if( i < 0 ) {
-      window.hiddenView.showMsg( "msg:다시 로그인 합니다" );
-      web.contentWindow.callLogin('hshin09', 'shin0903');
+      reloginkakotv();
       return;
    }
    s = s.substr(i);
