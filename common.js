@@ -64,6 +64,7 @@ var cnt;
 var nErr = 0;
 var web;
 var stv;
+var stv1;
 var tstr;
 var isChLoaded = 0;
 var msgGetCh = "채널리스트 구성중";
@@ -99,6 +100,7 @@ function Init()
    }
 
    stv = $('#tv').get(0);
+   stv1 = $('#tv1').get(0);
    web = document.getElementById("web");
    for(var i = 0; i < tvaddr.length; i++) {
       backtvaddr[i] = '79';
@@ -563,10 +565,11 @@ function movieclk(w, url, p)
       stv.style.display = "block";
       xx = stv;
    }
-   xx.setAttribute("src", url);
-   document.getElementById("tv1").setAttribute("src", url);
-   if(w == "tv")
+   //xx.setAttribute("src", url);
+   if(w == "tv") {
+      stv1.src = url;
       xx.play();
+   }
 }
 
 function showVideoMessage() 
