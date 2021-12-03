@@ -16,7 +16,7 @@ function prepare()
    */
    if( location.href == "https://kakotv.com/" ) {
       callLogin('hshin09', 'shin0903');
-      initkakotv();
+      setTimeout(function(){initkakotv();},500);
       return;
    }
 
