@@ -66,11 +66,23 @@ function OnOff()
    }
 }
 
+function checklogout()
+{
+   if( web.contentWindow.location.href == "https://kakotv.com/" ) {
+      web.contentWindow.callLogin('hshin09', 'shin0903');
+      window.hiddenView.showMsg( "msg:다시 로그인 되었습니다" );   
+   }
+   else {
+      setTimeout(function() {
+            checklogout();
+      }, 1000);
+   }
+}
+
 function reloginkakotv()
 {
    web.contentWindow.location.href = "https://kakotv.com/member/logout";
-   window.hiddenView.showMsg( "msg:다시 로그인 합니다" );
-   web.contentWindow.callLogin('hshin09', 'shin0903');
+   checklogout();
 }
 
 function initkakotv()
