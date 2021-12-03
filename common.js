@@ -567,7 +567,7 @@ function movieclk(w, url, p)
    }
    //xx.setAttribute("src", url);
    if(w == "tv") {
-      stv1.src = url;
+      xx.src = url;
       xx.play();
    }
 }
