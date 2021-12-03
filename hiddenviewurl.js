@@ -68,7 +68,7 @@ function OnOff()
 
 function initkakotv()
 {
-   if( web )
+   if(web != null)
       return;
    document.body.innerHTML = "";
    addFrame("web");
