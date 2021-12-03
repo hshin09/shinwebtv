@@ -565,11 +565,9 @@ function movieclk(w, url, p)
       stv.style.display = "block";
       xx = stv;
    }
-   //xx.setAttribute("src", url);
-   if(w == "tv") {
-      xx.src = url;
+   xx.setAttribute("src", url);
+   if(w == "tv")
       xx.play();
-   }
 }
 
 function showVideoMessage() 
