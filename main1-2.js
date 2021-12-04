@@ -99,7 +99,7 @@ function changeKorTv() {
    }
    else {
       tvchak = 0;
-      web.src = "";
+      //web.src = "";
    }
 
    si = asi[0]; 
