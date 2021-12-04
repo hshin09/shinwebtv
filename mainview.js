@@ -18,7 +18,7 @@ function prepare()
 function checkTitle()
 {
    var s = document.querySelector('title');
-   if( s && s.innerHTML == "404 Not Found" )
+   if( s && s.innerHTML.indexOf("티비착") >= 0) 
       init();
    else {
       setTimeout(function() {
