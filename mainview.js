@@ -58,4 +58,5 @@ function init() {
    loadMenu("body","https://hshin09.github.io/shinwebtv/mainbody.txt");
 }
 
-prepare();
+//prepare();
+init();
