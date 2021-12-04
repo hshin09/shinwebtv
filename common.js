@@ -333,7 +333,6 @@ function clearAddress(tar)
 
 function change() 
 {
-   web.src = "";
    asi[gi] = si;
    aei[gi] = ei;
    aoi[gi] = oi;
@@ -505,10 +504,11 @@ function movieclk(w, url, p)
 {
    if( isHotKey == 0 )
       lastCh = ei;
-   isHotKey = 0;
+   //isHotKey = 0;
    stv.pause();
 
    if(touchscreen && oi == p.id) {
+      isHotKey = 0;
       onok();
       return;
    }
@@ -522,11 +522,13 @@ function movieclk(w, url, p)
       showVideoMessage();
 
    if(url == "79") {
+      isHotKey = 0;
       get79tv(p.id);
       return;
    }
 
    if(url.substr(0,1) == "/") {
+      isHotKey = 0;
       getkakotv(p.id, url);
       return;
    }
@@ -550,6 +552,7 @@ function movieclk(w, url, p)
             setTimeout(function() {
                onok();
             }, 500);
+            isHotKey = 0;
             return;
          }
          url = url + ADsid;
@@ -565,7 +568,7 @@ function movieclk(w, url, p)
       stv.style.display = "none";
       web.style.display = "block";
       xx = web;
-      if( tvchak == 0 || url != lasturl ) {
+      if( isHotKey == 1 || tvchak == 0 || url != lasturl ) {
          if(tvchak)
             lasturl = url;
          xx.setAttribute("src", url);
@@ -576,6 +579,7 @@ function movieclk(w, url, p)
       xx.setAttribute("src", url);
       xx.play();
    }     
+   isHotKey = 0;
 }
 
 function showVideoMessage() 
