@@ -71,12 +71,12 @@ function checklogout()
 {
    window.hiddenView.showMsg( "msg:" + web.contentWindow.location.href + " - " + cnt++ );
    if( web.contentWindow.location.href == "about:blank" ) {
-      setTimeout(function(){checklogout();},1000);
+      setTimeout(function(){checklogout();},2000);
       return; 
    }
    if( web.contentWindow.location.href == "https://kakotv.com/live/list.html" ) {
       web.contentWindow.location.href = "https://kakotv.com/member/logout";
-      setTimeout(function(){checklogout();},1000);
+      setTimeout(function(){checklogout();},2000);
       return; 
    }
    if( web.contentWindow.location.href == "https://kakotv.com/" ) {
@@ -84,7 +84,7 @@ function checklogout()
       window.hiddenView.showMsg( "msg:다시 로그인 되었습니다" );   
    }
    else {
-      setTimeout(function(){checklogout();},1000);
+      setTimeout(function(){checklogout();},2000);
    }
 }
 
@@ -93,7 +93,7 @@ function reloginkakotv()
    cnt = 1;
    web.src = "https://kakotv.com/live/list.html";
    window.hiddenView.showMsg( "msg:로그아웃 합니다" );
-   setTimeout(function(){checklogout();},1000);
+   setTimeout(function(){checklogout();},2000);
 }
 
 function initkakotv()
@@ -105,7 +105,7 @@ function initkakotv()
    web = document.getElementById("web");
    web.src = "";
    window.hiddenView.showMsg( "msg:로그인 되었습니다" );
-   window.hiddenView.showMsg( "webView:setTimeout(function(){mlclk();},500)" );
+   window.hiddenView.showMsg( "webView:setTimeout(function(){mlclk();},1000)" );
 }
 
 function getkakotvurl()
