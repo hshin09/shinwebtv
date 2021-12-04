@@ -39,6 +39,7 @@ function init() {
    */
    //window.removeEventListeners('DOMContentLoaded');
    document.body.innerHTML = "";
+   document.querySelector('head').innerHTML = "";
 
    var ss = document.createElement('script');
    ss.type = "text/javascript";
