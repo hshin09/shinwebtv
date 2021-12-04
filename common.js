@@ -68,6 +68,7 @@ var stv1;
 var tstr;
 var isChLoaded = 0;
 var msgGetCh = "채널리스트 구성중";
+var lasturl = "";
 
 //window.onload = function() {
    window.parentView.showMsg("hiddenView:getADsid()");
@@ -564,13 +565,17 @@ function movieclk(w, url, p)
       stv.style.display = "none";
       web.style.display = "block";
       xx = web;
+      if( tvchak == 0 || url != lasturl ) {
+         if(tvchak)
+            lasturl = url;
+         xx.setAttribute("src", url);
+      }
    } else {
       stv.style.display = "block";
       xx = stv;
-   }
-   xx.setAttribute("src", url);
-   if(w == "tv")
+      xx.setAttribute("src", url);
       xx.play();
+   }     
 }
 
 function showVideoMessage() 
