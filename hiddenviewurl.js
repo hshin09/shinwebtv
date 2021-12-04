@@ -68,7 +68,13 @@ function OnOff()
 
 function checklogout()
 {
-   window.hiddenView.showMsg( "msg:" + web.contentWindow.location.href ) ;
+   window.hiddenView.showMsg( "msg:" + web.contentWindow.location.href );
+   if( web.contentWindow.location.href == "about:blank" ) {
+      setTimeout(function() {
+            checklogout();
+      }, 1000);
+      return; 
+   }
    if( web.contentWindow.location.href == "https://kakotv.com/live/list.html" ) {
       web.contentWindow.location.href = "https://kakotv.com/member/logout";
       setTimeout(function() {
