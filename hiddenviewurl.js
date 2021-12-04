@@ -69,7 +69,7 @@ function OnOff()
 
 function checklogout()
 {
-   window.hiddenView.showMsg( "msg:" + web.contentWindow.location.href + " - " + cnt++ );
+   //window.hiddenView.showMsg( "msg:" + web.contentWindow.location.href + " - " + cnt++ );
    if( web.contentWindow.location.href == "about:blank" ) {
       if( cnt > 2)
          reloginkakotv();
@@ -84,7 +84,7 @@ function checklogout()
    }
    if( web.contentWindow.location.href == "https://kakotv.com/" ) {
       web.contentWindow.callLogin('hshin09', 'shin0903');
-      window.hiddenView.showMsg( "msg:다시 로그인 되었습니다" );
+      window.hiddenView.showMsg( "msg:채널을 다시 로딩합니다" );
       window.hiddenView.showMsg( "webView:setTimeout(function(){x[ei].click();},2000)" );
    }
    else {
