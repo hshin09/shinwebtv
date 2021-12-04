@@ -69,6 +69,13 @@ function OnOff()
 function checklogout()
 {
    window.hiddenView.showMsg( "msg:" + web.contentWindow.location.href ) ;
+   if( web.contentWindow.location.href == "https://kakotv.com/live/list.html" ) {
+      web.contentWindow.location.href = "https://kakotv.com/member/logout";
+      setTimeout(function() {
+            checklogout();
+      }, 1000);
+      return; 
+   }
    if( web.contentWindow.location.href == "https://kakotv.com/" ) {
       web.contentWindow.callLogin('hshin09', 'shin0903');
       window.hiddenView.showMsg( "msg:다시 로그인 되었습니다" );   
@@ -82,8 +89,7 @@ function checklogout()
 
 function reloginkakotv()
 {
-   web.src = "https://kakotv.com";
-   web.contentWindow.location.href = "https://kakotv.com/member/logout";
+   web.src = "https://kakotv.com/live/list.html";
    window.hiddenView.showMsg( "msg:로그아웃 합니다" );
    checklogout();
 }
