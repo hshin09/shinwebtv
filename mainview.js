@@ -29,12 +29,14 @@ function checkTitle()
 
 function init() {  
    var s;
+   /*
    while(1) {
       s = document.getElementsByTagName('script')[0];
       if( s == null )
          break;
       s.parentNode.removeChild(s);
    }
+   */
    //window.removeEventListeners('DOMContentLoaded');
    document.body.innerHTML = "";
 
