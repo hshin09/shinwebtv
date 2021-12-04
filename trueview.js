@@ -278,7 +278,10 @@ function keychk(e) {
          onok();
    }
    else if( e.which == 48 ) { //0
-      tv.style.display = "none";
+      if(tv.style.display == "block")
+         tv.style.display = "none";
+      else
+         tv.style.display = "block";
    }
    else if( e.which == 49 ) { //1
       x[9].click();
@@ -355,7 +358,7 @@ function onFullscreenOnOff() {
       }
       else
       {
-	      document.getElementById("mydiv").style.left="10%";
+         document.getElementById("mydiv").style.left="10%";
          document.getElementById("mydiv").style.width="90%";
          full=false;
       }
