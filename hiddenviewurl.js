@@ -82,6 +82,7 @@ function checklogout()
 
 function reloginkakotv()
 {
+   web.src = "https://kakotv.com";
    web.contentWindow.location.href = "https://kakotv.com/member/logout";
    window.hiddenView.showMsg( "msg:로그아웃 합니다" );
    checklogout();
