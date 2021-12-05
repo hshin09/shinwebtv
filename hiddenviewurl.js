@@ -71,7 +71,7 @@ function checklogout()
 {
    //window.hiddenView.showMsg( "msg:" + web.contentWindow.location.href + " - " + cnt++ );
    if( web.contentWindow.location.href == "about:blank" ) {
-      if( cnt > 2)
+      if( cnt++ > 2)
          reloginkakotv();
       else
          setTimeout(function(){checklogout();},2000);
@@ -97,7 +97,7 @@ function reloginkakotv()
    cnt = 1;
    web.src = "https://kakotv.com/live/list.html";
    window.hiddenView.showMsg( "msg:로그아웃 합니다" );
-   setTimeout(function(){checklogout();},3000);
+   setTimeout(function(){checklogout();},2000);
 }
 
 function initkakotv()
