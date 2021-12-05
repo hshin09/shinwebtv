@@ -325,6 +325,7 @@ function clearAddress(tar)
       x[ei].click();
    }
    else {
+      window.parentView.showMsg("msg:" + addr[ei][ addr[ei][6] ] );
       backkakotvaddr[ei] = "/";
       tvaddr[ei] = addr[ei][ addr[ei][6] ];
       window.parentView.showMsg( "hiddenView:reloginkakotv()" );
