@@ -321,7 +321,7 @@ function clearAddress(tar)
    var ich = addr[ei][6];
    if( addr[ei][ich] == "79" ) {
       backtvaddr[ei] = tvaddr[ei] = tar;
-      x[ei].click();
+      //x[ei].click();
    }
    else {
       //window.parentView.showMsg("msg:ich = " + ich + " => " + addr[ei][ich] );
