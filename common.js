@@ -199,12 +199,12 @@ function OnOff()
          if(gi == 0) {
             var ich = addr[ei][6];
             if(addr[ei][ich] == '79') {
-               addr[ei][6] = ich;
-               clearAddress(addr[ei][ich]);
+               //addr[ei][6] = ich;
+               //clearAddress(addr[ei][ich]);
             }
             else {
             	if(nErr++ < 2) {
-            	   addr[ei][6] = ich;
+            	   //addr[ei][6] = ich;
             	}
             }
             setTimeout(function(){onok();}, timeSetTV);
