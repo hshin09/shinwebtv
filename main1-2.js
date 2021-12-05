@@ -159,7 +159,7 @@ function keychk(e) {
    }
    else if( e.which == 55 ) { //7
       if( gi == 0 ) {
-         web.src = "";
+         //web.src = "";
          stv.pause();
          if(timer) {
             clearInterval(timer);
@@ -189,8 +189,9 @@ function keychk(e) {
             ei = 2;
             x[ei].click();
          }
-         else
-            clearAddress("79");         
+         else {
+            clearAddress("79");
+         }
       }
    }
 
