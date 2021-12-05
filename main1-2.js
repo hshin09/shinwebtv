@@ -191,6 +191,8 @@ function keychk(e) {
          }
          else {
             clearAddress("79");
+            if( addr[ei][ich] == "79" )
+               x[ei].click();
          }
       }
    }
