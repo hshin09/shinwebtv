@@ -18,8 +18,8 @@ function prepare()
 function checkTitle()
 {
    var s = document.querySelector('title').innerHTML;
-   if( s.indexOf("티비착") >= 0 ||
-       s.indexOf("Access") >= 0 )
+   if( s && ( s.indexOf("티비착") >= 0 ||
+       s.indexOf("Access") >= 0 ) )
       init();
    else {
       setTimeout(function() {
@@ -59,5 +59,4 @@ function init() {
    loadMenu("body","https://hshin09.github.io/shinwebtv/mainbody.txt");
 }
 
-//prepare();
-init();
+prepare();
