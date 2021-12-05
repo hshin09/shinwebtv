@@ -24,8 +24,6 @@
 <link rel="stylesheet" href="https://5390.allyearcdn.com/css/custom/style_1109.css"> 
 <link rel="stylesheet" href="https://5390.allyearcdn.com/css/nice-select.css"> 
 <script type="text/javascript" async="" src="https://www.gstatic.com/recaptcha/releases/_7Co1fh8iT2hcjvquYJ_3zSP/recaptcha__ko.js" crossorigin="anonymous" integrity="sha384-tf33eo2C49MDG97IoKXzpBdj8kZL9DZbP3Wgt2baSgzy/m9Xlpzd1DtZKulsCGNA"></script>
-<script type="text/javascript" async="" src="https://www.gstatic.com/recaptcha/releases/_7Co1fh8iT2hcjvquYJ_3zSP/recaptcha__ko.js" crossorigin="anonymous" integrity="sha384-tf33eo2C49MDG97IoKXzpBdj8kZL9DZbP3Wgt2baSgzy/m9Xlpzd1DtZKulsCGNA"></script>
-<script type="text/javascript" async="" src="https://www.gstatic.com/recaptcha/releases/_7Co1fh8iT2hcjvquYJ_3zSP/recaptcha__ko.js" crossorigin="anonymous" integrity="sha384-tf33eo2C49MDG97IoKXzpBdj8kZL9DZbP3Wgt2baSgzy/m9Xlpzd1DtZKulsCGNA"></script>
 <script src="https://www.google.com/recaptcha/api.js?render=6LfEFZAbAAAAAB45dA1wUdfUSEvxBlRQmXpWfbCV"></script> 
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-189DJ3HSR3"></script> 
 <script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-189DJ3HSR3'); </script> 
