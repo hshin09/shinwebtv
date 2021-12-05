@@ -5,34 +5,38 @@
   <meta name="description" content="티비착은 실시간티비TV, 무료 온에어, 해외스포츠중계 및 최신 드라마 영화 예능 스포츠 등의 다시보기를 무제한으로 즐길 수 있습니다. - 티비착, 무료영화, 한국영화, 외국영화, 최신영화, 인기영화, 추천영화등 무료로 시청 가능 합니다"> 
   <meta name="keywords" content="티비착,tvchak,착티비,chaktv,실시간티비,다시보기,실시간시청,생방송,실시간,실시간TV,온에어,온에어무료,무료생방송,무료실시간,스포츠중계,스포츠무료중계,스포츠,중계,해외축구,해외야구,메이저리그,해외스포츠,고화질,무료,영화,드라마,예능"> 
   <meta property="og:title" content="티비착 - 실시간티비TV, 온에어, 해외스포츠중계, 다시보기 무료"> 
-  <meta property="og:url" content="https://v3.tvchak.com"> 
-  <meta property="og:image" content="https://5390.allyearcdn.com/img/og_image.png"> 
-  <meta property="og:description" content="티비착은 실시간티비TV, 무료 온에어, 해외스포츠중계 및 최신 드라마 영화 예능 스포츠 등의 다시보기를 무제한으로 즐길 수 있습니다. - 티비착, 무료영화, 한국영화, 외국영화, 최신영화, 인기영화, 추천영화등 무료로 시청 가능 합니다"> 
-  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport"> 
-  <link rel="icon" href="https://5390.allyearcdn.com/img/favicon_new.ico" type="image/x-icon"> 
-  <link rel="stylesheet" href="https://5390.allyearcdn.com/css/bootstrap.min.css"> 
-  <link href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" rel="stylesheet"> 
-  <link rel="stylesheet" href="https://5390.allyearcdn.com/css/AdminLTE.min.css"> 
-  <link rel="stylesheet" href="https://5390.allyearcdn.com/css/_all-skins.min.css"> 
-  <link rel="stylesheet" href="https://5390.allyearcdn.com/css/polaris.css"> 
-  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries --> 
-  <!-- WARNING: Respond.js doesn't work if you view the page via file:// --> 
-  <!--[if lt IE 9]>
- 
- 
+ <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport"> 
+<link rel="icon" href="https://5390.allyearcdn.com/img/favicon_new.ico" type="image/x-icon"> 
+<link rel="stylesheet" href="https://5390.allyearcdn.com/css/bootstrap.min.css"> 
+<link href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" rel="stylesheet"> 
+<link rel="stylesheet" href="https://5390.allyearcdn.com/css/AdminLTE.min.css"> 
+<link rel="stylesheet" href="https://5390.allyearcdn.com/css/_all-skins.min.css"> 
+<link rel="stylesheet" href="https://5390.allyearcdn.com/css/polaris.css"> 
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries --> 
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// --> 
+<!--[if lt IE 9]> 
+<script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script> 
+<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script> 
 <![endif]--> 
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic"> 
-  <link rel="stylesheet" href="https://5390.allyearcdn.com/css/custom/chlist.css"> 
-  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"> 
-  <link rel="stylesheet" href="https://5390.allyearcdn.com/css/custom/style_1109.css"> 
-  <link rel="stylesheet" href="https://5390.allyearcdn.com/css/nice-select.css"> 
-  <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-189DJ3HSR3');
-</script> 
-  <style>
-        .grecaptcha-badge { visibility: hidden; }
-    </style>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic"> 
+<link rel="stylesheet" href="https://5390.allyearcdn.com/css/custom/chlist.css"> 
+<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"> 
+<link rel="stylesheet" href="https://5390.allyearcdn.com/css/custom/style_1109.css"> 
+<link rel="stylesheet" href="https://5390.allyearcdn.com/css/nice-select.css"> 
+<script type="text/javascript" async="" src="https://www.gstatic.com/recaptcha/releases/_7Co1fh8iT2hcjvquYJ_3zSP/recaptcha__ko.js" crossorigin="anonymous" integrity="sha384-tf33eo2C49MDG97IoKXzpBdj8kZL9DZbP3Wgt2baSgzy/m9Xlpzd1DtZKulsCGNA"></script>
+<script type="text/javascript" async="" src="https://www.gstatic.com/recaptcha/releases/_7Co1fh8iT2hcjvquYJ_3zSP/recaptcha__ko.js" crossorigin="anonymous" integrity="sha384-tf33eo2C49MDG97IoKXzpBdj8kZL9DZbP3Wgt2baSgzy/m9Xlpzd1DtZKulsCGNA"></script>
+<script type="text/javascript" async="" src="https://www.gstatic.com/recaptcha/releases/_7Co1fh8iT2hcjvquYJ_3zSP/recaptcha__ko.js" crossorigin="anonymous" integrity="sha384-tf33eo2C49MDG97IoKXzpBdj8kZL9DZbP3Wgt2baSgzy/m9Xlpzd1DtZKulsCGNA"></script>
+<script src="https://www.google.com/recaptcha/api.js?render=6LfEFZAbAAAAAB45dA1wUdfUSEvxBlRQmXpWfbCV"></script> 
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-189DJ3HSR3"></script> 
+<script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-189DJ3HSR3'); </script> 
+<script src="https://5390.allyearcdn.com/js/jquery.min.js"></script> 
+<script src="https://5390.allyearcdn.com/js/bootstrap.min.js"></script> 
+<script src="https://5390.allyearcdn.com/js/adminlte.min.js"></script> 
+<script src="https://5390.allyearcdn.com/js/custom/common1115.js"></script> 
+<script src="https://5390.allyearcdn.com/js/icheck.min.js"></script> 
+<script src="https://5390.allyearcdn.com/js/custom/accountservice1004.js"></script> 
+<script src="https://5390.allyearcdn.com/js/custom/allservice1115.js"></script> 
+<script src="https://5390.allyearcdn.com/js/jquery.nice-select.min.js"></script> 
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script> 
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery.lazy/1.7.9/jquery.lazy.min.js"></script> 
+<style> .grecaptcha-badge { visibility: hidden; } </style>
