@@ -320,14 +320,15 @@ function setHiddenViewTV(s)
 
 function clearAddress(tar) 
 {
-   if( addr[ei][ addr[ei][6] ] == "79" ) {
+   var ich = addr[ei][6];
+   if( addr[ei][ich] == "79" ) {
       backtvaddr[ei] = tvaddr[ei] = tar;
       x[ei].click();
    }
    else {
-      window.parentView.showMsg("msg:" + addr[ei][ addr[ei][6] ] );
+      window.parentView.showMsg("msg:ich = " + ich + " => " + addr[ei][ich] );
       backkakotvaddr[ei] = "/";
-      tvaddr[ei] = addr[ei][ addr[ei][6] ];
+      tvaddr[ei] = addr[ei][ich];
       window.parentView.showMsg( "hiddenView:reloginkakotv()" );
    }
 }
