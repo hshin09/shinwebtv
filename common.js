@@ -171,9 +171,7 @@ function OnOff()
    if(mustWait) {
       mustWait--;
       if(mustWait == 0)
-         setTimeout(function() {
-            onok();
-         }, 10);
+         setTimeout(function(){onok();}, 10);
       return;
    }
 
@@ -201,17 +199,15 @@ function OnOff()
          if(gi == 0) {
             var ich = addr[ei][6];
             if(addr[ei][ich] == '79') {
-               addr[ei][6] = ich - 1;
+               addr[ei][6] = ich;
                clearAddress(addr[ei][ich]);
             }
             else {
             	if(nErr++ < 2) {
-            	   addr[ei][6] = ich - 1;
+            	   addr[ei][6] = ich;
             	}
             }
-            setTimeout(function() {
-               onok();
-            }, timeSetTV);
+            setTimeout(function(){onok();}, timeSetTV);
          }
       }
    }
@@ -326,7 +322,7 @@ function clearAddress(tar)
       x[ei].click();
    }
    else {
-      window.parentView.showMsg("msg:ich = " + ich + " => " + addr[ei][ich] );
+      //window.parentView.showMsg("msg:ich = " + ich + " => " + addr[ei][ich] );
       backkakotvaddr[ei] = "/";
       tvaddr[ei] = addr[ei][ich];
       window.parentView.showMsg( "hiddenView:reloginkakotv()" );
