@@ -55,6 +55,7 @@ var mustabout = 0;
 var timeSetTV = 500;
 var mustWait = 0;
 var isHotKey = 0;
+var isNotUser = 0;
 var lastCh = -1;
 var youtv24 = 0;
 var tvchak = 0;
@@ -199,6 +200,7 @@ function OnOff()
          if(gi == 0) {
             var ich = addr[ei][6];
             if(addr[ei][ich] == '79') {
+               //addr[ei][6] = ich-1;
                clearAddress(addr[ei][ich]);
                addr[ei][6] = ich-1;
             }
