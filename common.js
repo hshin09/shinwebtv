@@ -107,11 +107,11 @@ function Init()
    var ls,ich;
    for(var i = 0; i < tvaddr.length; i++) {      
       ls = localStorage.getItem("youtv"+i );
-      if( ls == null || ls == "" || ls == "undefined" ) ls = "79";
+      if( ls == null || ls == "" ) ls = "79";
       backtvaddr[i] = ls;
 
       ls = localStorage.getItem("kakotv"+i );
-      if( ls == null || ls == "" || ls == "undefined" ) ls = "/"
+      if( ls == null || ls == "" ) ls = "/"
       backkakotvaddr[i] = ls;
       //window.parentView.showMsg("msg:"+i+" = "+ls);
 
@@ -124,6 +124,9 @@ function Init()
       else if(addr[i][ich].substr(0,1) == "/" && backkakotvaddr[i] != "/")
          tvaddr[i] = backkakotvaddr[i];
    }
+   ls = localStorage.getItem("ei" );
+   if( ls && ls != "" )
+      ei = si = ls;
    //window.parentView.showMsg("msg:loadStorage end");
    timer = setInterval(function() {
       OnOff();
