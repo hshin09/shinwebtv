@@ -521,10 +521,6 @@ function onFullscreenOnOff()
 
 function movieclk(w, url, p) 
 { 
-   //if( url == "undefined" ) {
-      window.parentView.showMsg("msg:id = "+p.id+" - "+tvaddr[p.id]);
-      //url = tvaddr[p.id];
-   //}
    if( isHotKey == 0 )
       lastCh = ei;
    //isHotKey = 0;
@@ -603,6 +599,7 @@ function movieclk(w, url, p)
       xx.play();
    }     
    isHotKey = 0;
+   localStorage.setItem("ei",p.id);
 }
 
 function showVideoMessage() 
