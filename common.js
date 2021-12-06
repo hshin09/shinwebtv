@@ -516,7 +516,7 @@ function onFullscreenOnOff()
 }
 
 function movieclk(w, url, p) 
-{
+{ window.parentView.showMsg("msg:"+url );
    if( isHotKey == 0 )
       lastCh = ei;
    //isHotKey = 0;
