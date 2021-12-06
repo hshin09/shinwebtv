@@ -124,7 +124,7 @@ function Init()
       else if(addr[i][ich].substr(0,1) == "/" && backkakotvaddr[i] != "/")
          tvaddr[i] = backkakotvaddr[si];
    }
-   window.parentView.showMsg("msg:loadStorage end");
+   //window.parentView.showMsg("msg:loadStorage end");
    timer = setInterval(function() {
       OnOff();
    }, 500);
@@ -166,7 +166,7 @@ function OnOff()
             timer = null;
          }
          isChLoaded = 1;
-         window.parentView.showMsg("msg:isChLoaded end");
+         //window.parentView.showMsg("msg:isChLoaded end");
          setTimeout(function() {
             premlok();
          }, 500);
