@@ -122,7 +122,7 @@ function Init()
       if(addr[i][ich] == "79" && backtvaddr[i] != "79")
          tvaddr[i] = backtvaddr[i];
       else if(addr[i][ich].substr(0,1) == "/" && backkakotvaddr[i] != "/")
-         tvaddr[i] = backkakotvaddr[si];
+         tvaddr[i] = backkakotvaddr[i];
    }
    //window.parentView.showMsg("msg:loadStorage end");
    timer = setInterval(function() {
