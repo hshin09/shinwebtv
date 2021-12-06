@@ -104,9 +104,14 @@ function Init()
    stv = $('#tv').get(0);
    stv1 = $('#tv1').get(0);
    web = document.getElementById("web");
+   var ls;
    for(var i = 0; i < tvaddr.length; i++) {
-      backtvaddr[i] = '79';
-      backkakotvaddr[i] = "/";
+      ls = localStorage.getItem("youtv"+i );
+      if( ls == null || ls == "" ) ls = "79";
+      backtvaddr[i] = ls;
+      ls = localStorage.getItem("kakotv"+i );
+      if( ls == null || ls == "" ) ls = "/"
+      backkakotvaddr[i] = ls;
       //addr[i][3] = '79'; mustWait = 2;
       tvaddr[i] = addr[i][3];
    }
@@ -294,6 +299,7 @@ function setkakotv(s)
       return;
    }
    backkakotvaddr[ei] = tvaddr[ei] = s;
+   localStorage.setItem("youtv"+ei,s);
    mustWait = 0;
    setTimeout(function() {
       x[ei].click();
@@ -310,6 +316,7 @@ function setHiddenViewTV(s)
       return;
    }
    backtvaddr[ei] = tvaddr[ei] = s;
+   localStorage.setItem("kakotv"+ei,s);
    mustWait = 0;
    setTimeout(function() {
       x[ei].click();
