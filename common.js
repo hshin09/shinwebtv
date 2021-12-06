@@ -114,9 +114,10 @@ function Init()
       if( ls == null || ls == "" ) ls = "/"
       backkakotvaddr[i] = ls;
 
-      //addr[i][3] = '79'; mustWait = 2;
-      tvaddr[i] = addr[i][3];
       ich = addr[i][6];
+      //addr[i][ich] = '79'; mustWait = 2;
+      tvaddr[i] = addr[i][ich];
+      
       if(addr[i][ich] == "79" && backtvaddr[i] != "79")
          tvaddr[i] = backtvaddr[i];
       else if(addr[i][ich].substr(0,1) == "/" && backkakotvaddr[i] != "/")
@@ -392,10 +393,10 @@ function onok()
          i_ch = 3;
 
       tvaddr[si] = addr[si][i_ch];
-      if(addr[si][i_ch] == '79' && backtvaddr[si] != '79')
+      if(addr[si][i_ch] == "79" && backtvaddr[si] != "79")
          tvaddr[si] = backtvaddr[si];
 
-      if(addr[si][i_ch].substr(0,1) == "/" && backkakotvaddr[si] != '/')
+      if(addr[si][i_ch].substr(0,1) == "/" && backkakotvaddr[si] != "/")
          tvaddr[si] = backkakotvaddr[si];
 
       x[si].innerHTML = addr[si][i_ch - 3];
