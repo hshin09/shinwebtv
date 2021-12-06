@@ -107,6 +107,7 @@ function Init()
    var ls;
    for(var i = 0; i < tvaddr.length; i++) {
       ls = localStorage.getItem("youtv"+i );
+      window.parentView.showMsg("msg:youtv" + i + " = " + ls );
       if( ls == null || ls == "" ) ls = "79";
       backtvaddr[i] = ls;
       ls = localStorage.getItem("kakotv"+i );
