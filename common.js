@@ -518,6 +518,8 @@ function onFullscreenOnOff()
 
 function movieclk(w, url, p) 
 { 
+   if( url == "undefined" )
+      url = tvaddr[p.id];
    if( isHotKey == 0 )
       lastCh = ei;
    //isHotKey = 0;
