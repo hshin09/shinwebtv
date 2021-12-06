@@ -430,6 +430,8 @@ function loginProcess()
 {
    if( displayMenu == 0 )
       mlok();
+   else
+      mlclk();
 }
 
 function mlok()
