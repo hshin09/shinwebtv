@@ -107,11 +107,11 @@ function Init()
    var ls,ich;
    for(var i = 0; i < tvaddr.length; i++) {      
       ls = localStorage.getItem("youtv"+i );
-      if( ls == null || ls == "" ) ls = "79";
+      if( ls == null || ls == "" || ls == "undefined" ) ls = "79";
       backtvaddr[i] = ls;
 
       ls = localStorage.getItem("kakotv"+i );
-      if( ls == null || ls == "" ) ls = "/"
+      if( ls == null || ls == "" || ls == "undefined" ) ls = "/"
       backkakotvaddr[i] = ls;
       //window.parentView.showMsg("msg:"+i+" = "+ls);
 
