@@ -109,7 +109,7 @@ function initkakotv()
    web = document.getElementById("web");
    web.src = "";
    window.hiddenView.showMsg( "msg:로그인 되었습니다" );
-   window.hiddenView.showMsg( "webView:setTimeout(function(){mlclk();},1000)" );
+   window.hiddenView.showMsg( "webView:setTimeout(function(){loginProcess();},1000)" );
 }
 
 function getkakotvurl()
