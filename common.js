@@ -105,7 +105,7 @@ function Init()
    stv1 = $('#tv1').get(0);
    web = document.getElementById("web");
    var ls,ich;
-   for(var i = 0; i < tvaddr.length; i++) {
+   for(var i = 0; i < tvaddr.length; i++) {      
       ls = localStorage.getItem("youtv"+i );
       if( ls == null || ls == "" ) ls = "79";
       backtvaddr[i] = ls;
@@ -113,6 +113,7 @@ function Init()
       ls = localStorage.getItem("kakotv"+i );
       if( ls == null || ls == "" ) ls = "/"
       backkakotvaddr[i] = ls;
+      window.parentView.showMsg("msg:"+i+" = "+ls);
 
       ich = addr[i][6];
       //addr[i][ich] = '79'; mustWait = 2;
@@ -307,7 +308,7 @@ function setkakotv(s)
       return;
    }
    backkakotvaddr[ei] = tvaddr[ei] = s;
-   localStorage.setItem("youtv"+ei,s);
+   localStorage.setItem("kakotv"+ei,s);
    mustWait = 0;
    setTimeout(function() {
       x[ei].click();
@@ -324,7 +325,7 @@ function setHiddenViewTV(s)
       return;
    }
    backtvaddr[ei] = tvaddr[ei] = s;
-   localStorage.setItem("kakotv"+ei,s);
+   localStorage.setItem("youtv"+ei,s);
    mustWait = 0;
    setTimeout(function() {
       x[ei].click();
