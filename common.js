@@ -517,7 +517,7 @@ function onFullscreenOnOff()
 }
 
 function movieclk(w, url, p) 
-{ window.parentView.showMsg("msg:"+url );
+{ 
    if( isHotKey == 0 )
       lastCh = ei;
    //isHotKey = 0;
@@ -527,7 +527,7 @@ function movieclk(w, url, p)
       isHotKey = 0;
       onok();
       return;
-   }
+   } window.parentView.showMsg("msg:"+url );
 
    if(oi > -1) x[oi].style = "background-color:#252525;";
    if(ei > -1) x[ei].style = "background-color:#252525";
