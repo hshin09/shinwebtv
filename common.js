@@ -519,7 +519,7 @@ function onFullscreenOnOff()
 function movieclk(w, url, p) 
 { 
    //if( url == "undefined" ) {
-      window.parentView.showMsg("msg:id = "+p.id);
+      window.parentView.showMsg("msg:id = "+p.id+" - "+tvaddr[p.id]);
       //url = tvaddr[p.id];
    //}
    if( isHotKey == 0 )
