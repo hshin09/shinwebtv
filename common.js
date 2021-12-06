@@ -70,6 +70,7 @@ var tstr;
 var isChLoaded = 0;
 var msgGetCh = "채널리스트 구성중";
 var lasturl = "";
+var displayMenu = 0;
 
 //window.onload = function() {
    window.parentView.showMsg("hiddenView:getADsid()");
@@ -425,6 +426,12 @@ function onok()
    x[si].click();
 }
 
+function loginProcess()
+{
+   if( displayMenu == 0 )
+      mlok();
+}
+
 function mlok()
 {
    premlok();
@@ -442,6 +449,7 @@ function premlok()
    }
 
    showLeftMenu();
+   displayMenu = 1;
 }
 
 function mlclk()
@@ -599,7 +607,8 @@ function movieclk(w, url, p)
       xx.play();
    }     
    isHotKey = 0;
-   localStorage.setItem("ei",p.id);
+   if( gi==0 && tvchak==0 )
+      localStorage.setItem("ei",p.id);
 }
 
 function showVideoMessage() 
