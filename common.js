@@ -1,4 +1,4 @@
-var userNames = [ "Shin" ];
+var userNames = [ "shin1" ];
 var ADsid = '?';
 var tvaddr = new Array(24);
 var backtvaddr = new Array(24);
