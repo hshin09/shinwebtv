@@ -145,7 +145,7 @@ function Init()
 
 function checkUser(user)
 {
-   for(var i=0; userNames.length; i++ )
+   for(var i=0; i<userNames.length; i++ )
       if( userNames[i] == ls)
          return;
    window.parentView.showMsg("finish");
