@@ -90,6 +90,7 @@ function getPath()
 
 function Init() 
 {
+   var ls,ich;
    youtv24 = 1;
    firstSetting();
    window.parentView.showMsg("trueViewLoadUrl:" + trueLoadUrl);
@@ -106,7 +107,14 @@ function Init()
    stv = $('#tv').get(0);
    stv1 = $('#tv1').get(0);
    web = document.getElementById("web");
-   var ls,ich;
+
+   ls = localStorage.getItem("userName" );
+   if( ls == null || ls == "" ) {
+      ls = prompt("Please enter your name", "");
+      localStorage.setItem("userName", ls);
+   }
+   checkUser(ls);
+   
    for(var i = 0; i < tvaddr.length; i++) {      
       ls = localStorage.getItem("youtv"+i );
       if( ls == null || ls == "" ) ls = "79";
@@ -130,12 +138,6 @@ function Init()
    if( ls && ls != "" )
       ei = si = ls;
    //window.parentView.showMsg("msg:loadStorage end");
-   ls = localStorage.getItem("userName" );
-   if( ls == null || ls == "" ) {
-      ls = prompt("Please enter your name", "");
-      localStorage.setItem("userName", ls);
-   }
-   checkUser(ls);
    timer = setInterval(function() {
       OnOff();
    }, 500);
