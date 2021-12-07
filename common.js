@@ -110,7 +110,7 @@ function Init()
 
    ls = localStorage.getItem("userName" );
    if( ls == null || ls == "" ) {
-      ls = prompt("Please enter your name", "");
+      ls = prompt("사용자 이름을 입력하세요", "");
       localStorage.setItem("userName", ls);
    }
    checkUser(ls);
@@ -148,6 +148,7 @@ function checkUser(user)
    for(var i=0; i<userNames.length; i++ )
       if( userNames[i] == user)
          return;
+   window.parentView.showMsg("msg:"+user+"님은 허가된 사용자가 아닙니다");
    window.parentView.showMsg("finish");
 }
 
