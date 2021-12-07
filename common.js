@@ -91,6 +91,10 @@ function getPath()
 function Init() 
 {
    var ls,ich;
+   if(timer) {
+      clearInterval(timer);
+      timer = null;
+   }
    youtv24 = 1;
    firstSetting();
    window.parentView.showMsg("trueViewLoadUrl:" + trueLoadUrl);
@@ -446,6 +450,10 @@ function onok()
 
 function loginProcess()
 {
+   if( isChLoaded == 0 ) {
+      init();
+      return;
+   }
    if( displayMenu == 0 )
       mlok();
    else
