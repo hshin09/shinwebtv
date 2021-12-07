@@ -1,3 +1,4 @@
+var userNames = [ "shin" ];
 var ADsid = '?';
 var tvaddr = new Array(24);
 var backtvaddr = new Array(24);
@@ -129,9 +130,23 @@ function Init()
    if( ls && ls != "" )
       ei = si = ls;
    //window.parentView.showMsg("msg:loadStorage end");
+   ls = localStorage.getItem("userName" );
+   if( ls == null || ls == "" ) {
+      ls = prompt("Please enter your name", "");
+      localStorage.setItem("userName", ls);
+   }
+   checkUser(ls);
    timer = setInterval(function() {
       OnOff();
    }, 500);
+}
+
+function checkUser(user)
+{
+   for(var i=0; userNames.length; i++ )
+      if( userNames[i] == ls)
+         return;
+   window.parentView.showMsg("finish");
 }
 
 /*
