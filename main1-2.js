@@ -152,9 +152,11 @@ function keychk(e) {
       x[lastCh].click();
    }
    else if( e.which == 54 ) { //6
-      if( gi == 0 ) {
-         ist = ist?0:1;
-         window.parentView.showMsg("msg:" + pathmyshtv[ist]);
+      if( gi == 0 && tvchak ==0 ) {
+         iKakoSer++;
+         if( iKakoSer > 2 ) iKakoSer = 0;
+         window.parentView.showMsg("msg:" + kakoSer[iKakoSer] + "번 서버로 변경합니다);
+         getkakotv();
       }
    }
    else if( e.which == 55 ) { //7
