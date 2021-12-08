@@ -39,9 +39,9 @@ function addFrame(objId)
    document.body.appendChild(iFrm);
 }
 
-function loadVideo(url) 
+function loadVideo(ser,url) 
 {
-   cmdurl = "https://kakotv.com/live" + url + ".html";
+   cmdurl = "https://kakotv.com/live" + url + ".html" + ser;
    web.src = cmdurl;
    mustWait = 3;
    
