@@ -41,7 +41,7 @@ function addFrame(objId)
 
 function loadVideo(ser,url) 
 {
-   cmdurl = "https://kakotv.com/live" + url + ".html" + ser;
+   cmdurl = "https://kakotv.com/live" + url + ".html?ser=" + ser;
    web.src = cmdurl;
    mustWait = 3;
    
