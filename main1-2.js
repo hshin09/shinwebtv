@@ -153,6 +153,7 @@ function keychk(e) {
    }
    else if( e.which == 54 ) { //6
       if( gi == 0 && tvchak == 0 ) {
+         isChangeSer = 1;
          iKakoSer++;
          if( iKakoSer > 2 ) iKakoSer = 0;
          window.parentView.showMsg("msg:" + kakoSer[iKakoSer] + "번 서버로 변경합니다");
