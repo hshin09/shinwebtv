@@ -9,12 +9,12 @@ var url = "https://www.adintrend.tv/hd/live/i.php?ch=3&cxid=" + ADsid;
 function prepare()
 {
    //window.hiddenView.showMsg( "msg:" + location.href );
-   
+   /*
    if( location.href.indexOf('?') > 0 ) {
       initkakotv();
       return;
    }
-   
+   */
    if( location.href == "https://kakotv.com/" ) {
       callLogin('hshin09', 'shin0903');
       initkakotv();
@@ -74,18 +74,18 @@ function checklogout()
       if( cnt++ > 2)
          reloginkakotv();
       else
-         setTimeout(function(){checklogout();},2000);
+         setTimeout(function(){checklogout();},1000);
       return; 
    }
-   if( web.contentWindow.location.href == "https://kakotv.com/live/list.html" ) {
+   if( web.contentWindow.location.href.indexOf("https://kakotv.com/live/list.html") >= 0 ) {
       web.contentWindow.location.href = "https://kakotv.com/member/logout";
-      setTimeout(function(){checklogout();},2000);
+      setTimeout(function(){checklogout();},1000);
       return; 
    }
    if( web.contentWindow.location.href == "https://kakotv.com/" ) {
       web.contentWindow.callLogin('hshin09', 'shin0903');
       window.hiddenView.showMsg( "msg:채널을 다시 로딩합니다" );
-      window.hiddenView.showMsg( "webView:setTimeout(function(){x[ei].click();},2000)" );
+      window.hiddenView.showMsg( "webView:setTimeout(function(){x[ei].click();},1000)" );
    }
    else {
       setTimeout(function(){checklogout();},2000);
@@ -97,7 +97,7 @@ function reloginkakotv()
    cnt = 1;
    web.src = "https://kakotv.com/live/list.html";
    window.hiddenView.showMsg( "msg:로그아웃 합니다" );
-   setTimeout(function(){checklogout();},2000);
+   setTimeout(function(){checklogout();},1000);
 }
 
 function initkakotv()
