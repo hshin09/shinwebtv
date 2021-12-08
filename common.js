@@ -3,8 +3,8 @@ var ADsid = '?';
 var tvaddr = new Array(24);
 var backtvaddr = new Array(24);
 var backkakotvaddr = new Array(24);
-var kakoServer = ['44', '51', '61'];
-var iKakoServer = 0;
+var kakoSer = ['44', '51', '61'];
+var iKakoSer = 0;
 var addr = [
   ["SBS Golf", "SBS Golf", "SBS Golf", "/SBS%EA%B3%A8%ED%94%84%20HD-197", "79", "79", 3],
   ["JTBC Golf", "JTBC Golf", "JTBC Golf", "/J%20%EA%B3%A8%ED%94%84%20HD-198", "79", "79", 3],
