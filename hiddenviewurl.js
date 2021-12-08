@@ -88,7 +88,7 @@ function checklogout()
       window.hiddenView.showMsg( "webView:setTimeout(function(){x[ei].click();},1000)" );
    }
    else {
-      setTimeout(function(){checklogout();},2000);
+      setTimeout(function(){checklogout();},1000);
    }
 }
 
