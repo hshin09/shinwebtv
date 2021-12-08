@@ -319,7 +319,7 @@ function getkakotv(i, url)
    $("#videoMessage").css('display', 'block');   
    window.parentView.showMsg( "hiddenView:loadVideo('" + kakoSer[iKakoSer]+ "','" + url + "')" );
    if(isChangeSer == 1)
-      mustWait = 3;
+      mustWait = 2;
 }
 
 function setkakotv(s) 
@@ -375,6 +375,7 @@ function clearAddress(tar)
       //window.parentView.showMsg("msg:ich = " + ich + " => " + addr[ei][ich] );
       backkakotvaddr[ei] = "/";
       tvaddr[ei] = addr[ei][ich];
+      mustWait = 5;
       window.parentView.showMsg( "hiddenView:reloginkakotv()" );
    }
 }
