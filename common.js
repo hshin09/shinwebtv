@@ -5,6 +5,7 @@ var backtvaddr = new Array(24);
 var backkakotvaddr = new Array(24);
 var kakoSer = ['44', '51', '61'];
 var iKakoSer = 0;
+var isChangeSer = 0;
 var addr = [
   ["SBS Golf", "SBS Golf", "SBS Golf", "/SBS%EA%B3%A8%ED%94%84%20HD-197", "79", "79", 3],
   ["JTBC Golf", "JTBC Golf", "JTBC Golf", "/J%20%EA%B3%A8%ED%94%84%20HD-198", "79", "79", 3],
@@ -213,7 +214,7 @@ function OnOff()
 
    if(mustWait) {
       mustWait--;
-      if(mustWait == 0)
+      if(mustWait == 0 && isChangeSer == 0)
          setTimeout(function(){onok();}, 10);
       return;
    }
@@ -317,10 +318,13 @@ function getkakotv(i, url)
    $("#ch_name").text(x[ei].innerHTML + "(검색중)");
    $("#videoMessage").css('display', 'block');   
    window.parentView.showMsg( "hiddenView:loadVideo('" + kakoSer[iKakoSer]+ "','" + url + "')" );
+   if(isChangeSer == 1)
+      mustWait = 3;
 }
 
 function setkakotv(s) 
 {
+   isChangeSer = 0;
    oi = -1;
    if(s == "timeout") {
       $("#er_msg").text("서버가 응답이 없어 일정시간(2분내외) 대기 및 재시도를 진행합니다.");
@@ -336,7 +340,7 @@ function setkakotv(s)
       return;
    }
    backkakotvaddr[ei] = tvaddr[ei] = s;
-   localStorage.setItem("kakotv"+ei,s);
+   localStorage.setItem("kakotv"+ei,s); 
    mustWait = 0;
    setTimeout(function() {
       x[ei].click();
