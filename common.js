@@ -316,7 +316,7 @@ function getkakotv(i, url)
    stv.src = "empty";
    $("#ch_name").text(x[ei].innerHTML + "(검색중)");
    $("#videoMessage").css('display', 'block');   
-   window.parentView.showMsg( "hiddenView:loadVideo('" + url + "')" );
+   window.parentView.showMsg( "hiddenView:loadVideo('" + kakoSer[iKakoSer]+ "','" + url + "')" );
 }
 
 function setkakotv(s) 
