@@ -152,11 +152,12 @@ function keychk(e) {
       x[lastCh].click();
    }
    else if( e.which == 54 ) { //6
-      if( gi == 0 && tvchak ==0 ) {
+      if( gi == 0 && tvchak == 0 ) {
          iKakoSer++;
          if( iKakoSer > 2 ) iKakoSer = 0;
-         window.parentView.showMsg("msg:" + kakoSer[iKakoSer] + "번 서버로 변경합니다);
-         getkakotv();
+         window.parentView.showMsg("msg:" + kakoSer[iKakoSer] + "번 서버로 변경합니다");
+         tvaddr[ei] = addr[ei][addr[ei][6]];
+         x[ei].click();
       }
    }
    else if( e.which == 55 ) { //7
@@ -187,7 +188,7 @@ function keychk(e) {
    }
    else if( e.which == 57 ) { //9
       if( gi == 0 ) {
-         if(tvchak == 1) {
+         if( tvchak == 1 ) {
             ei = 2;
             x[ei].click();
          }
