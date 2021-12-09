@@ -153,12 +153,14 @@ function keychk(e) {
    }
    else if( e.which == 54 ) { //6
       if( gi == 0 && tvchak == 0 ) {
-         isChangeSer = 1;
-         iKakoSer++;
-         if( iKakoSer > 2 ) iKakoSer = 0;
-         window.parentView.showMsg("msg:" + kakoSer[iKakoSer] + "번 서버로 변경합니다");
-         tvaddr[ei] = addr[ei][addr[ei][6]];
-         x[ei].click();
+         if( addr[ei][addr[ei][6]] != "79" ) {        
+            isChangeSer = 1;
+            iKakoSer++;
+            if( iKakoSer > 2 ) iKakoSer = 0;
+            window.parentView.showMsg("msg:" + kakoSer[iKakoSer] + "번 서버로 변경합니다");
+            tvaddr[ei] = addr[ei][addr[ei][6]];
+            x[ei].click();
+         }
       }
    }
    else if( e.which == 55 ) { //7
