@@ -69,7 +69,7 @@ function OnOff()
 
 function checklogout()
 {
-   window.hiddenView.showMsg( "msg:" + web.contentWindow.location.href + " - " + cnt++ );
+   //window.hiddenView.showMsg( "msg:" + web.contentWindow.location.href + " - " + cnt++ );
    if( web.contentWindow.location.href == "about:blank" ) {
       if( cnt++ > 3 )
          reloginkakotv();
