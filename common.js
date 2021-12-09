@@ -214,7 +214,7 @@ function OnOff()
 
    if(mustWait) {
       mustWait--;
-      if(mustWait == 0)
+      if(mustWait == 0 && isChangeSer == 0)
          setTimeout(function(){onok();}, 10);
       return;
    }
