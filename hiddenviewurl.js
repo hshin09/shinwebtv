@@ -8,16 +8,13 @@ var url = "https://www.adintrend.tv/hd/live/i.php?ch=3&cxid=" + ADsid;
 
 function prepare()
 {
-   //window.hiddenView.showMsg( "msg:" + location.href );
-   
-   if( location.href.indexOf('?') > 0 ) {
-      initkakotv();
-      return;
-   }
-   
+   //window.hiddenView.showMsg( "msg:" + location.href );   
    if( location.href == "https://kakotv.com/" ) {
       callLogin('hshin09', 'shin0903');
-      //initkakotv();
+      return;
+   }
+   if( location.href.indexOf("kakotv.com") > 0 ) {
+      initkakotv();
       return;
    }
 
@@ -109,7 +106,7 @@ function initkakotv()
    web = document.getElementById("web");
    web.src = "";
    window.hiddenView.showMsg( "msg:로그인 되었습니다" );
-   window.hiddenView.showMsg( "webView:setTimeout(function(){loginProcess();},1000)" );
+   window.hiddenView.showMsg( "webView:setTimeout(function(){loginProcess();},100)" );
 }
 
 function getkakotvurl()
