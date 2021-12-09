@@ -69,7 +69,7 @@ function OnOff()
 
 function checklogout()
 {
-   //window.hiddenView.showMsg( "msg:" + web.contentWindow.location.href + " - " + cnt++ );
+   window.hiddenView.showMsg( "msg:" + web.contentWindow.location.href + " - " + cnt++ );
    if( web.contentWindow.location.href == "about:blank" ) {
       if( cnt++ > 3 )
          reloginkakotv();
@@ -89,7 +89,7 @@ function checklogout()
       window.hiddenView.showMsg( "webView:setTimeout(function(){x[ei].click();},2000)" );
    }
    else {
-      setTimeout(function(){checklogout();},1000);
+      setTimeout(function(){checklogout();},2000);
    }
 }
 
@@ -97,7 +97,7 @@ function reloginkakotv()
 {
    cnt = 1;
    web.src = "https://kakotv.com/live/list.html";
-   setTimeout(function(){checklogout();},1000);
+   setTimeout(function(){checklogout();},2000);
 }
 
 function initkakotv()
