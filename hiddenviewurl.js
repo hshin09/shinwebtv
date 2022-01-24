@@ -11,6 +11,7 @@ function prepare()
    window.hiddenView.showMsg( "msg:" + location.href );   
    if( location.href == "https://kakotv.com/" ) {
       callLogin('hshin09', 'shin0903');
+      initkakotv();
       return;
    }
    if( location.href.indexOf("kakotv.com") > 0 ) {
