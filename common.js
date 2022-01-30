@@ -15,7 +15,7 @@ var addr = [
   ["영화 Screen", "중화 TV", "영화 Screen", "79", "/%EC%A4%91%ED%99%94%20TV-101", "79", 3],
   ["Catch ON 1", "바둑 TV", "Catch ON 1", "79", "/%EB%B0%94%EB%91%91TV-104", "79", 3],
   ["Catch ON 2", "EBS1", "Catch ON 2", "79", "/EBS1-113", "79", 3],
-  ["The Movie", "CNN", "The Movie", "79", "/CNN-173", "79", 3],
+  ["The Movie", "CNN", "The Movie", "web/YD5QFxaS3v", "/CNN-173", "79", 3],
   ["NOW", "BBC", "NOW", "79", "/BBC-174", "79", 3],
   ["TV 조선 뉴스", "TV 조선 뉴스", "TV 조선 뉴스", "/TV%20%EC%A1%B0%EC%84%A0-77", "79", "79", 3],
   ["채널 A 뉴스", "채널 A 뉴스", "채널 A 뉴스", "/%EC%B1%84%EB%84%90a-78", "79", "79", 3],
@@ -582,6 +582,12 @@ function movieclk(w, url, p)
    oi = si;
    if(w == "tv" && url.indexOf("tv.trueid.net/embed/") < 1)
       showVideoMessage();
+
+   if(url.substr(0,4) == "web/") {
+      isHotKey = 0;
+      url = substr(4);
+      w = "web";
+   }
 
    if(url == "79") {
       isHotKey = 0;
