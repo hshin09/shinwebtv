@@ -564,6 +564,8 @@ function onFullscreenOnOff()
 
 function movieclk(w, url, p) 
 { 
+   let imsi_tvchak = 0;
+
    if( isHotKey == 0 )
       lastCh = ei;
    //isHotKey = 0;
@@ -585,6 +587,8 @@ function movieclk(w, url, p)
 
    if(url.substr(0,4) == "web/") {
       isHotKey = 0;
+      imsi_tvchak = 1;
+      tvchak = 1;
       url = url.substr(4);
       w = "web";
    }
@@ -636,6 +640,8 @@ function movieclk(w, url, p)
       stv.style.display = "none";
       web.style.display = "block";
       xx = web;
+      if(imsi_tvchak == 1)
+         tvchak = 0;
       if( isHotKey == 1 || tvchak == 0 || url != lasturl ) {
          if(tvchak)
             lasturl = url;
