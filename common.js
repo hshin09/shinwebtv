@@ -585,7 +585,7 @@ function movieclk(w, url, p)
 
    if(url.substr(0,4) == "web/") {
       isHotKey = 0;
-      url = substr(4);
+      url = url.substr(4);
       w = "web";
    }
 
