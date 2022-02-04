@@ -23,9 +23,13 @@ function checkTitle()
        s.indexOf("40") >= 0 ) )
       init();
    else {
-      setTimeout(function() {
-            checkTitle();
-      }, 1000);
+      s = document.querySelector('h1').innerHTML;
+      if( s && ( s.indexOf("Error") >= 0 ) )
+         init();
+      else
+         setTimeout(function() {
+               checkTitle();
+         }, 1000);
    }
 }
 
