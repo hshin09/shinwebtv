@@ -24,7 +24,7 @@ function checkTitle()
       init();
    else {
       s = document.querySelector('h1').innerHTML;
-      if( s && ( s.indexOf("Error") >= 0 ) )
+      if( s == null || s.indexOf("Error") >= 0 )
          init();
       else
          setTimeout(function() {
