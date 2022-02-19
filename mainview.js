@@ -17,8 +17,6 @@ function prepare()
 
 function checkTitle()
 {
-   init(); return;
-
    var s = document.querySelector('title').innerHTML;
    if( s && ( s.indexOf("티비착") >= 0 ||
        s.indexOf("Access") >= 0 ||
