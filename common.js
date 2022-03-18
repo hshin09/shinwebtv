@@ -7,8 +7,8 @@ var kakoSer = ['44', '51', '61'];
 var iKakoSer = 0;
 var isChangeSer = 0;
 var addr = [
-  ["SBS Golf", "SBS Golf", "SBS Golf", "/SBS%EA%B3%A8%ED%94%84%20HD-197", "79", "79", 3],
-  ["JTBC Golf", "JTBC Golf", "JTBC Golf", "/J%20%EA%B3%A8%ED%94%84%20HD-198", "79", "79", 3],
+  ["SBS Golf", "SBS Golf", "SBS Golf", "/SBS%EA%B3%A8%ED%94%84-87", "79", "79", 3],
+  ["JTBC Golf", "JTBC Golf", "JTBC Golf", "/J%20%EA%B3%A8%ED%94%84-88", "79", "79", 3],
   ["OCN Movies", "OCN Movies", "OCN Movies", "/OCN%20Movies-100", "79", "79", 3],
   ["OCN Original", "OCN Original", "OCN Original", "/OCN-97", "79", "79", 3],
   ["OCN Thrills", "OCN Thrills", "OCN Thrills", "/OCN%20Thrills-99", "79", "79", 3],
