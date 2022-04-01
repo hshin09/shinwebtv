@@ -711,8 +711,6 @@ function videoErr(e)
          document.getElementById("er_msg").innerHTML = "채널주소가 바뀌어 다른서버에서 새주소를 찾는 작업을 진행합니다.";
          //alert('The video could not be loaded, either because the server or network failed or because the format is not supported.');
          showErrorMessage();
-         tvaddr[ei] = addr[ei][addr[ei][6]];
-         x[ei].click();
          break;
       default:
          document.getElementById("er_msg").innerHTML = "알려지지않은 문제로 비디오 로드 에러";
