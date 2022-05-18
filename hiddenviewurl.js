@@ -10,7 +10,7 @@ function prepare()
 {
    //window.hiddenView.showMsg( "msg:" + location.href );   
    if( location.href == "https://kakotv.com/" ) {
-      callLogin('sh09', 'sh0903');
+      callLogin('hsh09', 'sh0903');
       setTimeout(function(){initkakotv();},1000);
       return;
    }
@@ -82,7 +82,7 @@ function checklogout()
       return; 
    }
    if( web.contentWindow.location.href == "https://kakotv.com/" ) {
-      web.contentWindow.callLogin('sh09', 'sh0903');
+      web.contentWindow.callLogin('hsh09', 'sh0903');
       window.hiddenView.showMsg( "msg:채널을 다시 로딩합니다" );
       window.hiddenView.showMsg( "webView:setTimeout(function(){x[ei].click();},2000)" );
    }
