@@ -215,7 +215,7 @@ function OnOff()
    if(mustWait) {
       mustWait--;
       if(mustWait == 0 && isChangeSer == 0) {
-         window.parentView.showMsg("msg:onok( 1 )");
+         //window.parentView.showMsg("msg:onok( 1 )");
          //setTimeout(function(){onok();}, 10);
          tvaddr[ei] = addr[ei][addr[ei][6]];
          setTimeout(function(){x[ei].click();}, 10);
@@ -255,7 +255,7 @@ function OnOff()
             	   //addr[ei][6] = ich-1;
             	}
             }
-            window.parentView.showMsg("msg:onok( 2 )");
+            //window.parentView.showMsg("msg:onok( 2 )");
             //setTimeout(function(){onok();}, timeSetTV);
             tvaddr[ei] = addr[ei][addr[ei][6]];
             setTimeout(function(){x[ei].click();}, timeSetTV);
