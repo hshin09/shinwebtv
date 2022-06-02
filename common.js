@@ -247,13 +247,12 @@ function OnOff()
          if(gi == 0) {
             var ich = addr[ei][6];
             if(addr[ei][ich] == '79') {
+               //clearAddress(addr[ei][ich]);
                //addr[ei][6] = ich-1;
-               clearAddress(addr[ei][ich]);
-               addr[ei][6] = ich-1;
             }
             else {
             	if(nErr++ < 2) {
-            	   addr[ei][6] = ich-1;
+            	   //addr[ei][6] = ich-1;
             	}
             }
             window.parentView.showMsg("msg:onok( 2 )");
