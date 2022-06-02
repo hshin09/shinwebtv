@@ -214,8 +214,10 @@ function OnOff()
 
    if(mustWait) {
       mustWait--;
-      if(mustWait == 0 && isChangeSer == 0)
+      if(mustWait == 0 && isChangeSer == 0) {
+         window.parentView.showMsg("msg:onok( 1 )");
          setTimeout(function(){onok();}, 10);
+      }
       return;
    }
 
@@ -252,6 +254,7 @@ function OnOff()
             	   addr[ei][6] = ich-1;
             	}
             }
+            window.parentView.showMsg("msg:onok( 2 )");
             setTimeout(function(){onok();}, timeSetTV);
          }
       }
