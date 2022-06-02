@@ -216,7 +216,9 @@ function OnOff()
       mustWait--;
       if(mustWait == 0 && isChangeSer == 0) {
          window.parentView.showMsg("msg:onok( 1 )");
-         setTimeout(function(){onok();}, 10);
+         //setTimeout(function(){onok();}, 10);
+         tvaddr[ei] = addr[ei][addr[ei][6]];
+         setTimeout(function(){x[ei].click();}, 10);
       }
       return;
    }
@@ -255,7 +257,9 @@ function OnOff()
             	}
             }
             window.parentView.showMsg("msg:onok( 2 )");
-            setTimeout(function(){onok();}, timeSetTV);
+            //setTimeout(function(){onok();}, timeSetTV);
+            tvaddr[ei] = addr[ei][addr[ei][6]];
+            setTimeout(function(){x[ei].click();}, timeSetTV);
          }
       }
    }
