@@ -30,7 +30,7 @@ var addr = [
   ["GeoGraphic", "GeoGraphic", "GeoGraphic", "/%EB%82%B4%EC%85%94%EB%84%90%EC%A7%80%EC%98%A4%EA%B7%B8%EB%9E%98%ED%94%BD-107", "79", "79", 3],
   ["Discovery", "Discovery", "Discovery", "/%EB%94%94%EC%8A%A4%EC%BB%A4%EB%B2%84%EB%A6%AC-108", "79", "79", 3],
   ["History", "History", "History", "/HISTORY-265", "79", "79", 3],
-  ["MNet", "MNet", "MNet", "/M-NET-96", "79", "79", 3]
+  ["MNet", "MNet", "MNet", "79", "/M-NET-96", "79", 3]
 ];
 
 var touchscreen = 0;
