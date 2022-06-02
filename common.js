@@ -250,19 +250,19 @@ function OnOff()
             if(addr[ei][ich] == '79') {
                clearAddress(addr[ei][ich]);
                addr[ei][6] = ich-1;
-               setTimeout(function(){onok();}, timeSetTV);
-               return;
+               //setTimeout(function(){onok();}, timeSetTV);
+               //return;
             }
             else {
             	if(nErr++ < 2) {
-            	   //addr[ei][6] = ich-1;
+            	   addr[ei][6] = ich-1;
             	}
             }
-            //window.parentView.showMsg("msg:onok( 2 )");
-            //setTimeout(function(){onok();}, timeSetTV);
-            isChangeSer = 1;
-            tvaddr[ei] = addr[ei][addr[ei][6]];
-            setTimeout(function(){x[ei].click();}, timeSetTV);
+            window.parentView.showMsg("msg:onok( 2 )");
+            setTimeout(function(){onok();}, timeSetTV);
+            //isChangeSer = 1;
+            //tvaddr[ei] = addr[ei][addr[ei][6]];
+            //setTimeout(function(){x[ei].click();}, timeSetTV);
          }
       }
    }
