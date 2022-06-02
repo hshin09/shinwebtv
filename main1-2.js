@@ -109,6 +109,21 @@ function changeKorTv() {
    lastCh = alc[0];
 }
 
+function changeKakoServer(add) {
+   if( gi == 0 && tvchak == 0 ) {
+      if( addr[ei][addr[ei][6]] != "79" ) {        
+         isChangeSer = 1;
+         if( add == 1 ) {
+            iKakoSer++;
+            if( iKakoSer > 2 ) iKakoSer = 0;
+         }
+         window.parentView.showMsg("msg:" + kakoSer[iKakoSer] + "번 서버로 변경합니다");
+         tvaddr[ei] = addr[ei][addr[ei][6]];
+         x[ei].click();
+      }
+   }
+}
+
 function keychk(e) {
    if( e.which == 38) {
       onup();
@@ -152,16 +167,7 @@ function keychk(e) {
       x[lastCh].click();
    }
    else if( e.which == 54 ) { //6
-      if( gi == 0 && tvchak == 0 ) {
-         if( addr[ei][addr[ei][6]] != "79" ) {        
-            isChangeSer = 1;
-            iKakoSer++;
-            if( iKakoSer > 2 ) iKakoSer = 0;
-            window.parentView.showMsg("msg:" + kakoSer[iKakoSer] + "번 서버로 변경합니다");
-            tvaddr[ei] = addr[ei][addr[ei][6]];
-            x[ei].click();
-         }
-      }
+      changeKakoServer( 1 );
    }
    else if( e.which == 55 ) { //7
       if( gi == 0 ) {
