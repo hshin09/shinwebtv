@@ -259,6 +259,7 @@ function OnOff()
             }
             //window.parentView.showMsg("msg:onok( 2 )");
             //setTimeout(function(){onok();}, timeSetTV);
+            isChangeSer = 1;
             tvaddr[ei] = addr[ei][addr[ei][6]];
             setTimeout(function(){x[ei].click();}, timeSetTV);
          }
