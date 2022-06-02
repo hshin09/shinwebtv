@@ -129,7 +129,7 @@ function Init()
 
       ls = localStorage.getItem("kakotv"+i );
       if( ls == null || ls == "" ) ls = "/"
-      backkakotvaddr[i] = ls;
+      backkakotvaddr[i] = ls + "1";
       //window.parentView.showMsg("msg:"+i+" = "+ls);
 
       ich = addr[i][6];
