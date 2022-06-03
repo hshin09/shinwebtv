@@ -251,7 +251,7 @@ function OnOff()
             }
             else {
             	if(nErr++ < 2) {
-                   //backkakotvaddr[ei] = tvaddr[ei] = addr[ei][ich];
+                   backkakotvaddr[ei] = tvaddr[ei] = addr[ei][ich];
                    changeKakoServer( 0 );
             	   addr[ei][6] = ich-1;
             	}
