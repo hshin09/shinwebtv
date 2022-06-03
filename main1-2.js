@@ -112,8 +112,8 @@ function changeKorTv() {
 function changeKakoServer(add) {
    if( gi == 0 && tvchak == 0 ) {
       if( addr[ei][addr[ei][6]] != "79" ) {        
-         isChangeSer = 1;
          if( add == 1 ) {
+            isChangeSer = 1;
             iKakoSer++;
             if( iKakoSer > 2 ) iKakoSer = 0;
          }
