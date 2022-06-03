@@ -254,15 +254,14 @@ function OnOff()
             }
             else {
             	if(nErr++ < 2) {
-                   //if( addr[ei][addr[ei][6]] == "79" )
-            	      addr[ei][6] = ich-1;
+            	   addr[ei][6] = ich-1;
             	}
             }
             window.parentView.showMsg("msg:onok( 2 )");
-            //if( addr[ei][addr[ei][6]] == "79" )
+            if( addr[ei][addr[ei][6]] == "79" )
                setTimeout(function(){onok();}, timeSetTV);
-            //else
-            //   changeKakoServer( 0 );
+            else
+               changeKakoServer( 0 );
             //isChangeSer = 1;
             //tvaddr[ei] = addr[ei][addr[ei][6]];
             //setTimeout(function(){x[ei].click();}, timeSetTV);
