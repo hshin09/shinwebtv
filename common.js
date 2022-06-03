@@ -255,8 +255,8 @@ function OnOff()
                    backkakotvaddr[ei] = tvaddr[ei] = addr[ei][ich];
                    iKakoSer--;
                    setTimeout(function(){changeKakoServer(1);}, timeSetTV);
-                   return;
-            	   //addr[ei][6] = ich-1;
+                   //return;
+            	   addr[ei][6] = ich-1;
             	}
             }
             //window.parentView.showMsg("msg:onok( 2 )");
