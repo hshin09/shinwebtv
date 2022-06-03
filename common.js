@@ -251,9 +251,11 @@ function OnOff()
             }
             else {
             	if(nErr++ < 2) {
-                   backkakotvaddr[ei] = tvaddr[ei] = addr[ei][ich];
-                   changeKakoServer( 0 );
-            	   addr[ei][6] = ich-1;
+                   //backkakotvaddr[ei] = tvaddr[ei] = addr[ei][ich];
+                   iKakoSer--;
+                   changeKakoServer( 1 );
+                   return;
+            	   //addr[ei][6] = ich-1;
             	}
             }
             //window.parentView.showMsg("msg:onok( 2 )");
