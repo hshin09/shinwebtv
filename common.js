@@ -216,8 +216,9 @@ function OnOff()
       mustWait--;
       if(mustWait == 0 && isChangeSer == 0) {
          window.parentView.showMsg("msg:onok( 1 )");
-         //setTimeout(function(){onok();}, 10);
-         changeKakoServer( 0 );
+         addr[ei][6] = addr[ei][6]-1;
+         setTimeout(function(){onok();}, 10);
+         //changeKakoServer( 0 );
       }
       return;
    }
@@ -442,7 +443,7 @@ function onok()
       if(addr[si][i_ch] == "79" && backtvaddr[si] != "79")
          tvaddr[si] = backtvaddr[si];
 
-      if(addr[si][i_ch].substr(0,1) == "/" && backkakotvaddr[si] != "/")
+      if(addr[si][i_ch].substr(0,1) == "/" && backkakotvaddr[si].substr(0,1) != "/")
          tvaddr[si] = backkakotvaddr[si];
 
       x[si].innerHTML = addr[si][i_ch - 3];
