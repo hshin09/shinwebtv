@@ -216,7 +216,6 @@ function OnOff()
       mustWait--;
       if(mustWait == 0 && isChangeSer == 0) {
          window.parentView.showMsg("msg:onok( 1 )");
-         addr[ei][6] = addr[ei][6]-1;
          setTimeout(function(){onok();}, 10);
          //changeKakoServer( 0 );
       }
@@ -249,8 +248,6 @@ function OnOff()
             if(addr[ei][ich] == '79') {
                clearAddress(addr[ei][ich]);
                addr[ei][6] = ich-1;
-               //setTimeout(function(){onok();}, timeSetTV);
-               //return;
             }
             else {
             	if(nErr++ < 2) {
@@ -258,13 +255,10 @@ function OnOff()
             	}
             }
             window.parentView.showMsg("msg:onok( 2 )");
-            if( addr[ei][addr[ei][6]] == "79" )
+            //if( addr[ei][addr[ei][6]] == "79" )
                setTimeout(function(){onok();}, timeSetTV);
-            else
-               changeKakoServer( 0 );
-            //isChangeSer = 1;
-            //tvaddr[ei] = addr[ei][addr[ei][6]];
-            //setTimeout(function(){x[ei].click();}, timeSetTV);
+            //else
+            //   changeKakoServer( 0 );
          }
       }
    }
