@@ -252,7 +252,7 @@ function OnOff()
             else {
             	if(nErr++ < 2) {
                    backkakotvaddr[ei] = tvaddr[ei] = addr[ei][ich];
-            	   //addr[ei][6] = ich-1;
+            	   addr[ei][6] = ich-1;
             	}
             }
             window.parentView.showMsg("msg:onok( 2 )");
