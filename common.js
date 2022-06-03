@@ -325,8 +325,8 @@ function getkakotv(i, url)
    $("#ch_name").text(x[ei].innerHTML + "(검색중)");
    $("#videoMessage").css('display', 'block');   
    window.parentView.showMsg( "hiddenView:loadVideo('" + kakoSer[iKakoSer]+ "','" + url + "')" );
-   if(isChangeSer == 1)
-      mustWait = 2;
+   //if(isChangeSer == 1)
+      mustWait = 3;
 }
 
 function setkakotv(s) 
