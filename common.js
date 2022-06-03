@@ -16,7 +16,7 @@ var addr = [
   ["Catch ON 1", "바둑 TV", "Catch ON 1", "79", "/%EB%B0%94%EB%91%91TV-104", "79", 3],
   ["Catch ON 2", "EBS1", "Catch ON 2", "79", "/EBS1-113", "79", 3],
   ["The Movie", "The Movie", "CNN", "79", "web/YD5QFxaS3v", "/CNN-173", 3],
-  ["NOW", "KBS 사극", "BBC", "79", "web/cYnwWP5AyR", "/BBC-174", 3],
+  ["YTN Life", "KBS 사극", "BBC", "79", "web/cYnwWP5AyR", "/BBC-174", 3],
   ["TV 조선 뉴스", "TV 조선 뉴스", "TV 조선 뉴스", "/TV%20%EC%A1%B0%EC%84%A0-77", "79", "79", 3],
   ["채널 A 뉴스", "채널 A 뉴스", "채널 A 뉴스", "/%EC%B1%84%EB%84%90a-78", "79", "79", 3],
   ["JTBC 뉴스", "JTBC 뉴스", "JTBC 뉴스", "/jtbc-76", "79", "79", 3],
@@ -40,7 +40,7 @@ var trueLoadUrl = trueHostUrl + "/sites";
 var path = trueLoadUrl + "/mstv/pages/pc/pc_view.php?ch=live";
 var pathTvChak = "https://china.allyearcdn.com/player/live/?g=";
 var optTvChak = "&q=0&sports=false";
-var ch = ['26', '37', '04', '05', '03', '25', '09', '35', '30', '17', '33', '02', '01', '34', '32', '23', '14', '07', '15', '13', '50', '46', '49', '38'];
+var ch = ['26', '37', '04', '05', '03', '25', '09', '35', '30', '44', '33', '02', '01', '34', '32', '23', '14', '07', '15', '13', '50', '46', '49', '38'];
 var gi = 0;
 var si = 10;
 var oi = 10;
