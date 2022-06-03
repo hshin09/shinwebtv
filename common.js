@@ -251,15 +251,13 @@ function OnOff()
             }
             else {
             	if(nErr++ < 2) {
-                   backkakotvaddr[ei] = tvaddr[ei] = addr[ei][ich];
+                   //backkakotvaddr[ei] = tvaddr[ei] = addr[ei][ich];
+                   changeKakoServer( 0 );
             	   addr[ei][6] = ich-1;
             	}
             }
-            window.parentView.showMsg("msg:onok( 2 )");
-            //if( addr[ei][addr[ei][6]] == "79" )
-               setTimeout(function(){onok();}, timeSetTV);
-            //else
-            //   changeKakoServer( 0 );
+            //window.parentView.showMsg("msg:onok( 2 )");
+            setTimeout(function(){onok();}, timeSetTV);
          }
       }
    }
