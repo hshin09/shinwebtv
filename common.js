@@ -215,10 +215,9 @@ function OnOff()
    if(mustWait) {
       mustWait--;
       if(mustWait == 0 && isChangeSer == 0) {
-         window.parentView.showMsg("msg:onok( 1 )");
+         //window.parentView.showMsg("msg:onok( 1 )");
          addr[ei][6]--;
          setTimeout(function(){onok();}, 10);
-         //changeKakoServer( 0 );
       }
       return;
    }
@@ -255,11 +254,11 @@ function OnOff()
                    backkakotvaddr[ei] = tvaddr[ei] = addr[ei][ich];
                    iKakoSer--;
                    setTimeout(function(){changeKakoServer(1);}, timeSetTV);
-                   //return;
-            	   addr[ei][6] = ich-1;
+                   return;  	   
             	}
             }
             //window.parentView.showMsg("msg:onok( 2 )");
+            addr[ei][6] = ich-1;
             setTimeout(function(){onok();}, timeSetTV);
          }
       }
