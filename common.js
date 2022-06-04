@@ -46,6 +46,7 @@ var si = 10;
 var oi = 10;
 var ei = 10;
 var di = 14;
+var iGetTv = 10;
 var asi = [10, 4, 2, 2];
 var aoi = [10, 4, 2, 2];
 var aei = [10, 4, 2, 2];
@@ -143,7 +144,7 @@ function Init()
    }
    ls = localStorage.getItem("ei" );
    if( ls && ls != "" )
-      ei = si = ls;
+      iGetTv = ei = si = ls;
    //window.parentView.showMsg("msg:loadStorage end");
    timer = setInterval(function() {
       OnOff();
@@ -251,6 +252,8 @@ function OnOff()
             }
             else {
             	if(nErr++ < 2) {
+                   if(iGetTv != ei)
+                      return;
                    backkakotvaddr[ei] = tvaddr[ei] = addr[ei][ich];
                    iKakoSer--;
                    setTimeout(function(){changeKakoServer(1);}, timeSetTV);
@@ -319,7 +322,7 @@ function get79tv(i)
 
 function getkakotv(i, url) 
 {
-   ei = i;
+   iGetTv = ei = i;
    stv.pause();
    stv.src = "empty";
    $("#ch_name").text(x[ei].innerHTML + "(검색중)");
