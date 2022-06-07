@@ -252,11 +252,11 @@ function OnOff()
             }
             else {
             	if(nErr++ < 2) {
-                   if(iGetTv != ei) {
+                   /* if(iGetTv != ei) {
                       iGetTv = ei;
                       backkakotvaddr[ei] = tvaddr[ei] = addr[ei][ich];
                       return;
-                   }
+                   } */
                    backkakotvaddr[ei] = tvaddr[ei] = addr[ei][ich];
                    iKakoSer--;
                    setTimeout(function(){changeKakoServer(1);}, timeSetTV);
