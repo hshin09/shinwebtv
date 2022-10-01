@@ -11,7 +11,7 @@ var addr = [
   ["JTBC Golf", "JTBC Golf", "JTBC Golf", "/J%20%EA%B3%A8%ED%94%84-88", "79", "79", 3],
   ["OCN Movies", "OCN Movies", "OCN Movies", "/OCN%20Movies-100", "79", "79", 3],
   ["OCN Original", "OCN Original", "OCN Original", "/OCN-97", "79", "79", 3],
-  ["OCN Thrills", "OCN Thrills", "OCN Thrills", "/OCN%20Thrills-99", "79", "79", 3],
+  ["OCN Movies2", "OCN Movies2", "OCN Movies2", "/OCN%20Thrills-99", "79", "79", 3],
   ["영화 Screen", "중화 TV", "영화 Screen", "79", "/%EC%A4%91%ED%99%94%20TV-101", "79", 3],
   ["Catch ON 1", "바둑 TV", "Catch ON 1", "79", "/%EB%B0%94%EB%91%91TV-104", "79", 3],
   ["Catch ON 2", "EBS1", "Catch ON 2", "79", "/EBS1-113", "79", 3],
