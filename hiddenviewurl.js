@@ -8,7 +8,7 @@ var url = "https://www.adintrend.tv/hd/live/i.php?ch=3&cxid=" + ADsid;
 
 function prepare()
 {
-   //window.hiddenView.showMsg( "msg:" + location.href );   
+   window.hiddenView.showMsg( "msg:" + location.href );   
    if( location.href == "https://kakotv.com/" ) {
       window.hiddenView.showMsg( "msg:1-" + location.href );
       callLogin('hsh09', 'sh0903');
