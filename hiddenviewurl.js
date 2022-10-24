@@ -20,7 +20,7 @@ function prepare()
       initkakotv();
       return;
    }
-
+   window.hiddenView.showMsg( "msg:" + location.href );
    addFrame("web");
    document.getElementById("web").src = url;
 }
