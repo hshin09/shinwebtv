@@ -10,8 +10,8 @@ function prepare()
 {
    //window.hiddenView.showMsg( "msg:" + location.href );   
    if( location.href == "https://kakotv.com/" ) {
-      callLogin('hsh09', 'sh0903');
       window.hiddenView.showMsg( "msg1:" + location.href );
+      callLogin('hsh09', 'sh0903');
       setTimeout(function(){initkakotv();},1000);
       return;
    }
