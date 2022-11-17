@@ -118,7 +118,6 @@ function getkakotvurl()
 {
    var f = web.contentDocument.getElementsByTagName('body')[0];
    var s = f.innerHTML;
-window.hiddenView.showMsg( "msg:addr =› " + s );
    var i = s.indexOf('initPlayer');
    /* if( i < 0 ) {
       reloginkakotv();
@@ -133,6 +132,7 @@ window.hiddenView.showMsg( "msg:addr =› " + s );
    if( j-i < 10 )
       s = "";
    web.src = "";
+window.hiddenView.showMsg( "msg:addr =› " + s );
    window.hiddenView.showMsg( "webView:setkakotv('" + s + "')" );
 }
 
