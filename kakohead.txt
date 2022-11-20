@@ -1,0 +1,36 @@
+<script type="text/javascript" charset="utf-8" async="" src="https://kakotv.com/js/jwplayer/jwpsrv.js"></script> 
+<meta charset="UTF-8"> <meta http-equiv="Cache-Control" content="max-age=0"> 
+<meta http-equiv="Cache-Control" content="no-siteapp"> 
+<meta http-equiv="Cache-Control" content="no-transform"> 
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+<meta name="viewport" content="initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"> 
+<meta name="csrf-token" content="Rys5xspW3fDnB9RQgsf6gfMjh0r3bamCIrAg0f1O"> 
+<link rel="shortcut icon" href="https://kakotv.com/images/logo-kakotv-icon.png" type="image/x-icon"> 
+<link rel="apple-touch-icon" href="https://kakotv.com/images/logo-kakotv-icon.png"> 
+<link href="" rel="icon" sizes="192x192"> 
+<link href="" rel="icon" sizes="128x128"> 
+<meta property="fb:app_id" content="574918786289549"> 
+<meta property="og:site_name" content="kakotv.com"> 
+<meta property="og:image" content="https://kakotv.com/shares/all-channel-kr.png"> 
+<meta property="og:image:url" content="https://kakotv.com/shares/all-channel-kr.png"> 
+<meta property="og:title" content="JTBC"> <meta property="og:description" content="JTBC"> 
+<meta property="og:url" content="https://kakotv.com/live/jtbc-76.html"> 
+<meta property="og:type" content="website"> 
+<meta name="twitter:card" content="JTBC"> 
+<link rel="shortcut icon" href="https://kakotv.com/images/logo-kakotv-icon.png" type="image/x-icon"> 
+<title>KAKOTV</title> 
+<link href="https://kakotv.com/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet"> 
+<link href="https://kakotv.com/font-awesome/css/font-awesome.min.css" rel="stylesheet"> 
+<link href="https://kakotv.com/iptv/style.css" rel="stylesheet"> 
+<link href="https://kakotv.com/dist/styles.css?v=2.8" rel="stylesheet"> 
+<script type="text/javascript" src="https://kakotv.com/js/lang/trans_kr.js"></script> 
+<script type="text/javascript" src="https://kakotv.com/js/jquery.min.js"></script> 
+<script type="text/javascript" src="https://kakotv.com/js/jquery.lazy/jquery.lazy.min.js"></script> 
+<script type="text/javascript"> var baseUrl = 'https://kakotv.com/'; var root = 'live/'; $.ajaxSetup({ headers: { 'X-CSRF-TOKEN': 'Rys5xspW3fDnB9RQgsf6gfMjh0r3bamCIrAg0f1O' } }); $(function () { $('[data-toggle="tooltip"]').tooltip(); $('.lazy').Lazy({  scrollDirection: 'vertical', effect: 'fadeIn', visibleOnly: true, onError: function(element) { console.log('error loading ' + element.data('src')); } }); }); </script> 
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-M757BN0LJH"></script> 
+<script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);}  gtag('js', new Date()); gtag('config', 'G-M757BN0LJH'); </script> 
+<script charset="utf-8" src="/js/jwplayer/jwplayer.core.controls.js"></script>
+<script charset="utf-8" src="/js/jwplayer/related.js"></script>
+<script charset="utf-8" src="/js/jwplayer/provider.hlsjs.js"></script>
+
+<style type="text/css" data-jwplayer-id="all-players"></style>
