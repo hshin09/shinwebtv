@@ -32,5 +32,7 @@
 <script charset="utf-8" src="/js/jwplayer/jwplayer.core.controls.js"></script>
 <script charset="utf-8" src="/js/jwplayer/related.js"></script>
 <script charset="utf-8" src="/js/jwplayer/provider.hlsjs.js"></script>
-
+<script type="text/javascript" src="https://kakotv.com/js/jwplayer/jwplayer.js"></script> 
+<script>jwplayer.key="eNFaXCjyURVoCCGiHp7HTQ3hDhE/AfL0g8VE1fRbL84=";</script> 
+<script type="text/javascript" src="https://kakotv.com/js/jwplayer-js.js?ver=1.2"></script>
 <style type="text/css" data-jwplayer-id="all-players"></style>
