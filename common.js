@@ -34,7 +34,8 @@ var addr = [
 ];
 
 var touchscreen = 0;
-var trueHostUrl = "http://www.youtv24.net";
+//var trueHostUrl = "http://www.youtv24.net";
+var trueHostUrl = "http://mansu24.com";
 var trueLoadUrl = trueHostUrl + "/sites";
 //trueLoadUrl = "https://v1.tvchak.com/a";
 var path = trueLoadUrl + "/mstv/pages/pc/pc_view.php?ch=live";
