@@ -1,0 +1,76 @@
+<html>
+<head>
+</head>
+<body>
+<style type="text/css">
+.tg  {border-collapse:collapse;border-color:#9ABAD9;border-spacing:0;}
+.tg td{background-color:#EBF5FF;border-color:#9ABAD9;border-style:solid;border-width:1px;color:#444;
+  font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg th{background-color:#409cff;border-color:#9ABAD9;border-style:solid;border-width:1px;color:#fff;
+  font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg .tg-hvfu{border-color:#ebf5ff;text-align:left;vertical-align:top}
+.tg .tg-kw3o{border-color:#ebf5ff;text-align:center;vertical-align:middle}
+.tg .tg-gtfd{border-color:#ebf5ff;position:-webkit-sticky;position:sticky;text-align:center;top:-1px;vertical-align:top;
+  will-change:transform}
+.tg .tg-3td0{border-color:#ebf5ff;text-align:center;vertical-align:top}
+</style>
+<table class="tg">
+<thead>
+  <tr>
+    <th class="tg-gtfd">예약일자</th>
+    <th class="tg-gtfd">닉네임</th>
+    <th class="tg-gtfd">시작 시간</th>
+    <th class="tg-gtfd">종료 시간</th>
+    <th class="tg-gtfd">인원</th>
+    <th class="tg-gtfd">종류</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td class="tg-kw3o" rowspan="3"> 04 / 11</td>
+    <td class="tg-hvfu">abcdefghi</td>
+    <td class="tg-hvfu">오전 10:00</td>
+    <td class="tg-hvfu">정오 12:00</td>
+    <td class="tg-3td0">1</td>
+    <td class="tg-3td0">일반</td>
+  </tr>
+  <tr>
+    <td class="tg-hvfu"></td>
+    <td class="tg-hvfu"></td>
+    <td class="tg-hvfu"></td>
+    <td class="tg-3td0"></td>
+    <td class="tg-3td0"></td>
+  </tr>
+  <tr>
+    <td class="tg-hvfu"></td>
+    <td class="tg-hvfu"></td>
+    <td class="tg-hvfu"></td>
+    <td class="tg-3td0"></td>
+    <td class="tg-3td0"></td>
+  </tr>
+  <tr>
+    <td class="tg-kw3o" rowspan="3"></td>
+    <td class="tg-hvfu"></td>
+    <td class="tg-hvfu"></td>
+    <td class="tg-hvfu"></td>
+    <td class="tg-3td0"></td>
+    <td class="tg-3td0"></td>
+  </tr>
+  <tr>
+    <td class="tg-hvfu"></td>
+    <td class="tg-hvfu"></td>
+    <td class="tg-hvfu"></td>
+    <td class="tg-3td0"></td>
+    <td class="tg-3td0"></td>
+  </tr>
+  <tr>
+    <td class="tg-hvfu"></td>
+    <td class="tg-hvfu"></td>
+    <td class="tg-hvfu"></td>
+    <td class="tg-3td0"></td>
+    <td class="tg-3td0"></td>
+  </tr>
+</tbody>
+</table>
+</body>
+<html>
