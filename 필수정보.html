@@ -12,11 +12,10 @@ function copyToClipBoard() {
      content.select();
      content.setSelectionRange(0, 99999);
      document.execCommand('copy');
-     content.setSelectionRange(0, 0);
 }
 </script>
 </head>
-<body style="background-color:black;color:white;line-height:150%;">
+<body style="background-color:black;color:white;line-height:200%;">
 <div>
 <a href="./예약현황.html"><button>예약현황으로 돌아가기</button></a>
 </div>
@@ -39,13 +38,14 @@ ex) 9월5일 2명 오전10시 일반안마 dcondo ping b동 307호 숙소보안�
 <div style="background-color:black">
 <span style="color:green">
 * 위내용을 복사해서 본인에 맞게 수정하세요.
+</span>
 <div>
 <button onclick="copyToClipBoard()">텍스트 복사</button></a>
 </div><br>
+<span style="color:green">
 * 순수한 건전 마사지이며 안마 시간은 기본 2시간입니다.<br>
 </span>
 </div>
-<br>
 필수정보 각각의 의미는 다음과 같습니다.<br>
 1. 날짜 & 인원: 월 / 일 ( 0명 )<br>
 2. 원하시는 시작시간 : 시작시간이 오후 4시가 넘는경우 시간에 따라 매30분당 50바트가 추가됩니다.<br>
