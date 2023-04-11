@@ -3,10 +3,9 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
-<link rel="stylesheet" type="text/css" href="http://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" />
-<script type="text/javascript" src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
-<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
-<script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css" integrity="sha512-3pIirOrwegjM6erE5gPSwkUzO 3cTjpnV9lexlNZqvupR64iZBnOOTiiLPb9M36zpMScbmUNIcHUqKD47M719g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js" integrity="sha512-VEd+nq25CkR676O+pLBnDW09R7VQX9Mdiij052gVCp5yVH3jGtH70Ho/UUv4mJDsEdTvqRCFZg0NKGiojGnUCw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script type="text/javascript">
 function copyToClipBoard() {
      var content = document.getElementById('textArea');
      content.value = document.getElementById("textcopy").textContent;
@@ -16,10 +15,9 @@ function copyToClipBoard() {
      toastr.options = {
                       closeButton: true,
                       progressBar: true,
-                      showMethod: 'slideDown',
                       timeOut: 3000
                   };
-     toastr.info('양식 복사', '양식을 복사했습니다. 카톡에서 붙여놓기후 수정하시면 됩니다!');
+     toastr.success('양식을 복사했습니다. 카톡에서 붙여놓기후 수정하시면 됩니다!');
 }
 </script>
 </head>
