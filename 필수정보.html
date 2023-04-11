@@ -12,6 +12,7 @@ function copyToClipBoard() {
      content.select();
      content.setSelectionRange(0, 99999);
      document.execCommand('copy');
+     content.setSelectionRange(0, 0);
 }
 </script>
 </head>
@@ -33,7 +34,7 @@ ex) 9월5일 2명 오전10시 일반안마 dcondo ping b동 307호 숙소보안�
 7. 왼쪽팔을 어깨높이위로 올리기 힘들고 아파요<br>
 8. 구글맴상의 위치링크<br>
 </div>
-<div style="position:relative;width:1px;height:1px">
+<div style="position:relative;left:3px;top:3px">
 <textarea id="textArea">
 </textarea>
 </div>
