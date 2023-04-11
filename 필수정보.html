@@ -3,9 +3,6 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css" integrity="sha512-3pIirOrwegjM6erE5gPSwkUzO 3cTjpnV9lexlNZqvupR64iZBnOOTiiLPb9M36zpMScbmUNIcHUqKD47M719g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js" integrity="sha512-VEd+nq25CkR676O+pLBnDW09R7VQX9Mdiij052gVCp5yVH3jGtH70Ho/UUv4mJDsEdTvqRCFZg0NKGiojGnUCw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script type="text/javascript">
 function copyToClipBoard() {
      var content = document.getElementById('textArea');
@@ -13,12 +10,6 @@ function copyToClipBoard() {
      content.select();
      content.setSelectionRange(0, 99999);
      document.execCommand('copy');
-     toastr.options = {
-                      closeButton: true,
-                      progressBar: true,
-                      timeOut: 3000
-                  };
-     toastr.success('양식을 복사했습니다. 카톡에서 붙여놓기후 수정하시면 됩니다!');
 }
 </script>
 </head>
