@@ -5,16 +5,23 @@
 <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
 <style type="text/css">
 </style>
+<script>
+function copyToClipBoard() {
+     var content = document.getElementById('textArea');
+     content.select();
+     document.execCommand('copy');
+}
+</script>
 </head>
-<body style="background-color:black;line-height:200%;">
+<body style="background-color:black;color:white;line-height:150%;">
 <div>
 <a href="./예약현황.html"><button>예약현황으로 돌아가기</button></a>
 </div>
-<br>
 <div>
 카톡아이디 <span style="background-color:black;color:yellow">aoy07</span> 로 친구등록 하신후 아래 필수정보를 보내시면 예약을 하실수 있습니다.<br>
 예약을 위해 카톡으로 보내주실 필수정보의 양식과 예는 다음과 같습니다.<br>
 ex) 9월5일 2명 오전10시 일반안마 dcondo ping b동 307호 숙소보안상 정문초소앞까지 마중나가셔야 할때<br>
+<textarea id="textArea">
 1. 09 / 05 (2)<br>
 2. 10:00<br>
 3. 080 123 5678<br>
@@ -23,9 +30,13 @@ ex) 9월5일 2명 오전10시 일반안마 dcondo ping b동 307호 숙소보안�
 6. thai<br>
 7. 왼쪽팔을 어깨높이위로 올리기 힘들고 아파요<br>
 8. 구글맴상의 위치링크<br>
+</textarea>
 <div style="background-color:black">
 <span style="color:green">
-* 위내용을 복사해서 본인에 맞게 수정하시는게 편하실겁니다.<br>
+* 위내용을 복사해서 본인에 맞게 수정하세요.
+<div>
+<button onclick="copyToClipBoard()">텍스트 복사</button></a>
+</div><br>
 * 순수한 건전 마사지이며 안마 시간은 기본 2시간입니다.<br>
 </span>
 </div>
