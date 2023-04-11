@@ -3,6 +3,10 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
+    <script src="js/jquery-3.1.1.min.js"></script>
+    <!-- Toastr -->
+    <link href="css/plugins/toastr/toastr.min.css" rel="stylesheet">
+    <script src="js/plugins/toastr/toastr.min.js"></script>
 <style type="text/css">
 </style>
 <script>
@@ -12,6 +16,13 @@ function copyToClipBoard() {
      content.select();
      content.setSelectionRange(0, 99999);
      document.execCommand('copy');
+     toastr.options = {
+                      closeButton: true,
+                      progressBar: true,
+                      showMethod: 'slideDown',
+                      timeOut: 3000
+                  };
+     toastr.info('양식 복사', '양식을 복사했습니다. 카톡에서 붙여놓기후 수정하시면 됩니다!');
 }
 </script>
 </head>
@@ -39,9 +50,9 @@ ex) 9월5일 2명 오전10시 일반안마 dcondo ping b동 307호 숙소보안�
 </div>
 <div style="background-color:black">
 <span style="color:green">
-* 위내용을 복사해서 본인에 맞게 수정하세요.
+* 위의 양식을 복사해서 본인에 맞게 수정하세요.
 </span>
-<button onclick="copyToClipBoard()">텍스트 복사</button>
+<button onclick="copyToClipBoard()">양식 복사</button>
 <br>
 <span style="color:green">
 * 순수한 건전 마사지이며 안마 시간은 기본 2시간입니다.<br>
