@@ -16,7 +16,10 @@ function copyToClipBoard() {
      content.select();
      content.setSelectionRange(0, 99999);
      document.execCommand('copy');
-     toastr.info('Are you the 6 fingered man?')
+     toastr.options.closeButton = "true";
+     toastr.options.progressBar = "true";
+     toastr.options.timeOut = "3000";
+     toastr.success('양식예제복사완료','카톡에서 붙여넣기후 원하시는 내용으로 수정하세요.')
 }
 </script>
 </head>
