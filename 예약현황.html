@@ -17,6 +17,21 @@ button {font-size:16px;color:#fff;background-color:green;border-color:green}
   will-change:transform}
 .tg .tg-3td0{border-color:#9ABAD9;text-align:center;vertical-align:top}
 </style>
+<script src="https://code.jquery.com/jquery-1.12.2.min.js"></script>
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css"/>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>  
+<script type="text/javascript">
+function copyToClipBoard() {
+     var content = document.getElementById('textArea');
+     content.select();
+     content.setSelectionRange(0, 99999);
+     document.execCommand('copy');
+     toastr.options.closeButton = "true";
+     toastr.options.progressBar = "true";
+     toastr.options.timeOut = "3000";
+     toastr.success('양식예제를 복사했습니다. 카톡에서 붙여넣기후 원하시는 내용으로 수정하세요.')
+}
+</script>
 </head>
 <body style="background-color:black;color:white;line-height:150%;">
 <div>
@@ -92,8 +107,8 @@ button {font-size:16px;color:#fff;background-color:green;border-color:green}
 <br>
 아래는 태국인용 스케줄 겹칠때 설명이니 굳이 읽지마세요.<br>
 ถ้าลูกคัาจองวันและเวลาซ้ำกันก็ส่งข้อความตามนี้เลย<br>
-이미 예약이 되어있는 시간과 겹치니 아래 링크로 확인하세요.<br>
-예약현황확인 & 예약하기 : https://hshin09.github.io/shinwebtv/예약현황.html
+<textarea value="이미 예약이 되어있는 시간과 겹치니 아래 링크로 확인하세요.<br>예약현황확인 & 예약하기 : https://hshin09.github.io/shinwebtv/예약현황.html" readonly>
+</textarea>
 <br><br><br>
 </div>
 </body>
