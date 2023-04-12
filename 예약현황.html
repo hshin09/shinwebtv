@@ -19,7 +19,7 @@ button {font-size:16px;color:#fff;background-color:green;border-color:green}
 </style>
 <script src="https://code.jquery.com/jquery-1.12.2.min.js"></script>
 <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css"/>
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>  
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 <script type="text/javascript">
 function copyToClipBoard() {
      var content = document.getElementById('textArea');
@@ -107,7 +107,9 @@ function copyToClipBoard() {
 <br>
 아래는 태국인용 스케줄 겹칠때 설명이니 굳이 읽지마세요.<br>
 ถ้าลูกคัาจองวันและเวลาซ้ำกันก็ส่งข้อความตามนี้เลย<br>
-<textarea value="이미 예약이 되어있는 시간과 겹치니 아래 링크로 확인하세요.<br>예약현황확인 & 예약하기 : https://hshin09.github.io/shinwebtv/예약현황.html" readonly>
+<textarea id="textArea"  readonly>
+이미 예약이 되어있는 시간과 겹치니 다음의 링크에서 확인하세요.<br>
+예약현황확인 : https://hshin09.github.io/shinwebtv/예약현황.html
 </textarea>
 <br><br><br>
 </div>
