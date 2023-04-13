@@ -8,7 +8,7 @@
 function popup() {
    document.getElementById("popup").classList.remove("hidden");
 }
-function close() {
+function closepopop() {
    document.getElementById("popup").classList.add("hidden");
 }
 function prev() {
@@ -20,7 +20,7 @@ function next() {
    document.getElementById("page1").classList.add("hidden");
 }
 function ok() {
-   close();
+   closepopop();
 }
 </script>
 </head>
@@ -30,7 +30,7 @@ function ok() {
 <button onclick="popup()">보기</button><br>
 <div id="popup" class="hidden">
    <span>테스트</span>
-   <button style="font-size:20px;float:right" onclick="close()">&times;</button>
+   <button style="font-size:20px;float:right" onclick="closepopop()">&times;</button>
    <div id="page1">
       <span>예약일시</span>
       <input type="date" id="date" style="width:150px"></input>
