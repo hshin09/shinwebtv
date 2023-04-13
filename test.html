@@ -1,14 +1,14 @@
 <html>
 <head>
 <style>
-#popup {position:fixed;left:200px;top:300px;width:50%;height:30%;border:1px solid red;}
+#popup {position:fixed;left:200px;top:300px;width:50%;height:50%;border:1px solid red;}
 .hidden {display:none;}
 </style>
 <script>
-function popup() {
+function showPopup() {
    document.getElementById("popup").classList.remove("hidden");
 }
-function closepopop() {
+function closePopup() {
    document.getElementById("popup").classList.add("hidden");
 }
 function prev() {
@@ -20,17 +20,17 @@ function next() {
    document.getElementById("page1").classList.add("hidden");
 }
 function ok() {
-   closepopop();
+   closePopup();
 }
 </script>
 </head>
 <body>
 <h1>아래의 영화보기를 클릭한후 로딩이 끝날때까지 잠시 기다리세요</h1>
 <video id="video_html5_api" class="vjs-tech" controls src=""></video>
-<button onclick="popup()">보기</button><br>
+<button onclick="showPopup()">보기</button><br>
 <div id="popup" class="hidden">
    <span>테스트</span>
-   <button style="font-size:20px;float:right" onclick="closepopop()">&times;</button>
+   <button style="font-size:20px;float:right" onclick="closePopup()">&times;</button>
    <div id="page1">
       <span>예약일시</span>
       <input type="date" id="date" style="width:150px"></input>
@@ -42,7 +42,7 @@ function ok() {
    <br>
    <button onclick="prev()">이전</button>
    <button onclick="next()">다음</button>
-   <button class="hidden" onclick="ok()" >확인</button>
+   <button onclick="ok()">확인</button>
 </div>
 </body>
 </html>
