@@ -5,13 +5,17 @@
 .hidden {display:none;}
 </style>
 <script>
-function abc() {
+function popup() {
    document.getElementById("popup").classList.remove("hidden");
 }
-function def() {
+function close() {
    document.getElementById("popup").classList.add("hidden");
 }
-function ghi() {
+function prev() {
+   document.getElementById("page2").classList.add("hidden");
+   document.getElementById("page1").classList.remove("hidden");
+}
+function next() {
    document.getElementById("page2").classList.remove("hidden");
    document.getElementById("page1").classList.add("hidden");
 }
@@ -20,16 +24,17 @@ function ghi() {
 <body>
 <h1>아래의 영화보기를 클릭한후 로딩이 끝날때까지 잠시 기다리세요</h1>
 <video id="video_html5_api" class="vjs-tech" controls src=""></video>
-<button onclick="abc()">abc</button>
+<button onclick="popup()">보기</button>
 <div id="popup" class="hidden">
    <div id="page1">
       <p>111111</p>
    </div>
    <div id="page2" class="hidden">
-      <p>2222222</p>
+      <p>예약일시</p><input type="date" id="date"></input><input type="time" id="time"></input>
    </div>
-   <br><button onclick="def()">def</button>
-   <button onclick="ghi()">ghi</button>
+   <br><span id="close "onclick="close()">&times;</span>
+   <button onclick="prev()">이전</button>
+   <button onclick="next()">다음</button>
 </div>
 </body>
 </html>
