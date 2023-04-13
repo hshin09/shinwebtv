@@ -11,7 +11,9 @@
    top:50%;
    left:50%;
    transform:translate(-50%, -50%);
+   box-shadow: 10px 10px 5px rgb(0, 0, 0, 0.2);
 }
+.cmt {width:60%;height:20%;border:1px solid green;background-color:white;}
 .hidden {display:none;}
 </style>
 <script>
@@ -44,8 +46,15 @@ function ok() {
       <span>예약일시</span>
       <input type="date" id="date" style="width:140px"></input>
       <input type="time" id="time"></input>
+      <span>인원</span>
+      <div class="cmt">
+         <span>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</span>
+      </div>
    </div>
    <div id="page2" class="hidden">
+      <span>인원</span>
+   </div>
+   <div id="page3" class="hidden">
       <span>인원</span>
    </div>
    <br>
