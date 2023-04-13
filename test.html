@@ -13,7 +13,12 @@
    transform:translate(-50%, -50%);
    box-shadow: 10px 10px 5px rgb(0, 0, 0, 0.2);
 }
-.cmt {margin:10px;width:90%;height:30%;border:1px solid green;background-color:white;}
+.cmt {
+   margin:10px;width:90%;height:30%;
+   border:1px solid green;background-color:white;
+   overflow:auto;
+}
+.cmt > p {background-color:white;}
 .hidden {display:none;}
 </style>
 <script>
@@ -48,7 +53,7 @@ function ok() {
       <input type="time" id="time"></input>
       <span>인원</span>
       <div class="cmt">
-         <span>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</span>
+         <p>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</p>
       </div>
    </div>
    <div id="page2" class="hidden">
