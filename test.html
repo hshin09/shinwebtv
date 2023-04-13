@@ -19,6 +19,9 @@ function next() {
    document.getElementById("page2").classList.remove("hidden");
    document.getElementById("page1").classList.add("hidden");
 }
+function ok() {
+   close()
+}
 </script>
 </head>
 <body>
@@ -26,15 +29,17 @@ function next() {
 <video id="video_html5_api" class="vjs-tech" controls src=""></video>
 <button onclick="popup()">보기</button>
 <div id="popup" class="hidden">
+   <p>테스트</p><span style="float:right" id="close" onclick="close()">&times;</span>
    <div id="page1">
-      <p>111111</p>
+      <p>예약일시</p><input type="date" id="date"></input><input type="time" id="time"></input>
    </div>
    <div id="page2" class="hidden">
       <p>예약일시</p><input type="date" id="date"></input><input type="time" id="time"></input>
    </div>
-   <br><span id="close "onclick="close()">&times;</span>
+   <br>
    <button onclick="prev()">이전</button>
    <button onclick="next()">다음</button>
+   <button class="hidden" onclick="ok()" >확인</button>
 </div>
 </body>
 </html>
