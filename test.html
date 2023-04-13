@@ -5,9 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
 #popup {
-   position:fixed;width:50%;height:50%;border:1px solid white;
+   position:fixed;width:70%;height:70%;border:1px solid white;
    background-color:darkgray;
-   padding:15px;
+   padding:10px 10px 10px 10px;
    top:50%;
    left:50%;
    transform:translate(-50%, -50%);
@@ -39,8 +39,7 @@ function ok() {
 <video id="video_html5_api" class="vjs-tech" controls src=""></video>
 <button onclick="showPopup()">보기</button><br>
 <div id="popup" class="hidden">
-   <h2>제목<label for="popup" style="float:right" onclick="closePopup()">X</label></h2>
-   <button style="font-size:20px" onclick="closePopup()">&times;</button>
+   <h3>제목<label for="popup" style="float:right" onclick="closePopup()">X</label></h3>   
    <div id="page1">
       <span>예약일시</span>
       <input type="date" id="date" style="width:140px"></input>
@@ -51,8 +50,8 @@ function ok() {
    </div>
    <br>
    <button onclick="prev()">이전</button>
-   <button onclick="next()">다음</button>
-   <button onclick="ok()" class="hidden">확인</button>
+   <button onclick="next()" style="float:right">다음</button>
+   <button onclick="ok()" class="hidden" style="float:right">확인</button>
 </div>
 </body>
 </html>
