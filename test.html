@@ -33,16 +33,16 @@ function ok() {
    <button style="font-size:20px;float:right" onclick="closePopup()">&times;</button>
    <div id="page1">
       <span>예약일시</span>
-      <input type="date" id="date" style="width:150px"></input>
+      <input type="date" id="date" style="width:140px"></input>
       <input type="time" id="time"></input>
    </div>
    <div id="page2" class="hidden">
-      <p>인원</p>
+      <span>인원</span>
    </div>
    <br>
    <button onclick="prev()">이전</button>
    <button onclick="next()">다음</button>
-   <button onclick="ok()">확인</button>
+   <button onclick="ok()" class="hidden">확인</button>
 </div>
 </body>
 </html>
