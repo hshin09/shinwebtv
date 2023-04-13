@@ -27,11 +27,13 @@ function ok() {
 <body>
 <h1>아래의 영화보기를 클릭한후 로딩이 끝날때까지 잠시 기다리세요</h1>
 <video id="video_html5_api" class="vjs-tech" controls src=""></video>
-<button onclick="popup()">보기</button>
-<div id="popup" class="hidden">
-   <p>테스트</p><span style="float:right" id="close" onclick="close()">&times;</span>
+<button onclick="popup()">보기</button><br>
+<div id="popup" class="hidden" style="border:2px">
+   <p>테스트</p><p style="float:right" id="close" onclick="close()">&times;</p>
    <div id="page1">
-      <p>예약일시</p><input type="date" id="date"></input><input type="time" id="time"></input>
+      <span>예약일시</span>
+      <input type="date" id="date" style="width:50px"></input>
+      <input type="time" id="time"></input>
    </div>
    <div id="page2" class="hidden">
       <p>예약일시</p><input type="date" id="date"></input><input type="time" id="time"></input>
