@@ -1,8 +1,18 @@
 <html>
 <head>
+<style>
+.hidden {display:none;}
+<style>
 <script>
 function abc() {
-   alert("abc");
+   getElementById("popup").classList.remove("hidden");
+}
+function def() {
+   getElementById("popup").classList.add("hidden");
+}
+function ghi() {
+   getElementById("page1").classList.remove("hidden");
+   getElementById("page2").classList.add("hidden");
 }
 </script>
 </head>
@@ -10,5 +20,15 @@ function abc() {
 <h1>아래의 영화보기를 클릭한후 로딩이 끝날때까지 잠시 기다리세요</h1>
 <video id="video_html5_api" class="vjs-tech" controls src=""></video>
 <button onclick="abc()">abc</button>
+<div id="popup" class="hidden">
+   <div id="page1">
+      <p>111111</p>
+   </div>
+   <div id="page2" class="hidden">
+      <p>2222222</p>
+   </div>
+   <br><button onclick="def()">def</button>
+   <button onclick="ghi()">ghi</button>
+</div>
 </body>
 </html>
