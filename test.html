@@ -6,9 +6,10 @@
 <style>
 #popup {
    position:fixed;
-   width:80%;height:50%;
+   width:90%;height:80%;
    border:2px solid white;
-   margin:0; padding:0;
+   margin:0; 
+   padding:0px,5px,0px,5px;
    background-color:darkgray;
    top:50%;
    left:50%;
@@ -17,14 +18,14 @@
 }
 #popup > div > button {
    position:absolute;
-   bottom:10px;
+   bottom:5px;
 }
 .cmt {
    white-space: pre-wrap;
-   margin:0; padding:0;
+   margin:5px; padding:0;
    border:1px solid green;
-   width:50%;
-   height:30%;
+   width:80%;
+   height:40%;
 }
 .hidden {display:none;}
 </style>
@@ -51,7 +52,7 @@ function ok() {
 <body style="background-color:black;">
 <h1>아래의 영화보기를 클릭한후 로딩이 끝날때까지 잠시 기다리세요</h1>
 <video id="video_html5_api" class="vjs-tech" controls src=""></video>
-<button onclick="showPopup()">보 기</button><br>
+<button onclick="showPopup()">보기</button><br>
 <div id="popup" class="hidden">
    <h3>제목<label for="popup" style="float:right" onclick="closePopup()">X</label></h3>
    <div id="page1" style="float:both">
