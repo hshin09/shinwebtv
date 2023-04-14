@@ -5,7 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
 #popup {
-   position:fixed;width:80%;height:50%;border:1px solid white;
+   position:fixed;
+   width:80%;height:50%;
+   border:2px solid white;
    background-color:darkgray;
    margin:5%;
    top:50%;
@@ -14,6 +16,7 @@
    box-shadow: 10px 10px 5px rgba(255, 255, 255, 0.2);
 }
 #popup button {
+   position:absolute;
    bottom:0;
 }
 .cmt {
@@ -50,6 +53,7 @@ function ok() {
 <video id="video_html5_api" class="vjs-tech" controls src=""></video>
 <button onclick="showPopup()">보기</button><br>
 <div id="popup" class="hidden">
+<div style="position:relative">
    <h3>제목<label for="popup" style="float:right" onclick="closePopup()">X</label></h3>   
    <div id="page1">
       <span>예약일시</span>
@@ -70,6 +74,7 @@ function ok() {
    <button onclick="prev()" style="float:left;">이전</button>
    <button onclick="next()" style="float:right;">다음</button>
    <button onclick="ok()" class="hidden" style="float:right;">확인</button>
+</div>
 </div>
 </body>
 </html>
