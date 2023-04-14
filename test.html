@@ -20,9 +20,13 @@
    position:absolute;
    bottom:5px;
 }
-h3, #popup > div {
+#popup > div {
    margin:0px; 
    padding:0px,5px,0px,5px;
+}
+#popup > h3 {
+   margin:0px; 
+   padding:0px,10px,0px,10px;
 }
 .cmt {
    white-space: pre-wrap;
@@ -56,7 +60,7 @@ function ok() {
 <body style="background-color:black;">
 <h1>아래의 영화보기를 클릭한후 로딩이 끝날때까지 잠시 기다리세요</h1>
 <video id="video_html5_api" class="vjs-tech" controls src=""></video>
-<button onclick="showPopup()">보 기</button><br>
+<button onclick="showPopup()">보기</button><br>
 <div id="popup" class="hidden">
    <h3>제목<label for="popup" style="float:right" onclick="closePopup()">X</label></h3>
    <div id="page1" style="float:both">
