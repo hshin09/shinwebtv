@@ -111,7 +111,7 @@
 </head>
 <body>
 <div class="modal-btn-box">
-  <button type="button" id="modal-open">모달창열기</button>  
+  <button type="button" id="modal-open">모달창 열기</button>  
 </div>
 
 <div class="container">
@@ -133,10 +133,10 @@
               </p>
             </div>
             <div id="page2" class="hidden">
-               <span>인원</span>
+               <span>page2</span>
             </div>
             <div id="page3" class="hidden">
-              <span>인원</span>
+              <span>page3</span>
             </div>         
           </div>                
         </div>
@@ -150,12 +150,12 @@
   </div>
 </div>
 <script>
-var page=1";
+var page=1;
 
 $(function(){
   $("#confirm").click(function(){
+    makeForm();
     modalClose();
-      //컨펌 이벤트 처리
   });
   $("#modal-open").click(function(){ 
     $("#popup").css('display','flex').hide().fadeIn();
@@ -170,11 +170,7 @@ $(function(){
   $("#next").click(function(){
     $('#page'+page++).addClass("hidden");
     $('#page'+page).removeClass("hidden");
-  }
-  $("#confirm").click(function(){
-    makeForm();
-    modalClose();
-  }
+  });
   function modalClose(){
     $("#popup").fadeOut();
   }
