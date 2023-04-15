@@ -116,7 +116,7 @@
 </head>
 <body>
 <div class="modal-btn-box">
-  <button type="button" id="modal-open">모달창 열기</button>  
+  <button type="button" id="modal-open">모달창열기</button>  
 </div>
 
 <div class="container">
@@ -204,6 +204,14 @@
 var page=1;
 
 $(function(){
+  let date = new Date();
+  date.setDate(date.getDate() + 1);
+  $("#date").val(date);
+  $("#date").attr("min",date);
+  date.setDate(date.getDate() + 14);
+  $("#date").attr("max",date);
+  $("#time").val("10:00");
+  
   $("#confirm").click(function(){
     makeForm();
     modalClose();
