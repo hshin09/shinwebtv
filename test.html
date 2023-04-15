@@ -116,7 +116,7 @@
 </head>
 <body>
 <div class="modal-btn-box">
-  <button type="button" id="modal-open">모달창열기</button>  
+  <button type="button" id="modal-open">모달창 열기</button>  
 </div>
 
 <div class="container">
@@ -247,12 +247,12 @@ $(function(){
   }
   function makeForm(){
     $("#popup").fadeOut();
-    var txt="1. " + $('#date').val() + " ("+ $('input[name=\"person\"]').val() + ")<br>";
+    var txt="1. " + $('#date').val() + " ("+ $('input[name=\"person\"]:checked').val() + ")\\n";
     txt = txt + "2. " + $('#time').val() + "<br>";
     txt = txt + "3. " + $('#tel').val() + "<br>";
-    txt = txt + "4. " + $('input[name="pos"]').val();
+    txt = txt + "4. " + $('input[name="pos"]:checked').val();
     txt = txt + "5. " + $('#h-name').val() + " - "+ $('#h-bul').val() + " & "+ $('#h-num').val();
-    txt = txt + "6. " + $('input[name="kind"]').val();
+    txt = txt + "6. " + $('input[name="kind"]:checked').val();
     txt = txt + "7. " + $('#req').val();
     txt = txt + "8. 구글맵상의 숙소위치를 찍어 공유";
     $('#req').val(txt);
