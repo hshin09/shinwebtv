@@ -111,7 +111,7 @@
 </head>
 <body>
 <div class="modal-btn-box">
-  <button type="button" id="modal-open">모달창 열기</button>  
+  <button type="button" id="modal-open">모달창열기</button>  
 </div>
 
 <div class="container">
@@ -128,8 +128,13 @@
               <p>예약일시</p>
               <input type="date" id="date" style="width:140px"></input>
               <input type="time" id="time"></input><br>
-              <span>인원</span>
-              <p class="cmt">aaaaaaaa aaaaaaaaaaaaaaa aaaaaaaaaaaaaaaa aaaaaaaaa aaaaaaaaa baaaaaaa aaaaaaaz
+              <p>인원</p>
+              <input type="radio" name="person" value="1">1명</input><br>
+              <input type="radio" name="person" value="2">2명</input><br>
+              <input type="radio" name="person" value="3">3명</input><br>
+              <input type="radio" name="person" value="4">4명</input><br>
+              <p class="cmt">예약현황표에서 기존예약시간을 참고하여 겹치지 않도록 날짜와 시간을 고려해 주세요.
+                안마시간은 기본 2시간입니다. 시작시간전, 종료시간후 최소 1시간의 여유가 필요합니다(정리 및 다음장소이동)
               </p>
             </div>
             <div id="page2" class="hidden">
