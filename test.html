@@ -116,7 +116,7 @@
 </head>
 <body>
 <div class="modal-btn-box">
-  <button type="button" id="modal-open">모달창 열기</button>  
+  <button type="button" id="modal-open">모달창열기</button>  
 </div>
 
 <div class="container">
@@ -206,10 +206,10 @@ var page=1;
 $(function(){
   let date = new Date();
   date.setDate(date.getDate() + 1);
-  $("#date").attr("value",date);
-  $("#date").attr("min",date);
+  $("#date").attr("value",dateFormat(date));
+  $("#date").attr("min",dateFormat(date));
   date.setDate(date.getDate() + 14);
-  $("#date").attr("max",date);
+  $("#date").attr("max",dateFormat(date));
   $("#time").val("10:00");
   
   $("#confirm").click(function(){
@@ -239,9 +239,15 @@ $(function(){
     $('#page'+page).addClass("hidden");
     $('#page1').removeClass("hidden");
   }
+  function dateFormat(date) {
+    let dateFormat2 = date.getFullYear() +
+      '-' + ( (date.getMonth()+1) < 9 ? "0" + (date.getMonth()+1) : (date.getMonth()+1) )+
+      '-' + ( (date.getDate()) < 9 ? "0" + (date.getDate()) : (date.getDate()) );
+    return dateFormat2;
+  }
   function makeForm(){
     $("#popup").fadeOut();
-    var txt="1. " + $('#date').val() + " ("+ $('input[name="person"]').val() + "<br>";
+    var txt="1. " + $('#date').val() + " ("+ $('input[name=\"person\"]').val() + ")<br>";
     txt = txt + "2. " + $('#time').val() + "<br>";
     txt = txt + "3. " + $('#tel').val() + "<br>";
     txt = txt + "4. " + $('input[name="pos"]').val();
@@ -249,6 +255,7 @@ $(function(){
     txt = txt + "6. " + $('input[name="kind"]').val();
     txt = txt + "7. " + $('#req').val();
     txt = txt + "8. 구글맵상의 숙소위치를 찍어 공유";
+    $('#req').val(txt);
     alert(txt);
   }
   function preparePage() {
