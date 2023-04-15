@@ -60,7 +60,7 @@ p{
 .head-title {
     font-size: 15px;
     font-weight: 10;
-    letter-spacing: 5px;
+    letter-spacing: 0px;
     text-align: center;
 }
 .popup-body{
@@ -98,7 +98,7 @@ p{
 </head>
 <body>
 <div class="modal-btn-box">
-  <button type="button" id="modal-open">모달창열기</button>  
+  <button type="button" id="modal-open">모달창 열기</button>  
 </div>
 
 <div class="container">
@@ -106,7 +106,7 @@ p{
     <div class="popup">
       <div class="popup-head">
         <span class="head-title">예약양식 만들기</span>
-        <span class="head-title" style="right:0px onclick="modalClose()">X</span>
+        <span id="close" style="right:0px">X</span>
       </div>
       <div class="popup-body">
         <div class="body-content">
