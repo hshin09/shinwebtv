@@ -88,12 +88,13 @@
 .popup-foot{
   width:100%;
   height:20px;
+  display: flex;
 }
 .pop-btn-prev{
   border:1px solid #e1e1e1;
   width:30%;
   height:100%;
-  left:5px;
+  float:left;
   color:#ffffff;
   cursor:pointer;
 }
@@ -101,7 +102,7 @@
   border:1px solid #e1e1e1;
   width:30%;
   height:100%;
-  right:5px;
+  float:right;
   color:#ffffff;
   cursor:pointer;
 }
@@ -246,13 +247,13 @@ $(function(){
   }
   function makeForm(){
     $("#popup").fadeOut();
-    var txt="1. " + $('#date').val() + " ("+ $('input[name=\"person\"]:checked').val() + ")\\n";
+    var txt="1. " + $('#date').val() + " ("+ $('input[name=\"person\"]:checked').val() + ")\n";
     txt = txt + "2. " + $('#time').val() + "\n";
-    txt = txt + "3. " + $('#tel').val() + "&#10;&#13;";
-    txt = txt + "4. " + $('input[name="pos"]:checked').val();
-    txt = txt + "5. " + $('#h-name').val() + " - "+ $('#h-bul').val() + " & "+ $('#h-num').val();
-    txt = txt + "6. " + $('input[name="kind"]:checked').val();
-    txt = txt + "7. " + $('#req').val();
+    txt = txt + "3. " + $('#tel').val() + "\n";
+    txt = txt + "4. " + $('input[name="pos"]:checked').val() + "\n";
+    txt = txt + "5. " + $('#h-name').val() + " - "+ $('#h-bul').val() + " & "+ $('#h-num').val() + "\n";
+    txt = txt + "6. " + $('input[name="kind"]:checked').val() + "\n";
+    txt = txt + "7. " + $('#req').val() + "\n";
     txt = txt + "8. 구글맵상의 숙소위치를 찍어 공유";
     $('#req').val(txt);
     alert(txt);
