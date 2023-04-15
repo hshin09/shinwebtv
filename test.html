@@ -94,7 +94,7 @@
   border:1px solid #e1e1e1;
   width:30%;
   height:100%;
-  float:left;
+  left:5px;
   color:#ffffff;
   cursor:pointer;
 }
@@ -102,7 +102,7 @@
   border:1px solid #e1e1e1;
   width:30%;
   height:100%;
-  float:right;
+  right:5px;
   color:#ffffff;
   cursor:pointer;
 }
@@ -116,7 +116,7 @@
 </head>
 <body>
 <div class="modal-btn-box">
-  <button type="button" id="modal-open">모달창열기</button>  
+  <button type="button" id="modal-open">모달창 열기</button>  
 </div>
 
 <div class="container">
@@ -228,6 +228,8 @@ $(function(){
   });
   function modalClose(){
     $("#popup").fadeOut();
+    $('#page'+page).addClass("hidden");
+    $('#page1').removeClass("hidden");
   }
   function makeForm(){
     $("#popup").fadeOut();
@@ -244,6 +246,8 @@ $(function(){
   function preparePage() {
     if(page == 1) {
       $('#prev').addClass("hidden");
+      $('#confirm').addClass("hidden");
+       $('#next').removeClass("hidden");
     }
     else if(page == 4) {
       $('#next').addClass("hidden");
