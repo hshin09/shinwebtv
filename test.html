@@ -10,9 +10,6 @@
   padding:0;
   box-sizing: border-box;
 }
-p{
-  margin-top:2px;
-}
 .container{
   width:100%;
 }
@@ -105,11 +102,16 @@ p{
 .pop-btn.confirm{
   border-right:1px solid #3b5fbf;
 }
+.cmt {
+   border:1px solid green;
+   margin-top:2px;
+}
+.hidden {display:none;}
 </style>
 </head>
 <body>
 <div class="modal-btn-box">
-  <button type="button" id="modal-open">모달창 열기</button>  
+  <button type="button" id="modal-open">모달창열기</button>  
 </div>
 
 <div class="container">
@@ -122,9 +124,20 @@ p{
       <div class="popup-body">
         <div class="body-content">
           <div class="body-contentbox">
-            <p>컨테이너 박스가 있고 그 안에 각각 가로값과 세로값이 다른 박스 아이템이 있습니다.
-위의 상태 그대로 라면 div의 기본속성은 display block이기 때문에 가로값과 관계없이 세로영역 만큼 한줄을 다 차지하기 때문에 div박스들은 아래와 같이 수직으로 떨어지게 됩니다.
-            </p>          
+            <div id="page1">
+              <label>예약일시</label>
+              <input type="date" id="date" style="width:140px"></input>
+              <input type="time" id="time"></input><br>
+              <span>인원</span>
+              <p class="cmt">aaaaaaaa aaaaaaaaaaaaaaa aaaaaaaaaaaaaaaa aaaaaaaaa aaaaaaaaa baaaaaaa aaaaaaaz
+              </p>
+            </div>
+            <div id="page2" class="hidden">
+               <span>인원</span>
+            </div>
+            <div id="page3" class="hidden">
+              <span>인원</span>
+            </div>         
           </div>                
         </div>
       </div>
@@ -137,6 +150,8 @@ p{
   </div>
 </div>
 <script>
+var page=1";
+
 $(function(){
   $("#confirm").click(function(){
     modalClose();
@@ -148,7 +163,22 @@ $(function(){
   $("#close").click(function(){
     modalClose();
   });
+  $("#prev").click(function(){
+    $('#page'+page--).addClass("hidden");
+    $('#page'+page).removeClass("hidden");
+  });
+  $("#next").click(function(){
+    $('#page'+page++).addClass("hidden");
+    $('#page'+page).removeClass("hidden");
+  }
+  $("#confirm").click(function(){
+    makeForm();
+    modalClose();
+  }
   function modalClose(){
+    $("#popup").fadeOut();
+  }
+  function makeForm(){
     $("#popup").fadeOut();
   }
 });
