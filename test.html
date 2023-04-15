@@ -241,12 +241,12 @@ $(function(){
   }
   function makeForm(){
     $("#popup").fadeOut();
-    var txt="1. " + $('#date').val() + " ("+ $('#person').val()  + ")";
+    var txt="1. " + $('#date').val() + " ("+ $('#person').val()  + ")\n";
     txt = txt + "2. " + $('#time').val();
     txt = txt + "3. " + $('#tel').val();
-    txt = txt + "4. " + $('#pos').val();
+    txt = txt + "4. " + $('input[name=pos]').val();
     txt = txt + "5. " + $('#h-name').val() + " - "+ $('#h-bul').val() + " & "+ $('#h-num').val();
-    txt = txt + "6. " + $('#kind').val();
+    txt = txt + "6. " + $('input[name=kind]''d').val();
     txt = txt + "7. " + $('#req').val();
     txt = txt + "8. 구글맵상의 숙소위치를 찍어 공유";
     alert(txt);
