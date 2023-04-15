@@ -12,6 +12,7 @@
 }
 .container{
   width:100%;
+  overflow:scroll;
 }
 .modal-btn-box{
   width:100%;
@@ -82,8 +83,8 @@
 .body-contentbox{
   word-break:break-word;
   overflow-y:auto;
-  min-height:400px;
-  max-height:500px;
+  min-height:200px;
+  max-height:400px;
 }
 .popup-foot{
   width:100%;
@@ -112,7 +113,7 @@
 </head>
 <body>
 <div class="modal-btn-box">
-  <button type="button" id="modal-open">모달창열기</button>  
+  <button type="button" id="modal-open">모달창 열기</button>  
 </div>
 
 <div class="container">
@@ -178,7 +179,7 @@
               <p>전화번호</p>
               <input type="tel" id="tel"></input>
               <p>요구사항</p>
-              <textarea id="req" rows="4" cols="40"></textarea>
+              <textarea id="req" rows="4" cols="30"></textarea>
               <p class="cmt">1.숙소정문에 도착시 우선 전화드리고 마중위치에 따라 기다리거나 들어갑니다.
 2.예약시간에 맞추기 위해 10~15분전에 도착해 연락드리니 전화,카톡알림에 귀기울여 주세요.
 3.요구사항에는 특별히 근육뭉침 등으로 집중안마를 원하실때 부위와 증상을 적어주시면 원인의 맥을 짚어 풀어드리겠습니다.
@@ -205,6 +206,8 @@ $(function(){
     modalClose();
   });
   $("#modal-open").click(function(){ 
+    page=1;
+    preparePage();
     $("#popup").css('display','flex').hide().fadeIn();
   });
   $("#close").click(function(){
@@ -213,16 +216,40 @@ $(function(){
   $("#prev").click(function(){
     $('#page'+page--).addClass("hidden");
     $('#page'+page).removeClass("hidden");
+    preparePage();
   });
   $("#next").click(function(){
     $('#page'+page++).addClass("hidden");
     $('#page'+page).removeClass("hidden");
+    preparePage();
   });
   function modalClose(){
     $("#popup").fadeOut();
   }
   function makeForm(){
     $("#popup").fadeOut();
+    var txt="1. " + $('#date').val() + " ("+ $('#person').val()  + ")";
+    txt = txt + "2. " + $('#time').val();
+    txt = txt + "3. " + $('#tel').val();
+    txt = txt + "4. " + $('#pos').val();
+    txt = txt + "5. " + $('#h-name').val() + " - "+ $('#h-bul').val() + " & "+ $('#h-num').val();
+    txt = txt + "6. " + $('#kind').val();
+    txt = txt + "7. " + $('#req').val();
+    txt = txt + "8. 구글맵상의 숙소위치를 찍어 공유";
+    alert(txt);
+  }
+  function preparePage() {
+    if(page == 1) {
+      $('#prev').addClass("hidden");
+    }
+    else if(page == 4) {
+      $('#next').addClass("hidden");
+      $('#confirm').removeClass("hidden");
+    }
+    else {
+      $('#prev').removeClass("hidden");
+      $('#next').removeClass("hidden");
+    }
   }
 });
 </script>
