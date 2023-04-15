@@ -112,7 +112,7 @@
 </head>
 <body>
 <div class="modal-btn-box">
-  <button type="button" id="modal-open">모달창열기</button>  
+  <button type="button" id="modal-open">모달창 열기</button>  
 </div>
 
 <div class="container">
@@ -131,9 +131,9 @@
               <input type="time" id="time"></input><br>
               <p>인원</p>
               <input type="radio" id="person1" name="person" value="1" checked>
-              <label for="person">1명</label>
+              <label for="person1">1명</label>
               <input type="radio" id="person2" name="person" value="2">
-              <label for="person2">2명</label>
+              <label for="person2">2명</label><br>
               <input type="radio" id="person3" name="person" value="3">
               <label for="person3">3명</label>
               <input type="radio" id="person4" name="person" value="4">
@@ -146,9 +146,12 @@
             </div>
             <div id="page2" class="hidden">
               <p>안마 종류</p>
-              <input type="radio" name="kind" value="thai" checked>일반안마(500바트)</input><br>
-              <input type="radio" name="kind" value="oil">오일안마(700바트)</input><br>
-              <input type="radio" name="kind" value="mix">각각 1시간씩(600바트)</input>
+              <input type="radio" id="kind1" name="kind" value="thai" checked>
+              <label for="kind1">일반안마(500바트)</label><br>
+              <input type="radio" id="kind2" name="kind" value="oil">
+              <label for="kind2">오일안마(700바트)</label><br>
+              <input type="radio" id="kind3" name="kind" value="mix">
+              <label for="kind3">각각 1시간씩(600바트)</label><br>
                <p class="cmt">1.두툼한 이불을 거실이나 방바닥에 준비해두세요. 
                 2.침대에서도 가능하나 안마사가 힘을 쓰기가 여의치않아 안마효과가 반감될수도 있습니다
                 3.오일안마는 이불,침대 등에 묻을수 있으니 안전장치(전신타월,비닐류)를 준비해 깔아두세요
@@ -160,9 +163,12 @@
               <input type="text" id="h-bul" placeholder="동(건물) 이름" ></input>
               <input type="text" id="h-num" placeholder="호수(번지수)" ></input>
               <p>마중 나오실 위치</p>
-              <input type="radio" name="pos" value="1" checked>방앞까지 가능</input><br>
-              <input type="radio" name="pos" value="2">해당동(건물)앞으로 마중</input><br>
-              <input type="radio" name="pos" value="3">경비초소(정문앞)앞으로 마중</input>
+              <input type="radio" id="pos1" name="pos" value="1" checked>방앞까지 가능
+              <label for="pos1">방앞까지 가능(600바트)</label><br>
+              <input type="radio" id="pos2" name="pos" value="2">
+              <label for="pos2">해당동(건물)앞으로 마중</label><br>
+              <input type="radio" id="pos3" name="pos" value="3">경비초소(정문앞)앞으로 마중
+              <label for="pos3">해당동(건물)경비초소(정문앞)앞으로 마중</label>
               <p class="cmt">1.숙소의 보안상 키카드,지문 등의 출입일땐 외부인이 혼자 들어가기 힘듭니다
                 2.방앞까지 갈수있는지 해당건물앞 또는 경비초소의 정문앞 등의 마중나오실 위치를 알려주세요
               </p>
