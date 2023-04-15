@@ -60,7 +60,12 @@ p{
   font-size: 15px;
   font-weight: 10;
   letter-spacing: 0px;
-  vertical-align: middle;
+}
+.popup-head::before {
+    content:'';
+    display: inline-block;
+    vertical-align: middle;
+    height: 100%;
 }
 .popup-body{
   width:100%;
@@ -97,7 +102,7 @@ p{
 </head>
 <body>
 <div class="modal-btn-box">
-  <button type="button" id="modal-open">모달창 열기</button>  
+  <button type="button" id="modal-open">모달창열기</button>  
 </div>
 
 <div class="container">
