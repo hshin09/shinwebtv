@@ -19,9 +19,8 @@
   text-align:center;
 }
 .modal-btn-box button{
-  display:inline-block;
   width:100px;
-  height:35px;
+  height:100%;
   background-color:#ffffff;
   border:1px solid #e1e1e1;
   cursor:pointer;
@@ -116,7 +115,7 @@
 </head>
 <body>
 <div class="modal-btn-box">
-  <button type="button" id="modal-open">모달창 열기</button>  
+  <button type="button" id="modal-open">모달창열기</button>  
 </div>
 
 <div class="container">
@@ -248,8 +247,8 @@ $(function(){
   function makeForm(){
     $("#popup").fadeOut();
     var txt="1. " + $('#date').val() + " ("+ $('input[name=\"person\"]:checked').val() + ")\\n";
-    txt = txt + "2. " + $('#time').val() + "<br>";
-    txt = txt + "3. " + $('#tel').val() + "<br>";
+    txt = txt + "2. " + $('#time').val() + "\n";
+    txt = txt + "3. " + $('#tel').val() + "&#10;&#13;";
     txt = txt + "4. " + $('input[name="pos"]:checked').val();
     txt = txt + "5. " + $('#h-name').val() + " - "+ $('#h-bul').val() + " & "+ $('#h-num').val();
     txt = txt + "6. " + $('input[name="kind"]:checked').val();
@@ -271,6 +270,7 @@ $(function(){
     else {
       $('#prev').removeClass("hidden");
       $('#next').removeClass("hidden");
+      $('#confirm').addClass("hidden");
     }
   }
 });
