@@ -165,7 +165,7 @@ function copyToClipBoard(text) {
 1. วันที่นวด และ จำนวนคน: ปี-เดือน-วันที่ (xคน)<br>
 2. เวลาเริ่มทำนวด : 10 - 16 เวลา (หลังจาก 16 เพิ่มคิด50บาทต่อทุก30นาที)<br>
 3. เบอร์โทร<br>
-4. สามารถคนภายนอกเข้าหาเองได้  : 1(ถึงห้องได้) 2(รอหน้าอาคาร) 3(รอหน้าด่านยาม)<br>
+4. สามารถคนภายนอกเข้าหาเองได้  : room(ถึงห้องได้) building(รอหน้าอาคาร) gate(รอหน้าด่านยาม)<br>
 5. ที่อยู่ : ชื่อที่พัก(ชื่อหมู่บ้าน) - อาคาร(ตึก) & หมายเลขห้อง<br>
 6. ชนิดนวด : thai(นวดแผนไทย - 500) หรือ oil(นวดน้ำมัน - 700) หรือ mix(อย่างละ1ชั่วโมง - 600)<br>
 7. ข้อเรียกร้องพิเศษ : ส่วนร่างกายที่ไม่ค่อยสบาย  ฯลฯ<br>
@@ -223,11 +223,11 @@ function copyToClipBoard(text) {
               <input type="text" id="h-bul" placeholder="동(건물)명을 입력" ></input><br>
               <input type="text" id="h-num" placeholder="방의 호수를 입력" ></input>
               <p>마중 나오실 위치</p>
-              <input type="radio" id="pos1" name="pos" value="1" checked>
+              <input type="radio" id="pos1" name="pos" value="room" checked>
               <label for="pos1">방앞까지 가능(마중 불필요)</label><br>
-              <input type="radio" id="pos2" name="pos" value="2">
+              <input type="radio" id="pos2" name="pos" value="building">
               <label for="pos2">해당동(건물)앞으로 마중</label><br>
-              <input type="radio" id="pos3" name="pos" value="3">
+              <input type="radio" id="pos3" name="pos" value="gate">
               <label for="pos3">경비초소(정문앞)앞으로 마중</label>
               <p class="cmt">1.무반인 경우는 동(건물)명에 골목번호(써이)를 방호수에는 번지수(xxx/xxx)를 쓰세요.
 2.숙소의 보안상 키카드,지문 등의 출입일땐 외부인이 혼자 들어가기 힘듭니다.
