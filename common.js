@@ -440,7 +440,7 @@ function onok()
       var i_ch = addr[si][6];
 
       i_ch++;
-      if(i_ch > 4)
+      if(i_ch > 5)
          i_ch = 3;
 
       tvaddr[si] = addr[si][i_ch];
