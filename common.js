@@ -143,7 +143,7 @@ function Init()
       
       if(addr[i][ich].substr(0,1) == "/" && backkakotvaddr[i] != "/")
          tvaddr[i] = backkakotvaddr[i];
-      else (i != 9 && backtvaddr[i] != "79")
+      else if(i != 9 && backtvaddr[i] != "79")
          tvaddr[i] = backtvaddr[i];
    }
    ls = localStorage.getItem("ei" );
