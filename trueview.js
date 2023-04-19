@@ -1,4 +1,4 @@
-var showYouTvMode = 0;
+var showYouTvMode = 1;
 var tv;
 var web;
 var ch_name;
@@ -73,7 +73,8 @@ function loadVideo(lm,url) {
       clearInterval(timer);
       timer=null;
    }
-   timer = setInterval( function() { OnOff(); }, 1100 );
+   //timer = setInterval( function() { OnOff(); }, 1100 );
+   setTimeout( function(){document.getElementById('videoMessage').style.display = 'none';}, 3000 );
 }
 
 function movieclk( ch, p ) {
@@ -254,7 +255,7 @@ function onright() {
 }
 
 function change() {
-	window.trueView.showMsg("webView:if(touchscreen) oi=-1; isHotKey=1; x[ei].click()");
+   window.trueView.showMsg("webView:if(touchscreen) oi=-1; isHotKey=1; x[ei].click()");
    window.trueView.showMsg("hideTrueView");
    tv.pause();
    web.src = '';
