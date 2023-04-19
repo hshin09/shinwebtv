@@ -287,7 +287,7 @@ function keychk(e) {
    else if( e.which == 50 ) { //2
       x[13].click();
    }
-   else if( e.which == 50 ) { //4
+   else if( e.which == 52 ) { //4
       x[15].click();
    }
    else if( e.which == 55 ) { //7
