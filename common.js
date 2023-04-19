@@ -129,7 +129,7 @@ function Init()
    
    for(var i = 0; i < tvaddr.length; i++) {      
       ls = localStorage.getItem("youtv"+i );
-      if( ls == null || ls == "" ) ls = "79";
+      if( ls == null || ls == "" ) ls = "";
       backtvaddr[i] = ls;
 
       ls = localStorage.getItem("kakotv"+i );
@@ -141,10 +141,10 @@ function Init()
       //addr[i][ich] = '79'; mustWait = 2;
       tvaddr[i] = addr[i][ich];
       
-      if(addr[i][ich] == "79" && backtvaddr[i] != "79")
-         tvaddr[i] = backtvaddr[i];
-      else if(addr[i][ich].substr(0,1) == "/" && backkakotvaddr[i] != "/")
+      ifif(addr[i][ich].substr(0,1) == "/" && backkakotvaddr[i] != "/")
          tvaddr[i] = backkakotvaddr[i];
+      else (backtvaddr[i] != "79")
+         tvaddr[i] = backtvaddr[i];
    }
    ls = localStorage.getItem("ei" );
    if( ls && ls != "" )
