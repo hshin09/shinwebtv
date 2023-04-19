@@ -462,7 +462,7 @@ function onok()
          get79tv(si);
          return;
       }
-
+window.parentView.showMsg("msg:" + si] + " = " + tvaddr[si]);
       if(tvaddr[si].substr(0,1) == "/") {
          getkakotv(si, tvaddr[si]);
          return;
