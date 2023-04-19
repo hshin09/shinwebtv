@@ -74,7 +74,7 @@ function loadVideo(lm,url) {
       timer=null;
    }
    //timer = setInterval( function() { OnOff(); }, 1100 );
-   setTimeout( function(){document.getElementById('videoMessage').style.display = 'none';}, 3000 );
+   setTimeout( function(){document.getElementById('videoMessage').style.display = 'none';}, 5000 );
 }
 
 function movieclk( ch, p ) {
@@ -279,16 +279,13 @@ function keychk(e) {
          onok();
    }
    else if( e.which == 48 ) { //0
-      if(tv.style.display == "block")
-         tv.style.display = "none";
-      else
-         tv.style.display = "block";
+
    }
    else if( e.which == 49 ) { //1
-      x[9].click();
+      x[0].click();
    }
    else if( e.which == 52 ) { //4
-      x[14].click();
+      x[13].click();
    }
    else if( e.which == 55 ) { //7
       if( loadMode == 1 )
@@ -299,10 +296,12 @@ function keychk(e) {
       showTime();
    }
    else if( e.which == 57 ) { //9
+/*
       showYouTvMode = !showYouTvMode;
       web.style.top = "4vh";
       if(!showYouTvMode)
          web.style.top = "100vh";
+*/
    }
         
    e.preventDefault();
