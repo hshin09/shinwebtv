@@ -4,9 +4,9 @@ var web;
 var ch_name;
 var path;
 var gi=0;
-var si=9;
+var si=4;
 var oi=-1;
-var ei=9;
+var ei=4;
 var full = false;
 var timer = null;
 var mustWait = 0;
@@ -284,8 +284,11 @@ function keychk(e) {
    else if( e.which == 49 ) { //1
       x[0].click();
    }
-   else if( e.which == 52 ) { //4
+   else if( e.which == 50 ) { //2
       x[13].click();
+   }
+   else if( e.which == 50 ) { //4
+      x[15].click();
    }
    else if( e.which == 55 ) { //7
       if( loadMode == 1 )
