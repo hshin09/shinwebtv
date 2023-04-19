@@ -44,7 +44,7 @@ var trueLoadUrl = trueHostUrl + "/sites";
 var path = "https://lifetv365.com/sites" + "/mstv/pages/pc/pc_view.php?ch=live";
 var pathTvChak = "https://china.allyearcdn.com/player/live/?g=";
 var optTvChak = "&q=0&sports=false";
-var ch = ['26', '37', '04', '05', '03', '25', '09', '35', '30', '44', '33', '02', '01', '34', '32', '23', '14', '07', '15', '13', '50', '46', '49', '38'];
+var ch = ['26', '37', '04', '05', '03', '25', '09', '35', '30', 'xx', '33', '02', '01', '34', '32', '23', '14', '07', '15', '13', '50', '46', '49', '38'];
 var gi = 0;
 var si = 10;
 var oi = 10;
@@ -141,9 +141,9 @@ function Init()
       //addr[i][ich] = '79'; mustWait = 2;
       tvaddr[i] = addr[i][ich];
       
-      ifif(addr[i][ich].substr(0,1) == "/" && backkakotvaddr[i] != "/")
+      if(addr[i][ich].substr(0,1) == "/" && backkakotvaddr[i] != "/")
          tvaddr[i] = backkakotvaddr[i];
-      else (addr[i][ich] == "79" && backtvaddr[i] != "79")
+      else (i != 9 && backtvaddr[i] != "79")
          tvaddr[i] = backtvaddr[i];
    }
    ls = localStorage.getItem("ei" );
