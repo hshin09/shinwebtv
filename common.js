@@ -463,7 +463,8 @@ function onok()
       if(i_ch == 3)
          window.parentView.showMsg("msg:기본서버(" + x[si].innerHTML + ") 로 이동합니다");
       else
-         window.parentView.showMsg("msg:" + (i_ch - 2) + "번 보조서버(" + x[si].innerHTML + ") 로 이동합니다");
+         //window.parentView.showMsg("msg:" + (i_ch - 2) + "번 보조서버(" + x[si].innerHTML + ") 로 이동합니다");
+         window.parentView.showMsg("msg:" + tvaddr[si] );
 
       if(tvaddr[si] == "79") {
          get79tv(si);
