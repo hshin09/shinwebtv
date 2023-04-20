@@ -215,7 +215,6 @@ function showTime()
 
 function onup() {
    if(showYouTvMode == 1 && si == 0) {
-      cableMoviesMode = 0;
       change();
       return;
    }
@@ -231,7 +230,6 @@ function onup() {
 
 function ondown() {
    if(showYouTvMode == 1 && si == 3) {
-      cableMoviesMode = 0;
       change();
       return;
    }
@@ -266,6 +264,7 @@ function onright() {
 }
 
 function change() {
+   cableMoviesMode = 0;
    window.trueView.showMsg("webView:if(touchscreen) oi=-1; isHotKey=1; x[ei].click()");
    window.trueView.showMsg("hideTrueView");
    tv.pause();
