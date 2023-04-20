@@ -214,7 +214,7 @@ function showTime()
 }
 
 function onup() {
-   if(cableMoviesMode == 1 && si == 0) {
+   if(cableMoviesMode && full && si == 0) {
       change();
       return;
    }
@@ -229,7 +229,7 @@ function onup() {
 }
 
 function ondown() {
-   if(cableMoviesMode == 1 && si == 3) {
+   if(cableMoviesMode && full && si == 3) {
       change();
       return;
    }
