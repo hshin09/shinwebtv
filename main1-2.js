@@ -25,7 +25,7 @@ function changeCableMovies() {
 }
 
 function onup() {
-        if( full && si == 6 ) {
+        if( gi  == 0 && full && si == 6 ) {
            changeCableMovies();
            return;
         }
@@ -40,7 +40,7 @@ function onup() {
 }
 
 function ondown() {
-        if( full && si == 4 ) {
+        if( gi  == 0 && full && si == 4 ) {
            changeCableMovies();
            return;
         }
@@ -55,7 +55,7 @@ function ondown() {
 }
 
 function onleft() {
-        if( si == 5 ) {
+        if( gi  == 0 && si == 5 ) {
            return;
         }
 	if(si>-1 && si==ei) {
@@ -69,7 +69,7 @@ function onleft() {
 }
 
 function onright() {
-        if( si == 5 ) {
+        if( gi  == 0 && si == 5 ) {
            return;
         }
 	if(full) {
