@@ -9,7 +9,26 @@ function firstSetting()
    window.onkeydown = keychk;
 }
 
+function changeCableMovies() {
+   if( gi == 0 ) {
+         //web.src = "";
+         stv.pause();
+         if(timer) {
+            clearInterval(timer);
+            timer=null;
+         }
+         window.parentView.showMsg("trueView:loadMode = 0");
+         //window.parentView.showMsg("trueView:full = 0; onFullscreenOnOff()");
+         window.parentView.showMsg("showTrueView");
+         window.parentView.showMsg("trueView:x[ei].click()");
+   }
+}
+
 function onup() {
+        if( si == 6 ) {
+           changeCableMovies();
+           return;
+        }
 	if(oi>-1) x[oi].style="background-color:#252525";
 	if(ei>-1) x[ei].style="color:yellow";
 	si--;
@@ -21,6 +40,10 @@ function onup() {
 }
 
 function ondown() {
+        if( si == 4 ) {
+           changeCableMovies();
+           return;
+        }
 	if(oi>-1) x[oi].style="background-color:#252525";
 	if(ei>-1) x[ei].style="color:yellow";
 	si++;
@@ -32,6 +55,9 @@ function ondown() {
 }
 
 function onleft() {
+        if( si == 5 ) {
+           return;
+        }
 	if(si>-1 && si==ei) {
 		if(full) {
 			change();
@@ -43,6 +69,9 @@ function onleft() {
 }
 
 function onright() {
+        if( si == 5 ) {
+           return;
+        }
 	if(full) {
 	    onFullscreenOnOff();
 	}
