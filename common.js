@@ -463,17 +463,18 @@ function onok()
       if(i_ch == 3)
          window.parentView.showMsg("msg:기본서버(" + x[si].innerHTML + ") 로 이동합니다");
       else
-         //window.parentView.showMsg("msg:" + (i_ch - 2) + "번 보조서버(" + x[si].innerHTML + ") 로 이동합니다");
-         window.parentView.showMsg("msg:" + tvaddr[si] );
+         window.parentView.showMsg("msg:" + (i_ch - 2) + "번 보조서버(" + x[si].innerHTML + ") 로 이동합니다");
 
-      if(tvaddr[si] == "79") {
-         get79tv(si);
-         return;
-      }
+      if(si<6 || si>9) {
+         if(tvaddr[si] == "79") {
+            get79tv(si);
+            return;
+         }
 
-      if(tvaddr[si].substr(0,1) == "/") {
-         getkakotv(si, tvaddr[si]);
-         return;
+         if(tvaddr[si].substr(0,1) == "/") {
+            getkakotv(si, tvaddr[si]);
+            return;
+         }
       }
    }
    oi = -1;
