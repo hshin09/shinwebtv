@@ -1,3 +1,4 @@
+var cableMoviesMode = 0;
 var showYouTvMode = 1;
 var tv;
 var web;
@@ -213,6 +214,11 @@ function showTime()
 }
 
 function onup() {
+   if(si == 0) {
+      cableMoviesMode = 0;
+      change();
+      return;
+   }
    if(oi>-1) x[oi].style="background-color:#252525";
    if(ei>-1) x[ei].style="color:yellow";
    si--;
@@ -224,6 +230,11 @@ function onup() {
 }
 
 function ondown() {
+   if(si == 3) {
+      cableMoviesMode = 0;
+      change();
+      return;
+   }
    if(oi>-1) x[oi].style="background-color:#252525";
    if(ei>-1) x[ei].style="color:yellow";
    si++;
