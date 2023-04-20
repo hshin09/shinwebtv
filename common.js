@@ -612,7 +612,7 @@ function movieclk(w, url, p)
       showVideoMessage();
 
    if(url.substr(0,4) == "web/") {
-      isHotKey = 0;
+      isHotKey = 1;
       imsi_tvchak = 0;
       tvchak = 0;
       url = url.substr(4);
