@@ -214,7 +214,7 @@ function showTime()
 }
 
 function onup() {
-   if(si == 0) {
+   if(showYouTvMode == 1 && si == 0) {
       cableMoviesMode = 0;
       change();
       return;
@@ -230,7 +230,7 @@ function onup() {
 }
 
 function ondown() {
-   if(si == 3) {
+   if(showYouTvMode == 1 && si == 3) {
       cableMoviesMode = 0;
       change();
       return;
