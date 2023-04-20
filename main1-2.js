@@ -25,7 +25,7 @@ function changeCableMovies() {
 }
 
 function onup() {
-        if( si == 6 ) {
+        if( full && si == 6 ) {
            changeCableMovies();
            return;
         }
@@ -40,7 +40,7 @@ function onup() {
 }
 
 function ondown() {
-        if( si == 4 ) {
+        if( full && si == 4 ) {
            changeCableMovies();
            return;
         }
