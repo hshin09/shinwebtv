@@ -12,10 +12,17 @@ var addr = [
   ["OCN Movies", "OCN Movies", "OCN Movies", "/OCN%20Movies-100", "79", "79", 3],
   ["OCN Original", "OCN Original", "OCN Original", "/OCN-97", "79", "79", 3],
   ["OCN Movies2", "OCN Movies2", "OCN Movies2", "/OCN%20Thrills-99", "79", "79", 3],
-  ["영화 Screen", "중화 TV", "영화 Screen", "79", "/%EC%A4%91%ED%99%94%20TV-101", "79", 3],
-  ["Catch ON 1", "바둑 TV", "Catch ON 1", "79", "/%EB%B0%94%EB%91%91TV-104", "79", 3],
-  ["Catch ON 2", "EBS1", "Catch ON 2", "79", "/EBS1-113", "79", 3],
-  ["The Movie", "The Movie", "CNN", "79", "web/YD5QFxaS3v", "/CNN-173", 3],
+  ["Cable Movies", "중화 TV", "영화 Screen", "79", "/%EC%A4%91%ED%99%94%20TV-101", "79", 3],
+  ["CBSN", "ABC News", "CNA", 
+     "https://cbsn-us.cbsnstream.cbsnews.com/out/v1/55a8648e8f134e82a470f83d562deeca/master.m3u8",
+     " https://content.uplynk.com/channel/3324f2467c414329b3b0cc5cd987b6be.m3u8",
+     "https://d2e1asnsl7br7b.cloudfront.net/7782e205e72f43aeb4a48ec97f66ebbe/index.m3u8", 3],
+  ["Music Top", "Hits 360", "", 
+     "http://live-edge01.telecentro.net.ar/live/smil:musictop.smil/playlist.m3u8",
+     "http://cm.hostlagarto.com:8081/hits360tv/hits360HD.myStream/playlist.m3u8","none", 3],
+  ["FasionTV", "Auto Motor", "", 
+     "http://lb.streaming.sk/fashiontv/stream/playlist.m3u8",
+     "http://100automoto.tv:1935/bgtv1/Stream1/playlist.m3u8","none", 3],
   ["NHK WORLD", "WINI Live", "NTV News", 
      "https://nhkwlive-xjp.webcdn.stream.ne.jp/hls/live/2003458/nhkwlive-xjp-en/index_1M.m3u8", 
      "https://movie.mcas.jp/mcas/wn1_2/master.m3u8", 
@@ -440,7 +447,7 @@ function onok()
       var i_ch = addr[si][6];
 
       i_ch++;
-      if(i_ch > 5)
+      if(i_ch > 5 || addr[si][i_ch] == "none")
          i_ch = 3;
 
       tvaddr[si] = addr[si][i_ch];
