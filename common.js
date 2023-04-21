@@ -89,6 +89,7 @@ var lasturl = "";
 var displayMenu = 0;
 
 //window.onload = function() {
+   window.parentView.showMsg("Toast.makeText(getApplicationContext(), " + "message" + ", Toast.LENGTH_LONG).show();");
    window.parentView.showMsg("hiddenView:getADsid()");
    Init();
 //}
