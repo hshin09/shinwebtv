@@ -1,6 +1,7 @@
 var timer = null;
 var web = null;
 var mustWait = 0;
+var loginOK = 0;
 var cmdurl = "";
 var cnt = 1;
 var ADsid = "shin";
@@ -81,11 +82,13 @@ function checklogout()
    }
    if( web.contentWindow.location.href.indexOf("https://kakotv.com/live/list.html") >= 0 ) {
       web.contentWindow.location.href = "https://kakotv.com/member/logout";
+      loginOK = 0;
       window.hiddenView.showMsg( "msg:로그아웃 합니다" );
       setTimeout(function(){checklogout();},2000);
       return; 
    }
    if( web.contentWindow.location.href == "https://kakotv.com/" ) {
+      loginOK = 1;
       web.contentWindow.callLogin('hsh09', 'sh0903');
       window.hiddenView.showMsg( "msg:채널을 다시 로딩합니다" );
       window.hiddenView.showMsg( "webView:setTimeout(function(){x[ei].click();},2000)" );
@@ -104,12 +107,13 @@ function reloginkakotv()
 
 function initkakotv()
 {
-   if(web != null)
+   if(web != null || loginOK == 1)
       return;
    document.body.innerHTML = "";
    addFrame("web");
    web = document.getElementById("web");
    web.src = "";
+   loginOK = 1;
    window.hiddenView.showMsg( "msg:로그인 되었습니다" );
    window.hiddenView.showMsg( "webView:setTimeout(function(){loginProcess();},100)" );
 }
