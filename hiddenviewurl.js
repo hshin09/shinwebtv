@@ -123,10 +123,15 @@ function getkakotvurl()
    var f = web.contentDocument.getElementsByTagName('body')[0];
    var s = f.innerHTML;
    var i = s.indexOf('initPlayer');
-   /* if( i < 0 ) {
-      reloginkakotv();
+   if( i < 0 ) {
+      mustWait = 3;
+      if(timer) {
+         clearInterval(timer);
+         timer=null;
+      }
+      timer = setInterval( function() { OnOff(); }, 1100 );
       return;
-   } */
+   }
    s = s.substr(i);
    i = s.indexOf("`");
    s = s.substr(i+1);
@@ -136,7 +141,7 @@ function getkakotvurl()
    if( j-i < 10 )
       s = "";
    web.src = "";
-window.hiddenView.showMsg( "msg:addr =› " + s );
+   //window.hiddenView.showMsg( "msg:addr =› " + s );
    window.hiddenView.showMsg( "webView:setkakotv('" + s + "')" );
 }
 
