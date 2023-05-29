@@ -136,7 +136,7 @@ function getkakotvurl()
    if( j-i < 10 )
       s = "";
    web.src = "";
-//window.hiddenView.showMsg( "msg:addr =› " + s );
+window.hiddenView.showMsg( "msg:addr =› " + s );
    window.hiddenView.showMsg( "webView:setkakotv('" + s + "')" );
 }
 
