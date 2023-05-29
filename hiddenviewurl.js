@@ -46,7 +46,7 @@ function loadVideo(ser,url)
 {
    cmdurl = "https://kakotv.com/live" + url + ".html?ser=" + ser;
    web.src = cmdurl;
-   mustWait = 3;
+   mustWait = 5;
    
    if(timer) {
       clearInterval(timer);
@@ -138,8 +138,10 @@ function getkakotvurl()
    var j= s.indexOf("`");
    s = s.substr(0,j);
    s = s.replace(/&amp;/g,"&");
-   if( j-i < 10 )
+   if( j-i < 10 ) {
       s = "";
+      window.hiddenView.showMsg( "msg:주소얻기실패" );
+   }
    web.src = "";
    //window.hiddenView.showMsg( "msg:addr =› " + s );
    window.hiddenView.showMsg( "webView:setkakotv('" + s + "')" );
