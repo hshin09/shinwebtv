@@ -10,11 +10,11 @@ var url = "https://www.adintrend.tv/hd/live/i.php?ch=3&cxid=" + ADsid;
 function prepare()
 {
    //window.hiddenView.showMsg( "msg:" + location.href );   
-   if( location.href == "https://kakotv.com/" ) {
+   if( location.href == "https://kakotv.com/live/list.html" ) {
       //window.hiddenView.showMsg( "msg:1-" + location.href );
       callLogin('lee2', 'sh0903');
       //window.hiddenView.showMsg( "msg:1-" + location.href );
-      setTimeout(function(){initkakotv();},1000);
+      setTimeout(function(){initkakotv();},2000);
       return;
    }
    if( location.href.indexOf("kakotv.com") > 0 ) {
@@ -28,7 +28,7 @@ function prepare()
 }
 
 function getADsid() {
-   window.location.replace("https://kakotv.com");
+   window.location.replace("https://kakotv.com/live/list.html");
    window.hiddenView.showMsg( "webView:setADsid('" + ADsid + "')" );
    //window.hiddenView.showMsg( "msg:getADsid" );
 }
@@ -46,7 +46,7 @@ function loadVideo(ser,url)
 {
    cmdurl = "https://kakotv.com/live" + url + ".html?ser=" + ser;
    web.src = cmdurl;
-   mustWait = 5;
+   mustWait = 7;
    
    if(timer) {
       clearInterval(timer);
@@ -87,7 +87,7 @@ function checklogout()
       setTimeout(function(){checklogout();},2000);
       return; 
    }
-   if( web.contentWindow.location.href == "https://kakotv.com/" ) {
+   if( web.contentWindow.location.href == "https://kakotv.com/live/list.html" ) {
       loginOK = 1;
       web.contentWindow.callLogin('lee2', 'sh0903');
       window.hiddenView.showMsg( "msg:채널을 다시 로딩합니다" );
