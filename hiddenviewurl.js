@@ -9,7 +9,7 @@ var url = "https://www.adintrend.tv/hd/live/i.php?ch=3&cxid=" + ADsid;
 
 function prepare()
 {
-   //window.hiddenView.showMsg( "msg:" + location.href );   
+   window.hiddenView.showMsg( "msg:" + location.href );   
    if( location.href == "https://kakotv.com/live/list.html" ) {
       //window.hiddenView.showMsg( "msg:1-" + location.href );
       callLogin('lee2', 'sh0903');
@@ -30,7 +30,7 @@ function prepare()
 function getADsid() {
    window.location.replace("https://kakotv.com/live/list.html");
    window.hiddenView.showMsg( "webView:setADsid('" + ADsid + "')" );
-   //window.hiddenView.showMsg( "msg:getADsid" );
+   window.hiddenView.showMsg( "msg:getADsid" );
 }
 
 function addFrame(objId)
