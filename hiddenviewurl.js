@@ -51,6 +51,7 @@ function loadMenu(url) {
       if(this.readyState!==4) return(s);
       if(this.status!==200) return(s);
       s=this.responseText;
+      alert(s);
       return(s);
    };
    xhr.send();
