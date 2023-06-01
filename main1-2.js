@@ -171,8 +171,11 @@ function keychk(e) {
    }
    else if( e.which == 48 ) { //0
       if( gi == 0 ) {
+	 window.parentView.showMsg("hiddenView:directLoadView = !directLoadView");
+	 /*
          changeKorTv();
          setTimeout(function(){ mlok(); }, 500);
+	 */
       }
    }
    else if( e.which == 49 ) { //1
