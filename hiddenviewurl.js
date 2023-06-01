@@ -44,22 +44,21 @@ function addFrame(objId)
 }
 
 function loadMenu() {
-   window.hiddenView.showMsg( "msg:url => " + cmdurl );
-   var s = "abcdefghijklmnopqrstuvwxyz";
    var xhr= new XMLHttpRequest();
    xhr.open('GET', cmdurl, true);
    xhr.onreadystatechange = function() {
-      if(this.readyState!==4) return(s);
-      if(this.status!==200) return(s);
-      s=this.responseText;
-      return(s);
+      if(this.readyState!==4) return;
+      if(this.status!==200) return;
+      cmdurl=this.responseText;
+      return;
    };
    xhr.send();
 }
 
 function dLoadVideo()
 {
-   var s = loadMenu();
+   loadMenu();
+   var s = cmdurl;
    window.hiddenView.showMsg( "msg:addr => " + s );
    var i = s.indexOf('initPlayer');
    if( i < 0 ) {
