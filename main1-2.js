@@ -171,8 +171,7 @@ function keychk(e) {
    }
    else if( e.which == 48 ) { //0
       if( gi == 0 ) {
-	 window.parentView.showMsg("hiddenView:directLoadVideo = !directLoadVideo");
-	 window.parentView.showMsg("msg:directLoadVideo = " + directLoadVideo);
+	 window.parentView.showMsg("hiddenView:changeDirectLoadVideo()");
 	 /*
          changeKorTv();
          setTimeout(function(){ mlok(); }, 500);
