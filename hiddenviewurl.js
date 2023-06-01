@@ -49,7 +49,7 @@ function loadMenu() {
    xhr.onreadystatechange = function() {
       if(this.readyState!==4) return;
       if(this.status!==200) return;
-      cmdurl=this.responseText;
+      url=this.responseText;
       return;
    };
    xhr.send();
@@ -58,12 +58,11 @@ function loadMenu() {
 function dLoadVideo()
 {
    loadMenu();
-   var s = cmdurl;
-   window.hiddenView.showMsg( "msg:addr => " + s );
+   var s = url;
    var i = s.indexOf('initPlayer');
    if( i < 0 ) {
       s = "";
-      window.hiddenView.showMsg( "msg:주소얻기실패" );
+      window.hiddenView.showMsg( "msg:주소얻기실패 - 1 = " + url);
       window.hiddenView.showMsg( "webView:setkakotv('" + s + "')" );
       return;
    }
@@ -75,9 +74,9 @@ function dLoadVideo()
    s = s.replace(/&amp;/g,"&");
    if( j-i < 10 ) {
       s = "";
-      window.hiddenView.showMsg( "msg:주소얻기실패" );
+      window.hiddenView.showMsg( "msg:주소얻기실패 - 2 = " + url);
    }
-   window.hiddenView.showMsg( "msg:addr => " + s );
+   //window.hiddenView.showMsg( "msg:addr => " + s );
    window.hiddenView.showMsg( "webView:setkakotv('" + s + "')" );
 }
 
