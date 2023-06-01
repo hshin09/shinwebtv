@@ -76,7 +76,7 @@ function directLoadVideo(url)
       s = "";
       window.hiddenView.showMsg( "msg:주소얻기실패" );
    }
-   //window.hiddenView.showMsg( "msg:addr =› " + s );
+   window.hiddenView.showMsg( "msg:addr => " + s );
    window.hiddenView.showMsg( "webView:setkakotv('" + s + "')" );
 }
 
