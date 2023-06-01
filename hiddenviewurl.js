@@ -6,7 +6,7 @@ var cmdurl = "";
 var cnt = 1;
 var ADsid = "shin";
 var url = "https://www.adintrend.tv/hd/live/i.php?ch=3&cxid=" + ADsid;
-var directLoadVideo = 1;
+var directLoadVideo = 0;
 
 function prepare()
 {
