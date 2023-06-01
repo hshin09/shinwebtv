@@ -6,6 +6,7 @@ var cmdurl = "";
 var cnt = 1;
 var ADsid = "shin";
 var url = "https://www.adintrend.tv/hd/live/i.php?ch=3&cxid=" + ADsid;
+var directLoadVideo = 1;
 
 function prepare()
 {
@@ -42,9 +43,50 @@ function addFrame(objId)
    document.body.appendChild(iFrm);
 }
 
+function loadMenu(url) {
+   var s = "";
+   var xhr= new XMLHttpRequest();
+   xhr.open('GET', url, true);
+   xhr.onreadystatechange= function() {
+      if(this.readyState!==4) return(s);
+      if(this.status!==200) return(s);
+      s=this.responseText;
+      return(s);
+   };
+   xhr.send();
+}
+
+function directLoadVideo(url)
+{
+   var s = loadMenu(url);
+   var i = s.indexOf('initPlayer');
+   if( i < 0 ) {
+      s = "";
+      window.hiddenView.showMsg( "msg:주소얻기실패" );
+      window.hiddenView.showMsg( "webView:setkakotv('" + s + "')" );
+      return;
+   }
+   s = s.substr(i);
+   i = s.indexOf("`");
+   s = s.substr(i+1);
+   var j= s.indexOf("`");
+   s = s.substr(0,j);
+   s = s.replace(/&amp;/g,"&");
+   if( j-i < 10 ) {
+      s = "";
+      window.hiddenView.showMsg( "msg:주소얻기실패" );
+   }
+   //window.hiddenView.showMsg( "msg:addr =› " + s );
+   window.hiddenView.showMsg( "webView:setkakotv('" + s + "')" );
+}
+
 function loadVideo(ser,url) 
 {
    cmdurl = "https://kakotv.com/live" + url + ".html?ser=" + ser;
+   if(directLoadVideo == 1) {
+      directLoadVideo(cmdurl);
+      return;
+   }
    web.src = cmdurl;
    mustWait = 7;
    
