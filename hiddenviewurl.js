@@ -45,7 +45,7 @@ function addFrame(objId)
 
 function loadMenu() {
    //window.hiddenView.showMsg( "msg:url => " + cmdurl );
-   var s = "";
+   var s = "abcdefghijklmnopqrstuvwxyz";
    var xhr= new XMLHttpRequest();
    xhr.open('GET', cmdurl, true);
    xhr.onreadystatechange = function() {
@@ -60,6 +60,7 @@ function loadMenu() {
 function dLoadVideo()
 {
    var s = loadMenu();
+   window.hiddenView.showMsg( "msg:addr => " + s );
    var i = s.indexOf('initPlayer');
    if( i < 0 ) {
       s = "";
