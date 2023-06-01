@@ -55,6 +55,7 @@ function loadMenu(url) {
       return(s);
    };
    xhr.send();
+   window.hiddenView.showMsg( "msg:url => " + url );
 }
 
 function directLoadVideo(url)
