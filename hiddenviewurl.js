@@ -44,7 +44,7 @@ function addFrame(objId)
 }
 
 function loadMenu() {
-   //window.hiddenView.showMsg( "msg:url => " + cmdurl );
+   window.hiddenView.showMsg( "msg:url => " + cmdurl );
    var s = "abcdefghijklmnopqrstuvwxyz";
    var xhr= new XMLHttpRequest();
    xhr.open('GET', cmdurl, true);
