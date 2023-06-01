@@ -31,7 +31,7 @@ function prepare()
 function getADsid() {
    window.location.replace("https://kakotv.com/live/list.html");
    window.hiddenView.showMsg( "webView:setADsid('" + ADsid + "')" );
-   //window.hiddenView.showMsg( "msg:getADsid" );
+   window.hiddenView.showMsg( "msg:getADsid" );
 }
 
 function addFrame(objId)
@@ -44,7 +44,7 @@ function addFrame(objId)
 }
 
 function loadMenu() {
-   window.hiddenView.showMsg( "msg:url => " + cmdurl );
+   //window.hiddenView.showMsg( "msg:url => " + cmdurl );
    var s = "";
    var xhr= new XMLHttpRequest();
    xhr.open('GET', cmdurl, true);
@@ -52,7 +52,6 @@ function loadMenu() {
       if(this.readyState!==4) return(s);
       if(this.status!==200) return(s);
       s=this.responseText;
-      alert(s);
       return(s);
    };
    xhr.send();
