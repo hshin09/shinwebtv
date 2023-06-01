@@ -8,6 +8,11 @@ var ADsid = "shin";
 var url = "https://www.adintrend.tv/hd/live/i.php?ch=3&cxid=" + ADsid;
 var directLoadVideo = 1;
 
+function changeDirectLoadVideo() {
+   directLoadVideo = !directLoadVideo;
+   window.hiddenView.showMsg("msg:directLoadVideo = " + directLoadVideo);
+}
+
 function prepare()
 {
    //window.hiddenView.showMsg( "msg:" + location.href );   
