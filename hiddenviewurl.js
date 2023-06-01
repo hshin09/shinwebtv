@@ -44,6 +44,7 @@ function addFrame(objId)
 }
 
 function loadMenu(url) {
+   window.hiddenView.showMsg( "msg:url => " + url );
    var s = "";
    var xhr= new XMLHttpRequest();
    xhr.open('GET', url, true);
@@ -55,7 +56,6 @@ function loadMenu(url) {
       return(s);
    };
    xhr.send();
-   window.hiddenView.showMsg( "msg:url => " + url );
 }
 
 function directLoadVideo(url)
