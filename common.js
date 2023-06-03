@@ -117,12 +117,12 @@ function Init()
 
    $('#menu0').load("https://hshin09.github.io/shinwebtv/kor2.html");
    $('#menu1').load("https://hshin09.github.io/shinwebtv/thai.html");
-
+   /*
    if(document.getElementById('menux')) {
       $('#menux').load("https://hshin09.github.io/shinwebtv/tvchak.html");
       $("#menux").css('display', 'none');
    }
-
+   */
    stv = $('#tv').get(0);
    stv1 = $('#tv1').get(0);
    web = document.getElementById("web");
