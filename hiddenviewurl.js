@@ -20,7 +20,7 @@ function prepare()
       //window.hiddenView.showMsg( "msg:1-" + location.href );
       callLogin('lee2', 'sh0903');
       //window.hiddenView.showMsg( "msg:1-" + location.href );
-      setTimeout(function(){initkakotv();},2000);
+      setTimeout(function(){initkakotv();},200);
       return;
    }
    if( location.href.indexOf("kakotv.com") > 0 ) {
