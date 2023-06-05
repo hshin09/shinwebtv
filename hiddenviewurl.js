@@ -25,7 +25,7 @@ function prepare()
    }
    if( location.href.indexOf("kakotv.com") > 0 ) {
       //window.hiddenView.showMsg( "msg:2-" + location.href );
-      initkakotv();
+      //initkakotv();
       return;
    }
    //window.hiddenView.showMsg( "msg:" + location.href );
