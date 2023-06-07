@@ -470,16 +470,16 @@ function onok()
          window.parentView.showMsg("msg:" + (i_ch - 2) + "번 보조서버(" + x[si].innerHTML + ") 로 이동합니다");
 
       if(si<6 || si>9) {
-        if(tvaddr[si].substr(0,1) == "/") {
-            getkakotv(si, tvaddr[si]);
-            return;
-         }
-         if(ich > 2) {
+        if(ich > 2) {
             //get79tv(si);
             iKakoSer = ich - 3;
             getkakotv(si, addr[si][ich]);
             return;
          }
+        if(tvaddr[si].substr(0,1) == "/") {
+            getkakotv(si, tvaddr[si]);
+            return;
+         }         
       }
    }
    oi = -1;
