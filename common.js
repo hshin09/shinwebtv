@@ -467,8 +467,11 @@ function onok()
 
       if(si<6 || si>9) {
          if(tvaddr[si] == "79") {
-            get79tv(si);
+            //get79tv(si);
+            iKakoSer = ich - 3;
+            getkakotv(si, addr[si][3]);
             return;
+           
          }
 
          if(tvaddr[si].substr(0,1) == "/") {
