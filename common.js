@@ -152,6 +152,10 @@ function Init()
          tvaddr[i] = backkakotvaddr[i];
       else if( ( i < 6 || i > 9 ) && backtvaddr[i] != "79")
          tvaddr[i] = backtvaddr[i];
+     
+     for(var j = 4; j < 6; j++)
+       if(addr[i][j] == "79")
+         addr[i][j] = addr[i][j3];
    }
    ls = localStorage.getItem("ei" );
    if( ls && ls != "" )
@@ -466,16 +470,14 @@ function onok()
          window.parentView.showMsg("msg:" + (i_ch - 2) + "번 보조서버(" + x[si].innerHTML + ") 로 이동합니다");
 
       if(si<6 || si>9) {
-         if(tvaddr[si] == "79") {
+        if(tvaddr[si].substr(0,1) == "/") {
+            getkakotv(si, tvaddr[si]);
+            return;
+         }
+         if(ich > 2) {
             //get79tv(si);
             iKakoSer = ich - 3;
-            getkakotv(si, addr[si][3]);
-            return;
-           
-         }
-
-         if(tvaddr[si].substr(0,1) == "/") {
-            getkakotv(si, tvaddr[si]);
+            getkakotv(si, addr[si][ich]);
             return;
          }
       }
