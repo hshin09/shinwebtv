@@ -473,7 +473,8 @@ function onok()
         if(ich > 2) {
             //get79tv(si);
             iKakoSer = ich - 3;
-            getkakotv(si, addr[si][ich]);
+            tvaddr[si] = addr[si][addr[si][6]];
+            x[si].click();
             return;
          }
         if(tvaddr[si].substr(0,1) == "/") {
