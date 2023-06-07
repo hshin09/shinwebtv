@@ -155,7 +155,7 @@ function Init()
      
      for(var j = 4; j < 6; j++)
        if(addr[i][j] == "79")
-         addr[i][j] = addr[i][j3];
+         addr[i][j] = addr[i][3];
    }
    ls = localStorage.getItem("ei" );
    if( ls && ls != "" )
