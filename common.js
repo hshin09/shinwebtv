@@ -472,8 +472,9 @@ function onok()
       if(si<6 || si>9) {
         if(ich > 2) {
             //get79tv(si);
+            isChangeSer = 1;
             iKakoSer = ich - 3;
-            tvaddr[si] = addr[si][addr[si][6]];
+            tvaddr[si] = addr[si][ich];
             x[si].click();
             return;
          }
