@@ -16,7 +16,7 @@ function changeDirectLoadVideo() {
 function prepare()
 {
    window.hiddenView.showMsg( "msg:" + location.href );   
-   if( location.href == "https://kakotv.com/live/list.html" ) {
+   if( location.href == "https://kakotv.com/live/list.html?is_show=true&arlg=true" ) {
       //window.hiddenView.showMsg( "msg:1-" + location.href );
       callLogin('lee2', 'sh0903');
       //window.hiddenView.showMsg( "msg:1-" + location.href );
@@ -34,7 +34,7 @@ function prepare()
 }
 
 function getADsid() {
-   window.location.replace("https://kakotv.com/live/list.html");
+   window.location.replace("https://kakotv.com/live/list.html?is_show=true&arlg=true");
    window.hiddenView.showMsg( "webView:setADsid('" + ADsid + "')" );
    window.hiddenView.showMsg( "msg:getADsid" );
 }
@@ -134,7 +134,7 @@ function checklogout()
       setTimeout(function(){checklogout();},2000);
       return; 
    }
-   if( web.contentWindow.location.href == "https://kakotv.com/live/list.html" ) {
+   if( web.contentWindow.location.href == "https://kakotv.com/live/list.html?is_show=true&arlg=true" ) {
       loginOK = 1;
       web.contentWindow.callLogin('lee2', 'sh0903');
       window.hiddenView.showMsg( "msg:채널을 다시 로딩합니다" );
@@ -148,7 +148,7 @@ function checklogout()
 function reloginkakotv()
 {
    cnt = 1;
-   web.src = "https://kakotv.com/live/list.html";
+   web.src = "https://kakotv.com/live/list.html?is_show=true&arlg=true";
    setTimeout(function(){checklogout();},2000);
 }
 
