@@ -16,7 +16,7 @@ function changeDirectLoadVideo() {
 function prepare()
 {
    window.hiddenView.showMsg( "msg:" + location.href );   
-   if( location.href == "https://kakotv.com/live/list.html?is_show=true&arlg=true" ) {
+   if( location.href.indexOf("https://kakotv.com/live/list.html") > 0 ) {
       //window.hiddenView.showMsg( "msg:1-" + location.href );
       callLogin('lee2', 'sh0903');
       //window.hiddenView.showMsg( "msg:1-" + location.href );
