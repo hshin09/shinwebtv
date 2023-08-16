@@ -337,7 +337,7 @@ function keychk(e) {
    e.preventDefault();
 }
 
-function onsubok(var i) 
+function onsubok(i) 
 {
    ch_addr[i][1]++;
    if( ch_addr[i][1] > ch_addr[i][0] )
