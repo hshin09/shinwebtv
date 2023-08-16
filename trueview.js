@@ -119,16 +119,17 @@ function movieclk( ch, p ) {
       timer = setInterval( function() { OnOff(); }, 1100 );
       return;
    }
+   var i = si-4;
    if(pressok == 1 && si>3 && si<6) {
-      var i = si-4;
       ch_addr[i][1]++;
       if( ch_addr[i][1] >= ch_addr[i][0] )
          ch_addr[i][1] = 0;
 
-      ch = addr[i][ch_addr[i][1]][0];
       x[si].innerHTML = addr[i][ch_addr[i][1]][1];
       pressok = 0;
    }
+   if(si>3 && si<6)
+       ch = addr[i][ch_addr[i][1]][0];
    
    var url = path + ch;
    if(showYouTvMode) {
