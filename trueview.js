@@ -117,6 +117,16 @@ function movieclk( ch, p ) {
       timer = setInterval( function() { OnOff(); }, 1100 );
       return;
    }
+   if(si>3 && si<6) {
+      var i = si-4;
+      ch_addr[i][1]++;
+      if( ch_addr[i][1] >= ch_addr[i][0] )
+         ch_addr[i][1] = 0;
+
+      ch = addr[i][ch_addr[i][1]][0];
+      x[si].innerHTML = addr[i][ch_addr[i][1]][1];
+   }
+   
    var url = path + ch;
    if(showYouTvMode) {
       tv.style.display = "none";
@@ -337,24 +347,10 @@ function keychk(e) {
    e.preventDefault();
 }
 
-function onsubok(i) 
-{
-   ch_addr[i][1]++;
-   if( ch_addr[i][1] > ch_addr[i][0] )
-      ch_addr[i][1] = 0;
-
-   tvaddr[si] = addr[i][ch_addr[i][1]][0];
-   x[si].innerHTML = addr[i][ch_addr[i][1]][1];
-   moveclick(addr[i][ch_addr[i][1]][0],addr[i][ch_addr[i][1]][1]);
-}
-
 function onok() {
    mustWait = 0;
    tvaddr[si] = si;
-   if( si > 3 && si < 6)
-      onsubok(si-4);
-   else
-      x[si].click();
+   x[si].click();
 }
 
 function mlok() {
