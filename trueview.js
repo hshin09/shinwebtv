@@ -18,7 +18,8 @@ var x;
 var cnt;
 var strResponse = "79";
 var tvaddr = new Array(24);
-var ch_addr = [ [ 6,0 ], [ 4,0 ] ];
+var pressok = 0;
+var ch_addr = [ [ 6,0 ], [ 5,0 ] ];
 var addr = [
    [
 	[ '33', 'TV 조선 뉴스' ],
@@ -29,6 +30,7 @@ var addr = [
 	[ '23', 'MBN 뉴스' ]
    ],
    [
+	[ '08', 'EBS' ],
         [ '14', 'SBS TV' ],
         [ '07', 'MBC TV' ],
         [ '15', 'KBS1' ],
@@ -117,7 +119,7 @@ function movieclk( ch, p ) {
       timer = setInterval( function() { OnOff(); }, 1100 );
       return;
    }
-   if(si>3 && si<6) {
+   if(pressok == 1 && si>3 && si<6) {
       var i = si-4;
       ch_addr[i][1]++;
       if( ch_addr[i][1] >= ch_addr[i][0] )
@@ -125,6 +127,7 @@ function movieclk( ch, p ) {
 
       ch = addr[i][ch_addr[i][1]][0];
       x[si].innerHTML = addr[i][ch_addr[i][1]][1];
+      pressok = 0;
    }
    
    var url = path + ch;
@@ -312,8 +315,10 @@ function keychk(e) {
       onright();
    }
    else if(e.which == 13 ) {
-      if( loadMode == 0 )
+      if( loadMode == 0 ) {
+         pressok = 1;
          onok();
+      }
    }
    else if( e.which == 48 ) { //0
 
