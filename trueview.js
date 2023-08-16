@@ -18,6 +18,23 @@ var x;
 var cnt;
 var strResponse = "79";
 var tvaddr = new Array(24);
+var addr[][] = {
+	{ '33', 'TV 조선 뉴스' },
+	{ '02', '채널 A 뉴스' },
+	{ '01', 'JTBC 뉴스' },
+	{ '34', 'YTN 뉴스' },
+	{ '32', '연합 뉴스' },
+	{ '23', 'MBN 뉴스' }
+/*'14', SBS TV
+'07', MBC TV
+'15', KBS1 
+'13', KBS2
+'50', GeoGraphic
+'46', Discovery
+'49', History
+'38',NatgeoWild
+	*/
+};
 
 var xDown = null;
 var yDown = null;
