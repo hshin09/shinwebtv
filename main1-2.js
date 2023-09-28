@@ -153,6 +153,15 @@ function changeKakoServer(add) {
    }
 }
 
+function copyToClipBoard() {
+     var content = document.getElementById('textArea');
+     content.text = tvaddr[ei];
+     content.select();
+     content.setSelectionRange(0, 99999);
+     document.execCommand('copy');
+     content.setSelectionRange(0, 0);
+}
+
 function keychk(e) {
    if( e.which == 38) {
       onup();
@@ -187,7 +196,7 @@ function keychk(e) {
       //window.parentView.showMsg("launchApp:com.google.android.youtube.tv");
    } 
    else if( e.which == 51 ) { //3
-      di = si;
+      copyToClipBoard();
       //window.parentView.showMsg("launchApp:com.android.chrome");
       //window.parentView.showMsg("launchApp:com.opera.browser.beta");
    }
