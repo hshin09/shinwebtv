@@ -159,7 +159,7 @@ function copyToClipBoard() {
      content.select();
      content.setSelectionRange(0, 99999);
      document.execCommand('copy');
-     content.setSelectionRange(0, 0);
+     window.parentView.showMsg("msg:" + content.value);
 }
 
 function keychk(e) {
