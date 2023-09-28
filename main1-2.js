@@ -155,7 +155,7 @@ function changeKakoServer(add) {
 
 function copyToClipBoard() {
      var content = document.getElementById('textArea');
-     content.text = tvaddr[ei];
+     content.value = tvaddr[ei];
      content.select();
      content.setSelectionRange(0, 99999);
      document.execCommand('copy');
