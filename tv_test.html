@@ -4,7 +4,7 @@
        <source id="tv1" type="application/vnd.apple.mpegURL">
 </video>
 <script>
-var userNames = [ "imsiYtn" ];
+var userNames = [ "imsiytn" ];
 function checkUser(user)
 {
    for(var i=0; i<userNames.length; i++ )
@@ -12,9 +12,11 @@ function checkUser(user)
          return 1;
    return 0;
 }
-ls = prompt("사용자 이름을 입력하세요", "");
+ls = prompt("부여받은 비밀번호를 입력하세요", "");
 if(checkUser(ls) == 1)
    document.getElementById("tv").src="https://edge-th136.cloudrsst.com:443/live/ytn_540/playlist.m3u8?secret=c7a2ceaa4a52117d068ffcd3b663d32e&time=1695551864";
+else 
+   alert("비밀번호가 틀렸습니다. 다시 하시려면 이페이지를 새로고침 하세요");
 </script>
 </body>
 </html>
