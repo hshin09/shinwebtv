@@ -12,10 +12,27 @@
 <audio id="tv" controls autoplay>
    <source src="start" type="audio/mpeg">
 </audio>
-<script>
-   var x = document.getElementById("tv");
+<button id="btn1" onclick="addClick()">
+        Click Me!
+</button>
+ 
+    <script type="text/javascript">
+        var x = document.getElementById("tv");
+ 
+        function addClick() {
+            x.play();
+        }
+ 
+        // Simulate click function
+        function clickButton() {
+            click_event = new CustomEvent('click');
+            btn_element = document.querySelector('#btn1');
+            btn_element.dispatchEvent(click_event);
+        }
+
+   
    x.src="https://hshin09.github.io/shinwebtv/start";
-   x.play();
+   clickButton();
 </script>
 </body>
 </html>
