@@ -12,14 +12,23 @@
 <audio id="tv" controls autoplay>
    <source src="start" type="audio/mpeg">
 </audio>
-<button id="btn1" onclick="addClick()">
-        Click Me!
+<br>
+<button id="btn1" onclick="start()">
+        충전
 </button>
- 
+<button id="btn2" onclick="end()">
+        완충
+</button>
     <script type="text/javascript">
         var x = document.getElementById("tv");
  
-        function addClick() {
+        function start() {
+            x.src="https://hshin09.github.io/shinwebtv/start";
+            x.play();
+        }
+
+        function end() {
+            x.src="https://hshin09.github.io/shinwebtv/end";
             x.play();
         }
  
@@ -30,8 +39,6 @@
             btn_element.dispatchEvent(click_event);
         }
 
-   
-   x.src="https://hshin09.github.io/shinwebtv/start";
    clickButton();
 </script>
 </body>
