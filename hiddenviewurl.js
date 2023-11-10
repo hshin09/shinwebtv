@@ -31,7 +31,7 @@ function prepare()
       return;
    }
    if( location.href.indexOf("www.adintrend.tv") < 0 ) {
-      //window.hiddenView.showMsg( "msg:" + location.href );  
+      window.hiddenView.showMsg( "msg:" + location.href );  
       window.location.replace("https://kakotv.com/live/list.html");
       return;
    }
@@ -182,7 +182,7 @@ function initkakotv()
       window.location.replace("https://kakotv.com/live");
       return;
    }
-   
+   window.hiddenView.showMsg( "msg:"+location.href);
    if(web != null)
       return;
    document.body.innerHTML = "";
