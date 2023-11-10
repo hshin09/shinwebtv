@@ -180,9 +180,10 @@ function initkakotv()
    if( location.href.indexOf("live/list.html?arlg=true") > 0 && loginOK == 0) {
       loginOK = 1;
       window.location.replace("https://kakotv.com/live");
+      window.hiddenView.showMsg( "msg:"+location.href + " ,1, " + loginOK);
       return;
    }
-   window.hiddenView.showMsg( "msg:"+location.href + " , " + loginOK);
+   window.hiddenView.showMsg( "msg:"+location.href + " ,2, " + loginOK);
    if(web != null)
       return;
    document.body.innerHTML = "";
