@@ -7,6 +7,7 @@ var cnt = 1;
 var ADsid = "shin";
 var url = "https://www.adintrend.tv/hd/live/i.php?ch=3&cxid=" + ADsid;
 var directLoadVideo = 1;
+var secr = "?";
 
 function changeDirectLoadVideo() {
    directLoadVideo = !directLoadVideo;
@@ -20,7 +21,7 @@ function prepare()
       //window.hiddenView.showMsg( "msg:1-" + location.href );
       callLogin('lee2', 'sh0903');
       //window.hiddenView.showMsg( "msg:1-" + location.href );
-      setTimeout(function(){initkakotv();},200);
+      setTimeout(function(){initkakotv();},500);
       return;
    }
    if( location.href.indexOf("kakotv.com") > 0 ) {
@@ -51,6 +52,21 @@ function addFrame(objId)
    iFrm.setAttribute('width', '100%');
    iFrm.setAttribute('height', '100%');
    document.body.appendChild(iFrm);
+}
+
+function loadSecr(url) {
+   var xhr= new XMLHttpRequest();
+   xhr.open('GET', url, false);
+   xhr.onreadystatechange= function() {
+      if(this.readyState!==4) return; if(this.status!==200) return;
+      var s=this.responseText;
+      var i=s.indexOf('?secr'); s=s.substr(i); i=s.indexOf('='); s=s.substr(i+1);
+      var j=s.indexOf('"');
+      s=s.substr(0,j);
+      s.replace(/&amp;/g,"&");
+      secr=s;
+   };
+   xhr.send();
 }
 
 function loadMenu() {
@@ -92,6 +108,7 @@ function dLoadVideo()
 
 function loadVideo(ser,url) 
 {
+   loadSecr("https://kakotv.com/live/list.html");
    cmdurl = "https://kakotv.com/live" + url + ".html?secr=" + secr;
    if(directLoadVideo == 1) {
       dLoadVideo();
