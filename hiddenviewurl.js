@@ -18,7 +18,7 @@ function prepare()
 {
    //window.hiddenView.showMsg( "msg:" + location.href );
    window.hiddenView.showMsg( "msg:" + document.getElementById("dropdownInforUser") );
-   if( !document.getElementById("dropdownInforUser") ) {
+   if( location.href.indexOf("kakotv.com/live/list.html") > 0 ) {
       //window.hiddenView.showMsg( "msg:1-" + location.href );
       callLogin('lee2', 'sh0903');
       //window.hiddenView.showMsg( "msg:1-" + location.href );
