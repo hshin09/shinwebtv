@@ -17,7 +17,7 @@ function changeDirectLoadVideo() {
 function prepare()
 {
    //window.hiddenView.showMsg( "msg:" + location.href );
-   window.hiddenView.showMsg( "msg:" + document.getElementById("dropdownInforUser") );
+   //window.hiddenView.showMsg( "msg:" + document.getElementById("dropdownInforUser") );
    if( location.href.indexOf("kakotv.com/live/list.html") > 0 ) {
       //window.hiddenView.showMsg( "msg:1-" + location.href );
       callLogin('lee2', 'sh0903');
@@ -31,7 +31,7 @@ function prepare()
       return;
    }
    if( location.href.indexOf("www.adintrend.tv") < 0 ) {
-      window.hiddenView.showMsg( "msg:" + location.href );  
+      //window.hiddenView.showMsg( "msg:" + location.href );  
       window.location.replace("https://kakotv.com/live/list.html");
       return;
    }
