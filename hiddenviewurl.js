@@ -182,14 +182,14 @@ function initkakotv()
       window.location.replace("https://kakotv.com/live");
       return;
    }
-   window.hiddenView.showMsg( "msg:"+location.href);
+   window.hiddenView.showMsg( "msg:"+location.href + " , " + loginOK);
    if(web != null)
       return;
    document.body.innerHTML = "";
    addFrame("web");
    web = document.getElementById("web");
    web.src = "";
-   window.hiddenView.showMsg( "msg:로그인 되었습니다" );
+   //window.hiddenView.showMsg( "msg:로그인 되었습니다" );
    window.hiddenView.showMsg( "webView:setTimeout(function(){loginProcess();},100)" );
 }
 
