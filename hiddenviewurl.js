@@ -16,7 +16,7 @@ function changeDirectLoadVideo() {
 
 function prepare()
 {
-   //window.hiddenView.showMsg( "msg:" + location.href );   
+   window.hiddenView.showMsg( "msg:" + location.href );   
    if( location.href.indexOf("/live/list.html") > 0 && loginOK == 0 ) {
       //window.hiddenView.showMsg( "msg:1-" + location.href );
       callLogin('lee2', 'sh0903');
