@@ -89,7 +89,6 @@ var lasturl = "";
 var displayMenu = 0;
 
 //window.onload = function() {
-   window.parentView.showMsg("msg:hiddenView:getADsid()");
    window.parentView.showMsg("hiddenView:getADsid()");
    Init();
 //}
