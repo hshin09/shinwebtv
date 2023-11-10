@@ -16,7 +16,7 @@ function changeDirectLoadVideo() {
 function prepare()
 {
    //window.hiddenView.showMsg( "msg:" + location.href );   
-   if( location.href == "https://kakotv.com/live/list.html?is_show=true&arlg=true" ) {
+   if( location.href == "https://kakotv.com/live/list.html" ) {
       //window.hiddenView.showMsg( "msg:1-" + location.href );
       callLogin('lee2', 'sh0903');
       //window.hiddenView.showMsg( "msg:1-" + location.href );
@@ -30,7 +30,7 @@ function prepare()
    }
    if( location.href.indexOf("www.adintrend.tv") < 0 ) {
       window.hiddenView.showMsg( "msg:" + location.href );  
-      window.location.replace("https://kakotv.com/live/list.html?is_show=true&arlg=true");
+      window.location.replace("https://kakotv.com/live/list.html");
       return;
    }
    //window.hiddenView.showMsg( "msg:" + location.href );
@@ -39,7 +39,7 @@ function prepare()
 }
 
 function getADsid() {
-   window.location.replace("https://kakotv.com/live/list.html?is_show=true&arlg=true");
+   window.location.replace("https://kakotv.com/live/list.html");
    window.hiddenView.showMsg( "webView:setADsid('" + ADsid + "')" );
    window.hiddenView.showMsg( "msg:getADsid" );
 }
@@ -92,7 +92,7 @@ function dLoadVideo()
 
 function loadVideo(ser,url) 
 {
-   cmdurl = "https://kakotv.com/live" + url + ".html?ser=" + ser;
+   cmdurl = "https://kakotv.com/live" + url + ".html?secr=" + secr;
    if(directLoadVideo == 1) {
       dLoadVideo();
       return;
@@ -139,7 +139,7 @@ function checklogout()
       setTimeout(function(){checklogout();},2000);
       return; 
    }
-   if( web.contentWindow.location.href == "https://kakotv.com/live/list.html?is_show=true&arlg=true" ) {
+   if( web.contentWindow.location.href == "https://kakotv.com/live/list.html" ) {
       loginOK = 1;
       web.contentWindow.callLogin('lee2', 'sh0903');
       window.hiddenView.showMsg( "msg:채널을 다시 로딩합니다" );
@@ -159,13 +159,18 @@ function reloginkakotv()
 
 function initkakotv()
 {
-   if(web != null || loginOK == 1)
+   if(location.href == "https://kakotv.com/live/list.html?arlg=true" && loginOK == 0) {
+      loginOK = 1;
+      window.location.replace("https://kakotv.com/live");
+      return;
+   }
+   
+   if(web != null)
       return;
    document.body.innerHTML = "";
    addFrame("web");
    web = document.getElementById("web");
    web.src = "";
-   loginOK = 1;
    window.hiddenView.showMsg( "msg:로그인 되었습니다" );
    window.hiddenView.showMsg( "webView:setTimeout(function(){loginProcess();},100)" );
 }
