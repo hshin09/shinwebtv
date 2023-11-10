@@ -16,7 +16,8 @@ function changeDirectLoadVideo() {
 
 function prepare()
 {
-   window.hiddenView.showMsg( "msg:" + location.href );
+   //window.hiddenView.showMsg( "msg:" + location.href );
+   window.hiddenView.showMsg( "msg:" + document.getElementById("dropdownInforUser") );
    if( !document.getElementById("dropdownInforUser") ) {
       //window.hiddenView.showMsg( "msg:1-" + location.href );
       callLogin('lee2', 'sh0903');
