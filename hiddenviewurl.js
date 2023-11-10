@@ -16,7 +16,7 @@ function changeDirectLoadVideo() {
 
 function prepare()
 {
-   //window.hiddenView.showMsg( "msg:" + location.href );
+   window.hiddenView.showMsg( "msg:"+location.href + " ,0, " + loginOK);
    //window.hiddenView.showMsg( "msg:" + document.getElementById("dropdownInforUser") );
    if( location.href.indexOf("kakotv.com/live/list.html") > 0 ) {
       //window.hiddenView.showMsg( "msg:1-" + location.href );
@@ -180,17 +180,17 @@ function initkakotv()
    if( location.href.indexOf("live/list.html?arlg=true") > 0 && loginOK == 0) {
       loginOK = 1;
       window.location.replace("https://kakotv.com/live");
-      window.hiddenView.showMsg( "msg:"+location.href + " ,1, " + loginOK);
+      //window.hiddenView.showMsg( "msg:"+location.href + " ,1, " + loginOK);
       return;
    }
-   window.hiddenView.showMsg( "msg:"+location.href + " ,2, " + loginOK);
+   //window.hiddenView.showMsg( "msg:"+location.href + " ,2, " + loginOK);
    if(web != null)
       return;
    document.body.innerHTML = "";
    addFrame("web");
    web = document.getElementById("web");
    web.src = "";
-   //window.hiddenView.showMsg( "msg:로그인 되었습니다" );
+   window.hiddenView.showMsg( "msg:로그인 되었습니다" );
    window.hiddenView.showMsg( "webView:setTimeout(function(){loginProcess();},100)" );
 }
 
