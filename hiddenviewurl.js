@@ -40,9 +40,9 @@ function prepare()
 }
 
 function getADsid() {
-   window.location.replace("https://kakotv.com/live/list.html");
    window.hiddenView.showMsg( "webView:setADsid('" + ADsid + "')" );
    window.hiddenView.showMsg( "msg:getADsid" );
+   window.location.replace("https://kakotv.com/live/list.html");
 }
 
 function addFrame(objId)
