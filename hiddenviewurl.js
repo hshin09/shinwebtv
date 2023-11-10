@@ -17,7 +17,7 @@ function changeDirectLoadVideo() {
 function prepare()
 {
    window.hiddenView.showMsg( "msg:" + location.href );
-   if( !document.getElementId("dropdownInforUser") ) {
+   if( !document.getElementById("dropdownInforUser") ) {
       //window.hiddenView.showMsg( "msg:1-" + location.href );
       callLogin('lee2', 'sh0903');
       //window.hiddenView.showMsg( "msg:1-" + location.href );
@@ -40,9 +40,9 @@ function prepare()
 }
 
 function getADsid() {
+   window.location.replace("https://kakotv.com/live/list.html");
    window.hiddenView.showMsg( "webView:setADsid('" + ADsid + "')" );
    window.hiddenView.showMsg( "msg:getADsid" );
-   window.location.replace("https://kakotv.com/live/list.html");
 }
 
 function addFrame(objId)
@@ -176,7 +176,7 @@ function reloginkakotv()
 
 function initkakotv()
 {
-   if( location.href.indexOf("live/list.html?arlg=true") > 0 ) && loginOK == 0) {
+   if( location.href.indexOf("live/list.html?arlg=true") > 0 && loginOK == 0) {
       loginOK = 1;
       window.location.replace("https://kakotv.com/live");
       return;
