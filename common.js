@@ -134,7 +134,7 @@ function Init()
    }
    checkUser(ls);
    
-   for(var i = 0; i < tvaddr.length; i++) {      
+   for(var i = 0; i < tvaddr.length-1; i++) {      
       ls = localStorage.getItem("youtv"+i );
       if( ls == null || ls == "" ) ls = "";
       backtvaddr[i] = ls;
