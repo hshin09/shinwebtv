@@ -157,7 +157,6 @@ function Init()
        if(addr[i][j] == "79")
          addr[i][j] = addr[i][3];
    }
-  tvaddr[i-1] = addr[i-1][ich];
    ls = localStorage.getItem("ei" );
    if( ls && ls != "" )
       iGetTv = ei = si = ls;
