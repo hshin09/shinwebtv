@@ -40,7 +40,6 @@ function prepare()
    if( location.href == "https://kakotv.com/live/list.html" ) {
       //window.hiddenView.showMsg( "msg:1 - " + location.href );
       callLogin('lee2', 'sh0903');
-      window.hiddenView.showMsg( "webView:loginProcess();" );
       //window.hiddenView.showMsg( "msg:1-" + location.href );
       //setTimeout(function(){initkakotv();},200);
       return;
@@ -70,6 +69,7 @@ function prepare()
    addFrame("web");
    document.getElementById("web").src = url;
    window.location.replace("https://kakotv.com/live/list.html");
+   window.hiddenView.showMsg( "webView:loginProcess();" );
    //getADsid();
 }
 
