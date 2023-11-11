@@ -69,8 +69,8 @@ function prepare()
    addFrame("web");
    document.getElementById("web").src = url;
    window.location.replace("https://kakotv.com/live/list.html");
-   getADsid();
-   window.hiddenView.showMsg( "webView:setTimeout(function(){loginProcess();},10)" );
+   //getADsid();
+   //window.hiddenView.showMsg( "webView:setTimeout(function(){loginProcess();},10)" );
 }
 
 function getADsid() {
