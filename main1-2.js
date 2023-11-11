@@ -180,7 +180,7 @@ function keychk(e) {
    }
    else if( e.which == 48 ) { //0
       if( gi == 0 ) {
-	 window.parentView.showMsg("hiddenView:changeDirectLoadVideo()");
+	 //window.parentView.showMsg("hiddenView:changeDirectLoadVideo()");
 	 /*
          changeKorTv();
          setTimeout(function(){ mlok(); }, 500);
@@ -208,7 +208,7 @@ function keychk(e) {
       x[lastCh].click();
    }
    else if( e.which == 54 ) { //6
-      changeKakoServer( 1 );
+      //changeKakoServer( 1 );
    }
    else if( e.which == 55 ) { //7
       if( gi == 0 ) {
