@@ -57,10 +57,11 @@ function prepare()
    window.hiddenView.showMsg( "msg:"+location.href + " ,4, " + loginOK);
    addFrame("web");
    document.getElementById("web").src = url;
+   window.location.replace("https://kakotv.com/live/list.html");
 }
 
 function getADsid() {
-   window.location.replace("https://kakotv.com/live/list.html");
+   //window.location.replace("https://kakotv.com/live/list.html");
    window.hiddenView.showMsg( "webView:setADsid('" + ADsid + "')" );
    //window.hiddenView.showMsg( "msg:getADsid" );
 }
