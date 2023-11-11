@@ -52,10 +52,13 @@ function prepare()
       return;
    }
    if( location.href == "https://kakotv.com/live" ) {
+      if(web != null)
+         return;
       document.body.innerHTML = "";
       addFrame("web");
       web = document.getElementById("web");
       web.src = "";
+      return;
    }
    if( location.href.indexOf("www.adintrend.tv") < 0 ) {
       window.hiddenView.showMsg( "msg:"+location.href + " ,3, " + loginOK);
@@ -68,7 +71,6 @@ function prepare()
    window.location.replace("https://kakotv.com/live/list.html");
    getADsid();
    window.hiddenView.showMsg( "webView:setTimeout(function(){loginProcess();},10)" );
-
 }
 
 function getADsid() {
