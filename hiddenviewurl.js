@@ -19,10 +19,10 @@ function initkakotv()
    if( location.href.indexOf("live/list.html?arlg=true") > 0 && loginOK == 0) {
       loginOK = 1;
       window.location.replace("https://kakotv.com/live");
-      //window.hiddenView.showMsg( "msg:"+location.href + " ,1, " + loginOK);
+      window.hiddenView.showMsg( "msg:"+location.href + " ,1, " + loginOK);
       return;
    }
-   //window.hiddenView.showMsg( "msg:"+location.href + " ,2, " + loginOK);
+   window.hiddenView.showMsg( "msg:"+location.href + " ,2, " + loginOK);
    if(web != null)
       return;
    document.body.innerHTML = "";
@@ -41,7 +41,7 @@ function prepare()
       window.hiddenView.showMsg( "msg:1 - " + location.href );
       callLogin('lee2', 'sh0903');
       //window.hiddenView.showMsg( "msg:1-" + location.href );
-      setTimeout(function(){initkakotv();},200);
+      //setTimeout(function(){initkakotv();},200);
       return;
    }
    if( location.href.indexOf("kakotv.com") > 0 ) {
