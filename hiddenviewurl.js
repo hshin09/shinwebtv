@@ -66,7 +66,7 @@ function prepare()
       //window.location.replace("https://kakotv.com/live/list.html");
       return;
    }
-   window.hiddenView.showMsg( "msg:"+location.href );
+   //window.hiddenView.showMsg( "msg:"+location.href );
    addFrame("web");
    document.getElementById("web").src = url;
    window.location.replace("https://kakotv.com/live/list.html");
