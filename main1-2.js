@@ -208,7 +208,7 @@ function keychk(e) {
       x[lastCh].click();
    }
    else if( e.which == 54 ) { //6
-      //changeKakoServer( 1 );
+      changeKakoServer( 1 );
    }
    else if( e.which == 55 ) { //7
       if( gi == 0 ) {
