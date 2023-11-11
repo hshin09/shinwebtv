@@ -46,7 +46,7 @@ function prepare()
       return;
    }
    if( location.href.indexOf("live/list.html?arlg=true") > 0 ) {
-      window.hiddenView.showMsg( "msg:로그인 되었습니다" );
+      //window.hiddenView.showMsg( "msg:로그인 되었습니다" );
       //initkakotv();
       loginOK = 1;
       window.location.replace("https://kakotv.com/live");
