@@ -14,19 +14,38 @@ function changeDirectLoadVideo() {
    window.hiddenView.showMsg("msg:directLoadVideo = " + directLoadVideo);
 }
 
+function initkakotv()
+{
+   if( location.href.indexOf("live/list.html?arlg=true") > 0 && loginOK == 0) {
+      loginOK = 1;
+      window.location.replace("https://kakotv.com/live");
+      //window.hiddenView.showMsg( "msg:"+location.href + " ,1, " + loginOK);
+      return;
+   }
+   //window.hiddenView.showMsg( "msg:"+location.href + " ,2, " + loginOK);
+   if(web != null)
+      return;
+   document.body.innerHTML = "";
+   addFrame("web");
+   web = document.getElementById("web");
+   web.src = "";
+   //window.hiddenView.showMsg( "msg:로그인 되었습니다" );
+   window.hiddenView.showMsg( "webView:setTimeout(function(){loginProcess();},100)" );
+}
+
 function prepare()
 {
    //window.hiddenView.showMsg( "msg:"+location.href + " ,0, " + loginOK);
    //window.hiddenView.showMsg( "msg:" + document.getElementById("dropdownInforUser") );
    if( location.href.indexOf("kakotv.com/live/list.html") > 0 ) {
-      window.hiddenView.showMsg( "msg:1-" + location.href );
+      window.hiddenView.showMsg( "msg:1 - " + location.href );
       callLogin('lee2', 'sh0903');
       //window.hiddenView.showMsg( "msg:1-" + location.href );
       setTimeout(function(){initkakotv();},200);
       return;
    }
    if( location.href.indexOf("kakotv.com") > 0 ) {
-      window.hiddenView.showMsg( "msg:2-" + location.href );
+      window.hiddenView.showMsg( "msg:2 - " + location.href );
       //initkakotv();
       return;
    }
@@ -43,7 +62,7 @@ function prepare()
 function getADsid() {
    window.location.replace("https://kakotv.com/live/list.html");
    window.hiddenView.showMsg( "webView:setADsid('" + ADsid + "')" );
-   window.hiddenView.showMsg( "msg:getADsid" );
+   //window.hiddenView.showMsg( "msg:getADsid" );
 }
 
 function addFrame(objId)
@@ -173,25 +192,6 @@ function reloginkakotv()
    cnt = 1;
    web.src = "https://kakotv.com/live/list.html?is_show=true&arlg=true";
    setTimeout(function(){checklogout();},2000);
-}
-
-function initkakotv()
-{
-   if( location.href.indexOf("live/list.html?arlg=true") > 0 && loginOK == 0) {
-      loginOK = 1;
-      window.location.replace("https://kakotv.com/live");
-      //window.hiddenView.showMsg( "msg:"+location.href + " ,1, " + loginOK);
-      return;
-   }
-   //window.hiddenView.showMsg( "msg:"+location.href + " ,2, " + loginOK);
-   if(web != null)
-      return;
-   document.body.innerHTML = "";
-   addFrame("web");
-   web = document.getElementById("web");
-   web.src = "";
-   window.hiddenView.showMsg( "msg:로그인 되었습니다" );
-   window.hiddenView.showMsg( "webView:setTimeout(function(){loginProcess();},100)" );
 }
 
 function getkakotvurl()
