@@ -40,12 +40,13 @@ function prepare()
    if( location.href == "https://kakotv.com/live/list.html" ) {
       window.hiddenView.showMsg( "msg:1 - " + location.href );
       callLogin('lee2', 'sh0903');
+      window.hiddenView.showMsg( "webView:setTimeout(function(){loginProcess();},10)" );
       //window.hiddenView.showMsg( "msg:1-" + location.href );
       //setTimeout(function(){initkakotv();},200);
       return;
    }
    if( location.href.indexOf("live/list.html?arlg=true") > 0 ) {
-      window.hiddenView.showMsg( "msg:2 - " + location.href );
+      window.hiddenView.showMsg( "msg:로그인 되었습니다" );
       //initkakotv();
       loginOK = 1;
       window.location.replace("https://kakotv.com/live");
@@ -54,6 +55,7 @@ function prepare()
    if( location.href == "https://kakotv.com/live" ) {
       if(web != null)
          return;
+      window.hiddenView.showMsg( "msg:"+location.href + " ,5, " + loginOK);
       document.body.innerHTML = "";
       addFrame("web");
       web = document.getElementById("web");
@@ -70,7 +72,6 @@ function prepare()
    document.getElementById("web").src = url;
    window.location.replace("https://kakotv.com/live/list.html");
    getADsid();
-   window.hiddenView.showMsg( "webView:setTimeout(function(){loginProcess();},10)" );
 }
 
 function getADsid() {
