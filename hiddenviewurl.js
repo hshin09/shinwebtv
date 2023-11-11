@@ -46,7 +46,7 @@ function prepare()
    }
    if( location.href.indexOf("kakotv.com") > 0 ) {
       window.hiddenView.showMsg( "msg:2 - " + location.href );
-      //initkakotv();
+      initkakotv();
       return;
    }
    if( location.href.indexOf("www.adintrend.tv") < 0 ) {
