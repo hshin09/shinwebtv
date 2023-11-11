@@ -31,11 +31,11 @@ function prepare()
       return;
    }
    if( location.href.indexOf("www.adintrend.tv") < 0 ) {
-      window.hiddenView.showMsg( "msg:" + location.href );  
+      window.hiddenView.showMsg( "msg:"+location.href + " ,3, " + loginOK);
       window.location.replace("https://kakotv.com/live/list.html");
       return;
    }
-   //window.hiddenView.showMsg( "msg:" + location.href );
+   window.hiddenView.showMsg( "msg:"+location.href + " ,4, " + loginOK);
    addFrame("web");
    document.getElementById("web").src = url;
 }
