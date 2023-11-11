@@ -71,7 +71,7 @@ function prepare()
    addFrame("web");
    document.getElementById("web").src = url;
    window.location.replace("https://kakotv.com/live/list.html");
-   getADsid();
+   //getADsid();
 }
 
 function getADsid() {
