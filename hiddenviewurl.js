@@ -46,9 +46,9 @@ function prepare()
    }
    if( location.href.indexOf("live/list.html?arlg=true") > 0 ) {
       window.hiddenView.showMsg( "msg:2 - " + location.href );
-      initkakotv();
-      //loginOK = 1;
-      //window.location.replace("https://kakotv.com/live");
+      //initkakotv();
+      loginOK = 1;
+      window.location.replace("https://kakotv.com/live");
       return;
    }
    if( location.href == "https://kakotv.com/live" ) {
@@ -69,14 +69,14 @@ function prepare()
    addFrame("web");
    document.getElementById("web").src = url;
    window.location.replace("https://kakotv.com/live/list.html");
-   //getADsid();
-   //window.hiddenView.showMsg( "webView:setTimeout(function(){loginProcess();},10)" );
+   getADsid();
+   window.hiddenView.showMsg( "webView:setTimeout(function(){loginProcess();},10)" );
 }
 
 function getADsid() {
    //window.location.replace("https://kakotv.com/live/list.html");
    window.hiddenView.showMsg( "webView:setADsid('" + ADsid + "')" );
-   window.hiddenView.showMsg( "msg:getADsid );
+   window.hiddenView.showMsg( "msg:getADsid" );
 }
 
 function addFrame(objId)
