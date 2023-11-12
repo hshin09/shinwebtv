@@ -45,11 +45,10 @@ function prepare()
       //setTimeout(function(){initkakotv();},200);
       return;
    }
-   if( location.href.indexOf("live/list.html?arlg=true") > 0 ) {
-      //window.hiddenView.showMsg( "msg:로그인 되었습니다" );
-      //initkakotv();
+   if( location.href.indexOf("live/list.html?arlg=true") > 0 ) 
       loginOK = 1;
       window.location.replace("https://kakotv.com/live");
+      window.hiddenView.showMsg( "msg:로그인 되었습니다" );
       return;
    }
    if( location.href == "https://kakotv.com/live" ) {
