@@ -6,6 +6,7 @@ document.querySelector('head').appendChild(scr);
 function firstSetting()
 {
    touchscreen = 0;
+   $("#endchange").css('display', 'none');
    window.onkeydown = keychk;
 }
 
