@@ -190,7 +190,6 @@ function keychk(e) {
    }
    else if( e.which == 49 ) { //1
       //isHotKey = 1;
-      window.parentView.showMsg("press key value : " + e.which);
       x[gi?0:1].click();
    }
    else if( e.which == 50 ) { //2
@@ -239,7 +238,6 @@ function keychk(e) {
       showTime();
    }
    else if( e.which == 57 ) { //9
-      window.parentView.showMsg("press key value : " + e.which);
       if( gi == 0 ) {
          if( tvchak == 1 ) {
             ei = 2;
@@ -252,6 +250,6 @@ function keychk(e) {
          }
       }
    }
-
+   window.parentView.showMsg("press key value : " + e.which);
    e.preventDefault();
 }
