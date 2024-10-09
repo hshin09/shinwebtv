@@ -250,6 +250,6 @@ function keychk(e) {
          }
       }
    }
-   window.parentView.showMsg("press key value : " + e.which);
+   //window.parentView.showMsg("press key value : " + e.which);
    e.preventDefault();
 }
