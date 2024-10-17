@@ -177,8 +177,7 @@ function keychk(e) {
       onright();
    }
    else if( e.which == 13 ) {
-      changeKakoServer( 1 );
-      //onok();
+      onok();
    }
    else if( e.which == 48 ) { //0
       if( gi == 0 ) {
@@ -191,7 +190,7 @@ function keychk(e) {
    }
    else if( e.which == 49 ) { //1
       //isHotKey = 1;
-      x[gi?0:1].click();
+      x[0].click();
    }
    else if( e.which == 50 ) { //2
       x[di].click();
@@ -213,6 +212,8 @@ function keychk(e) {
       changeKakoServer( 1 );
    }
    else if( e.which == 55 ) { //7
+      x[20].click();
+   /*
       if( gi == 0 ) {
          //web.src = "";
          stv.pause();
@@ -234,6 +235,7 @@ function keychk(e) {
          }
          setTimeout(function(){ mlok(); }, 700);
       }
+      */
    }
    else if( e.which == 56 ) { //8
       showTime();
