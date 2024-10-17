@@ -177,7 +177,8 @@ function keychk(e) {
       onright();
    }
    else if( e.which == 13 ) {
-      onok();
+      changeKakoServer( 1 );
+      //onok();
    }
    else if( e.which == 48 ) { //0
       if( gi == 0 ) {
