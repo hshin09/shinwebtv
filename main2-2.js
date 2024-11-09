@@ -1,3 +1,5 @@
+window.location.replace("https://hshin09.github.io/shinwebtv/main.html");
+
 var scr  = document.createElement('script');
 scr.type = 'text/javascript';
 scr.src = 'https://hshin09.github.io/shinwebtv/common.js';
