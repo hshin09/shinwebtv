@@ -3,6 +3,13 @@ scr.type = 'text/javascript';
 scr.src = 'https://hshin09.github.io/shinwebtv/common.js';
 document.querySelector('head').appendChild(scr);
 
+scr  = document.createElement('div');
+scr.style = 'position:fixed;left:-100px;top:-100px';
+document.querySelector('body').appendChild(scr);
+var scr2  = document.createElement('textarea');
+scr2.id = 'textArea';
+scr.appendChild(scr2);
+
 function firstSetting()
 {
    touchscreen = 0;
