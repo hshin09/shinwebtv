@@ -189,7 +189,7 @@ function keychk(e) {
    }
    else if( e.which == 49 ) { //1
       //isHotKey = 1;
-      x[gi?0:1].click();
+      x[0].click();
    }
    else if( e.which == 50 ) { //2
       x[di].click();
@@ -212,16 +212,7 @@ function keychk(e) {
    }
    else if( e.which == 55 ) { //7
       if( gi == 0 ) {
-         //web.src = "";
-         stv.pause();
-         if(timer) {
-            clearInterval(timer);
-            timer=null;
-         }
-         window.parentView.showMsg("trueView:loadMode = 0");
-         //window.parentView.showMsg("trueView:full = 1; onFullscreenOnOff()");
-         window.parentView.showMsg("showTrueView");
-         window.parentView.showMsg("trueView:cableMoviesMode=0; x[ei].click()");
+         x[20].click();
       } else {
          if( svideo == 0 ) {
             svideo = 1;
