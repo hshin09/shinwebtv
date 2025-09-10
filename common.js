@@ -27,7 +27,7 @@ var addr = [
      "https://nhkwlive-xjp.webcdn.stream.ne.jp/hls/live/2003458/nhkwlive-xjp-en/index_1M.m3u8", 
      "https://movie.mcas.jp/mcas/wn1_2/master.m3u8", 
      "https://n24-cdn-live.ntv.co.jp/ch01/index.m3u8", 3],
-  ["TV 조선 뉴스", "TV 조선 뉴스", "TV 조선 뉴스", "/TV%20%EC%A1%B0%EC%84%A0-77", "79", "79", 3],
+  ["TV 조선 뉴스", "TV 조선 뉴스", "TV 조선 뉴스", "/tv%EC%A1%B0%EC%84%A0-77", "79", "79", 3],
   ["채널 A 뉴스", "채널 A 뉴스", "채널 A 뉴스", "/%EC%B1%84%EB%84%90a-78", "79", "79", 3],
   ["JTBC 뉴스", "JTBC 뉴스", "JTBC 뉴스", "/jtbc-76", "79", "79", 3],
   ["YTN 뉴스", "YTN 뉴스", "YTN 뉴스", "/YTN-80", "79", "79", 3],
